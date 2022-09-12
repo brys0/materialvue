@@ -1,0 +1,25 @@
+name: Release Pull Request
+
+on:
+  pull_request:
+    branches:
+      - release
+
+jobs:
+  lint:
+    uses: cosmicverse/actions/.github/workflows/lint.yml@release
+    secrets:
+      npm_token: ${{ secrets.npm_token }}
+  codeql:
+    needs: lint
+    uses: cosmicverse/actions/.github/workflows/codeql.yml@release
+  release-build:
+    needs: codeql
+    uses: cosmicverse/actions/.github/workflows/release-build.yml@release
+    secrets:
+      npm_token: ${{ secrets.npm_token }}
+  test:
+    needs: release-build
+    uses: cosmicverse/actions/.github/workflows/test.yml@release
+    secrets:
+      npm_token: ${{ secrets.npm_token }}
