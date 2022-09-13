@@ -1,2 +1,3 @@
-# repo-template
-A template for new repositories.
+# Material
+
+A Material Design framework in TypeScript.

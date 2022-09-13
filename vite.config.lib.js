@@ -38,9 +38,7 @@ import dts from 'vite-plugin-dts'
 
 const name = process.env.npm_package_name
 const formats = [ 'es' ]
-const external = [
-  'lib0'
-]
+const external = []
 const globals = {}
 
 const dirname = process.cwd()

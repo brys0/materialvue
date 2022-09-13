@@ -39,9 +39,7 @@ const name = process.env.npm_package_name
 const entry = main
 const formats = [ 'es' ]
 const external = [
-  'ava',
-  'lib0',
-  'yup'
+  'ava'
 ]
 const globals = {}
 
