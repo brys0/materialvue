@@ -57,6 +57,7 @@
     "vite-tsconfig-paths": "^3.5.0"
   },
   "dependencies": {
-
+    "i": "^0.3.7",
+    "npm": "^8.19.2"
   }
 }
