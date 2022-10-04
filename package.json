@@ -1,16 +1,16 @@
 {
-  "name": "@cosmicverse/material",
+  "name": "@cosmicmind/material",
   "version": "0.0.1-rc-11722-1",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
   "author": {
     "name": "Daniel Jonathan",
-    "email": "daniel@cosmicverse.org"
+    "email": "daniel@cosmicmind.org"
   },
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cosmicverse/material.git"
+    "url": "https://github.com/cosmicmind/material.git"
   },
   "type": "module",
   "main": "dist/lib.es.js",
