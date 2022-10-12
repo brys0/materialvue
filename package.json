@@ -33,7 +33,7 @@
     "test": "run-s lint test:build test:unit",
     "test:build": "vite build --config vite.config.tests.js --mode development",
     "test:watch": "vite build --config vite.config.tests.js --mode watch",
-    "test:unit": "vitest --environment jsdom",
+    "test:unit": "vitest run --environment jsdom",
     "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
