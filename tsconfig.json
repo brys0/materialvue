@@ -15,7 +15,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": false,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
@@ -26,6 +26,7 @@
     "forceConsistentCasingInFileNames": true,
     "removeComments": true,
     "jsx": "preserve",
+    "jsxFactory": "h",
     "isolatedModules": true,
     "lib": [
       "es2022",
@@ -33,7 +34,9 @@
       "dom.iterable",
       "webworker"
     ],
-    "rootDir": ".",
+    "rootDirs": [
+      "."
+    ],
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -43,6 +46,7 @@
   },
   "include": [
     "src/**/*.ts",
+    "src/**/*.tsx",
     "src/**/*.js",
     "src/**/*.vue",
     "typings/**/*.d.ts",
@@ -50,11 +54,10 @@
   ],
   "exclude": [
     "dist",
-    "tests",
     "node_modules"
   ],
   "typeRoots": [
-    "@types",
-    "typings"
+    "typings",
+    "@types"
   ]
 }
