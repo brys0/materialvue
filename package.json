@@ -1,5 +1,5 @@
 {
-  "name": "@cosmicmind/material",
+  "name": "@cosmicmind/materialjs",
   "version": "0.0.1-rc-100422-1",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
@@ -10,12 +10,12 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cosmicmind/material.git"
+    "url": "https://github.com/cosmicmind/materialjs.git"
   },
   "type": "module",
   "main": "dist/lib.es.js",
   "module": "dist/lib.es.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/libs/material/src/index.d.ts",
   "files": [
     "dist",
     "typings",
