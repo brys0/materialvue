@@ -1,0 +1,157 @@
+/* Copyright (C) 2022, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. */
+
+@use 'sass:map'
+@use '@/sass/theme'
+@use '@/sass/conversion'
+
+.button,
+a.button
+  &
+    @extend %is-noselect
+    @extend %is-ellipsis
+
+    @extend %typography-label-large
+
+    padding: 10px 24px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 8px
+    border: none
+    outline: 1px solid transparent
+    border-radius: 100px
+    background: transparent
+    cursor: pointer
+
+    &:disabled:not(.hovered):not(.focused):not(.pressed),
+    &[disabled]:not(.hovered):not(.focused):not(.pressed),
+    &.disabled:not(.hovered):not(.focused):not(.pressed)
+      cursor: not-allowed
+      pointer-events: all !important
+      box-shadow: none
+
+      @include theme.preferred
+        color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+    &.elevated
+      @include theme.preferred
+        color: theme.style(primary)
+        background: theme.style(primary-container)
+        box-shadow: theme.style(shadow-1)
+
+      &:hover:not(.focused):not(.pressed):not(.disabled),
+      &.hovered
+        @include theme.preferred
+          background: theme.tint(theme.style(primary), theme.style(primary-container), 8%)
+          box-shadow: theme.style(shadow-2)
+  
+      &:focus:not(.hovered):not(.pressed):not(.disabled),
+      &.focused
+        @include theme.preferred
+          background: theme.tint(theme.style(primary), theme.style(primary-container), 12%)
+  
+      &:active:not(.hovered):not(.focused):not(.disabled),
+      &.pressed
+        @include theme.preferred
+          background: theme.tint(theme.style(primary), theme.style(primary-container), 12%)
+  
+    &.filled
+      @include theme.preferred
+        color: theme.style(on-primary)
+        background: theme.style(primary)
+
+      &:hover:not(.focused):not(.pressed):not(.disabled),
+      &.hovered
+        @include theme.preferred
+          background: theme.tint(theme.style(on-primary), theme.style(primary), 8%)
+          box-shadow: theme.style(shadow-1)
+
+      &:focus:not(.hovered):not(.pressed):not(.disabled),
+      &.focused
+        @include theme.preferred
+          background: theme.tint(theme.style(on-primary), theme.style(primary), 12%)
+
+      &:active:not(.hovered):not(.focused):not(.disabled),
+      &.pressed
+        @include theme.preferred
+          background: theme.tint(theme.style(on-primary), theme.style(primary), 12%)
+
+    &.tonal
+      @include theme.preferred
+        color: theme.style(on-secondary-container)
+        background: theme.style(secondary-container)
+
+      &:hover:not(.focused):not(.pressed):not(.disabled),
+      &.hovered
+        @include theme.preferred
+          background: theme.tint(theme.style(on-secondary-container), theme.style(secondary-container), 8%)
+          box-shadow: theme.style(shadow-1)
+  
+      &:focus:not(.hovered):not(.pressed):not(.disabled),
+      &.focused
+        @include theme.preferred
+          background: theme.tint(theme.style(on-secondary-container), theme.style(secondary-container), 12%)
+  
+      &:active:not(.hovered):not(.focused):not(.disabled),
+      &.pressed
+        @include theme.preferred
+          background: theme.tint(theme.style(on-secondary-container), theme.style(secondary-container), 12%)
+  
+    &.outlined
+      @include theme.preferred
+        color: theme.style(primary)
+        background: transparent
+        outline-color: theme.style(outline)
+
+      &:hover:not(.focused):not(.pressed):not(.disabled),
+      &.hovered
+        @include theme.preferred
+          background: theme.tint(theme.style(primary), transparent, 8%)
+          
+      &:focus:not(.hovered):not(.pressed):not(.disabled),
+      &.focused
+        @include theme.preferred
+          background: theme.tint(theme.style(primary), transparent, 12%)
+  
+      &:active:not(.hovered):not(.focused):not(.disabled),
+      &.pressed
+        @include theme.preferred
+          background: theme.tint(theme.style(primary), transparent, 12%)
+
+      &:disabled:not(.hovered):not(.focused):not(.pressed),
+      &[disabled]:not(.hovered):not(.focused):not(.pressed),
+      &.disabled:not(.hovered):not(.focused):not(.pressed)
+        @include theme.preferred
+          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          background: theme.style(surface)
+          outline-color: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+    &.text
+      @include theme.preferred
+        color: theme.style(primary)
+
+      &:hover:not(.focused):not(.pressed):not(.disabled),
+      &.hovered
+        @include theme.preferred
+          background: theme.tint(theme.style(primary), transparent, 8%)
+          
+      &:focus:not(.hovered):not(.pressed):not(.disabled),
+      &.focused
+        @include theme.preferred
+          background: theme.tint(theme.style(primary), transparent, 12%)
+  
+      &:active:not(.hovered):not(.focused):not(.disabled),
+      &.pressed
+        @include theme.preferred
+          background: theme.tint(theme.style(primary), transparent, 12%)
+
+      &:disabled:not(.hovered):not(.focused):not(.pressed),
+      &[disabled]:not(.hovered):not(.focused):not(.pressed),
+      &.disabled:not(.hovered):not(.focused):not(.pressed)
+        background: none
+        outline-color: none
+
+        @include theme.preferred
+          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)

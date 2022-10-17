@@ -1,0 +1,60 @@
+/* Copyright (C) 2022, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. */
+
+%list-scrollable
+  min-width: 0
+  min-height: min-content
+  display: flex
+  flex: 1 0 0
+  overflow-x: hidden
+  overflow-y: auto
+
+  > %list
+    min-width: 0
+    min-height: min-content
+    flex: 1 0 0
+
+%list
+  margin: 0
+  padding: 0
+
+  display: flex
+  flex-flow: column nowrap
+  list-style: none
+
+  &.inline
+    flex-flow: row nowrap
+
+%list-item
+  @extend %row
+
+  z-index: 0
+
+  &:hover
+    z-index: 1
+
+%list-item-start
+  @extend %row-start
+
+%list-item-center
+  @extend %row-center
+
+%list-item-end
+  @extend %row-end
+
+.list-scrollable
+  @extend %list-scrollable
+
+.list
+  @extend %list
+
+.list-item
+  @extend %list-item
+
+.list-item-start
+  @extend %list-item-start
+    
+.list-item-center
+  @extend %list-item-center
+    
+.list-item-end
+  @extend %list-item-end

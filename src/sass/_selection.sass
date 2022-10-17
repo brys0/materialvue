@@ -1,0 +1,17 @@
+/* Copyright (C) 2022, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. */
+
+%is-noselect
+  -webkit-touch-callout: none
+
+.is-noselect
+  @extend %is-noselect
+
+%is-select
+  -webkit-touch-callout: default
+
+.is-select
+  @extend %is-select
+
+::selection
+  background-color: cornflowerblue
+  color: black

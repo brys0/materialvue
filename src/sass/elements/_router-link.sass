@@ -1,0 +1,23 @@
+/* Copyright (C) 2022, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. */
+
+%router-link
+  @extend %is-noselect
+  @extend %is-ellipsis
+
+  display: flex
+  flex-flow: row nowrap
+  flex: 1
+  align-items: center
+  align-content: stretch
+  
+  &.to-center
+    align-content: center
+
+  &.to-right
+    align-content: flex-end
+
+  &.is-stretched
+    align-content: stretch
+
+.router-link
+  @extend %router-link
