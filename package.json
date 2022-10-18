@@ -26,7 +26,7 @@
   "scripts": {
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "build": "vite build --mode production",
-    "watch": "vite build --mode watch",
+    "watch": "vite build --watch --mode development",
     "test:unit": "vitest run",
     "test:coverage": "vitest run --coverage"
   },
@@ -56,6 +56,7 @@
     "eslint": "^8.24.0",
     "eslint-plugin-vue": "^9.5.1",
     "eslint-plugin-yml": "^1.1.0",
+    "fast-glob": "^3.2.12",
     "jsdom": "^20.0.0",
     "npm-run-all": "^4.1.5",
     "ts-node": "^10.9.1",

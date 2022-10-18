@@ -1,3 +1,5 @@
+import fg from 'fast-glob'
+
 import {
 	URL,
 	fileURLToPath,
@@ -6,7 +8,6 @@ import {
 import {
 	defineConfig,
 	LibraryFormats,
-	HmrContext,
 	Plugin,
 } from 'vite'
 
@@ -24,29 +25,20 @@ const formats: LibraryFormats[] = [ 'es' ]
 
 function CustomHmr(): Plugin {
 	return {
-		name: 'custom-hmr',
-		enforce: 'post',
-		handleHotUpdate: (ctx: HmrContext): void => {
-			if (ctx.file.endsWith('.sass') || ctx.file.endsWith('.scss')) {
-				ctx.server.ws.send({
-					type: 'full-reload',
-					path: '*',
-				})
+		name: 'watch-external', // https://stackoverflow.com/questions/63373804/rollup-watch-include-directory/63548394#63548394
+		async buildStart(): Promise<void> {
+			const files = await fg([
+				'./src/**/*',
+				'./public/**/*'
+			])
+			for(const file of files) {
+				this.addWatchFile(file)
 			}
 		},
 	}
 }
 
-export default defineConfig(({
-	mode,
-}) => {
-	const watch = 'watch' === mode ? {
-		include: [
-			'./src/**/*',
-			'./public/**/*'
-		],
-	}: undefined
-
+export default defineConfig(() => {
 	return {
 		define: {
 			'__PACKAGE_NAME__': packageVersion,
@@ -75,7 +67,6 @@ export default defineConfig(({
 					globals,
 				},
 			},
-			watch,
 		},
 	}
 })
