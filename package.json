@@ -15,7 +15,7 @@
   "type": "module",
   "main": "dist/lib.es.js",
   "module": "dist/lib.es.js",
-  "types": "dist/libs/material/src/index.d.ts",
+  "types": "dist/libs/materialjs/src/index.d.ts",
   "files": [
     "dist",
     "typings",
@@ -26,6 +26,7 @@
   "scripts": {
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "build": "vite build --mode production",
+    "watch": "vite build --mode watch",
     "test:unit": "vitest run",
     "test:coverage": "vitest run --coverage"
   },

@@ -2,8 +2,8 @@
 
 @use 'sass:map';
 
-@use '@/sass/themes/material/dark' as dark;
-@use '@/sass/themes/material/light' as light;
+@use './themes/material/dark' as dark;
+@use './themes/material/light' as light;
 
 $light: (
   primary: light.$primary,

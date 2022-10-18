@@ -6,6 +6,8 @@ import {
 import {
 	defineConfig,
 	LibraryFormats,
+	HmrContext,
+	Plugin,
 } from 'vite'
 
 import dts from 'vite-plugin-dts'
@@ -20,12 +22,28 @@ const globals = {}
 const emptyOutDir = true
 const formats: LibraryFormats[] = [ 'es' ]
 
+function CustomHmr(): Plugin {
+	return {
+		name: 'custom-hmr',
+		enforce: 'post',
+		handleHotUpdate: (ctx: HmrContext): void => {
+			if (ctx.file.endsWith('.sass') || ctx.file.endsWith('.scss')) {
+				ctx.server.ws.send({
+					type: 'full-reload',
+					path: '*',
+				})
+			}
+		},
+	}
+}
+
 export default defineConfig(({
 	mode,
 }) => {
 	const watch = 'watch' === mode ? {
 		include: [
-			'./src/**/*'
+			'./src/**/*',
+			'./public/**/*'
 		],
 	}: undefined
 
@@ -40,6 +58,7 @@ export default defineConfig(({
 			},
 		},
 		plugins: [
+			CustomHmr(),
 			dts()
 		],
 		build: {
