@@ -28,7 +28,6 @@ function CustomHmr(): Plugin {
 		name: 'watch-external', // https://stackoverflow.com/questions/63373804/rollup-watch-include-directory/63548394#63548394
 		async buildStart(): Promise<void> {
 			const files = await fg([
-				'./src/**/*',
 				'./public/**/*'
 			])
 			for(const file of files) {
