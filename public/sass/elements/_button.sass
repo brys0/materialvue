@@ -44,12 +44,12 @@ a.button
 
     padding: 10px 24px
     display: flex
-    flex-direction: column
+    flex-direction: row
     justify-content: center
     align-items: center
     gap: 8px
     border: none
-    outline: 1px solid transparent
+    outline: none
     border-radius: 100px
     background: transparent
     cursor: pointer
@@ -130,10 +130,15 @@ a.button
           background: theme.tint(theme.style(on-secondary-container), theme.style(secondary-container), 12%)
   
     &.outlined
+      padding-top: 8
+      padding-bottom: 8
+
+      background: transparent
+      border: 1px solid
+
       @include theme.preferred
         color: theme.style(primary)
-        background: transparent
-        outline-color: theme.style(outline)
+        border-color: theme.style(outline)
 
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered
@@ -156,7 +161,7 @@ a.button
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           background: theme.style(surface)
-          outline-color: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+          border-color: conversion.hex-to-rgba(theme.style(on-surface), 12%)
 
     &.text
       @include theme.preferred
@@ -181,7 +186,6 @@ a.button
       &[disabled]:not(.hovered):not(.focused):not(.pressed),
       &.disabled:not(.hovered):not(.focused):not(.pressed)
         background: none
-        outline-color: none
 
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
