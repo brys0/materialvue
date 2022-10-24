@@ -32,12 +32,12 @@
 
 export {
 	ListItem,
-} from './ListItem'
+} from '@/lists/ListItem'
 
 export {
 	OrderedList,
-} from './OrderedList'
+} from '@/lists/OrderedList'
 
 export {
 	UnorderedList,
-} from './UnorderedList'
+} from '@/lists/UnorderedList'

@@ -39,7 +39,7 @@ export {
 	Typography,
 	TypographyStyle,
 	TypographySize,
-} from './typography'
+} from '@/typography'
 
 export {
 	ButtonState,
@@ -48,7 +48,7 @@ export {
 	TonalButton,
 	OutlinedButton,
 	TextButton,
-} from './buttons'
+} from '@/buttons'
 
 export {
 	Finder,
@@ -57,7 +57,7 @@ export {
 	NavigationDrawer,
 	Sidebar,
 	Toolbar,
-} from './components'
+} from '@/components'
 
 export {
 	Icon,
@@ -65,16 +65,16 @@ export {
 	OutlinedIcon,
 	RoundedIcon,
 	SharpIcon,
-} from './icons'
+} from '@/icons'
 
 export {
 	Row,
 	RowCenter,
 	Column,
-} from './layout'
+} from '@/layout'
 
 export {
 	ListItem,
 	OrderedList,
 	UnorderedList,
-} from './list'
+} from '@/lists'

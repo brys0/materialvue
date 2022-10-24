@@ -32,24 +32,24 @@
 
 export {
 	Finder,
-} from './Finder'
+} from '@/components/Finder'
 
 export {
 	Modal,
-} from './Modal'
+} from '@/components/Modal'
 
 export {
 	NavigationBar,
-} from './NavigationBar'
+} from '@/components/NavigationBar'
 
 export {
 	NavigationDrawer,
-} from './NavigationDrawer'
+} from '@/components/NavigationDrawer'
 
 export {
 	Sidebar,
-} from './Sidebar'
+} from '@/components/Sidebar'
 
 export {
 	Toolbar,
-} from './Toolbar'
+} from '@/components/Toolbar'

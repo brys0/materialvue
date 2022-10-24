@@ -30,22 +30,11 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Column,
-} from '@/layout/Column'
+@use '../theme'
 
-export {
-	Row,
-} from '@/layout/Row'
-
-export {
-	RowStart,
-} from '@/layout/RowStart'
-
-export {
-	RowCenter,
-} from '@/layout/RowCenter'
-
-export {
-	RowEnd,
-} from '@/layout/RowEnd'
+%icon
+  @include theme.preferred
+    color: theme.style(on-background)
+  
+.icon
+  @extend %icon
