@@ -55,3 +55,7 @@ export {
 export {
 	TonalButton,
 } from '@/buttons/TonalButton'
+
+export {
+	FilledIconButton,
+} from '@/buttons/FilledIconButton'

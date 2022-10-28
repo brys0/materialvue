@@ -30,52 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
-	Typography,
-	TypographyStyle,
-	TypographySize,
-} from '@/typography'
+import {
+	PropType,
+	defineComponent,
+} from 'vue'
 
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	FilledIconButton,
-} from '@/buttons'
+import {
+	Button,
+	ButtonStyle,
+} from '@/buttons/Button'
 
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/components'
+export const FilledIconButton = defineComponent({
+	extends: Button,
+	props: {
+		style: {
+			type: String as PropType<ButtonStyle.filled>,
+			default: ButtonStyle.filled,
+		},
+	},
+})
 
-export {
-	Icon,
-	IconStyle,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/icons'
-
-export {
-	Row,
-	RowCenter,
-	Column,
-} from '@/layout'
-
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lists'
+export default FilledIconButton
