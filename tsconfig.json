@@ -34,9 +34,7 @@
       "dom.iterable",
       "webworker"
     ],
-    "rootDirs": [
-      "."
-    ],
+    "rootDir": ".",
     "baseUrl": ".",
     "paths": {
       "@/*": [
