@@ -31,7 +31,7 @@ module.exports = {
 			files: [ '**/*.js' ],
 			rules: {
 				'@typescript-eslint/no-inferrable-types': [ 0 ],
-				'@typescript-eslint/explicit-function-return-type': [ 0 ],
+				'@typescript-eslint/explicit-function-return-type': [ 0 ]
 			},
 		}
 	],
