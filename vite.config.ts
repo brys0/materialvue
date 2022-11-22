@@ -14,9 +14,6 @@ import {
 import dts from 'vite-plugin-dts'
 import vue from '@vitejs/plugin-vue'
 
-const packageName = process.env.npm_package_name
-const packageVersion = JSON.stringify(process.env.npm_package_version)
-
 const external = [
 	'@cosmicmind/foundation'
 ]
@@ -40,10 +37,6 @@ function CustomHmr(): Plugin {
 
 export default defineConfig(() => {
 	return {
-		define: {
-			'__PACKAGE_NAME__': packageVersion,
-			'__PACKAGE_VERSION__': packageVersion,
-		},
 		resolve: {
 			alias: {
 				'@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -57,7 +50,7 @@ export default defineConfig(() => {
 		build: {
 			emptyOutDir,
 			lib: {
-				name: packageName,
+				name: process.env.npm_package_name,
 				entry: './src/index.ts',
 				formats,
 				fileName: 'lib.es',
