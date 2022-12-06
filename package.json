@@ -32,7 +32,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@cosmicmind/foundation": "^0.0.1-rc-110822-2",
+    "@cosmicmind/foundation": "^0.0.1-rc-120622-1",
     "@vitejs/plugin-vue": "^3.1.0",
     "pinia": "^2.0.21",
     "sass": "^1.55.0",
