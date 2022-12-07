@@ -1,5 +1,3 @@
-import fg from 'fast-glob'
-
 import {
 	URL,
 	fileURLToPath,
@@ -8,7 +6,6 @@ import {
 import {
 	defineConfig,
 	LibraryFormats,
-	Plugin,
 } from 'vite'
 
 import dts from 'vite-plugin-dts'
@@ -21,20 +18,6 @@ const globals = {}
 const emptyOutDir = true
 const formats: LibraryFormats[] = [ 'es' ]
 
-function CustomHmr(): Plugin {
-	return {
-		name: 'watch-external', // https://stackoverflow.com/questions/63373804/rollup-watch-include-directory/63548394#63548394
-		async buildStart(): Promise<void> {
-			const files = await fg([
-				'./public/**/*'
-			])
-			for(const file of files) {
-				this.addWatchFile(file)
-			}
-		},
-	}
-}
-
 export default defineConfig(() => {
 	return {
 		resolve: {
@@ -43,7 +26,6 @@ export default defineConfig(() => {
 			},
 		},
 		plugins: [
-			CustomHmr(),
 			vue(),
 			dts()
 		],
