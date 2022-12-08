@@ -27,4 +27,4 @@ proxy_pass_header                   P3P;
 # proxy_buffering                     on;
 # proxy_buffer_size                   8k;
 # proxy_temp_file_write_size          16k;
-# proxy_temp_path                     /ebs/repos/cosmic/files;
+# proxy_temp_path                     /node/files;

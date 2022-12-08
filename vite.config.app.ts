@@ -4,6 +4,7 @@ import {
 } from 'node:url'
 
 import {
+	UserConfigExport,
 	defineConfig,
 } from 'vite'
 
@@ -13,28 +14,39 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 const srcDir = './src'
 const emptyOutDir = false
 
-export default defineConfig({
-	resolve: {
-		alias: {
-			'@': fileURLToPath(new URL(srcDir, import.meta.url)),
+export default defineConfig(({
+	mode,
+}) => {
+	const minify = 'production' === mode
+	const config: UserConfigExport = {
+		define: {
+			__ACCOUNT_ENDPOINT__: JSON.stringify(process.env.ACCOUNT_ENDPOINT),
 		},
-	},
-	build: {
-		outDir: 'dist/public',
-		emptyOutDir,
-	},
-	server: {
-		strictPort: true,
-		port: 80,
-		host: '0.0.0.0',
-	},
-	preview: {
-		strictPort: true,
-		port: 80,
-		host: '0.0.0.0',
-	},
-	plugins: [
-		vue(),
-		vueJsx()
-	],
+		resolve: {
+			alias: {
+				'@': fileURLToPath(new URL(srcDir, import.meta.url)),
+			},
+		},
+		build: {
+			outDir: 'dist/public',
+			emptyOutDir,
+			minify,
+		},
+		server: {
+			strictPort: true,
+			port: 80,
+			host: '0.0.0.0',
+		},
+		preview: {
+			strictPort: true,
+			port: 80,
+			host: '0.0.0.0',
+		},
+		plugins: [
+			vue(),
+			vueJsx()
+		],
+	}
+
+	return config
 })

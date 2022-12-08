@@ -6,11 +6,15 @@ import serve from 'koa-static'
 export default (router: Router): void => {
 	router.get([
 		'/'
-	], (ctx, next) =>
-		serve('dist/public')(
-			Object.assign(ctx, {
-				path: 'index.html',
-			}),
-			next)
+	], (ctx, next) => {
+		ctx.body = {
+			success: true,
+		}
+	}
+		// serve('dist/public')(
+		// 	Object.assign(ctx, {
+		// 		path: 'index.html',
+		// 	}),
+		// 	next)
 	)
 }
