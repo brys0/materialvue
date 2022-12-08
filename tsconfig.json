@@ -31,8 +31,7 @@
     "lib": [
       "es2022",
       "dom",
-      "dom.iterable",
-      "webworker"
+      "dom.iterable"
     ],
     "rootDir": ".",
     "baseUrl": ".",
@@ -48,7 +47,6 @@
     "src/**/*.js",
     "src/**/*.jsx",
     "src/**/*.vue",
-    "typings/**/*.d.ts",
     "vite.config*.ts"
   ],
   "exclude": [

@@ -9,9 +9,10 @@ import {
 } from 'vite'
 
 import dts from 'vite-plugin-dts'
-import vue from '@vitejs/plugin-vue'
+// import vue from '@vitejs/plugin-vue'
 
 const external = [
+	'vue',
 	'@cosmicmind/foundation'
 ]
 const globals = {}
@@ -26,7 +27,7 @@ export default defineConfig(() => {
 			},
 		},
 		plugins: [
-			vue(),
+			// vue(),
 			dts()
 		],
 		build: {
