@@ -30,52 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
-	Typography,
-	TypographyStyle,
-	TypographySize,
-} from '@/lib/typography'
+%router-link
+  @extend %is-noselect
+  @extend %is-ellipsis
 
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	FilledIconButton,
-} from '@/lib/buttons'
+  display: flex
+  flex-flow: row nowrap
+  flex: 1
+  align-items: center
+  align-content: stretch
+  
+  &.to-center
+    align-content: center
 
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/components'
+  &.to-right
+    align-content: flex-end
 
-export {
-	Icon,
-	IconStyle,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/icons'
+  &.is-stretched
+    align-content: stretch
 
-export {
-	Row,
-	RowCenter,
-	Column,
-} from '@/lib/layout'
-
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/lists'
+.router-link
+  @extend %router-link

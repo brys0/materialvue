@@ -30,52 +30,40 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
-	Typography,
-	TypographyStyle,
-	TypographySize,
-} from '@/lib/typography'
+@use '../theme'
 
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	FilledIconButton,
-} from '@/lib/buttons'
+.text
+  *
+    vertical-align: baseline
 
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/components'
+  h1
+    color: #0F1014
 
-export {
-	Icon,
-	IconStyle,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/icons'
+  h3
+    color: #0F1014
+    
+  p
+    color: #0F1014
 
-export {
-	Row,
-	RowCenter,
-	Column,
-} from '@/lib/layout'
+  ul,
+  ol
+    margin: 0
+    padding: 0
 
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/lists'
+    li
+      color: #0F1014
+
+      &:first-child
+        margin-top: 24px
+      
+      &:last-child
+        margin-bottom: 24px
+ 
+  blockquote
+    padding: 24px
+    color: #0F1014
+
+    border-left: solid 5px
+  
+  a
+    color: #53BDF9

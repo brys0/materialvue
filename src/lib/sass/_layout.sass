@@ -1,0 +1,119 @@
+/**
+ * BSD 3-Clause License
+ *
+ * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicverse dot org>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its
+ *    contributors may be used to endorse or promote products derived from
+ *    this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES LOSS OF USE, DATA, OR PROFITS OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+@use './conversion'
+
+/* 0-599+ */
+$max-mobile-width-value: 599
+$max-mobile-width: conversion.to-px($max-mobile-width-value)
+
+/* 600-904 */
+$min-tablet-width-value: $max-mobile-width-value + 1
+$min-tablet-width: conversion.to-px($min-tablet-width-value)
+$max-tablet-width-value: 904
+$max-tablet-width: conversion.to-px($max-tablet-width-value)
+
+/* 905-1239 */
+$min-desktop-width-value: $max-tablet-width-value + 1
+$min-desktop-width: conversion.to-px($min-desktop-width-value)
+$max-desktop-width-value: 1239
+$max-desktop-width: conversion.to-px($max-desktop-width-value)
+
+/* 1240-1439 */
+$min-widescreen-width-value: $max-desktop-width-value + 1
+$min-widescreen-width: conversion.to-px($min-widescreen-width-value)
+$max-widescreen-width-value: 1439
+$max-widescreen-width: conversion.to-px($max-widescreen-width-value)
+
+/* 1440+ */
+$min-fullhd-width-value: $max-widescreen-width-value + 1
+$min-fullhd-width: to-px($min-fullhd-width-value)
+
+@mixin is-mobile
+  @media (max-width: $max-mobile-width)
+    @content
+
+@mixin is-tablet
+  @media (min-width: $min-tablet-width) and (max-width: $max-tablet-width)
+    @content
+
+@mixin is-lte-tablet
+  @media (max-width: $max-mobile-width)
+    @content
+
+@mixin is-gte-tablet
+  @media (min-width: $min-desktop-width)
+    @content
+
+@mixin is-desktop
+  @media (min-width: $min-desktop-width) and (max-width: $max-desktop-width)
+    @content
+
+@mixin is-lte-desktop
+  @media (max-width: $max-tablet-width)
+    @content
+
+@mixin is-gte-desktop
+  @media (min-width: $min-widescreen-width)
+    @content
+
+@mixin is-widescreen
+  @media (min-width: $min-widescreen-width) and (max-width: $max-widescreen-width)
+    @content
+
+@mixin is-lte-widescreen
+  @media (max-width: $max-desktop-width)
+    @content
+
+@mixin is-gte-widescreen
+  @media (min-width: $min-fullhd-width)
+    @content
+
+@mixin is-fullhd
+  @media (min-width: $min-fullhd-width)
+    @content
+
+@mixin is-lte-fullhd
+  @media (max-width: $max-widescreen-width)
+    @content
+
+@mixin is-portrait
+  @media (orientation: portrait)
+    @content
+
+@mixin is-landscape
+  @media (orientation: landscape)
+    @content
+
+@mixin is-hoverable
+  @media (hover)
+    @content

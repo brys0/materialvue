@@ -30,52 +30,37 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
+
+import {
 	Typography,
-	TypographyStyle,
 	TypographySize,
-} from '@/lib/typography'
+	TypographyStyle,
+} from '@/lib/typography/Typography'
 
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	FilledIconButton,
-} from '@/lib/buttons'
+export type LabelProps = {
+	size: TypographySize
+}
 
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/components'
+export const Label: FunctionalComponent<LabelProps> = ({
+	size,
+}, {
+	slots,
+}): VNode => h(Typography, {
+	size,
+	style: TypographyStyle.label,
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	Icon,
-	IconStyle,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/icons'
+Label.displayName = 'Label'
 
-export {
-	Row,
-	RowCenter,
-	Column,
-} from '@/lib/layout'
+Label.props = [
+	'size'
+]
 
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/lists'
+export default Label

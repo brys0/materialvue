@@ -30,52 +30,46 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
-	Typography,
-	TypographyStyle,
-	TypographySize,
-} from '@/lib/typography'
+@use './theme'
 
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	FilledIconButton,
-} from '@/lib/buttons'
+%shadow-0
+  @include theme.preferred
+    box-shadow: theme.style(shadow-0)
 
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/components'
+.shadow-0
+  @extend %shadow-0
 
-export {
-	Icon,
-	IconStyle,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/icons'
+%shadow-1
+  @include theme.preferred
+    box-shadow: theme.style(shadow-1)
 
-export {
-	Row,
-	RowCenter,
-	Column,
-} from '@/lib/layout'
+.shadow-1
+  @extend %shadow-1
 
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/lists'
+%shadow-2
+  @include theme.preferred
+    box-shadow: theme.style(shadow-2)
+  
+.shadow-2
+  @extend %shadow-2
+
+%shadow-3
+  @include theme.preferred
+    box-shadow: theme.style(shadow-3)
+  
+.shadow-3
+  @extend %shadow-3
+
+%shadow-4
+  @include theme.preferred
+    box-shadow: theme.style(shadow-4)
+  
+.shadow-4
+  @extend %shadow-4
+
+%shadow-5
+  @include theme.preferred
+    box-shadow: theme.style(shadow-5)
+  
+.shadow-5
+  @extend %shadow-5

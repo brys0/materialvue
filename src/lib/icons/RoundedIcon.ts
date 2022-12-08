@@ -30,52 +30,28 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
-	Typography,
-	TypographyStyle,
-	TypographySize,
-} from '@/lib/typography'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	FilledIconButton,
-} from '@/lib/buttons'
-
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/components'
-
-export {
+import {
 	Icon,
 	IconStyle,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/icons'
+} from '@/lib/icons/Icon'
 
-export {
-	Row,
-	RowCenter,
-	Column,
-} from '@/lib/layout'
+export type RoundedIconProps = {}
 
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/lists'
+export const RoundedIcon: FunctionalComponent<RoundedIconProps> = (_, {
+	slots,
+}): VNode => h(Icon, {
+	style: IconStyle.rounded,
+}, {
+	default: () => slots.default?.(),
+})
+
+RoundedIcon.displayName = 'RoundedIcon'
+RoundedIcon.props = []
+
+export default RoundedIcon

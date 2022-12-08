@@ -1,0 +1,16 @@
+# recursive ignore
+*
+
+# allow
+!/package*.json
+!/*.html
+!/src
+!/public
+!/typings
+!/tsconfig*
+!/vite.config*
+!/.env.*
+!/config
+
+!/LICENSE
+!/README.md

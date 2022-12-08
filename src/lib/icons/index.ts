@@ -31,51 +31,18 @@
  */
 
 export {
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
-	Typography,
-	TypographyStyle,
-	TypographySize,
-} from '@/lib/typography'
-
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	FilledIconButton,
-} from '@/lib/buttons'
-
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/components'
-
-export {
 	Icon,
 	IconStyle,
+} from '@/lib/icons/Icon'
+
+export {
 	OutlinedIcon,
+} from '@/lib/icons/OutlinedIcon'
+
+export {
 	RoundedIcon,
+} from '@/lib/icons/RoundedIcon'
+
+export {
 	SharpIcon,
-} from '@/lib/icons'
-
-export {
-	Row,
-	RowCenter,
-	Column,
-} from '@/lib/layout'
-
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/lists'
+} from '@/lib/icons/SharpIcon'

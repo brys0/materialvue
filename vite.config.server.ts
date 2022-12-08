@@ -4,40 +4,42 @@ import {
 } from 'node:url'
 
 import {
-	defineConfig,
 	LibraryFormats,
+	UserConfigExport,
+	defineConfig,
 } from 'vite'
 
-import dts from 'vite-plugin-dts'
-import vue from '@vitejs/plugin-vue'
-
+const formats: LibraryFormats[] = [ 'es' ]
 const external = [
-	'vue',
+	'http',
+	'koa',
+	'koa-body',
+	'koa-static',
+	'@koa/router',
+	'keygrip',
 	'@cosmicmind/foundation'
 ]
 const globals = {}
 const srcDir = './src'
 const emptyOutDir = false
-const formats: LibraryFormats[] = [ 'es' ]
 
-export default defineConfig(() => {
-	return {
+export default (): UserConfigExport => {
+	const config = defineConfig({
+		define: {
+			__SERVER_PORT__: JSON.stringify(process.env.SERVER_PORT),
+		},
 		resolve: {
 			alias: {
 				'@': fileURLToPath(new URL(srcDir, import.meta.url)),
 			},
 		},
-		plugins: [
-			vue(),
-			dts()
-		],
 		build: {
 			emptyOutDir,
 			lib: {
 				name: process.env.npm_package_name,
-				entry: `${srcDir}/index.ts`,
+				entry: 'src/app/server.ts',
 				formats,
-				fileName: 'lib.es',
+				fileName: 'server',
 			},
 			rollupOptions: {
 				external,
@@ -46,5 +48,7 @@ export default defineConfig(() => {
 				},
 			},
 		},
-	}
-})
+	})
+
+	return config
+}
