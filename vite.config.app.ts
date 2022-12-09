@@ -19,9 +19,6 @@ export default defineConfig(({
 }) => {
 	const minify = 'production' === mode
 	const config: UserConfigExport = {
-		define: {
-			__ACCOUNT_ENDPOINT__: JSON.stringify(process.env.ACCOUNT_ENDPOINT),
-		},
 		resolve: {
 			alias: {
 				'@': fileURLToPath(new URL(srcDir, import.meta.url)),
