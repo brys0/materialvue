@@ -7,14 +7,10 @@ export default (router: Router): void => {
 	router.get([
 		'/'
 	], (ctx, next) => {
-		ctx.body = {
-			success: true,
-		}
-	}
-		// serve('dist/public')(
-		// 	Object.assign(ctx, {
-		// 		path: 'index.html',
-		// 	}),
-		// 	next)
-	)
+		serve('dist/public')(
+			Object.assign(ctx, {
+				path: 'index.html',
+			}),
+			next)
+	})
 }
