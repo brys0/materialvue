@@ -1,6 +1,6 @@
 {
   "name": "@cosmicmind/materialjs",
-  "version": "0.0.1-rc-120922-1",
+  "version": "0.0.1-rc-121122-1",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
   "author": {
@@ -39,7 +39,8 @@
     "app": "run-s build start",
     "test:unit": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "docker:build": "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --squash --target prod -t cosmicmind/materialjs:latest ."
   },
   "dependencies": {
     "@cosmicmind/foundation": "^0.0.1-rc-120822-2",
