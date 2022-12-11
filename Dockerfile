@@ -92,7 +92,7 @@ USER node
 
 CMD nginx; npm run dev;
 
-# dev
+# prod
 FROM source as prod
 ENV NODE_ENV=production
 
