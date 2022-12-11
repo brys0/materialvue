@@ -42,7 +42,7 @@ routes(router)
 
 try {
 	const server = http.createServer(koa.callback())
-	server.listen(__SERVER_PORT__ || 3000)
+	server.listen(SERVER_PORT || 3000)
 
 	// shut down server
 	const shutdown = (): void => {

@@ -9,4 +9,4 @@ interface ImportMeta {
   readonly env: ImportMetaEnv
 }
 
-declare const __SERVER_PORT__: string
+declare const SERVER_PORT: string

@@ -25,7 +25,7 @@ const emptyOutDir = false
 
 export default defineConfig({
 	define: {
-		__SERVER_PORT__: JSON.stringify(process.env.SERVER_PORT),
+		SERVER_PORT: JSON.stringify(process.env.SERVER_PORT),
 	},
 	resolve: {
 		alias: {
