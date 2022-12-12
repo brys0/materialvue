@@ -19,25 +19,20 @@ export default defineConfig(({
 }) => {
 	const minify = 'production' === mode
 	const config: UserConfigExport = {
+		define: {
+			ACCOUNT_ENDPOINT: JSON.stringify(process.env.ACCOUNT_ENDPOINT),
+		},
 		resolve: {
 			alias: {
 				'@': fileURLToPath(new URL(srcDir, import.meta.url)),
 			},
 		},
+		publicDir: 'public',
 		build: {
+			assetsDir: 'assets',
 			outDir: 'dist/public',
 			emptyOutDir,
 			minify,
-		},
-		server: {
-			strictPort: true,
-			port: 80,
-			host: '0.0.0.0',
-		},
-		preview: {
-			strictPort: true,
-			port: 80,
-			host: '0.0.0.0',
 		},
 		plugins: [
 			vue(),
