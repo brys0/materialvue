@@ -1,7 +1,7 @@
 add_header                                        Strict-Transport-Security 'max-age=31536000; includeSubDomains' always;
 
-ssl_certificate                                   /node/ssl/cert.pem;
-ssl_certificate_key                               /node/ssl/key.pem;
+ssl_certificate                                   /etc/nginx/ssl/cert.pem;
+ssl_certificate_key                               /etc/nginx/ssl/key.pem;
 ssl_session_timeout                               1d;
 ssl_session_cache                                 shared:SSL:50M;
 ssl_session_tickets                               off;
@@ -14,10 +14,10 @@ ssl_prefer_server_ciphers                         on;
 # OCSP Stapling ---
 # fetch OCSP records from URL in ssl_certificate and cache them
 #
-ssl_stapling on;
-ssl_stapling_verify on;
+ssl_stapling                                      on;
+ssl_stapling_verify                               on;
 
 #
 # verify chain of trust of OCSP response using Root CA and Intermediate certs
 #
-ssl_trusted_certificate /node/ssl/cert.pem;
+ssl_trusted_certificate                           /etc/nginx/ssl/cert.pem;
