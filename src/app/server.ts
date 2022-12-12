@@ -1,47 +1,36 @@
 /* Copyright (C) 2022, CosmicMind, Inc. <http://cosmicmind.com>. All rights reserved. */
 
 import http from 'http'
-
 import Koa from 'koa'
 import Router from '@koa/router'
-import KeyGrip from 'keygrip'
 import serve from 'koa-static'
-
-import {
-	logger,
-} from '@cosmicmind/foundation'
 
 import {
 	koaBody,
 } from 'koa-body'
 
+import {
+	logger,
+} from '@cosmicmind/foundation'
+
 import routes from '@/app/routes'
 
-export const keygrip = {
-	keys: [
-		'keygrip key a',
-		'keygrip key b'
-	],
-	hash: 'sha256',
-}
+const app = new Koa()
+app.proxy = true
 
-const koa = new Koa()
-koa.proxy = false
-koa.keys = new KeyGrip(keygrip.keys, keygrip.hash)
+app.use(koaBody())
 
-koa.use(koaBody())
-
-koa.use(serve('dist/public', {
+app.use(serve('dist/public', {
 	maxage: 0,
 }))
 
 const router = new Router()
-koa.use(router.routes()).use(router.allowedMethods())
+app.use(router.routes()).use(router.allowedMethods())
 
 routes(router)
 
 try {
-	const server = http.createServer(koa.callback())
+	const server = http.createServer(app.callback())
 	server.listen(SERVER_PORT || 3000)
 
 	// shut down server

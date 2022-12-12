@@ -16,7 +16,6 @@ const external = [
 	'koa-body',
 	'koa-static',
 	'@koa/router',
-	'keygrip',
 	'@cosmicmind/foundation'
 ]
 const globals = {}
