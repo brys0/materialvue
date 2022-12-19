@@ -31,12 +31,9 @@ routes(router)
 
 try {
 	const server = http.createServer(app.callback())
-	server.listen(SERVER_PORT || 3000)
+	server.listen(SERVER_PORT)
 
-	// shut down server
 	const shutdown = (): void => {
-		// NOTE: server.close is for express based apps
-		// If using hapi, use `server.stop`
 		server.close((error?: Error) => {
 			if (error) {
 				logger.error(error)
@@ -46,13 +43,11 @@ try {
 		})
 	}
 
-	// quit on ctrl-c when running docker in terminal
 	process.on('SIGINT', () => {
 		logger.info('Got SIGINT (aka ctrl-c in docker). Graceful shutdown ', new Date().toISOString())
 		shutdown()
 	})
 
-	// quit properly on docker stop
 	process.on('SIGTERM', () => {
 		logger.info('Got SIGTERM (docker container stop). Graceful shutdown ', new Date().toISOString())
 		shutdown()

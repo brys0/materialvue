@@ -303,6 +303,38 @@ import {
         </div>
       </section>
     </div>
+
+    <div>
+      <section class="banner">
+        <Display :size="TypographySize.large">
+          Text fields
+        </Display>
+        <Body :size="TypographySize.large">
+          See the <a
+            href="https://m3.material.io/components/text-fields/overview"
+            target="_blank"
+          >Design Guidelines</a>
+        </Body>
+      </section>
+      <section>
+        <Display :size="TypographySize.small">
+          Outlined text fields
+        </Display>
+        <div>
+          <Row>
+            <Column>
+              <div class="text-field">
+                <div class="container">
+                  <Label>
+                    Label Text
+                  </Label>
+                </div>
+              </div>
+            </Column>
+          </Row>
+        </div>
+      </section>
+    </div>
   </AppMain>
 </template>
 

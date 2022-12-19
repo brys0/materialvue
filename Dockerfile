@@ -132,6 +132,4 @@ RUN chown -R node:node /etc/nginx/http.d \
 
 USER node
 
-RUN npm run build
-
-CMD nginx; npm run start;
+CMD nginx; npm run service;
