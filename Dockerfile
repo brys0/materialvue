@@ -71,6 +71,7 @@ WORKDIR /node/service
 COPY --chown=node:node . .
 
 RUN mkdir -p /node/logs \
+    && mkdir -p /node/cache \
     && mkdir -p /etc/nginx/inc.d \
     && rm /etc/nginx/http.d/default.conf
 
@@ -113,6 +114,7 @@ WORKDIR /node/service
 COPY --chown=node:node . .
 
 RUN mkdir -p /node/logs \
+    && mkdir -p /node/cache \
     && mkdir -p /etc/nginx/inc.d \
     && rm /etc/nginx/http.d/default.conf
 

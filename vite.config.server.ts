@@ -40,7 +40,7 @@ export default defineConfig(({
 			emptyOutDir,
 			lib: {
 				name: process.env.npm_package_name,
-				entry: 'src/server.ts',
+				entry: `${srcDir}/app/server.ts`,
 				formats,
 				fileName: 'server',
 			},
