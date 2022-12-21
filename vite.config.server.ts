@@ -13,7 +13,7 @@ const formats: LibraryFormats[] = [ 'es' ]
 const external = [
 	'http',
 	'koa',
-	'koa-body',
+	'koa-bodyparser',
 	'koa-static',
 	'@koa/router',
 	'@cosmicmind/foundation'
@@ -28,7 +28,7 @@ export default defineConfig(({
 	const minify = 'production' === mode
 	const config: UserConfigExport = {
 		define: {
-			SERVER_PORT: JSON.stringify(process.env.SERVER_PORT),
+			SERVER_PORT: JSON.stringify(String(process.env.SERVER_PORT)),
 		},
 		resolve: {
 			alias: {

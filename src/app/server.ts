@@ -2,12 +2,9 @@
 
 import http from 'http'
 import Koa from 'koa'
+import koaBodyParser from 'koa-bodyparser'
 import Router from '@koa/router'
 import serve from 'koa-static'
-
-import {
-	koaBody,
-} from 'koa-body'
 
 import {
 	logger,
@@ -18,7 +15,7 @@ import routes from '@/app/routes'
 const app = new Koa()
 app.proxy = true
 
-app.use(koaBody())
+app.use(koaBodyParser())
 
 app.use(serve('dist/public', {
 	maxage: 0,

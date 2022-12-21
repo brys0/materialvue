@@ -20,7 +20,7 @@ export default defineConfig(({
 	const minify = 'production' === mode
 	const config: UserConfigExport = {
 		define: {
-			ACCOUNT_ENDPOINT: JSON.stringify(process.env.ACCOUNT_ENDPOINT),
+			SERVER_ACCOUNT_ENDPOINT: JSON.stringify(String(process.env.SERVER_ACCOUNT_ENDPOINT)),
 		},
 		resolve: {
 			alias: {
