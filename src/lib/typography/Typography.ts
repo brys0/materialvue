@@ -60,13 +60,11 @@ export const Typography: FunctionalComponent<TypographyProps> = ({
 	size,
 }, {
 	slots,
-}): VNode => {
-	return h('span', {
-		class: `typography ${style} ${size}`,
-	}, {
-		default: () => slots.default?.(),
-	})
-}
+}): VNode => h('span', {
+	class: `typography ${style} ${size}`,
+}, {
+	default: () => slots.default?.(),
+})
 
 Typography.displayName = 'Typography'
 

@@ -36,31 +36,16 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-import {
-	Typography,
-	TypographySize,
-	TypographyStyle,
-} from '@/lib/typography/Typography'
+export type FieldSetProps = {}
 
-export type HeadlineProps = {
-	size?: TypographySize
-}
-
-export const Headline: FunctionalComponent<HeadlineProps> = ({
-	size,
-}, {
+export const FieldSet: FunctionalComponent<FieldSetProps> = (_, {
 	slots,
-}): VNode => h(Typography, {
-	size: size ?? TypographySize.medium,
-	style: TypographyStyle.headline,
-}, {
+}): VNode => h('fieldset', {
 	default: () => slots.default?.(),
 })
 
-Headline.displayName = 'Headline'
+FieldSet.displayName = 'FieldSet'
 
-Headline.props = [
-	'size'
-]
+FieldSet.props = []
 
-export default Headline
+export default FieldSet

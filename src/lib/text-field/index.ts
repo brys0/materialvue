@@ -30,26 +30,18 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	defineComponent,
-} from 'vue'
+export {
+	FieldSet,
+} from '@/lib/text-field/FieldSet'
 
-export const Input = defineComponent({
-	props: {
-		modelValue: {
-			type: [ String, Number ],
-			required: true,
-		},
-	},
-	emits: [ 'update:modelValue' ],
-	render(): VNode {
-		return h('input', {
-			modelValue: this.modelValue,
-			'onUpdate:modelValue': (value: string | number) => this.$emit('update:modelValue', value),
-		})
-	},
-})
+export {
+	FilledTextField,
+} from '@/lib/text-field/FilledTextField'
 
-export default Input
+export {
+	RoundedIcon,
+} from '@/lib/icons/RoundedIcon'
+
+export {
+	SharpIcon,
+} from '@/lib/icons/SharpIcon'

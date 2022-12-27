@@ -33,34 +33,23 @@
 import {
 	h,
 	VNode,
-	FunctionalComponent,
+	defineComponent,
 } from 'vue'
 
-import {
-	Typography,
-	TypographySize,
-	TypographyStyle,
-} from '@/lib/typography/Typography'
-
-export type HeadlineProps = {
-	size?: TypographySize
-}
-
-export const Headline: FunctionalComponent<HeadlineProps> = ({
-	size,
-}, {
-	slots,
-}): VNode => h(Typography, {
-	size: size ?? TypographySize.medium,
-	style: TypographyStyle.headline,
-}, {
-	default: () => slots.default?.(),
+export const FilledTextField = defineComponent({
+	props: {
+		modelValue: {
+			type: [ String, Number ],
+			required: true,
+		},
+	},
+	emits: [ 'update:modelValue' ],
+	render(): VNode {
+		return h('FilledTextField', {
+			modelValue: this.modelValue,
+			'onUpdate:modelValue': (value: string | number) => this.$emit('update:modelValue', value),
+		})
+	},
 })
 
-Headline.displayName = 'Headline'
-
-Headline.props = [
-	'size'
-]
-
-export default Headline
+export default FilledTextField

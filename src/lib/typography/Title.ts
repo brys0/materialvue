@@ -43,7 +43,7 @@ import {
 } from '@/lib/typography/Typography'
 
 export type TitleProps = {
-	size: TypographySize
+	size?: TypographySize
 }
 
 export const Title: FunctionalComponent<TitleProps> = ({
@@ -51,7 +51,7 @@ export const Title: FunctionalComponent<TitleProps> = ({
 }, {
 	slots,
 }): VNode => h(Typography, {
-	size,
+	size: size ?? TypographySize.medium,
 	style: TypographyStyle.title,
 }, {
 	default: () => slots.default?.(),
