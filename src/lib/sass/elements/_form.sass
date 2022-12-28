@@ -30,24 +30,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
-
-export type FieldSetProps = {}
-
-export const FieldSet: FunctionalComponent<FieldSetProps> = (_, {
-	slots,
-}): VNode => h('fieldset', {
-	class: 'fieldset',
-}, {
-	default: () => slots.default?.(),
-})
-
-FieldSet.displayName = 'FieldSet'
-
-FieldSet.props = []
-
-export default FieldSet
+.form-fieldset
+  padding: 0
+  border: none

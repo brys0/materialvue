@@ -30,33 +30,10 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use '../theme'
+export {
+	FormFieldSet,
+} from '@/lib/form/FormFieldSet'
 
-%text-field
-  @extend %row
-
-%text-field-start
-  @extend %row-start
-
-%text-field-end
-  @extend %row-end
-
-%text-field-center
-  @extend %column
-
-.text-field
-  @extend %text-field
-
-  border: 1px solid
-
-  @include theme.preferred
-    border-color: theme.style(outline)
-
-  > .text-field-start
-    @extend %text-field-start
-
-  > .text-field-center
-    @extend %text-field-center
-
-  > .text-field-end
-    @extend %text-field-end
+export {
+	FormField,
+} from '@/lib/form/FormField'

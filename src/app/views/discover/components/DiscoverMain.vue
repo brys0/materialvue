@@ -38,7 +38,7 @@ import {
 	TonalButton,
 	Row,
 	Column,
-	FieldSet,
+	FormFieldSet,
 	TextFieldStart,
 	TextFieldCenter,
 	TextFieldEnd,
@@ -373,7 +373,7 @@ onBeforeUnmount(() => {
           <Row>
             <Column>
               <form @submit="onSubmit">
-                <FieldSet>
+                <FormFieldSet>
                   <FilledTextField>
                     <TextFieldStart>
                       <RoundedIcon>
@@ -395,7 +395,7 @@ onBeforeUnmount(() => {
                       {{ errors.email }}
                     </Label>
                   </FilledTextField>
-                </FieldSet>
+                </FormFieldSet>
               </form>
             </Column>
           </Row>

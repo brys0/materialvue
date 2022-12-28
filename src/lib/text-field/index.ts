@@ -31,14 +31,6 @@
  */
 
 export {
-	FieldSet,
-} from '@/lib/text-field/FieldSet'
-
-export {
-	Field,
-} from '@/lib/text-field/Field'
-
-export {
 	TextField,
 	TextFieldSize,
 	TextFieldStyle,

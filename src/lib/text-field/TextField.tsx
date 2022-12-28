@@ -37,8 +37,8 @@ import {
 } from 'vue'
 
 import {
-	Field,
-} from '@/lib/text-field/Field'
+	FormField,
+} from '@/lib/form/FormField'
 
 export enum TextFieldStyle {
   filled = 'filled',
@@ -61,7 +61,7 @@ export const TextField: FunctionalComponent<TextFieldProps> = ({
 	size,
 }, {
 	slots,
-}): VNode => h(Field, {
+}): VNode => h(FormField, {
 	class: `text-field ${style} ${size}`,
 }, {
 	default: () => slots.default?.(),
