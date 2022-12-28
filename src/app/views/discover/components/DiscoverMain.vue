@@ -2,8 +2,26 @@
 
 <script lang="ts" setup>
 import {
+	watch,
+	onBeforeUnmount,
+} from 'vue'
+
+import {
+	logger,
+} from '@cosmicmind/foundation'
+
+import {
 	AppMain,
 } from '@/app/contexts/app/components/AppMain'
+
+import {
+	object,
+	string,
+} from 'yup'
+
+import {
+	useForm,
+} from 'vee-validate'
 
 import {
 	TypographySize,
@@ -20,7 +38,34 @@ import {
 	TonalButton,
 	Row,
 	Column,
+	FieldSet,
+	FilledTextField,
+	TextFieldLabel,
+	TextFieldInput,
 } from '@/index'
+
+const validationSchema = object({
+	email: string().required().email().label('Email Address'),
+})
+
+// Create a form context with the validation schema
+const {
+	// meta,
+	errors,
+	handleSubmit,
+} = useForm({
+	validationSchema,
+})
+
+const unwatch = watch(errors, errors => console.log('errors', errors))
+
+const onSubmit = handleSubmit(async (data) => {
+	logger.log(data)
+})
+
+onBeforeUnmount(() => {
+	unwatch()
+})
 
 </script>
 
@@ -318,18 +363,21 @@ import {
       </section>
       <section>
         <Display :size="TypographySize.small">
-          Outlined text fields
+          Filled text field
         </Display>
         <div>
           <Row>
             <Column>
-              <div class="text-field">
-                <div class="container">
-                  <Label>
-                    Label Text
-                  </Label>
-                </div>
-              </div>
+              <form @submit="onSubmit">
+                <FieldSet>
+                  <FilledTextField>
+                    <TextFieldLabel name="email">
+                      Email
+                    </TextFieldLabel>
+                    <TextFieldInput name="email" />
+                  </FilledTextField>
+                </FieldSet>
+              </form>
             </Column>
           </Row>
         </div>

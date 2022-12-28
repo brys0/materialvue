@@ -30,63 +30,48 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
-	Typography,
-	TypographyStyle,
-	TypographySize,
-} from '@/lib/typography'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	FilledIconButton,
-} from '@/lib/buttons'
-
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/components'
-
-export {
-	Icon,
-	IconStyle,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/icons'
-
-export {
-	Row,
-	RowCenter,
-	Column,
-} from '@/lib/layout'
-
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/lists'
-
-export {
+import {
 	Field,
-	FieldSet,
-	FilledTextField,
-	TextField,
-	TextFieldSize,
-	TextFieldStyle,
-	TextFieldLabel,
-	TextFieldInput,
-} from '@/lib/text-field'
+} from '@/lib/text-field/Field'
+
+export enum TextFieldStyle {
+  filled = 'filled',
+  outlined = 'outlined',
+}
+
+export enum TextFieldSize {
+  large = 'large',
+  medium = 'medium',
+  small = 'small',
+}
+
+export type TextFieldProps = {
+	style: TextFieldStyle,
+	size: TextFieldSize,
+}
+
+export const TextField: FunctionalComponent<TextFieldProps> = ({
+	style,
+	size,
+}, {
+	slots,
+}): VNode => h(Field, {
+	class: `text-field ${style} ${size}`,
+}, {
+	default: () => slots.default?.(),
+})
+
+TextField.displayName = 'TextField'
+
+TextField.props = [
+	'style',
+	'size'
+]
+
+export default TextField

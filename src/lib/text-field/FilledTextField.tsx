@@ -33,23 +33,35 @@
 import {
 	h,
 	VNode,
-	defineComponent,
+	// defineComponent,
+	FunctionalComponent,
 } from 'vue'
 
-export const FilledTextField = defineComponent({
-	props: {
-		modelValue: {
-			type: [ String, Number ],
-			required: true,
-		},
-	},
-	emits: [ 'update:modelValue' ],
-	render(): VNode {
-		return h('FilledTextField', {
-			modelValue: this.modelValue,
-			'onUpdate:modelValue': (value: string | number) => this.$emit('update:modelValue', value),
-		})
-	},
-})
+import {
+	TextField,
+	TextFieldSize,
+	TextFieldStyle,
+} from '@/lib/text-field/TextField'
+
+export type FilledTextFieldProps = {
+	size?: TextFieldSize,
+}
+
+export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
+	size,
+}, {
+	slots,
+}): VNode => h(TextField, {
+	size: size ?? TextFieldSize.medium,
+	style: TextFieldStyle.filled,
+}, () => h('div', {
+	class: 'container',
+}, {
+	default: () => slots.default?.(),
+}))
+
+FilledTextField.props = [
+	'size'
+]
 
 export default FilledTextField

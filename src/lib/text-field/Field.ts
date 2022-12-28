@@ -30,63 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
-	Typography,
-	TypographyStyle,
-	TypographySize,
-} from '@/lib/typography'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	FilledIconButton,
-} from '@/lib/buttons'
+export type FieldProps = {}
 
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/components'
+export const Field: FunctionalComponent<FieldProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: 'field',
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	Icon,
-	IconStyle,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/icons'
+Field.displayName = 'Field'
 
-export {
-	Row,
-	RowCenter,
-	Column,
-} from '@/lib/layout'
+Field.props = []
 
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/lists'
-
-export {
-	Field,
-	FieldSet,
-	FilledTextField,
-	TextField,
-	TextFieldSize,
-	TextFieldStyle,
-	TextFieldLabel,
-	TextFieldInput,
-} from '@/lib/text-field'
+export default Field

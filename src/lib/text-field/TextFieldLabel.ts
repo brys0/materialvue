@@ -30,63 +30,29 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
-	Typography,
-	TypographyStyle,
-	TypographySize,
-} from '@/lib/typography'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	FilledIconButton,
-} from '@/lib/buttons'
+export type TextFieldLabelProps = {
+	name: string,
+}
 
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/components'
+export const TextFieldLabel: FunctionalComponent<TextFieldLabelProps> = ({
+	name,
+}, {
+	slots,
+}): VNode => h('label', {
+	for: name,
+	class: 'label',
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	Icon,
-	IconStyle,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/icons'
+TextFieldLabel.props = [
+	'name'
+]
 
-export {
-	Row,
-	RowCenter,
-	Column,
-} from '@/lib/layout'
-
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/lists'
-
-export {
-	Field,
-	FieldSet,
-	FilledTextField,
-	TextField,
-	TextFieldSize,
-	TextFieldStyle,
-	TextFieldLabel,
-	TextFieldInput,
-} from '@/lib/text-field'
+export default TextFieldLabel

@@ -1,3 +1,4 @@
+<!--
 /**
  * BSD 3-Clause License
  *
@@ -29,64 +30,73 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+-->
 
-export {
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
-	Typography,
-	TypographyStyle,
-	TypographySize,
-} from '@/lib/typography'
+<script lang="ts" setup>
+import {
+	computed,
+	toRef,
+} from 'vue'
 
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	FilledIconButton,
-} from '@/lib/buttons'
+import {
+	useField,
+} from 'vee-validate'
 
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/components'
+// interface FieldMeta {
+//   dirty: boolean;
+//   pending: boolean;
+//   touched: boolean;
+//   valid: boolean;
+//   initialValue: any;
+// }
 
-export {
-	Icon,
-	IconStyle,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/icons'
+const props = defineProps({
+	name: {
+		type: String,
+		required: true,
+	},
+	modelValue: {
+		type: String,
+		default: '',
+	},
+})
 
-export {
-	Row,
-	RowCenter,
-	Column,
-} from '@/lib/layout'
+const nameRef = toRef(props, 'name')
 
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/lists'
+const {
+	errorMessage,
+	value,
+	handleChange,
+	// meta
+} = useField(nameRef, undefined, {
+	validateOnValueUpdate: false,
+})
 
-export {
-	Field,
-	FieldSet,
-	FilledTextField,
-	TextField,
-	TextFieldSize,
-	TextFieldStyle,
-	TextFieldLabel,
-	TextFieldInput,
-} from '@/lib/text-field'
+const validationListeners = computed(() => {
+	// If the field is valid or have not been validated yet
+	// lazy
+	if (!errorMessage.value) {
+		return {
+			// blur: handleChange,
+			change: handleChange,
+			// disable `shouldValidate` to avoid validating on input
+			input: (event: Event): void => handleChange(event, false),
+		}
+	}
+	// Aggressive
+	return {
+		// blur: handleChange,
+		change: handleChange,
+		input: handleChange, // only switched this
+	}
+})
+
+</script>
+
+<template>
+  <input
+    type="text"
+    v-model="value"
+    v-on="validationListeners"
+  >
+</template>

@@ -35,13 +35,23 @@ export {
 } from '@/lib/text-field/FieldSet'
 
 export {
+	Field,
+} from '@/lib/text-field/Field'
+
+export {
+	TextField,
+	TextFieldSize,
+	TextFieldStyle,
+} from '@/lib/text-field/TextField'
+
+export {
+	TextFieldLabel,
+} from '@/lib/text-field/TextFieldLabel'
+
+export {
+	default as TextFieldInput,
+} from '@/lib/text-field/TextFieldInput.vue'
+
+export {
 	FilledTextField,
 } from '@/lib/text-field/FilledTextField'
-
-export {
-	RoundedIcon,
-} from '@/lib/icons/RoundedIcon'
-
-export {
-	SharpIcon,
-} from '@/lib/icons/SharpIcon'

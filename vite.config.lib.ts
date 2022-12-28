@@ -14,6 +14,7 @@ import dts from 'vite-plugin-dts'
 
 const external = [
 	'vue',
+	'vee-validate',
 	'@cosmicmind/foundation'
 ]
 const globals = {}

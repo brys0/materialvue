@@ -41,6 +41,8 @@ export type FieldSetProps = {}
 export const FieldSet: FunctionalComponent<FieldSetProps> = (_, {
 	slots,
 }): VNode => h('fieldset', {
+	class: 'fieldset',
+}, {
 	default: () => slots.default?.(),
 })
 

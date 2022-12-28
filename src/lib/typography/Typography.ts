@@ -52,7 +52,7 @@ export enum TypographySize {
 
 export type TypographyProps = {
 	style: TypographyStyle,
-	size: TypographySize
+	size: TypographySize,
 }
 
 export const Typography: FunctionalComponent<TypographyProps> = ({
