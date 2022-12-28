@@ -54,11 +54,9 @@ export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
 }): VNode => h(TextField, {
 	size: size ?? TextFieldSize.medium,
 	style: TextFieldStyle.filled,
-}, () => h('div', {
-	class: 'container',
 }, {
 	default: () => slots.default?.(),
-}))
+})
 
 FilledTextField.props = [
 	'size'

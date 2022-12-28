@@ -45,6 +45,18 @@ export {
 } from '@/lib/text-field/TextField'
 
 export {
+	TextFieldStart,
+} from '@/lib/text-field/TextFieldStart'
+
+export {
+	TextFieldCenter,
+} from '@/lib/text-field/TextFieldCenter'
+
+export {
+	TextFieldEnd,
+} from '@/lib/text-field/TextFieldEnd'
+
+export {
 	TextFieldLabel,
 } from '@/lib/text-field/TextFieldLabel'
 

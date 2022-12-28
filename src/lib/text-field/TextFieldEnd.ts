@@ -30,37 +30,22 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use '../theme'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-%text-field
-  @extend %row
+export type TextFieldEndProps = {}
 
-%text-field-start
-  @extend %row-start
+export const TextFieldEnd: FunctionalComponent<TextFieldEndProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: 'text-field-end',
+}, {
+	default: () => slots.default?.(),
+})
 
-%text-field-end
-  @extend %row-end
+TextFieldEnd.props = []
 
-%text-field-center
-  @extend %column
-
-.fieldset
-  padding: 0
-  border: none
-
-.text-field
-  @extend %text-field
-
-  border: 1px solid
-
-  @include theme.preferred
-    border-color: theme.style(outline)
-
-  > .text-field-start
-    @extend %text-field-start
-
-  > .text-field-center
-    @extend %text-field-center
-
-  > .text-field-end
-    @extend %text-field-end
+export default TextFieldEnd

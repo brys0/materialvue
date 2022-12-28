@@ -87,6 +87,9 @@ export {
 	TextField,
 	TextFieldSize,
 	TextFieldStyle,
+	TextFieldStart,
+	TextFieldCenter,
+	TextFieldEnd,
 	TextFieldLabel,
 	TextFieldInput,
 } from '@/lib/text-field'

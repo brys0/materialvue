@@ -39,9 +39,13 @@ import {
 	Row,
 	Column,
 	FieldSet,
-	FilledTextField,
+	TextFieldStart,
+	TextFieldCenter,
+	TextFieldEnd,
 	TextFieldLabel,
 	TextFieldInput,
+	FilledTextField,
+	RoundedIcon,
 } from '@/index'
 
 const validationSchema = object({
@@ -371,10 +375,25 @@ onBeforeUnmount(() => {
               <form @submit="onSubmit">
                 <FieldSet>
                   <FilledTextField>
-                    <TextFieldLabel name="email">
-                      Email
-                    </TextFieldLabel>
-                    <TextFieldInput name="email" />
+                    <TextFieldStart>
+                      <RoundedIcon>
+                        mail
+                      </RoundedIcon>
+                    </TextFieldStart>
+                    <TextFieldCenter>
+                      <TextFieldLabel name="email">
+                        Email
+                      </TextFieldLabel>
+                      <TextFieldInput name="email" />
+                    </TextFieldCenter>
+                    <TextFieldEnd>
+                      <RoundedIcon>
+                        cancel
+                      </RoundedIcon>
+                    </TextFieldEnd>
+                    <Label v-if="errors.email">
+                      {{ errors.email }}
+                    </Label>
                   </FilledTextField>
                 </FieldSet>
               </form>
