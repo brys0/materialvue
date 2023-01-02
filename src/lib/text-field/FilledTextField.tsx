@@ -33,33 +33,34 @@
 import {
 	h,
 	VNode,
-	// defineComponent,
 	FunctionalComponent,
 } from 'vue'
 
 import {
 	TextField,
-	TextFieldSize,
+	TextFieldState,
 	TextFieldStyle,
 } from '@/lib/text-field/TextField'
 
 export type FilledTextFieldProps = {
-	size?: TextFieldSize,
+	state?: TextFieldState,
 }
 
 export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
-	size,
+	state,
 }, {
 	slots,
 }): VNode => h(TextField, {
-	size: size ?? TextFieldSize.medium,
 	style: TextFieldStyle.filled,
+	state: state ?? TextFieldState.enabled,
 }, {
 	default: () => slots.default?.(),
 })
 
+FilledTextField.displayName = 'FilledTextField'
+
 FilledTextField.props = [
-	'size'
+	'state'
 ]
 
 export default FilledTextField

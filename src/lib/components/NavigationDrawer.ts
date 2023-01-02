@@ -46,6 +46,8 @@ export const NavigationDrawer: FunctionalComponent<NavigationDrawerProps> = (_, 
 	default: () => slots.default?.(),
 })
 
+NavigationDrawer.displayName = 'NavigationDrawer'
+
 NavigationDrawer.props = []
 
 export default NavigationDrawer

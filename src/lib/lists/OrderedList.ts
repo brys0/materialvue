@@ -46,6 +46,8 @@ export const OrderedList: FunctionalComponent<OrderedListProps> = (_, {
 	default: () => slots.default?.(),
 })
 
+OrderedList.displayName = 'OrderedList'
+
 OrderedList.props = []
 
 export default OrderedList

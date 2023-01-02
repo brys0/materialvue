@@ -52,6 +52,7 @@ export const OutlinedIcon: FunctionalComponent<OutlinedIconProps> = (_, {
 })
 
 OutlinedIcon.displayName = 'OutlinedIcon'
+
 OutlinedIcon.props = []
 
 export default OutlinedIcon

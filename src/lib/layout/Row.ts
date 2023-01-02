@@ -46,6 +46,8 @@ export const Row: FunctionalComponent<RowProps> = (_, {
 	default: () => slots.default?.(),
 })
 
+Row.displayName = 'Row'
+
 Row.props = []
 
 export default Row

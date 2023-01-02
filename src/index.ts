@@ -88,8 +88,8 @@ export {
 export {
 	FilledTextField,
 	TextField,
-	TextFieldSize,
 	TextFieldStyle,
+	TextFieldState,
 	TextFieldStart,
 	TextFieldCenter,
 	TextFieldEnd,

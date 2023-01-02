@@ -46,6 +46,8 @@ export const Finder: FunctionalComponent<FinderProps> = (_, {
 	default: () => slots.default?.(),
 })
 
+Finder.displayName = 'Finder'
+
 Finder.props = []
 
 export default Finder

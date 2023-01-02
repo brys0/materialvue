@@ -46,6 +46,8 @@ export const TextFieldCenter: FunctionalComponent<TextFieldCenterProps> = (_, {
 	default: () => slots.default?.(),
 })
 
+TextFieldCenter.displayName = 'TextFieldCenter'
+
 TextFieldCenter.props = []
 
 export default TextFieldCenter

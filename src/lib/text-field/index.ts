@@ -32,8 +32,8 @@
 
 export {
 	TextField,
-	TextFieldSize,
 	TextFieldStyle,
+	TextFieldState,
 } from '@/lib/text-field/TextField'
 
 export {

@@ -51,6 +51,8 @@ export const TextFieldLabel: FunctionalComponent<TextFieldLabelProps> = ({
 	default: () => slots.default?.(),
 })
 
+TextFieldLabel.displayName = 'TextFieldLabel'
+
 TextFieldLabel.props = [
 	'name'
 ]

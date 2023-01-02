@@ -46,6 +46,8 @@ export const ListItem: FunctionalComponent<ListItemProps> = (_, {
 	default: () => slots.default?.(),
 })
 
+ListItem.displayName = 'ListItem'
+
 ListItem.props = []
 
 export default ListItem

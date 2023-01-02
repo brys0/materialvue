@@ -39,6 +39,7 @@ import {
 	Row,
 	Column,
 	FormFieldSet,
+	TextFieldState,
 	TextFieldStart,
 	TextFieldCenter,
 	TextFieldEnd,
@@ -375,12 +376,10 @@ onBeforeUnmount(() => {
               <form @submit="onSubmit">
                 <FormFieldSet>
                   <FilledTextField>
-                    <TextFieldStart>
-                      <RoundedIcon>
-                        mail
-                      </RoundedIcon>
-                    </TextFieldStart>
-                    <TextFieldCenter>
+                    <RoundedIcon>
+                      mail
+                    </RoundedIcon>
+                    <!-- <TextFieldCenter>
                       <TextFieldLabel name="email">
                         Email
                       </TextFieldLabel>
@@ -393,7 +392,7 @@ onBeforeUnmount(() => {
                     </TextFieldEnd>
                     <Label v-if="errors.email">
                       {{ errors.email }}
-                    </Label>
+                    </Label> -->
                   </FilledTextField>
                 </FormFieldSet>
               </form>

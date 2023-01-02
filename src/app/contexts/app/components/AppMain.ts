@@ -16,6 +16,8 @@ export const AppMain: FunctionalComponent<AppMainProps> = (_, {
 	default: () => slots.default?.(),
 })
 
+AppMain.displayName = 'AppMain'
+
 AppMain.props = []
 
 export default AppMain

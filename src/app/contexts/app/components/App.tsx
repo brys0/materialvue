@@ -34,6 +34,8 @@ export const App: FunctionalComponent<AppProps> = (): VNode =>
 		</div>
 	</div>
 
+App.displayName = 'App'
+
 App.props = []
 
 export default App

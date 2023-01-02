@@ -52,6 +52,7 @@ export const SharpIcon: FunctionalComponent<SharpIconProps> = (_, {
 })
 
 SharpIcon.displayName = 'SharpIcon'
+
 SharpIcon.props = []
 
 export default SharpIcon

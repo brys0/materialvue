@@ -16,6 +16,8 @@ export const AppContent: FunctionalComponent<AppContentProps> = (_, {
 	default: () => slots.default?.(),
 })
 
+AppContent.displayName = 'AppContent'
+
 AppContent.props = []
 
 export default AppContent

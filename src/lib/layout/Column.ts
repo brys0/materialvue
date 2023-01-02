@@ -46,6 +46,8 @@ export const Column: FunctionalComponent<ColumnProps> = (_: ColumnProps, {
 	default: () => slots.default?.(),
 })
 
+Column.displayName = 'Column'
+
 Column.props = []
 
 export default Column

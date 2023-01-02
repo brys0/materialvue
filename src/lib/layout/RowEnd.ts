@@ -46,6 +46,8 @@ export const RowEnd: FunctionalComponent<RowEndProps> = (_, {
 	default: () => slots.default?.(),
 })
 
+RowEnd.displayName = 'RowEnd'
+
 RowEnd.props = []
 
 export default RowEnd

@@ -46,6 +46,8 @@ export const TextFieldEnd: FunctionalComponent<TextFieldEndProps> = (_, {
 	default: () => slots.default?.(),
 })
 
+TextFieldEnd.displayName = 'TextFieldEnd'
+
 TextFieldEnd.props = []
 
 export default TextFieldEnd

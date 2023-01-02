@@ -47,12 +47,7 @@
 .text-field
   @extend %text-field
 
-  border: 1px solid
-
-  @include theme.preferred
-    border-color: theme.style(outline)
-
-  > .text-field-start
+  > .leading
     @extend %text-field-start
 
   > .text-field-center
@@ -60,3 +55,10 @@
 
   > .text-field-end
     @extend %text-field-end
+
+  &.filled 
+    border: 1px solid
+
+    @include theme.preferred
+      border-color: theme.style(surface-variant)
+      background-color: theme.style(surface-variant)

@@ -45,24 +45,25 @@ export enum TextFieldStyle {
   outlined = 'outlined',
 }
 
-export enum TextFieldSize {
-  large = 'large',
-  medium = 'medium',
-  small = 'small',
+export enum TextFieldState {
+  enabled = 'enabled',
+  hovered = 'hovered',
+  focused = 'focused',
+	disabled = 'disabled',
 }
 
 export type TextFieldProps = {
 	style: TextFieldStyle,
-	size: TextFieldSize,
+	state: TextFieldState,
 }
 
 export const TextField: FunctionalComponent<TextFieldProps> = ({
 	style,
-	size,
+	state,
 }, {
 	slots,
 }): VNode => h(FormField, {
-	class: `text-field ${style} ${size}`,
+	class: `text-field ${style} ${state}`,
 }, {
 	default: () => slots.default?.(),
 })
@@ -71,7 +72,7 @@ TextField.displayName = 'TextField'
 
 TextField.props = [
 	'style',
-	'size'
+	'state'
 ]
 
 export default TextField

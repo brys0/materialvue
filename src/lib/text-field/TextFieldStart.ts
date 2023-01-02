@@ -46,6 +46,8 @@ export const TextFieldStart: FunctionalComponent<TextFieldStartProps> = (_, {
 	default: () => slots.default?.(),
 })
 
+TextFieldStart.displayName = 'TextFieldStart'
+
 TextFieldStart.props = []
 
 export default TextFieldStart

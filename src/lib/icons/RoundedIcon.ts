@@ -52,6 +52,7 @@ export const RoundedIcon: FunctionalComponent<RoundedIconProps> = (_, {
 })
 
 RoundedIcon.displayName = 'RoundedIcon'
+
 RoundedIcon.props = []
 
 export default RoundedIcon
