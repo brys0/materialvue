@@ -33,23 +33,27 @@
 import {
 	h,
 	VNode,
-	defineComponent,
+	FunctionalComponent,
 } from 'vue'
 
 import {
 	Button,
 } from '@/lib/buttons/Button'
 
-export const TonalButton = defineComponent({
-	render(): VNode {
-		return h(Button, {
-			class: {
-				tonal: true,
-			},
-		}, {
-			default: () => this.$slots.default?.(),
-		})
+export type TonalButtonProps = {}
+
+export const TonalButton: FunctionalComponent<TonalButtonProps> = (_, {
+	slots,
+}): VNode => h(Button, {
+	class: {
+		tonal: true,
 	},
+}, {
+	default: () => slots.default?.(),
 })
+
+TonalButton.displayName = 'TonalButton'
+
+TonalButton.props = []
 
 export default TonalButton

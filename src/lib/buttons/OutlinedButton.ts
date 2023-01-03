@@ -33,23 +33,27 @@
 import {
 	h,
 	VNode,
-	defineComponent,
+	FunctionalComponent,
 } from 'vue'
 
 import {
 	Button,
 } from '@/lib/buttons/Button'
 
-export const OutlinedButton = defineComponent({
-	render(): VNode {
-		return h(Button, {
-			class: {
-				outlined: true,
-			},
-		}, {
-			default: () => this.$slots.default?.(),
-		})
+export type OutlinedButtonProps = {}
+
+export const OutlinedButton: FunctionalComponent<OutlinedButtonProps> = (_, {
+	slots,
+}): VNode => h(Button, {
+	class: {
+		outlined: true,
 	},
+}, {
+	default: () => slots.default?.(),
 })
+
+OutlinedButton.displayName = 'OutlinedButton'
+
+OutlinedButton.props = []
 
 export default OutlinedButton

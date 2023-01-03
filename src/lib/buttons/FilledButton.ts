@@ -33,23 +33,27 @@
 import {
 	h,
 	VNode,
-	defineComponent,
+	FunctionalComponent,
 } from 'vue'
 
 import {
 	Button,
 } from '@/lib/buttons/Button'
 
-export const FilledButton = defineComponent({
-	render(): VNode {
-		return h(Button, {
-			class: {
-				filled: true,
-			},
-		}, {
-			default: () => this.$slots.default?.(),
-		})
+export type FilledButtonProps = {}
+
+export const FilledButton: FunctionalComponent<FilledButtonProps> = (_, {
+	slots,
+}): VNode => h(Button, {
+	class: {
+		filled: true,
 	},
+}, {
+	default: () => slots.default?.(),
 })
+
+FilledButton.displayName = 'FilledButton'
+
+FilledButton.props = []
 
 export default FilledButton

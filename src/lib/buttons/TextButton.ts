@@ -33,23 +33,27 @@
 import {
 	h,
 	VNode,
-	defineComponent,
+	FunctionalComponent,
 } from 'vue'
 
 import {
 	Button,
 } from '@/lib/buttons/Button'
 
-export const TextButton = defineComponent({
-	render(): VNode {
-		return h(Button, {
-			class: {
-				text: true,
-			},
-		}, {
-			default: () => this.$slots.default?.(),
-		})
+export type TextButtonProps = {}
+
+export const TextButton: FunctionalComponent<TextButtonProps> = (_, {
+	slots,
+}): VNode => h(Button, {
+	class: {
+		text: true,
 	},
+}, {
+	default: () => slots.default?.(),
 })
+
+TextButton.displayName = 'TextButton'
+
+TextButton.props = []
 
 export default TextButton

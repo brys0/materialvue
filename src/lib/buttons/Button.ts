@@ -37,10 +37,6 @@ import {
 	defineComponent,
 } from 'vue'
 
-import {
-	logger,
-} from '@cosmicmind/foundation'
-
 export enum ButtonState {
   enabled = 'enabled',
   hovered = 'hovered',
@@ -73,7 +69,6 @@ export const Button = defineComponent({
 			onClick: (event: PointerEvent) => {
 				if (ButtonState.enabled === this.$props.state) {
 					this.$el.blur()
-					logger.trace(this)
 					this.$emit('click', event)
 				}
 			},

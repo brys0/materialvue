@@ -33,23 +33,27 @@
 import {
 	h,
 	VNode,
-	defineComponent,
+	FunctionalComponent,
 } from 'vue'
 
 import {
 	Button,
 } from '@/lib/buttons/Button'
 
-export const ElevatedButton = defineComponent({
-	render(): VNode {
-		return h(Button, {
-			class: {
-				elevated: true,
-			},
-		}, {
-			default: () => this.$slots.default?.(),
-		})
+export type ElevatedButtonProps = {}
+
+export const ElevatedButton: FunctionalComponent<ElevatedButtonProps> = (_, {
+	slots,
+}): VNode => h(Button, {
+	class: {
+		elevated: true,
 	},
+}, {
+	default: () => slots.default?.(),
 })
+
+ElevatedButton.displayName = 'ElevatedButton'
+
+ElevatedButton.props = []
 
 export default ElevatedButton
