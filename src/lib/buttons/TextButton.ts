@@ -31,22 +31,24 @@
  */
 
 import {
-	PropType,
+	h,
+	VNode,
 	defineComponent,
 } from 'vue'
 
 import {
 	Button,
-	ButtonStyle,
 } from '@/lib/buttons/Button'
 
 export const TextButton = defineComponent({
-	extends: Button,
-	props: {
-		style: {
-			type: String as PropType<ButtonStyle.text>,
-			default: ButtonStyle.text,
-		},
+	render(): VNode {
+		return h(Button, {
+			class: {
+				text: true,
+			},
+		}, {
+			default: () => this.$slots.default?.(),
+		})
 	},
 })
 

@@ -38,7 +38,6 @@ import {
 
 import {
 	Icon,
-	IconStyle,
 } from '@/lib/icons/Icon'
 
 export type SharpIconProps = {}
@@ -46,7 +45,10 @@ export type SharpIconProps = {}
 export const SharpIcon: FunctionalComponent<SharpIconProps> = (_, {
 	slots,
 }): VNode => h(Icon, {
-	style: IconStyle.sharp,
+	class: {
+		'material-symbols-sharp': true,
+		sharp: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

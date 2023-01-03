@@ -31,22 +31,24 @@
  */
 
 import {
-	PropType,
+	h,
+	VNode,
 	defineComponent,
 } from 'vue'
 
 import {
 	Button,
-	ButtonStyle,
 } from '@/lib/buttons/Button'
 
 export const FilledButton = defineComponent({
-	extends: Button,
-	props: {
-		style: {
-			type: String as PropType<ButtonStyle.filled>,
-			default: ButtonStyle.filled,
-		},
+	render(): VNode {
+		return h(Button, {
+			class: {
+				filled: true,
+			},
+		}, {
+			default: () => this.$slots.default?.(),
+		})
 	},
 })
 

@@ -31,22 +31,24 @@
  */
 
 import {
-	PropType,
+	h,
+	VNode,
 	defineComponent,
 } from 'vue'
 
 import {
 	Button,
-	ButtonStyle,
 } from '@/lib/buttons/Button'
 
 export const TonalButton = defineComponent({
-	extends: Button,
-	props: {
-		style: {
-			type: String as PropType<ButtonStyle.tonal>,
-			default: ButtonStyle.tonal,
-		},
+	render(): VNode {
+		return h(Button, {
+			class: {
+				tonal: true,
+			},
+		}, {
+			default: () => this.$slots.default?.(),
+		})
 	},
 })
 

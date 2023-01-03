@@ -39,7 +39,6 @@ import {
 import {
 	Typography,
 	TypographySize,
-	TypographyStyle,
 } from '@/lib/typography/Typography'
 
 export type BodyProps = {
@@ -52,7 +51,9 @@ export const Body: FunctionalComponent<BodyProps> = ({
 	slots,
 }): VNode => h(Typography, {
 	size: size ?? TypographySize.medium,
-	style: TypographyStyle.body,
+	class: {
+		body: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

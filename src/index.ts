@@ -37,7 +37,6 @@ export {
 	Label,
 	Body,
 	Typography,
-	TypographyStyle,
 	TypographySize,
 } from '@/lib/typography'
 
@@ -48,7 +47,6 @@ export {
 	TonalButton,
 	OutlinedButton,
 	TextButton,
-	FilledIconButton,
 } from '@/lib/buttons'
 
 export {
@@ -62,7 +60,6 @@ export {
 
 export {
 	Icon,
-	IconStyle,
 	OutlinedIcon,
 	RoundedIcon,
 	SharpIcon,
@@ -88,7 +85,6 @@ export {
 export {
 	FilledTextField,
 	TextField,
-	TextFieldStyle,
 	TextFieldState,
 	TextFieldStart,
 	TextFieldCenter,

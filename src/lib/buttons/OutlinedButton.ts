@@ -31,22 +31,24 @@
  */
 
 import {
-	PropType,
+	h,
+	VNode,
 	defineComponent,
 } from 'vue'
 
 import {
 	Button,
-	ButtonStyle,
 } from '@/lib/buttons/Button'
 
 export const OutlinedButton = defineComponent({
-	extends: Button,
-	props: {
-		style: {
-			type: String as PropType<ButtonStyle.outlined>,
-			default: ButtonStyle.outlined,
-		},
+	render(): VNode {
+		return h(Button, {
+			class: {
+				outlined: true,
+			},
+		}, {
+			default: () => this.$slots.default?.(),
+		})
 	},
 })
 

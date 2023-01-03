@@ -31,22 +31,24 @@
  */
 
 import {
-	PropType,
+	h,
+	VNode,
 	defineComponent,
 } from 'vue'
 
 import {
 	Button,
-	ButtonStyle,
 } from '@/lib/buttons/Button'
 
 export const ElevatedButton = defineComponent({
-	extends: Button,
-	props: {
-		style: {
-			type: String as PropType<ButtonStyle.elevated>,
-			default: ButtonStyle.elevated,
-		},
+	render(): VNode {
+		return h(Button, {
+			class: {
+				elevated: true,
+			},
+		}, {
+			default: () => this.$slots.default?.(),
+		})
 	},
 })
 

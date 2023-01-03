@@ -36,30 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export enum IconStyle {
-  outlined = 'outlined',
-	rounded = 'rounded',
-	sharp = 'sharp',
-}
+export type IconProps = {}
 
-export type IconProps = {
-	style: IconStyle
-}
-
-export const Icon: FunctionalComponent<IconProps> = ({
-	style,
-}, {
+export const Icon: FunctionalComponent<IconProps> = (_, {
 	slots,
 }): VNode => h('span', {
-	class: `material-symbols-${style} icon ${style}`,
+	class: {
+		icon: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })
 
 Icon.displayName = 'Icon'
 
-Icon.props = [
-	'style'
-]
+Icon.props = []
 
 export default Icon

@@ -41,14 +41,6 @@ import {
 	logger,
 } from '@cosmicmind/foundation'
 
-export enum ButtonStyle {
-  elevated = 'elevated',
-	filled = 'filled',
-  tonal = 'tonal',
-	outlined = 'outlined',
-  text = 'text',
-}
-
 export enum ButtonState {
   enabled = 'enabled',
   hovered = 'hovered',
@@ -59,10 +51,6 @@ export enum ButtonState {
 
 export const Button = defineComponent({
 	props: {
-		style: {
-			type: String as PropType<ButtonStyle>,
-			default: ButtonStyle.text,
-		},
 		state: {
 			type: String as PropType<ButtonState>,
 			default: ButtonState.enabled,
@@ -70,8 +58,18 @@ export const Button = defineComponent({
 	},
 	emits: [ 'click' ],
 	render(): VNode {
+		const {
+			state,
+		} = this.$props
 		return h('button', {
-			class: `button ${this.$props.style} ${this.$props.state}`,
+			class: {
+				button: true,
+				enabled: ButtonState.enabled === state,
+				hovered: ButtonState.hovered === state,
+				focused: ButtonState.focused === state,
+				pressed: ButtonState.pressed === state,
+				disabled: ButtonState.disabled === state,
+			},
 			onClick: (event: PointerEvent) => {
 				if (ButtonState.enabled === this.$props.state) {
 					this.$el.blur()

@@ -39,7 +39,6 @@ import {
 import {
 	Typography,
 	TypographySize,
-	TypographyStyle,
 } from '@/lib/typography/Typography'
 
 export type LabelProps = {
@@ -52,7 +51,9 @@ export const Label: FunctionalComponent<LabelProps> = ({
 	slots,
 }): VNode => h(Typography, {
 	size: size ?? TypographySize.medium,
-	style: TypographyStyle.label,
+	class: {
+		label: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

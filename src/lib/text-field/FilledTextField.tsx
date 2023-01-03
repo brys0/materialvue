@@ -39,7 +39,6 @@ import {
 import {
 	TextField,
 	TextFieldState,
-	TextFieldStyle,
 } from '@/lib/text-field/TextField'
 
 export type FilledTextFieldProps = {
@@ -51,8 +50,10 @@ export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
 }, {
 	slots,
 }): VNode => h(TextField, {
-	style: TextFieldStyle.filled,
 	state: state ?? TextFieldState.enabled,
+	class: {
+		filled: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

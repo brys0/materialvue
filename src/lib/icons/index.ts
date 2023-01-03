@@ -32,7 +32,6 @@
 
 export {
 	Icon,
-	IconStyle,
 } from '@/lib/icons/Icon'
 
 export {

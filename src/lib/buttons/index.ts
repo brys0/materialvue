@@ -32,7 +32,6 @@
 
 export {
 	Button,
-	ButtonStyle,
 	ButtonState,
 } from '@/lib/buttons/Button'
 
@@ -55,7 +54,3 @@ export {
 export {
 	TonalButton,
 } from '@/lib/buttons/TonalButton'
-
-export {
-	FilledIconButton,
-} from '@/lib/buttons/FilledIconButton'

@@ -376,7 +376,7 @@ onBeforeUnmount(() => {
               <form @submit="onSubmit">
                 <FormFieldSet>
                   <FilledTextField>
-                    <RoundedIcon>
+                    <RoundedIcon class="leading">
                       mail
                     </RoundedIcon>
                     <!-- <TextFieldCenter>

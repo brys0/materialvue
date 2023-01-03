@@ -32,7 +32,6 @@
 
 export {
 	Typography,
-	TypographyStyle,
 	TypographySize,
 } from '@/lib/typography/Typography'
 

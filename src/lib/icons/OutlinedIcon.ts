@@ -38,7 +38,6 @@ import {
 
 import {
 	Icon,
-	IconStyle,
 } from '@/lib/icons/Icon'
 
 export type OutlinedIconProps = {}
@@ -46,7 +45,10 @@ export type OutlinedIconProps = {}
 export const OutlinedIcon: FunctionalComponent<OutlinedIconProps> = (_, {
 	slots,
 }): VNode => h(Icon, {
-	style: IconStyle.outlined,
+	class: {
+		'material-symbols-outlined': true,
+		outlined: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

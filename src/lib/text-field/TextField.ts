@@ -31,23 +31,46 @@
  */
 
 import {
-	PropType,
-	defineComponent,
+	h,
+	VNode,
+	FunctionalComponent,
 } from 'vue'
 
 import {
-	Button,
-	ButtonStyle,
-} from '@/lib/buttons/Button'
+	FormField,
+} from '@/lib/form/FormField'
 
-export const FilledIconButton = defineComponent({
-	extends: Button,
-	props: {
-		style: {
-			type: String as PropType<ButtonStyle.filled>,
-			default: ButtonStyle.filled,
-		},
+export enum TextFieldState {
+  enabled = 'enabled',
+  hovered = 'hovered',
+  focused = 'focused',
+	disabled = 'disabled',
+}
+
+export type TextFieldProps = {
+	state: TextFieldState,
+}
+
+export const TextField: FunctionalComponent<TextFieldProps> = ({
+	state,
+}, {
+	slots,
+}): VNode => h(FormField, {
+	class: {
+		'text-field': true,
+		enabled: TextFieldState.enabled === state,
+		hovered: TextFieldState.hovered === state,
+		focused: TextFieldState.focused === state,
+		disabled: TextFieldState.disabled === state,
 	},
+}, {
+	default: () => slots.default?.(),
 })
 
-export default FilledIconButton
+TextField.displayName = 'TextField'
+
+TextField.props = [
+	'state'
+]
+
+export default TextField

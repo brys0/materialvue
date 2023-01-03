@@ -39,7 +39,6 @@ import {
 import {
 	Typography,
 	TypographySize,
-	TypographyStyle,
 } from '@/lib/typography/Typography'
 
 export type HeadlineProps = {
@@ -52,7 +51,9 @@ export const Headline: FunctionalComponent<HeadlineProps> = ({
 	slots,
 }): VNode => h(Typography, {
 	size: size ?? TypographySize.medium,
-	style: TypographyStyle.headline,
+	class: {
+		headline: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })
