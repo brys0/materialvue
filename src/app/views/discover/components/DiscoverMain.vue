@@ -208,7 +208,10 @@ onBeforeUnmount(() => {
               </FilledButton>
             </Column>
             <Column>
-              <FilledButton :state="ButtonState.disabled">
+              <FilledButton
+                :state="ButtonState.disabled"
+                disabled
+              >
                 Disabled
               </FilledButton>
             </Column>
@@ -242,7 +245,10 @@ onBeforeUnmount(() => {
               </OutlinedButton>
             </Column>
             <Column>
-              <OutlinedButton :state="ButtonState.disabled">
+              <OutlinedButton
+                :state="ButtonState.disabled"
+                disabled
+              >
                 Disabled
               </OutlinedButton>
             </Column>
@@ -276,7 +282,10 @@ onBeforeUnmount(() => {
               </TextButton>
             </Column>
             <Column>
-              <TextButton :state="ButtonState.disabled">
+              <TextButton
+                :state="ButtonState.disabled"
+                disabled
+              >
                 Disabled
               </TextButton>
             </Column>
@@ -310,7 +319,10 @@ onBeforeUnmount(() => {
               </ElevatedButton>
             </Column>
             <Column>
-              <ElevatedButton :state="ButtonState.disabled">
+              <ElevatedButton
+                :state="ButtonState.disabled"
+                disabled
+              >
                 Disabled
               </ElevatedButton>
             </Column>
@@ -344,7 +356,10 @@ onBeforeUnmount(() => {
               </TonalButton>
             </Column>
             <Column>
-              <TonalButton :state="ButtonState.disabled">
+              <TonalButton
+                :state="ButtonState.disabled"
+                disabled
+              >
                 Disabled
               </TonalButton>
             </Column>
@@ -402,57 +417,9 @@ onBeforeUnmount(() => {
                         </Column>
                       </RowEnd>
                     </Row>
-                    <Row>
+                    <Row v-if="errors.email">
                       <Column>
-                        <Label
-                          v-if="errors.email"
-                          class="supporting"
-                        >
-                          {{ errors.email }}
-                        </Label>
-                      </Column>
-                    </Row>
-                  </FilledTextField>
-                </FormFieldSet>
-              </form>
-            </Column>
-            <Column>
-              <form @submit="onSubmit">
-                <FormFieldSet>
-                  <FilledTextField :state="TextFieldState.focused">
-                    <Row class="gap">
-                      <RowStart>
-                        <Column>
-                          <RoundedIcon class="leading">
-                            mail
-                          </RoundedIcon>
-                        </Column>
-                      </RowStart>
-                      <RowCenter>
-                        <Column>
-                          <Label
-                            name="email"
-                            class="text"
-                          >
-                            Email
-                          </Label>
-                          <FormInput name="email" />
-                        </Column>
-                      </RowCenter>
-                      <RowEnd>
-                        <Column>
-                          <RoundedIcon class="trailing">
-                            close
-                          </RoundedIcon>
-                        </Column>
-                      </RowEnd>
-                    </Row>
-                    <Row>
-                      <Column>
-                        <Label
-                          v-if="errors.email"
-                          class="supporting"
-                        >
+                        <Label class="supporting">
                           {{ errors.email }}
                         </Label>
                       </Column>
@@ -492,12 +459,93 @@ onBeforeUnmount(() => {
                         </Column>
                       </RowEnd>
                     </Row>
-                    <Row>
+                    <Row v-if="errors.email">
                       <Column>
-                        <Label
-                          v-if="errors.email"
-                          class="supporting"
-                        >
+                        <Label class="supporting">
+                          {{ errors.email }}
+                        </Label>
+                      </Column>
+                    </Row>
+                  </FilledTextField>
+                </FormFieldSet>
+              </form>
+            </Column>
+            <Column>
+              <form @submit="onSubmit">
+                <FormFieldSet>
+                  <FilledTextField :state="TextFieldState.focused">
+                    <Row class="gap">
+                      <RowStart>
+                        <Column>
+                          <RoundedIcon class="leading">
+                            mail
+                          </RoundedIcon>
+                        </Column>
+                      </RowStart>
+                      <RowCenter>
+                        <Column>
+                          <Label
+                            name="email"
+                            class="text"
+                          >
+                            Email
+                          </Label>
+                          <FormInput name="email" />
+                        </Column>
+                      </RowCenter>
+                      <RowEnd>
+                        <Column>
+                          <RoundedIcon class="trailing">
+                            close
+                          </RoundedIcon>
+                        </Column>
+                      </RowEnd>
+                    </Row>
+                    <Row v-if="errors.email">
+                      <Column>
+                        <Label class="supporting">
+                          {{ errors.email }}
+                        </Label>
+                      </Column>
+                    </Row>
+                  </FilledTextField>
+                </FormFieldSet>
+              </form>
+            </Column>
+            <Column>
+              <form @submit="onSubmit">
+                <FormFieldSet>
+                  <FilledTextField :state="TextFieldState.error">
+                    <Row class="gap">
+                      <RowStart>
+                        <Column>
+                          <RoundedIcon class="leading">
+                            mail
+                          </RoundedIcon>
+                        </Column>
+                      </RowStart>
+                      <RowCenter>
+                        <Column>
+                          <Label
+                            name="email"
+                            class="text"
+                          >
+                            Email
+                          </Label>
+                          <FormInput name="email" />
+                        </Column>
+                      </RowCenter>
+                      <RowEnd>
+                        <Column>
+                          <RoundedIcon class="trailing">
+                            error
+                          </RoundedIcon>
+                        </Column>
+                      </RowEnd>
+                    </Row>
+                    <Row v-if="errors.email">
+                      <Column>
+                        <Label class="supporting">
                           {{ errors.email }}
                         </Label>
                       </Column>
@@ -526,7 +574,10 @@ onBeforeUnmount(() => {
                           >
                             Email
                           </Label>
-                          <FormInput name="email" />
+                          <FormInput
+                            name="email"
+                            disabled
+                          />
                         </Column>
                       </RowCenter>
                       <RowEnd>
@@ -537,12 +588,9 @@ onBeforeUnmount(() => {
                         </Column>
                       </RowEnd>
                     </Row>
-                    <Row>
+                    <Row v-if="errors.email">
                       <Column>
-                        <Label
-                          v-if="errors.email"
-                          class="supporting"
-                        >
+                        <Label class="supporting">
                           {{ errors.email }}
                         </Label>
                       </Column>
@@ -560,9 +608,6 @@ onBeforeUnmount(() => {
 
 <style lang="sass" scoped>
   @use '@/lib/sass/theme'
-
-  .main
-    padding: 0 20%
 
   section
     padding: 48px

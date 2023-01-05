@@ -34,9 +34,14 @@
 @use '../conversion'
 
 .text-field
-  &:disabled:not(.hovered):not(.focused):not(.pressed),
-  &[disabled]:not(.hovered):not(.focused):not(.pressed),
-  &.disabled:not(.hovered):not(.focused):not(.pressed)
+  &:disabled:not(.hovered):not(.focused):not(.error),
+  &[disabled]:not(.hovered):not(.focused):not(.error),
+  &.disabled:not(.hovered):not(.focused):not(.error)
+    @extend %is-noselect
+
+    cursor: not-allowed
+    pointer-events: all !important
+      
     .row
       &:first-child
         @include theme.preferred
@@ -52,6 +57,8 @@
         color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
     .form-input
+      pointer-events: none !important
+
       @include theme.preferred
         color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           
@@ -76,7 +83,7 @@
           border-color: theme.style(on-surface-variant)
           background-color: theme.style(surface-variant)
           
-      &:last-child
+      &:last-child:not(:first-child)
         padding: 4px 16px 0
     
     .leading
@@ -114,7 +121,27 @@
       @include theme.preferred
         color: theme.style(on-surface-variant)
 
-    &:focus:not(.hovered):not(.pressed):not(.disabled),
+    &:hover:not(.focused):not(.error):not(.disabled),
+    &.hovered
+      cursor: pointer
+
+      .row
+        @include theme.preferred
+            border-color: theme.style(on-surface)
+
+      .form-input
+        @include theme.preferred
+          color: theme.style(on-surface)
+            
+      .text
+        @include theme.preferred
+          color: theme.style(on-surface-variant)
+          
+      .supporting
+        @include theme.preferred
+          color: theme.style(on-surface-variant)
+
+    &:focus:not(.hovered):not(.error):not(.disabled),
     &.focused
       .row
         &:first-child
@@ -134,22 +161,23 @@
       .supporting
         @include theme.preferred
           color: theme.style(on-surface-variant)
-
-    
-    &:hover:not(.focused):not(.pressed):not(.disabled),
-    &.hovered
+  
+    &.error
       .row
-        @include theme.preferred
-            border-color: theme.style(on-surface)
+        &:first-child
+          border-bottom-width: 2px
+          
+          @include theme.preferred
+            border-color: theme.style(error)
 
-      .form-input
+      .trailing
         @include theme.preferred
-          color: theme.style(on-surface)
+          color: theme.style(error)
             
       .text
         @include theme.preferred
-          color: theme.style(on-surface-variant)
+          color: theme.style(error)
           
       .supporting
         @include theme.preferred
-          color: theme.style(on-surface-variant)
+          color: theme.style(error)

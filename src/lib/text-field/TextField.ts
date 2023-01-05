@@ -44,6 +44,7 @@ export enum TextFieldState {
   enabled = 'enabled',
   hovered = 'hovered',
   focused = 'focused',
+	error = 'error',
 	disabled = 'disabled',
 }
 
@@ -61,6 +62,7 @@ export const TextField: FunctionalComponent<TextFieldProps> = ({
 		enabled: TextFieldState.enabled === state,
 		hovered: TextFieldState.hovered === state,
 		focused: TextFieldState.focused === state,
+		error: TextFieldState.error === state,
 		disabled: TextFieldState.disabled === state,
 	},
 }, {
