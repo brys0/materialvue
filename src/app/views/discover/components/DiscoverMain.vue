@@ -183,7 +183,7 @@ onBeforeUnmount(() => {
       </section>
       <section>
         <Display :size="TypographySize.small">
-          Filled Buttons
+          Filled button states
         </Display>
         <div>
           <Row>
@@ -220,7 +220,7 @@ onBeforeUnmount(() => {
       </section>
       <section>
         <Display :size="TypographySize.small">
-          Outlined Buttons
+          Outlined button states
         </Display>
         <div>
           <Row>
@@ -257,7 +257,7 @@ onBeforeUnmount(() => {
       </section>
       <section>
         <Display :size="TypographySize.small">
-          Text Buttons
+          Text button states
         </Display>
         <div>
           <Row>
@@ -294,7 +294,7 @@ onBeforeUnmount(() => {
       </section>
       <section>
         <Display :size="TypographySize.small">
-          Elevated Buttons
+          Elevated button states
         </Display>
         <div>
           <Row>
@@ -331,7 +331,7 @@ onBeforeUnmount(() => {
       </section>
       <section>
         <Display :size="TypographySize.small">
-          Tonal Buttons
+          Tonal button states
         </Display>
         <div>
           <Row>
@@ -382,7 +382,7 @@ onBeforeUnmount(() => {
       </section>
       <section>
         <Display :size="TypographySize.small">
-          Filled text field
+          Filled text field states
         </Display>
         <div>
           <Row>
