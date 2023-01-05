@@ -38,7 +38,7 @@ import {
 
 import {
 	FormField,
-} from '@/lib/form/FormField'
+} from '@/lib/forms/FormField'
 
 export enum TextFieldState {
   enabled = 'enabled',

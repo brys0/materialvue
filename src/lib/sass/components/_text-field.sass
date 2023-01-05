@@ -31,34 +31,125 @@
  */
 
 @use '../theme'
-
-%text-field
-  @extend %row
-
-%text-field-start
-  @extend %row-start
-
-%text-field-end
-  @extend %row-end
-
-%text-field-center
-  @extend %column
+@use '../conversion'
 
 .text-field
-  @extend %text-field
+  &:disabled:not(.hovered):not(.focused):not(.pressed),
+  &[disabled]:not(.hovered):not(.focused):not(.pressed),
+  &.disabled:not(.hovered):not(.focused):not(.pressed)
+    .row
+      &:first-child
+        @include theme.preferred
+          border-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          background-color: conversion.hex-to-rgba(theme.style(on-surface), 4%)
 
-  > .leading
-    @extend %text-field-start
+    .leading
+      @include theme.preferred
+        color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+    
+    .trailing
+      @include theme.preferred
+        color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
-  > .text-field-center
-    @extend %text-field-center
+    .form-input
+      @include theme.preferred
+        color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          
+    .text
+      @include theme.preferred
+        color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+        
+    .supporting
+      @include theme.preferred
+        color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
-  > .text-field-end
-    @extend %text-field-end
+  &.filled
+    .row
+      &:first-child
+        padding: 12px
+        border-bottom-style: solid
+        border-bottom-width: 1px
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
 
-  &.filled 
-    border: 1px solid
+        @include theme.preferred
+          border-color: theme.style(on-surface-variant)
+          background-color: theme.style(surface-variant)
+          
+      &:last-child
+        padding: 4px 16px 0
+    
+    .leading
+      font-size: 20px
 
-    @include theme.preferred
-      border-color: theme.style(surface-variant)
-      background-color: theme.style(surface-variant)
+      @include theme.preferred
+        color: theme.style(on-surface-variant)
+
+    .trailing
+      font-size: 24px
+
+      @include theme.preferred
+        color: theme.style(on-surface-variant)
+
+    .form-input
+      @extend %typography-body-large
+
+      border: none
+      outline: none
+      background-color: transparent
+
+      @include theme.preferred
+        color: theme.style(on-surface)
+        caret-color: theme.style(primary)
+
+    .text
+      @extend %typography-body-small
+
+      @include theme.preferred
+        color: theme.style(on-surface-variant)
+
+    .supporting
+      @extend %typography-body-small
+
+      @include theme.preferred
+        color: theme.style(on-surface-variant)
+
+    &:focus:not(.hovered):not(.pressed):not(.disabled),
+    &.focused
+      .row
+        &:first-child
+          border-bottom-width: 2px
+          
+          @include theme.preferred
+            border-color: theme.style(primary)
+
+      .form-input
+        @include theme.preferred
+          color: theme.style(on-surface)
+            
+      .text
+        @include theme.preferred
+          color: theme.style(primary)
+          
+      .supporting
+        @include theme.preferred
+          color: theme.style(on-surface-variant)
+
+    
+    &:hover:not(.focused):not(.pressed):not(.disabled),
+    &.hovered
+      .row
+        @include theme.preferred
+            border-color: theme.style(on-surface)
+
+      .form-input
+        @include theme.preferred
+          color: theme.style(on-surface)
+            
+      .text
+        @include theme.preferred
+          color: theme.style(on-surface-variant)
+          
+      .supporting
+        @include theme.preferred
+          color: theme.style(on-surface-variant)

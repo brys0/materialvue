@@ -32,8 +32,12 @@
 
 export {
 	FormFieldSet,
-} from '@/lib/form/FormFieldSet'
+} from '@/lib/forms/FormFieldSet'
 
 export {
 	FormField,
-} from '@/lib/form/FormField'
+} from '@/lib/forms/FormField'
+
+export {
+	default as FormInput,
+} from '@/lib/forms/FormInput.vue'

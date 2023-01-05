@@ -52,9 +52,5 @@ export {
 } from '@/lib/text-field/TextFieldLabel'
 
 export {
-	default as TextFieldInput,
-} from '@/lib/text-field/TextFieldInput.vue'
-
-export {
 	FilledTextField,
 } from '@/lib/text-field/FilledTextField'

@@ -95,6 +95,7 @@ const validationListeners = computed(() => {
 
 <template>
   <input
+    class="form-input"
     type="text"
     v-model="value"
     v-on="validationListeners"

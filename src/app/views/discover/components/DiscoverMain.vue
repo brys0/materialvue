@@ -37,11 +37,13 @@ import {
 	ElevatedButton,
 	TonalButton,
 	Row,
+	RowStart,
+	RowCenter,
+	RowEnd,
 	Column,
 	FormFieldSet,
+	FormInput,
 	TextFieldState,
-	TextFieldLabel,
-	TextFieldInput,
 	FilledTextField,
 	RoundedIcon,
 } from '@/index'
@@ -373,23 +375,178 @@ onBeforeUnmount(() => {
               <form @submit="onSubmit">
                 <FormFieldSet>
                   <FilledTextField>
-                    <RoundedIcon class="leading">
-                      mail
-                    </RoundedIcon>
-                    <!-- <TextFieldCenter>
-                      <TextFieldLabel name="email">
-                        Email
-                      </TextFieldLabel>
-                      <TextFieldInput name="email" />
-                    </TextFieldCenter>
-                    <TextFieldEnd>
-                      <RoundedIcon>
-                        cancel
-                      </RoundedIcon>
-                    </TextFieldEnd>
-                    <Label v-if="errors.email">
-                      {{ errors.email }}
-                    </Label> -->
+                    <Row class="gap">
+                      <RowStart>
+                        <Column>
+                          <RoundedIcon class="leading">
+                            mail
+                          </RoundedIcon>
+                        </Column>
+                      </RowStart>
+                      <RowCenter>
+                        <Column>
+                          <Label
+                            name="email"
+                            class="text"
+                          >
+                            Email
+                          </Label>
+                          <FormInput name="email" />
+                        </Column>
+                      </RowCenter>
+                      <RowEnd>
+                        <Column>
+                          <RoundedIcon class="trailing">
+                            close
+                          </RoundedIcon>
+                        </Column>
+                      </RowEnd>
+                    </Row>
+                    <Row>
+                      <Column>
+                        <Label
+                          v-if="errors.email"
+                          class="supporting"
+                        >
+                          {{ errors.email }}
+                        </Label>
+                      </Column>
+                    </Row>
+                  </FilledTextField>
+                </FormFieldSet>
+              </form>
+            </Column>
+            <Column>
+              <form @submit="onSubmit">
+                <FormFieldSet>
+                  <FilledTextField :state="TextFieldState.focused">
+                    <Row class="gap">
+                      <RowStart>
+                        <Column>
+                          <RoundedIcon class="leading">
+                            mail
+                          </RoundedIcon>
+                        </Column>
+                      </RowStart>
+                      <RowCenter>
+                        <Column>
+                          <Label
+                            name="email"
+                            class="text"
+                          >
+                            Email
+                          </Label>
+                          <FormInput name="email" />
+                        </Column>
+                      </RowCenter>
+                      <RowEnd>
+                        <Column>
+                          <RoundedIcon class="trailing">
+                            close
+                          </RoundedIcon>
+                        </Column>
+                      </RowEnd>
+                    </Row>
+                    <Row>
+                      <Column>
+                        <Label
+                          v-if="errors.email"
+                          class="supporting"
+                        >
+                          {{ errors.email }}
+                        </Label>
+                      </Column>
+                    </Row>
+                  </FilledTextField>
+                </FormFieldSet>
+              </form>
+            </Column>
+            <Column>
+              <form @submit="onSubmit">
+                <FormFieldSet>
+                  <FilledTextField :state="TextFieldState.hovered">
+                    <Row class="gap">
+                      <RowStart>
+                        <Column>
+                          <RoundedIcon class="leading">
+                            mail
+                          </RoundedIcon>
+                        </Column>
+                      </RowStart>
+                      <RowCenter>
+                        <Column>
+                          <Label
+                            name="email"
+                            class="text"
+                          >
+                            Email
+                          </Label>
+                          <FormInput name="email" />
+                        </Column>
+                      </RowCenter>
+                      <RowEnd>
+                        <Column>
+                          <RoundedIcon class="trailing">
+                            close
+                          </RoundedIcon>
+                        </Column>
+                      </RowEnd>
+                    </Row>
+                    <Row>
+                      <Column>
+                        <Label
+                          v-if="errors.email"
+                          class="supporting"
+                        >
+                          {{ errors.email }}
+                        </Label>
+                      </Column>
+                    </Row>
+                  </FilledTextField>
+                </FormFieldSet>
+              </form>
+            </Column>
+            <Column>
+              <form @submit="onSubmit">
+                <FormFieldSet>
+                  <FilledTextField :state="TextFieldState.disabled">
+                    <Row class="gap">
+                      <RowStart>
+                        <Column>
+                          <RoundedIcon class="leading">
+                            mail
+                          </RoundedIcon>
+                        </Column>
+                      </RowStart>
+                      <RowCenter>
+                        <Column>
+                          <Label
+                            name="email"
+                            class="text"
+                          >
+                            Email
+                          </Label>
+                          <FormInput name="email" />
+                        </Column>
+                      </RowCenter>
+                      <RowEnd>
+                        <Column>
+                          <RoundedIcon class="trailing">
+                            close
+                          </RoundedIcon>
+                        </Column>
+                      </RowEnd>
+                    </Row>
+                    <Row>
+                      <Column>
+                        <Label
+                          v-if="errors.email"
+                          class="supporting"
+                        >
+                          {{ errors.email }}
+                        </Label>
+                      </Column>
+                    </Row>
                   </FilledTextField>
                 </FormFieldSet>
               </form>
