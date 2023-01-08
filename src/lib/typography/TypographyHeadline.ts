@@ -41,27 +41,27 @@ import {
 	TypographySize,
 } from '@/lib/typography/Typography'
 
-export type LabelProps = {
+export type TypographyHeadlineProps = {
 	size?: TypographySize
 }
 
-export const Label: FunctionalComponent<LabelProps> = ({
+export const TypographyHeadline: FunctionalComponent<TypographyHeadlineProps> = ({
 	size,
 }, {
 	slots,
 }): VNode => h(Typography, {
 	size: size ?? TypographySize.medium,
 	class: {
-		label: true,
+		headline: true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-Label.displayName = 'Label'
+TypographyHeadline.displayName = 'TypographyHeadline'
 
-Label.props = [
+TypographyHeadline.props = [
 	'size'
 ]
 
-export default Label
+export default TypographyHeadline

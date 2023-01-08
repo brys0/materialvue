@@ -36,25 +36,32 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type TextFieldLabelProps = {
-	name: string,
+import {
+	Typography,
+	TypographySize,
+} from '@/lib/typography/Typography'
+
+export type TypographyBodyProps = {
+	size?: TypographySize
 }
 
-export const TextFieldLabel: FunctionalComponent<TextFieldLabelProps> = ({
-	name,
+export const TypographyBody: FunctionalComponent<TypographyBodyProps> = ({
+	size,
 }, {
 	slots,
-}): VNode => h('label', {
-	for: name,
-	class: 'label',
+}): VNode => h(Typography, {
+	size: size ?? TypographySize.medium,
+	class: {
+		body: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })
 
-TextFieldLabel.displayName = 'TextFieldLabel'
+TypographyBody.displayName = 'TypographyBody'
 
-TextFieldLabel.props = [
-	'name'
+TypographyBody.props = [
+	'size'
 ]
 
-export default TextFieldLabel
+export default TypographyBody

@@ -36,18 +36,32 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type TextFieldStartProps = {}
+import {
+	Typography,
+	TypographySize,
+} from '@/lib/typography/Typography'
 
-export const TextFieldStart: FunctionalComponent<TextFieldStartProps> = (_, {
+export type TypographyDisplayProps = {
+	size?: TypographySize
+}
+
+export const TypographyDisplay: FunctionalComponent<TypographyDisplayProps> = ({
+	size,
+}, {
 	slots,
-}): VNode => h('div', {
-	class: 'text-field-start',
+}): VNode => h(Typography, {
+	size: size ?? TypographySize.medium,
+	class: {
+		display: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })
 
-TextFieldStart.displayName = 'TextFieldStart'
+TypographyDisplay.displayName = 'TypographyDisplay'
 
-TextFieldStart.props = []
+TypographyDisplay.props = [
+	'size'
+]
 
-export default TextFieldStart
+export default TypographyDisplay

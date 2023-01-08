@@ -31,11 +31,11 @@
  */
 
 export {
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
+	TypographyDisplay,
+	TypographyHeadline,
+	TypographyTitle,
+	TypographyLabel,
+	TypographyBody,
 	Typography,
 	TypographySize,
 } from '@/lib/typography'
@@ -89,8 +89,4 @@ export {
 	FilledTextField,
 	TextField,
 	TextFieldState,
-	TextFieldStart,
-	TextFieldCenter,
-	TextFieldEnd,
-	TextFieldLabel,
 } from '@/lib/text-field'

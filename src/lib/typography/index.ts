@@ -36,21 +36,21 @@ export {
 } from '@/lib/typography/Typography'
 
 export {
-	Display,
-} from '@/lib/typography/Display'
+	TypographyDisplay,
+} from '@/lib/typography/TypographyDisplay'
 
 export {
-	Headline,
-} from '@/lib/typography/Headline'
+	TypographyHeadline,
+} from '@/lib/typography/TypographyHeadline'
 
 export {
-	Title,
-} from '@/lib/typography/Title'
+	TypographyTitle,
+} from '@/lib/typography/TypographyTitle'
 
 export {
-	Label,
-} from '@/lib/typography/Label'
+	TypographyLabel,
+} from '@/lib/typography/TypographyLabel'
 
 export {
-	Body,
-} from '@/lib/typography/Body'
+	TypographyBody,
+} from '@/lib/typography/TypographyBody'

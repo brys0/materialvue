@@ -41,27 +41,27 @@ import {
 	TypographySize,
 } from '@/lib/typography/Typography'
 
-export type BodyProps = {
+export type TypographyLabelProps = {
 	size?: TypographySize
 }
 
-export const Body: FunctionalComponent<BodyProps> = ({
+export const TypographyLabel: FunctionalComponent<TypographyLabelProps> = ({
 	size,
 }, {
 	slots,
 }): VNode => h(Typography, {
 	size: size ?? TypographySize.medium,
 	class: {
-		body: true,
+		label: true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-Body.displayName = 'Body'
+TypographyLabel.displayName = 'TypographyLabel'
 
-Body.props = [
+TypographyLabel.props = [
 	'size'
 ]
 
-export default Body
+export default TypographyLabel

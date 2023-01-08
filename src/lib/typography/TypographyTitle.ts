@@ -41,27 +41,27 @@ import {
 	TypographySize,
 } from '@/lib/typography/Typography'
 
-export type HeadlineProps = {
+export type TypographyTitleProps = {
 	size?: TypographySize
 }
 
-export const Headline: FunctionalComponent<HeadlineProps> = ({
+export const TypographyTitle: FunctionalComponent<TypographyTitleProps> = ({
 	size,
 }, {
 	slots,
 }): VNode => h(Typography, {
 	size: size ?? TypographySize.medium,
 	class: {
-		headline: true,
+		title: true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-Headline.displayName = 'Headline'
+TypographyTitle.displayName = 'TypographyTitle'
 
-Headline.props = [
+TypographyTitle.props = [
 	'size'
 ]
 
-export default Headline
+export default TypographyTitle

@@ -26,11 +26,11 @@ import {
 
 import {
 	TypographySize,
-	Display,
-	Headline,
-	Title,
-	Label,
-	Body,
+	TypographyDisplay,
+	TypographyHeadline,
+	TypographyTitle,
+	TypographyLabel,
+	TypographyBody,
 	ButtonState,
 	FilledButton,
 	OutlinedButton,
@@ -112,114 +112,114 @@ onBeforeUnmount(() => {
   <AppMain>
     <div>
       <section class="banner">
-        <Display :size="TypographySize.large">
+        <TypographyDisplay :size="TypographySize.large">
           Typography
-        </Display>
-        <Body :size="TypographySize.large">
+        </TypographyDisplay>
+        <TypographyBody :size="TypographySize.large">
           See the <a
             href="https://m3.material.io/styles/typography/overview"
             target="_blank"
           >Design Guidelines</a>
-        </Body>
+        </TypographyBody>
       </section>
       <section>
-        <Display :size="TypographySize.small">
-          Display
-        </Display>
+        <TypographyDisplay :size="TypographySize.small">
+          TypographyDisplay
+        </TypographyDisplay>
         <div>
-          <Display :size="TypographySize.large">
-            Display Large - Roboto 57/64 . 0
-          </Display>
-          <Display :size="TypographySize.medium">
-            Display Medium - Roboto 45/52 .  0
-          </Display>
-          <Display :size="TypographySize.small">
-            Display Small - Roboto 36/44 . 0
-          </Display>
+          <TypographyDisplay :size="TypographySize.large">
+            TypographyDisplay Large - Roboto 57/64 . 0
+          </TypographyDisplay>
+          <TypographyDisplay :size="TypographySize.medium">
+            TypographyDisplay Medium - Roboto 45/52 .  0
+          </TypographyDisplay>
+          <TypographyDisplay :size="TypographySize.small">
+            TypographyDisplay Small - Roboto 36/44 . 0
+          </TypographyDisplay>
         </div>
       </section>
       <section>
-        <Display :size="TypographySize.small">
-          Headline
-        </Display>
+        <TypographyDisplay :size="TypographySize.small">
+          TypographyHeadline
+        </TypographyDisplay>
         <div>
-          <Headline :size="TypographySize.large">
-            Headline Large - Roboto 32/40 . 0
-          </Headline>
-          <Headline :size="TypographySize.medium">
-            Headline Medium - Roboto 28/36 . 0
-          </Headline>
-          <Headline :size="TypographySize.small">
-            Headline Small - Roboto 24/32 . 0
-          </Headline>
+          <TypographyHeadline :size="TypographySize.large">
+            TypographyHeadline Large - Roboto 32/40 . 0
+          </TypographyHeadline>
+          <TypographyHeadline :size="TypographySize.medium">
+            TypographyHeadline Medium - Roboto 28/36 . 0
+          </TypographyHeadline>
+          <TypographyHeadline :size="TypographySize.small">
+            TypographyHeadline Small - Roboto 24/32 . 0
+          </TypographyHeadline>
         </div>
       </section>
       <section>
-        <Display :size="TypographySize.small">
-          Title
-        </Display>
+        <TypographyDisplay :size="TypographySize.small">
+          TypographyTitle
+        </TypographyDisplay>
         <div>
-          <Title :size="TypographySize.large">
-            Title Large - Roboto Medium 22/28 . 0
-          </Title>
-          <Title :size="TypographySize.medium">
-            Title Medium - Roboto Medium 16/24 . +0.15
-          </Title>
-          <Title :size="TypographySize.small">
-            Title Small - Roboto Medium 14/20 . +0.1
-          </Title>
+          <TypographyTitle :size="TypographySize.large">
+            TypographyTitle Large - Roboto Medium 22/28 . 0
+          </TypographyTitle>
+          <TypographyTitle :size="TypographySize.medium">
+            TypographyTitle Medium - Roboto Medium 16/24 . +0.15
+          </TypographyTitle>
+          <TypographyTitle :size="TypographySize.small">
+            TypographyTitle Small - Roboto Medium 14/20 . +0.1
+          </TypographyTitle>
         </div>
       </section>
       <section>
-        <Display :size="TypographySize.small">
-          Label
-        </Display>
+        <TypographyDisplay :size="TypographySize.small">
+          TypographyLabel
+        </TypographyDisplay>
         <div>
-          <Label :size="TypographySize.large">
-            Label Large - Roboto Medium 14/20 . +0.1
-          </Label>
-          <Label :size="TypographySize.medium">
-            Label Medium - Roboto Medium 12/16 . +0.5
-          </Label>
-          <Label :size="TypographySize.small">
-            Label Small - Roboto Medium 11/16 . +0.5
-          </Label>
+          <TypographyLabel :size="TypographySize.large">
+            TypographyLabel Large - Roboto Medium 14/20 . +0.1
+          </TypographyLabel>
+          <TypographyLabel :size="TypographySize.medium">
+            TypographyLabel Medium - Roboto Medium 12/16 . +0.5
+          </TypographyLabel>
+          <TypographyLabel :size="TypographySize.small">
+            TypographyLabel Small - Roboto Medium 11/16 . +0.5
+          </TypographyLabel>
         </div>
       </section>
       <section>
-        <Display :size="TypographySize.small">
-          Body
-        </Display>
+        <TypographyDisplay :size="TypographySize.small">
+          TypographyBody
+        </TypographyDisplay>
         <div>
-          <Body :size="TypographySize.large">
-            Body Large - Roboto 16/24 . +0.15
-          </Body>
-          <Body :size="TypographySize.medium">
-            Body Medium - Roboto 14/20 . +0.25
-          </Body>
-          <Body :size="TypographySize.small">
-            Body Small - Roboto 12/16 . +0.4
-          </Body>
+          <TypographyBody :size="TypographySize.large">
+            TypographyBody Large - Roboto 16/24 . +0.15
+          </TypographyBody>
+          <TypographyBody :size="TypographySize.medium">
+            TypographyBody Medium - Roboto 14/20 . +0.25
+          </TypographyBody>
+          <TypographyBody :size="TypographySize.small">
+            TypographyBody Small - Roboto 12/16 . +0.4
+          </TypographyBody>
         </div>
       </section>
     </div>
 
     <div>
       <section class="banner">
-        <Display :size="TypographySize.large">
+        <TypographyDisplay :size="TypographySize.large">
           Buttons
-        </Display>
-        <Body :size="TypographySize.large">
+        </TypographyDisplay>
+        <TypographyBody :size="TypographySize.large">
           See the <a
             href="https://m3.material.io/components/buttons/overview"
             target="_blank"
           >Design Guidelines</a>
-        </Body>
+        </TypographyBody>
       </section>
       <section>
-        <Display :size="TypographySize.small">
+        <TypographyDisplay :size="TypographySize.small">
           Filled button states
-        </Display>
+        </TypographyDisplay>
         <div>
           <Row>
             <Column>
@@ -254,9 +254,9 @@ onBeforeUnmount(() => {
         </div>
       </section>
       <section>
-        <Display :size="TypographySize.small">
+        <TypographyDisplay :size="TypographySize.small">
           Outlined button states
-        </Display>
+        </TypographyDisplay>
         <div>
           <Row>
             <Column>
@@ -291,9 +291,9 @@ onBeforeUnmount(() => {
         </div>
       </section>
       <section>
-        <Display :size="TypographySize.small">
+        <TypographyDisplay :size="TypographySize.small">
           Text button states
-        </Display>
+        </TypographyDisplay>
         <div>
           <Row>
             <Column>
@@ -328,9 +328,9 @@ onBeforeUnmount(() => {
         </div>
       </section>
       <section>
-        <Display :size="TypographySize.small">
+        <TypographyDisplay :size="TypographySize.small">
           Elevated button states
-        </Display>
+        </TypographyDisplay>
         <div>
           <Row>
             <Column>
@@ -365,9 +365,9 @@ onBeforeUnmount(() => {
         </div>
       </section>
       <section>
-        <Display :size="TypographySize.small">
+        <TypographyDisplay :size="TypographySize.small">
           Tonal button states
-        </Display>
+        </TypographyDisplay>
         <div>
           <Row>
             <Column>
@@ -405,66 +405,61 @@ onBeforeUnmount(() => {
 
     <div>
       <section class="banner">
-        <Display :size="TypographySize.large">
+        <TypographyDisplay :size="TypographySize.large">
           Text fields
-        </Display>
-        <Body :size="TypographySize.large">
+        </TypographyDisplay>
+        <TypographyBody :size="TypographySize.large">
           See the <a
             href="https://m3.material.io/components/text-fields/overview"
             target="_blank"
           >Design Guidelines</a>
-        </Body>
+        </TypographyBody>
       </section>
       <section>
-        <Display :size="TypographySize.small">
+        <TypographyDisplay :size="TypographySize.small">
           Filled text field states
-        </Display>
+        </TypographyDisplay>
         <div>
           <Row>
             <Column>
               <form @submit="onSubmit">
                 <FormFieldSet>
                   <FilledTextField ref="emailRef">
-                    <template #leading>
+                    <div class="field-body">
                       <RoundedIcon class="leading">
                         mail
                       </RoundedIcon>
-                    </template>
-                    <template #text>
-                      <Label
-                        name="email"
-                        class="text"
+                      <div class="control">
+                        <TypographyLabel
+                          name="email"
+                        >
+                          Email
+                        </TypographyLabel>
+                        <FormInput
+                          name="email"
+                          @change="handleChange"
+                        />
+                      </div>
+                      <RoundedIcon
+                        v-if="errors.email"
+                        class="trailing"
                       >
-                        Email
-                      </Label>
-                    </template>
-                    <template #input>
-                      <FormInput
-                        name="email"
-                        @change="handleChange"
-                      />
-                    </template>
-                    <template
-                      v-if="errors.email"
-                      #trailing
-                    >
-                      <RoundedIcon class="trailing">
                         error
                       </RoundedIcon>
-                    </template>
-                    <template
+                    </div>
+                    <div
                       v-if="errors.email"
-                      #supporting
+                      class="field-supporting"
                     >
-                      <Label class="supporting">
+                      <TypographyBody class="supporting">
                         {{ errors.email }}
-                      </Label>
-                    </template>
+                      </TypographyBody>
+                    </div>
                   </FilledTextField>
                 </FormFieldSet>
               </form>
             </Column>
-            <Column>
+            <!-- <Column>
               <form @submit="onSubmit">
                 <FormFieldSet>
                   <FilledTextField :state="TextFieldState.hovered">
@@ -474,12 +469,12 @@ onBeforeUnmount(() => {
                       </RoundedIcon>
                     </template>
                     <template #text>
-                      <Label
+                      <TypographyLabel
                         name="email"
                         class="text"
                       >
                         Email
-                      </Label>
+                      </TypographyLabel>
                     </template>
                     <template #input>
                       <FormInput name="email" />
@@ -488,9 +483,9 @@ onBeforeUnmount(() => {
                       v-if="errors.email"
                       #supporting
                     >
-                      <Label class="supporting">
+                      <TypographyLabel class="supporting">
                         {{ errors.email }}
-                      </Label>
+                      </TypographyLabel>
                     </template>
                   </FilledTextField>
                 </FormFieldSet>
@@ -506,12 +501,12 @@ onBeforeUnmount(() => {
                       </RoundedIcon>
                     </template>
                     <template #text>
-                      <Label
+                      <TypographyLabel
                         name="email"
                         class="text"
                       >
                         Email
-                      </Label>
+                      </TypographyLabel>
                     </template>
                     <template #input>
                       <FormInput name="email" />
@@ -525,9 +520,9 @@ onBeforeUnmount(() => {
                       v-if="errors.email"
                       #supporting
                     >
-                      <Label class="supporting">
+                      <TypographyLabel class="supporting">
                         {{ errors.email }}
-                      </Label>
+                      </TypographyLabel>
                     </template>
                   </FilledTextField>
                 </FormFieldSet>
@@ -543,12 +538,12 @@ onBeforeUnmount(() => {
                       </RoundedIcon>
                     </template>
                     <template #text>
-                      <Label
+                      <TypographyLabel
                         name="email"
                         class="text"
                       >
                         Email
-                      </Label>
+                      </TypographyLabel>
                     </template>
                     <template #input>
                       <FormInput name="email" />
@@ -557,19 +552,19 @@ onBeforeUnmount(() => {
                       v-if="errors.email"
                       #supporting
                     >
-                      <Label class="supporting">
+                      <TypographyLabel class="supporting">
                         {{ errors.email }}
-                      </Label>
+                      </TypographyLabel>
                     </template>
                   </FilledTextField>
                 </FormFieldSet>
               </form>
-            </Column>
+            </Column> -->
           </Row>
         </div>
-        <Display :size="TypographySize.small">
+        <!-- <TypographyDisplay :size="TypographySize.small">
           Filled text field error states
-        </Display>
+        </TypographyDisplay>
         <div>
           <div>
             <Row>
@@ -583,12 +578,12 @@ onBeforeUnmount(() => {
                         </RoundedIcon>
                       </template>
                       <template #text>
-                        <Label
+                        <TypographyLabel
                           name="email"
                           class="text"
                         >
                           Email
-                        </Label>
+                        </TypographyLabel>
                       </template>
                       <template #input>
                         <FormInput name="email" />
@@ -602,9 +597,9 @@ onBeforeUnmount(() => {
                         v-if="errors.email"
                         #supporting
                       >
-                        <Label class="supporting">
+                        <TypographyLabel class="supporting">
                           {{ errors.email }}
-                        </Label>
+                        </TypographyLabel>
                       </template>
                     </FilledTextField>
                   </FormFieldSet>
@@ -623,12 +618,12 @@ onBeforeUnmount(() => {
                         </RoundedIcon>
                       </template>
                       <template #text>
-                        <Label
+                        <TypographyLabel
                           name="email"
                           class="text"
                         >
                           Email
-                        </Label>
+                        </TypographyLabel>
                       </template>
                       <template #input>
                         <FormInput name="email" />
@@ -637,9 +632,9 @@ onBeforeUnmount(() => {
                         v-if="errors.email"
                         #supporting
                       >
-                        <Label class="supporting">
+                        <TypographyLabel class="supporting">
                           {{ errors.email }}
-                        </Label>
+                        </TypographyLabel>
                       </template>
                     </FilledTextField>
                   </FormFieldSet>
@@ -658,12 +653,12 @@ onBeforeUnmount(() => {
                         </RoundedIcon>
                       </template>
                       <template #text>
-                        <Label
+                        <TypographyLabel
                           name="email"
                           class="text"
                         >
                           Email
-                        </Label>
+                        </TypographyLabel>
                       </template>
                       <template #input>
                         <FormInput name="email" />
@@ -677,9 +672,9 @@ onBeforeUnmount(() => {
                         v-if="errors.email"
                         #supporting
                       >
-                        <Label class="supporting">
+                        <TypographyLabel class="supporting">
                           {{ errors.email }}
-                        </Label>
+                        </TypographyLabel>
                       </template>
                     </FilledTextField>
                   </FormFieldSet>
@@ -695,12 +690,12 @@ onBeforeUnmount(() => {
                         </RoundedIcon>
                       </template>
                       <template #text>
-                        <Label
+                        <TypographyLabel
                           name="email"
                           class="text"
                         >
                           Email
-                        </Label>
+                        </TypographyLabel>
                       </template>
                       <template #input>
                         <FormInput name="email" />
@@ -709,9 +704,9 @@ onBeforeUnmount(() => {
                         v-if="errors.email"
                         #supporting
                       >
-                        <Label class="supporting">
+                        <TypographyLabel class="supporting">
                           {{ errors.email }}
-                        </Label>
+                        </TypographyLabel>
                       </template>
                     </FilledTextField>
                   </FormFieldSet>
@@ -719,7 +714,7 @@ onBeforeUnmount(() => {
               </Column>
             </Row>
           </div>
-        </div>
+        </div> -->
       </section>
     </div>
   </AppMain>

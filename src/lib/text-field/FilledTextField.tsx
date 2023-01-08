@@ -58,11 +58,7 @@ export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
 		filled: true,
 	},
 }, {
-	leading: () => slots.leading?.(),
-	text: () => slots.text?.(),
-	input: () => slots.input?.(),
-	trailing: () => slots.trailing?.(),
-	supporting: () => slots.supporting?.(),
+	default: () => slots.default?.(),
 })
 
 FilledTextField.displayName = 'FilledTextField'
