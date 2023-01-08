@@ -42,7 +42,7 @@ import {
 } from '@/lib/text-field/TextField'
 
 export type FilledTextFieldProps = {
-	state?: TextFieldState,
+	state?: TextFieldState
 	hasError?: boolean
 }
 
@@ -53,12 +53,16 @@ export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
 	slots,
 }): VNode => h(TextField, {
 	state: state ?? TextFieldState.enabled,
+	hasError,
 	class: {
 		filled: true,
-		error: hasError,
 	},
 }, {
-	default: () => slots.default?.(),
+	leading: () => slots.leading?.(),
+	text: () => slots.text?.(),
+	input: () => slots.input?.(),
+	trailing: () => slots.trailing?.(),
+	supporting: () => slots.supporting?.(),
 })
 
 FilledTextField.displayName = 'FilledTextField'

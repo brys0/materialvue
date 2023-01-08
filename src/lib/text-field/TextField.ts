@@ -38,41 +38,98 @@ import {
 
 import {
 	FormField,
-} from '@/lib/forms/FormField'
+} from '@/lib/forms'
+
+import {
+	Row,
+	RowStart,
+	RowCenter,
+	RowEnd,
+	Column,
+} from '@/lib/layout'
 
 export enum TextFieldState {
   enabled = 'enabled',
   hovered = 'hovered',
   focused = 'focused',
-	error = 'error',
 	disabled = 'disabled',
 }
 
 export type TextFieldProps = {
 	state: TextFieldState,
+	hasError?: boolean
 }
 
 export const TextField: FunctionalComponent<TextFieldProps> = ({
 	state,
+	hasError,
 }, {
 	slots,
-}): VNode => h(FormField, {
-	class: {
-		'text-field': true,
-		enabled: TextFieldState.enabled === state,
-		hovered: TextFieldState.hovered === state,
-		focused: TextFieldState.focused === state,
-		error: TextFieldState.error === state,
-		disabled: TextFieldState.disabled === state,
-	},
-}, {
-	default: () => slots.default?.(),
-})
+}): VNode => {
+	let def: () => VNode[] = () => []
+
+	const leading = slots.leading
+	const text = slots.text
+	const input = slots.input
+	const trailing = slots.trailing
+	const supporting = slots.supporting
+
+	if (leading || text || input || trailing) {
+		const children: VNode[] = []
+
+		if (trailing) {
+			children.push(
+				h(RowEnd,
+					() => h(Column, () => trailing()))
+			)
+		}
+
+		if (text && input) {
+			children.push(
+				h(RowCenter,
+					() => h(Column, () => [ text(), input() ]))
+			)
+		}
+
+		if (leading) {
+			children.push(
+				h(RowStart,
+					() => h(Column, () => leading()))
+			)
+		}
+
+		def = supporting ? (): VNode[] => [
+			h(Row, () => children),
+			h(Row,
+				() => h(Column, () => supporting()))
+		] :
+			(): VNode[] => [ h(Row, () => children) ]
+	}
+
+	return h(FormField, {
+		class: {
+			'text-field': true,
+			enabled: TextFieldState.enabled === state,
+			hovered: TextFieldState.hovered === state,
+			focused: TextFieldState.focused === state,
+			disabled: TextFieldState.disabled === state,
+			error: true === hasError,
+			'has-leading': 'undefined' !== typeof leading,
+			'has-text': 'undefined' !== typeof text,
+			'has-input': 'undefined' !== typeof input,
+			'has-trailing': 'undefined' !== typeof trailing,
+			'has-supporting': 'undefined' !== typeof supporting,
+		},
+	}, {
+		default: def,
+	})
+}
 
 TextField.displayName = 'TextField'
 
 TextField.props = [
-	'state'
+	'state',
+	'hasError'
 ]
 
 export default TextField
