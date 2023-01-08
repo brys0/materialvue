@@ -2,6 +2,7 @@
 
 <script lang="ts" setup>
 import {
+	ref,
 	watch,
 	onBeforeUnmount,
 } from 'vue'
@@ -37,9 +38,6 @@ import {
 	ElevatedButton,
 	TonalButton,
 	Row,
-	RowStart,
-	RowCenter,
-	RowEnd,
 	Column,
 	FormFieldSet,
 	FormInput,
@@ -59,16 +57,53 @@ const {
 	handleSubmit,
 } = useForm({
 	validationSchema,
+	initialValues: {
+		email: '',
+	},
 })
 
-const unwatch = watch(errors, errors => logger.log('errors', errors))
+const emailRef = ref<HTMLElement>()
+
+const handleChange = (event: Event): void => {
+	const {
+		target,
+	} = event
+
+	if (target instanceof HTMLInputElement) {
+		const $el = emailRef.value
+		if ($el instanceof HTMLElement) {
+			if (0 === target.value.length) {
+				$el.classList.add('is-empty')
+			}
+			else {
+				$el.classList.remove('is-empty')
+			}
+		}
+	}
+}
+
+const unwatchEmailRef = watch(emailRef, email => {
+	email?.classList.add('is-empty')
+})
+
+const unwatchErrors = watch(errors, errors => {
+	if (errors.email) {
+		emailRef.value?.classList.add('error')
+	}
+	else {
+		emailRef.value?.classList.remove('error')
+	}
+
+	logger.log('errors', errors)
+})
 
 const onSubmit = handleSubmit((data): void => {
 	logger.log(data)
 })
 
 onBeforeUnmount(() => {
-	unwatch()
+	unwatchErrors()
+	unwatchEmailRef()
 })
 
 </script>
@@ -389,7 +424,7 @@ onBeforeUnmount(() => {
             <Column>
               <form @submit="onSubmit">
                 <FormFieldSet>
-                  <FilledTextField>
+                  <FilledTextField ref="emailRef">
                     <template #leading>
                       <RoundedIcon class="leading">
                         mail
@@ -404,7 +439,10 @@ onBeforeUnmount(() => {
                       </Label>
                     </template>
                     <template #input>
-                      <FormInput name="email" />
+                      <FormInput
+                        name="email"
+                        @change="handleChange"
+                      />
                     </template>
                     <template #trailing>
                       <RoundedIcon class="trailing">
@@ -704,5 +742,8 @@ onBeforeUnmount(() => {
     > div
       > span
         padding: 12px
+
+    .text-field
+      width: 300px
 
 </style>

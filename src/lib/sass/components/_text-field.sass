@@ -34,6 +34,23 @@
 @use '../conversion'
 
 .text-field
+  &.is-empty
+    .text
+      @extend %typography-body-large
+
+    .form-input
+      display: none
+      visibility: hidden
+  
+  &:not(.is-empty),
+  &.focused
+    .text
+      @extend %typography-body-small
+    
+    .form-input
+      display: block
+      visibility: visible
+
   &.has-text
     .row
       &:first-child
@@ -137,8 +154,6 @@
         caret-color: theme.style(primary)
 
     .text
-      @extend %typography-body-small
-
       @include theme.preferred
         color: theme.style(on-surface-variant)
 

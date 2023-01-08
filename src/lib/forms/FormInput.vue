@@ -77,7 +77,7 @@ const validationListeners = computed(() => {
 	// lazy
 	if (!errorMessage.value) {
 		return {
-			// blur: handleChange,
+			blur: handleChange,
 			change: handleChange,
 			// disable `shouldValidate` to avoid validating on input
 			input: (event: Event): void => handleChange(event, false),
@@ -85,7 +85,7 @@ const validationListeners = computed(() => {
 	}
 	// Aggressive
 	return {
-		// blur: handleChange,
+		blur: handleChange,
 		change: handleChange,
 		input: handleChange, // only switched this
 	}

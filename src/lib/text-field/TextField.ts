@@ -32,8 +32,10 @@
 
 import {
 	h,
+	ref,
 	VNode,
-	FunctionalComponent,
+	PropType,
+	defineComponent,
 } from 'vue'
 
 import {
@@ -55,81 +57,115 @@ export enum TextFieldState {
 	disabled = 'disabled',
 }
 
-export type TextFieldProps = {
-	state: TextFieldState,
-	hasError?: boolean
-}
 
-export const TextField: FunctionalComponent<TextFieldProps> = ({
-	state,
-	hasError,
-}, {
-	slots,
-}): VNode => {
-	let def: () => VNode[] = () => []
-
-	const leading = slots.leading
-	const text = slots.text
-	const input = slots.input
-	const trailing = slots.trailing
-	const supporting = slots.supporting
-
-	if (leading || text || input || trailing) {
-		const children: VNode[] = []
-
-		if (leading) {
-			children.push(
-				h(RowStart,
-					() => h(Column, () => leading()))
-			)
-		}
-
-		if (text && input) {
-			children.push(
-				h(RowCenter,
-					() => h(Column, () => [ text(), input() ]))
-			)
-		}
-
-		if (trailing) {
-			children.push(
-				h(RowEnd,
-					() => h(Column, () => trailing()))
-			)
-		}
-
-		def = supporting ? (): VNode[] => [
-			h(Row, () => children),
-			h(Row,
-				() => h(Column, () => supporting()))
-		] :
-			(): VNode[] => [ h(Row, () => children) ]
-	}
-
-	return h(FormField, {
-		class: {
-			'text-field': true,
-			enabled: TextFieldState.enabled === state,
-			hovered: TextFieldState.hovered === state,
-			focused: TextFieldState.focused === state,
-			disabled: TextFieldState.disabled === state,
-			error: true === hasError,
-			'has-leading': 'undefined' !== typeof leading,
-			'has-text': 'undefined' !== typeof text,
-			'has-input': 'undefined' !== typeof input,
-			'has-trailing': 'undefined' !== typeof trailing,
-			'has-supporting': 'undefined' !== typeof supporting,
+export const TextField = defineComponent({
+	name: 'TextField',
+	props: {
+		state: {
+			type: String as PropType<TextFieldState>,
+			default: TextFieldState.enabled,
 		},
-	}, {
-		default: def,
-	})
-}
+		hasError: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	emits: [
+		'updateState',
+		'click'
+	],
+	render(): VNode {
+		const inputRef = ref<null | VNode>(null)
 
-TextField.displayName = 'TextField'
+		let def: () => VNode[] = () => []
 
-TextField.props = [
-	'state',
-	'hasError'
-]
+		const {
+			leading,
+			text,
+			input,
+			trailing,
+			supporting,
+		} = this.$slots
+
+		if (leading || text || input || trailing) {
+			const children: VNode[] = []
+
+			if (leading) {
+				children.push(
+					h(RowStart,
+						() => h(Column, () => leading()))
+				)
+			}
+
+			if (text && input) {
+				inputRef.value = input()[0]
+
+				children.push(
+					h(RowCenter,
+						() => h(Column, () => [ text(), inputRef.value ]))
+				)
+			}
+
+			if (trailing) {
+				children.push(
+					h(RowEnd,
+						() => h(Column, () => trailing()))
+				)
+			}
+
+			def = supporting ? (): VNode[] => [
+				h(Row, () => children),
+				h(Row,
+					() => h(Column, () => supporting()))
+			] :
+				(): VNode[] => [ h(Row, () => children) ]
+		}
+
+		const {
+			state,
+			hasError,
+		} = this.$props
+
+		const field = h(FormField, {
+			class: {
+				'text-field': true,
+				enabled: TextFieldState.enabled === state,
+				hovered: TextFieldState.hovered === state,
+				focused: TextFieldState.focused === state,
+				disabled: TextFieldState.disabled === state,
+				error: true === hasError,
+				'has-leading': 'undefined' !== typeof leading,
+				'has-text': 'undefined' !== typeof text,
+				'has-input': 'undefined' !== typeof input,
+				'has-trailing': 'undefined' !== typeof trailing,
+				'has-supporting': 'undefined' !== typeof supporting,
+			},
+			onClick: (event: PointerEvent) => {
+				if (TextFieldState.enabled === this.$props.state) {
+					const {
+						$el,
+					} = this
+
+					$el.classList.add('focused')
+
+					const el = inputRef.value?.el
+					if (el instanceof HTMLInputElement && 0 === el.value.length) {
+						el.focus()
+						el.onblur = (): void => {
+							$el.classList.remove('focused')
+						}
+					}
+
+					this.$emit('updateState', TextFieldState.focused)
+					this.$emit('click', event)
+				}
+			},
+		}, {
+			default: def,
+		})
+
+		return field
+	},
+})
 
 export default TextField
