@@ -444,9 +444,12 @@ onBeforeUnmount(() => {
                         @change="handleChange"
                       />
                     </template>
-                    <template #trailing>
+                    <template
+                      v-if="errors.email"
+                      #trailing
+                    >
                       <RoundedIcon class="trailing">
-                        close
+                        error
                       </RoundedIcon>
                     </template>
                     <template

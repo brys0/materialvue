@@ -56,6 +56,10 @@
       &:first-child
         height: 56px
         gap: 16px
+
+        .row-center
+          .column
+            flex: 1
       
       &:last-child
         &:not(:first-child)
@@ -81,7 +85,7 @@
         .row
           &:first-child
             padding: 8px 12px
-  
+
   &:disabled:not(.hovered):not(.focused),
   &[disabled]:not(.hovered):not(.focused),
   &.disabled:not(.hovered):not(.focused)

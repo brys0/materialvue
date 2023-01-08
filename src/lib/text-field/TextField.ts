@@ -149,7 +149,7 @@ export const TextField = defineComponent({
 					$el.classList.add('focused')
 
 					const el = inputRef.value?.el
-					if (el instanceof HTMLInputElement && 0 === el.value.length) {
+					if (el instanceof HTMLInputElement) {
 						el.focus()
 						el.onblur = (): void => {
 							$el.classList.remove('focused')
