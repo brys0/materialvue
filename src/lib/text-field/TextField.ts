@@ -77,10 +77,10 @@ export const TextField: FunctionalComponent<TextFieldProps> = ({
 	if (leading || text || input || trailing) {
 		const children: VNode[] = []
 
-		if (trailing) {
+		if (leading) {
 			children.push(
-				h(RowEnd,
-					() => h(Column, () => trailing()))
+				h(RowStart,
+					() => h(Column, () => leading()))
 			)
 		}
 
@@ -91,10 +91,10 @@ export const TextField: FunctionalComponent<TextFieldProps> = ({
 			)
 		}
 
-		if (leading) {
+		if (trailing) {
 			children.push(
-				h(RowStart,
-					() => h(Column, () => leading()))
+				h(RowEnd,
+					() => h(Column, () => trailing()))
 			)
 		}
 

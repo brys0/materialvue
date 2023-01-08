@@ -411,11 +411,11 @@ onBeforeUnmount(() => {
                         close
                       </RoundedIcon>
                     </template>
-                    <template #supporting>
-                      <Label
-                        v-if="errors.email"
-                        class="supporting"
-                      >
+                    <template
+                      v-if="errors.email"
+                      #supporting
+                    >
+                      <Label class="supporting">
                         {{ errors.email }}
                       </Label>
                     </template>
@@ -443,16 +443,11 @@ onBeforeUnmount(() => {
                     <template #input>
                       <FormInput name="email" />
                     </template>
-                    <template #trailing>
-                      <RoundedIcon class="trailing">
-                        close
-                      </RoundedIcon>
-                    </template>
-                    <template #supporting>
-                      <Label
-                        v-if="errors.email"
-                        class="supporting"
-                      >
+                    <template
+                      v-if="errors.email"
+                      #supporting
+                    >
+                      <Label class="supporting">
                         {{ errors.email }}
                       </Label>
                     </template>
@@ -485,11 +480,11 @@ onBeforeUnmount(() => {
                         close
                       </RoundedIcon>
                     </template>
-                    <template #supporting>
-                      <Label
-                        v-if="errors.email"
-                        class="supporting"
-                      >
+                    <template
+                      v-if="errors.email"
+                      #supporting
+                    >
+                      <Label class="supporting">
                         {{ errors.email }}
                       </Label>
                     </template>
@@ -517,16 +512,11 @@ onBeforeUnmount(() => {
                     <template #input>
                       <FormInput name="email" />
                     </template>
-                    <template #trailing>
-                      <RoundedIcon class="trailing">
-                        close
-                      </RoundedIcon>
-                    </template>
-                    <template #supporting>
-                      <Label
-                        v-if="errors.email"
-                        class="supporting"
-                      >
+                    <template
+                      v-if="errors.email"
+                      #supporting
+                    >
+                      <Label class="supporting">
                         {{ errors.email }}
                       </Label>
                     </template>
@@ -567,11 +557,11 @@ onBeforeUnmount(() => {
                           close
                         </RoundedIcon>
                       </template>
-                      <template #supporting>
-                        <Label
-                          v-if="errors.email"
-                          class="supporting"
-                        >
+                      <template
+                        v-if="errors.email"
+                        #supporting
+                      >
+                        <Label class="supporting">
                           {{ errors.email }}
                         </Label>
                       </template>
@@ -602,16 +592,11 @@ onBeforeUnmount(() => {
                       <template #input>
                         <FormInput name="email" />
                       </template>
-                      <template #trailing>
-                        <RoundedIcon class="trailing">
-                          close
-                        </RoundedIcon>
-                      </template>
-                      <template #supporting>
-                        <Label
-                          v-if="errors.email"
-                          class="supporting"
-                        >
+                      <template
+                        v-if="errors.email"
+                        #supporting
+                      >
+                        <Label class="supporting">
                           {{ errors.email }}
                         </Label>
                       </template>
@@ -647,11 +632,11 @@ onBeforeUnmount(() => {
                           close
                         </RoundedIcon>
                       </template>
-                      <template #supporting>
-                        <Label
-                          v-if="errors.email"
-                          class="supporting"
-                        >
+                      <template
+                        v-if="errors.email"
+                        #supporting
+                      >
+                        <Label class="supporting">
                           {{ errors.email }}
                         </Label>
                       </template>
@@ -679,16 +664,11 @@ onBeforeUnmount(() => {
                       <template #input>
                         <FormInput name="email" />
                       </template>
-                      <template #trailing>
-                        <RoundedIcon class="trailing">
-                          close
-                        </RoundedIcon>
-                      </template>
-                      <template #supporting>
-                        <Label
-                          v-if="errors.email"
-                          class="supporting"
-                        >
+                      <template
+                        v-if="errors.email"
+                        #supporting
+                      >
+                        <Label class="supporting">
                           {{ errors.email }}
                         </Label>
                       </template>

@@ -34,6 +34,37 @@
 @use '../conversion'
 
 .text-field
+  &.has-text
+    .row
+      &:first-child
+        height: 56px
+        gap: 16px
+      
+      &:last-child
+        &:not(:first-child)
+          padding: 4px 16px 0
+
+    &:not(.has-leading)
+      &:not(.has-trailing)
+        .row
+          &:first-child
+            padding: 8px 16px
+    
+    &.has-leading
+      .row
+        &:first-child
+          padding: 8px 16px
+
+      &:not(.has-trailing)
+        .row
+          &:first-child
+            padding: 8px 16px
+
+      &.has-trailing
+        .row
+          &:first-child
+            padding: 8px 12px
+  
   &:disabled:not(.hovered):not(.focused),
   &[disabled]:not(.hovered):not(.focused),
   &.disabled:not(.hovered):not(.focused)
@@ -45,7 +76,7 @@
     .row
       &:first-child
         @include theme.preferred
-          border-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          border-bottom-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           background: conversion.hex-to-rgba(theme.style(on-surface), 4%)
 
     .leading
@@ -73,19 +104,15 @@
   &.filled
     .row
       &:first-child
-        padding: 12px
         border-bottom-style: solid
         border-bottom-width: 1px
         border-top-left-radius: 5px
         border-top-right-radius: 5px
 
         @include theme.preferred
-          border-color: theme.style(on-surface-variant)
+          border-bottom-color: theme.style(on-surface-variant)
           background: theme.style(surface-variant)
           
-      &:last-child:not(:first-child)
-        padding: 4px 16px 0
-    
     .leading
       font-size: 24px
 
@@ -127,7 +154,7 @@
           border-bottom-width: 2px
           
           @include theme.preferred
-            border-color: theme.style(error)
+            border-bottom-color: theme.style(error)
 
       .trailing
         @include theme.preferred
@@ -150,7 +177,7 @@
           border-bottom-width: 1px
 
           @include theme.preferred
-            border-color: theme.style(on-surface)
+            border-bottom-color: theme.style(on-surface)
             background: theme.tint(theme.style(on-surface), theme.style(surface-variant), 8%)
 
       .form-input
@@ -169,7 +196,7 @@
         .row
           &:first-child
             @include theme.preferred
-              border-color: theme.style(on-error-container)
+              border-bottom-color: theme.style(on-error-container)
 
         .leading
           @include theme.preferred
@@ -194,7 +221,7 @@
           border-bottom-width: 2px
           
           @include theme.preferred
-            border-color: theme.style(primary)
+            border-bottom-color: theme.style(primary)
 
       .form-input
         @include theme.preferred
@@ -212,7 +239,7 @@
         .row
           &:first-child
             @include theme.preferred
-              border-color: theme.style(error)
+              border-bottom-color: theme.style(error)
               caret-color: theme.style(error)
 
         .leading
