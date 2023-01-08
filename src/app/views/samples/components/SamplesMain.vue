@@ -61,9 +61,9 @@ const {
 	validationSchema,
 })
 
-const unwatch = watch(errors, errors => console.log('errors', errors))
+const unwatch = watch(errors, errors => logger.log('errors', errors))
 
-const onSubmit = handleSubmit(async (data) => {
+const onSubmit = handleSubmit((data): void => {
 	logger.log(data)
 })
 
@@ -515,48 +515,6 @@ onBeforeUnmount(() => {
             <Column>
               <form @submit="onSubmit">
                 <FormFieldSet>
-                  <FilledTextField :state="TextFieldState.error">
-                    <Row class="gap">
-                      <RowStart>
-                        <Column>
-                          <RoundedIcon class="leading">
-                            mail
-                          </RoundedIcon>
-                        </Column>
-                      </RowStart>
-                      <RowCenter>
-                        <Column>
-                          <Label
-                            name="email"
-                            class="text"
-                          >
-                            Email
-                          </Label>
-                          <FormInput name="email" />
-                        </Column>
-                      </RowCenter>
-                      <RowEnd>
-                        <Column>
-                          <RoundedIcon class="trailing">
-                            error
-                          </RoundedIcon>
-                        </Column>
-                      </RowEnd>
-                    </Row>
-                    <Row v-if="errors.email">
-                      <Column>
-                        <Label class="supporting">
-                          {{ errors.email }}
-                        </Label>
-                      </Column>
-                    </Row>
-                  </FilledTextField>
-                </FormFieldSet>
-              </form>
-            </Column>
-            <Column>
-              <form @submit="onSubmit">
-                <FormFieldSet>
                   <FilledTextField :state="TextFieldState.disabled">
                     <Row class="gap">
                       <RowStart>
@@ -601,6 +559,192 @@ onBeforeUnmount(() => {
             </Column>
           </Row>
         </div>
+        <Display :size="TypographySize.small">
+          Filled text field error states
+        </Display>
+        <div>
+          <div>
+            <Row>
+              <Column>
+                <form @submit="onSubmit">
+                  <FormFieldSet>
+                    <FilledTextField :has-error="true">
+                      <Row class="gap">
+                        <RowStart>
+                          <Column>
+                            <RoundedIcon class="leading">
+                              mail
+                            </RoundedIcon>
+                          </Column>
+                        </RowStart>
+                        <RowCenter>
+                          <Column>
+                            <Label
+                              name="email"
+                              class="text"
+                            >
+                              Email
+                            </Label>
+                            <FormInput name="email" />
+                          </Column>
+                        </RowCenter>
+                        <RowEnd>
+                          <Column>
+                            <RoundedIcon class="trailing">
+                              close
+                            </RoundedIcon>
+                          </Column>
+                        </RowEnd>
+                      </Row>
+                      <Row v-if="errors.email">
+                        <Column>
+                          <Label class="supporting">
+                            {{ errors.email }}
+                          </Label>
+                        </Column>
+                      </Row>
+                    </FilledTextField>
+                  </FormFieldSet>
+                </form>
+              </Column>
+              <Column>
+                <form @submit="onSubmit">
+                  <FormFieldSet>
+                    <FilledTextField
+                      :state="TextFieldState.hovered"
+                      :has-error="true"
+                    >
+                      <Row class="gap">
+                        <RowStart>
+                          <Column>
+                            <RoundedIcon class="leading">
+                              mail
+                            </RoundedIcon>
+                          </Column>
+                        </RowStart>
+                        <RowCenter>
+                          <Column>
+                            <Label
+                              name="email"
+                              class="text"
+                            >
+                              Email
+                            </Label>
+                            <FormInput name="email" />
+                          </Column>
+                        </RowCenter>
+                        <RowEnd>
+                          <Column>
+                            <RoundedIcon class="trailing">
+                              close
+                            </RoundedIcon>
+                          </Column>
+                        </RowEnd>
+                      </Row>
+                      <Row v-if="errors.email">
+                        <Column>
+                          <Label class="supporting">
+                            {{ errors.email }}
+                          </Label>
+                        </Column>
+                      </Row>
+                    </FilledTextField>
+                  </FormFieldSet>
+                </form>
+              </Column>
+              <Column>
+                <form @submit="onSubmit">
+                  <FormFieldSet>
+                    <FilledTextField
+                      :state="TextFieldState.focused"
+                      :has-error="true"
+                    >
+                      <Row class="gap">
+                        <RowStart>
+                          <Column>
+                            <RoundedIcon class="leading">
+                              mail
+                            </RoundedIcon>
+                          </Column>
+                        </RowStart>
+                        <RowCenter>
+                          <Column>
+                            <Label
+                              name="email"
+                              class="text"
+                            >
+                              Email
+                            </Label>
+                            <FormInput name="email" />
+                          </Column>
+                        </RowCenter>
+                        <RowEnd>
+                          <Column>
+                            <RoundedIcon class="trailing">
+                              close
+                            </RoundedIcon>
+                          </Column>
+                        </RowEnd>
+                      </Row>
+                      <Row v-if="errors.email">
+                        <Column>
+                          <Label class="supporting">
+                            {{ errors.email }}
+                          </Label>
+                        </Column>
+                      </Row>
+                    </FilledTextField>
+                  </FormFieldSet>
+                </form>
+              </Column>
+              <Column>
+                <form @submit="onSubmit">
+                  <FormFieldSet>
+                    <FilledTextField :state="TextFieldState.disabled">
+                      <Row class="gap">
+                        <RowStart>
+                          <Column>
+                            <RoundedIcon class="leading">
+                              mail
+                            </RoundedIcon>
+                          </Column>
+                        </RowStart>
+                        <RowCenter>
+                          <Column>
+                            <Label
+                              name="email"
+                              class="text"
+                            >
+                              Email
+                            </Label>
+                            <FormInput
+                              name="email"
+                              disabled
+                            />
+                          </Column>
+                        </RowCenter>
+                        <RowEnd>
+                          <Column>
+                            <RoundedIcon class="trailing">
+                              close
+                            </RoundedIcon>
+                          </Column>
+                        </RowEnd>
+                      </Row>
+                      <Row v-if="errors.email">
+                        <Column>
+                          <Label class="supporting">
+                            {{ errors.email }}
+                          </Label>
+                        </Column>
+                      </Row>
+                    </FilledTextField>
+                  </FormFieldSet>
+                </form>
+              </Column>
+            </Row>
+          </div>
+        </div>
       </section>
     </div>
   </AppMain>
@@ -620,7 +764,7 @@ onBeforeUnmount(() => {
       @include theme.preferred
         color: theme.style(primary)
 
-    > .display:first-child
+    > .display
       padding: 24px 0
 
     > div

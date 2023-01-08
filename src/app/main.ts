@@ -16,11 +16,11 @@ import {
 import '@/app/main.sass'
 import MountMain from '@/app/MountMain.vue'
 
-import discoverRoutes from '@/app/views/discover/routes'
+import samplesRoutes from '@/app/views/samples/routes'
 
 const router = createRouter({
 	routes: [
-		...discoverRoutes
+		...samplesRoutes
 	],
 	history: createWebHistory(),
 })

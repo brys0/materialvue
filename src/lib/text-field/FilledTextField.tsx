@@ -43,16 +43,19 @@ import {
 
 export type FilledTextFieldProps = {
 	state?: TextFieldState,
+	hasError?: boolean
 }
 
 export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
 	state,
+	hasError,
 }, {
 	slots,
 }): VNode => h(TextField, {
 	state: state ?? TextFieldState.enabled,
 	class: {
 		filled: true,
+		error: hasError,
 	},
 }, {
 	default: () => slots.default?.(),
@@ -61,7 +64,8 @@ export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
 FilledTextField.displayName = 'FilledTextField'
 
 FilledTextField.props = [
-	'state'
+	'state',
+	'hasError'
 ]
 
 export default FilledTextField

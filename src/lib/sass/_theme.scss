@@ -35,6 +35,7 @@ $light: (
   on-surface-variant: light.$on-surface-variant,
   
   outline: light.$outline,
+  outline-variant: light.$outline-variant,
   
   shadow-0: light.$shadow-0,
   shadow-1: light.$shadow-1,
@@ -80,6 +81,7 @@ $dark: (
   on-surface-variant: dark.$on-surface-variant,
   
   outline: dark.$outline,
+  outline-variant: dark.$outline-variant,
   
   shadow-0: light.$shadow-0,
   shadow-1: dark.$shadow-1,

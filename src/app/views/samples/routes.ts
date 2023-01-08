@@ -4,14 +4,14 @@ import {
 	RouteRecordRaw,
 } from 'vue-router'
 
-import DiscoverMainVue from '@/app/views/discover/components/DiscoverMain.vue'
+import SamplesMainVue from '@/app/views/samples/components/SamplesMain.vue'
 
 const routes: RouteRecordRaw[] = [
 	{
-		name: 'discover',
+		name: 'samples',
 		path: '/',
 		components: {
-			main: DiscoverMainVue,
+			main: SamplesMainVue,
 		},
 	}
 ]

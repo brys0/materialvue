@@ -55,12 +55,18 @@ const unwatchTheme = watch(theme, syncTheme)
 
 // Check to see if Media-Queries are supported
 if (window.matchMedia) {
+	logger.trace('matchMedia', window.matchMedia('(prefers-color-scheme: dark)').matches)
+
 	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 		theme.value = 'dark'
+		syncTheme('dark')
+
 		logger.trace('detected dark theme')
 	}
 	else {
 		theme.value = 'light'
+		syncTheme('light')
+
 		logger.trace('detected light theme')
 	}
 
@@ -70,12 +76,15 @@ if (window.matchMedia) {
 }
 else {
 	theme.value = 'light'
+	syncTheme('light')
+
 	logger.trace('detected light theme')
 }
 
 onBeforeUnmount((): void => {
 	unwatchTheme()
 })
+
 </script>
 
 <template>
