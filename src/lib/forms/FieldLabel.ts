@@ -1,4 +1,3 @@
-<!--
 /**
  * BSD 3-Clause License
  *
@@ -30,74 +29,25 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
--->
 
-<script lang="ts" setup>
 import {
-	computed,
-	toRef,
+	h,
+	VNode,
+	FunctionalComponent,
 } from 'vue'
 
-import {
-	useField,
-} from 'vee-validate'
+export type FieldLabelProps = {}
 
-// interface FieldMeta {
-//   dirty: boolean;
-//   pending: boolean;
-//   touched: boolean;
-//   valid: boolean;
-//   initialValue: any;
-// }
-
-const props = defineProps({
-	name: {
-		type: String,
-		required: true,
-	},
-	modelValue: {
-		type: String,
-		default: '',
-	},
+export const FieldLabel: FunctionalComponent<FieldLabelProps> = (_, {
+	slots,
+}): VNode => h('span', {
+	class: 'typography body field-label',
+}, {
+	default: () => slots.default?.(),
 })
 
-const nameRef = toRef(props, 'name')
+FieldLabel.displayName = 'FieldLabel'
 
-const {
-	errorMessage,
-	value,
-	handleChange,
-	// meta
-} = useField(nameRef, undefined, {
-	validateOnValueUpdate: false,
-})
+FieldLabel.props = []
 
-const validationListeners = computed(() => {
-	// If the field is valid or have not been validated yet
-	// lazy
-	if (!errorMessage.value) {
-		return {
-			blur: handleChange,
-			change: handleChange,
-			// disable `shouldValidate` to avoid validating on input
-			input: (event: Event): void => handleChange(event, false),
-		}
-	}
-	// Aggressive
-	return {
-		blur: handleChange,
-		change: handleChange,
-		input: handleChange, // only switched this
-	}
-})
-
-</script>
-
-<template>
-  <input
-    class="form-input"
-    type="text"
-    v-model="value"
-    v-on="validationListeners"
-  >
-</template>
+export default FieldLabel

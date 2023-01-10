@@ -82,7 +82,13 @@ export {
 export {
 	FormField,
 	FormFieldSet,
-	FormInput,
+	FieldBody,
+	FieldControl,
+	FieldIcon,
+	FieldInput,
+	FieldLabel,
+	FieldSupport,
+	FieldText,
 } from '@/lib/forms'
 
 export {

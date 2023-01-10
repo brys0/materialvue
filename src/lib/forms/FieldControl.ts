@@ -30,38 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	FormFieldSet,
-} from '@/lib/forms/FormFieldSet'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	FormField,
-} from '@/lib/forms/FormField'
+export type FieldControlProps = {}
 
-export {
-	FieldBody,
-} from '@/lib/forms/FieldBody'
+export const FieldControl: FunctionalComponent<FieldControlProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: 'field-control',
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	FieldControl,
-} from '@/lib/forms/FieldControl'
+FieldControl.displayName = 'FieldControl'
 
-export {
-	FieldIcon,
-} from '@/lib/forms/FieldIcon'
+FieldControl.props = []
 
-export {
-	default as FieldInput,
-} from '@/lib/forms/FieldInput.vue'
-
-export {
-	FieldLabel,
-} from '@/lib/forms/FieldLabel'
-
-export {
-	FieldSupport,
-} from '@/lib/forms/FieldSupport'
-
-export {
-	FieldText,
-} from '@/lib/forms/FieldText'
+export default FieldControl

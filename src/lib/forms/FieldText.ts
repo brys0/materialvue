@@ -30,38 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	FormFieldSet,
-} from '@/lib/forms/FormFieldSet'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	FormField,
-} from '@/lib/forms/FormField'
+export type FieldTextProps = {}
 
-export {
-	FieldBody,
-} from '@/lib/forms/FieldBody'
+export const FieldText: FunctionalComponent<FieldTextProps> = (_, {
+	slots,
+}): VNode => h('span', {
+	class: 'typography body field-text',
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	FieldControl,
-} from '@/lib/forms/FieldControl'
+FieldText.displayName = 'FieldText'
 
-export {
-	FieldIcon,
-} from '@/lib/forms/FieldIcon'
+FieldText.props = []
 
-export {
-	default as FieldInput,
-} from '@/lib/forms/FieldInput.vue'
-
-export {
-	FieldLabel,
-} from '@/lib/forms/FieldLabel'
-
-export {
-	FieldSupport,
-} from '@/lib/forms/FieldSupport'
-
-export {
-	FieldText,
-} from '@/lib/forms/FieldText'
+export default FieldText

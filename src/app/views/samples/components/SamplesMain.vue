@@ -40,7 +40,13 @@ import {
 	Row,
 	Column,
 	FormFieldSet,
-	FormInput,
+	FieldBody,
+	FieldControl,
+	FieldIcon,
+	FieldInput,
+	FieldLabel,
+	FieldSupport,
+	FieldText,
 	TextFieldState,
 	FilledTextField,
 	RoundedIcon,
@@ -425,68 +431,76 @@ onBeforeUnmount(() => {
               <form @submit="onSubmit">
                 <FormFieldSet>
                   <FilledTextField ref="emailRef">
-                    <div class="field-body">
-                      <RoundedIcon class="leading">
-                        mail
-                      </RoundedIcon>
-                      <div class="control">
-                        <TypographyLabel
+                    <FieldBody>
+                      <FieldIcon class="leading">
+                        <RoundedIcon>
+                          mail
+                        </RoundedIcon>
+                      </FieldIcon>
+                      <FieldControl>
+                        <FieldLabel
                           name="email"
                         >
                           Email
-                        </TypographyLabel>
-                        <FormInput
+                        </FieldLabel>
+                        <FieldInput
                           name="email"
                           @change="handleChange"
                         />
-                      </div>
-                      <RoundedIcon
+                      </FieldControl>
+                      <FieldIcon
                         v-if="errors.email"
                         class="trailing"
                       >
-                        error
-                      </RoundedIcon>
-                    </div>
-                    <div
-                      v-if="errors.email"
-                      class="field-supporting"
-                    >
-                      <TypographyBody class="supporting">
+                        <RoundedIcon>
+                          error
+                        </RoundedIcon>
+                      </FieldIcon>
+                    </FieldBody>
+                    <FieldSupport v-if="errors.email">
+                      <FieldText>
                         {{ errors.email }}
-                      </TypographyBody>
-                    </div>
+                      </FieldText>
+                    </FieldSupport>
                   </FilledTextField>
                 </FormFieldSet>
               </form>
             </Column>
-            <!-- <Column>
+            <Column>
               <form @submit="onSubmit">
                 <FormFieldSet>
                   <FilledTextField :state="TextFieldState.hovered">
-                    <template #leading>
-                      <RoundedIcon class="leading">
-                        mail
-                      </RoundedIcon>
-                    </template>
-                    <template #text>
-                      <TypographyLabel
-                        name="email"
-                        class="text"
+                    <FieldBody>
+                      <FieldIcon class="leading">
+                        <RoundedIcon>
+                          mail
+                        </RoundedIcon>
+                      </FieldIcon>
+                      <FieldControl>
+                        <FieldLabel
+                          name="email"
+                        >
+                          Email
+                        </FieldLabel>
+                        <FieldInput
+                          name="email"
+                          @change="handleChange"
+                        />
+                      </FieldControl>
+                      <FieldIcon
+                        v-if="errors.email"
+                        class="trailing"
                       >
-                        Email
-                      </TypographyLabel>
-                    </template>
-                    <template #input>
-                      <FormInput name="email" />
-                    </template>
-                    <template
-                      v-if="errors.email"
-                      #supporting
-                    >
-                      <TypographyLabel class="supporting">
+                        <RoundedIcon>
+                          error
+                        </RoundedIcon>
+                      </FieldIcon>
+                    </FieldBody>
+                    <FieldSupport v-if="errors.email">
+                      <FieldText>
                         {{ errors.email }}
-                      </TypographyLabel>
-                    </template>
+                      </FieldText>
+                    </FieldSupport>
                   </FilledTextField>
                 </FormFieldSet>
               </form>
@@ -495,35 +509,37 @@ onBeforeUnmount(() => {
               <form @submit="onSubmit">
                 <FormFieldSet>
                   <FilledTextField :state="TextFieldState.focused">
-                    <template #leading>
-                      <RoundedIcon class="leading">
-                        mail
-                      </RoundedIcon>
-                    </template>
-                    <template #text>
-                      <TypographyLabel
-                        name="email"
-                        class="text"
+                    <FieldBody>
+                      <FieldIcon class="leading">
+                        <RoundedIcon>
+                          mail
+                        </RoundedIcon>
+                      </FieldIcon>
+                      <FieldControl>
+                        <FieldLabel
+                          name="email"
+                        >
+                          Email
+                        </FieldLabel>
+                        <FieldInput
+                          name="email"
+                          @change="handleChange"
+                        />
+                      </FieldControl>
+                      <FieldIcon
+                        v-if="errors.email"
+                        class="trailing"
                       >
-                        Email
-                      </TypographyLabel>
-                    </template>
-                    <template #input>
-                      <FormInput name="email" />
-                    </template>
-                    <template #trailing>
-                      <RoundedIcon class="trailing">
-                        close
-                      </RoundedIcon>
-                    </template>
-                    <template
-                      v-if="errors.email"
-                      #supporting
-                    >
-                      <TypographyLabel class="supporting">
+                        <RoundedIcon>
+                          error
+                        </RoundedIcon>
+                      </FieldIcon>
+                    </FieldBody>
+                    <FieldSupport v-if="errors.email">
+                      <FieldText>
                         {{ errors.email }}
-                      </TypographyLabel>
-                    </template>
+                      </FieldText>
+                    </FieldSupport>
                   </FilledTextField>
                 </FormFieldSet>
               </form>
@@ -532,37 +548,44 @@ onBeforeUnmount(() => {
               <form @submit="onSubmit">
                 <FormFieldSet>
                   <FilledTextField :state="TextFieldState.disabled">
-                    <template #leading>
-                      <RoundedIcon class="leading">
-                        mail
-                      </RoundedIcon>
-                    </template>
-                    <template #text>
-                      <TypographyLabel
-                        name="email"
-                        class="text"
+                    <FieldBody>
+                      <FieldIcon class="leading">
+                        <RoundedIcon>
+                          mail
+                        </RoundedIcon>
+                      </FieldIcon>
+                      <FieldControl>
+                        <FieldLabel
+                          name="email"
+                        >
+                          Email
+                        </FieldLabel>
+                        <FieldInput
+                          name="email"
+                          @change="handleChange"
+                        />
+                      </FieldControl>
+                      <FieldIcon
+                        v-if="errors.email"
+                        class="trailing"
                       >
-                        Email
-                      </TypographyLabel>
-                    </template>
-                    <template #input>
-                      <FormInput name="email" />
-                    </template>
-                    <template
-                      v-if="errors.email"
-                      #supporting
-                    >
-                      <TypographyLabel class="supporting">
+                        <RoundedIcon>
+                          error
+                        </RoundedIcon>
+                      </FieldIcon>
+                    </FieldBody>
+                    <FieldSupport v-if="errors.email">
+                      <FieldText>
                         {{ errors.email }}
-                      </TypographyLabel>
-                    </template>
+                      </FieldText>
+                    </FieldSupport>
                   </FilledTextField>
                 </FormFieldSet>
               </form>
-            </Column> -->
+            </Column>
           </Row>
         </div>
-        <!-- <TypographyDisplay :size="TypographySize.small">
+        <TypographyDisplay :size="TypographySize.small">
           Filled text field error states
         </TypographyDisplay>
         <div>
@@ -572,35 +595,37 @@ onBeforeUnmount(() => {
                 <form @submit="onSubmit">
                   <FormFieldSet>
                     <FilledTextField :has-error="true">
-                      <template #leading>
-                        <RoundedIcon class="leading">
-                          mail
-                        </RoundedIcon>
-                      </template>
-                      <template #text>
-                        <TypographyLabel
-                          name="email"
-                          class="text"
+                      <FieldBody>
+                        <FieldIcon class="leading">
+                          <RoundedIcon>
+                            mail
+                          </RoundedIcon>
+                        </FieldIcon>
+                        <FieldControl>
+                          <FieldLabel
+                            name="email"
+                          >
+                            Email
+                          </FieldLabel>
+                          <FieldInput
+                            name="email"
+                            @change="handleChange"
+                          />
+                        </FieldControl>
+                        <FieldIcon
+                          v-if="errors.email"
+                          class="trailing"
                         >
-                          Email
-                        </TypographyLabel>
-                      </template>
-                      <template #input>
-                        <FormInput name="email" />
-                      </template>
-                      <template #trailing>
-                        <RoundedIcon class="trailing">
-                          close
-                        </RoundedIcon>
-                      </template>
-                      <template
-                        v-if="errors.email"
-                        #supporting
-                      >
-                        <TypographyLabel class="supporting">
+                          <RoundedIcon>
+                            error
+                          </RoundedIcon>
+                        </FieldIcon>
+                      </FieldBody>
+                      <FieldSupport v-if="errors.email">
+                        <FieldText>
                           {{ errors.email }}
-                        </TypographyLabel>
-                      </template>
+                        </FieldText>
+                      </FieldSupport>
                     </FilledTextField>
                   </FormFieldSet>
                 </form>
@@ -612,30 +637,37 @@ onBeforeUnmount(() => {
                       :state="TextFieldState.hovered"
                       :has-error="true"
                     >
-                      <template #leading>
-                        <RoundedIcon class="leading">
-                          mail
-                        </RoundedIcon>
-                      </template>
-                      <template #text>
-                        <TypographyLabel
-                          name="email"
-                          class="text"
+                      <FieldBody>
+                        <FieldIcon class="leading">
+                          <RoundedIcon>
+                            mail
+                          </RoundedIcon>
+                        </FieldIcon>
+                        <FieldControl>
+                          <FieldLabel
+                            name="email"
+                          >
+                            Email
+                          </FieldLabel>
+                          <FieldInput
+                            name="email"
+                            @change="handleChange"
+                          />
+                        </FieldControl>
+                        <FieldIcon
+                          v-if="errors.email"
+                          class="trailing"
                         >
-                          Email
-                        </TypographyLabel>
-                      </template>
-                      <template #input>
-                        <FormInput name="email" />
-                      </template>
-                      <template
-                        v-if="errors.email"
-                        #supporting
-                      >
-                        <TypographyLabel class="supporting">
+                          <RoundedIcon>
+                            error
+                          </RoundedIcon>
+                        </FieldIcon>
+                      </FieldBody>
+                      <FieldSupport v-if="errors.email">
+                        <FieldText>
                           {{ errors.email }}
-                        </TypographyLabel>
-                      </template>
+                        </FieldText>
+                      </FieldSupport>
                     </FilledTextField>
                   </FormFieldSet>
                 </form>
@@ -647,35 +679,37 @@ onBeforeUnmount(() => {
                       :state="TextFieldState.focused"
                       :has-error="true"
                     >
-                      <template #leading>
-                        <RoundedIcon class="leading">
-                          mail
-                        </RoundedIcon>
-                      </template>
-                      <template #text>
-                        <TypographyLabel
-                          name="email"
-                          class="text"
+                      <FieldBody>
+                        <FieldIcon class="leading">
+                          <RoundedIcon>
+                            mail
+                          </RoundedIcon>
+                        </FieldIcon>
+                        <FieldControl>
+                          <FieldLabel
+                            name="email"
+                          >
+                            Email
+                          </FieldLabel>
+                          <FieldInput
+                            name="email"
+                            @change="handleChange"
+                          />
+                        </FieldControl>
+                        <FieldIcon
+                          v-if="errors.email"
+                          class="trailing"
                         >
-                          Email
-                        </TypographyLabel>
-                      </template>
-                      <template #input>
-                        <FormInput name="email" />
-                      </template>
-                      <template #trailing>
-                        <RoundedIcon class="trailing">
-                          close
-                        </RoundedIcon>
-                      </template>
-                      <template
-                        v-if="errors.email"
-                        #supporting
-                      >
-                        <TypographyLabel class="supporting">
+                          <RoundedIcon>
+                            error
+                          </RoundedIcon>
+                        </FieldIcon>
+                      </FieldBody>
+                      <FieldSupport v-if="errors.email">
+                        <FieldText>
                           {{ errors.email }}
-                        </TypographyLabel>
-                      </template>
+                        </FieldText>
+                      </FieldSupport>
                     </FilledTextField>
                   </FormFieldSet>
                 </form>
@@ -684,37 +718,44 @@ onBeforeUnmount(() => {
                 <form @submit="onSubmit">
                   <FormFieldSet>
                     <FilledTextField :state="TextFieldState.disabled">
-                      <template #leading>
-                        <RoundedIcon class="leading">
-                          mail
-                        </RoundedIcon>
-                      </template>
-                      <template #text>
-                        <TypographyLabel
-                          name="email"
-                          class="text"
+                      <FieldBody>
+                        <FieldIcon class="leading">
+                          <RoundedIcon>
+                            mail
+                          </RoundedIcon>
+                        </FieldIcon>
+                        <FieldControl>
+                          <FieldLabel
+                            name="email"
+                          >
+                            Email
+                          </FieldLabel>
+                          <FieldInput
+                            name="email"
+                            @change="handleChange"
+                          />
+                        </FieldControl>
+                        <FieldIcon
+                          v-if="errors.email"
+                          class="trailing"
                         >
-                          Email
-                        </TypographyLabel>
-                      </template>
-                      <template #input>
-                        <FormInput name="email" />
-                      </template>
-                      <template
-                        v-if="errors.email"
-                        #supporting
-                      >
-                        <TypographyLabel class="supporting">
+                          <RoundedIcon>
+                            error
+                          </RoundedIcon>
+                        </FieldIcon>
+                      </FieldBody>
+                      <FieldSupport v-if="errors.email">
+                        <FieldText>
                           {{ errors.email }}
-                        </TypographyLabel>
-                      </template>
+                        </FieldText>
+                      </FieldSupport>
                     </FilledTextField>
                   </FormFieldSet>
                 </form>
               </Column>
             </Row>
           </div>
-        </div> -->
+        </div>
       </section>
     </div>
   </AppMain>

@@ -1,3 +1,4 @@
+<!--
 /**
  * BSD 3-Clause License
  *
@@ -29,39 +30,73 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+-->
 
-export {
-	FormFieldSet,
-} from '@/lib/forms/FormFieldSet'
+<script lang="ts" setup>
+import {
+	computed,
+	toRef,
+} from 'vue'
 
-export {
-	FormField,
-} from '@/lib/forms/FormField'
+import {
+	useField,
+} from 'vee-validate'
 
-export {
-	FieldBody,
-} from '@/lib/forms/FieldBody'
+// interface FieldMeta {
+//   dirty: boolean;
+//   pending: boolean;
+//   touched: boolean;
+//   valid: boolean;
+//   initialValue: any;
+// }
 
-export {
-	FieldControl,
-} from '@/lib/forms/FieldControl'
+const props = defineProps({
+	name: {
+		type: String,
+		required: true,
+	},
+	modelValue: {
+		type: String,
+		default: '',
+	},
+})
 
-export {
-	FieldIcon,
-} from '@/lib/forms/FieldIcon'
+const nameRef = toRef(props, 'name')
 
-export {
-	default as FieldInput,
-} from '@/lib/forms/FieldInput.vue'
+const {
+	errorMessage,
+	value,
+	handleChange,
+	// meta
+} = useField(nameRef, undefined, {
+	validateOnValueUpdate: false,
+})
 
-export {
-	FieldLabel,
-} from '@/lib/forms/FieldLabel'
+const validationListeners = computed(() => {
+	// If the field is valid or have not been validated yet
+	if (!errorMessage.value) {
+		return {
+			blur: handleChange,
+			change: handleChange,
+			// disable `shouldValidate` to avoid validating on input
+			input: (event: Event): void => handleChange(event, false),
+		}
+	}
 
-export {
-	FieldSupport,
-} from '@/lib/forms/FieldSupport'
+	return {
+		blur: handleChange,
+		change: handleChange,
+		input: handleChange, // only switched this
+	}
+})
 
-export {
-	FieldText,
-} from '@/lib/forms/FieldText'
+</script>
+
+<template>
+  <input
+    class="field-input"
+    type="text"
+    v-model="value"
+    v-on="validationListeners"
+  >
+</template>
