@@ -430,7 +430,10 @@ onBeforeUnmount(() => {
             <Column>
               <form @submit="onSubmit">
                 <FormFieldSet>
-                  <FilledTextField ref="emailRef">
+                  <FilledTextField
+                    ref="emailRef"
+                    :has-error="'undefined' !== typeof errors.email"
+                  >
                     <FieldBody>
                       <FieldIcon class="leading">
                         <RoundedIcon>

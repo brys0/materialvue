@@ -40,6 +40,7 @@
   align-items: stretch
   
   .field-body
+    height: 56px
     padding: 8px 16px
     display: flex
     flex-flow: row nowrap
@@ -72,6 +73,16 @@
     padding: 4px 16px 0
     flex-flow: row nowrap
     align-items: center
+  
+  &.is-empty:not(.focused)
+    .field-body
+      .field-control
+        .field-label
+          @extend %typography-body-large
+        
+        .field-input
+          display: none
+          visibility: hidden
 
   &.filled
     .field-body
@@ -95,6 +106,8 @@
 
       .field-control
         .field-label
+          @extend %typography-body-small
+
           @include theme.preferred
             color: theme.style(on-surface-variant)
 
@@ -116,7 +129,7 @@
         @include theme.preferred
           color: theme.style(on-surface-variant)
 
-    &.error
+    &.has-error
       .field-body
         border-bottom-width: 2px
         
@@ -164,7 +177,7 @@
           @include theme.preferred
             color: theme.style(on-surface-variant)
       
-      &.error
+      &.has-error
         .field-body
           @include theme.preferred
             border-bottom-color: theme.style(on-error-container)
@@ -200,6 +213,8 @@
 
         .field-control
           .field-label
+            @extend %typography-body-small
+
             @include theme.preferred
               color: theme.style(primary)
 
@@ -212,7 +227,7 @@
           @include theme.preferred
             color: theme.style(on-surface-variant)
 
-      &.error
+      &.has-error
         .field-body
           @include theme.preferred
             border-bottom-color: theme.style(error)

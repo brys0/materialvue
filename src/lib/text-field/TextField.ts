@@ -60,27 +60,57 @@ export const TextField = defineComponent({
 			type: Boolean,
 			default: false,
 		},
+		isEmpty: {
+			type: Boolean,
+			default: true,
+		},
 	},
 	emits: [
 		'updateState',
 		'click'
 	],
+	mounted() {
+		const {
+			$el,
+		} = this
+
+		const fieldInputEl = $el.querySelector('.field-input')
+		if (fieldInputEl instanceof HTMLInputElement) {
+			if (0 < fieldInputEl.value.length) {
+				$el.classList.remove('is-empty')
+			}
+		}
+	},
+	updated() {
+		const {
+			$el,
+		} = this
+
+		const fieldInputEl = $el.querySelector('.field-input')
+		if (fieldInputEl instanceof HTMLInputElement) {
+			if (0 < fieldInputEl.value.length) {
+				$el.classList.remove('is-empty')
+			}
+		}
+	},
 	render(): VNode {
 		const inputRef = ref<null | VNode>(null)
 
 		const {
 			state,
 			hasError,
+			isEmpty,
 		} = this.$props
 
 		const field = h(FormField, {
 			class: {
 				'text-field': true,
+				'has-error': hasError,
+				'is-empty': isEmpty,
 				enabled: TextFieldState.enabled === state,
 				hovered: TextFieldState.hovered === state,
 				focused: TextFieldState.focused === state,
 				disabled: TextFieldState.disabled === state,
-				error: true === hasError,
 			},
 			onClick: (event: PointerEvent) => {
 				if (TextFieldState.enabled === this.$props.state) {
@@ -90,10 +120,10 @@ export const TextField = defineComponent({
 
 					$el.classList.add('focused')
 
-					const el = inputRef.value?.el
-					if (el instanceof HTMLInputElement) {
-						el.focus()
-						el.onblur = (): void => {
+					const fieldInputEl = $el.querySelector('.field-input')
+					if (fieldInputEl instanceof HTMLInputElement) {
+						fieldInputEl.focus()
+						fieldInputEl.onblur = (): void => {
 							$el.classList.remove('focused')
 						}
 					}
