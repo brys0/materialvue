@@ -59,8 +59,8 @@ export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
 		filled: true,
 	},
 	onClick: (event: PointerEvent) => emit('click', event),
-	onFocus: (event: Event) => emit('focus', event),
-	onblur: (event: Event) => emit('blur', event),
+	onBlur: (event: FocusEvent) => emit('blur', event),
+	onFocus: (event: FocusEvent) => emit('focus', event),
 	'onUpdate:state': (newState: TextFieldState, oldState: TextFieldState) => emit('update:state', newState, oldState),
 }, {
 	default: () => slots.default?.(),

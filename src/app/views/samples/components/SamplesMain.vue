@@ -460,11 +460,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldIcon>
                       <FieldControl>
                         <FieldLabel
-                          name="email"
+                          name="name"
                         >
                           Email
                         </FieldLabel>
-                        <FieldInput name="email" />
+                        <FieldInput name="name" />
                       </FieldControl>
                       <FieldIcon
                         v-if="errors.email"
@@ -496,11 +496,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldIcon>
                       <FieldControl>
                         <FieldLabel
-                          name="email"
+                          name="name"
                         >
                           Email
                         </FieldLabel>
-                        <FieldInput name="email" />
+                        <FieldInput name="name" />
                       </FieldControl>
                       <FieldIcon
                         v-if="errors.email"
@@ -532,11 +532,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldIcon>
                       <FieldControl>
                         <FieldLabel
-                          name="email"
+                          name="name"
                         >
                           Email
                         </FieldLabel>
-                        <FieldInput name="email" />
+                        <FieldInput name="name" />
                       </FieldControl>
                       <FieldIcon
                         v-if="errors.email"
@@ -576,11 +576,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldIcon>
                         <FieldControl>
                           <FieldLabel
-                            name="email"
+                            name="name"
                           >
                             Email
                           </FieldLabel>
-                          <FieldInput name="email" />
+                          <FieldInput name="name" />
                         </FieldControl>
                         <FieldIcon
                           v-if="errors.email"
@@ -615,11 +615,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldIcon>
                         <FieldControl>
                           <FieldLabel
-                            name="email"
+                            name="name"
                           >
                             Email
                           </FieldLabel>
-                          <FieldInput name="email" />
+                          <FieldInput name="name" />
                         </FieldControl>
                         <FieldIcon
                           v-if="errors.email"
@@ -654,11 +654,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldIcon>
                         <FieldControl>
                           <FieldLabel
-                            name="email"
+                            name="name"
                           >
                             Email
                           </FieldLabel>
-                          <FieldInput name="email" />
+                          <FieldInput name="name" />
                         </FieldControl>
                         <FieldIcon
                           v-if="errors.email"
@@ -690,11 +690,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldIcon>
                         <FieldControl>
                           <FieldLabel
-                            name="email"
+                            name="name"
                           >
                             Email
                           </FieldLabel>
-                          <FieldInput name="email" />
+                          <FieldInput name="name" />
                         </FieldControl>
                         <FieldIcon
                           v-if="errors.email"

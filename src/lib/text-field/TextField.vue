@@ -44,10 +44,6 @@ import {
 } from 'vue'
 
 import {
-	logger,
-} from '@cosmicmind/foundation'
-
-import {
 	FormField,
 } from '@/lib/forms'
 
@@ -67,26 +63,31 @@ const props = defineProps({
 })
 
 const emit = defineEmits<
-{(e: 'click', event: MouseEvent): void
- (e: 'blur', event: Event): void
- (e: 'focus', event: Event): void
+{(e: 'click', event: PointerEvent): void
+ (e: 'blur', event: FocusEvent): void
+ (e: 'focus', event: FocusEvent): void
  (e: 'update:state', newState: TextFieldState, oldState: TextFieldState): void
 }>()
 
 const fieldRef = ref<HTMLElement | null>(null)
 const inputRef = ref<HTMLInputElement | null>(null)
-const isEmptyRef = computed(() => inputRef.value instanceof HTMLInputElement && 0 === inputRef.value.value.length)
 const stateRef = ref(props.state)
 const enabledRef = ref(TextFieldState.enabled === props.state)
 const hoveredRef = ref(TextFieldState.hovered === props.state)
 const focusedRef = ref(TextFieldState.focused === props.state)
 const disabledRef = ref(TextFieldState.disabled === props.state)
 const hasErrorRef = toRef(props, 'hasError')
+const isMouseDown = ref(false)
+
+const isEmpty = (): boolean => {
+	const target = inputRef.value
+	return target instanceof HTMLInputElement && 0 === target.value.length
+}
 
 const classRef = computed(() => ({
 	'text-field': true,
 	'has-error': hasErrorRef.value,
-	'is-empty': isEmptyRef.value,
+	'is-empty': isEmpty(),
 	enabled: enabledRef.value,
 	hovered: hoveredRef.value,
 	focused: focusedRef.value,
@@ -94,8 +95,6 @@ const classRef = computed(() => ({
 }))
 
 const updateState = (newState: TextFieldState): void => {
-	logger.trace('updateState')
-
 	const oldState = stateRef.value
 	if (newState !== oldState) {
 		stateRef.value = newState
@@ -135,42 +134,36 @@ const updateState = (newState: TextFieldState): void => {
 	}
 }
 
-const handleClick = (event: MouseEvent): void => {
-	event.preventDefault()
-	event.stopPropagation()
+const handleMouseDown = (): void => {
+	isMouseDown.value = true
+}
 
-	logger.trace('handleClick')
+const handleClick = (event: PointerEvent): void => {
+	isMouseDown.value = false
+
 	const el = fieldRef.value
-
-	if (el instanceof HTMLElement &&
-		event.target instanceof HTMLElement &&
-		el.contains(event.target)) {
-
+	if (el instanceof HTMLElement) {
 		const target = inputRef.value
 		if (target instanceof HTMLInputElement) {
 			nextTick(() => {
-				logger.trace('nextTick', target)
 				target.focus()
 			})
 		}
 
 		updateState(TextFieldState.focused)
 	}
-	else {
-		updateState(TextFieldState.enabled)
-	}
 
 	emit('click', event)
 }
 
-const handleBlur = (event: Event): void => {
-	logger.trace('handleBlur')
-	updateState(TextFieldState.enabled)
-	emit('blur', event)
+const handleBlur = (event: FocusEvent): void => {
+	if (!isMouseDown.value) {
+		updateState(TextFieldState.enabled)
+		emit('blur', event)
+	}
 }
 
-const handleFocus = (event: Event): void => {
-	logger.trace('handleFocus')
+const handleFocus = (event: FocusEvent): void => {
 	updateState(TextFieldState.focused)
 	emit('focus', event)
 }
@@ -199,6 +192,7 @@ onBeforeUnmount(() => {
 })
 
 const listeners = computed(() => ({
+	mousedown: handleMouseDown,
 	click: handleClick,
 }))
 
