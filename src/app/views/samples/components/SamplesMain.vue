@@ -111,81 +111,81 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </section>
       <section>
         <TypographyDisplay :size="TypographySize.small">
-          TypographyDisplay
+          Display
         </TypographyDisplay>
         <div>
           <TypographyDisplay :size="TypographySize.large">
-            TypographyDisplay Large - Roboto 57/64 . 0
+            Display Large - Roboto 57/64 . 0
           </TypographyDisplay>
           <TypographyDisplay :size="TypographySize.medium">
-            TypographyDisplay Medium - Roboto 45/52 .  0
+            Display Medium - Roboto 45/52 .  0
           </TypographyDisplay>
           <TypographyDisplay :size="TypographySize.small">
-            TypographyDisplay Small - Roboto 36/44 . 0
+            Display Small - Roboto 36/44 . 0
           </TypographyDisplay>
         </div>
       </section>
       <section>
         <TypographyDisplay :size="TypographySize.small">
-          TypographyHeadline
+          Headline
         </TypographyDisplay>
         <div>
           <TypographyHeadline :size="TypographySize.large">
-            TypographyHeadline Large - Roboto 32/40 . 0
+            Headline Large - Roboto 32/40 . 0
           </TypographyHeadline>
           <TypographyHeadline :size="TypographySize.medium">
-            TypographyHeadline Medium - Roboto 28/36 . 0
+            Headline Medium - Roboto 28/36 . 0
           </TypographyHeadline>
           <TypographyHeadline :size="TypographySize.small">
-            TypographyHeadline Small - Roboto 24/32 . 0
+            Headline Small - Roboto 24/32 . 0
           </TypographyHeadline>
         </div>
       </section>
       <section>
         <TypographyDisplay :size="TypographySize.small">
-          TypographyTitle
+          Title
         </TypographyDisplay>
         <div>
           <TypographyTitle :size="TypographySize.large">
-            TypographyTitle Large - Roboto Medium 22/28 . 0
+            Title Large - Roboto Medium 22/28 . 0
           </TypographyTitle>
           <TypographyTitle :size="TypographySize.medium">
-            TypographyTitle Medium - Roboto Medium 16/24 . +0.15
+            Title Medium - Roboto Medium 16/24 . +0.15
           </TypographyTitle>
           <TypographyTitle :size="TypographySize.small">
-            TypographyTitle Small - Roboto Medium 14/20 . +0.1
+            Title Small - Roboto Medium 14/20 . +0.1
           </TypographyTitle>
         </div>
       </section>
       <section>
         <TypographyDisplay :size="TypographySize.small">
-          TypographyLabel
+          Label
         </TypographyDisplay>
         <div>
           <TypographyLabel :size="TypographySize.large">
-            TypographyLabel Large - Roboto Medium 14/20 . +0.1
+            Label Large - Roboto Medium 14/20 . +0.1
           </TypographyLabel>
           <TypographyLabel :size="TypographySize.medium">
-            TypographyLabel Medium - Roboto Medium 12/16 . +0.5
+            Label Medium - Roboto Medium 12/16 . +0.5
           </TypographyLabel>
           <TypographyLabel :size="TypographySize.small">
-            TypographyLabel Small - Roboto Medium 11/16 . +0.5
+            Label Small - Roboto Medium 11/16 . +0.5
           </TypographyLabel>
         </div>
       </section>
       <section>
         <TypographyDisplay :size="TypographySize.small">
-          TypographyBody
+          Body
         </TypographyDisplay>
         <div>
           <TypographyBody :size="TypographySize.large">
-            TypographyBody Large - Roboto 16/24 . +0.15
+            Body Large - Roboto 16/24 . +0.15
           </TypographyBody>
           <TypographyBody :size="TypographySize.medium">
-            TypographyBody Medium - Roboto 14/20 . +0.25
+            Body Medium - Roboto 14/20 . +0.25
           </TypographyBody>
           <TypographyBody :size="TypographySize.small">
-            TypographyBody Small - Roboto 12/16 . +0.4
+            Body Small - Roboto 12/16 . +0.4
           </TypographyBody>
         </div>
       </section>

@@ -122,6 +122,14 @@
             color: theme.style(on-surface)
             caret-color: theme.style(primary)
 
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover, 
+          &:-webkit-autofill:focus, 
+          &:-webkit-autofill:active
+            @include theme.preferred
+              -webkit-text-fill-color: theme.style(on-surface) !important
+              -webkit-box-shadow: 0 0 0 30px theme.style(surface-variant) inset !important
+            
     .field-support
       .field-text
         @extend %typography-body-small
@@ -169,8 +177,12 @@
               color: theme.style(on-surface-variant)
 
           .field-input
-            @include theme.preferred
-              color: theme.style(on-surface)
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover, 
+            &:-webkit-autofill:focus, 
+            &:-webkit-autofill:active
+              @include theme.preferred
+                -webkit-box-shadow: 0 0 0 30px theme.tint(theme.style(on-surface), theme.style(surface-variant), 8%) inset !important
 
       .field-support
         .field-text
@@ -217,10 +229,6 @@
 
             @include theme.preferred
               color: theme.style(primary)
-
-          .field-input
-            @include theme.preferred
-              color: theme.style(on-surface)
               
       .field-support
         .field-text
@@ -287,6 +295,14 @@
 
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+            
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover, 
+            &:-webkit-autofill:focus, 
+            &:-webkit-autofill:active
+              @include theme.preferred
+                -webkit-text-fill-color: conversion.hex-to-rgba(theme.style(on-surface), 38%) !important
+                -webkit-box-shadow: 0 0 0 30px conversion.hex-to-rgba(theme.style(on-surface), 4%) inset !important
                 
       .field-support
         .field-text
