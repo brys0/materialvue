@@ -50,7 +50,7 @@ import {
 	TextFieldState,
 	FilledTextField,
 	RoundedIcon,
-} from '@/index'
+} from '@/lib/vue'
 
 const validationSchema = object({
 	email: string().required().email().label('Email Address'),

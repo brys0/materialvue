@@ -1,6 +1,6 @@
 {
   "name": "@cosmicmind/materialjs",
-  "version": "0.0.1-rc-011223-1",
+  "version": "0.0.1-rc-011223-2",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
   "author": {
@@ -83,6 +83,7 @@
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.0",
+    "vite-plugin-static-copy": "^0.13.0",
     "vitest": "^0.23.0",
     "yup": "^0.32.11"
   }
