@@ -31,9 +31,12 @@
  */
 
 export {
-	TextField,
+	default as TextField,
+} from '@/lib/text-field/TextField.vue'
+
+export {
 	TextFieldState,
-} from '@/lib/text-field/TextField'
+} from '@/lib/text-field/TextFieldState'
 
 export {
 	FilledTextField,

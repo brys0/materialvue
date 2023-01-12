@@ -30,54 +30,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
-
-import {
-	TextField,
-	TextFieldState,
-} from '@/lib/text-field'
-
-export type FilledTextFieldProps = {
-	state?: TextFieldState
-	hasError?: boolean
+export enum TextFieldState {
+  enabled = 'enabled',
+  hovered = 'hovered',
+  focused = 'focused',
+	disabled = 'disabled',
 }
-
-export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
-	state,
-	hasError,
-}, {
-	slots,
-	emit,
-}): VNode => h(TextField, {
-	state: state ?? TextFieldState.enabled,
-	hasError,
-	class: {
-		filled: true,
-	},
-	onClick: (event: PointerEvent) => emit('click', event),
-	onFocus: (event: Event) => emit('focus', event),
-	onblur: (event: Event) => emit('blur', event),
-	'onUpdate:state': (newState: TextFieldState, oldState: TextFieldState) => emit('update:state', newState, oldState),
-}, {
-	default: () => slots.default?.(),
-})
-
-FilledTextField.displayName = 'FilledTextField'
-
-FilledTextField.emits = [
-	'click',
-	'blur',
-	'focus',
-	'update:state'
-]
-
-FilledTextField.props = [
-	'state',
-	'hasError'
-]
-
-export default FilledTextField

@@ -70,28 +70,6 @@ const {
 
 const emailRef = ref<HTMLElement>()
 
-const handleChange = (event: Event): void => {
-	const {
-		target,
-	} = event
-
-	if (target instanceof HTMLInputElement) {
-		const $el = emailRef.value
-		if ($el instanceof HTMLElement) {
-			if (0 === target.value.length) {
-				$el.classList.add('is-empty')
-			}
-			else {
-				$el.classList.remove('is-empty')
-			}
-		}
-	}
-}
-
-const unwatchEmailRef = watch(emailRef, email => {
-	email?.classList.add('is-empty')
-})
-
 const unwatchErrors = watch(errors, errors => {
 	if (errors.email) {
 		emailRef.value?.classList.add('error')
@@ -109,8 +87,11 @@ const onSubmit = handleSubmit((data): void => {
 
 onBeforeUnmount(() => {
 	unwatchErrors()
-	unwatchEmailRef()
 })
+
+const updateState = (newState: TextFieldState, oldState: TextFieldState): void => {
+	console.log('newState', newState, 'oldState', oldState)
+}
 
 </script>
 
@@ -433,6 +414,7 @@ onBeforeUnmount(() => {
                   <FilledTextField
                     ref="emailRef"
                     :has-error="'undefined' !== typeof errors.email"
+                    @update:state="updateState"
                   >
                     <FieldBody>
                       <FieldIcon class="leading">
@@ -446,10 +428,7 @@ onBeforeUnmount(() => {
                         >
                           Email
                         </FieldLabel>
-                        <FieldInput
-                          name="email"
-                          @change="handleChange"
-                        />
+                        <FieldInput name="email" />
                       </FieldControl>
                       <FieldIcon
                         v-if="errors.email"
@@ -485,10 +464,7 @@ onBeforeUnmount(() => {
                         >
                           Email
                         </FieldLabel>
-                        <FieldInput
-                          name="email"
-                          @change="handleChange"
-                        />
+                        <FieldInput name="email" />
                       </FieldControl>
                       <FieldIcon
                         v-if="errors.email"
@@ -524,10 +500,7 @@ onBeforeUnmount(() => {
                         >
                           Email
                         </FieldLabel>
-                        <FieldInput
-                          name="email"
-                          @change="handleChange"
-                        />
+                        <FieldInput name="email" />
                       </FieldControl>
                       <FieldIcon
                         v-if="errors.email"
@@ -563,10 +536,7 @@ onBeforeUnmount(() => {
                         >
                           Email
                         </FieldLabel>
-                        <FieldInput
-                          name="email"
-                          @change="handleChange"
-                        />
+                        <FieldInput name="email" />
                       </FieldControl>
                       <FieldIcon
                         v-if="errors.email"
@@ -610,10 +580,7 @@ onBeforeUnmount(() => {
                           >
                             Email
                           </FieldLabel>
-                          <FieldInput
-                            name="email"
-                            @change="handleChange"
-                          />
+                          <FieldInput name="email" />
                         </FieldControl>
                         <FieldIcon
                           v-if="errors.email"
@@ -652,10 +619,7 @@ onBeforeUnmount(() => {
                           >
                             Email
                           </FieldLabel>
-                          <FieldInput
-                            name="email"
-                            @change="handleChange"
-                          />
+                          <FieldInput name="email" />
                         </FieldControl>
                         <FieldIcon
                           v-if="errors.email"
@@ -694,10 +658,7 @@ onBeforeUnmount(() => {
                           >
                             Email
                           </FieldLabel>
-                          <FieldInput
-                            name="email"
-                            @change="handleChange"
-                          />
+                          <FieldInput name="email" />
                         </FieldControl>
                         <FieldIcon
                           v-if="errors.email"
@@ -733,10 +694,7 @@ onBeforeUnmount(() => {
                           >
                             Email
                           </FieldLabel>
-                          <FieldInput
-                            name="email"
-                            @change="handleChange"
-                          />
+                          <FieldInput name="email" />
                         </FieldControl>
                         <FieldIcon
                           v-if="errors.email"

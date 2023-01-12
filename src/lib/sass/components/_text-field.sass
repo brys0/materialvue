@@ -46,6 +46,7 @@
     flex-flow: row nowrap
     align-items: center
     gap: 16px
+    overflow: hidden
     
     .field-icon
       &.leading,
@@ -81,9 +82,8 @@
           @extend %typography-body-large
         
         .field-input
-          display: none
-          visibility: hidden
-
+          height: 0
+        
   &.filled
     .field-body
       border-bottom-style: solid

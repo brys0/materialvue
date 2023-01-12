@@ -34,13 +34,11 @@
 
 <script lang="ts" setup>
 import {
-	computed,
 	toRef,
+	computed,
 } from 'vue'
 
-import {
-	useField,
-} from 'vee-validate'
+import { useField } from 'vee-validate'
 
 // interface FieldMeta {
 //   dirty: boolean;
@@ -68,12 +66,10 @@ const {
 	value,
 	handleChange,
 	// meta
-} = useField(nameRef, undefined, {
-	validateOnValueUpdate: false,
-})
+} = useField(nameRef, undefined, { validateOnValueUpdate: false })
 
-const validationListeners = computed(() => {
-	// If the field is valid or have not been validated yet
+const listeners = computed(() => {
+	// if the field is valid or have not been validated yet
 	if (!errorMessage.value) {
 		return {
 			blur: handleChange,
@@ -97,6 +93,6 @@ const validationListeners = computed(() => {
     class="field-input"
     type="text"
     v-model="value"
-    v-on="validationListeners"
+    v-on="listeners"
   >
 </template>
