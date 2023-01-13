@@ -32,21 +32,72 @@
 
 @use '../theme'
 
-// .navigation-drawer
-//   padding: 12px
+body
+  margin: 0 !important
+  padding: 0 !important
+  width: 100vw
+  height: 100vh
+  display: grid
+  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] min-content [row-2-end row-3-start] auto [row-3-end]
+  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] min-content [col-2-end col-3-start] auto [col-3-end col-4-start] 200px [col-4-end]
+  overflow: hidden
 
-//   > .container
-//     @include theme.preferred
-//       background-color: theme.style(surface)
+  @include theme.preferred
+    background-color: theme.style(background)
 
-//     > .headline
-//       position: relative
-//       line-height: 56px
-//       display: flex
-//       flex-flow: row nowrap
-//       flex: 1
-//       align-items: flex-start
-//       align-content: center
+.top-app-bar
+  @extend %is-noselect
 
-//       @include theme.preferred
-//         color: theme.style(on-surface-variant)
+  height: 56px
+  display: grid
+  grid-row: row-1-start / row-1-end
+  grid-column: col-1-start / col-4-end
+  background-color: purple
+
+.app-navigation-rail
+  @extend %is-noselect
+
+  width: 60px
+  display: grid
+  grid-row: row-2-start / row-3-end
+  grid-column: col-1-start
+  background-color: yellow
+
+.app-navigation-drawer
+  @extend %is-noselect
+
+  width: 250px
+  display: grid
+  grid-row: row-2-start / row-3-end
+  grid-column: col-2-start / col-2-end
+  background-color: blue
+
+.app-toolbar
+  @extend %is-noselect
+
+  height: 56px
+  display: grid
+  grid-row: row-2-start / row-2-end
+  grid-column: col-3-start / col-3-end
+  background-color: violet
+
+.app-main
+  @extend %is-noselect
+
+  display: grid
+  grid-row: row-3-start / row-3-end
+  grid-column: col-3-start / col-3-end
+  background-color: green
+
+  overflow: scroll
+
+.app-finder
+  @extend %is-noselect
+
+  width: 200px
+  display: grid
+  grid-row: row-2-start / row-3-end
+  grid-column: col-4-start / col-4-end
+  background-color: orange
+
+  overflow: scroll

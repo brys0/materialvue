@@ -40,13 +40,5 @@ import {
 </script>
 
 <template>
-  <AppNavigationDrawer class="is-opened" />
+  <AppNavigationDrawer />
 </template>
-
-<style lang="sass" scoped>
-  @use '@/lib/sass/theme'
-
-  .app-navigation-drawer
-    background: yellow
-
-</style>

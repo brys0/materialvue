@@ -1,0 +1,167 @@
+/**
+ * BSD 3-Clause License
+ *
+ * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicverse dot org>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its
+ *    contributors may be used to endorse or promote products derived from
+ *    this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES LOSS OF USE, DATA, OR PROFITS OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+@use '../theme'
+
+body
+  margin: 0 !important
+  padding: 0 !important
+  position: absolute
+  width: 100vw
+  height: 100vh
+  // display: grid
+  // grid-template-rows: [app-start] auto [app-end]
+  
+// .app
+//   @extend %is-noselect
+
+//   position: relative
+//   top: 0
+//   left: 0
+//   bottom: 0
+// //   right: 0
+//   overflow: scroll
+  // display: grid
+  // grid-row: app-start / app-end
+  // grid-template-rows: [top-app-bar-start] 56px [top-app-bar-end app-body-start] auto [app-body-end]
+  
+  @include theme.preferred
+    background-color: theme.style(background)
+
+.top-app-bar
+  @extend %is-noselect
+
+  position: sticky
+  top: 0
+  left: 0
+  right: 0
+  height: 56px
+  z-index: 1
+  // display: grid
+  // grid-row: top-app-bar-start / top-app-bar-end
+  
+  background-color: purple
+
+// .app-body
+//   @extend %is-noselect
+
+//   position: relative
+//   top: 56px
+//   left: 0
+//   bottom: 0
+//   right: 0
+  // display: grid
+  // grid-row: app-body-start / app-body-end
+  // grid-template-columns: [app-navigation-rail-start] 60px [app-navigation-rail-end app-navigation-drawer-start] 256px [app-navigation-drawer-end app-content-start] auto [app-content-end app-finder-start] 300px [app-finder-end]
+
+  // background-color: green
+
+.app-navigation-rail
+  @extend %is-noselect
+
+  position: sticky
+  top: 56px
+  left: 0
+  bottom: 0
+  width: 60px
+  z-index: 1
+  // display: grid
+  // grid-column: app-navigation-rail-start / app-navigation-rail-end
+  
+  background-color: blue
+
+.app-navigation-drawer
+  @extend %is-noselect
+
+  position: sticky
+  top: 56px
+  left: 60px
+  bottom: 0
+  width: 250px
+  z-index: 1
+  // display: grid
+  // grid-column: app-navigation-drawer-start / app-navigation-drawer-end
+  
+  background-color: yellow
+
+// .app-content
+//   @extend %is-noselect
+
+//   position: relative
+//   top: 56px
+//   left: 310px
+//   bottom: 0
+//   right: 0
+  
+//   // display: grid
+//   // grid-column: app-content-start / app-content-end
+//   // grid-template-rows: [app-toolbar-start] 56px [app-toolbar-end app-main-start] auto [app-main-end]
+  
+//   background-color: orange
+
+.app-toolbar
+  @extend %is-noselect
+
+  position: sticky
+  top: 56px
+  left: 310px
+  right: 0
+  height: 56px
+  z-index: 1
+  // display: grid
+  // grid-row: app-toolbar-start / app-toolbar-end
+
+  background-color: violet
+
+.app-main
+  @extend %is-noselect
+
+  // position: relative
+  margin: 112px 300px 0 310px
+
+  z-index: 0
+  // display: grid
+  // grid-row: app-main-start / app-main-end
+  background-color: brown
+
+.app-finder
+  @extend %is-noselect
+
+  position: sticky
+  top: 56px
+  bottom: 0
+  right: 0
+  width: 300px
+  // display: grid
+  // grid-column: app-finder-start / app-finder-end
+
+  background-color: cyan

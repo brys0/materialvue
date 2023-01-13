@@ -35,6 +35,14 @@ export {
 } from '@/lib/vue/apps/App.vue'
 
 export {
+	default as AppLayoutTopAppBar,
+} from '@/lib/vue/apps/AppLayoutTopAppBar.vue'
+
+export {
+	AppBody,
+} from '@/lib/vue/apps/AppBody'
+
+export {
 	AppNavigationRail,
 } from '@/lib/vue/apps/AppNavigationRail'
 

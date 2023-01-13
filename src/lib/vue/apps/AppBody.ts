@@ -30,17 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-.top-app-bar
-  @extend %row
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-.top-app-bar-item
-  @extend %column
+export type AppBodyProps = {}
 
-.top-app-bar-start
-  @extend %row-start
-  
-.top-app-bar-center
-  @extend %row-center
-  
-.top-app-bar-end
-  @extend %row-end
+export const AppBody: FunctionalComponent<AppBodyProps> = (_, {
+	slots,
+}): VNode => h('aside', {
+	class: 'app-body',
+}, {
+	default: () => slots.default?.(),
+})
+
+AppBody.displayName = 'AppBody'
+
+AppBody.props = []
+
+export default AppBody

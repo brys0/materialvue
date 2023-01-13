@@ -40,13 +40,5 @@ import {
 </script>
 
 <template>
-  <AppFinder class="is-opened" />
+  <AppFinder />
 </template>
-
-<style lang="sass" scoped>
-  @use '@/lib/sass/theme'
-
-  .app-finder
-    background: blue
-
-</style>

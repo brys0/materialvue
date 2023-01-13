@@ -32,6 +32,8 @@
 
 export {
 	App,
+	AppLayoutTopAppBar,
+	AppBody,
 	AppNavigationDrawer,
 	AppNavigationRail,
 	AppContent,

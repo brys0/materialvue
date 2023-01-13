@@ -42,11 +42,3 @@ import {
 <template>
   <TopAppBar />
 </template>
-
-<style lang="sass" scoped>
-  @use '@/lib/sass/theme'
-
-  .top-app-bar
-    background: purple
-
-</style>

@@ -47,7 +47,7 @@ import {
 } from '@cosmicmind/foundation'
 
 import {
-	App,
+	AppLayoutTopAppBar,
 } from '@/lib/vue'
 
 import {
@@ -120,5 +120,5 @@ onBeforeUnmount((): void => {
 </script>
 
 <template>
-  <App />
+  <AppLayoutTopAppBar />
 </template>

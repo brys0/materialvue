@@ -1,3 +1,4 @@
+<!--
 /**
  * BSD 3-Clause License
  *
@@ -29,62 +30,20 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+-->
 
-%list-scrollable
-  min-width: 0
-  min-height: min-content
-  display: flex
-  flex: 1 0 0
-  overflow-x: hidden
-  overflow-y: auto
+<script lang="ts" setup>
+import AppBody from '@/lib/vue/apps/AppBody'
+import AppContent from '@/lib/vue/apps/AppContent'
 
-  > %list
-    min-width: 0
-    min-height: min-content
-    flex: 1 0 0
+</script>
 
-%list
-  margin: 0
-  padding: 0
-
-  display: flex
-  flex-flow: column nowrap
-  list-style: none
-
-  &.inline
-    flex-flow: row nowrap
-
-%list-item
-  @extend %row
-
-  z-index: 0
-
-  &:hover
-    z-index: 1
-
-%list-item-start
-  @extend %row-start
-
-%list-item-center
-  @extend %row-center
-
-%list-item-end
-  @extend %row-end
-
-.list-scrollable
-  @extend %list-scrollable
-
-.list
-  @extend %list
-
-.list-item
-  @extend %list-item
-
-.list-item-start
-  @extend %list-item-start
-    
-.list-item-center
-  @extend %list-item-center
-    
-.list-item-end
-  @extend %list-item-end
+<template>
+  <router-view name="top-app-bar" />
+  <router-view name="navigation-rail" />
+  <router-view name="navigation-drawer" />
+  <router-view name="toolbar" />
+  <router-view name="main" />
+  <router-view name="finder" />
+  <!-- <router-view name="modal" /> -->
+</template>

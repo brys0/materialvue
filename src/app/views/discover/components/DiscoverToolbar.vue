@@ -42,11 +42,3 @@ import {
 <template>
   <AppToolbar />
 </template>
-
-<style lang="sass" scoped>
-  @use '@/lib/sass/theme'
-
-  .app-toolbar
-    background: orange
-
-</style>

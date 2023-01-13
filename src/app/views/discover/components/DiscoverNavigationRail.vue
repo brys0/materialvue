@@ -42,11 +42,3 @@ import {
 <template>
   <AppNavigationRail />
 </template>
-
-<style lang="sass" scoped>
-  @use '@/lib/sass/theme'
-
-  .app-navigation-rail
-    background: green
-
-</style>
