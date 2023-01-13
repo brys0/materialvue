@@ -48,7 +48,7 @@ import {
 
 import {
 	App,
-} from '@/lib/vue/apps/App'
+} from '@/lib/vue'
 
 import {
 	useAppStore,

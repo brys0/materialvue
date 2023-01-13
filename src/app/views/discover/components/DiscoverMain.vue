@@ -119,7 +119,7 @@ onBeforeUnmount(() => {
 })
 
 const updateState = (newState: TextFieldState, oldState: TextFieldState): void => {
-	console.log('newState', newState, 'oldState', oldState)
+	logger.log('newState', newState, 'oldState', oldState)
 }
 
 </script>

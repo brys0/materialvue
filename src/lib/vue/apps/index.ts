@@ -31,8 +31,8 @@
  */
 
 export {
-	App,
-} from '@/lib/vue/apps/App'
+	default as App,
+} from '@/lib/vue/apps/App.vue'
 
 export {
 	AppNavigationRail,

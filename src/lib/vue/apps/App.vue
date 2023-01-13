@@ -1,3 +1,4 @@
+<!--
 /**
  * BSD 3-Clause License
  *
@@ -29,41 +30,23 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+-->
 
-import {
-	VNode,
-	Suspense,
-	FunctionalComponent,
-} from 'vue'
-
+<script lang="ts" setup>
 import AppContent from '@/lib/vue/apps/AppContent'
 
-export type AppProps = {}
+</script>
 
-export const App: FunctionalComponent<AppProps> = (): VNode =>
-	<div class="app">
-		<Suspense
-			v-slots={{
-				default: () =>
-					<>
-						<router-view name="navigation-rail" />
-						<router-view name="navigation-drawer" />
-						<AppContent>
-							<router-view name="navigation-bar" />
-							<router-view name="toolbar" />
-							<router-view name="main" />
-						</AppContent>
-						<router-view name="finder" />
-						<router-view name="modal" />
-					</>
-				,
-				fallback: () => <p>Loading...</p>,
-			}}
-		/>
-	</div>
-
-App.displayName = 'App'
-
-App.props = []
-
-export default App
+<template>
+  <div class="app">
+    <router-view name="navigation-rail" />
+    <router-view name="navigation-drawer" />
+    <AppContent>
+      <router-view name="navigation-bar" />
+      <router-view name="toolbar" />
+      <router-view name="main" />
+    </AppContent>
+    <router-view name="finder" />
+    <router-view name="modal" />
+  </div>
+</template>
