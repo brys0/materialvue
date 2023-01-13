@@ -1,3 +1,4 @@
+<!--
 /**
  * BSD 3-Clause License
  *
@@ -29,25 +30,23 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+-->
 
+<script lang="ts" setup>
 import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
+	TopAppBar,
+} from '@/lib/vue'
 
-export type SidebarProps = {}
+</script>
 
-export const Sidebar: FunctionalComponent<SidebarProps> = (_, {
-	slots,
-}): VNode => h('div', {
-	class: 'sidebar',
-}, {
-	default: () => slots.default?.(),
-})
+<template>
+  <TopAppBar />
+</template>
 
-Sidebar.displayName = 'Sidebar'
+<style lang="sass" scoped>
+  @use '@/lib/sass/theme'
 
-Sidebar.props = []
+  .top-app-bar
+    background: purple
 
-export default Sidebar
+</style>

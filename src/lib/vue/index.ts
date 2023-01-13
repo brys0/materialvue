@@ -35,7 +35,7 @@ export {
 	AppNavigationDrawer,
 	AppNavigationRail,
 	AppContent,
-	AppNavigationBar,
+	TopAppBar,
 	AppToolbar,
 	AppMain,
 	AppFinder,
@@ -59,15 +59,6 @@ export {
 	OutlinedButton,
 	TextButton,
 } from '@/lib/vue/buttons'
-
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/vue/components'
 
 export {
 	Icon,

@@ -42,7 +42,7 @@ import AppContent from '@/lib/vue/apps/AppContent'
     <router-view name="navigation-rail" />
     <router-view name="navigation-drawer" />
     <AppContent>
-      <router-view name="navigation-bar" />
+      <router-view name="top-app-bar" />
       <router-view name="toolbar" />
       <router-view name="main" />
     </AppContent>

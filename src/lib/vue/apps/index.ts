@@ -47,8 +47,8 @@ export {
 } from '@/lib/vue/apps/AppContent'
 
 export {
-	AppNavigationBar,
-} from '@/lib/vue/apps/AppNavigationBar'
+	TopAppBar,
+} from '@/lib/vue/apps/TopAppBar'
 
 export {
 	AppToolbar,

@@ -110,7 +110,7 @@
     display: grid
     grid-column: content-start / content-end
     grid-auto-flow: row
-    grid-template-rows: [navigation-bar-start] min-content [navigation-bar-end toolbar-start] min-content [toolbar-end main-start] auto [main-end]
+    grid-template-rows: [top-app-bar-start] min-content [top-app-bar-end toolbar-start] min-content [toolbar-end main-start] auto [main-end]
     align-items: stretch
     justify-items: stretch
     z-index: 0
@@ -121,13 +121,13 @@
       display: none
       visibility: hidden
 
-    > .app-navigation-bar
+    > .top-app-bar
       @extend %is-noselect
 
       position: relative
       height: 56px
       display: grid
-      grid-row: navigation-bar-start / navigation-bar-end
+      grid-row: top-app-bar-start / top-app-bar-end
       grid-auto-flow: row
       align-items: stretch
       justify-items: stretch

@@ -36,18 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type NavigationBarProps = {}
+export type TopAppBarProps = {}
 
-export const NavigationBar: FunctionalComponent<NavigationBarProps> = (_, {
+export const TopAppBar: FunctionalComponent<TopAppBarProps> = (_, {
 	slots,
-}): VNode => h('div', {
-	class: 'navigation-bar',
+}): VNode => h('aside', {
+	class: 'top-app-bar',
 }, {
 	default: () => slots.default?.(),
 })
 
-NavigationBar.displayName = 'NavigationBar'
+TopAppBar.displayName = 'TopAppBar'
 
-NavigationBar.props = []
+TopAppBar.props = []
 
-export default NavigationBar
+export default TopAppBar
