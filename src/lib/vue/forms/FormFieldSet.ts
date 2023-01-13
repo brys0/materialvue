@@ -36,9 +36,9 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type FormFieldSetProps = {}
+export type FormFieldsetProps = {}
 
-export const FormFieldSet: FunctionalComponent<FormFieldSetProps> = (_, {
+export const FormFieldset: FunctionalComponent<FormFieldsetProps> = (_, {
 	slots,
 }): VNode => h('fieldset', {
 	class: 'form-fieldset',
@@ -46,8 +46,8 @@ export const FormFieldSet: FunctionalComponent<FormFieldSetProps> = (_, {
 	default: () => slots.default?.(),
 })
 
-FormFieldSet.displayName = 'FormFieldSet'
+FormFieldset.displayName = 'FormFieldset'
 
-FormFieldSet.props = []
+FormFieldset.props = []
 
-export default FormFieldSet
+export default FormFieldset

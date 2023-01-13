@@ -31,8 +31,8 @@
  */
 
 export {
-	FormFieldSet,
-} from '@/lib/vue/forms/FormFieldSet'
+	FormFieldset,
+} from '@/lib/vue/forms/FormFieldset'
 
 export {
 	FormField,

@@ -58,6 +58,7 @@ export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
 	class: {
 		filled: true,
 	},
+	onAutofill: () => emit('autofill'),
 	onClick: (event: PointerEvent) => emit('click', event),
 	onBlur: (event: FocusEvent) => emit('blur', event),
 	onFocus: (event: FocusEvent) => emit('focus', event),
@@ -69,6 +70,7 @@ export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
 FilledTextField.displayName = 'FilledTextField'
 
 FilledTextField.emits = [
+	'autofill',
 	'click',
 	'blur',
 	'focus',

@@ -63,7 +63,8 @@ const props = defineProps({
 })
 
 const emit = defineEmits<
-{(e: 'click', event: PointerEvent): void
+{(e: 'autofill'): void
+ (e: 'click', event: PointerEvent): void
  (e: 'blur', event: FocusEvent): void
  (e: 'focus', event: FocusEvent): void
  (e: 'update:state', newState: TextFieldState, oldState: TextFieldState): void
@@ -168,6 +169,11 @@ const handleFocus = (event: FocusEvent): void => {
 	emit('focus', event)
 }
 
+const handleAnimationStart = (): void => {
+	fieldRef?.value?.classList.remove('is-empty')
+	emit('autofill')
+}
+
 onMounted(() => {
 	const el = fieldRef.value
 	if (el instanceof HTMLElement) {
@@ -176,6 +182,7 @@ onMounted(() => {
 			inputRef.value = target
 			target.addEventListener('blur', handleBlur)
 			target.addEventListener('focus', handleFocus)
+			target.addEventListener('animationstart', handleAnimationStart, true)
 		}
 	}
 })
@@ -187,6 +194,7 @@ onBeforeUnmount(() => {
 		if (target instanceof HTMLInputElement) {
 			target.removeEventListener('blur', handleBlur)
 			target.removeEventListener('focus', handleFocus)
+			target.removeEventListener('animationstart', handleAnimationStart, true)
 		}
 	}
 })

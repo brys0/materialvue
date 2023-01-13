@@ -94,7 +94,7 @@ export {
 
 export {
 	FormField,
-	FormFieldSet,
+	FormFieldset,
 	FieldBody,
 	FieldControl,
 	FieldIcon,

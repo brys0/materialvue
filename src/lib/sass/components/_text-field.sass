@@ -69,6 +69,26 @@
         
       .field-input
         width: 100%
+
+        &:-webkit-autofill
+          animation-name: onAutoFillStart
+
+        &:not(:-webkit-autofill)
+          animation-name: onAutoFillCancel
+
+        @keyframes onAutoFillStart
+          from
+            transform: translateX(0)
+
+          to
+            transform: translateX(0)
+
+        @keyframes onAutoFillCancel
+          from
+            transform: translateX(0)
+
+          to
+            transform: translateX(0)
         
   .field-support
     padding: 4px 16px 0

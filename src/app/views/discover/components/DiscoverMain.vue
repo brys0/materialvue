@@ -68,7 +68,7 @@ import {
 	TonalButton,
 	Row,
 	Column,
-	FormFieldSet,
+	FormFieldset,
 	FieldBody,
 	FieldControl,
 	FieldIcon,
@@ -439,7 +439,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <Row>
             <Column>
               <form @submit="onSubmit">
-                <FormFieldSet>
+                <FormFieldset>
                   <FilledTextField
                     ref="emailRef"
                     :has-error="'undefined' !== typeof errors.email"
@@ -474,12 +474,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldText>
                     </FieldSupport>
                   </FilledTextField>
-                </FormFieldSet>
+                </FormFieldset>
               </form>
             </Column>
             <Column>
               <form @submit="onSubmit">
-                <FormFieldSet>
+                <FormFieldset>
                   <FilledTextField :state="TextFieldState.hovered">
                     <FieldBody>
                       <FieldIcon class="leading">
@@ -510,12 +510,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldText>
                     </FieldSupport>
                   </FilledTextField>
-                </FormFieldSet>
+                </FormFieldset>
               </form>
             </Column>
             <Column>
               <form @submit="onSubmit">
-                <FormFieldSet>
+                <FormFieldset>
                   <FilledTextField :state="TextFieldState.focused">
                     <FieldBody>
                       <FieldIcon class="leading">
@@ -546,12 +546,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldText>
                     </FieldSupport>
                   </FilledTextField>
-                </FormFieldSet>
+                </FormFieldset>
               </form>
             </Column>
             <Column>
               <form @submit="onSubmit">
-                <FormFieldSet>
+                <FormFieldset>
                   <FilledTextField :state="TextFieldState.disabled">
                     <FieldBody>
                       <FieldIcon class="leading">
@@ -582,7 +582,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldText>
                     </FieldSupport>
                   </FilledTextField>
-                </FormFieldSet>
+                </FormFieldset>
               </form>
             </Column>
           </Row>
@@ -595,7 +595,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <Row>
               <Column>
                 <form @submit="onSubmit">
-                  <FormFieldSet>
+                  <FormFieldset>
                     <FilledTextField :has-error="true">
                       <FieldBody>
                         <FieldIcon class="leading">
@@ -626,12 +626,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldText>
                       </FieldSupport>
                     </FilledTextField>
-                  </FormFieldSet>
+                  </FormFieldset>
                 </form>
               </Column>
               <Column>
                 <form @submit="onSubmit">
-                  <FormFieldSet>
+                  <FormFieldset>
                     <FilledTextField
                       :state="TextFieldState.hovered"
                       :has-error="true"
@@ -665,12 +665,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldText>
                       </FieldSupport>
                     </FilledTextField>
-                  </FormFieldSet>
+                  </FormFieldset>
                 </form>
               </Column>
               <Column>
                 <form @submit="onSubmit">
-                  <FormFieldSet>
+                  <FormFieldset>
                     <FilledTextField
                       :state="TextFieldState.focused"
                       :has-error="true"
@@ -704,12 +704,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldText>
                       </FieldSupport>
                     </FilledTextField>
-                  </FormFieldSet>
+                  </FormFieldset>
                 </form>
               </Column>
               <Column>
                 <form @submit="onSubmit">
-                  <FormFieldSet>
+                  <FormFieldset>
                     <FilledTextField :state="TextFieldState.disabled">
                       <FieldBody>
                         <FieldIcon class="leading">
@@ -740,7 +740,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldText>
                       </FieldSupport>
                     </FilledTextField>
-                  </FormFieldSet>
+                  </FormFieldset>
                 </form>
               </Column>
             </Row>

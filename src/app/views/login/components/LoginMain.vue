@@ -57,7 +57,7 @@ import {
 	Tile,
 	TonalButton,
 	RoundedIcon,
-	FormFieldSet,
+	FormFieldset,
 	FieldBody,
 	FieldControl,
 	FieldIcon,
@@ -80,6 +80,9 @@ const {
 	handleSubmit,
 } = useForm({
 	validationSchema,
+	initialValues: {
+		email: 'me@domain.com',
+	},
 })
 
 const unwatch = watch(errors, errors => logger.trace('errors', errors))
@@ -102,7 +105,7 @@ onBeforeUnmount(() => {
           class="login"
           @submit="onSubmit"
         >
-          <FormFieldSet>
+          <FormFieldset>
             <FilledTextField
               ref="emailRef"
               :has-error="'undefined' !== typeof errors.email"
@@ -136,8 +139,8 @@ onBeforeUnmount(() => {
                 </FieldText>
               </FieldSupport>
             </FilledTextField>
-          </FormFieldSet>
-          <FormFieldSet>
+          </FormFieldset>
+          <FormFieldset>
             <FilledTextField
               ref="passwordRef"
               :has-error="'undefined' !== typeof errors.password"
@@ -174,7 +177,7 @@ onBeforeUnmount(() => {
                 </FieldText>
               </FieldSupport>
             </FilledTextField>
-          </FormFieldSet>
+          </FormFieldset>
           <TonalButton>
             Submit
           </TonalButton>
