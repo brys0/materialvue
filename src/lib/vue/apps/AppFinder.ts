@@ -30,82 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	App,
-	AppNavigationDrawer,
-	AppNavigationRail,
-	AppContent,
-	AppNavigationBar,
-	AppToolbar,
-	AppMain,
-	AppFinder,
-} from '@/lib/vue/apps'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	TypographyDisplay,
-	TypographyHeadline,
-	TypographyTitle,
-	TypographyLabel,
-	TypographyBody,
-	Typography,
-	TypographySize,
-} from '@/lib/vue/typography'
+export type AppFinderProps = {}
 
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-} from '@/lib/vue/buttons'
+export const AppFinder: FunctionalComponent<AppFinderProps> = (_, {
+	slots,
+}): VNode => h('aside', {
+	class: 'app-finder',
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/vue/components'
+AppFinder.displayName = 'AppFinder'
 
-export {
-	Icon,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/vue/icons'
+AppFinder.props = []
 
-export {
-	Layout,
-	Tile,
-	Row,
-	RowStart,
-	RowCenter,
-	RowEnd,
-	Column,
-} from '@/lib/vue/layout'
-
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/vue/lists'
-
-export {
-	FormField,
-	FormFieldSet,
-	FieldBody,
-	FieldControl,
-	FieldIcon,
-	FieldInput,
-	FieldLabel,
-	FieldSupport,
-	FieldText,
-} from '@/lib/vue/forms'
-
-export {
-	FilledTextField,
-	TextField,
-	TextFieldState,
-} from '@/lib/vue/text-field'
+export default AppFinder

@@ -9,6 +9,7 @@ import DiscoverNavigationDrawer from '@/app/views/discover/components/DiscoverNa
 import DiscoverNavigationBar from '@/app/views/discover/components/DiscoverNavigationBar.vue'
 import DiscoverToolbar from '@/app/views/discover/components/DiscoverToolbar.vue'
 import DiscoverMain from '@/app/views/discover/components/DiscoverMain.vue'
+import DiscoverFinder from '@/app/views/discover/components/DiscoverFinder.vue'
 
 const routes: RouteRecordRaw[] = [
 	{
@@ -20,6 +21,7 @@ const routes: RouteRecordRaw[] = [
 			'navigation-bar': DiscoverNavigationBar,
 			toolbar: DiscoverToolbar,
 			main: DiscoverMain,
+			finder: DiscoverFinder,
 		},
 	}
 ]

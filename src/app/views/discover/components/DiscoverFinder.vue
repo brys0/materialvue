@@ -1,3 +1,4 @@
+<!--
 /**
  * BSD 3-Clause License
  *
@@ -29,83 +30,23 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+-->
 
-export {
-	App,
-	AppNavigationDrawer,
-	AppNavigationRail,
-	AppContent,
-	AppNavigationBar,
-	AppToolbar,
-	AppMain,
+<script lang="ts" setup>
+import {
 	AppFinder,
-} from '@/lib/vue/apps'
+} from '@/lib/vue'
 
-export {
-	TypographyDisplay,
-	TypographyHeadline,
-	TypographyTitle,
-	TypographyLabel,
-	TypographyBody,
-	Typography,
-	TypographySize,
-} from '@/lib/vue/typography'
+</script>
 
-export {
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-} from '@/lib/vue/buttons'
+<template>
+  <AppFinder class="is-opened" />
+</template>
 
-export {
-	Finder,
-	Modal,
-	NavigationBar,
-	NavigationDrawer,
-	Sidebar,
-	Toolbar,
-} from '@/lib/vue/components'
+<style lang="sass" scoped>
+  @use '@/lib/sass/theme'
 
-export {
-	Icon,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/vue/icons'
+  .app-finder
+    background: blue
 
-export {
-	Layout,
-	Tile,
-	Row,
-	RowStart,
-	RowCenter,
-	RowEnd,
-	Column,
-} from '@/lib/vue/layout'
-
-export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/vue/lists'
-
-export {
-	FormField,
-	FormFieldSet,
-	FieldBody,
-	FieldControl,
-	FieldIcon,
-	FieldInput,
-	FieldLabel,
-	FieldSupport,
-	FieldText,
-} from '@/lib/vue/forms'
-
-export {
-	FilledTextField,
-	TextField,
-	TextFieldState,
-} from '@/lib/vue/text-field'
+</style>

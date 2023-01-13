@@ -57,3 +57,7 @@ export {
 export {
 	AppMain,
 } from '@/lib/vue/apps/AppMain'
+
+export {
+	AppFinder,
+} from '@/lib/vue/apps/AppFinder'
