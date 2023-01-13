@@ -30,8 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-%container
-  @extend %column
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-.container
-  @extend %container
+export type AppMainProps = {}
+
+export const AppMain: FunctionalComponent<AppMainProps> = (_, {
+	slots,
+}): VNode => h('main', {
+	class: 'main',
+}, {
+	default: () => slots.default?.(),
+})
+
+AppMain.displayName = 'AppMain'
+
+AppMain.props = []
+
+export default AppMain

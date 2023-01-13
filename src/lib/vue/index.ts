@@ -66,6 +66,8 @@ export {
 } from '@/lib/vue/icons'
 
 export {
+	Layout,
+	Tile,
 	Row,
 	RowStart,
 	RowCenter,

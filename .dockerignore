@@ -11,6 +11,7 @@
 !/vite.config*
 !/.env.*
 !/config
+!/nodemon.json
 
 !/LICENSE
 !/README.md

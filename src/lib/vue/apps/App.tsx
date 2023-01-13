@@ -30,40 +30,41 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use '../theme'
+import {
+	VNode,
+	Suspense,
+	FunctionalComponent,
+} from 'vue'
 
-.text
-  *
-    vertical-align: baseline
+import AppNavigationRail from '@/lib/vue/apps/AppNavigationRail'
+import AppContent from '@/lib/vue/apps/AppContent'
 
-  h1
-    color: #0F1014
+export type AppProps = {}
 
-  h3
-    color: #0F1014
-    
-  p
-    color: #0F1014
+export const App: FunctionalComponent<AppProps> = (): VNode =>
+	<div class="app">
+		<Suspense
+			v-slots={{
+				default: () =>
+					<>
+						<AppNavigationRail />
+						<router-view name="navigation-drawer" />
+						<AppContent>
+							<router-view name="navigation-bar" />
+							<router-view name="toolbar" />
+							<router-view name="main" />
+						</AppContent>
+						<router-view name="finder" />
+						<router-view name="modal" />
+					</>
+				,
+				fallback: () => <p>Loading...</p>,
+			}}
+		/>
+	</div>
 
-  ul,
-  ol
-    margin: 0
-    padding: 0
+App.displayName = 'App'
 
-    li
-      color: #0F1014
+App.props = []
 
-      &:first-child
-        margin-top: 24px
-      
-      &:last-child
-        margin-bottom: 24px
- 
-  blockquote
-    padding: 24px
-    color: #0F1014
-
-    border-left: solid 5px
-  
-  a
-    color: #53BDF9
+export default App

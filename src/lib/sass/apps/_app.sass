@@ -1,0 +1,172 @@
+/**
+ * BSD 3-Clause License
+ *
+ * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicverse dot org>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its
+ *    contributors may be used to endorse or promote products derived from
+ *    this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES LOSS OF USE, DATA, OR PROFITS OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+@use '../theme'
+
+.app
+  @extend %is-noselect
+
+  position: absolute
+  width: 100%
+  height: 100%
+  display: grid
+  grid-auto-flow: column
+  grid-template-columns: [sidebar-start] min-content [sidebar-end navigation-drawer-start] min-content [navigation-drawer-end content-start] auto [content-end finder-start] min-content [finder-end]
+  align-items: stretch
+  justify-items: stretch
+
+  @include theme.preferred
+    background-color: theme.style(background)
+
+  > .modal
+    @extend %is-noselect
+    
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    z-index: 0
+
+    &:empty
+      display: none
+      visibility: hidden
+
+  > .sidebar
+    @extend %is-noselect
+
+    position: relative
+    width: 68px
+    display: grid
+    grid-column: sidebar-start / sidebar-end
+    grid-auto-flow: row
+    align-items: start
+    justify-items: stretch
+    z-index: 2
+
+  > .navigation-drawer
+    @extend %is-noselect
+
+    position: relative
+    width: 0
+    display: grid
+    grid-column: navigation-drawer-start / navigation-drawer-end
+    grid-auto-flow: row
+    align-items: start
+    justify-items: stretch
+    z-index: 1
+
+    &.is-opened
+      width: 256px
+
+  > .finder
+    @extend %is-noselect
+
+    position: relative
+    width: 61px
+    display: grid
+    grid-column: finder-start / finder-end
+    grid-auto-flow: row
+    align-items: start
+    justify-items: stretch
+    z-index: 2
+
+    &.is-opened
+      width: 461px
+
+  > .content
+    @extend %is-noselect
+
+    position: relative
+    display: grid
+    grid-column: content-start / content-end
+    grid-auto-flow: row
+    grid-template-rows: [navigation-bar-start] min-content [navigation-bar-end toolbar-start] min-content [toolbar-end main-start] auto [main-end]
+    align-items: stretch
+    justify-items: stretch
+    z-index: 0
+
+    overflow: hidden
+
+    &:empty
+      display: none
+      visibility: hidden
+
+    > .navigation-bar
+      @extend %is-noselect
+
+      position: relative
+      height: 56px
+      display: grid
+      grid-row: navigation-bar-start / navigation-bar-end
+      grid-auto-flow: row
+      align-items: stretch
+      justify-items: stretch
+      z-index: 1
+
+      &:empty
+        display: none
+        visibility: hidden
+
+    > .toolbar
+      @extend %is-noselect
+
+      position: relative
+      height: 56px
+      display: grid
+      grid-row: toolbar-start / toolbar-end
+      grid-auto-flow: row
+      align-items: stretch
+      justify-items: stretch
+      z-index: 1
+
+      &:empty
+        display: none
+        visibility: hidden
+
+    > .main
+      @extend %is-noselect
+
+      position: relative
+      max-width: 100%
+      display: grid
+      grid-row: main-start / main-end
+      grid-auto-flow: row
+      align-items: start
+      justify-items: stretch
+      z-index: 0
+
+      overflow: scroll
+
+      &:empty
+        display: none
+        visibility: hidden

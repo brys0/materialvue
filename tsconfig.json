@@ -31,7 +31,8 @@
     "lib": [
       "es2022",
       "dom",
-      "dom.iterable"
+      "dom.iterable",
+      "webworker"
     ],
     "rootDir": ".",
     "baseUrl": ".",

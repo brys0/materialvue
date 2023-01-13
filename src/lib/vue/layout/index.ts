@@ -31,8 +31,12 @@
  */
 
 export {
-	Column,
-} from '@/lib/vue/layout/Column'
+	Layout,
+} from '@/lib/vue/layout/Layout'
+
+export {
+	Tile,
+} from '@/lib/vue/layout/Tile'
 
 export {
 	Row,
@@ -49,3 +53,7 @@ export {
 export {
 	RowEnd,
 } from '@/lib/vue/layout/RowEnd'
+
+export {
+	Column,
+} from '@/lib/vue/layout/Column'
