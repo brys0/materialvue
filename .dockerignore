@@ -5,6 +5,7 @@
 !/package*.json
 !/*.html
 !/src
+!/assets
 !/public
 !/typings
 !/tsconfig*
