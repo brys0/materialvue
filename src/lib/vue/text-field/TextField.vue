@@ -169,9 +169,11 @@ const handleFocus = (event: FocusEvent): void => {
 	emit('focus', event)
 }
 
-const handleAnimationStart = (): void => {
-	fieldRef?.value?.classList.remove('is-empty')
-	emit('autofill')
+const handleAnimationStart = (event: AnimationEvent): void => {
+	if ('onAutoFillStart' === event.animationName) {
+		fieldRef?.value?.classList.remove('is-empty')
+		emit('autofill')
+	}
 }
 
 onMounted(() => {

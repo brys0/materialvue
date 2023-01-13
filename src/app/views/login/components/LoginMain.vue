@@ -55,7 +55,7 @@ import {
 	AppMain,
 	Layout,
 	Tile,
-	TonalButton,
+	FilledButton,
 	RoundedIcon,
 	FormFieldset,
 	FieldBody,
@@ -81,7 +81,7 @@ const {
 } = useForm({
 	validationSchema,
 	initialValues: {
-		email: 'me@domain.com',
+		// email: 'me@domain.com',
 	},
 })
 
@@ -178,9 +178,9 @@ onBeforeUnmount(() => {
               </FieldSupport>
             </FilledTextField>
           </FormFieldset>
-          <TonalButton>
+          <FilledButton>
             Submit
-          </TonalButton>
+          </FilledButton>
         </form>
       </Tile>
     </Layout>
@@ -188,7 +188,9 @@ onBeforeUnmount(() => {
 </template>
 
 <style lang="sass" scoped>
-	.login
-		width: 300px
+.login
+  width: 300px
+  .form-fieldset
+    height: 100px
 
 </style>
