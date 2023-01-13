@@ -52,6 +52,9 @@ import {
 } from '@cosmicmind/foundation'
 
 import {
+	AppMain,
+	Layout,
+	Tile,
 	TonalButton,
 	RoundedIcon,
 	FormFieldSet,
@@ -64,10 +67,6 @@ import {
 	FieldText,
 	FilledTextField,
 } from '@/lib/vue'
-
-import {
-	AppMain,
-} from '@/lib/vue/apps/AppMain'
 
 const validationSchema = object({
 	email: string().required().email().label('Email Address'),
@@ -97,89 +96,91 @@ onBeforeUnmount(() => {
 
 <template>
   <AppMain>
-    <div class="container">
-      <form
-        class="login"
-        @submit="onSubmit"
-      >
-        <FormFieldSet>
-          <FilledTextField
-            ref="emailRef"
-            :has-error="'undefined' !== typeof errors.email"
-          >
-            <FieldBody>
-              <FieldIcon class="leading">
-                <RoundedIcon>
-                  mail
-                </RoundedIcon>
-              </FieldIcon>
-              <FieldControl>
-                <FieldLabel
-                  name="email"
+    <Layout>
+      <Tile>
+        <form
+          class="login"
+          @submit="onSubmit"
+        >
+          <FormFieldSet>
+            <FilledTextField
+              ref="emailRef"
+              :has-error="'undefined' !== typeof errors.email"
+            >
+              <FieldBody>
+                <FieldIcon class="leading">
+                  <RoundedIcon>
+                    mail
+                  </RoundedIcon>
+                </FieldIcon>
+                <FieldControl>
+                  <FieldLabel
+                    name="email"
+                  >
+                    Email
+                  </FieldLabel>
+                  <FieldInput name="email" />
+                </FieldControl>
+                <FieldIcon
+                  v-if="errors.email"
+                  class="trailing"
                 >
-                  Email
-                </FieldLabel>
-                <FieldInput name="email" />
-              </FieldControl>
-              <FieldIcon
-                v-if="errors.email"
-                class="trailing"
-              >
-                <RoundedIcon>
-                  error
-                </RoundedIcon>
-              </FieldIcon>
-            </FieldBody>
-            <FieldSupport v-if="errors.email">
-              <FieldText>
-                {{ errors.email }}
-              </FieldText>
-            </FieldSupport>
-          </FilledTextField>
-        </FormFieldSet>
-        <FormFieldSet>
-          <FilledTextField
-            ref="passwordRef"
-            :has-error="'undefined' !== typeof errors.password"
-          >
-            <FieldBody>
-              <FieldIcon class="leading">
-                <RoundedIcon>
-                  lock
-                </RoundedIcon>
-              </FieldIcon>
-              <FieldControl>
-                <FieldLabel
-                  name="password"
+                  <RoundedIcon>
+                    error
+                  </RoundedIcon>
+                </FieldIcon>
+              </FieldBody>
+              <FieldSupport v-if="errors.email">
+                <FieldText>
+                  {{ errors.email }}
+                </FieldText>
+              </FieldSupport>
+            </FilledTextField>
+          </FormFieldSet>
+          <FormFieldSet>
+            <FilledTextField
+              ref="passwordRef"
+              :has-error="'undefined' !== typeof errors.password"
+            >
+              <FieldBody>
+                <FieldIcon class="leading">
+                  <RoundedIcon>
+                    lock
+                  </RoundedIcon>
+                </FieldIcon>
+                <FieldControl>
+                  <FieldLabel
+                    name="password"
+                  >
+                    Password
+                  </FieldLabel>
+                  <FieldInput
+                    type="password"
+                    name="password"
+                  />
+                </FieldControl>
+                <FieldIcon
+                  v-if="errors.password"
+                  class="trailing"
                 >
-                  Password
-                </FieldLabel>
-                <FieldInput
-                  type="password"
-                  name="password"
-                />
-              </FieldControl>
-              <FieldIcon
-                v-if="errors.password"
-                class="trailing"
-              >
-                <RoundedIcon>
-                  error
-                </RoundedIcon>
-              </FieldIcon>
-            </FieldBody>
-            <FieldSupport v-if="errors.password">
-              <FieldText>
-                {{ errors.password }}
-              </FieldText>
-            </FieldSupport>
-          </FilledTextField>
-        </FormFieldSet>
-        <TonalButton>
-          Submit
-        </TonalButton>
-      </form>
-    </div>
+                  <RoundedIcon>
+                    error
+                  </RoundedIcon>
+                </FieldIcon>
+              </FieldBody>
+              <FieldSupport v-if="errors.password">
+                <FieldText>
+                  {{ errors.password }}
+                </FieldText>
+              </FieldSupport>
+            </FilledTextField>
+          </FormFieldSet>
+          <TonalButton>
+            Submit
+          </TonalButton>
+        </form>
+      </Tile>
+    </Layout>
   </AppMain>
 </template>
 

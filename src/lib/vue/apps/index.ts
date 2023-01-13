@@ -30,20 +30,30 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	RouteRecordRaw,
-} from 'vue-router'
+export {
+	App,
+} from '@/lib/vue/apps/App'
 
-import LoginMain from '@/app/views/login/components/LoginMain.vue'
+export {
+	AppNavigationRail,
+} from '@/lib/vue/apps/AppNavigationRail'
 
-const routes: RouteRecordRaw[] = [
-	{
-		name: 'login',
-		path: '/login',
-		components: {
-			main: LoginMain,
-		},
-	}
-]
+export {
+	AppNavigationDrawer,
+} from '@/lib/vue/apps/AppNavigationDrawer'
 
-export default routes
+export {
+	AppContent,
+} from '@/lib/vue/apps/AppContent'
+
+export {
+	AppNavigationBar,
+} from '@/lib/vue/apps/AppNavigationBar'
+
+export {
+	AppToolbar,
+} from '@/lib/vue/apps/AppToolbar'
+
+export {
+	AppMain,
+} from '@/lib/vue/apps/AppMain'

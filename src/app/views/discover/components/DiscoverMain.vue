@@ -40,14 +40,6 @@ import {
 } from 'vue'
 
 import {
-	logger,
-} from '@cosmicmind/foundation'
-
-import {
-	AppMain,
-} from '@/app/contexts/app/components/AppMain'
-
-import {
 	object,
 	string,
 } from 'yup'
@@ -57,6 +49,11 @@ import {
 } from 'vee-validate'
 
 import {
+	logger,
+} from '@cosmicmind/foundation'
+
+import {
+	AppMain,
 	TypographySize,
 	TypographyDisplay,
 	TypographyHeadline,

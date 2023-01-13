@@ -41,7 +41,7 @@ export type AppMainProps = {}
 export const AppMain: FunctionalComponent<AppMainProps> = (_, {
 	slots,
 }): VNode => h('main', {
-	class: 'main',
+	class: 'app-main',
 }, {
 	default: () => slots.default?.(),
 })

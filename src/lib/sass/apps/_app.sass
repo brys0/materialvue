@@ -40,14 +40,14 @@
   height: 100%
   display: grid
   grid-auto-flow: column
-  grid-template-columns: [sidebar-start] min-content [sidebar-end navigation-drawer-start] min-content [navigation-drawer-end content-start] auto [content-end finder-start] min-content [finder-end]
+  grid-template-columns: [navigation-rail-start] min-content [navigation-rail-end navigation-drawer-start] min-content [navigation-drawer-end content-start] auto [content-end finder-start] min-content [finder-end]
   align-items: stretch
   justify-items: stretch
 
   @include theme.preferred
     background-color: theme.style(background)
 
-  > .modal
+  > .app-modal
     @extend %is-noselect
     
     position: fixed
@@ -61,19 +61,19 @@
       display: none
       visibility: hidden
 
-  > .sidebar
+  > .app-navigation-rail
     @extend %is-noselect
 
     position: relative
     width: 68px
     display: grid
-    grid-column: sidebar-start / sidebar-end
+    grid-column: navigation-rail-start / navigation-rail-end
     grid-auto-flow: row
     align-items: start
     justify-items: stretch
     z-index: 2
 
-  > .navigation-drawer
+  > .app-navigation-drawer
     @extend %is-noselect
 
     position: relative
@@ -88,7 +88,7 @@
     &.is-opened
       width: 256px
 
-  > .finder
+  > .app-finder
     @extend %is-noselect
 
     position: relative
@@ -103,7 +103,7 @@
     &.is-opened
       width: 461px
 
-  > .content
+  > .app-content
     @extend %is-noselect
 
     position: relative
@@ -121,7 +121,7 @@
       display: none
       visibility: hidden
 
-    > .navigation-bar
+    > .app-navigation-bar
       @extend %is-noselect
 
       position: relative
@@ -133,11 +133,11 @@
       justify-items: stretch
       z-index: 1
 
-      &:empty
-        display: none
-        visibility: hidden
+      // &:empty
+      //   display: none
+      //   visibility: hidden
 
-    > .toolbar
+    > .app-toolbar
       @extend %is-noselect
 
       position: relative
@@ -153,7 +153,7 @@
         display: none
         visibility: hidden
 
-    > .main
+    > .app-main
       @extend %is-noselect
 
       position: relative

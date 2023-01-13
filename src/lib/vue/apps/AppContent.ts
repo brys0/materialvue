@@ -40,8 +40,8 @@ export type AppContentProps = {}
 
 export const AppContent: FunctionalComponent<AppContentProps> = (_, {
 	slots,
-}): VNode => h('div', {
-	class: 'content',
+}): VNode => h('aside', {
+	class: 'app-content',
 }, {
 	default: () => slots.default?.(),
 })

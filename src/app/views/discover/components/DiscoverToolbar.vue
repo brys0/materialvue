@@ -1,3 +1,4 @@
+<!--
 /**
  * BSD 3-Clause License
  *
@@ -29,21 +30,23 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+-->
 
+<script lang="ts" setup>
 import {
-	RouteRecordRaw,
-} from 'vue-router'
+	AppToolbar,
+} from '@/lib/vue'
 
-import LoginMain from '@/app/views/login/components/LoginMain.vue'
+</script>
 
-const routes: RouteRecordRaw[] = [
-	{
-		name: 'login',
-		path: '/login',
-		components: {
-			main: LoginMain,
-		},
-	}
-]
+<template>
+  <AppToolbar />
+</template>
 
-export default routes
+<style lang="sass" scoped>
+  @use '@/lib/sass/theme'
+
+  .app-toolbar
+    background: orange
+
+</style>

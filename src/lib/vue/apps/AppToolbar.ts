@@ -31,19 +31,23 @@
  */
 
 import {
-	RouteRecordRaw,
-} from 'vue-router'
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-import LoginMain from '@/app/views/login/components/LoginMain.vue'
+export type AppToolbarProps = {}
 
-const routes: RouteRecordRaw[] = [
-	{
-		name: 'login',
-		path: '/login',
-		components: {
-			main: LoginMain,
-		},
-	}
-]
+export const AppToolbar: FunctionalComponent<AppToolbarProps> = (_, {
+	slots,
+}): VNode => h('aside', {
+	class: 'app-toolbar',
+}, {
+	default: () => slots.default?.(),
+})
 
-export default routes
+AppToolbar.displayName = 'AppToolbar'
+
+AppToolbar.props = []
+
+export default AppToolbar

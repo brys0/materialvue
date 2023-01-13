@@ -36,7 +36,6 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-import AppNavigationRail from '@/lib/vue/apps/AppNavigationRail'
 import AppContent from '@/lib/vue/apps/AppContent'
 
 export type AppProps = {}
@@ -47,7 +46,7 @@ export const App: FunctionalComponent<AppProps> = (): VNode =>
 			v-slots={{
 				default: () =>
 					<>
-						<AppNavigationRail />
+						<router-view name="navigation-rail" />
 						<router-view name="navigation-drawer" />
 						<AppContent>
 							<router-view name="navigation-bar" />

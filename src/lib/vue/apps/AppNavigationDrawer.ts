@@ -31,19 +31,23 @@
  */
 
 import {
-	RouteRecordRaw,
-} from 'vue-router'
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-import LoginMain from '@/app/views/login/components/LoginMain.vue'
+export type AppNavigationDrawerProps = {}
 
-const routes: RouteRecordRaw[] = [
-	{
-		name: 'login',
-		path: '/login',
-		components: {
-			main: LoginMain,
-		},
-	}
-]
+export const AppNavigationDrawer: FunctionalComponent<AppNavigationDrawerProps> = (_, {
+	slots,
+}): VNode => h('aside', {
+	class: 'app-navigation-drawer',
+}, {
+	default: () => slots.default?.(),
+})
 
-export default routes
+AppNavigationDrawer.displayName = 'AppNavigationDrawer'
+
+AppNavigationDrawer.props = []
+
+export default AppNavigationDrawer

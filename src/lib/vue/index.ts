@@ -31,6 +31,16 @@
  */
 
 export {
+	App,
+	AppNavigationDrawer,
+	AppNavigationRail,
+	AppContent,
+	AppNavigationBar,
+	AppToolbar,
+	AppMain,
+} from '@/lib/vue/apps'
+
+export {
 	TypographyDisplay,
 	TypographyHeadline,
 	TypographyTitle,
