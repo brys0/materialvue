@@ -32,19 +32,10 @@
 
 @use '../theme'
 
-
 .top-app-bar
-  @extend %is-noselect
-
   padding: 0 16px
   height: 64px
-  display: grid
-  grid-row: row-1-start / row-1-end
-  grid-column: col-1-start / col-4-end
-  grid-template-rows: [row-1-start] auto [row-1-end]  
-  grid-template-columns: [col-1-start] minmax(0, 1fr) [col-1-end col-2-start] auto [col-2-end col-3-start] minmax(0, 1fr) [col-3-end] 
-  align-items: stretch
-
+  
   @include theme.preferred
     background-color: theme.style(surface)
 
@@ -55,13 +46,10 @@
   > .start,
   > .center,
   > .end
-    display: flex
-    align-items: center
-
     .button
       &.icon
-        // width: 48px
-        // height: 48px
+        width: 48px
+        height: 48px
       
         &.leading
           @include theme.preferred
@@ -75,22 +63,3 @@
       &.headline
         @include theme.preferred
           color: theme.style(on-surface)
-
-  > .start
-    grid-row: row-1-start / row-2-end
-    grid-column: col-1-start / col-1-end
-    gap: 24px
-    justify-content: start
-
-  > .center
-    padding: 0 24px
-    grid-row: row-1-start / row-2-end
-    grid-column: col-2-start / col-2-end
-    gap: 24px
-    justify-content: center
-
-  > .end
-    grid-row: row-1-start / row-2-end
-    grid-column: col-3-start / col-3-end
-    gap: 24px
-    justify-content: end

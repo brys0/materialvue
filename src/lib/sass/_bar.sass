@@ -30,18 +30,47 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-%row
-  display: grid
-  grid-template-rows: [row-1-start] auto [row-1-end]
-  
-%column
-  grid-row: row-1-start / row-2-end
-  display: flex
-  flex-flow: column
-  align-items: center
-  
-.row
-  @extend %row
+%bar
+  @extend %is-noselect
 
-  > .column
-    @extend %column
+  display: grid
+  grid-row: row-1-start / row-1-end
+  grid-column: col-1-start / col-4-end
+  grid-template-rows: [row-1-start] auto [row-1-end]  
+  grid-template-columns: [col-1-start] minmax(0, 1fr) [col-1-end col-2-start] auto [col-2-end col-3-start] minmax(0, 1fr) [col-3-end] 
+  align-items: stretch
+
+%bar-start,
+%bar-center,
+%bar-end
+  display: flex
+  align-items: center
+  gap: 24px
+  
+%bar-start
+  grid-row: row-1-start / row-1-end
+  grid-column: col-1-start / col-1-end
+  justify-content: start
+
+%bar-center
+  padding: 0 24px
+  grid-row: row-1-start / row-1-end
+  grid-column: col-2-start / col-2-end
+  justify-content: center
+
+%bar-end
+  grid-row: row-1-start / row-1-end
+  grid-column: col-3-start / col-3-end
+  justify-content: end
+
+.bar
+  @extend %bar
+
+  > .start
+    @extend %bar-start
+
+  > .center
+    @extend %bar-center
+
+  > .end
+    @extend %bar-end
