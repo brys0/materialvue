@@ -36,18 +36,24 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type RowEndProps = {}
+import {
+	Card,
+} from '@/lib/vue/cards/Card'
 
-export const RowEnd: FunctionalComponent<RowEndProps> = (_, {
+export type FilledCardProps = {}
+
+export const FilledCard: FunctionalComponent<FilledCardProps> = (_, {
 	slots,
-}): VNode => h('div', {
-	class: 'row-end',
+}): VNode => h(Card, {
+	class: {
+		filled: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })
 
-RowEnd.displayName = 'RowEnd'
+FilledCard.displayName = 'FilledCard'
 
-RowEnd.props = []
+FilledCard.props = []
 
-export default RowEnd
+export default FilledCard

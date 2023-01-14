@@ -30,24 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
+@use './theme'
 
-export type RowCenterProps = {}
+.card
+  @extend %is-noselect
 
-export const RowCenter: FunctionalComponent<RowCenterProps> = (_, {
-	slots,
-}): VNode => h('div', {
-	class: 'row-center',
-}, {
-	default: () => slots.default?.(),
-})
+  padding: 0 16px
+  border-radius: 12px
+  
+  &.elevated
+    @include theme.preferred
+      background: theme.style(elevation-1)
+      box-shadow: theme.style(shadow-1)
 
-RowCenter.displayName = 'RowCenter'
+.cards
+  @extend %row
 
-RowCenter.props = []
+  justify-content: space-evenly
+  gap: 8px
 
-export default RowCenter
+  .card
+    @extend %column

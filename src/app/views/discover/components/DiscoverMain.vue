@@ -80,6 +80,10 @@ import {
 	TextFieldState,
 	FilledTextField,
 	RoundedIcon,
+	Cards,
+	ElevatedCard,
+	FilledCard,
+	OutlinedCard,
 } from '@/lib/vue'
 
 const validationSchema = object({
@@ -695,160 +699,206 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           Filled text field error states
         </TypographyDisplay>
         <div>
-          <div>
-            <Row>
-              <Column>
-                <form @submit="onSubmit">
-                  <FormFieldset>
-                    <FilledTextField :has-error="true">
-                      <FieldBody>
-                        <FieldIcon class="leading">
-                          <RoundedIcon>
-                            mail
-                          </RoundedIcon>
-                        </FieldIcon>
-                        <FieldControl>
-                          <FieldLabel
-                            name="name"
-                          >
-                            Email
-                          </FieldLabel>
-                          <FieldInput name="name" />
-                        </FieldControl>
-                        <FieldIcon
-                          v-if="errors.email"
-                          class="trailing"
+          <Row>
+            <Column>
+              <form @submit="onSubmit">
+                <FormFieldset>
+                  <FilledTextField :has-error="true">
+                    <FieldBody>
+                      <FieldIcon class="leading">
+                        <RoundedIcon>
+                          mail
+                        </RoundedIcon>
+                      </FieldIcon>
+                      <FieldControl>
+                        <FieldLabel
+                          name="name"
                         >
-                          <RoundedIcon>
-                            error
-                          </RoundedIcon>
-                        </FieldIcon>
-                      </FieldBody>
-                      <FieldSupport v-if="errors.email">
-                        <FieldText>
-                          {{ errors.email }}
-                        </FieldText>
-                      </FieldSupport>
-                    </FilledTextField>
-                  </FormFieldset>
-                </form>
-              </Column>
-              <Column>
-                <form @submit="onSubmit">
-                  <FormFieldset>
-                    <FilledTextField
-                      :state="TextFieldState.hovered"
-                      :has-error="true"
-                    >
-                      <FieldBody>
-                        <FieldIcon class="leading">
-                          <RoundedIcon>
-                            mail
-                          </RoundedIcon>
-                        </FieldIcon>
-                        <FieldControl>
-                          <FieldLabel
-                            name="name"
-                          >
-                            Email
-                          </FieldLabel>
-                          <FieldInput name="name" />
-                        </FieldControl>
-                        <FieldIcon
-                          v-if="errors.email"
-                          class="trailing"
+                          Email
+                        </FieldLabel>
+                        <FieldInput name="name" />
+                      </FieldControl>
+                      <FieldIcon
+                        v-if="errors.email"
+                        class="trailing"
+                      >
+                        <RoundedIcon>
+                          error
+                        </RoundedIcon>
+                      </FieldIcon>
+                    </FieldBody>
+                    <FieldSupport v-if="errors.email">
+                      <FieldText>
+                        {{ errors.email }}
+                      </FieldText>
+                    </FieldSupport>
+                  </FilledTextField>
+                </FormFieldset>
+              </form>
+            </Column>
+            <Column>
+              <form @submit="onSubmit">
+                <FormFieldset>
+                  <FilledTextField
+                    :state="TextFieldState.hovered"
+                    :has-error="true"
+                  >
+                    <FieldBody>
+                      <FieldIcon class="leading">
+                        <RoundedIcon>
+                          mail
+                        </RoundedIcon>
+                      </FieldIcon>
+                      <FieldControl>
+                        <FieldLabel
+                          name="name"
                         >
-                          <RoundedIcon>
-                            error
-                          </RoundedIcon>
-                        </FieldIcon>
-                      </FieldBody>
-                      <FieldSupport v-if="errors.email">
-                        <FieldText>
-                          {{ errors.email }}
-                        </FieldText>
-                      </FieldSupport>
-                    </FilledTextField>
-                  </FormFieldset>
-                </form>
-              </Column>
-              <Column>
-                <form @submit="onSubmit">
-                  <FormFieldset>
-                    <FilledTextField
-                      :state="TextFieldState.focused"
-                      :has-error="true"
-                    >
-                      <FieldBody>
-                        <FieldIcon class="leading">
-                          <RoundedIcon>
-                            mail
-                          </RoundedIcon>
-                        </FieldIcon>
-                        <FieldControl>
-                          <FieldLabel
-                            name="name"
-                          >
-                            Email
-                          </FieldLabel>
-                          <FieldInput name="name" />
-                        </FieldControl>
-                        <FieldIcon
-                          v-if="errors.email"
-                          class="trailing"
+                          Email
+                        </FieldLabel>
+                        <FieldInput name="name" />
+                      </FieldControl>
+                      <FieldIcon
+                        v-if="errors.email"
+                        class="trailing"
+                      >
+                        <RoundedIcon>
+                          error
+                        </RoundedIcon>
+                      </FieldIcon>
+                    </FieldBody>
+                    <FieldSupport v-if="errors.email">
+                      <FieldText>
+                        {{ errors.email }}
+                      </FieldText>
+                    </FieldSupport>
+                  </FilledTextField>
+                </FormFieldset>
+              </form>
+            </Column>
+            <Column>
+              <form @submit="onSubmit">
+                <FormFieldset>
+                  <FilledTextField
+                    :state="TextFieldState.focused"
+                    :has-error="true"
+                  >
+                    <FieldBody>
+                      <FieldIcon class="leading">
+                        <RoundedIcon>
+                          mail
+                        </RoundedIcon>
+                      </FieldIcon>
+                      <FieldControl>
+                        <FieldLabel
+                          name="name"
                         >
-                          <RoundedIcon>
-                            error
-                          </RoundedIcon>
-                        </FieldIcon>
-                      </FieldBody>
-                      <FieldSupport v-if="errors.email">
-                        <FieldText>
-                          {{ errors.email }}
-                        </FieldText>
-                      </FieldSupport>
-                    </FilledTextField>
-                  </FormFieldset>
-                </form>
-              </Column>
-              <Column>
-                <form @submit="onSubmit">
-                  <FormFieldset>
-                    <FilledTextField :state="TextFieldState.disabled">
-                      <FieldBody>
-                        <FieldIcon class="leading">
-                          <RoundedIcon>
-                            mail
-                          </RoundedIcon>
-                        </FieldIcon>
-                        <FieldControl>
-                          <FieldLabel
-                            name="name"
-                          >
-                            Email
-                          </FieldLabel>
-                          <FieldInput name="name" />
-                        </FieldControl>
-                        <FieldIcon
-                          v-if="errors.email"
-                          class="trailing"
+                          Email
+                        </FieldLabel>
+                        <FieldInput name="name" />
+                      </FieldControl>
+                      <FieldIcon
+                        v-if="errors.email"
+                        class="trailing"
+                      >
+                        <RoundedIcon>
+                          error
+                        </RoundedIcon>
+                      </FieldIcon>
+                    </FieldBody>
+                    <FieldSupport v-if="errors.email">
+                      <FieldText>
+                        {{ errors.email }}
+                      </FieldText>
+                    </FieldSupport>
+                  </FilledTextField>
+                </FormFieldset>
+              </form>
+            </Column>
+            <Column>
+              <form @submit="onSubmit">
+                <FormFieldset>
+                  <FilledTextField :state="TextFieldState.disabled">
+                    <FieldBody>
+                      <FieldIcon class="leading">
+                        <RoundedIcon>
+                          mail
+                        </RoundedIcon>
+                      </FieldIcon>
+                      <FieldControl>
+                        <FieldLabel
+                          name="name"
                         >
-                          <RoundedIcon>
-                            error
-                          </RoundedIcon>
-                        </FieldIcon>
-                      </FieldBody>
-                      <FieldSupport v-if="errors.email">
-                        <FieldText>
-                          {{ errors.email }}
-                        </FieldText>
-                      </FieldSupport>
-                    </FilledTextField>
-                  </FormFieldset>
-                </form>
-              </Column>
-            </Row>
-          </div>
+                          Email
+                        </FieldLabel>
+                        <FieldInput name="name" />
+                      </FieldControl>
+                      <FieldIcon
+                        v-if="errors.email"
+                        class="trailing"
+                      >
+                        <RoundedIcon>
+                          error
+                        </RoundedIcon>
+                      </FieldIcon>
+                    </FieldBody>
+                    <FieldSupport v-if="errors.email">
+                      <FieldText>
+                        {{ errors.email }}
+                      </FieldText>
+                    </FieldSupport>
+                  </FilledTextField>
+                </FormFieldset>
+              </form>
+            </Column>
+          </Row>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <section class="banner">
+        <TypographyDisplay :size="TypographySize.large">
+          Cards
+        </TypographyDisplay>
+        <TypographyBody :size="TypographySize.large">
+          See the <a
+            href="https://m3.material.io/components/cards/overview"
+            target="_blank"
+          >Design Guidelines</a>
+        </TypographyBody>
+      </section>
+      <section>
+        <TypographyDisplay :size="TypographySize.small">
+          Elevated card states
+        </TypographyDisplay>
+        <div>
+          <Cards>
+            <ElevatedCard>
+              <TypographyTitle>
+                Title
+              </TypographyTitle>
+            </ElevatedCard>
+            <ElevatedCard>
+              <TypographyTitle>
+                Title
+              </TypographyTitle>
+            </ElevatedCard>
+            <ElevatedCard>
+              <TypographyTitle>
+                Title
+              </TypographyTitle>
+            </ElevatedCard>
+            <ElevatedCard>
+              <TypographyTitle>
+                Title
+              </TypographyTitle>
+            </ElevatedCard>
+            <ElevatedCard>
+              <TypographyTitle>
+                Title
+              </TypographyTitle>
+            </ElevatedCard>
+          </Cards>
         </div>
       </section>
     </div>
@@ -875,8 +925,5 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
     > div
       > span
         padding: 12px
-
-    .text-field
-      width: 300px
 
 </style>

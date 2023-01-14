@@ -34,42 +34,48 @@
 @use '../conversion'
 
 .text-field
-  display: flex
-  flex-flow: column
-  flex: 1
-  align-items: stretch
+  display: grid
+  grid-template-rows: [row-1-start] 56px [row-1-end row-2-start] min-content [row-2-end]  
+  grid-template-columns: [col-1-start] auto [col-1-end row-2-start]
   
   .field-body
-    height: 56px
-    padding: 8px 16px
-    display: flex
-    flex-flow: row nowrap
-    align-items: center
+    @extend %bar
+    
+    padding: 0 16px
+    grid-row: row-1-start / row-1-end
+    grid-column: col-1-start / col-1-end
     gap: 16px
-    overflow: hidden
     
     .field-icon
+      @extend %is-noselect
+
+      height: 54px
+
+      &.leading
+        @extend %bar-start
+      
+      &.trailing
+        @extend %bar-end
+      
       &.leading,
       &.trailing
-        @extend %is-noselect
+        gap: 0
 
-        display: flex
-        flex: 0
-        
     .field-control
+      @extend %bar-center
+
+      padding: 0
+      height: 54px
       display: flex
       flex-flow: column
-      flex: 1
       align-items: stretch
+      gap: 0
       
       .field-label
         @extend %is-noselect
-
-        width: 100%
         
       .field-input
         padding: 0
-        width: 100%
 
         &:-webkit-autofill
           animation-name: onAutoFillStart
@@ -91,8 +97,11 @@
         
   .field-support
     padding: 4px 16px 0
+    grid-row: row-2-start / row-2-end
+    grid-column: col-1-start / col-1-end
+    dsiplay: flex
     flex-flow: row nowrap
-    align-items: center
+    align-items: flex-start
   
   &.is-empty:not(.focused)
     .field-body

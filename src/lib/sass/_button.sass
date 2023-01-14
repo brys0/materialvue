@@ -30,7 +30,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use 'sass:map'
 @use './theme'
 @use './conversion'
 
@@ -38,8 +37,6 @@
 a.button
   @extend %is-noselect
   @extend %is-ellipsis
-
-  @extend %typography-label-large
 
   padding: 10px 24px
   display: flex
@@ -61,6 +58,8 @@ a.button
     box-shadow: none
 
   &.elevated
+    @extend %typography-label-large
+
     @include theme.preferred
       color: theme.style(primary)
       background: theme.style(primary-container)
@@ -90,6 +89,8 @@ a.button
         background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
 
   &.filled
+    @extend %typography-label-large
+
     @include theme.preferred
       color: theme.style(on-primary)
       background: theme.style(primary)
@@ -118,6 +119,8 @@ a.button
         background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
 
   &.tonal
+    @extend %typography-label-large
+
     @include theme.preferred
       color: theme.style(on-secondary-container)
       background: theme.style(secondary-container)
@@ -146,6 +149,8 @@ a.button
         background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
 
   &.outlined
+    @extend %typography-label-large
+
     padding-top: 8
     padding-bottom: 8
 
@@ -180,6 +185,8 @@ a.button
         border-color: conversion.hex-to-rgba(theme.style(on-surface), 12%)
 
   &.text
+    @extend %typography-label-large
+
     @include theme.preferred
       color: theme.style(primary)
 

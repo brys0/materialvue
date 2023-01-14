@@ -30,18 +30,30 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Layout,
-} from '@/lib/vue/layout/Layout'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	Tile,
-} from '@/lib/vue/layout/Tile'
+import {
+	Card,
+} from '@/lib/vue/cards/Card'
 
-export {
-	Row,
-} from '@/lib/vue/layout/Row'
+export type OutlinedCardProps = {}
 
-export {
-	Column,
-} from '@/lib/vue/layout/Column'
+export const OutlinedCard: FunctionalComponent<OutlinedCardProps> = (_, {
+	slots,
+}): VNode => h(Card, {
+	class: {
+		outlined: true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
+
+OutlinedCard.displayName = 'OutlinedCard'
+
+OutlinedCard.props = []
+
+export default OutlinedCard

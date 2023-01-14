@@ -30,18 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Layout,
-} from '@/lib/vue/layout/Layout'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	Tile,
-} from '@/lib/vue/layout/Tile'
+export type CardProps = {}
 
-export {
-	Row,
-} from '@/lib/vue/layout/Row'
+export const Card: FunctionalComponent<CardProps> = (_: CardProps, {
+	slots,
+}): VNode => h('div', {
+	class: 'card',
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	Column,
-} from '@/lib/vue/layout/Column'
+Card.displayName = 'Card'
+
+Card.props = []
+
+export default Card

@@ -30,18 +30,30 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Layout,
-} from '@/lib/vue/layout/Layout'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	Tile,
-} from '@/lib/vue/layout/Tile'
+import {
+	Card,
+} from '@/lib/vue/cards/Card'
 
-export {
-	Row,
-} from '@/lib/vue/layout/Row'
+export type ElevatedCardProps = {}
 
-export {
-	Column,
-} from '@/lib/vue/layout/Column'
+export const ElevatedCard: FunctionalComponent<ElevatedCardProps> = (_, {
+	slots,
+}): VNode => h(Card, {
+	class: {
+		elevated: true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
+
+ElevatedCard.displayName = 'ElevatedCard'
+
+ElevatedCard.props = []
+
+export default ElevatedCard

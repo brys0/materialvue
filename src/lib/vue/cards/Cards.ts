@@ -36,18 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type RowStartProps = {}
+export type CardsProps = {}
 
-export const RowStart: FunctionalComponent<RowStartProps> = (_, {
+export const Cards: FunctionalComponent<CardsProps> = (_: CardsProps, {
 	slots,
 }): VNode => h('div', {
-	class: 'row-start',
+	class: 'cards',
 }, {
 	default: () => slots.default?.(),
 })
 
-RowStart.displayName = 'RowStart'
+Cards.displayName = 'Cards'
 
-RowStart.props = []
+Cards.props = []
 
-export default RowStart
+export default Cards

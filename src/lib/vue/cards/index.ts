@@ -31,17 +31,21 @@
  */
 
 export {
-	Layout,
-} from '@/lib/vue/layout/Layout'
+	Cards,
+} from '@/lib/vue/cards/Cards'
 
 export {
-	Tile,
-} from '@/lib/vue/layout/Tile'
+	Card,
+} from '@/lib/vue/cards/Card'
 
 export {
-	Row,
-} from '@/lib/vue/layout/Row'
+	ElevatedCard,
+} from '@/lib/vue/cards/ElevatedCard'
 
 export {
-	Column,
-} from '@/lib/vue/layout/Column'
+	FilledCard,
+} from '@/lib/vue/cards/FilledCard'
+
+export {
+	OutlinedCard,
+} from '@/lib/vue/cards/OutlinedCard'
