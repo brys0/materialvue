@@ -465,6 +465,62 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </Row>
         </div>
       </section>
+      <section>
+        <TypographyDisplay :size="TypographySize.small">
+          Icon button selected states
+        </TypographyDisplay>
+        <div>
+          <Row>
+            <Column>
+              <IconButton :selected="true">
+                <RoundedIcon>
+                  settings
+                </RoundedIcon>
+              </IconButton>
+            </Column>
+            <Column>
+              <IconButton
+                :state="ButtonState.hovered"
+                :selected="true"
+              >
+                <RoundedIcon>
+                  settings
+                </RoundedIcon>
+              </IconButton>
+            </Column>
+            <Column>
+              <IconButton
+                :state="ButtonState.focused"
+                :selected="true"
+              >
+                <RoundedIcon>
+                  settings
+                </RoundedIcon>
+              </IconButton>
+            </Column>
+            <Column>
+              <IconButton
+                :state="ButtonState.pressed"
+                :selected="true"
+              >
+                <RoundedIcon>
+                  settings
+                </RoundedIcon>
+              </IconButton>
+            </Column>
+            <Column>
+              <IconButton
+                :state="ButtonState.disabled"
+                disabled
+              >
+                <RoundedIcon>
+                  settings
+                </RoundedIcon>
+              </IconButton>
+            </Column>
+          </Row>
+        </div>
+      </section>
     </div>
 
     <div>

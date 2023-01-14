@@ -40,13 +40,18 @@ import {
 	Button,
 } from '@/lib/vue/buttons/Button'
 
-export type IconButtonProps = {}
+export type IconButtonProps = {
+	selected?: boolean
+}
 
-export const IconButton: FunctionalComponent<IconButtonProps> = (_, {
+export const IconButton: FunctionalComponent<IconButtonProps> = ({
+	selected,
+}, {
 	slots,
 }): VNode => h(Button, {
 	class: {
 		icon: true,
+		selected,
 	},
 }, {
 	default: () => slots.default?.(),
@@ -54,6 +59,8 @@ export const IconButton: FunctionalComponent<IconButtonProps> = (_, {
 
 IconButton.displayName = 'IconButton'
 
-IconButton.props = []
+IconButton.props = [
+	'selected'
+]
 
 export default IconButton
