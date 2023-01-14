@@ -31,8 +31,8 @@
  */
 
 @use 'sass:map'
-@use '../theme'
-@use '../conversion'
+@use './theme'
+@use './conversion'
 
 .button,
 a.button
@@ -166,6 +166,40 @@ a.button
     &.text
       @include theme.preferred
         color: theme.style(primary)
+
+      &:hover:not(.focused):not(.pressed):not(.disabled),
+      &.hovered
+        @include theme.preferred
+          background: theme.tint(theme.style(primary), transparent, 8%)
+          
+      &:focus:not(.hovered):not(.pressed):not(.disabled),
+      &.focused
+        @include theme.preferred
+          background: theme.tint(theme.style(primary), transparent, 12%)
+  
+      &:active:not(.hovered):not(.focused):not(.disabled),
+      &.pressed
+        @include theme.preferred
+          background: theme.tint(theme.style(primary), transparent, 12%)
+
+      &:disabled:not(.hovered):not(.focused):not(.pressed),
+      &[disabled]:not(.hovered):not(.focused):not(.pressed),
+      &.disabled:not(.hovered):not(.focused):not(.pressed)
+        background: none
+
+        @include theme.preferred
+          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+
+    &.icon
+      padding: 0
+      width: 40px
+      height: 40px
+
+      .icon
+        font-size: 24px
+
+        @include theme.preferred
+          color: theme.style(on-surface-variant)
 
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered

@@ -54,3 +54,7 @@ export {
 export {
 	TonalButton,
 } from '@/lib/vue/buttons/TonalButton'
+
+export {
+	IconButton,
+} from '@/lib/vue/buttons/IconButton'

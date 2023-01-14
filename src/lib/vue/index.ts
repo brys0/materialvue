@@ -58,6 +58,7 @@ export {
 	TonalButton,
 	OutlinedButton,
 	TextButton,
+	IconButton,
 } from '@/lib/vue/buttons'
 
 export {

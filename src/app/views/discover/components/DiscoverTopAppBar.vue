@@ -35,27 +35,24 @@
 <script lang="ts" setup>
 import {
 	TopAppBar,
-	TextButton,
+	IconButton,
 	RoundedIcon,
-	Row,
-	RowStart,
-	Column,
+	TypographyHeadline,
 } from '@/lib/vue'
 
 </script>
 
 <template>
   <TopAppBar>
-    <Row>
-      <RowStart>
-        <Column>
-          <TextButton>
-            <RoundedIcon>
-              menu
-            </RoundedIcon>
-          </TextButton>
-        </Column>
-      </RowStart>
-    </Row>
+    <div class="start">
+      <IconButton>
+        <RoundedIcon>
+          menu
+        </RoundedIcon>
+      </IconButton>
+      <TypographyHeadline>
+        CosmicMind
+      </TypographyHeadline>
+    </div>
   </TopAppBar>
 </template>
