@@ -32,21 +32,12 @@
  */
 -->
 
-<script lang="ts" setup>
-import AppContent from '@/lib/vue/apps/AppContent'
-
-</script>
-
 <template>
-  <div class="app">
-    <router-view name="navigation-rail" />
-    <router-view name="navigation-drawer" />
-    <AppContent>
-      <router-view name="top-app-bar" />
-      <router-view name="toolbar" />
-      <router-view name="main" />
-    </AppContent>
-    <router-view name="finder" />
-    <router-view name="modal" />
-  </div>
+  <router-view name="top-app-bar" />
+  <router-view name="navigation-rail" />
+  <router-view name="navigation-drawer" />
+  <router-view name="toolbar" />
+  <router-view name="main" />
+  <router-view name="finder" />
+  <router-view name="modal" />
 </template>

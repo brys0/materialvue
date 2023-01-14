@@ -35,24 +35,12 @@ export {
 } from '@/lib/vue/apps/App.vue'
 
 export {
-	default as AppLayoutTopAppBar,
-} from '@/lib/vue/apps/AppLayoutTopAppBar.vue'
-
-export {
-	AppBody,
-} from '@/lib/vue/apps/AppBody'
-
-export {
 	AppNavigationRail,
 } from '@/lib/vue/apps/AppNavigationRail'
 
 export {
 	AppNavigationDrawer,
 } from '@/lib/vue/apps/AppNavigationDrawer'
-
-export {
-	AppContent,
-} from '@/lib/vue/apps/AppContent'
 
 export {
 	TopAppBar,
@@ -69,3 +57,7 @@ export {
 export {
 	AppFinder,
 } from '@/lib/vue/apps/AppFinder'
+
+export {
+	AppModal,
+} from '@/lib/vue/apps/AppModal'

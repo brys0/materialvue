@@ -1,3 +1,4 @@
+<!--
 /**
  * BSD 3-Clause License
  *
@@ -29,25 +30,15 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+-->
 
+<script lang="ts" setup>
 import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
+	AppModal,
+} from '@/lib/vue'
 
-export type AppContentProps = {}
+</script>
 
-export const AppContent: FunctionalComponent<AppContentProps> = (_, {
-	slots,
-}): VNode => h('aside', {
-	class: 'app-content',
-}, {
-	default: () => slots.default?.(),
-})
-
-AppContent.displayName = 'AppContent'
-
-AppContent.props = []
-
-export default AppContent
+<template>
+  <AppModal />
+</template>

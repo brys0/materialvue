@@ -32,15 +32,13 @@
 
 export {
 	App,
-	AppLayoutTopAppBar,
-	AppBody,
 	AppNavigationDrawer,
 	AppNavigationRail,
-	AppContent,
 	TopAppBar,
 	AppToolbar,
 	AppMain,
 	AppFinder,
+	AppModal,
 } from '@/lib/vue/apps'
 
 export {

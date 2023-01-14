@@ -35,10 +35,27 @@
 <script lang="ts" setup>
 import {
 	TopAppBar,
+	TextButton,
+	RoundedIcon,
+	Row,
+	RowStart,
+	Column,
 } from '@/lib/vue'
 
 </script>
 
 <template>
-  <TopAppBar />
+  <TopAppBar>
+    <Row>
+      <RowStart>
+        <Column>
+          <TextButton>
+            <RoundedIcon>
+              menu
+            </RoundedIcon>
+          </TextButton>
+        </Column>
+      </RowStart>
+    </Row>
+  </TopAppBar>
 </template>

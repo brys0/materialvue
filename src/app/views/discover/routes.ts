@@ -10,6 +10,7 @@ import DiscoverTopAppBar from '@/app/views/discover/components/DiscoverTopAppBar
 import DiscoverToolbar from '@/app/views/discover/components/DiscoverToolbar.vue'
 import DiscoverMain from '@/app/views/discover/components/DiscoverMain.vue'
 import DiscoverFinder from '@/app/views/discover/components/DiscoverFinder.vue'
+import DiscoverModal from '@/app/views/discover/components/DiscoverModal.vue'
 
 const routes: RouteRecordRaw[] = [
 	{
@@ -22,6 +23,7 @@ const routes: RouteRecordRaw[] = [
 			toolbar: DiscoverToolbar,
 			main: DiscoverMain,
 			finder: DiscoverFinder,
+			modal: DiscoverModal,
 		},
 	}
 ]

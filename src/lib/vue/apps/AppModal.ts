@@ -30,76 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use '../theme'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-body
-  margin: 0
-  padding: 0
-  width: 100vw
-  height: 100vh
-  display: grid
-  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] min-content [row-2-end row-3-start] auto [row-3-end]
-  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] min-content [col-2-end col-3-start] auto [col-3-end col-4-start] 200px [col-4-end]
-  overflow: hidden
+export type AppFinderProps = {}
 
-  @include theme.preferred
-    background-color: theme.style(background)
+export const AppModal: FunctionalComponent<AppFinderProps> = (_, {
+	slots,
+}): VNode => h('aside', {
+	class: 'app-modal',
+}, {
+	default: () => slots.default?.(),
+})
 
-.top-app-bar
-  @extend %is-noselect
+AppModal.displayName = 'AppModal'
 
-  height: 56px
-  display: grid
-  grid-row: row-1-start / row-1-end
-  grid-column: col-1-start / col-4-end
-  background-color: purple
+AppModal.props = []
 
-.app-navigation-rail
-  @extend %is-noselect
-
-  width: 60px
-  display: grid
-  grid-row: row-2-start / row-3-end
-  grid-column: col-1-start
-  background-color: yellow
-
-.app-navigation-drawer
-  @extend %is-noselect
-
-  width: 250px
-  display: grid
-  grid-row: row-2-start / row-3-end
-  grid-column: col-2-start / col-2-end
-  background-color: blue
-
-.app-toolbar
-  @extend %is-noselect
-
-  height: 56px
-  display: grid
-  grid-row: row-2-start / row-2-end
-  grid-column: col-3-start / col-3-end
-  background-color: violet
-
-.app-main
-  @extend %is-noselect
-
-  display: grid
-  grid-row: row-3-start / row-3-end
-  grid-column: col-3-start / col-3-end
-  
-  @include theme.preferred
-    background-color: theme.style(background)
-
-  overflow: scroll
-
-.app-finder
-  @extend %is-noselect
-
-  width: 200px
-  display: grid
-  grid-row: row-2-start / row-3-end
-  grid-column: col-4-start / col-4-end
-  background-color: orange
-
-  overflow: scroll
+export default AppModal

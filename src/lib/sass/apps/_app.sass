@@ -32,141 +32,106 @@
 
 @use '../theme'
 
-.app
-  @extend %is-noselect
-
-  position: absolute
-  width: 100%
-  height: 100%
+body
+  margin: 0
+  padding: 0
+  width: 100vw
+  height: 100vh
   display: grid
-  grid-auto-flow: column
-  grid-template-columns: [navigation-rail-start] min-content [navigation-rail-end navigation-drawer-start] min-content [navigation-drawer-end content-start] auto [content-end finder-start] min-content [finder-end]
-  align-items: stretch
-  justify-items: stretch
+  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] min-content [row-2-end row-3-start] auto [row-3-end]
+  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] min-content [col-2-end col-3-start] auto [col-3-end col-4-start] min-content [col-4-end]
+  overflow: hidden
 
   @include theme.preferred
     background-color: theme.style(background)
 
-  > .app-modal
-    @extend %is-noselect
-    
-    position: fixed
-    top: 0
-    left: 0
-    bottom: 0
-    right: 0
-    z-index: 0
+.top-app-bar
+  @extend %is-noselect
 
-    // &:empty
-    //   display: none
-    //   visibility: hidden
+  height: 64px
+  display: grid
+  grid-row: row-1-start / row-1-end
+  grid-column: col-1-start / col-4-end
+  background-color: purple
 
-  > .app-navigation-rail
-    @extend %is-noselect
+  @include theme.preferred
+    background-color: theme.style(surface)
 
-    position: relative
-    width: 68px
-    display: grid
-    grid-column: navigation-rail-start / navigation-rail-end
-    grid-auto-flow: row
-    align-items: start
-    justify-items: stretch
-    z-index: 2
+  &:empty
+    height: 0
+    visibility: hidden
 
-  > .app-navigation-drawer
-    @extend %is-noselect
+.app-navigation-rail
+  @extend %is-noselect
 
-    position: relative
+  width: 80px
+  display: grid
+  grid-row: row-2-start / row-3-end
+  grid-column: col-1-start
+  background-color: yellow
+
+  &:empty
     width: 0
-    display: grid
-    grid-column: navigation-drawer-start / navigation-drawer-end
-    grid-auto-flow: row
-    align-items: start
-    justify-items: stretch
-    z-index: 1
+    visibility: hidden
 
-    &.is-opened
-      width: 256px
+.app-navigation-drawer
+  @extend %is-noselect
 
-  > .app-finder
-    @extend %is-noselect
+  width: 250px
+  display: grid
+  grid-row: row-2-start / row-3-end
+  grid-column: col-2-start / col-2-end
+  background-color: blue
 
-    position: relative
-    width: 61px
-    display: grid
-    grid-column: finder-start / finder-end
-    grid-auto-flow: row
-    align-items: start
-    justify-items: stretch
-    z-index: 2
+  &:empty
+    width: 0
+    visibility: hidden
 
-    &.is-opened
-      width: 461px
+.app-toolbar
+  @extend %is-noselect
 
-  > .app-content
-    @extend %is-noselect
+  height: 56px
+  display: grid
+  grid-row: row-2-start / row-2-end
+  grid-column: col-3-start / col-3-end
+  background-color: violet
 
-    position: relative
-    display: grid
-    grid-column: content-start / content-end
-    grid-auto-flow: row
-    grid-template-rows: [top-app-bar-start] min-content [top-app-bar-end toolbar-start] min-content [toolbar-end main-start] auto [main-end]
-    align-items: stretch
-    justify-items: stretch
-    z-index: 0
+  &:empty
+    height: 0
+    visibility: hidden
 
-    overflow: hidden
+.app-main
+  @extend %is-noselect
 
-    // &:empty
-    //   display: none
-    //   visibility: hidden
+  display: grid
+  grid-row: row-3-start / row-3-end
+  grid-column: col-3-start / col-3-end
+  overflow: scroll
 
-    > .top-app-bar
-      @extend %is-noselect
+  @include theme.preferred
+    background-color: theme.style(background)
 
-      position: relative
-      height: 56px
-      display: grid
-      grid-row: top-app-bar-start / top-app-bar-end
-      grid-auto-flow: row
-      align-items: stretch
-      justify-items: stretch
-      z-index: 1
+  &:empty
+    visibility: hidden
 
-      // &:empty
-      //   display: none
-      //   visibility: hidden
+.app-finder
+  @extend %is-noselect
 
-    > .app-toolbar
-      @extend %is-noselect
+  width: 200px
+  display: grid
+  grid-row: row-2-start / row-3-end
+  grid-column: col-4-start / col-4-end
+  background-color: orange
 
-      position: relative
-      height: 56px
-      display: grid
-      grid-row: toolbar-start / toolbar-end
-      grid-auto-flow: row
-      align-items: stretch
-      justify-items: stretch
-      z-index: 1
+  &:empty
+    width: 0
+    visibility: hidden
 
-      // &:empty
-      //   display: none
-      //   visibility: hidden
+.app-modal
+  display: grid
+  grid-row: row-1-start / row-3-end
+  grid-column: col-1-start / col-4-end
+  background-color: brown
 
-    > .app-main
-      @extend %is-noselect
-
-      position: relative
-      max-width: 100%
-      display: grid
-      grid-row: main-start / main-end
-      grid-auto-flow: row
-      align-items: start
-      justify-items: stretch
-      z-index: 0
-
-      overflow: scroll
-
-      // &:empty
-      //   display: none
-      //   visibility: hidden
+  &:empty
+    visibility: hidden
