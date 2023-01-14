@@ -54,6 +54,11 @@ import {
         CosmicMind
       </TypographyHeadline>
     </div>
+    <div class="center">
+      <TypographyHeadline>
+        Search Bar
+      </TypographyHeadline>
+    </div>
     <div class="end">
       <IconButton>
         <RoundedIcon>
