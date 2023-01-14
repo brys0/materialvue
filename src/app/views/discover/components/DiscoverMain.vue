@@ -66,6 +66,7 @@ import {
 	TextButton,
 	ElevatedButton,
 	TonalButton,
+	IconButton,
 	Row,
 	Column,
 	FormFieldset,
@@ -413,6 +414,53 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               >
                 Disabled
               </TonalButton>
+            </Column>
+          </Row>
+        </div>
+      </section>
+      <section>
+        <TypographyDisplay :size="TypographySize.small">
+          Icon button states
+        </TypographyDisplay>
+        <div>
+          <Row>
+            <Column>
+              <IconButton>
+                <RoundedIcon>
+                  settings
+                </RoundedIcon>
+              </IconButton>
+            </Column>
+            <Column>
+              <IconButton :state="ButtonState.hovered">
+                <RoundedIcon>
+                  settings
+                </RoundedIcon>
+              </IconButton>
+            </Column>
+            <Column>
+              <IconButton :state="ButtonState.focused">
+                <RoundedIcon>
+                  settings
+                </RoundedIcon>
+              </IconButton>
+            </Column>
+            <Column>
+              <IconButton :state="ButtonState.pressed">
+                <RoundedIcon>
+                  settings
+                </RoundedIcon>
+              </IconButton>
+            </Column>
+            <Column>
+              <IconButton
+                :state="ButtonState.disabled"
+                disabled
+              >
+                <RoundedIcon>
+                  settings
+                </RoundedIcon>
+              </IconButton>
             </Column>
           </Row>
         </div>

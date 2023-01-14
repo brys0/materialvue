@@ -54,5 +54,17 @@ import {
         CosmicMind
       </TypographyHeadline>
     </div>
+    <div class="end">
+      <IconButton>
+        <RoundedIcon>
+          notifications
+        </RoundedIcon>
+      </IconButton>
+      <IconButton>
+        <RoundedIcon>
+          account_circle
+        </RoundedIcon>
+      </IconButton>
+    </div>
   </TopAppBar>
 </template>

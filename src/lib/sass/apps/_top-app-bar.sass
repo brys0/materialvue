@@ -57,16 +57,36 @@
     display: flex
     align-items: center
 
+    .button
+      &.icon
+        // width: 48px
+        // height: 48px
+      
+        &.leading
+          @include theme.preferred
+            color: theme.style(on-surface)
+        
+        &.trailing
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+
+    .typography
+      &.headline
+        @include theme.preferred
+          color: theme.style(on-surface)
+
   > .start
     grid-row: row-1-start / row-2-end
     grid-column: col-1-start / col-1-end
-    
+    gap: 24px
+
   > .center
     padding: 24px
     grid-row: row-1-start / row-2-end
     grid-column: col-2-start / col-2-end
-    
+    gap: 24px
+
   > .end
     grid-row: row-1-start / row-2-end
     grid-column: col-3-start / col-3-end
-    
+    gap: 24px

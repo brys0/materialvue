@@ -204,22 +204,35 @@ a.button
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered
         @include theme.preferred
-          background: theme.tint(theme.style(primary), transparent, 8%)
+          background: theme.tint(theme.style(on-surface-variant), transparent, 8%)
+        
+        .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
           
       &:focus:not(.hovered):not(.pressed):not(.disabled),
       &.focused
         @include theme.preferred
-          background: theme.tint(theme.style(primary), transparent, 12%)
+          background: theme.tint(theme.style(on-surface-variant), transparent, 12%)
+        
+        .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
   
       &:active:not(.hovered):not(.focused):not(.disabled),
       &.pressed
         @include theme.preferred
-          background: theme.tint(theme.style(primary), transparent, 12%)
+          background: theme.tint(theme.style(on-surface-variant), transparent, 12%)
+        
+        .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
 
       &:disabled:not(.hovered):not(.focused):not(.pressed),
       &[disabled]:not(.hovered):not(.focused):not(.pressed),
       &.disabled:not(.hovered):not(.focused):not(.pressed)
         background: none
 
-        @include theme.preferred
-          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+        .icon
+          @include theme.preferred
+            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
