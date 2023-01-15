@@ -36,9 +36,12 @@
   @extend %is-noselect
 
   width: 80px
-  display: grid
   grid-row: row-2-start / row-3-end
-  grid-column: col-1-start
+  grid-column: col-1-start / col-1-end
+  display: flex
+  flex-flow: column
+  align-items: center
+  align-content: flex-start
 
   @include theme.preferred
     background: theme.style(surface)

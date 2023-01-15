@@ -279,3 +279,76 @@ a.button
         
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+  &.fab
+    padding: 0
+    width: 56px
+    height: 56px
+    border-radius: 16px
+
+    @include theme.preferred
+      background: theme.style(primary-container)
+      box-shadow: theme.style(shadow-3)
+
+    .icon
+      width: 56px
+      height: 56px
+      display: flex
+      align-items: center
+      justify-content: center
+      font-size: 24px
+      border-radius: 16px
+
+      @include theme.preferred
+        color: theme.style(on-primary-container)
+
+    &.selected
+      .icon
+        @include theme.preferred
+          color: theme.style(primary)
+
+    &:hover:not(.focused):not(.pressed):not(.disabled),
+    &.hovered
+      .icon
+        @include theme.preferred
+          background: theme.tint(theme.style(on-surface-variant), transparent, 8%)
+          color: theme.style(on-surface-variant)
+      
+      &.selected
+        .icon
+          @include theme.preferred
+            background: theme.tint(theme.style(primary), transparent, 8%)
+            color: theme.style(primary)
+        
+    &:focus:not(.hovered):not(.pressed):not(.disabled),
+    &.focused
+      .icon
+        @include theme.preferred
+          background: theme.tint(theme.style(on-surface-variant), transparent, 12%)
+          color: theme.style(on-surface-variant)
+
+      &.selected
+        .icon
+          @include theme.preferred
+            color: theme.style(primary)
+
+    &:active:not(.hovered):not(.focused):not(.disabled),
+    &.pressed
+      .icon
+        @include theme.preferred
+          background: theme.tint(theme.style(on-surface-variant), transparent, 12%)
+          color: theme.style(on-surface-variant)
+      
+      &.selected
+        .icon
+          @include theme.preferred
+            background: theme.tint(theme.style(primary), transparent, 12%)
+            color: theme.style(primary)
+
+    &:disabled:not(.hovered):not(.focused):not(.pressed),
+    &[disabled]:not(.hovered):not(.focused):not(.pressed),
+    &.disabled:not(.hovered):not(.focused):not(.pressed)
+      .icon
+        background: transparent
+        
+        @include theme.preferred
+          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
