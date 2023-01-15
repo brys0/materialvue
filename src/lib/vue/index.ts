@@ -59,6 +59,7 @@ export {
 	OutlinedButton,
 	TextButton,
 	IconButton,
+	FABButton,
 } from '@/lib/vue/buttons'
 
 export {

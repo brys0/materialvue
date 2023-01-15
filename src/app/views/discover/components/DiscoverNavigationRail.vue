@@ -35,10 +35,18 @@
 <script lang="ts" setup>
 import {
 	NavigationRail,
+	FABButton,
+	RoundedIcon,
 } from '@/lib/vue'
 
 </script>
 
 <template>
-  <NavigationRail />
+  <NavigationRail>
+    <FABButton>
+      <RoundedIcon>
+        edit
+      </RoundedIcon>
+    </FABButton>
+  </NavigationRail>
 </template>

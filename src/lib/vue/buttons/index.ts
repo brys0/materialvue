@@ -58,3 +58,7 @@ export {
 export {
 	IconButton,
 } from '@/lib/vue/buttons/IconButton'
+
+export {
+	FABButton,
+} from '@/lib/vue/buttons/FABButton'

@@ -41,7 +41,7 @@ export type ToolbarProps = {}
 export const Toolbar: FunctionalComponent<ToolbarProps> = (_, {
 	slots,
 }): VNode => h('aside', {
-	class: 'app-toolbar',
+	class: 'toolbar',
 }, {
 	default: () => slots.default?.(),
 })

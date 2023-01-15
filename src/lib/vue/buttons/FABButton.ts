@@ -30,33 +30,37 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use '../theme'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-.top-app-bar
-  padding: 0 16px
-  height: 64px
-  
-  @include theme.preferred
-    background: theme.style(surface)
+import {
+	Button,
+} from '@/lib/vue/buttons/Button'
 
-  &:empty
-    height: 0
-    visibility: hidden
+export type FABButtonProps = {
+	selected?: boolean
+}
 
-  > .start,
-  > .center,
-  > .end
-    .button
-      &.icon
-        &.leading
-          @include theme.preferred
-            color: theme.style(on-surface)
-        
-        &.trailing
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
+export const FABButton: FunctionalComponent<FABButtonProps> = ({
+	selected,
+}, {
+	slots,
+}): VNode => h(Button, {
+	class: {
+		fab: true,
+		selected,
+	},
+}, {
+	default: () => slots.default?.(),
+})
 
-    .typography
-      &.headline
-        @include theme.preferred
-          color: theme.style(on-surface)
+FABButton.displayName = 'FABButton'
+
+FABButton.props = [
+	'selected'
+]
+
+export default FABButton
