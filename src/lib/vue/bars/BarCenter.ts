@@ -33,51 +33,21 @@
 import {
 	h,
 	VNode,
-	PropType,
-	defineComponent,
+	FunctionalComponent,
 } from 'vue'
 
-export enum CardState {
-  enabled = 'enabled',
-  hovered = 'hovered',
-  focused = 'focused',
-	pressed = 'pressed',
-	dragged = 'dragged',
-	disabled = 'disabled',
-}
+export type BarCenterProps = {}
 
-export const Card = defineComponent({
-	props: {
-		state: {
-			type: String as PropType<CardState>,
-			default: CardState.enabled,
-		},
-	},
-	emits: [ 'click' ],
-	render(): VNode {
-		const {
-			state,
-		} = this.$props
-		return h('div', {
-			class: {
-				card: true,
-				enabled: CardState.enabled === state,
-				hovered: CardState.hovered === state,
-				focused: CardState.focused === state,
-				pressed: CardState.pressed === state,
-				dragged: CardState.dragged === state,
-				disabled: CardState.disabled === state,
-			},
-			onClick: (event: PointerEvent) => {
-				if (CardState.enabled === this.$props.state) {
-					this.$el.blur()
-					this.$emit('click', event)
-				}
-			},
-		}, {
-			default: () => this.$slots.default?.(),
-		})
-	},
+export const BarCenter: FunctionalComponent<BarCenterProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: 'bar-center center',
+}, {
+	default: () => slots.default?.(),
 })
 
-export default Card
+BarCenter.displayName = 'BarCenter'
+
+BarCenter.props = []
+
+export default BarCenter

@@ -106,3 +106,10 @@ export {
 	FilledCard,
 	OutlinedCard,
 } from '@/lib/vue/cards'
+
+export {
+	Bar,
+	BarStart,
+	BarCenter,
+	BarEnd,
+} from '@/lib/vue/bars'

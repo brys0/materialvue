@@ -84,6 +84,8 @@ import {
 	ElevatedCard,
 	FilledCard,
 	OutlinedCard,
+	Bar,
+	BarEnd,
 } from '@/lib/vue'
 
 const validationSchema = object({
@@ -877,7 +879,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               <TypographyLabel>
                 Enabled
               </TypographyLabel>
-              <TypographyTitle>
+              <TypographyTitle :size="TypographySize.large">
                 Title
               </TypographyTitle>
               <TypographyTitle :size="TypographySize.small">
@@ -886,12 +888,40 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               <TypographyBody>
                 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
               </TypographyBody>
+              <Bar>
+                <BarEnd>
+                  <FilledButton>
+                    Get Started
+                  </FilledButton>
+                </BarEnd>
+              </Bar>
+            </ElevatedCard>
+            <ElevatedCard>
+              <TypographyLabel>
+                Hovered
+              </TypographyLabel>
+              <TypographyTitle :size="TypographySize.large">
+                Title
+              </TypographyTitle>
+              <TypographyTitle :size="TypographySize.small">
+                Subhead
+              </TypographyTitle>
+              <TypographyBody>
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+              </TypographyBody>
+              <Bar>
+                <BarEnd>
+                  <FilledButton>
+                    Get Started
+                  </FilledButton>
+                </BarEnd>
+              </Bar>
             </ElevatedCard>
             <ElevatedCard>
               <TypographyLabel>
                 Focused
               </TypographyLabel>
-              <TypographyTitle>
+              <TypographyTitle :size="TypographySize.large">
                 Title
               </TypographyTitle>
               <TypographyTitle :size="TypographySize.small">
@@ -900,12 +930,19 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               <TypographyBody>
                 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
               </TypographyBody>
+              <Bar>
+                <BarEnd>
+                  <FilledButton>
+                    Get Started
+                  </FilledButton>
+                </BarEnd>
+              </Bar>
             </ElevatedCard>
             <ElevatedCard>
               <TypographyLabel>
                 Pressed
               </TypographyLabel>
-              <TypographyTitle>
+              <TypographyTitle :size="TypographySize.large">
                 Title
               </TypographyTitle>
               <TypographyTitle :size="TypographySize.small">
@@ -914,12 +951,19 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               <TypographyBody>
                 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
               </TypographyBody>
+              <Bar>
+                <BarEnd>
+                  <FilledButton>
+                    Get Started
+                  </FilledButton>
+                </BarEnd>
+              </Bar>
             </ElevatedCard>
             <ElevatedCard>
               <TypographyLabel>
                 Dragged
               </TypographyLabel>
-              <TypographyTitle>
+              <TypographyTitle :size="TypographySize.large">
                 Title
               </TypographyTitle>
               <TypographyTitle :size="TypographySize.small">
@@ -928,12 +972,19 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               <TypographyBody>
                 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
               </TypographyBody>
+              <Bar>
+                <BarEnd>
+                  <FilledButton>
+                    Get Started
+                  </FilledButton>
+                </BarEnd>
+              </Bar>
             </ElevatedCard>
             <ElevatedCard>
               <TypographyLabel>
                 Disabled
               </TypographyLabel>
-              <TypographyTitle>
+              <TypographyTitle :size="TypographySize.large">
                 Title
               </TypographyTitle>
               <TypographyTitle :size="TypographySize.small">
@@ -942,6 +993,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               <TypographyBody>
                 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
               </TypographyBody>
+              <Bar>
+                <BarEnd>
+                  <FilledButton>
+                    Get Started
+                  </FilledButton>
+                </BarEnd>
+              </Bar>
             </ElevatedCard>
           </Cards>
         </div>
