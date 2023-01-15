@@ -31,11 +31,12 @@
  */
 
 @use './theme'
+@use './layout'
 
 .card
   @extend %is-noselect
 
-  padding: 0 16px
+  padding: 20px 16px
   border-radius: 12px
   
   &.elevated
@@ -44,10 +45,20 @@
       box-shadow: theme.style(shadow-1)
 
 .cards
-  @extend %row
-
-  justify-content: space-evenly
+  display: grid
   gap: 8px
 
-  .card
-    @extend %column
+  @include layout.is-mobile
+    grid-template-columns: repeat(1, 1fr) !important
+
+  @include layout.is-tablet
+    grid-template-columns: repeat(3, 1fr) !important
+
+  @include layout.is-desktop
+    grid-template-columns: repeat(3, 1fr) !important
+
+  @include layout.is-widescreen
+    grid-template-columns: repeat(4, 1fr) !important
+
+  @include layout.is-fullhd
+    grid-template-columns: repeat(5, 1fr) !important

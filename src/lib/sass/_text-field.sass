@@ -30,15 +30,15 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use '../theme'
-@use '../conversion'
+@use './theme'
+@use './conversion'
 
 .text-field
   display: grid
   grid-template-rows: [row-1-start] 56px [row-1-end row-2-start] min-content [row-2-end]  
   grid-template-columns: [col-1-start] auto [col-1-end row-2-start]
   
-  .field-body
+  > .field-body
     @extend %bar
     
     padding: 0 16px
@@ -46,7 +46,7 @@
     grid-column: col-1-start / col-1-end
     gap: 16px
     
-    .field-icon
+    > .field-icon
       @extend %is-noselect
 
       height: 54px
@@ -61,7 +61,7 @@
       &.trailing
         gap: 0
 
-    .field-control
+    > .field-control
       @extend %bar-center
 
       padding: 0
@@ -71,10 +71,10 @@
       align-items: stretch
       gap: 0
       
-      .field-label
+      > .field-label
         @extend %is-noselect
         
-      .field-input
+      > .field-input
         padding: 0
 
         &:-webkit-autofill
@@ -95,7 +95,7 @@
           to
             /** */
         
-  .field-support
+  > .field-support
     padding: 4px 16px 0
     grid-row: row-2-start / row-2-end
     grid-column: col-1-start / col-1-end
@@ -104,17 +104,17 @@
     align-items: flex-start
   
   &.is-empty:not(.focused)
-    .field-body
-      .field-control
-        .field-label
+    > .field-body
+      > .field-control
+        > .field-label
           @extend %typography-body-large
         
-        .field-input
+        > .field-input
           height: 0
           appearance: none
         
   &.filled
-    .field-body
+    > .field-body
       border-bottom-style: solid
       border-bottom-width: 1px
       border-top-left-radius: 5px
@@ -124,7 +124,7 @@
         border-bottom-color: theme.style(on-surface-variant)
         background: theme.style(surface-variant)
 
-      .field-icon
+      > .field-icon
         &.leading,
         &.trailing
           .icon
@@ -133,14 +133,14 @@
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
-      .field-control
-        .field-label
+      > .field-control
+        > .field-label
           @extend %typography-body-small
 
           @include theme.preferred
             color: theme.style(on-surface-variant)
 
-        .field-input
+        > .field-input
           @extend %typography-body-large
 
           border: none
@@ -159,33 +159,33 @@
               -webkit-text-fill-color: theme.style(on-surface) !important
               -webkit-box-shadow: 0 0 0 30px theme.style(surface-variant) inset !important
             
-    .field-support
-      .field-text
+    > .field-support
+      > .field-details
         @extend %typography-body-small
 
         @include theme.preferred
           color: theme.style(on-surface-variant)
 
     &.has-error
-      .field-body
+      > .field-body
         border-bottom-width: 2px
         
         @include theme.preferred
           border-bottom-color: theme.style(error)
 
-        .field-icon
+        > .field-icon
           &.trailing
             .icon
               @include theme.preferred
                 color: theme.style(error)
 
-        .field-control        
-          .field-label
+        > .field-control        
+          > .field-label
             @include theme.preferred
               color: theme.style(error)
           
-      .field-support
-        .field-text
+      > .field-support
+        > .field-details
           @include theme.preferred
             color: theme.style(error)
     
@@ -193,19 +193,19 @@
     &.hovered
       cursor: pointer
 
-      .field-body
+      > .field-body
         border-bottom-width: 1px
 
         @include theme.preferred
           border-bottom-color: theme.style(on-surface)
           background: theme.tint(theme.style(on-surface), theme.style(surface-variant), 8%)
 
-        .field-control
-          .field-label
+        > .field-control
+          > .field-label
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
-          .field-input
+          > .field-input
             &:-webkit-autofill,
             &:-webkit-autofill:hover, 
             &:-webkit-autofill:focus, 
@@ -213,17 +213,17 @@
               @include theme.preferred
                 -webkit-box-shadow: 0 0 0 30px theme.tint(theme.style(on-surface), theme.style(surface-variant), 8%) inset !important
 
-      .field-support
-        .field-text
+      > .field-support
+        > .field-details
           @include theme.preferred
             color: theme.style(on-surface-variant)
       
       &.has-error
-        .field-body
+        > .field-body
           @include theme.preferred
             border-bottom-color: theme.style(on-error-container)
 
-          .field-icon
+          > .field-icon
             &.leading
               .icon
                 @include theme.preferred
@@ -234,42 +234,42 @@
                 @include theme.preferred
                   color: theme.style(on-error-container)
 
-          .field-control  
-            .field-label
+          > .field-control  
+            > .field-label
               @include theme.preferred
                 color: theme.style(on-error-container)
             
-        .field-support
-          .field-text
+        > .field-support
+          > .field-details
             @include theme.preferred
               color: theme.style(error)
     
     &:focus:not(.hovered):not(.disabled),
     &.focused
-      .field-body
+      > .field-body
         border-bottom-width: 2px
         
         @include theme.preferred
           border-bottom-color: theme.style(primary)
 
-        .field-control
-          .field-label
+        > .field-control
+          > .field-label
             @extend %typography-body-small
 
             @include theme.preferred
               color: theme.style(primary)
               
-      .field-support
-        .field-text
+      > .field-support
+        > .field-details
           @include theme.preferred
             color: theme.style(on-surface-variant)
 
       &.has-error
-        .field-body
+        > .field-body
           @include theme.preferred
             border-bottom-color: theme.style(error)
             
-          .field-icon
+          > .field-icon
             &.leading
               .icon
                 @include theme.preferred
@@ -280,17 +280,17 @@
                 @include theme.preferred
                   color: theme.style(error)
           
-          .field-control
-            .field-label
+          > .field-control
+            > .field-label
               @include theme.preferred
                 color: theme.style(error)
             
-            .field-input
+            > .field-input
               @include theme.preferred
                 caret-color: theme.style(error)
               
-        .field-support
-          .field-text
+        > .field-support
+          > .field-details
             @include theme.preferred
               color: theme.style(error)
 
@@ -302,24 +302,24 @@
       cursor: not-allowed
       pointer-events: all !important
         
-      .field-body
+      > .field-body
         @include theme.preferred
           border-bottom-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           background: conversion.hex-to-rgba(theme.style(on-surface), 4%)
 
-        .field-icon
+        > .field-icon
           &.leading,
           &.trailing
             .icon
               @include theme.preferred
                 color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           
-        .field-control
-          .field-label
+        > .field-control
+          > .field-label
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
             
-          .field-input
+          > .field-input
             pointer-events: none !important
 
             @include theme.preferred
@@ -333,7 +333,7 @@
                 -webkit-text-fill-color: conversion.hex-to-rgba(theme.style(on-surface), 38%) !important
                 -webkit-box-shadow: 0 0 0 30px conversion.hex-to-rgba(theme.style(on-surface), 4%) inset !important
                 
-      .field-support
-        .field-text
+      > .field-support
+        > .field-details
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)

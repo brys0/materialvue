@@ -90,7 +90,7 @@ export {
 	FieldInput,
 	FieldLabel,
 	FieldSupport,
-	FieldText,
+	FieldDetails,
 } from '@/lib/vue/forms'
 
 export {

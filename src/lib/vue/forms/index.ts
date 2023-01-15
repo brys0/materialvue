@@ -63,5 +63,5 @@ export {
 } from '@/lib/vue/forms/FieldSupport'
 
 export {
-	FieldText,
-} from '@/lib/vue/forms/FieldText'
+	FieldDetails,
+} from '@/lib/vue/forms/FieldDetails'

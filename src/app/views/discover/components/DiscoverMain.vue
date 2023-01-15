@@ -76,7 +76,7 @@ import {
 	FieldInput,
 	FieldLabel,
 	FieldSupport,
-	FieldText,
+	FieldDetails,
 	TextFieldState,
 	FilledTextField,
 	RoundedIcon,
@@ -534,7 +534,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         </TypographyDisplay>
         <TypographyBody :size="TypographySize.large">
           See the <a
-            href="https://m3.material.io/components/text-fields/overview"
+            href="https://m3.material.io/text-fields/overview"
             target="_blank"
           >Design Guidelines</a>
         </TypographyBody>
@@ -577,9 +577,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldIcon>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
-                      <FieldText>
+                      <FieldDetails>
                         {{ errors.email }}
-                      </FieldText>
+                      </FieldDetails>
                     </FieldSupport>
                   </FilledTextField>
                 </FormFieldset>
@@ -613,9 +613,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldIcon>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
-                      <FieldText>
+                      <FieldDetails>
                         {{ errors.email }}
-                      </FieldText>
+                      </FieldDetails>
                     </FieldSupport>
                   </FilledTextField>
                 </FormFieldset>
@@ -649,9 +649,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldIcon>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
-                      <FieldText>
+                      <FieldDetails>
                         {{ errors.email }}
-                      </FieldText>
+                      </FieldDetails>
                     </FieldSupport>
                   </FilledTextField>
                 </FormFieldset>
@@ -685,9 +685,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldIcon>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
-                      <FieldText>
+                      <FieldDetails>
                         {{ errors.email }}
-                      </FieldText>
+                      </FieldDetails>
                     </FieldSupport>
                   </FilledTextField>
                 </FormFieldset>
@@ -728,9 +728,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldIcon>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
-                      <FieldText>
+                      <FieldDetails>
                         {{ errors.email }}
-                      </FieldText>
+                      </FieldDetails>
                     </FieldSupport>
                   </FilledTextField>
                 </FormFieldset>
@@ -767,9 +767,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldIcon>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
-                      <FieldText>
+                      <FieldDetails>
                         {{ errors.email }}
-                      </FieldText>
+                      </FieldDetails>
                     </FieldSupport>
                   </FilledTextField>
                 </FormFieldset>
@@ -806,9 +806,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldIcon>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
-                      <FieldText>
+                      <FieldDetails>
                         {{ errors.email }}
-                      </FieldText>
+                      </FieldDetails>
                     </FieldSupport>
                   </FilledTextField>
                 </FormFieldset>
@@ -842,9 +842,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </FieldIcon>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
-                      <FieldText>
+                      <FieldDetails>
                         {{ errors.email }}
-                      </FieldText>
+                      </FieldDetails>
                     </FieldSupport>
                   </FilledTextField>
                 </FormFieldset>
@@ -874,29 +874,74 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         <div>
           <Cards>
             <ElevatedCard>
+              <TypographyLabel>
+                Enabled
+              </TypographyLabel>
               <TypographyTitle>
                 Title
               </TypographyTitle>
+              <TypographyTitle :size="TypographySize.small">
+                Subhead
+              </TypographyTitle>
+              <TypographyBody>
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+              </TypographyBody>
             </ElevatedCard>
             <ElevatedCard>
+              <TypographyLabel>
+                Focused
+              </TypographyLabel>
               <TypographyTitle>
                 Title
               </TypographyTitle>
+              <TypographyTitle :size="TypographySize.small">
+                Subhead
+              </TypographyTitle>
+              <TypographyBody>
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+              </TypographyBody>
             </ElevatedCard>
             <ElevatedCard>
+              <TypographyLabel>
+                Pressed
+              </TypographyLabel>
               <TypographyTitle>
                 Title
               </TypographyTitle>
+              <TypographyTitle :size="TypographySize.small">
+                Subhead
+              </TypographyTitle>
+              <TypographyBody>
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+              </TypographyBody>
             </ElevatedCard>
             <ElevatedCard>
+              <TypographyLabel>
+                Dragged
+              </TypographyLabel>
               <TypographyTitle>
                 Title
               </TypographyTitle>
+              <TypographyTitle :size="TypographySize.small">
+                Subhead
+              </TypographyTitle>
+              <TypographyBody>
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+              </TypographyBody>
             </ElevatedCard>
             <ElevatedCard>
+              <TypographyLabel>
+                Disabled
+              </TypographyLabel>
               <TypographyTitle>
                 Title
               </TypographyTitle>
+              <TypographyTitle :size="TypographySize.small">
+                Subhead
+              </TypographyTitle>
+              <TypographyBody>
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+              </TypographyBody>
             </ElevatedCard>
           </Cards>
         </div>

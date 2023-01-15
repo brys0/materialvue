@@ -150,12 +150,18 @@
     &.small
       @extend %typography-title-small
 
+      + .body
+        margin-top: 16px
+
   &.label
     &.large
       @extend %typography-label-large
     
     &.medium
       @extend %typography-label-medium
+
+      + .title
+        margin-top: 16px
     
     &.small
       @extend %typography-label-small

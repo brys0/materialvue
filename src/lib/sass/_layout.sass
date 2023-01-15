@@ -56,7 +56,7 @@ $max-widescreen-width: conversion.to-px($max-widescreen-width-value)
 
 /* 1440+ */
 $min-fullhd-width-value: $max-widescreen-width-value + 1
-$min-fullhd-width: to-px($min-fullhd-width-value)
+$min-fullhd-width: conversion.to-px($min-fullhd-width-value)
 
 @mixin is-mobile
   @media (max-width: $max-mobile-width)

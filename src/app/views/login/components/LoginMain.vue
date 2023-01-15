@@ -64,7 +64,7 @@ import {
 	FieldInput,
 	FieldLabel,
 	FieldSupport,
-	FieldText,
+	FieldDetails,
 	FilledTextField,
 } from '@/lib/vue'
 
@@ -134,9 +134,9 @@ onBeforeUnmount(() => {
                 </FieldIcon>
               </FieldBody>
               <FieldSupport v-if="errors.email">
-                <FieldText>
+                <FieldDetails>
                   {{ errors.email }}
-                </FieldText>
+                </FieldDetails>
               </FieldSupport>
             </FilledTextField>
           </FormFieldset>
@@ -172,9 +172,9 @@ onBeforeUnmount(() => {
                 </FieldIcon>
               </FieldBody>
               <FieldSupport v-if="errors.password">
-                <FieldText>
+                <FieldDetails>
                   {{ errors.password }}
-                </FieldText>
+                </FieldDetails>
               </FieldSupport>
             </FilledTextField>
           </FormFieldset>
