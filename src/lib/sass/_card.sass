@@ -31,6 +31,7 @@
  */
 
 @use './theme'
+@use './conversion'
 @use './layout'
 
 .card
@@ -39,13 +40,53 @@
   padding: 20px 16px
   border-radius: 12px
   
-  &.elevated
-    @include theme.preferred
-      background: theme.style(elevation-1)
-      box-shadow: theme.style(shadow-1)
-
   > .bar
     margin-top: 24px
+  
+  &:disabled:not(.hovered):not(.focused):not(.pressed),
+  &[disabled]:not(.hovered):not(.focused):not(.pressed),
+  &.disabled:not(.hovered):not(.focused):not(.pressed)
+    cursor: not-allowed
+    pointer-events: all !important
+    box-shadow: none
+    
+  &.elevated
+    @include theme.preferred
+      background: theme.style(elevation-1), theme.style(surface)
+      box-shadow: theme.style(shadow-1)
+
+    &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
+    &.hovered
+      cursor: pointer
+      
+      @include theme.preferred
+        background: theme.style(elevation-2), theme.style(surface)
+        box-shadow: theme.style(shadow-2)
+
+    &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
+    &.focused
+      @include theme.preferred
+        background: theme.style(elevation-1), theme.style(surface)
+
+    &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
+    &.pressed
+      @include theme.preferred
+        background: theme.style(elevation-1), theme.style(surface)
+    
+    &:active:not(.hovered):not(.focused):not(.pressed):not(.disabled),
+    &.dragged
+      @include theme.preferred
+        background: theme.style(elevation-3), theme.style(surface)
+        box-shadow: theme.style(shadow-3)
+    
+    &:disabled:not(.hovered):not(.focused):not(.pressed):not(.dragged),
+    &[disabled]:not(.hovered):not(.focused):not(.pressed):not(.dragged),
+    &.disabled:not(.hovered):not(.focused):not(.pressed:not(.dragged))
+      opacity: 38%
+
+      @include theme.preferred
+        background: theme.style(elevation-0), theme.style(surface)
+        box-shadow: theme.style(shadow-0)
 
 .cards
   display: grid

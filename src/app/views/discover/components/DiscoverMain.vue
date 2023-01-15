@@ -81,6 +81,7 @@ import {
 	FilledTextField,
 	RoundedIcon,
 	Cards,
+	CardState,
 	ElevatedCard,
 	FilledCard,
 	OutlinedCard,
@@ -890,13 +891,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </TypographyBody>
               <Bar>
                 <BarEnd>
-                  <FilledButton>
+                  <TonalButton>
                     Get Started
-                  </FilledButton>
+                  </TonalButton>
                 </BarEnd>
               </Bar>
             </ElevatedCard>
-            <ElevatedCard>
+            <ElevatedCard :state="CardState.hovered">
               <TypographyLabel>
                 Hovered
               </TypographyLabel>
@@ -911,13 +912,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </TypographyBody>
               <Bar>
                 <BarEnd>
-                  <FilledButton>
+                  <TonalButton>
                     Get Started
-                  </FilledButton>
+                  </TonalButton>
                 </BarEnd>
               </Bar>
             </ElevatedCard>
-            <ElevatedCard>
+            <ElevatedCard :state="CardState.focused">
               <TypographyLabel>
                 Focused
               </TypographyLabel>
@@ -932,13 +933,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </TypographyBody>
               <Bar>
                 <BarEnd>
-                  <FilledButton>
+                  <TonalButton>
                     Get Started
-                  </FilledButton>
+                  </TonalButton>
                 </BarEnd>
               </Bar>
             </ElevatedCard>
-            <ElevatedCard>
+            <ElevatedCard :state="CardState.pressed">
               <TypographyLabel>
                 Pressed
               </TypographyLabel>
@@ -953,13 +954,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </TypographyBody>
               <Bar>
                 <BarEnd>
-                  <FilledButton>
+                  <TonalButton>
                     Get Started
-                  </FilledButton>
+                  </TonalButton>
                 </BarEnd>
               </Bar>
             </ElevatedCard>
-            <ElevatedCard>
+            <ElevatedCard :state="CardState.dragged">
               <TypographyLabel>
                 Dragged
               </TypographyLabel>
@@ -974,13 +975,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </TypographyBody>
               <Bar>
                 <BarEnd>
-                  <FilledButton>
+                  <TonalButton>
                     Get Started
-                  </FilledButton>
+                  </TonalButton>
                 </BarEnd>
               </Bar>
             </ElevatedCard>
-            <ElevatedCard>
+            <ElevatedCard :state="CardState.disabled">
               <TypographyLabel>
                 Disabled
               </TypographyLabel>
@@ -995,9 +996,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </TypographyBody>
               <Bar>
                 <BarEnd>
-                  <FilledButton>
+                  <TonalButton :state="CardState.disabled">
                     Get Started
-                  </FilledButton>
+                  </TonalButton>
                 </BarEnd>
               </Bar>
             </ElevatedCard>
