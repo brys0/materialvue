@@ -34,11 +34,11 @@
 
 <script lang="ts" setup>
 import {
-	AppModal,
+	Modal,
 } from '@/lib/vue'
 
 </script>
 
 <template>
-  <AppModal />
+  <Modal />
 </template>

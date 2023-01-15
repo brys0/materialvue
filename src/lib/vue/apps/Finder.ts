@@ -36,18 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type AppToolbarProps = {}
+export type FinderProps = {}
 
-export const AppToolbar: FunctionalComponent<AppToolbarProps> = (_, {
+export const Finder: FunctionalComponent<FinderProps> = (_, {
 	slots,
 }): VNode => h('aside', {
-	class: 'app-toolbar',
+	class: 'finder',
 }, {
 	default: () => slots.default?.(),
 })
 
-AppToolbar.displayName = 'AppToolbar'
+Finder.displayName = 'Finder'
 
-AppToolbar.props = []
+Finder.props = []
 
-export default AppToolbar
+export default Finder

@@ -34,11 +34,11 @@
 
 <script lang="ts" setup>
 import {
-	AppNavigationDrawer,
+	NavigationDrawer,
 } from '@/lib/vue'
 
 </script>
 
 <template>
-  <AppNavigationDrawer />
+  <NavigationDrawer />
 </template>

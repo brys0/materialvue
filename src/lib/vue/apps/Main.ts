@@ -36,18 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type AppMainProps = {}
+export type MainProps = {}
 
-export const AppMain: FunctionalComponent<AppMainProps> = (_, {
+export const Main: FunctionalComponent<MainProps> = (_, {
 	slots,
 }): VNode => h('main', {
-	class: 'app-main',
+	class: 'main',
 }, {
 	default: () => slots.default?.(),
 })
 
-AppMain.displayName = 'AppMain'
+Main.displayName = 'Main'
 
-AppMain.props = []
+Main.props = []
 
-export default AppMain
+export default Main

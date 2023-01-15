@@ -36,18 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type AppNavigationRailProps = {}
+export type FinderProps = {}
 
-export const AppNavigationRail: FunctionalComponent<AppNavigationRailProps> = (_, {
+export const Modal: FunctionalComponent<FinderProps> = (_, {
 	slots,
 }): VNode => h('aside', {
-	class: 'app-navigation-rail',
+	class: 'app-modal',
 }, {
 	default: () => slots.default?.(),
 })
 
-AppNavigationRail.displayName = 'AppNavigationRail'
+Modal.displayName = 'Modal'
 
-AppNavigationRail.props = []
+Modal.props = []
 
-export default AppNavigationRail
+export default Modal

@@ -34,11 +34,11 @@
 
 <script lang="ts" setup>
 import {
-	AppNavigationRail,
+	NavigationRail,
 } from '@/lib/vue'
 
 </script>
 
 <template>
-  <AppNavigationRail />
+  <NavigationRail />
 </template>

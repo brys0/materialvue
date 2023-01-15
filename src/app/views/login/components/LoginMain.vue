@@ -52,7 +52,7 @@ import {
 } from '@cosmicmind/foundation'
 
 import {
-	AppMain,
+	Main,
 	Layout,
 	Tile,
 	FilledButton,
@@ -98,7 +98,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <AppMain>
+  <Main>
     <Layout>
       <Tile>
         <form
@@ -184,7 +184,7 @@ onBeforeUnmount(() => {
         </form>
       </Tile>
     </Layout>
-  </AppMain>
+  </Main>
 </template>
 
 <style lang="sass" scoped>

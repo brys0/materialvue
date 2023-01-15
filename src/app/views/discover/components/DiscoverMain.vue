@@ -53,7 +53,7 @@ import {
 } from '@cosmicmind/foundation'
 
 import {
-	AppMain,
+	Main,
 	TypographySize,
 	TypographyDisplay,
 	TypographyHeadline,
@@ -133,7 +133,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
 </script>
 
 <template>
-  <AppMain>
+  <Main>
     <div>
       <section class="banner">
         <TypographyDisplay :size="TypographySize.large">
@@ -1006,7 +1006,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         </div>
       </section>
     </div>
-  </AppMain>
+  </Main>
 </template>
 
 <style lang="sass" scoped>

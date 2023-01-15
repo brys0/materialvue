@@ -36,18 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type AppNavigationDrawerProps = {}
+export type NavigationDrawerProps = {}
 
-export const AppNavigationDrawer: FunctionalComponent<AppNavigationDrawerProps> = (_, {
+export const NavigationDrawer: FunctionalComponent<NavigationDrawerProps> = (_, {
 	slots,
 }): VNode => h('aside', {
-	class: 'app-navigation-drawer',
+	class: 'navigation-drawer',
 }, {
 	default: () => slots.default?.(),
 })
 
-AppNavigationDrawer.displayName = 'AppNavigationDrawer'
+NavigationDrawer.displayName = 'NavigationDrawer'
 
-AppNavigationDrawer.props = []
+NavigationDrawer.props = []
 
-export default AppNavigationDrawer
+export default NavigationDrawer

@@ -36,18 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type AppFinderProps = {}
+export type ToolbarProps = {}
 
-export const AppModal: FunctionalComponent<AppFinderProps> = (_, {
+export const Toolbar: FunctionalComponent<ToolbarProps> = (_, {
 	slots,
 }): VNode => h('aside', {
-	class: 'app-modal',
+	class: 'app-toolbar',
 }, {
 	default: () => slots.default?.(),
 })
 
-AppModal.displayName = 'AppModal'
+Toolbar.displayName = 'Toolbar'
 
-AppModal.props = []
+Toolbar.props = []
 
-export default AppModal
+export default Toolbar

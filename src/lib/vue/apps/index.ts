@@ -35,29 +35,29 @@ export {
 } from '@/lib/vue/apps/App.vue'
 
 export {
-	AppNavigationRail,
-} from '@/lib/vue/apps/AppNavigationRail'
+	NavigationRail,
+} from '@/lib/vue/apps/NavigationRail'
 
 export {
-	AppNavigationDrawer,
-} from '@/lib/vue/apps/AppNavigationDrawer'
+	NavigationDrawer,
+} from '@/lib/vue/apps/NavigationDrawer'
 
 export {
 	TopAppBar,
 } from '@/lib/vue/apps/TopAppBar'
 
 export {
-	AppToolbar,
-} from '@/lib/vue/apps/AppToolbar'
+	Toolbar,
+} from '@/lib/vue/apps/Toolbar'
 
 export {
-	AppMain,
-} from '@/lib/vue/apps/AppMain'
+	Main,
+} from '@/lib/vue/apps/Main'
 
 export {
-	AppFinder,
-} from '@/lib/vue/apps/AppFinder'
+	Finder,
+} from '@/lib/vue/apps/Finder'
 
 export {
-	AppModal,
-} from '@/lib/vue/apps/AppModal'
+	Modal,
+} from '@/lib/vue/apps/Modal'

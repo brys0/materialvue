@@ -34,11 +34,11 @@
 
 <script lang="ts" setup>
 import {
-	AppFinder,
+	Finder,
 } from '@/lib/vue'
 
 </script>
 
 <template>
-  <AppFinder />
+  <Finder />
 </template>
