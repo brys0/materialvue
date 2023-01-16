@@ -87,6 +87,8 @@ import {
 	OutlinedCard,
 	Bar,
 	BarEnd,
+	FABButton,
+	FABButtonVariant,
 } from '@/lib/vue'
 
 const validationSchema = object({
@@ -524,6 +526,281 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   settings
                 </RoundedIcon>
               </IconButton>
+            </Column>
+          </Row>
+        </div>
+      </section>
+      <section>
+        <TypographyDisplay :size="TypographySize.small">
+          FAB button states
+        </TypographyDisplay>
+        <div>
+          <Row>
+            <Column>
+              <FABButton>
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton :state="ButtonState.hovered">
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton :state="ButtonState.focused">
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton :state="ButtonState.pressed">
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :state="ButtonState.disabled"
+                disabled
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+          </Row>
+        </div>
+      </section>
+      <section>
+        <TypographyDisplay :size="TypographySize.small">
+          FAB button lowered states
+        </TypographyDisplay>
+        <div>
+          <Row>
+            <Column>
+              <FABButton :lowered="true">
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :lowered="true"
+                :state="ButtonState.hovered"
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :lowered="true"
+                :state="ButtonState.focused"
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :lowered="true"
+                :state="ButtonState.pressed"
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :lowered="true"
+                :state="ButtonState.disabled"
+                disabled
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+          </Row>
+        </div>
+      </section>
+      <section>
+        <TypographyDisplay :size="TypographySize.small">
+          FAB button surface variant
+        </TypographyDisplay>
+        <div>
+          <Row>
+            <Column>
+              <FABButton :variant="FABButtonVariant.surface">
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :variant="FABButtonVariant.surface"
+                :state="ButtonState.hovered"
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :variant="FABButtonVariant.surface"
+                :state="ButtonState.focused"
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :variant="FABButtonVariant.surface"
+                :state="ButtonState.pressed"
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :variant="FABButtonVariant.surface"
+                :state="ButtonState.disabled"
+                disabled
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+          </Row>
+        </div>
+      </section>
+      <section>
+        <TypographyDisplay :size="TypographySize.small">
+          FAB button secondary variant
+        </TypographyDisplay>
+        <div>
+          <Row>
+            <Column>
+              <FABButton :variant="FABButtonVariant.secondary">
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :variant="FABButtonVariant.secondary"
+                :state="ButtonState.hovered"
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :variant="FABButtonVariant.secondary"
+                :state="ButtonState.focused"
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :variant="FABButtonVariant.secondary"
+                :state="ButtonState.pressed"
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :variant="FABButtonVariant.secondary"
+                :state="ButtonState.disabled"
+                disabled
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+          </Row>
+        </div>
+      </section>
+      <section>
+        <TypographyDisplay :size="TypographySize.small">
+          FAB button tertiary variant
+        </TypographyDisplay>
+        <div>
+          <Row>
+            <Column>
+              <FABButton :variant="FABButtonVariant.tertiary">
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :variant="FABButtonVariant.tertiary"
+                :state="ButtonState.hovered"
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :variant="FABButtonVariant.tertiary"
+                :state="ButtonState.focused"
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :variant="FABButtonVariant.tertiary"
+                :state="ButtonState.pressed"
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
+            </Column>
+            <Column>
+              <FABButton
+                :variant="FABButtonVariant.tertiary"
+                :state="ButtonState.disabled"
+                disabled
+              >
+                <RoundedIcon>
+                  edit
+                </RoundedIcon>
+              </FABButton>
             </Column>
           </Row>
         </div>

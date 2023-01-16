@@ -40,18 +40,29 @@ import {
 	Button,
 } from '@/lib/vue/buttons/Button'
 
+export enum FABButtonVariant {
+  surface = 'surface',
+  secondary = 'secondary',
+  tertiary = 'tertiary',
+}
+
 export type FABButtonProps = {
-	selected?: boolean
+	lowered?: boolean
+	variant?: FABButtonVariant
 }
 
 export const FABButton: FunctionalComponent<FABButtonProps> = ({
-	selected,
+	lowered,
+	variant,
 }, {
 	slots,
 }): VNode => h(Button, {
 	class: {
 		fab: true,
-		selected,
+		lowered,
+		surface: FABButtonVariant.surface === variant,
+		secondary: FABButtonVariant.secondary === variant,
+		tertiary: FABButtonVariant.tertiary === variant,
 	},
 }, {
 	default: () => slots.default?.(),
@@ -60,7 +71,8 @@ export const FABButton: FunctionalComponent<FABButtonProps> = ({
 FABButton.displayName = 'FABButton'
 
 FABButton.props = [
-	'selected'
+	'lowered',
+	'variant'
 ]
 
 export default FABButton

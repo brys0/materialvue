@@ -61,4 +61,5 @@ export {
 
 export {
 	FABButton,
+	FABButtonVariant,
 } from '@/lib/vue/buttons/FABButton'

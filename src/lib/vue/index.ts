@@ -60,6 +60,7 @@ export {
 	TextButton,
 	IconButton,
 	FABButton,
+	FABButtonVariant,
 } from '@/lib/vue/buttons'
 
 export {

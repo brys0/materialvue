@@ -289,6 +289,9 @@ a.button
       background: theme.style(primary-container)
       box-shadow: theme.style(shadow-3)
 
+    &.lowered
+      box-shadow: theme.style(shadow-1)
+
     .icon
       width: 56px
       height: 56px
@@ -301,54 +304,142 @@ a.button
       @include theme.preferred
         color: theme.style(on-primary-container)
 
-    &.selected
+    &.surface
+      @include theme.preferred
+        background: theme.style(surface)
+
       .icon
         @include theme.preferred
           color: theme.style(primary)
 
-    &:hover:not(.focused):not(.pressed):not(.disabled),
-    &.hovered
+    &.secondary
+      @include theme.preferred
+        background: theme.style(secondary-container)
+
       .icon
         @include theme.preferred
-          background: theme.tint(theme.style(on-surface-variant), transparent, 8%)
-          color: theme.style(on-surface-variant)
+          color: theme.style(on-secondary-container)
+
+    &.tertiary
+      @include theme.preferred
+        background: theme.style(tertiary-container)
       
-      &.selected
+      .icon
+        @include theme.preferred
+          color: theme.style(on-tertiary-container)
+
+    &:hover:not(.focused):not(.pressed):not(.disabled),
+    &.hovered
+      @include theme.preferred
+        box-shadow: theme.style(shadow-4)
+
+      &.lowered
+        @include theme.preferred
+          box-shadow: theme.style(shadow-2)
+
+      .icon
+        @include theme.preferred
+          background: theme.tint(theme.style(on-primary-container), transparent, 8%)
+      
+      &.surface
         .icon
           @include theme.preferred
             background: theme.tint(theme.style(primary), transparent, 8%)
-            color: theme.style(primary)
-        
-    &:focus:not(.hovered):not(.pressed):not(.disabled),
-    &.focused
-      .icon
-        @include theme.preferred
-          background: theme.tint(theme.style(on-surface-variant), transparent, 12%)
-          color: theme.style(on-surface-variant)
 
-      &.selected
+      &.secondary
         .icon
           @include theme.preferred
-            color: theme.style(primary)
+            background: theme.tint(theme.style(on-secondary-container), transparent, 8%)
 
-    &:active:not(.hovered):not(.focused):not(.disabled),
-    &.pressed
+      &.tertiary
+        .icon
+          @include theme.preferred
+            background: theme.tint(theme.style(on-tertiary-container), transparent, 8%)
+              
+    &:focus:not(.hovered):not(.pressed):not(.disabled),
+    &.focused
+      @include theme.preferred
+        box-shadow: theme.style(shadow-3)
+
+      &.lowered
+        @include theme.preferred
+          box-shadow: theme.style(shadow-1)
+
       .icon
         @include theme.preferred
-          background: theme.tint(theme.style(on-surface-variant), transparent, 12%)
-          color: theme.style(on-surface-variant)
+          background: theme.tint(theme.style(on-primary-container), transparent, 12%)
       
-      &.selected
+      &.surface
         .icon
           @include theme.preferred
             background: theme.tint(theme.style(primary), transparent, 12%)
-            color: theme.style(primary)
+
+      &.secondary
+        .icon
+          @include theme.preferred
+            background: theme.tint(theme.style(on-secondary-container), transparent, 12%)
+
+      &.tertiary
+        .icon
+          @include theme.preferred
+            background: theme.tint(theme.style(on-tertiary-container), transparent, 12%)
+
+    &:active:not(.hovered):not(.focused):not(.disabled),
+    &.pressed
+      @include theme.preferred
+        box-shadow: theme.style(shadow-3)
+
+      &.lowered
+        @include theme.preferred
+          box-shadow: theme.style(shadow-1)
+
+      .icon
+        @include theme.preferred
+          background: theme.tint(theme.style(on-primary-container), transparent, 12%)
+      
+      &.surface
+        .icon
+          @include theme.preferred
+            background: theme.tint(theme.style(primary), transparent, 12%)
+
+      &.secondary
+        .icon
+          @include theme.preferred
+            background: theme.tint(theme.style(on-secondary-container), transparent, 12%)
+
+      &.tertiary
+        .icon
+          @include theme.preferred
+            background: theme.tint(theme.style(on-tertiary-container), transparent, 12%)
 
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
     &.disabled:not(.hovered):not(.focused):not(.pressed)
-      .icon
-        background: transparent
-        
+      background: transparent
+
+      @include theme.preferred
+        box-shadow: theme.style(shadow-0)
+
+      &.lowered
         @include theme.preferred
-          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          box-shadow: theme.style(shadow-0)
+
+      .icon
+        @include theme.preferred
+          background: transparent
+          color: theme.tint(theme.style(on-primary-container), transparent, 38%)
+      
+      &.surface
+        .icon
+          @include theme.preferred
+            color: theme.tint(theme.style(primary), transparent, 38%)
+
+      &.secondary
+        .icon
+          @include theme.preferred
+            color: theme.tint(theme.style(on-secondary-container), transparent, 38%)
+
+      &.tertiary
+        .icon
+          @include theme.preferred
+            color: theme.tint(theme.style(on-tertiary-container), transparent, 38%)

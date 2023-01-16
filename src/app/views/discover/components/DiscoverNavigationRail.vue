@@ -36,6 +36,7 @@
 import {
 	NavigationRail,
 	FABButton,
+	FABButtonVariant,
 	RoundedIcon,
 } from '@/lib/vue'
 
@@ -43,7 +44,10 @@ import {
 
 <template>
   <NavigationRail>
-    <FABButton>
+    <FABButton
+      :lowered="true"
+      :variant="FABButtonVariant.secondary"
+    >
       <RoundedIcon>
         edit
       </RoundedIcon>
