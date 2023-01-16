@@ -238,10 +238,11 @@ a.button
 
     &:hover:not(.focused):not(.pressed):not(.disabled),
     &.hovered
-      > .icon
-        @include theme.preferred
-          background: theme.tint(theme.style(on-surface-variant), transparent, 8%)
-          color: theme.style(on-surface-variant)
+      &:not(.selected)
+        > .icon
+          @include theme.preferred
+            background: theme.tint(theme.style(on-surface-variant), transparent, 8%)
+            color: theme.style(on-surface-variant)
       
       &.selected
         > .icon
@@ -251,10 +252,11 @@ a.button
         
     &:focus:not(.hovered):not(.pressed):not(.disabled),
     &.focused
-      > .icon
-        @include theme.preferred
-          background: theme.tint(theme.style(on-surface-variant), transparent, 12%)
-          color: theme.style(on-surface-variant)
+      &:not(.selected)
+        > .icon
+          @include theme.preferred
+            background: theme.tint(theme.style(on-surface-variant), transparent, 12%)
+            color: theme.style(on-surface-variant)
 
       &.selected
         > .icon
@@ -263,10 +265,11 @@ a.button
 
     &:active:not(.hovered):not(.focused):not(.disabled),
     &.pressed
-      > .icon
-        @include theme.preferred
-          background: theme.tint(theme.style(on-surface-variant), transparent, 12%)
-          color: theme.style(on-surface-variant)
+      &:not(.selected)
+        > .icon
+          @include theme.preferred
+            background: theme.tint(theme.style(on-surface-variant), transparent, 12%)
+            color: theme.style(on-surface-variant)
       
       &.selected
         > .icon
@@ -277,11 +280,12 @@ a.button
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
     &.disabled:not(.hovered):not(.focused):not(.pressed)
-      > .icon
-        background: transparent
-        
-        @include theme.preferred
-          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+      &:not(.selected)
+        > .icon
+          background: transparent
+          
+          @include theme.preferred
+            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
   &.fab
     padding: 0
     width: 56px

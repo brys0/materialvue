@@ -36,7 +36,7 @@
 import {
 	NavigationRail,
 	TypographyLabel,
-	Button,
+	IconButton,
 	FABButton,
 	FABButtonVariant,
 	RoundedIcon,
@@ -54,21 +54,21 @@ import {
         edit
       </RoundedIcon>
     </FABButton>
-    <Button>
+    <IconButton>
       <RoundedIcon>
         tag
       </RoundedIcon>
       <TypographyLabel>
         Tags
       </TypographyLabel>
-    </Button>
-    <Button>
+    </IconButton>
+    <IconButton :selected="true">
       <RoundedIcon>
         bookmarks
       </RoundedIcon>
       <TypographyLabel>
         Bookmarks
       </TypographyLabel>
-    </Button>
+    </IconButton>
   </NavigationRail>
 </template>
