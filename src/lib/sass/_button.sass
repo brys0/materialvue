@@ -35,7 +35,7 @@
 
 .button,
 a.button
-  @extend %is-noselect
+  @extend %is-noselectable
   @extend %is-ellipsis
 
   padding: 10px 24px
@@ -51,7 +51,7 @@ a.button
   cursor: pointer
 
   > .typography
-    @extend %is-noselect
+    @extend %is-noselectable
 
   &:disabled:not(.hovered):not(.focused):not(.pressed),
   &[disabled]:not(.hovered):not(.focused):not(.pressed),

@@ -37,15 +37,15 @@
 [disabled]:not(.hovered):not(.focused):not(.pressed),
 .disabled:not(.hovered):not(.focused):not(.pressed)
   .typography
-    @extend %is-noselect
+    @extend %is-noselectable
 
     cursor: not-allowed
     pointer-events: all !important
     box-shadow: none
 
 %typography
-  @extend %is-select
-  
+  @extend %is-selectable
+
   font-style: normal
   font-weight: 400
   display: block
