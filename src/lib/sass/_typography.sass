@@ -44,6 +44,8 @@
     box-shadow: none
 
 %typography
+  @extend %is-select
+  
   font-style: normal
   font-weight: 400
   display: block
@@ -124,7 +126,6 @@
   @extend %typography
 
   &.display
-    @extend %is-select
 
     &.large
       @extend %typography-display-large
@@ -136,7 +137,6 @@
       @extend %typography-display-small
 
   &.headline
-    @extend %is-select
     
     &.large
       @extend %typography-headline-large
@@ -148,7 +148,6 @@
       @extend %typography-headline-small
 
   &.title
-    @extend %is-select
     
     &.large
       @extend %typography-title-large
@@ -163,7 +162,6 @@
       margin-top: 16px
 
   &.label
-    @extend %is-select
     
     &.large
       @extend %typography-label-large
@@ -178,7 +176,6 @@
         margin-top: 16px
   
   &.body
-    @extend %is-select
     
     &.large
       @extend %typography-body-large

@@ -52,6 +52,7 @@ export {
 } from '@/lib/vue/typography'
 
 export {
+	Button,
 	ButtonState,
 	ElevatedButton,
 	FilledButton,

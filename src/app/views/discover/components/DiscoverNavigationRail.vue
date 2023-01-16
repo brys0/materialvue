@@ -35,6 +35,8 @@
 <script lang="ts" setup>
 import {
 	NavigationRail,
+	TypographyLabel,
+	Button,
 	FABButton,
 	FABButtonVariant,
 	RoundedIcon,
@@ -46,11 +48,27 @@ import {
   <NavigationRail>
     <FABButton
       :lowered="true"
-      :variant="FABButtonVariant.secondary"
+      :variant="FABButtonVariant.tertiary"
     >
       <RoundedIcon>
         edit
       </RoundedIcon>
     </FABButton>
+    <Button>
+      <RoundedIcon>
+        tag
+      </RoundedIcon>
+      <TypographyLabel>
+        Tags
+      </TypographyLabel>
+    </Button>
+    <Button>
+      <RoundedIcon>
+        bookmarks
+      </RoundedIcon>
+      <TypographyLabel>
+        Bookmarks
+      </TypographyLabel>
+    </Button>
   </NavigationRail>
 </template>

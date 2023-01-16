@@ -40,15 +40,18 @@ a.button
 
   padding: 10px 24px
   display: flex
-  flex-direction: row
-  justify-content: center
+  flex-flow: row
   align-items: center
+  justify-content: center
   gap: 8px
   border: none
   outline: none
   border-radius: 100px
   background: transparent
   cursor: pointer
+
+  > .typography
+    @extend %is-noselect
 
   &:disabled:not(.hovered):not(.focused):not(.pressed),
   &[disabled]:not(.hovered):not(.focused):not(.pressed),
@@ -216,7 +219,7 @@ a.button
     width: 48px
     height: 48px
 
-    .icon
+    > .icon
       width: 40px
       height: 40px
       display: flex
@@ -229,44 +232,44 @@ a.button
         color: theme.style(on-surface-variant)
 
     &.selected
-      .icon
+      > .icon
         @include theme.preferred
           color: theme.style(primary)
 
     &:hover:not(.focused):not(.pressed):not(.disabled),
     &.hovered
-      .icon
+      > .icon
         @include theme.preferred
           background: theme.tint(theme.style(on-surface-variant), transparent, 8%)
           color: theme.style(on-surface-variant)
       
       &.selected
-        .icon
+        > .icon
           @include theme.preferred
             background: theme.tint(theme.style(primary), transparent, 8%)
             color: theme.style(primary)
         
     &:focus:not(.hovered):not(.pressed):not(.disabled),
     &.focused
-      .icon
+      > .icon
         @include theme.preferred
           background: theme.tint(theme.style(on-surface-variant), transparent, 12%)
           color: theme.style(on-surface-variant)
 
       &.selected
-        .icon
+        > .icon
           @include theme.preferred
             color: theme.style(primary)
 
     &:active:not(.hovered):not(.focused):not(.disabled),
     &.pressed
-      .icon
+      > .icon
         @include theme.preferred
           background: theme.tint(theme.style(on-surface-variant), transparent, 12%)
           color: theme.style(on-surface-variant)
       
       &.selected
-        .icon
+        > .icon
           @include theme.preferred
             background: theme.tint(theme.style(primary), transparent, 12%)
             color: theme.style(primary)
@@ -274,7 +277,7 @@ a.button
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
     &.disabled:not(.hovered):not(.focused):not(.pressed)
-      .icon
+      > .icon
         background: transparent
         
         @include theme.preferred
@@ -292,7 +295,7 @@ a.button
     &.lowered
       box-shadow: theme.style(shadow-1)
 
-    .icon
+    > .icon
       width: 56px
       height: 56px
       display: flex
@@ -308,7 +311,7 @@ a.button
       @include theme.preferred
         background: theme.style(surface)
 
-      .icon
+      > .icon
         @include theme.preferred
           color: theme.style(primary)
 
@@ -316,7 +319,7 @@ a.button
       @include theme.preferred
         background: theme.style(secondary-container)
 
-      .icon
+      > .icon
         @include theme.preferred
           color: theme.style(on-secondary-container)
 
@@ -324,7 +327,7 @@ a.button
       @include theme.preferred
         background: theme.style(tertiary-container)
       
-      .icon
+      > .icon
         @include theme.preferred
           color: theme.style(on-tertiary-container)
 
@@ -337,22 +340,22 @@ a.button
         @include theme.preferred
           box-shadow: theme.style(shadow-2)
 
-      .icon
+      > .icon
         @include theme.preferred
           background: theme.tint(theme.style(on-primary-container), transparent, 8%)
       
       &.surface
-        .icon
+        > .icon
           @include theme.preferred
             background: theme.tint(theme.style(primary), transparent, 8%)
 
       &.secondary
-        .icon
+        > .icon
           @include theme.preferred
             background: theme.tint(theme.style(on-secondary-container), transparent, 8%)
 
       &.tertiary
-        .icon
+        > .icon
           @include theme.preferred
             background: theme.tint(theme.style(on-tertiary-container), transparent, 8%)
               
@@ -365,22 +368,22 @@ a.button
         @include theme.preferred
           box-shadow: theme.style(shadow-1)
 
-      .icon
+      > .icon
         @include theme.preferred
           background: theme.tint(theme.style(on-primary-container), transparent, 12%)
       
       &.surface
-        .icon
+        > .icon
           @include theme.preferred
             background: theme.tint(theme.style(primary), transparent, 12%)
 
       &.secondary
-        .icon
+        > .icon
           @include theme.preferred
             background: theme.tint(theme.style(on-secondary-container), transparent, 12%)
 
       &.tertiary
-        .icon
+        > .icon
           @include theme.preferred
             background: theme.tint(theme.style(on-tertiary-container), transparent, 12%)
 
@@ -393,22 +396,22 @@ a.button
         @include theme.preferred
           box-shadow: theme.style(shadow-1)
 
-      .icon
+      > .icon
         @include theme.preferred
           background: theme.tint(theme.style(on-primary-container), transparent, 12%)
       
       &.surface
-        .icon
+        > .icon
           @include theme.preferred
             background: theme.tint(theme.style(primary), transparent, 12%)
 
       &.secondary
-        .icon
+        > .icon
           @include theme.preferred
             background: theme.tint(theme.style(on-secondary-container), transparent, 12%)
 
       &.tertiary
-        .icon
+        > .icon
           @include theme.preferred
             background: theme.tint(theme.style(on-tertiary-container), transparent, 12%)
 
@@ -424,22 +427,22 @@ a.button
         @include theme.preferred
           box-shadow: theme.style(shadow-0)
 
-      .icon
+      > .icon
         @include theme.preferred
           background: transparent
           color: theme.tint(theme.style(on-primary-container), transparent, 38%)
       
       &.surface
-        .icon
+        > .icon
           @include theme.preferred
             color: theme.tint(theme.style(primary), transparent, 38%)
 
       &.secondary
-        .icon
+        > .icon
           @include theme.preferred
             color: theme.tint(theme.style(on-secondary-container), transparent, 38%)
 
       &.tertiary
-        .icon
+        > .icon
           @include theme.preferred
             color: theme.tint(theme.style(on-tertiary-container), transparent, 38%)
