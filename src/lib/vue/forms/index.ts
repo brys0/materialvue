@@ -51,6 +51,14 @@ export {
 } from '@/lib/vue/forms/FieldIcon'
 
 export {
+	FieldIconLeading,
+} from '@/lib/vue/forms/FieldIconLeading'
+
+export {
+	FieldIconTrailing,
+} from '@/lib/vue/forms/FieldIconTrailing'
+
+export {
 	default as FieldInput,
 } from '@/lib/vue/forms/FieldInput.vue'
 

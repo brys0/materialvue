@@ -51,7 +51,6 @@ export {
 	NavigationDrawerHeadline,
 } from '@/lib/vue/navigation-drawer'
 
-
 export {
 	TypographyDisplay,
 	TypographyHeadline,
@@ -95,6 +94,8 @@ export {
 	FieldBody,
 	FieldControl,
 	FieldIcon,
+	FieldIconLeading,
+	FieldIconTrailing,
 	FieldInput,
 	FieldLabel,
 	FieldSupport,

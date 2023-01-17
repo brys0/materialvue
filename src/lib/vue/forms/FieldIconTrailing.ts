@@ -36,18 +36,22 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type MenuProps = {}
+import {
+	FieldIcon,
+} from '@/lib/vue/forms'
 
-export const Menu: FunctionalComponent<MenuProps> = (_: MenuProps, {
+export type FieldIconTrailingProps = {}
+
+export const FieldIconTrailing: FunctionalComponent<FieldIconTrailingProps> = (_, {
 	slots,
-}): VNode => h('aside', {
-	class: 'menu',
+}): VNode => h(FieldIcon, {
+	class: 'trailing',
 }, {
 	default: () => slots.default?.(),
 })
 
-Menu.displayName = 'Menu'
+FieldIconTrailing.displayName = 'FieldIconTrailing'
 
-Menu.props = []
+FieldIconTrailing.props = []
 
-export default Menu
+export default FieldIconTrailing

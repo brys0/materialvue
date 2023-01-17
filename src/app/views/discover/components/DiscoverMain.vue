@@ -72,7 +72,8 @@ import {
 	FormFieldset,
 	FieldBody,
 	FieldControl,
-	FieldIcon,
+	FieldIconLeading,
+	FieldIconTrailing,
 	FieldInput,
 	FieldLabel,
 	FieldSupport,
@@ -834,11 +835,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     @update:state="updateState"
                   >
                     <FieldBody>
-                      <FieldIcon class="leading">
+                      <FieldIconLeading>
                         <RoundedIcon>
                           mail
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconLeading>
                       <FieldControl>
                         <FieldLabel
                           name="email"
@@ -847,14 +848,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldLabel>
                         <FieldInput name="email" />
                       </FieldControl>
-                      <FieldIcon
-                        v-if="errors.email"
-                        class="trailing"
-                      >
+                      <FieldIconTrailing v-if="errors.email">
                         <RoundedIcon>
                           error
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconTrailing>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
                       <FieldDetails>
@@ -870,11 +868,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <FormFieldset>
                   <FilledTextField :state="TextFieldState.hovered">
                     <FieldBody>
-                      <FieldIcon class="leading">
+                      <FieldIconLeading>
                         <RoundedIcon>
                           mail
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconLeading>
                       <FieldControl>
                         <FieldLabel
                           name="name"
@@ -883,14 +881,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldLabel>
                         <FieldInput name="name" />
                       </FieldControl>
-                      <FieldIcon
-                        v-if="errors.email"
-                        class="trailing"
-                      >
+                      <FieldIconTrailing v-if="errors.email">
                         <RoundedIcon>
                           error
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconTrailing>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
                       <FieldDetails>
@@ -906,11 +901,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <FormFieldset>
                   <FilledTextField :state="TextFieldState.focused">
                     <FieldBody>
-                      <FieldIcon class="leading">
+                      <FieldIconLeading>
                         <RoundedIcon>
                           mail
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconLeading>
                       <FieldControl>
                         <FieldLabel
                           name="name"
@@ -919,14 +914,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldLabel>
                         <FieldInput name="name" />
                       </FieldControl>
-                      <FieldIcon
-                        v-if="errors.email"
-                        class="trailing"
-                      >
+                      <FieldIconTrailing v-if="errors.email">
                         <RoundedIcon>
                           error
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconTrailing>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
                       <FieldDetails>
@@ -942,11 +934,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <FormFieldset>
                   <FilledTextField :state="TextFieldState.disabled">
                     <FieldBody>
-                      <FieldIcon class="leading">
+                      <FieldIconLeading>
                         <RoundedIcon>
                           mail
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconLeading>
                       <FieldControl>
                         <FieldLabel
                           name="name"
@@ -955,14 +947,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldLabel>
                         <FieldInput name="name" />
                       </FieldControl>
-                      <FieldIcon
-                        v-if="errors.email"
-                        class="trailing"
-                      >
+                      <FieldIconTrailing v-if="errors.email">
                         <RoundedIcon>
                           error
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconTrailing>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
                       <FieldDetails>
@@ -985,11 +974,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <FormFieldset>
                   <FilledTextField :has-error="true">
                     <FieldBody>
-                      <FieldIcon class="leading">
+                      <FieldIconLeading>
                         <RoundedIcon>
                           mail
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconLeading>
                       <FieldControl>
                         <FieldLabel
                           name="name"
@@ -998,14 +987,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldLabel>
                         <FieldInput name="name" />
                       </FieldControl>
-                      <FieldIcon
-                        v-if="errors.email"
-                        class="trailing"
-                      >
+                      <FieldIconTrailing v-if="errors.email">
                         <RoundedIcon>
                           error
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconTrailing>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
                       <FieldDetails>
@@ -1024,11 +1010,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     :has-error="true"
                   >
                     <FieldBody>
-                      <FieldIcon class="leading">
+                      <FieldIconLeading>
                         <RoundedIcon>
                           mail
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconLeading>
                       <FieldControl>
                         <FieldLabel
                           name="name"
@@ -1037,14 +1023,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldLabel>
                         <FieldInput name="name" />
                       </FieldControl>
-                      <FieldIcon
-                        v-if="errors.email"
-                        class="trailing"
-                      >
+                      <FieldIconTrailing v-if="errors.email">
                         <RoundedIcon>
                           error
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconTrailing>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
                       <FieldDetails>
@@ -1063,11 +1046,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     :has-error="true"
                   >
                     <FieldBody>
-                      <FieldIcon class="leading">
+                      <FieldIconLeading>
                         <RoundedIcon>
                           mail
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconLeading>
                       <FieldControl>
                         <FieldLabel
                           name="name"
@@ -1076,14 +1059,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldLabel>
                         <FieldInput name="name" />
                       </FieldControl>
-                      <FieldIcon
-                        v-if="errors.email"
-                        class="trailing"
-                      >
+                      <FieldIconTrailing v-if="errors.email">
                         <RoundedIcon>
                           error
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconTrailing>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
                       <FieldDetails>
@@ -1099,11 +1079,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <FormFieldset>
                   <FilledTextField :state="TextFieldState.disabled">
                     <FieldBody>
-                      <FieldIcon class="leading">
+                      <FieldIconLeading>
                         <RoundedIcon>
                           mail
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconLeading>
                       <FieldControl>
                         <FieldLabel
                           name="name"
@@ -1112,14 +1092,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         </FieldLabel>
                         <FieldInput name="name" />
                       </FieldControl>
-                      <FieldIcon
-                        v-if="errors.email"
-                        class="trailing"
-                      >
+                      <FieldIconTrailing v-if="errors.email">
                         <RoundedIcon>
                           error
                         </RoundedIcon>
-                      </FieldIcon>
+                      </FieldIconTrailing>
                     </FieldBody>
                     <FieldSupport v-if="errors.email">
                       <FieldDetails>
