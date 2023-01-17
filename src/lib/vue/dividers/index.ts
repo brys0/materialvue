@@ -31,13 +31,5 @@
  */
 
 export {
-	ListItem,
-} from '@/lib/vue/lists/ListItem'
-
-export {
-	OrderedList,
-} from '@/lib/vue/lists/OrderedList'
-
-export {
-	UnorderedList,
-} from '@/lib/vue/lists/UnorderedList'
+	Divider,
+} from '@/lib/vue/dividers/Divider'

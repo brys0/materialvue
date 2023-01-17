@@ -41,7 +41,7 @@ export type BarCenterProps = {}
 export const BarCenter: FunctionalComponent<BarCenterProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'bar-center center',
+	class: 'bar-center',
 }, {
 	default: () => slots.default?.(),
 })

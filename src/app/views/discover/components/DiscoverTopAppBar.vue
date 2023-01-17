@@ -35,6 +35,9 @@
 <script lang="ts" setup>
 import {
 	TopAppBar,
+	BarStart,
+	BarCenter,
+	BarEnd,
 	IconButton,
 	RoundedIcon,
 	TypographyHeadline,
@@ -44,22 +47,22 @@ import {
 
 <template>
   <TopAppBar>
-    <div class="start">
+    <BarStart>
       <IconButton>
         <RoundedIcon>
           menu
         </RoundedIcon>
       </IconButton>
       <TypographyHeadline>
-        CosmicMind
+        Material
       </TypographyHeadline>
-    </div>
-    <div class="center">
+    </BarStart>
+    <BarCenter>
       <TypographyHeadline>
         Search Bar
       </TypographyHeadline>
-    </div>
-    <div class="end">
+    </BarCenter>
+    <BarEnd>
       <IconButton>
         <RoundedIcon>
           notifications
@@ -70,6 +73,6 @@ import {
           account_circle
         </RoundedIcon>
       </IconButton>
-    </div>
+    </BarEnd>
   </TopAppBar>
 </template>

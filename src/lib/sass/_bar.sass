@@ -31,7 +31,7 @@
  */
 
 %bar
-  @extend %is-noselectable
+  @extend %is-not-selectable
 
   display: grid
   grid-row: row-1-start / row-1-end
@@ -66,11 +66,11 @@
 .bar
   @extend %bar
 
-  > .start
+  > .bar-start
     @extend %bar-start
 
-  > .center
+  > .bar-center
     @extend %bar-center
 
-  > .end
+  > .bar-end
     @extend %bar-end

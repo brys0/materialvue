@@ -30,24 +30,10 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
+export {
+	Menu,
+} from '@/lib/vue/menus/Menu'
 
-export type ListItemProps = {}
-
-export const ListItem: FunctionalComponent<ListItemProps> = (_, {
-	slots,
-}): VNode => h('li', {
-	class: 'list-item',
-}, {
-	default: () => slots.default?.(),
-})
-
-ListItem.displayName = 'ListItem'
-
-ListItem.props = []
-
-export default ListItem
+export {
+	ListItem,
+} from '@/lib/vue/menus/ListItem'

@@ -33,6 +33,8 @@
 @use '../theme'
 
 .top-app-bar
+  @extend %bar
+
   padding: 0 16px
   height: 64px
   
@@ -42,10 +44,19 @@
   &:empty
     height: 0
     visibility: hidden
+  
+  > .bar-start
+    @extend %bar-start
 
-  > .start,
-  > .center,
-  > .end
+  > .bar-center
+    @extend %bar-center
+
+  > .bar-end
+    @extend %bar-end
+
+  > .bar-start,
+  > .bar-center,
+  > .bar-end
     .button
       &.icon
         &.leading

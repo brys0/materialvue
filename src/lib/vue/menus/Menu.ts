@@ -30,24 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-%is-not-selectable
-  -webkit-touch-callout: none
-  -webkit-user-select: none
-  -khtml-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
-  user-select: none
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-.is-not-selectable
-  @extend %is-not-selectable
+export type MenuProps = {}
 
-%is-selectable
-  -webkit-touch-callout: text
-  -webkit-user-select: text
-  -khtml-user-select: text
-  -moz-user-select: text
-  -ms-user-select: text
-  user-select: text
+export const Menu: FunctionalComponent<MenuProps> = (_: MenuProps, {
+	slots,
+}): VNode => h('ol', {
+	class: 'menu',
+}, {
+	default: () => slots.default?.(),
+})
 
-.is-selectable
-  @extend %is-not-selectable
+Menu.displayName = 'Menu'
+
+Menu.props = []
+
+export default Menu

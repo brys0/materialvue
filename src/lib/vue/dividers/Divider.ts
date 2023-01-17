@@ -36,18 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type OrderedListProps = {}
+export type DividerProps = {}
 
-export const OrderedList: FunctionalComponent<OrderedListProps> = (_, {
+export const Divider: FunctionalComponent<DividerProps> = (_: DividerProps, {
 	slots,
-}): VNode => h('ol', {
-	class: 'ordered-list',
+}): VNode => h('div', {
+	class: 'divider',
 }, {
 	default: () => slots.default?.(),
 })
 
-OrderedList.displayName = 'OrderedList'
+Divider.displayName = 'Divider'
 
-OrderedList.props = []
+Divider.props = []
 
-export default OrderedList
+export default Divider

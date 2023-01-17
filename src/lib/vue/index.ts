@@ -79,12 +79,6 @@ export {
 } from '@/lib/vue/layout'
 
 export {
-	ListItem,
-	OrderedList,
-	UnorderedList,
-} from '@/lib/vue/lists'
-
-export {
 	FormField,
 	FormFieldset,
 	FieldBody,
@@ -117,3 +111,12 @@ export {
 	BarCenter,
 	BarEnd,
 } from '@/lib/vue/bars'
+
+export {
+	Divider,
+} from '@/lib/vue/dividers'
+
+export {
+	Menu,
+	ListItem,
+} from '@/lib/vue/menus'

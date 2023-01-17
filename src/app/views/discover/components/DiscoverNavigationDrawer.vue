@@ -35,10 +35,32 @@
 <script lang="ts" setup>
 import {
 	NavigationDrawer,
+	TypographyHeadline,
+	Menu,
+	ListItem,
+	RoundedIcon,
+	TypographyLabel,
 } from '@/lib/vue'
 
 </script>
 
 <template>
-  <NavigationDrawer />
+  <NavigationDrawer>
+    <TypographyHeadline>
+      Headline
+    </TypographyHeadline>
+    <Menu>
+      <ListItem>
+        <RoundedIcon>
+          mail
+        </RoundedIcon>
+        <TypographyLabel>
+          Mail
+        </TypographyLabel>
+        <TypographyLabel>
+          33
+        </TypographyLabel>
+      </ListItem>
+    </Menu>
+  </NavigationDrawer>
 </template>

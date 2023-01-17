@@ -30,24 +30,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
+@use './theme'
 
-export type UnorderedListProps = {}
+.divider
+  @extend %is-not-selectable
 
-export const UnorderedList: FunctionalComponent<UnorderedListProps> = (_, {
-	slots,
-}): VNode => h('ul', {
-	class: 'unordered-list',
-}, {
-	default: () => slots.default?.(),
-})
-
-UnorderedList.displayName = 'UnorderedList'
-
-UnorderedList.props = []
-
-export default UnorderedList
+  
