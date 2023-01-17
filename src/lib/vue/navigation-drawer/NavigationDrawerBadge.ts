@@ -1,4 +1,3 @@
-<!--
 /**
  * BSD 3-Clause License
  *
@@ -30,41 +29,25 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
--->
 
-<script lang="ts" setup>
 import {
-	NavigationDrawer,
-	NavigationDrawerHeadline,
-	NavigationDrawerList,
-	NavigationDrawerListItem,
-	NavigationDrawerIcon,
-	NavigationDrawerLabel,
-	NavigationDrawerBadge,
-	RoundedIcon,
-} from '@/lib/vue'
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-</script>
+export type NavigationDrawerBadgeProps = {}
 
-<template>
-  <NavigationDrawer>
-    <NavigationDrawerHeadline>
-      Headline
-    </NavigationDrawerHeadline>
-    <NavigationDrawerList>
-      <NavigationDrawerListItem>
-        <NavigationDrawerIcon>
-          <RoundedIcon>
-            mail
-          </RoundedIcon>
-        </NavigationDrawerIcon>
-        <NavigationDrawerLabel>
-          Mail
-        </NavigationDrawerLabel>
-        <NavigationDrawerBadge>
-          33
-        </NavigationDrawerBadge>
-      </NavigationDrawerListItem>
-    </NavigationDrawerList>
-  </NavigationDrawer>
-</template>
+export const NavigationDrawerBadge: FunctionalComponent<NavigationDrawerBadgeProps> = (_, {
+	slots,
+}): VNode => h('span', {
+	class: 'typography label badge',
+}, {
+	default: () => slots.default?.(),
+})
+
+NavigationDrawerBadge.displayName = 'NavigationDrawerBadge'
+
+NavigationDrawerBadge.props = []
+
+export default NavigationDrawerBadge

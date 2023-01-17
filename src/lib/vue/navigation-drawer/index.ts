@@ -37,3 +37,23 @@ export {
 export {
 	NavigationDrawerHeadline,
 } from '@/lib/vue/navigation-drawer/NavigationDrawerHeadline'
+
+export {
+	NavigationDrawerList,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerList'
+
+export {
+	NavigationDrawerListItem,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerListItem'
+
+export {
+	NavigationDrawerIcon,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerIcon'
+
+export {
+	NavigationDrawerLabel,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerLabel'
+
+export {
+	NavigationDrawerBadge,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerBadge'

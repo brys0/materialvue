@@ -49,6 +49,11 @@ export {
 export {
 	NavigationDrawer,
 	NavigationDrawerHeadline,
+	NavigationDrawerList,
+	NavigationDrawerListItem,
+	NavigationDrawerIcon,
+	NavigationDrawerLabel,
+	NavigationDrawerBadge,
 } from '@/lib/vue/navigation-drawer'
 
 
