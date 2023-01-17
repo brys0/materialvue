@@ -36,18 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type AvatarProps = {}
+export type AvatarThumbnailProps = {}
 
-export const Avatar: FunctionalComponent<AvatarProps> = (_, {
+export const AvatarThumbnail: FunctionalComponent<AvatarThumbnailProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'video thumbnail',
+	class: 'avatar thumbnail',
 }, {
 	default: () => slots.default?.(),
 })
 
-Avatar.displayName = 'Avatar'
+AvatarThumbnail.displayName = 'AvatarThumbnail'
 
-Avatar.props = []
+AvatarThumbnail.props = []
 
-export default Avatar
+export default AvatarThumbnail

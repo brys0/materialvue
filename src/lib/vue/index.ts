@@ -144,5 +144,5 @@ export {
 } from '@/lib/vue/videos'
 
 export {
-	Avatar,
+	AvatarThumbnail,
 } from '@/lib/vue/avatars'

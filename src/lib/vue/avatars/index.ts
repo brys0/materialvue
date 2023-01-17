@@ -31,5 +31,5 @@
  */
 
 export {
-	Avatar,
-} from '@/lib/vue/avatars/Avatar'
+	AvatarThumbnail,
+} from '@/lib/vue/avatars/AvatarThumbnail'

@@ -93,6 +93,7 @@ import {
 	ListItemText,
 	ListItemTrailing,
 	VideoThumbnail,
+	AvatarThumbnail,
 } from '@/lib/vue'
 
 const validationSchema = object({
@@ -272,7 +273,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <TypographyDisplay :size="TypographySize.small">
         Outlined button states
       </TypographyDisplay>
-
       <Row>
         <Column>
           <OutlinedButton>
@@ -789,7 +789,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <TypographyDisplay :size="TypographySize.small">
         Filled text field states
       </TypographyDisplay>
-
       <Row>
         <Column>
           <form @submit="onSubmit">
@@ -1247,9 +1246,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List>
             <ListItem>
               <ListItemLeading>
-                <RoundedIcon>
-                  mail
-                </RoundedIcon>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
@@ -1267,9 +1268,118 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem>
               <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
                 <RoundedIcon>
-                  movie
+                  arrow_drop_down
                 </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+        </Column>
+        <Column>
+          <List>
+            <ListItem :size="ListItemSize.medium">
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Videos
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem :size="ListItemSize.medium">
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Videos
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem :size="ListItemSize.medium">
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </AvatarThumbnail>
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
@@ -1315,21 +1425,62 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :size="ListItemSize.large">
               <ListItemLeading>
-                <RoundedIcon>
-                  movie
-                </RoundedIcon>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Videos
+                  Headline
                 </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text
+                </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
-                <RoundedIcon>
-                  arrow_drop_down
-                </RoundedIcon>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem :size="ListItemSize.large">
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
           </List>

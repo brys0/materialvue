@@ -33,5 +33,38 @@
 @use './theme'
 
 .avatar
-  @include theme.preferred
-    background: theme.style(background)
+  &.thumbnail
+    display: flex
+    flex-flow: column
+    align-items: center
+    justify-content: center
+
+    > img
+      width: 56px
+      height: 56px
+      border: 1px solid
+      border-radius: 4px
+    
+      @include theme.preferred
+        border-color: theme.style(outline-variant)
+
+    > .typography
+      width: 40px
+      height: 40px
+      border: 1px solid
+      border-radius: 20px
+    
+      @include theme.preferred
+        border-color: theme.style(outline-variant)
+
+      &.label
+        @extend %typography-title-medium
+
+        display: flex
+        flex-flow: column
+        align-items: center
+        justify-content: center
+        
+        @include theme.preferred
+          background: theme.style(primary-container)
+          color: theme.style(on-primary-container)
