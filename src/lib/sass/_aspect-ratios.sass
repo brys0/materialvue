@@ -30,119 +30,65 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	App,
-	Toolbar,
-	Main,
-	Finder,
-	Modal,
-} from '@/lib/vue/apps'
+%aspect-ratio-1x1
+  padding-top: 100%
+  height: 0
 
-export {
-	TopAppBar,
-} from '@/lib/vue/top-app-bar'
+%aspect-ratio-2x1
+  padding-top: 50%
+  height: 0
 
-export {
-	NavigationRail,
-} from '@/lib/vue/navigation-rail'
+%aspect-ratio-1x2
+  padding-top: 200%
+  height: 0
 
-export {
-	NavigationDrawer,
-} from '@/lib/vue/navigation-drawer'
+%aspect-ratio-4x1
+  padding-top: 25%
+  height: 0
 
-export {
-	TypographyDisplay,
-	TypographyHeadline,
-	TypographyTitle,
-	TypographyLabel,
-	TypographyBody,
-	Typography,
-	TypographySize,
-} from '@/lib/vue/typography'
+%aspect-ratio-4x3
+  padding-top: 75%
+  height: 0
 
-export {
-	Button,
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	IconButton,
-	FABButton,
-	FABButtonVariant,
-} from '@/lib/vue/buttons'
+%aspect-ratio-5x1
+  padding-top: 21.05%
+  height: 0
 
-export {
-	Icon,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/vue/icons'
+%aspect-ratio-8x5
+  padding-top: 62.5%
+  height: 0
 
-export {
-	Layout,
-	Tile,
-	Row,
-	Column,
-} from '@/lib/vue/layout'
+%aspect-ratio-9x6
+  padding-top: 66.6%
+  height: 0
 
-export {
-	FormField,
-	FormFieldset,
-	FieldBody,
-	FieldControl,
-	FieldLeading,
-	FieldTrailing,
-	FieldInput,
-	FieldSupport,
-	FieldDetails,
-} from '@/lib/vue/forms'
+%aspect-ratio-16x9
+  padding-top: 56.25%
+  height: 0
 
-export {
-	TextField,
-	TextFieldState,
-	FilledTextField,
-} from '@/lib/vue/text-field'
+.aspect-ratio-1x1
+  @extend %aspect-ratio-1x1
 
-export {
-	Cards,
-	Card,
-	CardState,
-	ElevatedCard,
-	FilledCard,
-	OutlinedCard,
-} from '@/lib/vue/cards'
+.aspect-ratio-2x1
+  @extend %aspect-ratio-2x1
 
-export {
-	Bar,
-	BarStart,
-	BarCenter,
-	BarEnd,
-} from '@/lib/vue/bars'
+.aspect-ratio-1x2
+  @extend %aspect-ratio-1x2
 
-export {
-	Divider,
-} from '@/lib/vue/dividers'
+.aspect-ratio-4x1
+  @extend %aspect-ratio-4x1
 
-export {
-	Menu,
-} from '@/lib/vue/menus'
+.aspect-ratio-4x3
+  @extend %aspect-ratio-4x3
 
-export {
-	List,
-	ListItem,
-	ListItemLeading,
-	ListItemText,
-	ListItemTrailing,
-	ListItemLabel,
-	ListItemBadge,
-} from '@/lib/vue/lists'
+.aspect-ratio-5x1
+  @extend %aspect-ratio-5x1
 
-export {
-	VideoThumbnail,
-} from '@/lib/vue/videos'
+.aspect-ratio-8x5
+  @extend %aspect-ratio-8x5 
 
-export {
-	Avatar,
-} from '@/lib/vue/avatars'
+.aspect-ratio-9x6
+  @extend %aspect-ratio-9x6
+
+.aspect-ratio-16x9
+  @extend %aspect-ratio-16x9

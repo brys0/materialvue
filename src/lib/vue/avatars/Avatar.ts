@@ -30,119 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	App,
-	Toolbar,
-	Main,
-	Finder,
-	Modal,
-} from '@/lib/vue/apps'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	TopAppBar,
-} from '@/lib/vue/top-app-bar'
+export type AvatarProps = {}
 
-export {
-	NavigationRail,
-} from '@/lib/vue/navigation-rail'
+export const Avatar: FunctionalComponent<AvatarProps> = (_, {
+	slots,
+}): VNode => h('span', {
+	class: 'video thumbnail',
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	NavigationDrawer,
-} from '@/lib/vue/navigation-drawer'
+Avatar.displayName = 'Avatar'
 
-export {
-	TypographyDisplay,
-	TypographyHeadline,
-	TypographyTitle,
-	TypographyLabel,
-	TypographyBody,
-	Typography,
-	TypographySize,
-} from '@/lib/vue/typography'
+Avatar.props = []
 
-export {
-	Button,
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	IconButton,
-	FABButton,
-	FABButtonVariant,
-} from '@/lib/vue/buttons'
-
-export {
-	Icon,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
-} from '@/lib/vue/icons'
-
-export {
-	Layout,
-	Tile,
-	Row,
-	Column,
-} from '@/lib/vue/layout'
-
-export {
-	FormField,
-	FormFieldset,
-	FieldBody,
-	FieldControl,
-	FieldLeading,
-	FieldTrailing,
-	FieldInput,
-	FieldSupport,
-	FieldDetails,
-} from '@/lib/vue/forms'
-
-export {
-	TextField,
-	TextFieldState,
-	FilledTextField,
-} from '@/lib/vue/text-field'
-
-export {
-	Cards,
-	Card,
-	CardState,
-	ElevatedCard,
-	FilledCard,
-	OutlinedCard,
-} from '@/lib/vue/cards'
-
-export {
-	Bar,
-	BarStart,
-	BarCenter,
-	BarEnd,
-} from '@/lib/vue/bars'
-
-export {
-	Divider,
-} from '@/lib/vue/dividers'
-
-export {
-	Menu,
-} from '@/lib/vue/menus'
-
-export {
-	List,
-	ListItem,
-	ListItemLeading,
-	ListItemText,
-	ListItemTrailing,
-	ListItemLabel,
-	ListItemBadge,
-} from '@/lib/vue/lists'
-
-export {
-	VideoThumbnail,
-} from '@/lib/vue/videos'
-
-export {
-	Avatar,
-} from '@/lib/vue/avatars'
+export default Avatar
