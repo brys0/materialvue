@@ -48,4 +48,33 @@ body
   overflow: hidden
   
   @include theme.preferred
-    background: theme.style(surface)
+    background: theme.style(background)
+
+  > .top-app-bar
+    grid-row: row-1-start / row-1-end
+    grid-column: col-1-start / col-4-end
+
+  > .navigation-rail
+    grid-row: row-2-start / row-3-end
+    grid-column: col-1-start / col-1-end
+
+  > .navigation-drawer
+    grid-row: row-2-start / row-3-end
+    grid-column: col-2-start / col-2-end
+  
+  > .toolbar
+    grid-row: row-2-start / row-2-end
+    grid-column: col-3-start / col-3-end
+  
+  > .main
+    grid-row: row-3-start / row-3-end
+    grid-column: col-3-start / col-3-end
+
+  > .finder
+    grid-row: row-2-start / row-3-end
+    grid-column: col-4-start / col-4-end
+
+  > .modal
+    grid-row: row-1-start / row-3-end
+    grid-column: col-1-start / col-4-end
+  

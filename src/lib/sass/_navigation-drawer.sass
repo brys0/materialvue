@@ -39,10 +39,13 @@
 .navigation-drawer
   @extend %is-not-selectable
 
+  padding: 28px
   width: 360px
   display: grid
   grid-row: row-2-start / row-3-end
   grid-column: col-2-start / col-2-end
+  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] auto [row-2-end]
+  grid-template-columns: [col-1-start] auto [col-1-end]
   border-radius: 0 16px 16px 0
 
   @include theme.preferred
@@ -61,6 +64,9 @@
   > .typography
     &.headline
       @extend %typography-title-small
+
+      grid-row: row-1-start / row-1-end
+      grid-column: col-1-start / col-1-end
 
       @include theme.preferred
         color: theme.style(on-surface-variant)
