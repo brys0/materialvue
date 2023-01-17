@@ -33,7 +33,3 @@
 export {
 	Menu,
 } from '@/lib/vue/menus/Menu'
-
-export {
-	ListItem,
-} from '@/lib/vue/menus/ListItem'

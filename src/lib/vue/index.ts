@@ -129,7 +129,6 @@ export {
 
 export {
 	Menu,
-	// ListItem,
 } from '@/lib/vue/menus'
 
 export {
