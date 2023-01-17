@@ -85,6 +85,8 @@ export {
 	Tile,
 	Row,
 	Column,
+	Grid,
+	GridItem,
 } from '@/lib/vue/layout'
 
 export {
@@ -106,7 +108,6 @@ export {
 } from '@/lib/vue/text-field'
 
 export {
-	Cards,
 	Card,
 	CardState,
 	ElevatedCard,

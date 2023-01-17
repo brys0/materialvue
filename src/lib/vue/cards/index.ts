@@ -31,10 +31,6 @@
  */
 
 export {
-	Cards,
-} from '@/lib/vue/cards/Cards'
-
-export {
 	Card,
 	CardState,
 } from '@/lib/vue/cards/Card'

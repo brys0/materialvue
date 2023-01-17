@@ -30,39 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use './layout'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-%row
-  display: grid
-  grid-template-rows: [row-1-start] auto [row-1-end]
-  
-%column
-  grid-row: row-1-start / row-2-end
-  display: flex
-  flex-flow: column
-  align-items: center
-  
-.row
-  @extend %row
+export type GridItemProps = {}
 
-  > .column
-    @extend %column
+export const GridItem: FunctionalComponent<GridItemProps> = (_: GridItemProps, {
+	slots,
+}): VNode => h('div', {
+	class: 'grid-item',
+}, {
+	default: () => slots.default?.(),
+})
 
-.grid
-  display: grid
-  gap: 8px
+GridItem.displayName = 'GridItem'
 
-  @include layout.is-mobile
-    grid-template-columns: repeat(1, 1fr) !important
+GridItem.props = []
 
-  @include layout.is-tablet
-    grid-template-columns: repeat(3, 1fr) !important
-
-  @include layout.is-desktop
-    grid-template-columns: repeat(3, 1fr) !important
-
-  @include layout.is-widescreen
-    grid-template-columns: repeat(4, 1fr) !important
-
-  @include layout.is-fullhd
-    grid-template-columns: repeat(5, 1fr) !important
+export default GridItem

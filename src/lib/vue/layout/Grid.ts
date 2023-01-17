@@ -36,18 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type CardsProps = {}
+export type TileProps = {}
 
-export const Cards: FunctionalComponent<CardsProps> = (_: CardsProps, {
+export const Grid: FunctionalComponent<TileProps> = (_: TileProps, {
 	slots,
 }): VNode => h('div', {
-	class: 'cards',
+	class: 'grid',
 }, {
 	default: () => slots.default?.(),
 })
 
-Cards.displayName = 'Cards'
+Grid.displayName = 'Grid'
 
-Cards.props = []
+Grid.props = []
 
-export default Cards
+export default Grid

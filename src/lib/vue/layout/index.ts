@@ -45,3 +45,11 @@ export {
 export {
 	Column,
 } from '@/lib/vue/layout/Column'
+
+export {
+	Grid,
+} from '@/lib/vue/layout/Grid'
+
+export {
+	GridItem,
+} from '@/lib/vue/layout/GridItem'

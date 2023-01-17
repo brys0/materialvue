@@ -87,22 +87,3 @@
       @include theme.preferred
         background: theme.style(elevation-0), theme.style(surface)
         box-shadow: theme.style(shadow-0)
-
-.cards
-  display: grid
-  gap: 8px
-
-  @include layout.is-mobile
-    grid-template-columns: repeat(1, 1fr) !important
-
-  @include layout.is-tablet
-    grid-template-columns: repeat(3, 1fr) !important
-
-  @include layout.is-desktop
-    grid-template-columns: repeat(3, 1fr) !important
-
-  @include layout.is-widescreen
-    grid-template-columns: repeat(4, 1fr) !important
-
-  @include layout.is-fullhd
-    grid-template-columns: repeat(5, 1fr) !important
