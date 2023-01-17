@@ -40,7 +40,7 @@ export type VideoThumbnailProps = {}
 
 export const VideoThumbnail: FunctionalComponent<VideoThumbnailProps> = (_, {
 	slots,
-}): VNode => h('span', {
+}): VNode => h('div', {
 	class: 'video thumbnail',
 }, {
 	default: () => slots.default?.(),

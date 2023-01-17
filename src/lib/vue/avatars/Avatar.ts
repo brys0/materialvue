@@ -40,7 +40,7 @@ export type AvatarProps = {}
 
 export const Avatar: FunctionalComponent<AvatarProps> = (_, {
 	slots,
-}): VNode => h('span', {
+}): VNode => h('div', {
 	class: 'video thumbnail',
 }, {
 	default: () => slots.default?.(),

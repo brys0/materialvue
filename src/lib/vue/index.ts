@@ -133,6 +133,7 @@ export {
 export {
 	List,
 	ListItem,
+	ListItemSize,
 	ListItemLeading,
 	ListItemText,
 	ListItemTrailing,

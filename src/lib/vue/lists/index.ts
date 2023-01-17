@@ -36,6 +36,7 @@ export {
 
 export {
 	ListItem,
+	ListItemSize,
 } from '@/lib/vue/lists/ListItem'
 
 export {

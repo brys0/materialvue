@@ -45,7 +45,6 @@
     @extend %is-not-selectable
 
     padding: 0 24px 0 16px
-    height: 56px
     display: grid
     grid-template-rows: [row-1-start] auto [row-1-end]  
     grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
@@ -53,6 +52,16 @@
     list-style-type: none
     border-radius: 28px
     cursor: pointer
+
+    &,
+    &.small
+      height: 56px
+    
+    &.medium
+      height: 72px
+    
+    &.large
+      height: 88px
     
     @include theme.preferred
       background: theme.style(elevation-0), theme.style(surface)
@@ -67,6 +76,10 @@
     > .list-item-leading
       grid-row: row-1-start / row-1-end
       grid-column: col-1-start / col-1-end
+
+      // > .video
+      //   &.thumbnail
+      //     @extend %aspect-ratop-16x9
 
     > .list-item-text
       display: flex

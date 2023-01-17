@@ -67,8 +67,8 @@ import {
 	ElevatedButton,
 	TonalButton,
 	IconButton,
-	Grid,
-	GridItem,
+	Row,
+	Column,
 	FormFieldset,
 	FieldBody,
 	FieldControl,
@@ -88,9 +88,11 @@ import {
 	FABButtonVariant,
 	List,
 	ListItem,
+	ListItemSize,
 	ListItemLeading,
 	ListItemText,
 	ListItemTrailing,
+	VideoThumbnail,
 } from '@/lib/vue'
 
 const validationSchema = object({
@@ -235,212 +237,212 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <TypographyDisplay :size="TypographySize.small">
         Filled button states
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <FilledButton>
             Enabled
           </FilledButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FilledButton :state="ButtonState.hovered">
             Hovered
           </FilledButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FilledButton :state="ButtonState.focused">
             Focused
           </FilledButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FilledButton :state="ButtonState.pressed">
             Pressed
           </FilledButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FilledButton
             :state="ButtonState.disabled"
             disabled
           >
             Disabled
           </FilledButton>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
         Outlined button states
       </TypographyDisplay>
 
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <OutlinedButton>
             Enabled
           </OutlinedButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <OutlinedButton :state="ButtonState.hovered">
             Hovered
           </OutlinedButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <OutlinedButton :state="ButtonState.focused">
             Focused
           </OutlinedButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <OutlinedButton :state="ButtonState.pressed">
             Pressed
           </OutlinedButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <OutlinedButton
             :state="ButtonState.disabled"
             disabled
           >
             Disabled
           </OutlinedButton>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
         Text button states
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <TextButton>
             Enabled
           </TextButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <TextButton :state="ButtonState.hovered">
             Hovered
           </TextButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <TextButton :state="ButtonState.focused">
             Focused
           </TextButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <TextButton :state="ButtonState.pressed">
             Pressed
           </TextButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <TextButton
             :state="ButtonState.disabled"
             disabled
           >
             Disabled
           </TextButton>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
         Elevated button states
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <ElevatedButton>
             Enabled
           </ElevatedButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <ElevatedButton :state="ButtonState.hovered">
             Hovered
           </ElevatedButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <ElevatedButton :state="ButtonState.focused">
             Focused
           </ElevatedButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <ElevatedButton :state="ButtonState.pressed">
             Pressed
           </ElevatedButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <ElevatedButton
             :state="ButtonState.disabled"
             disabled
           >
             Disabled
           </ElevatedButton>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
         Tonal button states
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <TonalButton>
             Enabled
           </TonalButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <TonalButton :state="ButtonState.hovered">
             Hovered
           </TonalButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <TonalButton :state="ButtonState.focused">
             Focused
           </TonalButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <TonalButton :state="ButtonState.pressed">
             Pressed
           </TonalButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <TonalButton
             :state="ButtonState.disabled"
             disabled
           >
             Disabled
           </TonalButton>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
         Icon button states
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <IconButton>
             <RoundedIcon>
               settings
             </RoundedIcon>
           </IconButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <IconButton :state="ButtonState.hovered">
             <RoundedIcon>
               settings
             </RoundedIcon>
           </IconButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <IconButton :state="ButtonState.focused">
             <RoundedIcon>
               settings
             </RoundedIcon>
           </IconButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <IconButton :state="ButtonState.pressed">
             <RoundedIcon>
               settings
             </RoundedIcon>
           </IconButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <IconButton
             :state="ButtonState.disabled"
             disabled
@@ -449,22 +451,22 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               settings
             </RoundedIcon>
           </IconButton>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
         Icon button selected states
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <IconButton :selected="true">
             <RoundedIcon>
               settings
             </RoundedIcon>
           </IconButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <IconButton
             :state="ButtonState.hovered"
             :selected="true"
@@ -473,8 +475,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               settings
             </RoundedIcon>
           </IconButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <IconButton
             :state="ButtonState.focused"
             :selected="true"
@@ -483,8 +485,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               settings
             </RoundedIcon>
           </IconButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <IconButton
             :state="ButtonState.pressed"
             :selected="true"
@@ -493,8 +495,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               settings
             </RoundedIcon>
           </IconButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <IconButton
             :state="ButtonState.disabled"
             disabled
@@ -503,43 +505,43 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               settings
             </RoundedIcon>
           </IconButton>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
         FAB button states
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <FABButton>
             <RoundedIcon>
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton :state="ButtonState.hovered">
             <RoundedIcon>
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton :state="ButtonState.focused">
             <RoundedIcon>
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton :state="ButtonState.pressed">
             <RoundedIcon>
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :state="ButtonState.disabled"
             disabled
@@ -548,22 +550,22 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
         FAB button lowered states
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <FABButton :lowered="true">
             <RoundedIcon>
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :lowered="true"
             :state="ButtonState.hovered"
@@ -572,8 +574,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :lowered="true"
             :state="ButtonState.focused"
@@ -582,8 +584,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :lowered="true"
             :state="ButtonState.pressed"
@@ -592,8 +594,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :lowered="true"
             :state="ButtonState.disabled"
@@ -603,22 +605,22 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
         FAB button surface variant
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <FABButton :variant="FABButtonVariant.surface">
             <RoundedIcon>
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :variant="FABButtonVariant.surface"
             :state="ButtonState.hovered"
@@ -627,8 +629,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :variant="FABButtonVariant.surface"
             :state="ButtonState.focused"
@@ -637,8 +639,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :variant="FABButtonVariant.surface"
             :state="ButtonState.pressed"
@@ -647,8 +649,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :variant="FABButtonVariant.surface"
             :state="ButtonState.disabled"
@@ -658,22 +660,22 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
         FAB button secondary variant
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <FABButton :variant="FABButtonVariant.secondary">
             <RoundedIcon>
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :variant="FABButtonVariant.secondary"
             :state="ButtonState.hovered"
@@ -682,8 +684,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :variant="FABButtonVariant.secondary"
             :state="ButtonState.focused"
@@ -692,8 +694,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :variant="FABButtonVariant.secondary"
             :state="ButtonState.pressed"
@@ -702,8 +704,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :variant="FABButtonVariant.secondary"
             :state="ButtonState.disabled"
@@ -713,22 +715,22 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
         FAB button tertiary variant
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <FABButton :variant="FABButtonVariant.tertiary">
             <RoundedIcon>
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :variant="FABButtonVariant.tertiary"
             :state="ButtonState.hovered"
@@ -737,8 +739,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :variant="FABButtonVariant.tertiary"
             :state="ButtonState.focused"
@@ -747,8 +749,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :variant="FABButtonVariant.tertiary"
             :state="ButtonState.pressed"
@@ -757,8 +759,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <FABButton
             :variant="FABButtonVariant.tertiary"
             :state="ButtonState.disabled"
@@ -768,8 +770,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               edit
             </RoundedIcon>
           </FABButton>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
 
     <section class="banner">
@@ -788,8 +790,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         Filled text field states
       </TypographyDisplay>
 
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField
@@ -825,8 +827,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </FilledTextField>
             </FormFieldset>
           </form>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField :state="TextFieldState.hovered">
@@ -858,8 +860,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </FilledTextField>
             </FormFieldset>
           </form>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField :state="TextFieldState.focused">
@@ -891,8 +893,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </FilledTextField>
             </FormFieldset>
           </form>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField :state="TextFieldState.disabled">
@@ -924,13 +926,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </FilledTextField>
             </FormFieldset>
           </form>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
       <TypographyDisplay :size="TypographySize.small">
         Filled text field error states
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField :has-error="true">
@@ -962,8 +964,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </FilledTextField>
             </FormFieldset>
           </form>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField
@@ -998,8 +1000,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </FilledTextField>
             </FormFieldset>
           </form>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField
@@ -1034,8 +1036,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </FilledTextField>
             </FormFieldset>
           </form>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField :state="TextFieldState.disabled">
@@ -1067,8 +1069,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </FilledTextField>
             </FormFieldset>
           </form>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
 
     <section class="banner">
@@ -1086,8 +1088,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <TypographyDisplay :size="TypographySize.small">
         Elevated card states
       </TypographyDisplay>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <ElevatedCard>
             <TypographyLabel>
               Enabled
@@ -1109,8 +1111,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </BarEnd>
             </Bar>
           </ElevatedCard>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <ElevatedCard :state="CardState.hovered">
             <TypographyLabel>
               Hovered
@@ -1132,8 +1134,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </BarEnd>
             </Bar>
           </ElevatedCard>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <ElevatedCard :state="CardState.focused">
             <TypographyLabel>
               Focused
@@ -1155,8 +1157,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </BarEnd>
             </Bar>
           </ElevatedCard>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <ElevatedCard :state="CardState.pressed">
             <TypographyLabel>
               Pressed
@@ -1178,8 +1180,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </BarEnd>
             </Bar>
           </ElevatedCard>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <ElevatedCard :state="CardState.dragged">
             <TypographyLabel>
               Dragged
@@ -1201,8 +1203,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </BarEnd>
             </Bar>
           </ElevatedCard>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <ElevatedCard :state="CardState.disabled">
             <TypographyLabel>
               Disabled
@@ -1224,8 +1226,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </BarEnd>
             </Bar>
           </ElevatedCard>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
 
     <section class="banner">
@@ -1240,8 +1242,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </TypographyBody>
     </section>
     <section>
-      <Grid>
-        <GridItem>
+      <Row>
+        <Column>
           <List>
             <ListItem>
               <ListItemLeading>
@@ -1281,14 +1283,23 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemTrailing>
             </ListItem>
           </List>
-        </GridItem>
-        <GridItem>
+        </Column>
+        <Column>
           <List>
-            <ListItem>
+            <ListItem :size="ListItemSize.large">
               <ListItemLeading>
-                <RoundedIcon>
-                  mail
-                </RoundedIcon>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
@@ -1322,90 +1333,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemTrailing>
             </ListItem>
           </List>
-        </GridItem>
-        <GridItem>
-          <List>
-            <ListItem>
-              <ListItemLeading>
-                <RoundedIcon>
-                  mail
-                </RoundedIcon>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text
-                </TypographyBody>
-              </ListItemText>
-              <ListItemTrailing>
-                <TypographyLabel>
-                  100+
-                </TypographyLabel>
-              </ListItemTrailing>
-            </ListItem>
-            <ListItem>
-              <ListItemLeading>
-                <RoundedIcon>
-                  movie
-                </RoundedIcon>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Videos
-                </TypographyHeadline>
-              </ListItemText>
-              <ListItemTrailing>
-                <RoundedIcon>
-                  arrow_drop_down
-                </RoundedIcon>
-              </ListItemTrailing>
-            </ListItem>
-          </List>
-        </GridItem>
-        <GridItem>
-          <List>
-            <ListItem>
-              <ListItemLeading>
-                <RoundedIcon>
-                  mail
-                </RoundedIcon>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text
-                </TypographyBody>
-              </ListItemText>
-              <ListItemTrailing>
-                <TypographyLabel>
-                  100+
-                </TypographyLabel>
-              </ListItemTrailing>
-            </ListItem>
-            <ListItem>
-              <ListItemLeading>
-                <RoundedIcon>
-                  movie
-                </RoundedIcon>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Videos
-                </TypographyHeadline>
-              </ListItemText>
-              <ListItemTrailing>
-                <RoundedIcon>
-                  arrow_drop_down
-                </RoundedIcon>
-              </ListItemTrailing>
-            </ListItem>
-          </List>
-        </GridItem>
-      </Grid>
+        </Column>
+      </Row>
     </section>
   </Main>
 </template>

@@ -36,18 +36,35 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type ListItemProps = {}
+export enum ListItemSize {
+  large = 'large',
+  medium = 'medium',
+  small = 'small',
+}
 
-export const ListItem: FunctionalComponent<ListItemProps> = (_, {
+export type ListItemProps = {
+	size?: ListItemSize,
+}
+
+export const ListItem: FunctionalComponent<ListItemProps> = ({
+	size,
+}, {
 	slots,
-}): VNode => h('li', {
-	class: 'list-item',
+}): VNode => h('span', {
+	class: {
+		'list-item': true,
+		large: ListItemSize.large === size,
+		medium: ListItemSize.medium === size,
+		small: ListItemSize.small === size,
+	},
 }, {
 	default: () => slots.default?.(),
 })
 
 ListItem.displayName = 'ListItem'
 
-ListItem.props = []
+ListItem.props = [
+	'size'
+]
 
 export default ListItem
