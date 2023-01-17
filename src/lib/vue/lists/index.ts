@@ -49,11 +49,3 @@ export {
 export {
 	ListItemTrailing,
 } from '@/lib/vue/lists/ListItemTrailing'
-
-export {
-	ListItemLabel,
-} from '@/lib/vue/lists/ListItemLabel'
-
-export {
-	ListItemBadge,
-} from '@/lib/vue/lists/ListItemBadge'

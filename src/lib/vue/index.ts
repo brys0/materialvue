@@ -135,8 +135,6 @@ export {
 	ListItemLeading,
 	ListItemText,
 	ListItemTrailing,
-	ListItemLabel,
-	ListItemBadge,
 } from '@/lib/vue/lists'
 
 export {

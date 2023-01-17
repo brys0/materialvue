@@ -35,9 +35,11 @@
 .list
   margin: 0
   padding: 0
+  width: 100%
   display: flex
   flex-flow: column
   align-items: stretch
+  justify-content: flex-start
 
   > .list-item
     @extend %is-not-selectable
@@ -53,7 +55,8 @@
     cursor: pointer
     
     @include theme.preferred
-      background: theme.style(secondary-container)
+      background: theme.style(elevation-0), theme.style(surface)
+      box-shadow: theme.style(shadow-0)
     
     > .list-item-leading,
     > .list-item-text,
@@ -66,15 +69,25 @@
       grid-column: col-1-start / col-1-end
 
     > .list-item-text
-      // @extend %is-not-selectable
-      // @extend %typography-label-large
-
+      display: flex
+      flex-flow: column
       grid-row: row-1-start / row-1-end
       grid-column: col-2-start / col-2-end
+      align-items: flex-start
+      justify-content: center
+
+      > .typography
+        &.headline
+          @extend %typography-body-large
+        
+        &.body
+          @extend %typography-body-medium
 
     > .list-item-trailing
-      // @extend %typography-label-large
-      
       grid-row: row-1-start / row-1-end
       grid-column: col-3-start / col-3-end
+
+      > .typography
+        &.label
+          @extend %typography-label-small
         

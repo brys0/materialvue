@@ -89,6 +89,9 @@ import {
 	FABButtonVariant,
 	List,
 	ListItem,
+	ListItemLeading,
+	ListItemText,
+	ListItemTrailing,
 } from '@/lib/vue'
 
 const validationSchema = object({
@@ -1226,9 +1229,172 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </TypographyBody>
     </section>
     <section>
-      <List>
-        <ListItem />
-      </List>
+      <Row>
+        <Column>
+          <List>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  movie
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Videos
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+        </Column>
+        <Column>
+          <List>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  movie
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Videos
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+        </Column>
+        <Column>
+          <List>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  movie
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Videos
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+        </Column>
+        <Column>
+          <List>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  movie
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Videos
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+        </Column>
+      </Row>
     </section>
   </Main>
 </template>

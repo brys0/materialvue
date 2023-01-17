@@ -36,13 +36,12 @@
 import {
 	NavigationDrawer,
 	TypographyHeadline,
+	TypographyLabel,
 	List,
 	ListItem,
 	ListItemLeading,
 	ListItemText,
 	ListItemTrailing,
-	ListItemLabel,
-	ListItemBadge,
 	RoundedIcon,
 } from '@/lib/vue'
 
@@ -61,14 +60,31 @@ import {
           </RoundedIcon>
         </ListItemLeading>
         <ListItemText>
-          <ListItemLabel>
+          <TypographyLabel>
             Mail
-          </ListItemLabel>
+          </TypographyLabel>
         </ListItemText>
         <ListItemTrailing>
-          <ListItemBadge>
-            33
-          </ListItemBadge>
+          <TypographyLabel>
+            100+
+          </TypographyLabel>
+        </ListItemTrailing>
+      </ListItem>
+      <ListItem>
+        <ListItemLeading>
+          <RoundedIcon>
+            movie
+          </RoundedIcon>
+        </ListItemLeading>
+        <ListItemText>
+          <TypographyLabel>
+            Videos
+          </TypographyLabel>
+        </ListItemText>
+        <ListItemTrailing>
+          <RoundedIcon>
+            arrow_drop_down
+          </RoundedIcon>
         </ListItemTrailing>
       </ListItem>
     </List>
