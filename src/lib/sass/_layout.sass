@@ -30,90 +30,53 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use './conversion'
+@use './display'
 
-/* 0-599+ */
-$max-mobile-width-value: 599
-$max-mobile-width: conversion.to-px($max-mobile-width-value)
+%row
+  display: grid
+  grid-template-rows: [row-1-start] auto [row-1-end]
+  
+%column
+  grid-row: row-1-start / row-2-end
+  display: flex
+  flex-flow: column
+  align-items: center
+  
+.row
+  @extend %row
 
-/* 600-904 */
-$min-tablet-width-value: $max-mobile-width-value + 1
-$min-tablet-width: conversion.to-px($min-tablet-width-value)
-$max-tablet-width-value: 904
-$max-tablet-width: conversion.to-px($max-tablet-width-value)
+  > .column
+    @extend %column
 
-/* 905-1239 */
-$min-desktop-width-value: $max-tablet-width-value + 1
-$min-desktop-width: conversion.to-px($min-desktop-width-value)
-$max-desktop-width-value: 1239
-$max-desktop-width: conversion.to-px($max-desktop-width-value)
+%grid
+  display: grid
+  gap: 8px
 
-/* 1240-1439 */
-$min-widescreen-width-value: $max-desktop-width-value + 1
-$min-widescreen-width: conversion.to-px($min-widescreen-width-value)
-$max-widescreen-width-value: 1439
-$max-widescreen-width: conversion.to-px($max-widescreen-width-value)
+  @include display.is-mobile
+    grid-template-columns: repeat(1, 1fr) !important
 
-/* 1440+ */
-$min-fullhd-width-value: $max-widescreen-width-value + 1
-$min-fullhd-width: conversion.to-px($min-fullhd-width-value)
+  @include display.is-tablet
+    grid-template-columns: repeat(3, 1fr) !important
 
-@mixin is-mobile
-  @media (max-width: $max-mobile-width)
-    @content
+  @include display.is-desktop
+    grid-template-columns: repeat(3, 1fr) !important
 
-@mixin is-tablet
-  @media (min-width: $min-tablet-width) and (max-width: $max-tablet-width)
-    @content
+  @include display.is-widescreen
+    grid-template-columns: repeat(4, 1fr) !important
 
-@mixin is-lte-tablet
-  @media (max-width: $max-mobile-width)
-    @content
+  @include display.is-fullhd
+    grid-template-columns: repeat(5, 1fr) !important
 
-@mixin is-gte-tablet
-  @media (min-width: $min-desktop-width)
-    @content
+.grid
+  @extend %grid
 
-@mixin is-desktop
-  @media (min-width: $min-desktop-width) and (max-width: $max-desktop-width)
-    @content
+%tile
+  position: relative
+  display: flex
+  flex-flow: column
+  flex: 1
+  align-items: center
+  justify-content: center
 
-@mixin is-lte-desktop
-  @media (max-width: $max-tablet-width)
-    @content
-
-@mixin is-gte-desktop
-  @media (min-width: $min-widescreen-width)
-    @content
-
-@mixin is-widescreen
-  @media (min-width: $min-widescreen-width) and (max-width: $max-widescreen-width)
-    @content
-
-@mixin is-lte-widescreen
-  @media (max-width: $max-desktop-width)
-    @content
-
-@mixin is-gte-widescreen
-  @media (min-width: $min-fullhd-width)
-    @content
-
-@mixin is-fullhd
-  @media (min-width: $min-fullhd-width)
-    @content
-
-@mixin is-lte-fullhd
-  @media (max-width: $max-widescreen-width)
-    @content
-
-@mixin is-portrait
-  @media (orientation: portrait)
-    @content
-
-@mixin is-landscape
-  @media (orientation: landscape)
-    @content
-
-@mixin is-hoverable
-  @media (hover)
-    @content
+.tile
+  @extend %tile

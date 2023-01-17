@@ -38,15 +38,31 @@
   // font-family: 'Roboto Serif', serif
   // font-family: 'Noto Sans', sans-serif
 
+*,
+*:after,
+*::before
+  box-sizing: border-box
+
+[v-cloak]
+  display: none
+
+.theme-light
+  .is-theme-dark
+    display: none
+    visibility: hidden
+
+.theme-dark
+  .is-theme-light
+    display: none
+    visibility: hidden
+
 @import '@/lib/sass/aspect-ratios'
 @import '@/lib/sass/typography'
+@import '@/lib/sass/layout'
 @import '@/lib/sass/divider'
 @import '@/lib/sass/form'
-@import '@/lib/sass/row'
-@import '@/lib/sass/tile'
 @import '@/lib/sass/section'
 @import '@/lib/sass/content'
-@import '@/lib/sass/display'
 @import '@/lib/sass/icons/icon'
 @import '@/lib/sass/icons/icon-outlined'
 @import '@/lib/sass/icons/icon-rounded'
