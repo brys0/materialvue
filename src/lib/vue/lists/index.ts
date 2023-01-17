@@ -51,10 +51,6 @@ export {
 } from '@/lib/vue/lists/ListItemTrailing'
 
 export {
-	ListItemIcon,
-} from '@/lib/vue/lists/ListItemIcon'
-
-export {
 	ListItemLabel,
 } from '@/lib/vue/lists/ListItemLabel'
 

@@ -72,8 +72,9 @@
       grid-column: col-2-start / col-2-end
       justify-content: center
 
-      > .field-label
-        @extend %is-not-selectable
+      > .typography
+        &.label
+          @extend %is-not-selectable
         
       > .field-input
         padding: 0
@@ -107,8 +108,9 @@
   &.is-empty:not(.focused)
     > .field-body
       > .field-control
-        > .field-label
-          @extend %typography-body-large
+        > .typography
+          &.label
+            @extend %typography-body-large
         
         > .field-input
           height: 0
@@ -134,8 +136,9 @@
             color: theme.style(on-surface-variant)
 
       > .field-control
-        > .field-label
-          @extend %typography-body-small
+        > .typography
+          &.label
+            @extend %typography-body-small
 
           @include theme.preferred
             color: theme.style(on-surface-variant)
@@ -179,9 +182,10 @@
               color: theme.style(error)
 
         > .field-control        
-          > .field-label
-            @include theme.preferred
-              color: theme.style(error)
+          > .typography
+            &.label
+              @include theme.preferred
+                color: theme.style(error)
           
       > .field-support
         > .field-details
@@ -200,9 +204,10 @@
           background: theme.tint(theme.style(on-surface), theme.style(surface-variant), 8%)
 
         > .field-control
-          > .field-label
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
+          > .typography
+            &.label
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
 
           > .field-input
             &:-webkit-autofill,
@@ -233,9 +238,10 @@
                 color: theme.style(on-error-container)
 
           > .field-control  
-            > .field-label
-              @include theme.preferred
-                color: theme.style(on-error-container)
+            > .typography
+              &.label
+                @include theme.preferred
+                  color: theme.style(on-error-container)
             
         > .field-support
           > .field-details
@@ -251,11 +257,12 @@
           border-bottom-color: theme.style(primary)
 
         > .field-control
-          > .field-label
-            @extend %typography-body-small
+          > .typography
+            &.label
+              @extend %typography-body-small
 
-            @include theme.preferred
-              color: theme.style(primary)
+              @include theme.preferred
+                color: theme.style(primary)
               
       > .field-support
         > .field-details
@@ -278,9 +285,10 @@
                 color: theme.style(error)
           
           > .field-control
-            > .field-label
-              @include theme.preferred
-                color: theme.style(error)
+            > .typography
+              &.label
+                @include theme.preferred
+                  color: theme.style(error)
             
             > .field-input
               @include theme.preferred
@@ -311,9 +319,10 @@
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           
         > .field-control
-          > .field-label
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          > .typography
+            &.label
+              @include theme.preferred
+                color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
             
           > .field-input
             pointer-events: none !important

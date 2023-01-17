@@ -50,7 +50,7 @@ export const TypographyTitle: FunctionalComponent<TypographyTitleProps> = ({
 }, {
 	slots,
 }): VNode => h(Typography, {
-	size: size ?? TypographySize.medium,
+	size,
 	class: {
 		title: true,
 	},

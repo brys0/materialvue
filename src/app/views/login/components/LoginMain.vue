@@ -55,6 +55,7 @@ import {
 	Main,
 	Layout,
 	Tile,
+	TypographyLabel,
 	FilledButton,
 	RoundedIcon,
 	FormFieldset,
@@ -63,7 +64,6 @@ import {
 	FieldLeading,
 	FieldTrailing,
 	FieldInput,
-	FieldLabel,
 	FieldSupport,
 	FieldDetails,
 	FilledTextField,
@@ -118,11 +118,11 @@ onBeforeUnmount(() => {
                   </RoundedIcon>
                 </FieldLeading>
                 <FieldControl>
-                  <FieldLabel
+                  <TypographyLabel
                     name="email"
                   >
                     Email
-                  </FieldLabel>
+                  </TypographyLabel>
                   <FieldInput name="email" />
                 </FieldControl>
                 <FieldTrailing
@@ -153,11 +153,11 @@ onBeforeUnmount(() => {
                   </RoundedIcon>
                 </FieldLeading>
                 <FieldControl>
-                  <FieldLabel
+                  <TypographyLabel
                     name="password"
                   >
                     Password
-                  </FieldLabel>
+                  </TypographyLabel>
                   <FieldInput
                     type="password"
                     name="password"

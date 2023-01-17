@@ -75,7 +75,6 @@ import {
 	FieldLeading,
 	FieldTrailing,
 	FieldInput,
-	FieldLabel,
 	FieldSupport,
 	FieldDetails,
 	TextFieldState,
@@ -84,17 +83,12 @@ import {
 	Cards,
 	CardState,
 	ElevatedCard,
-	FilledCard,
-	OutlinedCard,
 	Bar,
 	BarEnd,
 	FABButton,
 	FABButtonVariant,
 	List,
 	ListItem,
-	ListItemBadge,
-	ListItemIcon,
-	ListItemLabel,
 } from '@/lib/vue'
 
 const validationSchema = object({
@@ -154,7 +148,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </TypographyBody>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <TypographyDisplay :size="TypographySize.large">
         Display
       </TypographyDisplay>
       <TypographyDisplay :size="TypographySize.large">
@@ -168,7 +162,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </TypographyDisplay>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <TypographyDisplay :size="TypographySize.large">
         Headline
       </TypographyDisplay>
       <TypographyHeadline :size="TypographySize.large">
@@ -182,7 +176,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </TypographyHeadline>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <TypographyDisplay :size="TypographySize.large">
         Title
       </TypographyDisplay>
       <TypographyTitle :size="TypographySize.large">
@@ -196,7 +190,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </TypographyTitle>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <TypographyDisplay :size="TypographySize.large">
         Label
       </TypographyDisplay>
       <TypographyLabel :size="TypographySize.large">
@@ -210,7 +204,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </TypographyLabel>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <TypographyDisplay :size="TypographySize.large">
         Body
       </TypographyDisplay>
       <TypographyBody :size="TypographySize.large">
@@ -808,11 +802,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <FieldLabel
+                    <TypographyLabel
                       name="email"
                     >
                       Email
-                    </FieldLabel>
+                    </TypographyLabel>
                     <FieldInput name="email" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
@@ -841,11 +835,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <FieldLabel
+                    <TypographyLabel
                       name="name"
                     >
                       Email
-                    </FieldLabel>
+                    </TypographyLabel>
                     <FieldInput name="name" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
@@ -874,11 +868,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <FieldLabel
+                    <TypographyLabel
                       name="name"
                     >
                       Email
-                    </FieldLabel>
+                    </TypographyLabel>
                     <FieldInput name="name" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
@@ -907,11 +901,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <FieldLabel
+                    <TypographyLabel
                       name="name"
                     >
                       Email
-                    </FieldLabel>
+                    </TypographyLabel>
                     <FieldInput name="name" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
@@ -945,11 +939,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <FieldLabel
+                    <TypographyLabel
                       name="name"
                     >
                       Email
-                    </FieldLabel>
+                    </TypographyLabel>
                     <FieldInput name="name" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
@@ -981,11 +975,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <FieldLabel
+                    <TypographyLabel
                       name="name"
                     >
                       Email
-                    </FieldLabel>
+                    </TypographyLabel>
                     <FieldInput name="name" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
@@ -1017,11 +1011,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <FieldLabel
+                    <TypographyLabel
                       name="name"
                     >
                       Email
-                    </FieldLabel>
+                    </TypographyLabel>
                     <FieldInput name="name" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
@@ -1050,11 +1044,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <FieldLabel
+                    <TypographyLabel
                       name="name"
                     >
                       Email
-                    </FieldLabel>
+                    </TypographyLabel>
                     <FieldInput name="name" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">

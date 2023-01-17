@@ -35,13 +35,12 @@
 <script lang="ts" setup>
 import {
 	NavigationDrawer,
-	NavigationDrawerHeadline,
+	TypographyHeadline,
 	List,
 	ListItem,
 	ListItemLeading,
 	ListItemText,
 	ListItemTrailing,
-	ListItemIcon,
 	ListItemLabel,
 	ListItemBadge,
 	RoundedIcon,
@@ -51,9 +50,9 @@ import {
 
 <template>
   <NavigationDrawer>
-    <NavigationDrawerHeadline>
+    <TypographyHeadline>
       Headline
-    </NavigationDrawerHeadline>
+    </TypographyHeadline>
     <List>
       <ListItem>
         <ListItemLeading>

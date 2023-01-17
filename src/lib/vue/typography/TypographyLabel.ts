@@ -50,7 +50,7 @@ export const TypographyLabel: FunctionalComponent<TypographyLabelProps> = ({
 }, {
 	slots,
 }): VNode => h(Typography, {
-	size: size ?? TypographySize.medium,
+	size,
 	class: {
 		label: true,
 	},

@@ -59,10 +59,6 @@ export {
 } from '@/lib/vue/forms/FieldInput.vue'
 
 export {
-	FieldLabel,
-} from '@/lib/vue/forms/FieldLabel'
-
-export {
 	FieldSupport,
 } from '@/lib/vue/forms/FieldSupport'
 

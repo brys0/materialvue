@@ -48,7 +48,6 @@ export {
 
 export {
 	NavigationDrawer,
-	NavigationDrawerHeadline,
 } from '@/lib/vue/navigation-drawer'
 
 export {
@@ -96,7 +95,6 @@ export {
 	FieldLeading,
 	FieldTrailing,
 	FieldInput,
-	FieldLabel,
 	FieldSupport,
 	FieldDetails,
 } from '@/lib/vue/forms'
@@ -137,7 +135,6 @@ export {
 	ListItemLeading,
 	ListItemText,
 	ListItemTrailing,
-	ListItemIcon,
 	ListItemLabel,
 	ListItemBadge,
 } from '@/lib/vue/lists'

@@ -50,7 +50,7 @@ export const TypographyHeadline: FunctionalComponent<TypographyHeadlineProps> = 
 }, {
 	slots,
 }): VNode => h(Typography, {
-	size: size ?? TypographySize.medium,
+	size,
 	class: {
 		headline: true,
 	},
