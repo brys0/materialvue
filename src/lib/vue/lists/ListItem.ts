@@ -1,4 +1,3 @@
-<!--
 /**
  * BSD 3-Clause License
  *
@@ -30,41 +29,25 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
--->
 
-<script lang="ts" setup>
 import {
-	NavigationDrawer,
-	NavigationDrawerHeadline,
-	List,
-	ListItem,
-	ListItemIcon,
-	ListItemLabel,
-	ListItemBadge,
-	RoundedIcon,
-} from '@/lib/vue'
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-</script>
+export type ListItemProps = {}
 
-<template>
-  <NavigationDrawer>
-    <NavigationDrawerHeadline>
-      Headline
-    </NavigationDrawerHeadline>
-    <List>
-      <ListItem>
-        <ListItemIcon>
-          <RoundedIcon>
-            mail
-          </RoundedIcon>
-        </ListItemIcon>
-        <ListItemLabel>
-          Mail
-        </ListItemLabel>
-        <ListItemBadge>
-          33
-        </ListItemBadge>
-      </ListItem>
-    </List>
-  </NavigationDrawer>
-</template>
+export const ListItem: FunctionalComponent<ListItemProps> = (_, {
+	slots,
+}): VNode => h('li', {
+	class: 'list-item',
+}, {
+	default: () => slots.default?.(),
+})
+
+ListItem.displayName = 'ListItem'
+
+ListItem.props = []
+
+export default ListItem

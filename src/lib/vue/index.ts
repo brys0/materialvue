@@ -49,11 +49,6 @@ export {
 export {
 	NavigationDrawer,
 	NavigationDrawerHeadline,
-	NavigationDrawerList,
-	NavigationDrawerListItem,
-	NavigationDrawerIcon,
-	NavigationDrawerLabel,
-	NavigationDrawerBadge,
 } from '@/lib/vue/navigation-drawer'
 
 
@@ -134,5 +129,13 @@ export {
 
 export {
 	Menu,
-	ListItem,
+	// ListItem,
 } from '@/lib/vue/menus'
+
+export {
+	List,
+	ListItem,
+	ListItemIcon,
+	ListItemLabel,
+	ListItemBadge,
+} from '@/lib/vue/lists'
