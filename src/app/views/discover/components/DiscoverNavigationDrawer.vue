@@ -54,12 +54,12 @@ import {
         <RoundedIcon>
           mail
         </RoundedIcon>
-        <TypographyLabel>
+        <span class="typography label">
           Mail
-        </TypographyLabel>
-        <TypographyLabel>
+        </span>
+        <span class="typography badge">
           33
-        </TypographyLabel>
+        </span>
       </ListItem>
     </Menu>
   </NavigationDrawer>
