@@ -33,11 +33,13 @@
 -->
 
 <template>
-  <router-view name="top-app-bar" />
-  <router-view name="navigation-rail" />
-  <router-view name="navigation-drawer" />
-  <router-view name="toolbar" />
-  <router-view name="main" />
-  <router-view name="finder" />
-  <router-view name="modal" />
+  <div class="app">
+    <router-view name="top-app-bar" />
+    <router-view name="navigation-rail" />
+    <router-view name="navigation-drawer" />
+    <router-view name="toolbar" />
+    <router-view name="main" />
+    <router-view name="finder" />
+    <router-view name="modal" />
+  </div>
 </template>

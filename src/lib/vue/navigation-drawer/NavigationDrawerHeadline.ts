@@ -30,18 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use '../theme'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-.main
-  @extend %is-not-selectable
+export type NavigationDrawerHeadlineProps = {}
 
-  display: grid
-  grid-row: row-3-start / row-3-end
-  grid-column: col-3-start / col-3-end
-  overflow: scroll
+export const NavigationDrawerHeadline: FunctionalComponent<NavigationDrawerHeadlineProps> = (_, {
+	slots,
+}): VNode => h('span', {
+	class: 'typography headline',
+}, {
+	default: () => slots.default?.(),
+})
 
-  @include theme.preferred
-    background: theme.style(background)
+NavigationDrawerHeadline.displayName = 'NavigationDrawerHeadline'
 
-  &:empty
-    visibility: hidden
+NavigationDrawerHeadline.props = []
+
+export default NavigationDrawerHeadline

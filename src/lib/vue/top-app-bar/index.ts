@@ -30,17 +30,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use '../theme'
-
-body
-  margin: 0
-  padding: 0
-  width: 100vw
-  height: 100vh
-  display: grid
-  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] min-content [row-2-end row-3-start] auto [row-3-end]
-  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] min-content [col-2-end col-3-start] auto [col-3-end col-4-start] min-content [col-4-end]
-  overflow: hidden
-
-  @include theme.preferred
-    background: theme.style(background)
+export {
+	TopAppBar,
+} from '@/lib/vue/top-app-bar/TopAppBar'

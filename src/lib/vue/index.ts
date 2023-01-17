@@ -32,14 +32,25 @@
 
 export {
 	App,
-	NavigationDrawer,
-	NavigationRail,
-	TopAppBar,
 	Toolbar,
 	Main,
 	Finder,
 	Modal,
 } from '@/lib/vue/apps'
+
+export {
+	TopAppBar,
+} from '@/lib/vue/top-app-bar'
+
+export {
+	NavigationRail,
+} from '@/lib/vue/navigation-rail'
+
+export {
+	NavigationDrawer,
+	NavigationDrawerHeadline,
+} from '@/lib/vue/navigation-drawer'
+
 
 export {
 	TypographyDisplay,

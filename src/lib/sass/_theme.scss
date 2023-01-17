@@ -124,12 +124,6 @@ $current: null;
   $current: null !global;
 }
 
-@mixin dark() {
-  .theme-dark & {
-    @content;
-  }
-}
-
 @mixin prefers-light-scheme {
   @media (prefers-color-scheme: light) {
     @content;

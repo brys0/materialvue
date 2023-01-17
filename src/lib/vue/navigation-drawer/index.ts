@@ -30,16 +30,10 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use '../theme'
+export {
+	NavigationDrawer,
+} from '@/lib/vue/navigation-drawer/NavigationDrawer'
 
-.toolbar
-  @extend %is-not-selectable
-
-  height: 56px
-  display: grid
-  grid-row: row-2-start / row-2-end
-  grid-column: col-3-start / col-3-end
-
-  &:empty
-    height: 0
-    visibility: hidden
+export {
+	NavigationDrawerHeadline,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerHeadline'

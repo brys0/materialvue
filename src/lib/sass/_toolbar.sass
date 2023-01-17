@@ -30,22 +30,16 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	default as App,
-} from '@/lib/vue/apps/App.vue'
+@use './theme'
 
-export {
-	Toolbar,
-} from '@/lib/vue/apps/Toolbar'
+.toolbar
+  @extend %is-not-selectable
 
-export {
-	Main,
-} from '@/lib/vue/apps/Main'
+  height: 56px
+  display: grid
+  grid-row: row-2-start / row-2-end
+  grid-column: col-3-start / col-3-end
 
-export {
-	Finder,
-} from '@/lib/vue/apps/Finder'
-
-export {
-	Modal,
-} from '@/lib/vue/apps/Modal'
+  &:empty
+    height: 0
+    visibility: hidden

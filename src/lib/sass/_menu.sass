@@ -30,12 +30,39 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use '../theme'
+@use './theme'
+@use './conversion'
 
-.modal
+.menu
+  margin: 0
+  padding: 0
   display: grid
-  grid-row: row-1-start / row-3-end
-  grid-column: col-1-start / col-4-end
+  grid-template-rows: [row-1-start] 56px [row-1-end row-2-start] min-content [row-2-end]  
+  grid-template-columns: [col-1-start] auto [col-1-end row-2-start]
+  
 
-  &:empty
-    visibility: hidden
+  > .list-item
+    @extend %bar
+    
+    padding: 0 16px
+    grid-row: row-1-start / row-1-end
+    grid-column: col-1-start / col-1-end
+    gap: 16px
+    list-style-type: none
+    
+    > .icon
+      @extend %bar-start
+      
+    > .badge
+      @extend %bar-end
+      
+    &.icon,
+    &.badge
+      gap: 0
+
+    > .typography
+      &.label
+        @extend %bar-center
+
+        gap: 0
+      

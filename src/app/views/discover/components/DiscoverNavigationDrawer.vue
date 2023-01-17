@@ -35,7 +35,7 @@
 <script lang="ts" setup>
 import {
 	NavigationDrawer,
-	TypographyHeadline,
+	NavigationDrawerHeadline,
 	Menu,
 	ListItem,
 	RoundedIcon,
@@ -46,9 +46,9 @@ import {
 
 <template>
   <NavigationDrawer>
-    <TypographyHeadline>
+    <NavigationDrawerHeadline>
       Headline
-    </TypographyHeadline>
+    </NavigationDrawerHeadline>
     <Menu>
       <ListItem>
         <RoundedIcon>

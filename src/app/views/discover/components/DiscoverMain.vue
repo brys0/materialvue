@@ -1290,8 +1290,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
   @use '@/lib/sass/theme'
 
   section
-    padding: 48px
-
     &.banner
       > span
         padding: 12px
