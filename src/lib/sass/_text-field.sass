@@ -39,38 +39,39 @@
   grid-template-columns: [col-1-start] auto [col-1-end]
   
   > .field-body
-    @extend %bar
-    
     padding: 0 16px
+    display: grid
     grid-row: row-1-start / row-1-end
     grid-column: col-1-start / col-1-end
+    grid-template-rows: [row-1-start] auto [row-1-end]  
+    grid-template-columns: [col-1-start] minmax(0, 1fr) [col-1-end col-2-start] auto [col-2-end col-3-start] minmax(0, 1fr) [col-3-end] 
+    align-items: stretch
     gap: 16px
     
-    > .field-icon
-      @extend %is-not-selectable
-
+    > .field-leading,
+    > .field-trailing
       height: 54px
+      display: flex
+      align-items: center
 
-      &.leading
-        @extend %bar-start
+    > .field-leading
+      grid-row: row-1-start / row-1-end
+      grid-column: col-1-start / col-1-end
+      justify-content: start
       
-      &.trailing
-        @extend %bar-end
+    > .field-trailing
+      grid-row: row-1-start / row-1-end
+      grid-column: col-3-start / col-3-end
+      justify-content: end
       
-      &.leading,
-      &.trailing
-        gap: 0
-
     > .field-control
-      @extend %bar-center
-
-      padding: 0
       height: 54px
       display: flex
       flex-flow: column
-      align-items: stretch
-      gap: 0
-      
+      grid-row: row-1-start / row-1-end
+      grid-column: col-2-start / col-2-end
+      justify-content: center
+
       > .field-label
         @extend %is-not-selectable
         
@@ -124,14 +125,13 @@
         border-bottom-color: theme.style(on-surface-variant)
         background: theme.style(surface-variant)
 
-      > .field-icon
-        &.leading,
-        &.trailing
-          .icon
-            font-size: 24px
+      > .field-leading
+      > .field-trailing
+        .icon
+          font-size: 24px
 
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
 
       > .field-control
         > .field-label
@@ -173,11 +173,10 @@
         @include theme.preferred
           border-bottom-color: theme.style(error)
 
-        > .field-icon
-          &.trailing
-            .icon
-              @include theme.preferred
-                color: theme.style(error)
+        > .field-trailing
+          .icon
+            @include theme.preferred
+              color: theme.style(error)
 
         > .field-control        
           > .field-label
@@ -223,16 +222,15 @@
           @include theme.preferred
             border-bottom-color: theme.style(on-error-container)
 
-          > .field-icon
-            &.leading
-              .icon
-                @include theme.preferred
-                  color: theme.style(on-surface-variant)
+          > .field-leading
+            .icon
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
 
-            &.trailing
-              .icon
-                @include theme.preferred
-                  color: theme.style(on-error-container)
+          > .field-trailing
+            .icon
+              @include theme.preferred
+                color: theme.style(on-error-container)
 
           > .field-control  
             > .field-label
@@ -269,16 +267,15 @@
           @include theme.preferred
             border-bottom-color: theme.style(error)
             
-          > .field-icon
-            &.leading
-              .icon
-                @include theme.preferred
-                  color: theme.style(on-surface-variant)
+          > .field-leading
+            .icon
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
 
-            &.trailing
-              .icon
-                @include theme.preferred
-                  color: theme.style(error)
+          > .field-trailing
+            .icon
+              @include theme.preferred
+                color: theme.style(error)
           
           > .field-control
             > .field-label
@@ -307,12 +304,11 @@
           border-bottom-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           background: conversion.hex-to-rgba(theme.style(on-surface), 4%)
 
-        > .field-icon
-          &.leading,
-          &.trailing
-            .icon
-              @include theme.preferred
-                color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+        > .field-leading
+        > .field-trailing
+          .icon
+            @include theme.preferred
+              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           
         > .field-control
           > .field-label

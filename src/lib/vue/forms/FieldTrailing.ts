@@ -36,22 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-import {
-	FieldIcon,
-} from '@/lib/vue/forms'
+export type FieldTrailingProps = {}
 
-export type FieldIconLeadingProps = {}
-
-export const FieldIconLeading: FunctionalComponent<FieldIconLeadingProps> = (_, {
+export const FieldTrailing: FunctionalComponent<FieldTrailingProps> = (_, {
 	slots,
-}): VNode => h(FieldIcon, {
-	class: 'leading',
+}): VNode => h('div', {
+	class: 'field-trailing',
 }, {
 	default: () => slots.default?.(),
 })
 
-FieldIconLeading.displayName = 'FieldIconLeading'
+FieldTrailing.displayName = 'FieldTrailing'
 
-FieldIconLeading.props = []
+FieldTrailing.props = []
 
-export default FieldIconLeading
+export default FieldTrailing

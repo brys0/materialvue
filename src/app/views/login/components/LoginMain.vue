@@ -60,7 +60,8 @@ import {
 	FormFieldset,
 	FieldBody,
 	FieldControl,
-	FieldIcon,
+	FieldLeading,
+	FieldTrailing,
 	FieldInput,
 	FieldLabel,
 	FieldSupport,
@@ -111,11 +112,11 @@ onBeforeUnmount(() => {
               :has-error="'undefined' !== typeof errors.email"
             >
               <FieldBody>
-                <FieldIcon class="leading">
+                <FieldLeading>
                   <RoundedIcon>
                     mail
                   </RoundedIcon>
-                </FieldIcon>
+                </FieldLeading>
                 <FieldControl>
                   <FieldLabel
                     name="email"
@@ -124,14 +125,14 @@ onBeforeUnmount(() => {
                   </FieldLabel>
                   <FieldInput name="email" />
                 </FieldControl>
-                <FieldIcon
+                <FieldTrailing
                   v-if="errors.email"
                   class="trailing"
                 >
                   <RoundedIcon>
                     error
                   </RoundedIcon>
-                </FieldIcon>
+                </FieldTrailing>
               </FieldBody>
               <FieldSupport v-if="errors.email">
                 <FieldDetails>
@@ -146,11 +147,11 @@ onBeforeUnmount(() => {
               :has-error="'undefined' !== typeof errors.password"
             >
               <FieldBody>
-                <FieldIcon class="leading">
+                <FieldLeading>
                   <RoundedIcon>
                     lock
                   </RoundedIcon>
-                </FieldIcon>
+                </FieldLeading>
                 <FieldControl>
                   <FieldLabel
                     name="password"
@@ -162,14 +163,14 @@ onBeforeUnmount(() => {
                     name="password"
                   />
                 </FieldControl>
-                <FieldIcon
+                <FieldTrailing
                   v-if="errors.password"
                   class="trailing"
                 >
                   <RoundedIcon>
                     error
                   </RoundedIcon>
-                </FieldIcon>
+                </FieldTrailing>
               </FieldBody>
               <FieldSupport v-if="errors.password">
                 <FieldDetails>
