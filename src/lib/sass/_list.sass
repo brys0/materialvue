@@ -55,25 +55,25 @@
     @include theme.preferred
       background: theme.style(secondary-container)
     
-    > .icon,
-    > .label,
-    > .badge
+    > .list-item-leading,
+    > .list-item-text,
+    > .list-item-trailing
       display: flex
       align-items: center
 
-    > .icon
+    > .list-item-leading
       grid-row: row-1-start / row-1-end
       grid-column: col-1-start / col-1-end
 
-    > .label
-      @extend %is-not-selectable
-      @extend %typography-label-large
+    > .list-item-text
+      // @extend %is-not-selectable
+      // @extend %typography-label-large
 
       grid-row: row-1-start / row-1-end
       grid-column: col-2-start / col-2-end
 
-    > .badge
-      @extend %typography-label-large
+    > .list-item-trailing
+      // @extend %typography-label-large
       
       grid-row: row-1-start / row-1-end
       grid-column: col-3-start / col-3-end

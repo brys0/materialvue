@@ -30,34 +30,24 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	List,
-} from '@/lib/vue/lists/List'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	ListItem,
-} from '@/lib/vue/lists/ListItem'
+export type ListItemTrailingProps = {}
 
-export {
-	ListItemLeading,
-} from '@/lib/vue/lists/ListItemLeading'
+export const ListItemTrailing: FunctionalComponent<ListItemTrailingProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: 'list-item-trailing',
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	ListItemText,
-} from '@/lib/vue/lists/ListItemText'
+ListItemTrailing.displayName = 'ListItemTrailing'
 
-export {
-	ListItemTrailing,
-} from '@/lib/vue/lists/ListItemTrailing'
+ListItemTrailing.props = []
 
-export {
-	ListItemIcon,
-} from '@/lib/vue/lists/ListItemIcon'
-
-export {
-	ListItemLabel,
-} from '@/lib/vue/lists/ListItemLabel'
-
-export {
-	ListItemBadge,
-} from '@/lib/vue/lists/ListItemBadge'
+export default ListItemTrailing

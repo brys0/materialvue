@@ -38,6 +38,9 @@ import {
 	NavigationDrawerHeadline,
 	List,
 	ListItem,
+	ListItemLeading,
+	ListItemText,
+	ListItemTrailing,
 	ListItemIcon,
 	ListItemLabel,
 	ListItemBadge,
@@ -53,17 +56,21 @@ import {
     </NavigationDrawerHeadline>
     <List>
       <ListItem>
-        <ListItemIcon>
+        <ListItemLeading>
           <RoundedIcon>
             mail
           </RoundedIcon>
-        </ListItemIcon>
-        <ListItemLabel>
-          Mail
-        </ListItemLabel>
-        <ListItemBadge>
-          33
-        </ListItemBadge>
+        </ListItemLeading>
+        <ListItemText>
+          <ListItemLabel>
+            Mail
+          </ListItemLabel>
+        </ListItemText>
+        <ListItemTrailing>
+          <ListItemBadge>
+            33
+          </ListItemBadge>
+        </ListItemTrailing>
       </ListItem>
     </List>
   </NavigationDrawer>

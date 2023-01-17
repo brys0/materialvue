@@ -134,6 +134,9 @@ export {
 export {
 	List,
 	ListItem,
+	ListItemLeading,
+	ListItemText,
+	ListItemTrailing,
 	ListItemIcon,
 	ListItemLabel,
 	ListItemBadge,
