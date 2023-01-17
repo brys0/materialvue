@@ -40,7 +40,7 @@ export type NavigationDrawerProps = {}
 
 export const NavigationDrawer: FunctionalComponent<NavigationDrawerProps> = (_, {
 	slots,
-}): VNode => h('aside', {
+}): VNode => h('nav', {
 	class: 'navigation-drawer',
 }, {
 	default: () => slots.default?.(),

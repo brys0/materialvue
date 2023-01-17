@@ -40,7 +40,7 @@ export type NavigationRailProps = {}
 
 export const NavigationRail: FunctionalComponent<NavigationRailProps> = (_, {
 	slots,
-}): VNode => h('aside', {
+}): VNode => h('nav', {
 	class: 'navigation-rail',
 }, {
 	default: () => slots.default?.(),
