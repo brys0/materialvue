@@ -37,6 +37,7 @@ import {
 	NavigationDrawer,
 	TypographyHeadline,
 	TypographyLabel,
+	Divider,
 	List,
 	ListItem,
 	ListItemLeading,
@@ -52,6 +53,43 @@ import {
     <TypographyHeadline>
       Headline
     </TypographyHeadline>
+    <List>
+      <ListItem>
+        <ListItemLeading>
+          <RoundedIcon>
+            mail
+          </RoundedIcon>
+        </ListItemLeading>
+        <ListItemText>
+          <TypographyLabel>
+            Mail
+          </TypographyLabel>
+        </ListItemText>
+        <ListItemTrailing>
+          <TypographyLabel>
+            100+
+          </TypographyLabel>
+        </ListItemTrailing>
+      </ListItem>
+      <ListItem>
+        <ListItemLeading>
+          <RoundedIcon>
+            movie
+          </RoundedIcon>
+        </ListItemLeading>
+        <ListItemText>
+          <TypographyLabel>
+            Videos
+          </TypographyLabel>
+        </ListItemText>
+        <ListItemTrailing>
+          <RoundedIcon>
+            arrow_drop_down
+          </RoundedIcon>
+        </ListItemTrailing>
+      </ListItem>
+      <Divider />
+    </List>
     <List>
       <ListItem>
         <ListItemLeading>

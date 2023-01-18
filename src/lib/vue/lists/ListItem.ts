@@ -37,9 +37,9 @@ import {
 } from 'vue'
 
 export enum ListItemSize {
-  large = 'large',
-  medium = 'medium',
-  small = 'small',
+  line1 = 'line-1',
+  line2 = 'line-2',
+  line3 = 'line-3',
 }
 
 export type ListItemProps = {
@@ -50,12 +50,12 @@ export const ListItem: FunctionalComponent<ListItemProps> = ({
 	size,
 }, {
 	slots,
-}): VNode => h('span', {
+}): VNode => h('li', {
 	class: {
 		'list-item': true,
-		large: ListItemSize.large === size,
-		medium: ListItemSize.medium === size,
-		small: ListItemSize.small === size,
+		'line-1': ListItemSize.line1 === size,
+		'line-2': ListItemSize.line2 === size,
+		'line-3': ListItemSize.line3 === size,
 	},
 }, {
 	default: () => slots.default?.(),

@@ -41,9 +41,10 @@
 
   padding: 0 16px
   width: 360px
-  display: grid
-  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] auto [row-2-end]
-  grid-template-columns: [col-1-start] auto [col-1-end]
+  display: flex
+  flex-flow: column
+  align-items: stretch
+  justify-content: flex-start
   border-radius: 0 16px 16px 0
 
   @include theme.preferred
@@ -63,8 +64,25 @@
     &.headline
       @extend %typography-title-small
 
-      grid-row: row-1-start / row-1-end
-      grid-column: col-1-start / col-1-end
-
       @include theme.preferred
         color: theme.style(on-surface-variant)
+
+  > .list
+    > .list-item
+      > .list-item-leading
+        > .icon
+          font-size: 24px
+
+      > .list-item-text
+        > .typography
+          &.label
+            @extend %typography-label-large
+          
+      > .list-item-trailing
+        > .typography
+          &.label
+            @extend %typography-label-large
+        
+        > .icon
+          font-size: 24px
+          

@@ -37,9 +37,9 @@ import {
 } from 'vue'
 
 export enum TypographySize {
-  large = 'large',
-  medium = 'medium',
   small = 'small',
+	medium = 'medium',
+	large = 'large',
 }
 
 export type TypographyProps = {
@@ -53,9 +53,9 @@ export const Typography: FunctionalComponent<TypographyProps> = ({
 }): VNode => h('span', {
 	class: {
 		typography: true,
-		large: TypographySize.large === size,
-		medium: TypographySize.medium === size,
 		small: TypographySize.small === size,
+		medium: TypographySize.medium === size,
+		large: TypographySize.large === size,
 	},
 }, {
 	default: () => slots.default?.(),

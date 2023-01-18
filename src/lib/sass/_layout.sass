@@ -33,14 +33,16 @@
 @use './display'
 
 %row
-  display: grid
-  grid-template-rows: [row-1-start] auto [row-1-end]
-  
+  display: flex
+  flex-flow: row
+  align-items: flex-start
+
 %column
   grid-row: row-1-start / row-2-end
   display: flex
   flex-flow: column
   align-items: center
+  flex: 1
   
 .row
   @extend %row

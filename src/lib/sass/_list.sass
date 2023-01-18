@@ -39,30 +39,29 @@
   display: flex
   flex-flow: column
   align-items: stretch
-  justify-content: flex-start
+  justify-content: center
+
+  > .divider
+    margin-left: 16px
+    margin-right: 24px
 
   > .list-item
     @extend %is-not-selectable
 
-    padding: 0 24px 0 16px
+    &:first-of-type
+      margin-top: 8px
+    
+    &:last-of-type
+      margin-bottom: 8px
+
+    padding: 8px 24px 8px 16px
     display: grid
     grid-template-rows: [row-1-start] auto [row-1-end]  
     grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
-    gap: 12px
     list-style-type: none
     border-radius: 28px
     cursor: pointer
 
-    &,
-    &.small
-      height: 56px
-    
-    &.medium
-      height: 72px
-    
-    &.large
-      height: 88px
-    
     @include theme.preferred
       background: theme.style(elevation-0), theme.style(surface)
       box-shadow: theme.style(shadow-0)
@@ -72,16 +71,39 @@
     > .list-item-trailing
       display: flex
       align-items: center
+    
+    &,
+    &.line-1
+      height: min-content
+      min-height: 56px
+    
+    &.line-2
+      height: min-content
+      min-height: 72px
+    
+    &.line-3
+      height: min-content
+      min-height: 88px
+
+      > .list-item-leading,
+      > .list-item-text,
+      > .list-item-trailing
+        align-items: flex-start
 
     > .list-item-leading
       grid-row: row-1-start / row-1-end
       grid-column: col-1-start / col-1-end
 
-      // > .video
-      //   &.thumbnail
-      //     @extend %aspect-ratop-16x9
+      > .icon
+        font-size: 18px
 
+      > .video
+        &.thumbnail
+          width: 114px
+          height: 64px
+      
     > .list-item-text
+      padding: 0 16px
       display: flex
       flex-flow: column
       grid-row: row-1-start / row-1-end
@@ -89,18 +111,43 @@
       align-items: flex-start
       justify-content: center
 
+      &:first-child
+        padding-left: 0
+      
+      &:last-child
+        padding-right: 0
+
       > .typography
+        @extend %is-not-selectable
+        
         &.headline
           @extend %typography-body-large
+
+          @include theme.preferred
+            color: theme.style(on-surface)
         
         &.body
           @extend %typography-body-medium
+          
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
 
     > .list-item-trailing
       grid-row: row-1-start / row-1-end
       grid-column: col-3-start / col-3-end
 
       > .typography
+        @extend %is-not-selectable
+
         &.label
           @extend %typography-label-small
-        
+
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+      
+      > .icon
+        font-size: 24px
+
+        @include theme.preferred
+          color: theme.style(on-surface-variant)
+      
