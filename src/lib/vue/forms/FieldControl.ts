@@ -41,7 +41,9 @@ export type FieldControlProps = {}
 export const FieldControl: FunctionalComponent<FieldControlProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'field-control',
+	class: {
+		'field-control': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

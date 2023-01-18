@@ -41,7 +41,9 @@ export type BarEndProps = {}
 export const BarEnd: FunctionalComponent<BarEndProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'bar-end',
+	class: {
+		'bar-end': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

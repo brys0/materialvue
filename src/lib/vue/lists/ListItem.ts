@@ -41,7 +41,9 @@ export type ListItemProps = {}
 export const ListItem: FunctionalComponent<ListItemProps> = (_, {
 	slots,
 }): VNode => h('li', {
-	class: 'list-item',
+	class: {
+		'list-item': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

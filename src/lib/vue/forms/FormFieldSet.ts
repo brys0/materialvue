@@ -41,7 +41,9 @@ export type FormFieldsetProps = {}
 export const FormFieldset: FunctionalComponent<FormFieldsetProps> = (_, {
 	slots,
 }): VNode => h('fieldset', {
-	class: 'form-fieldset',
+	class: {
+		'form-fieldset': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

@@ -41,7 +41,9 @@ export type DividerProps = {}
 export const Divider: FunctionalComponent<DividerProps> = (_: DividerProps, {
 	slots,
 }): VNode => h('hr', {
-	class: 'divider',
+	class: {
+		divider: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

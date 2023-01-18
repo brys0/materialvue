@@ -41,7 +41,9 @@ export type ListItemTrailingProps = {}
 export const ListItemTrailing: FunctionalComponent<ListItemTrailingProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'list-item-trailing',
+	class: {
+		'list-item-trailing': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

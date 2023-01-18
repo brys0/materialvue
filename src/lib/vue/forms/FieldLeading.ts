@@ -41,7 +41,9 @@ export type FieldLeadingProps = {}
 export const FieldLeading: FunctionalComponent<FieldLeadingProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'field-leading',
+	class: {
+		'field-leading': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

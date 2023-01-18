@@ -41,7 +41,9 @@ export type FieldTrailingProps = {}
 export const FieldTrailing: FunctionalComponent<FieldTrailingProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'field-trailing',
+	class: {
+		'field-trailing': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

@@ -132,7 +132,7 @@ export {
 
 export {
 	List,
-	ListSize,
+	ListLines,
 	ListItem,
 	ListItemLeading,
 	ListItemText,

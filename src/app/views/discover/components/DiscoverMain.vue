@@ -88,7 +88,7 @@ import {
 	FABButtonVariant,
 	Divider,
 	List,
-	ListSize,
+	ListLines,
 	ListItem,
 	ListItemLeading,
 	ListItemText,
@@ -1267,7 +1267,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemText>
             </ListItem>
           </List>
-          <List class="has-trailing-badge">
+          <List :has-trailing-badge="true">
             <Divider />
             <ListItem>
               <ListItemText>
@@ -1306,7 +1306,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemTrailing>
             </ListItem>
           </List>
-          <List :size="ListSize.line2">
+          <List :lines="ListLines.two">
             <Divider />
             <ListItem>
               <ListItemText>
@@ -1340,8 +1340,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line2"
-            class="has-trailing-badge"
+            :lines="ListLines.two"
+            :has-trailing-badge="true"
           >
             <Divider />
             <ListItem>
@@ -1390,7 +1390,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemTrailing>
             </ListItem>
           </List>
-          <List :size="ListSize.line3">
+          <List :lines="ListLines.three">
             <Divider />
             <ListItem>
               <ListItemText>
@@ -1424,8 +1424,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line3"
-            class="has-trailing-badge"
+            :lines="ListLines.three"
+            :has-trailing-badge="true"
           >
             <Divider />
             <ListItem>
@@ -1476,7 +1476,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
         </Column>
         <Column>
-          <List class="has-leading-icon">
+          <List :has-leading-icon="true">
             <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
@@ -1514,7 +1514,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemText>
             </ListItem>
           </List>
-          <List class="has-leading-icon has-trailing-icon">
+          <List
+            :has-leading-icon="true"
+            :has-trailing-icon="true"
+          >
             <Divider />
             <ListItem>
               <ListItemLeading>
@@ -1569,8 +1572,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line2"
-            class="has-leading-icon"
+            :lines="ListLines.two"
+            :has-leading-icon="true"
           >
             <Divider />
             <ListItem>
@@ -1620,8 +1623,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line2"
-            class="has-leading-icon has-trailing-icon"
+            :lines="ListLines.two"
+            :has-leading-icon="true"
+            :has-trailing-icon="true"
           >
             <Divider />
             <ListItem>
@@ -1686,8 +1690,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line3"
-            class="has-leading-icon"
+            :lines="ListLines.three"
+            :has-leading-icon="true"
           >
             <Divider />
             <ListItem>
@@ -1737,8 +1741,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line3"
-            class="has-leading-icon has-trailing-icon"
+            :lines="ListLines.three"
+            :has-leading-icon="true"
+            :has-trailing-icon="true"
           >
             <Divider />
             <ListItem>
@@ -1804,7 +1809,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
         </Column>
         <Column>
-          <List class="has-leading-avatar">
+          <List :has-leading-avatar="true">
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -1848,7 +1853,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemText>
             </ListItem>
           </List>
-          <List class="has-leading-avatar has-trailing-icon">
+          <List
+            :has-leading-avatar="true"
+            :has-trailing-icon="true"
+          >
             <Divider />
             <ListItem>
               <ListItemLeading>
@@ -1909,8 +1917,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line2"
-            class="has-leading-avatar"
+            :lines="ListLines.two"
+            :has-leading-avatar="true"
           >
             <Divider />
             <ListItem>
@@ -1966,8 +1974,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line2"
-            class="has-leading-avatar has-trailing-icon"
+            :lines="ListLines.two"
+            :has-leading-avatar="true"
+            :has-trailing-icon="true"
           >
             <Divider />
             <ListItem>
@@ -2038,8 +2047,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line3"
-            class="has-leading-avatar"
+            :lines="ListLines.three"
+            :has-leading-avatar="true"
           >
             <Divider />
             <ListItem>
@@ -2095,8 +2104,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line3"
-            class="has-leading-avatar has-trailing-icon"
+            :lines="ListLines.three"
+            :has-leading-avatar="true"
+            :has-trailing-icon="true"
           >
             <Divider />
             <ListItem>
@@ -2168,7 +2178,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
         </Column>
         <Column>
-          <List class="has-leading-image">
+          <List :has-leading-image="true">
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2227,7 +2237,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemText>
             </ListItem>
           </List>
-          <List class="has-leading-image has-trailing-icon">
+          <List
+            :has-leading-image="true"
+            :has-trailing-icon="true"
+          >
             <Divider />
             <ListItem>
               <ListItemLeading>
@@ -2303,8 +2316,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line2"
-            class="has-leading-image"
+            :lines="ListLines.two"
+            :has-leading-image="true"
           >
             <Divider />
             <ListItem>
@@ -2375,8 +2388,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line2"
-            class="has-leading-image has-trailing-icon"
+            :lines="ListLines.two"
+            :has-leading-image="true"
+            :has-trailing-icon="true"
           >
             <Divider />
             <ListItem>
@@ -2462,8 +2476,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line3"
-            class="has-leading-image"
+            :lines="ListLines.three"
+            :has-leading-image="true"
           >
             <Divider />
             <ListItem>
@@ -2534,8 +2548,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line3"
-            class="has-leading-image has-trailing-icon"
+            :lines="ListLines.three"
+            :has-leading-image="true"
+            :has-trailing-icon="true"
           >
             <Divider />
             <ListItem>
@@ -2622,7 +2637,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
         </Column>
         <Column>
-          <List class="has-leading-video">
+          <List :has-leading-video="true">
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -2687,7 +2702,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemText>
             </ListItem>
           </List>
-          <List class="has-leading-video has-trailing-icon">
+          <List
+            :has-leading-video="true"
+            :has-trailing-icon="true"
+          >
             <Divider />
             <ListItem>
               <ListItemLeading>
@@ -2769,8 +2787,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line2"
-            class="has-leading-video"
+            :lines="ListLines.two"
+            :has-leading-video="true"
           >
             <Divider />
             <ListItem>
@@ -2847,8 +2865,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line2"
-            class="has-leading-video has-trailing-icon"
+            :lines="ListLines.two"
+            :has-leading-video="true"
+            :has-trailing-icon="true"
           >
             <Divider />
             <ListItem>
@@ -2940,8 +2959,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line3"
-            class="has-leading-video"
+            :lines="ListLines.three"
+            :has-leading-video="true"
           >
             <Divider />
             <ListItem>
@@ -3018,8 +3037,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List
-            :size="ListSize.line3"
-            class="has-leading-video has-trailing-icon"
+            :lines="ListLines.three"
+            :has-leading-video="true"
+            :has-trailing-icon="true"
           >
             <Divider />
             <ListItem>

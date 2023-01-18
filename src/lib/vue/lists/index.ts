@@ -32,7 +32,7 @@
 
 export {
 	List,
-	ListSize,
+	ListLines,
 } from '@/lib/vue/lists/List'
 
 export {

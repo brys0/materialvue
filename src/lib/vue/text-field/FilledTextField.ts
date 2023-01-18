@@ -79,7 +79,7 @@ FilledTextField.emits = [
 
 FilledTextField.props = [
 	'state',
-	'hasError'
+	'has-error'
 ]
 
 export default FilledTextField

@@ -41,7 +41,9 @@ export type TopAppBarProps = {}
 export const TopAppBar: FunctionalComponent<TopAppBarProps> = (_, {
 	slots,
 }): VNode => h('aside', {
-	class: 'top-app-bar',
+	class: {
+		'top-app-bar': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

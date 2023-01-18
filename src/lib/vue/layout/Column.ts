@@ -41,7 +41,9 @@ export type ColumnProps = {}
 export const Column: FunctionalComponent<ColumnProps> = (_: ColumnProps, {
 	slots,
 }): VNode => h('div', {
-	class: 'column',
+	class: {
+		column: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

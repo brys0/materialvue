@@ -41,7 +41,9 @@ export type GridItemProps = {}
 export const GridItem: FunctionalComponent<GridItemProps> = (_: GridItemProps, {
 	slots,
 }): VNode => h('div', {
-	class: 'grid-item',
+	class: {
+		'grid-item': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

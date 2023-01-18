@@ -41,7 +41,9 @@ export type FinderProps = {}
 export const Modal: FunctionalComponent<FinderProps> = (_, {
 	slots,
 }): VNode => h('aside', {
-	class: 'modal',
+	class: {
+		modal: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

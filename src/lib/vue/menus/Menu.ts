@@ -41,7 +41,9 @@ export type MenuProps = {}
 export const Menu: FunctionalComponent<MenuProps> = (_: MenuProps, {
 	slots,
 }): VNode => h('aside', {
-	class: 'menu',
+	class: {
+		menu: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

@@ -41,7 +41,9 @@ export type FieldBodyProps = {}
 export const FieldBody: FunctionalComponent<FieldBodyProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'field-body',
+	class: {
+		'field-body': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

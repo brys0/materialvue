@@ -41,7 +41,9 @@ export type ListItemTextProps = {}
 export const ListItemText: FunctionalComponent<ListItemTextProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'list-item-text',
+	class: {
+		'list-item-text': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

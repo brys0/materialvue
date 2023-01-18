@@ -41,7 +41,9 @@ export type LayoutProps = {}
 export const Layout: FunctionalComponent<LayoutProps> = (_: LayoutProps, {
 	slots,
 }): VNode => h('div', {
-	class: 'layout',
+	class: {
+		layout: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

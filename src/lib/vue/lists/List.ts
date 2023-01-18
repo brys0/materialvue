@@ -36,26 +36,44 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export enum ListSize {
-  line1 = 'line-1',
-  line2 = 'line-2',
-  line3 = 'line-3',
+export enum ListLines {
+  one = 1,
+	two = 2,
+	three = 3,
 }
 
 export type ListProps = {
-	size?: ListSize,
+	lines?: ListLines
+	hasLeadingAvatar?: boolean
+	hasLeadingIcon?: boolean
+	hasLeadingImage?: boolean
+	hasLeadingVideo?: boolean
+	hasTrailingIcon?: boolean
+	hasTrailingBadge?: boolean
 }
 
 export const List: FunctionalComponent<ListProps> = ({
-	size,
+	lines,
+	hasLeadingAvatar,
+	hasLeadingIcon,
+	hasLeadingImage,
+	hasLeadingVideo,
+	hasTrailingIcon,
+	hasTrailingBadge,
 }, {
 	slots,
 }): VNode => h('ol', {
 	class: {
-		'list': true,
-		'line-1': ListSize.line1 === size,
-		'line-2': ListSize.line2 === size,
-		'line-3': ListSize.line3 === size,
+		list: true,
+		'lines-1': ListLines.one === lines,
+		'lines-2': ListLines.two === lines,
+		'lines-3': ListLines.three === lines,
+		'has-leading-avatar': hasLeadingAvatar,
+		'has-leading-icon': hasLeadingIcon,
+		'has-leading-image': hasLeadingImage,
+		'has-leading-video': hasLeadingVideo,
+		'has-trailing-icon': hasTrailingIcon,
+		'has-trailing-badge': hasTrailingBadge,
 	},
 }, {
 	default: () => slots.default?.(),
@@ -64,7 +82,13 @@ export const List: FunctionalComponent<ListProps> = ({
 List.displayName = 'List'
 
 List.props = [
-	'size'
+	'lines',
+	'has-leading-avatar',
+	'has-leading-icon',
+	'has-leading-image',
+	'has-leading-video',
+	'has-trailing-icon',
+	'has-trailing-badge'
 ]
 
 export default List

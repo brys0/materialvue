@@ -41,7 +41,9 @@ export type TileProps = {}
 export const Grid: FunctionalComponent<TileProps> = (_: TileProps, {
 	slots,
 }): VNode => h('div', {
-	class: 'grid',
+	class: {
+		grid: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

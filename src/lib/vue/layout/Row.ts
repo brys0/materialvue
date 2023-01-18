@@ -41,7 +41,9 @@ export type RowProps = {}
 export const Row: FunctionalComponent<RowProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'row',
+	class: {
+		row: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

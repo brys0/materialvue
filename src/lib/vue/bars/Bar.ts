@@ -41,7 +41,9 @@ export type BarProps = {}
 export const Bar: FunctionalComponent<BarProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'bar',
+	class: {
+		bar: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

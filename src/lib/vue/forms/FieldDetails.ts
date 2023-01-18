@@ -41,7 +41,11 @@ export type FieldDetailsProps = {}
 export const FieldDetails: FunctionalComponent<FieldDetailsProps> = (_, {
 	slots,
 }): VNode => h('span', {
-	class: 'typography body field-details',
+	class: {
+		typography: true,
+		body: true,
+		'field-details': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

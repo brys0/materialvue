@@ -41,7 +41,9 @@ export type FormFieldProps = {}
 export const FormField: FunctionalComponent<FormFieldProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'form-field',
+	class: {
+		'form-field': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

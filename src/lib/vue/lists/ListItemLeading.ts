@@ -41,7 +41,9 @@ export type ListItemLeadingProps = {}
 export const ListItemLeading: FunctionalComponent<ListItemLeadingProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'list-item-leading',
+	class: {
+		'list-item-leading': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

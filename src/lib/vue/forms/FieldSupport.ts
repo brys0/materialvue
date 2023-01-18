@@ -41,7 +41,9 @@ export type FieldSupportProps = {}
 export const FieldSupport: FunctionalComponent<FieldSupportProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'field-support',
+	class: {
+		'field-support': true,
+	},
 }, {
 	default: () => slots.default?.(),
 })

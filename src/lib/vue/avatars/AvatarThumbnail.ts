@@ -41,7 +41,10 @@ export type AvatarThumbnailProps = {}
 export const AvatarThumbnail: FunctionalComponent<AvatarThumbnailProps> = (_, {
 	slots,
 }): VNode => h('div', {
-	class: 'avatar thumbnail',
+	class: {
+		avatar: true,
+		thumbnail: true,
+	},
 }, {
 	default: () => slots.default?.(),
 })
