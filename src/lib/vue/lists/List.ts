@@ -36,18 +36,35 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type ListProps = {}
+export enum ListSize {
+  line1 = 'line-1',
+  line2 = 'line-2',
+  line3 = 'line-3',
+}
 
-export const List: FunctionalComponent<ListProps> = (_, {
+export type ListProps = {
+	size?: ListSize,
+}
+
+export const List: FunctionalComponent<ListProps> = ({
+	size,
+}, {
 	slots,
 }): VNode => h('ol', {
-	class: 'list',
+	class: {
+		'list': true,
+		'line-1': ListSize.line1 === size,
+		'line-2': ListSize.line2 === size,
+		'line-3': ListSize.line3 === size,
+	},
 }, {
 	default: () => slots.default?.(),
 })
 
 List.displayName = 'List'
 
-List.props = []
+List.props = [
+	'size'
+]
 
 export default List

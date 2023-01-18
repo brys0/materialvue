@@ -32,11 +32,11 @@
 
 export {
 	List,
+	ListSize,
 } from '@/lib/vue/lists/List'
 
 export {
 	ListItem,
-	ListItemSize,
 } from '@/lib/vue/lists/ListItem'
 
 export {

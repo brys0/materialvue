@@ -42,7 +42,6 @@
   justify-content: center
 
   > .divider
-    margin-left: 16px
     margin-right: 24px
 
   > .list-item
@@ -54,7 +53,7 @@
     &:last-of-type
       margin-bottom: 8px
 
-    padding: 8px 24px 8px 16px
+    padding: 8px 24px 8px 0
     display: grid
     grid-template-rows: [row-1-start] auto [row-1-end]  
     grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
@@ -70,25 +69,6 @@
     > .list-item-text,
     > .list-item-trailing
       display: flex
-      align-items: center
-    
-    &,
-    &.line-1
-      height: min-content
-      min-height: 56px
-    
-    &.line-2
-      height: min-content
-      min-height: 72px
-    
-    &.line-3
-      height: min-content
-      min-height: 88px
-
-      > .list-item-leading,
-      > .list-item-text,
-      > .list-item-trailing
-        align-items: flex-start
 
     > .list-item-leading
       grid-row: row-1-start / row-1-end
@@ -97,13 +77,26 @@
       > .icon
         font-size: 18px
 
+      > img
+        width: 56px
+        height: 56px
+        border: 1px solid
+        border-radius: 4px
+      
+        @include theme.preferred
+          border-color: theme.style(outline-variant)
+
+      > .avatar
+        &.thumbnail
+          width: 40px
+          height: 40px
+
       > .video
         &.thumbnail
           width: 114px
           height: 64px
       
     > .list-item-text
-      padding: 0 16px
       display: flex
       flex-flow: column
       grid-row: row-1-start / row-1-end
@@ -111,15 +104,9 @@
       align-items: flex-start
       justify-content: center
 
-      &:first-child
-        padding-left: 0
-      
-      &:last-child
-        padding-right: 0
-
       > .typography
         @extend %is-not-selectable
-        
+
         &.headline
           @extend %typography-body-large
 
@@ -150,4 +137,45 @@
 
         @include theme.preferred
           color: theme.style(on-surface-variant)
-      
+  
+  &,
+  &.line-1
+    > .list-item
+      height: min-content
+      min-height: 56px
+      align-items: center
+
+  &.line-2
+    > .list-item
+      height: min-content
+      min-height: 72px
+      align-items: center  
+
+  &.line-3
+    > .list-item
+      height: min-content
+      min-height: 88px
+      align-items: flex-start
+
+  &.has-leading-icon,
+  &.has-leading-avatar,
+  &.has-leading-image
+    > .divider
+      margin-left: 16px
+    
+    > .list-item
+      padding-left: 16px
+  
+  &.has-leading-icon,
+  &.has-leading-avatar,
+  &.has-leading-image,
+  &.has-leading-video
+    > .list-item
+      > .list-item-text
+        padding-left: 16px
+  
+  &.has-trailing-icon,
+  &.has-trailing-badge
+    > .list-item
+      > .list-item-text
+        padding-right: 16px

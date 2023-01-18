@@ -88,8 +88,8 @@ import {
 	FABButtonVariant,
 	Divider,
 	List,
+	ListSize,
 	ListItem,
-	ListItemSize,
 	ListItemLeading,
 	ListItemText,
 	ListItemTrailing,
@@ -1251,13 +1251,502 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Headline
                 </TypographyHeadline>
               </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List class="has-trailing-badge">
+            <Divider />
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
               <ListItemTrailing>
                 <TypographyLabel>
                   100+
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line3">
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+          <List :size="ListSize.line2">
+            <Divider />
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line2"
+            class="has-trailing-badge"
+          >
+            <Divider />
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+          <List :size="ListSize.line3">
+            <Divider />
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line3"
+            class="has-trailing-badge"
+          >
+            <Divider />
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <TypographyLabel>
+                  100+
+                </TypographyLabel>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+        </Column>
+        <Column>
+          <List class="has-leading-icon">
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List class="has-leading-icon has-trailing-icon">
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line2"
+            class="has-leading-icon"
+          >
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line2"
+            class="has-leading-icon has-trailing-icon"
+          >
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line3"
+            class="has-leading-icon"
+          >
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line3"
+            class="has-leading-icon has-trailing-icon"
+          >
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
                   Headline
@@ -1272,37 +1761,20 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line2">
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
-                  Supporting text.
+                  Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
               </ListItemText>
-            </ListItem>
-          </List>
-          <List>
-            <Divider />
-            <ListItem>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-              </ListItemText>
-              <ListItemTrailing>
-                <TypographyLabel>
-                  100+
-                </TypographyLabel>
-              </ListItemTrailing>
-            </ListItem>
-            <ListItem>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-              </ListItemText>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -1319,55 +1791,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
-            </ListItem>
-          </List>
-          <List>
-            <Divider />
-            <ListItem>
-              <ListItemLeading>
-                <RoundedIcon>
-                  mail
-                </RoundedIcon>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-              </ListItemText>
-              <ListItemTrailing>
-                <TypographyLabel>
-                  100+
-                </TypographyLabel>
-              </ListItemTrailing>
-            </ListItem>
-            <ListItem>
-              <ListItemLeading>
-                <RoundedIcon>
-                  mail
-                </RoundedIcon>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-              </ListItemText>
-              <ListItemTrailing>
-                <RoundedIcon>
-                  arrow_drop_down
-                </RoundedIcon>
-              </ListItemTrailing>
-            </ListItem>
-            <ListItem>
-              <ListItemLeading>
-                <RoundedIcon>
-                  mail
-                </RoundedIcon>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -1378,8 +1804,173 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
         </Column>
         <Column>
-          <List>
-            <ListItem :size="ListItemSize.line2">
+          <List class="has-leading-avatar">
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List class="has-leading-avatar has-trailing-icon">
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line2"
+            class="has-leading-avatar"
+          >
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line2"
+            class="has-leading-avatar has-trailing-icon"
+          >
+            <Divider />
+            <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1396,12 +1987,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
-                <TypographyLabel>
-                  100+
-                </TypographyLabel>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line3">
+            <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1414,7 +2005,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
-                  Supporting text that is long enough to fill multiple lines.
+                  Supporting text.
                 </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
@@ -1423,7 +2014,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line2">
+            <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1446,9 +2037,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemTrailing>
             </ListItem>
           </List>
-          <List>
+          <List
+            :size="ListSize.line3"
+            class="has-leading-avatar"
+          >
             <Divider />
-            <ListItem :size="ListItemSize.line2">
+            <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1461,16 +2055,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
-                  Supporting text.
+                  Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
               </ListItemText>
-              <ListItemTrailing>
-                <TypographyLabel>
-                  100+
-                </TypographyLabel>
-              </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line2">
+            <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1483,7 +2072,47 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
-                  Supporting text.
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line3"
+            class="has-leading-avatar has-trailing-icon"
+          >
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
@@ -1492,7 +2121,29 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line3">
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1517,21 +2168,79 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
         </Column>
         <Column>
-          <List>
-            <ListItem :size="ListItemSize.line2">
+          <List class="has-leading-image">
+            <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <img
-                    class="is-theme-dark"
-                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                  <img
-                    class="is-theme-light"
-                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                </AvatarThumbnail>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List class="has-leading-image has-trailing-icon">
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
@@ -1544,28 +2253,23 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line3">
+            <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <img
-                    class="is-theme-dark"
-                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                  <img
-                    class="is-theme-light"
-                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                </AvatarThumbnail>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -1573,20 +2277,18 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line2">
+            <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <img
-                    class="is-theme-dark"
-                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                  <img
-                    class="is-theme-light"
-                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                </AvatarThumbnail>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
@@ -1600,22 +2302,254 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemTrailing>
             </ListItem>
           </List>
-          <List>
+          <List
+            :size="ListSize.line2"
+            class="has-leading-image"
+          >
             <Divider />
-            <ListItem :size="ListItemSize.line3">
+            <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <img
-                    class="is-theme-dark"
-                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                  <img
-                    class="is-theme-light"
-                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                </AvatarThumbnail>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line2"
+            class="has-leading-image has-trailing-icon"
+          >
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line3"
+            class="has-leading-image"
+          >
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line3"
+            class="has-leading-image has-trailing-icon"
+          >
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
@@ -1631,25 +2565,26 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line2">
+            <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <img
-                    class="is-theme-dark"
-                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                  <img
-                    class="is-theme-light"
-                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                </AvatarThumbnail>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -1657,27 +2592,25 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line2">
+            <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <img
-                    class="is-theme-dark"
-                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                  <img
-                    class="is-theme-light"
-                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                </AvatarThumbnail>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
-                  Supporting text.
+                  Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
@@ -1689,8 +2622,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
         </Column>
         <Column>
-          <List>
-            <ListItem :size="ListItemSize.line2">
+          <List class="has-leading-video">
+            <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -1709,17 +2642,80 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text.
-                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List class="has-leading-video has-trailing-icon">
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
               </ListItemText>
               <ListItemTrailing>
-                <TypographyLabel>
-                  100+
-                </TypographyLabel>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line3">
+            <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -1738,17 +2734,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
-                <TypographyLabel>
-                  100+
-                </TypographyLabel>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line2">
+            <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -1767,20 +2760,98 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text.
-                </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
-                <TypographyLabel>
-                  100+
-                </TypographyLabel>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
           </List>
-          <List>
+          <List
+            :size="ListSize.line2"
+            class="has-leading-video"
+          >
             <Divider />
-            <ListItem :size="ListItemSize.line2">
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line2"
+            class="has-leading-video has-trailing-icon"
+          >
+            <Divider />
+            <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -1804,12 +2875,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
-                <TypographyLabel>
-                  100+
-                </TypographyLabel>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line2">
+            <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -1833,12 +2904,125 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
-                <TypographyLabel>
-                  100+
-                </TypographyLabel>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :size="ListItemSize.line3">
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line3"
+            class="has-leading-video"
+          >
+            <Divider />
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+            </ListItem>
+          </List>
+          <List
+            :size="ListSize.line3"
+            class="has-leading-video has-trailing-icon"
+          >
+            <Divider />
+            <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -1862,9 +3046,67 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
               <ListItemTrailing>
-                <TypographyLabel>
-                  100+
-                </TypographyLabel>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemText>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemText>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
           </List>

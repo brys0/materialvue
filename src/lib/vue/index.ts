@@ -132,8 +132,8 @@ export {
 
 export {
 	List,
+	ListSize,
 	ListItem,
-	ListItemSize,
 	ListItemLeading,
 	ListItemText,
 	ListItemTrailing,
