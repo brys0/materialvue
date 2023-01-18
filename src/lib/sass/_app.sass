@@ -43,8 +43,8 @@ body
   width: 100%
   height: 100%
   display: grid
-  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] min-content [row-2-end row-3-start] auto [row-3-end]
-  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] min-content [col-2-end col-3-start] auto [col-3-end col-4-start] min-content [col-4-end]
+  grid-template-rows: [row-1-start] minmax(0, min-content) [row-1-end row-2-start] minmax(0, min-content) [row-2-end row-3-start] auto [row-3-end]
+  grid-template-columns: [col-1-start] minmax(0, min-content) [col-1-end col-2-start] minmax(0, min-content) [col-2-end col-3-start] auto [col-3-end col-4-start] minmax(0, min-content) [col-4-end]
   overflow: hidden
   
   @include theme.preferred

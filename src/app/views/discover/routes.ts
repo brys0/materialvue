@@ -18,7 +18,7 @@ const routes: RouteRecordRaw[] = [
 		path: '/',
 		components: {
 			'navigation-rail': DiscoverNavigationRail,
-			'navigation-drawer': DiscoverNavigationDrawer,
+			// 'navigation-drawer': DiscoverNavigationDrawer,
 			'top-app-bar': DiscoverTopAppBar,
 			toolbar: DiscoverToolbar,
 			main: DiscoverMain,
