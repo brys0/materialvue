@@ -73,10 +73,10 @@ const emit = defineEmits<
 const fieldRef = ref<HTMLElement | null>(null)
 const inputRef = ref<HTMLInputElement | null>(null)
 const stateRef = ref(props.state)
-const enabledRef = ref(TextFieldState.enabled === props.state)
-const hoveredRef = ref(TextFieldState.hovered === props.state)
-const focusedRef = ref(TextFieldState.focused === props.state)
-const disabledRef = ref(TextFieldState.disabled === props.state)
+const enabledRef = ref(TextFieldState.enabled === stateRef.value)
+const hoveredRef = ref(TextFieldState.hovered === stateRef.value)
+const focusedRef = ref(TextFieldState.focused === stateRef.value)
+const disabledRef = ref(TextFieldState.disabled === stateRef.value)
 const hasErrorRef = toRef(props, 'hasError')
 const isMouseDown = ref(false)
 
@@ -140,21 +140,23 @@ const handleMouseDown = (): void => {
 }
 
 const handleClick = (event: PointerEvent): void => {
-	isMouseDown.value = false
+	if (true !== disabledRef.value) {
+		isMouseDown.value = false
 
-	const el = fieldRef.value
-	if (el instanceof HTMLElement) {
-		const target = inputRef.value
-		if (target instanceof HTMLInputElement) {
-			nextTick(() => {
-				target.focus()
-			})
+		const el = fieldRef.value
+		if (el instanceof HTMLElement) {
+			const target = inputRef.value
+			if (target instanceof HTMLInputElement) {
+				nextTick(() => {
+					target.focus()
+				})
+			}
+
+			updateState(TextFieldState.focused)
 		}
 
-		updateState(TextFieldState.focused)
+		emit('click', event)
 	}
-
-	emit('click', event)
 }
 
 const handleBlur = (event: FocusEvent): void => {

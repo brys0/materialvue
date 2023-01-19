@@ -59,6 +59,7 @@ export const Card = defineComponent({
 			state,
 		} = this.$props
 		return h('div', {
+			tabindex: CardState.disabled === state ? undefined : 0,
 			class: {
 				card: true,
 				enabled: CardState.enabled === state,

@@ -807,12 +807,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <TypographyLabel
-                      name="email"
-                    >
+                    <TypographyLabel>
                       Email
                     </TypographyLabel>
-                    <FieldInput name="email" />
+                    <FieldInput :name="'email'" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
@@ -840,12 +838,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <TypographyLabel
-                      name="name"
-                    >
+                    <TypographyLabel>
                       Email
                     </TypographyLabel>
-                    <FieldInput name="name" />
+                    <FieldInput :name="'name'" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
@@ -873,12 +869,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <TypographyLabel
-                      name="name"
-                    >
+                    <TypographyLabel>
                       Email
                     </TypographyLabel>
-                    <FieldInput name="name" />
+                    <FieldInput
+                      name="readonly"
+                      value="Readonly"
+                      :readonly="true"
+                    />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
@@ -906,12 +904,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <TypographyLabel
-                      name="name"
-                    >
+                    <TypographyLabel>
                       Email
                     </TypographyLabel>
-                    <FieldInput name="name" />
+                    <FieldInput
+                      name="name"
+                      :disabled="true"
+                    />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
@@ -944,12 +943,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <TypographyLabel
-                      name="name"
-                    >
+                    <TypographyLabel>
                       Email
                     </TypographyLabel>
-                    <FieldInput name="name" />
+                    <FieldInput :name="'name'" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
@@ -980,12 +977,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <TypographyLabel
-                      name="name"
-                    >
+                    <TypographyLabel>
                       Email
                     </TypographyLabel>
-                    <FieldInput name="name" />
+                    <FieldInput :name="'name'" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
@@ -1016,12 +1011,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <TypographyLabel
-                      name="name"
-                    >
+                    <TypographyLabel>
                       Email
                     </TypographyLabel>
-                    <FieldInput name="name" />
+                    <FieldInput :name="'name'" />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
@@ -1049,12 +1042,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldControl>
-                    <TypographyLabel
-                      name="name"
-                    >
+                    <TypographyLabel>
                       Email
                     </TypographyLabel>
-                    <FieldInput name="name" />
+                    <FieldInput
+                      name="name"
+                      :disabled="true"
+                    />
                   </FieldControl>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
@@ -1253,12 +1247,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyHeadline>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemText>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
               </ListItemText>
+              <Divider />
             </ListItem>
             <ListItem>
               <ListItemText>
@@ -1269,7 +1264,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List :has-trailing-badge="true">
-            <Divider />
             <ListItem>
               <ListItemText>
                 <TypographyHeadline>
@@ -1282,7 +1276,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.hovered">
+            <ListItem>
               <ListItemText>
                 <TypographyHeadline>
                   Hovered
@@ -1294,7 +1288,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemText>
                 <TypographyHeadline>
                   Headline
@@ -1305,10 +1299,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   100+
                 </TypographyLabel>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
           <List :lines="ListLines.two">
-            <Divider />
             <ListItem>
               <ListItemText>
                 <TypographyHeadline>
@@ -1319,7 +1313,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem :state="ListItemState.focused">
+            <ListItem>
               <ListItemText>
                 <TypographyHeadline>
                   Focused
@@ -1329,7 +1323,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemText>
                 <TypographyHeadline>
                   Headline
@@ -1338,13 +1332,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Supporting text.
                 </TypographyBody>
               </ListItemText>
+              <Divider />
             </ListItem>
           </List>
           <List
             :lines="ListLines.two"
             :has-trailing-badge="true"
           >
-            <Divider />
             <ListItem>
               <ListItemText>
                 <TypographyHeadline>
@@ -1360,7 +1354,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.pressed">
+            <ListItem>
               <ListItemText>
                 <TypographyHeadline>
                   Pressed
@@ -1375,7 +1369,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemText>
                 <TypographyHeadline>
                   Headline
@@ -1389,10 +1383,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   100+
                 </TypographyLabel>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
           <List :lines="ListLines.three">
-            <Divider />
             <ListItem>
               <ListItemText>
                 <TypographyHeadline>
@@ -1429,7 +1423,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             :lines="ListLines.three"
             :has-trailing-badge="true"
           >
-            <Divider />
             <ListItem>
               <ListItemText>
                 <TypographyHeadline>
@@ -1445,7 +1438,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.disabled">
+            <ListItem
+              :state="ListItemState.disabled"
+              :has-divider="true"
+            >
               <ListItemText>
                 <TypographyHeadline>
                   Disabled
@@ -1459,8 +1455,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   100+
                 </TypographyLabel>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemText>
                 <TypographyHeadline>
                   Headline
@@ -1474,6 +1471,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   100+
                 </TypographyLabel>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
         </Column>
@@ -1491,7 +1489,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyHeadline>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1502,6 +1500,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Headline
                 </TypographyHeadline>
               </ListItemText>
+              <Divider />
             </ListItem>
             <ListItem>
               <ListItemLeading>
@@ -1520,7 +1519,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             :has-leading-icon="true"
             :has-trailing-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
@@ -1538,7 +1536,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.hovered">
+            <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1555,7 +1553,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1571,13 +1569,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
           <List
             :lines="ListLines.two"
             :has-leading-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
@@ -1593,7 +1591,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem :state="ListItemState.focused">
+            <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1608,7 +1606,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1622,6 +1620,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Supporting text.
                 </TypographyBody>
               </ListItemText>
+              <Divider />
             </ListItem>
           </List>
           <List
@@ -1629,7 +1628,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             :has-leading-icon="true"
             :has-trailing-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
@@ -1650,7 +1648,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.pressed">
+            <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1670,7 +1668,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1689,13 +1687,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
           <List
             :lines="ListLines.three"
             :has-leading-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
@@ -1727,7 +1725,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1741,6 +1739,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
               </ListItemText>
+              <Divider />
             </ListItem>
           </List>
           <List
@@ -1748,7 +1747,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             :has-leading-icon="true"
             :has-trailing-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
@@ -1789,7 +1787,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1808,6 +1806,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
         </Column>
@@ -1827,7 +1826,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyHeadline>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1840,6 +1839,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Headline
                 </TypographyHeadline>
               </ListItemText>
+              <Divider />
             </ListItem>
             <ListItem>
               <ListItemLeading>
@@ -1860,7 +1860,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             :has-leading-avatar="true"
             :has-trailing-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -1880,7 +1879,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.hovered">
+            <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1899,7 +1898,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1917,13 +1916,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
           <List
             :lines="ListLines.two"
             :has-leading-avatar="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -1941,7 +1940,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem :state="ListItemState.focused">
+            <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1958,7 +1957,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1974,6 +1973,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Supporting text.
                 </TypographyBody>
               </ListItemText>
+              <Divider />
             </ListItem>
           </List>
           <List
@@ -1981,7 +1981,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             :has-leading-avatar="true"
             :has-trailing-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -2004,7 +2003,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.pressed">
+            <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -2026,7 +2025,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -2047,13 +2046,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
           <List
             :lines="ListLines.three"
             :has-leading-avatar="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -2082,14 +2081,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Dragged
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -2105,6 +2104,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
               </ListItemText>
+              <Divider />
             </ListItem>
           </List>
           <List
@@ -2112,7 +2112,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             :has-leading-avatar="true"
             :has-trailing-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -2145,7 +2144,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Disabled
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
@@ -2157,7 +2156,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -2178,6 +2177,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
         </Column>
@@ -2202,7 +2202,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyHeadline>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2220,6 +2220,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Headline
                 </TypographyHeadline>
               </ListItemText>
+              <Divider />
             </ListItem>
             <ListItem>
               <ListItemLeading>
@@ -2245,7 +2246,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             :has-leading-image="true"
             :has-trailing-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2270,7 +2270,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.hovered">
+            <ListItem>
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2294,7 +2294,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2317,13 +2317,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
           <List
             :lines="ListLines.two"
             :has-leading-image="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2346,7 +2346,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem :state="ListItemState.focused">
+            <ListItem>
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2368,7 +2368,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2389,6 +2389,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Supporting text.
                 </TypographyBody>
               </ListItemText>
+              <Divider />
             </ListItem>
           </List>
           <List
@@ -2396,7 +2397,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             :has-leading-image="true"
             :has-trailing-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2424,7 +2424,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.pressed">
+            <ListItem>
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2451,7 +2451,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2477,13 +2477,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
           <List
             :lines="ListLines.three"
             :has-leading-image="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2529,7 +2529,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2550,6 +2550,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
               </ListItemText>
+              <Divider />
             </ListItem>
           </List>
           <List
@@ -2557,7 +2558,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             :has-leading-image="true"
             :has-trailing-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2612,7 +2612,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2638,6 +2638,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
         </Column>
@@ -2664,7 +2665,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyHeadline>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2684,6 +2685,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Headline
                 </TypographyHeadline>
               </ListItemText>
+              <Divider />
             </ListItem>
             <ListItem>
               <ListItemLeading>
@@ -2711,7 +2713,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             :has-leading-video="true"
             :has-trailing-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -2738,7 +2739,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.hovered">
+            <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2764,7 +2765,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2789,13 +2790,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
-          <List
-            :lines="ListLines.two"
-            :has-leading-video="true"
-          >
-            <Divider />
+          <List :has-leading-video="true">
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -2820,7 +2818,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem :state="ListItemState.focused">
+            <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2844,7 +2842,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2867,14 +2865,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Supporting text.
                 </TypographyBody>
               </ListItemText>
+              <Divider />
             </ListItem>
           </List>
           <List
-            :lines="ListLines.two"
             :has-leading-video="true"
             :has-trailing-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -2904,7 +2901,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.pressed">
+            <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2933,7 +2930,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2961,13 +2958,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
           <List
             :lines="ListLines.three"
             :has-leading-video="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -3017,7 +3014,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :has-divider="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -3040,6 +3037,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
               </ListItemText>
+              <Divider />
             </ListItem>
           </List>
           <List
@@ -3047,7 +3045,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             :has-leading-video="true"
             :has-trailing-icon="true"
           >
-            <Divider />
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -3077,7 +3074,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.disabled">
+            <ListItem
+              :state="ListItemState.disabled"
+              :has-divider="true"
+            >
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -3105,6 +3105,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
             <ListItem>
               <ListItemLeading>

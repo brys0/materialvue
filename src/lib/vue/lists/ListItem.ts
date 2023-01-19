@@ -52,13 +52,19 @@ export const ListItem = defineComponent({
 			type: String as PropType<ListItemState>,
 			default: ListItemState.enabled,
 		},
+		hasDivider: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	emits: [ 'click' ],
 	render(): VNode {
 		const {
 			state,
+			hasDivider,
 		} = this.$props
 		return h('li', {
+			tabindex: ListItemState.disabled === state ? undefined : 0,
 			class: {
 				'list-item': true,
 				enabled: ListItemState.enabled === state,
@@ -67,6 +73,7 @@ export const ListItem = defineComponent({
 				pressed: ListItemState.pressed === state,
 				dragged: ListItemState.dragged === state,
 				disabled: ListItemState.disabled === state,
+				'has-divider': hasDivider,
 			},
 			onClick: (event: PointerEvent) => {
 				if (ListItemState.enabled === this.$props.state) {

@@ -38,6 +38,7 @@
 
   padding: 20px 16px
   border-radius: 12px
+  outline: none
   
   > .bar
     margin-top: 24px
@@ -59,22 +60,22 @@
       cursor: pointer
       
       @include theme.preferred
-        background: theme.style(elevation-2), theme.style(surface)
+        background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
         box-shadow: theme.style(shadow-2)
 
     &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
     &.focused
       @include theme.preferred
-        background: theme.style(elevation-1), theme.style(surface)
+        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
 
     &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
     &.pressed
       @include theme.preferred
-        background: theme.style(elevation-1), theme.style(surface)
+        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
     
     &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
       @include theme.preferred
-        background: theme.style(elevation-3), theme.style(surface)
+        background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
         box-shadow: theme.style(shadow-3)
     
     &:disabled:not(.hovered):not(.focused):not(.pressed):not(.dragged),
@@ -83,5 +84,5 @@
       opacity: 38%
 
       @include theme.preferred
-        background: theme.style(elevation-0), theme.style(surface)
+        background: conversion.hex-to-rgba(theme.style(on-surface), 38%)
         box-shadow: theme.style(shadow-0)
