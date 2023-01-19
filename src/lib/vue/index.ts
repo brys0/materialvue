@@ -134,6 +134,7 @@ export {
 	List,
 	ListLines,
 	ListItem,
+	ListItemState,
 	ListItemLeading,
 	ListItemText,
 	ListItemTrailing,

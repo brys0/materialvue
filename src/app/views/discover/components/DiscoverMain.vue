@@ -90,6 +90,7 @@ import {
 	List,
 	ListLines,
 	ListItem,
+	ListItemState,
 	ListItemLeading,
 	ListItemText,
 	ListItemTrailing,
@@ -1281,10 +1282,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.hovered">
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Hovered
                 </TypographyHeadline>
               </ListItemText>
               <ListItemTrailing>
@@ -1318,10 +1319,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.focused">
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Focused
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
@@ -1359,10 +1360,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.pressed">
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Pressed
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
@@ -1402,10 +1403,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
+            <!-- <ListItem :state="ListItemState.dragged"> -->
             <ListItem>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Dragged
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
@@ -1443,10 +1445,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.disabled">
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Disabled
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
@@ -1536,7 +1538,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.hovered">
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1544,7 +1546,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Hovered
                 </TypographyHeadline>
               </ListItemText>
               <ListItemTrailing>
@@ -1591,7 +1593,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.focused">
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1599,7 +1601,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Focused
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
@@ -1648,7 +1650,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.pressed">
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1656,7 +1658,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Pressed
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
@@ -1709,6 +1711,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
+            <!-- <ListItem :state="ListItemState.dragged"> -->
             <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
@@ -1717,7 +1720,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Dragged
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
@@ -1766,7 +1769,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.disabled">
               <ListItemLeading>
                 <RoundedIcon>
                   mail
@@ -1774,7 +1777,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Disabled
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
@@ -1877,7 +1880,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.hovered">
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1887,7 +1890,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Hovered
                 </TypographyHeadline>
               </ListItemText>
               <ListItemTrailing>
@@ -1938,7 +1941,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.focused">
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1948,7 +1951,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Focused
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
@@ -2001,7 +2004,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.pressed">
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -2011,7 +2014,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Pressed
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
@@ -2068,6 +2071,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
+            <!-- <ListItem :state="ListItemState.dragged"> -->
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -2131,7 +2135,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.disabled">
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -2266,7 +2270,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.hovered">
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2281,7 +2285,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Hovered
                 </TypographyHeadline>
               </ListItemText>
               <ListItemTrailing>
@@ -2342,7 +2346,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.focused">
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2357,7 +2361,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Focused
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
@@ -2420,7 +2424,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.pressed">
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2435,7 +2439,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Pressed
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
@@ -2502,6 +2506,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
+            <!-- <ListItem :state="ListItemState.dragged"> -->
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2517,7 +2522,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Dragged
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
@@ -2580,7 +2585,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.disabled">
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2595,7 +2600,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Disabled
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
@@ -2733,7 +2738,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.hovered">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2750,7 +2755,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Hovered
                 </TypographyHeadline>
               </ListItemText>
               <ListItemTrailing>
@@ -2815,7 +2820,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.focused">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2832,7 +2837,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Focused
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
@@ -2899,7 +2904,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.pressed">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2916,7 +2921,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Pressed
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
@@ -2987,6 +2992,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemText>
             </ListItem>
+            <!-- <ListItem :state="ListItemState.dragged"> -->
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -3004,7 +3010,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Dragged
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
@@ -3071,7 +3077,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :state="ListItemState.disabled">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -3088,7 +3094,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemLeading>
               <ListItemText>
                 <TypographyHeadline>
-                  Headline
+                  Disabled
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.

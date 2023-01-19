@@ -33,23 +33,51 @@
 import {
 	h,
 	VNode,
-	FunctionalComponent,
+	PropType,
+	defineComponent,
 } from 'vue'
 
-export type ListItemProps = {}
+export enum ListItemState {
+  enabled = 'enabled',
+  hovered = 'hovered',
+  focused = 'focused',
+	pressed = 'pressed',
+	dragged = 'dragged',
+	disabled = 'disabled',
+}
 
-export const ListItem: FunctionalComponent<ListItemProps> = (_, {
-	slots,
-}): VNode => h('li', {
-	class: {
-		'list-item': true,
+export const ListItem = defineComponent({
+	props: {
+		state: {
+			type: String as PropType<ListItemState>,
+			default: ListItemState.enabled,
+		},
 	},
-}, {
-	default: () => slots.default?.(),
+	emits: [ 'click' ],
+	render(): VNode {
+		const {
+			state,
+		} = this.$props
+		return h('li', {
+			class: {
+				'list-item': true,
+				enabled: ListItemState.enabled === state,
+				hovered: ListItemState.hovered === state,
+				focused: ListItemState.focused === state,
+				pressed: ListItemState.pressed === state,
+				dragged: ListItemState.dragged === state,
+				disabled: ListItemState.disabled === state,
+			},
+			onClick: (event: PointerEvent) => {
+				if (ListItemState.enabled === this.$props.state) {
+					this.$el.blur()
+					this.$emit('click', event)
+				}
+			},
+		}, {
+			default: () => this.$slots.default?.(),
+		})
+	},
 })
-
-ListItem.displayName = 'ListItem'
-
-ListItem.props = []
 
 export default ListItem

@@ -72,8 +72,7 @@
       @include theme.preferred
         background: theme.style(elevation-1), theme.style(surface)
     
-    &:active:not(.hovered):not(.focused):not(.pressed):not(.disabled),
-    &.dragged
+    &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
       @include theme.preferred
         background: theme.style(elevation-3), theme.style(surface)
         box-shadow: theme.style(shadow-3)

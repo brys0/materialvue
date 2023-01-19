@@ -37,6 +37,7 @@ export {
 
 export {
 	ListItem,
+	ListItemState,
 } from '@/lib/vue/lists/ListItem'
 
 export {

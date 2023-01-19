@@ -31,6 +31,7 @@
  */
 
 @use './theme'
+@use './conversion'
 
 .list
   margin: 0
@@ -42,29 +43,31 @@
   justify-content: center
 
   > .divider
-    margin-right: 24px
+    margin: 0 24px 0 16px
+
+    @include theme.preferred
+      border-color: theme.style(surface-variant)
 
   > .list-item
     @extend %is-not-selectable
 
+    padding: 8px 24px 8px 16px
+    display: grid
+    grid-template-rows: [row-1-start] auto [row-1-end]  
+    grid-template-columns: [col-1-start] minmax(0, min-content) [col-1-end col-2-start] auto [col-2-end col-3-start] minmax(0, min-content) [col-3-end]
+    list-style-type: none
+    cursor: pointer
+
+    @include theme.preferred
+      background: theme.style(surface)
+      box-shadow: theme.style(shadow-0)
+    
     &:first-of-type
       margin-top: 8px
     
     &:last-of-type
       margin-bottom: 8px
 
-    padding: 8px 24px 8px 0
-    display: grid
-    grid-template-rows: [row-1-start] auto [row-1-end]  
-    grid-template-columns: [col-1-start] minmax(0, min-content) [col-1-end col-2-start] auto [col-2-end col-3-start] minmax(0, min-content) [col-3-end]
-    list-style-type: none
-    border-radius: 28px
-    cursor: pointer
-
-    @include theme.preferred
-      background: theme.style(elevation-0), theme.style(surface)
-      box-shadow: theme.style(shadow-0)
-    
     > .list-item-leading,
     > .list-item-text,
     > .list-item-trailing
@@ -77,24 +80,44 @@
       > .icon
         font-size: 18px
 
+        @include theme.preferred
+          color: theme.style(on-surface-variant)
+
       > img
         width: 56px
         height: 56px
         border: 1px solid
-        border-radius: 4px
       
         @include theme.preferred
-          border-color: theme.style(outline-variant)
+          border-color: theme.style(surface-variant)
 
       > .avatar
         &.thumbnail
           width: 40px
           height: 40px
 
+          > img
+            @include theme.preferred
+              background: theme.style(background)
+              border-color: theme.style(surface-variant)
+
+          > .typography
+            @include theme.preferred
+              border-color: theme.style(surface-variant)
+
+            &.label
+              @include theme.preferred
+                background: theme.style(primary-container)
+                color: theme.style(on-primary-container)
+
       > .video
         &.thumbnail
           width: 114px
           height: 64px
+
+          @include theme.preferred
+            background: theme.style(background)
+            border-color: theme.style(outline-variant)
       
     > .list-item-text
       display: flex
@@ -137,6 +160,104 @@
 
         @include theme.preferred
           color: theme.style(on-surface-variant)
+
+    &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
+    &.hovered
+      cursor: pointer
+
+      @include theme.preferred
+        background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+            
+      > .list-item-leading
+        > .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+        
+      > .list-item-trailing
+        > .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+
+    &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
+    &.focused
+      @include theme.preferred
+        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+            
+      > .list-item-leading
+        > .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+        
+      > .list-item-trailing
+        > .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+
+    &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
+    &.pressed
+      @include theme.preferred
+        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+            
+      > .list-item-leading
+        > .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+        
+      > .list-item-trailing
+        > .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+    
+    &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
+      @include theme.preferred
+        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+        box-shadow: theme.style(shadow-4)
+            
+      > .list-item-leading
+        > .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+        
+      > .list-item-trailing
+        > .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+            
+    &:disabled:not(.hovered):not(.focused):not(.pressed):not(.dragged),
+    &[disabled]:not(.hovered):not(.focused):not(.pressed):not(.dragged),
+    &.disabled:not(.hovered):not(.focused):not(.pressed:not(.dragged))
+      cursor: not-allowed
+      pointer-events: all !important
+      box-shadow: none
+      opacity: 38%
+
+      @include theme.preferred
+        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+            
+      > .list-item-leading
+        > .icon
+          @include theme.preferred
+            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+        
+      > .list-item-text
+        > .typography
+          &.headline
+            @include theme.preferred
+              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          
+          &.body
+            @include theme.preferred
+              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+
+      > .list-item-trailing
+        > .typography
+          &.label
+            @include theme.preferred
+              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+        
+        > .icon
+          @include theme.preferred
+            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
   
   &,
   &.lines-1
@@ -157,14 +278,12 @@
       min-height: 88px
       align-items: flex-start
 
-  &.has-leading-icon,
-  &.has-leading-avatar,
-  &.has-leading-image
+  &.has-leading-video
     > .divider
-      margin-left: 16px
-    
+      margin-left: 0
+
     > .list-item
-      padding-left: 16px
+      padding-left: 0
   
   &.has-leading-icon,
   &.has-leading-avatar,
