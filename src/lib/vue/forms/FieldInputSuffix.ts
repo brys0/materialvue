@@ -30,42 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	FormFieldset,
-} from '@/lib/vue/forms/FormFieldset'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	FormField,
-} from '@/lib/vue/forms/FormField'
+export type FieldInputSuffixProps = {}
 
-export {
-	FieldBody,
-} from '@/lib/vue/forms/FieldBody'
+export const FieldInputSuffix: FunctionalComponent<FieldInputSuffixProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: {
+		'field-input-suffix': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	FieldControl,
-} from '@/lib/vue/forms/FieldControl'
+FieldInputSuffix.displayName = 'FieldInputSuffix'
 
-export {
-	FieldLeading,
-} from '@/lib/vue/forms/FieldLeading'
+FieldInputSuffix.props = []
 
-export {
-	FieldTrailing,
-} from '@/lib/vue/forms/FieldTrailing'
-
-export {
-	default as FieldInput,
-} from '@/lib/vue/forms/FieldInput.vue'
-
-export {
-	FieldInputPrefix,
-} from '@/lib/vue/forms/FieldInputPrefix'
-
-export {
-	FieldInputSuffix,
-} from '@/lib/vue/forms/FieldInputSuffix'
-
-export {
-	FieldSupport,
-} from '@/lib/vue/forms/FieldSupport'
+export default FieldInputSuffix

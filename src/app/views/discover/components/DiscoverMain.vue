@@ -75,8 +75,9 @@ import {
 	FieldLeading,
 	FieldTrailing,
 	FieldInput,
+	FieldInputPrefix,
+	FieldInputSuffix,
 	FieldSupport,
-	FieldDetails,
 	TextFieldState,
 	FilledTextField,
 	RoundedIcon,
@@ -797,8 +798,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <FormFieldset>
               <FilledTextField
                 ref="emailRef"
-                :has-error="'undefined' !== typeof errors.email"
-                @update:state="updateState"
+                :has-error="errors.email"
               >
                 <FieldBody>
                   <FieldLeading>
@@ -819,9 +819,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldTrailing>
                 </FieldBody>
                 <FieldSupport v-if="errors.email">
-                  <FieldDetails>
+                  <TypographyBody>
                     {{ errors.email }}
-                  </FieldDetails>
+                  </TypographyBody>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -830,7 +830,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         <Column>
           <form @submit="onSubmit">
             <FormFieldset>
-              <FilledTextField :state="TextFieldState.hovered">
+              <FilledTextField>
                 <FieldBody>
                   <FieldLeading>
                     <RoundedIcon>
@@ -839,20 +839,18 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldLeading>
                   <FieldControl>
                     <TypographyLabel>
-                      Email
+                      Label
                     </TypographyLabel>
                     <FieldInput :name="'name'" />
                   </FieldControl>
-                  <FieldTrailing v-if="errors.email">
-                    <RoundedIcon>
-                      error
-                    </RoundedIcon>
-                  </FieldTrailing>
                 </FieldBody>
-                <FieldSupport v-if="errors.email">
-                  <FieldDetails>
-                    {{ errors.email }}
-                  </FieldDetails>
+                <FieldSupport>
+                  <TypographyBody>
+                    Support text.
+                  </TypographyBody>
+                  <TypographyLabel>
+                    5/20
+                  </TypographyLabel>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -861,33 +859,82 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         <Column>
           <form @submit="onSubmit">
             <FormFieldset>
-              <FilledTextField :state="TextFieldState.focused">
+              <FilledTextField>
                 <FieldBody>
-                  <FieldLeading>
-                    <RoundedIcon>
-                      mail
-                    </RoundedIcon>
-                  </FieldLeading>
                   <FieldControl>
                     <TypographyLabel>
-                      Email
+                      Label
                     </TypographyLabel>
-                    <FieldInput
-                      name="readonly"
-                      value="Readonly"
-                      :readonly="true"
-                    />
+                    <FieldInputPrefix>
+                      <TypographyLabel>
+                        $
+                      </TypographyLabel>
+                    </FieldInputPrefix>
+                    <FieldInput :name="'name'" />
                   </FieldControl>
-                  <FieldTrailing v-if="errors.email">
+                  <FieldTrailing>
                     <RoundedIcon>
-                      error
+                      clear
                     </RoundedIcon>
                   </FieldTrailing>
                 </FieldBody>
-                <FieldSupport v-if="errors.email">
-                  <FieldDetails>
-                    {{ errors.email }}
-                  </FieldDetails>
+                <FieldSupport>
+                  <TypographyLabel>
+                    5/20
+                  </TypographyLabel>
+                </FieldSupport>
+              </FilledTextField>
+            </FormFieldset>
+          </form>
+        </Column>
+        <Column>
+          <form @submit="onSubmit">
+            <FormFieldset>
+              <FilledTextField>
+                <FieldBody>
+                  <FieldControl>
+                    <TypographyLabel>
+                      Label
+                    </TypographyLabel>
+                    <FieldInput :name="'name'" />
+                    <FieldInputSuffix>
+                      <TypographyLabel>
+                        lbs
+                      </TypographyLabel>
+                    </FieldInputSuffix>
+                  </FieldControl>
+                </FieldBody>
+                <FieldSupport>
+                  <TypographyLabel>
+                    5/20
+                  </TypographyLabel>
+                </FieldSupport>
+              </FilledTextField>
+            </FormFieldset>
+          </form>
+        </Column>
+        <Column>
+          <form @submit="onSubmit">
+            <FormFieldset>
+              <FilledTextField>
+                <FieldBody>
+                  <FieldControl>
+                    <TypographyLabel>
+                      Label
+                    </TypographyLabel>
+                    <FieldInput :name="'name'" />
+                  </FieldControl>
+                </FieldBody>
+                <FieldSupport>
+                  <TypographyBody>
+                    Support text that is much longer than you think.
+                    Support text that is much longer than you think.
+                    Support text that is much longer than you think.
+                    Support text that is much longer than you think.
+                  </TypographyBody>
+                  <TypographyLabel>
+                    5/20
+                  </TypographyLabel>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -905,23 +952,23 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldLeading>
                   <FieldControl>
                     <TypographyLabel>
-                      Email
+                      Label
                     </TypographyLabel>
                     <FieldInput
-                      name="name"
+                      :name="'name'"
                       :disabled="true"
                     />
                   </FieldControl>
-                  <FieldTrailing v-if="errors.email">
+                  <FieldTrailing>
                     <RoundedIcon>
                       error
                     </RoundedIcon>
                   </FieldTrailing>
                 </FieldBody>
-                <FieldSupport v-if="errors.email">
-                  <FieldDetails>
-                    {{ errors.email }}
-                  </FieldDetails>
+                <FieldSupport>
+                  <TypographyBody>
+                    Support text.
+                  </TypographyBody>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -955,9 +1002,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldTrailing>
                 </FieldBody>
                 <FieldSupport v-if="errors.email">
-                  <FieldDetails>
+                  <TypographyBody>
                     {{ errors.email }}
-                  </FieldDetails>
+                  </TypographyBody>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -989,9 +1036,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldTrailing>
                 </FieldBody>
                 <FieldSupport v-if="errors.email">
-                  <FieldDetails>
+                  <TypographyBody>
                     {{ errors.email }}
-                  </FieldDetails>
+                  </TypographyBody>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -1023,9 +1070,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldTrailing>
                 </FieldBody>
                 <FieldSupport v-if="errors.email">
-                  <FieldDetails>
+                  <TypographyBody>
                     {{ errors.email }}
-                  </FieldDetails>
+                  </TypographyBody>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -1046,7 +1093,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       Email
                     </TypographyLabel>
                     <FieldInput
-                      name="name"
+                      :name="'name'"
                       :disabled="true"
                     />
                   </FieldControl>
@@ -1057,9 +1104,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldTrailing>
                 </FieldBody>
                 <FieldSupport v-if="errors.email">
-                  <FieldDetails>
+                  <TypographyBody>
                     {{ errors.email }}
-                  </FieldDetails>
+                  </TypographyBody>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>

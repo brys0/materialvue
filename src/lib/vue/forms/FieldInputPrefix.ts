@@ -36,22 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type FieldDetailsProps = {}
+export type FieldInputPrefixProps = {}
 
-export const FieldDetails: FunctionalComponent<FieldDetailsProps> = (_, {
+export const FieldInputPrefix: FunctionalComponent<FieldInputPrefixProps> = (_, {
 	slots,
-}): VNode => h('span', {
+}): VNode => h('div', {
 	class: {
-		typography: true,
-		body: true,
-		'field-details': true,
+		'field-input-prefix': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-FieldDetails.displayName = 'FieldDetails'
+FieldInputPrefix.displayName = 'FieldInputPrefix'
 
-FieldDetails.props = []
+FieldInputPrefix.props = []
 
-export default FieldDetails
+export default FieldInputPrefix

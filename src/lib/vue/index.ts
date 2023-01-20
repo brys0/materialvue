@@ -97,8 +97,9 @@ export {
 	FieldLeading,
 	FieldTrailing,
 	FieldInput,
+	FieldInputPrefix,
+	FieldInputSuffix,
 	FieldSupport,
-	FieldDetails,
 } from '@/lib/vue/forms'
 
 export {

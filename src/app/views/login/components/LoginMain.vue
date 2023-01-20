@@ -55,6 +55,7 @@ import {
 	Main,
 	Layout,
 	Tile,
+	TypographyBody,
 	TypographyLabel,
 	FilledButton,
 	RoundedIcon,
@@ -65,7 +66,6 @@ import {
 	FieldTrailing,
 	FieldInput,
 	FieldSupport,
-	FieldDetails,
 	FilledTextField,
 } from '@/lib/vue'
 
@@ -135,9 +135,9 @@ onBeforeUnmount(() => {
                 </FieldTrailing>
               </FieldBody>
               <FieldSupport v-if="errors.email">
-                <FieldDetails>
+                <TypographyBody>
                   {{ errors.email }}
-                </FieldDetails>
+                </TypographyBody>
               </FieldSupport>
             </FilledTextField>
           </FormFieldset>
@@ -173,9 +173,9 @@ onBeforeUnmount(() => {
                 </FieldTrailing>
               </FieldBody>
               <FieldSupport v-if="errors.password">
-                <FieldDetails>
+                <TypographyBody>
                   {{ errors.password }}
-                </FieldDetails>
+                </TypographyBody>
               </FieldSupport>
             </FilledTextField>
           </FormFieldset>
