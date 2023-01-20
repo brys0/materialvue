@@ -44,7 +44,8 @@
     grid-column: col-1-start / col-1-end
     grid-template-rows: [row-1-start] auto [row-1-end]  
     grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
-    align-items: stretch
+    align-content: stretch
+    justify-content: stretch
     
     > .field-leading,
     > .field-control,
@@ -72,15 +73,16 @@
       display: grid
       grid-row: row-1-start / row-1-end
       grid-column: col-2-start / col-2-end
-      grid-template-rows: [row-1-start] auto [row-1-end row-2-start] minmax(0, min-content) [row-2-end]  
+      grid-template-rows: [row-1-start] minmax(0, min-content) [row-1-end row-2-start] minmax(0, min-content) [row-2-end]  
       grid-template-columns: [col-1-start] minmax(0, min-content) [col-1-end col-2-start] auto [col-2-end col-3-start] minmax(0, min-content) [col-3-end]
-      align-items: center
+      align-content: center
       justify-content: stretch
 
       > .typography
         &.label
           @extend %is-not-selectable
         
+          overflow: hidden
           grid-row: row-1-start / row-1-end
           grid-column: col-1-start / col-3-end
 
@@ -136,7 +138,6 @@
     grid-column: col-1-start / col-1-end
     grid-template-rows: [row-1-start] auto [row-1-end]  
     grid-template-columns: [col-1-start] auto [col-1-end col-2-start] minmax(0, min-content) [col-2-end]
-    align-items: stretch
     
     > .typography
       grid-row: row-1-start / row-1-end
@@ -162,7 +163,16 @@
         > .field-input
           height: 0
           appearance: none
-        
+
+  &.without-label-text
+    &.focused
+      > .field-body
+        > .field-control
+          > .typography
+            &.label
+              height: 0
+              appearance: none
+
   &.filled
     > .field-body
       border-bottom-style: solid
@@ -316,6 +326,7 @@
 
               @include theme.preferred
                 color: theme.style(primary)
+              
               
       > .field-support
         > .typography

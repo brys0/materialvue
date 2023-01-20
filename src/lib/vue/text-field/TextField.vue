@@ -60,6 +60,10 @@ const props = defineProps({
 		type: Boolean,
 		default: false,
 	},
+	withoutLabelText: {
+		type: Boolean,
+		default: false,
+	},
 })
 
 const emit = defineEmits<
@@ -77,6 +81,7 @@ const enabledRef = ref(TextFieldState.enabled === stateRef.value)
 const hoveredRef = ref(TextFieldState.hovered === stateRef.value)
 const focusedRef = ref(TextFieldState.focused === stateRef.value)
 const disabledRef = ref(TextFieldState.disabled === stateRef.value)
+const withoutLabelTextRef = toRef(props, 'withoutLabelText')
 const hasErrorRef = toRef(props, 'hasError')
 const isMouseDown = ref(false)
 
@@ -88,6 +93,7 @@ const isEmpty = (): boolean => {
 const classRef = computed(() => ({
 	'text-field': true,
 	'has-error': hasErrorRef.value,
+	'without-label-text': withoutLabelTextRef.value,
 	'is-empty': isEmpty(),
 	enabled: enabledRef.value,
 	hovered: hoveredRef.value,

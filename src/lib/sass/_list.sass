@@ -39,8 +39,6 @@
   width: 100%
   display: flex
   flex-flow: column
-  align-items: stretch
-  justify-content: flex-start
 
   &:first-of-type
     padding-top: 8px
@@ -73,7 +71,6 @@
     display: grid
     grid-template-rows: [row-1-start] auto [row-1-end row-2-start] minmax(0, min-content) [row-2-end]
     grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
-    align-items: stretch
     list-style-type: none
     border: none
     outline: none
@@ -103,7 +100,6 @@
       padding-bottom: 8px
       display: flex
       flex-flow: column
-      align-items: stretch
       justify-content: center
 
     > .list-item-leading
@@ -122,10 +118,6 @@
       > img
         width: 56px
         height: 56px
-        border: 1px solid
-      
-        @include theme.preferred
-          border-color: theme.style(surface-variant)
 
       > .avatar
         &.thumbnail

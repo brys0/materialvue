@@ -859,7 +859,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         <Column>
           <form @submit="onSubmit">
             <FormFieldset>
-              <FilledTextField>
+              <FilledTextField :without-label-text="true">
                 <FieldBody>
                   <FieldControl>
                     <TypographyLabel>
