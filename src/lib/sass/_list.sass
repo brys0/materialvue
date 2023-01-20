@@ -90,9 +90,11 @@
       @include theme.preferred
         border-color: theme.style(surface-variant)
 
-    &.has-leading-video,
     &:has(.video.thumbnail)
-      padding-left: 0 !important
+      padding-left: 0
+
+    &.has-leading-video
+      padding-left: 0
         
     > .list-item-leading,
     > .list-item-body,
