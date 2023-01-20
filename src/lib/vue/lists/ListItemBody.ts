@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type ListItemTextProps = {}
+export type ListItemBodyProps = {}
 
-export const ListItemText: FunctionalComponent<ListItemTextProps> = (_, {
+export const ListItemBody: FunctionalComponent<ListItemBodyProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'list-item-text': true,
+		'list-item-body': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-ListItemText.displayName = 'ListItemText'
+ListItemBody.displayName = 'ListItemBody'
 
-ListItemText.props = []
+ListItemBody.props = []
 
-export default ListItemText
+export default ListItemBody

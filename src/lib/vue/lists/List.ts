@@ -44,22 +44,10 @@ export enum ListLines {
 
 export type ListProps = {
 	lines?: ListLines
-	hasLeadingAvatar?: boolean
-	hasLeadingIcon?: boolean
-	hasLeadingImage?: boolean
-	hasLeadingVideo?: boolean
-	hasTrailingIcon?: boolean
-	hasTrailingBadge?: boolean
 }
 
 export const List: FunctionalComponent<ListProps> = ({
 	lines,
-	hasLeadingAvatar,
-	hasLeadingIcon,
-	hasLeadingImage,
-	hasLeadingVideo,
-	hasTrailingIcon,
-	hasTrailingBadge,
 }, {
 	slots,
 }): VNode => h('ol', {
@@ -68,12 +56,6 @@ export const List: FunctionalComponent<ListProps> = ({
 		'lines-1': ListLines.one === lines,
 		'lines-2': ListLines.two === lines,
 		'lines-3': ListLines.three === lines,
-		'has-leading-avatar': hasLeadingAvatar,
-		'has-leading-icon': hasLeadingIcon,
-		'has-leading-image': hasLeadingImage,
-		'has-leading-video': hasLeadingVideo,
-		'has-trailing-icon': hasTrailingIcon,
-		'has-trailing-badge': hasTrailingBadge,
 	},
 }, {
 	default: () => slots.default?.(),
@@ -82,13 +64,7 @@ export const List: FunctionalComponent<ListProps> = ({
 List.displayName = 'List'
 
 List.props = [
-	'lines',
-	'has-leading-avatar',
-	'has-leading-icon',
-	'has-leading-image',
-	'has-leading-video',
-	'has-trailing-icon',
-	'has-trailing-badge'
+	'lines'
 ]
 
 export default List

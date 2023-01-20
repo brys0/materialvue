@@ -45,8 +45,8 @@ export {
 } from '@/lib/vue/lists/ListItemLeading'
 
 export {
-	ListItemText,
-} from '@/lib/vue/lists/ListItemText'
+	ListItemBody,
+} from '@/lib/vue/lists/ListItemBody'
 
 export {
 	ListItemTrailing,

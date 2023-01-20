@@ -92,7 +92,7 @@ import {
 	ListItem,
 	ListItemState,
 	ListItemLeading,
-	ListItemText,
+	ListItemBody,
 	ListItemTrailing,
 	VideoThumbnail,
 	AvatarThumbnail,
@@ -1241,35 +1241,35 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         <Column>
           <List>
             <ListItem>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemText>
+            <ListItem>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
+            </ListItem>
+            <ListItem>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemBody>
               <Divider />
             </ListItem>
-            <ListItem>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-              </ListItemText>
-            </ListItem>
           </List>
-          <List :has-trailing-badge="true">
+          <List>
             <ListItem>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <TypographyLabel>
                   100+
@@ -1277,23 +1277,23 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemTrailing>
             </ListItem>
             <ListItem>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Hovered
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <TypographyLabel>
                   100+
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemText>
+            <ListItem>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <TypographyLabel>
                   100+
@@ -1304,50 +1304,47 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
           <List :lines="ListLines.two">
             <ListItem>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
             <ListItem>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Focused
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemText>
+            <ListItem>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <Divider />
             </ListItem>
           </List>
-          <List
-            :lines="ListLines.two"
-            :has-trailing-badge="true"
-          >
+          <List :lines="ListLines.two">
             <ListItem>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <TypographyLabel>
                   100+
@@ -1355,29 +1352,29 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemTrailing>
             </ListItem>
             <ListItem>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Pressed
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <TypographyLabel>
                   100+
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemText>
+            <ListItem>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <TypographyLabel>
                   100+
@@ -1388,84 +1385,78 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
           <List :lines="ListLines.three">
             <ListItem>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
             <!-- <ListItem :state="ListItemState.dragged"> -->
             <ListItem>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Dragged
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
             <ListItem>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
+              <Divider />
             </ListItem>
           </List>
-          <List
-            :lines="ListLines.three"
-            :has-trailing-badge="true"
-          >
+          <List :lines="ListLines.three">
             <ListItem>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <TypographyLabel>
                   100+
                 </TypographyLabel>
               </ListItemTrailing>
             </ListItem>
-            <ListItem
-              :state="ListItemState.disabled"
-              :has-divider="true"
-            >
-              <ListItemText>
+            <ListItem :state="ListItemState.disabled">
+              <ListItemBody>
                 <TypographyHeadline>
                   Disabled
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <TypographyLabel>
                   100+
                 </TypographyLabel>
               </ListItemTrailing>
-              <Divider />
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemText>
+            <ListItem>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <TypographyLabel>
                   100+
@@ -1476,60 +1467,57 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
         </Column>
         <Column>
-          <List :has-leading-icon="true">
+          <List>
             <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
+            <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemBody>
               <Divider />
             </ListItem>
-            <ListItem>
-              <ListItemLeading>
-                <RoundedIcon>
-                  mail
-                </RoundedIcon>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-              </ListItemText>
-            </ListItem>
           </List>
-          <List
-            :has-leading-icon="true"
-            :has-trailing-icon="true"
-          >
+          <List>
             <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -1542,28 +1530,28 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Hovered
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
+            <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -1574,7 +1562,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
           <List
             :lines="ListLines.two"
-            :has-leading-icon="true"
           >
             <ListItem>
               <ListItemLeading>
@@ -1582,14 +1569,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
             <ListItem>
               <ListItemLeading>
@@ -1597,51 +1584,47 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Focused
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <RoundedIcon>
-                  mail
-                </RoundedIcon>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text.
-                </TypographyBody>
-              </ListItemText>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :lines="ListLines.two"
-            :has-leading-icon="true"
-            :has-trailing-icon="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
+              <Divider />
+            </ListItem>
+          </List>
+          <List :lines="ListLines.two">
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -1654,34 +1637,34 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Pressed
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
+            <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -1692,7 +1675,6 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
           <List
             :lines="ListLines.three"
-            :has-leading-icon="true"
           >
             <ListItem>
               <ListItemLeading>
@@ -1700,14 +1682,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
             <!-- <ListItem :state="ListItemState.dragged"> -->
             <ListItem>
@@ -1716,51 +1698,47 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Dragged
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <RoundedIcon>
-                  mail
-                </RoundedIcon>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
-              </ListItemText>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :lines="ListLines.three"
-            :has-leading-icon="true"
-            :has-trailing-icon="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
+              <Divider />
+            </ListItem>
+          </List>
+          <List :lines="ListLines.three">
+            <ListItem>
+              <ListItemLeading>
+                <RoundedIcon>
+                  mail
+                </RoundedIcon>
+              </ListItemLeading>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -1773,34 +1751,34 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Disabled
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
+            <ListItem>
               <ListItemLeading>
                 <RoundedIcon>
                   mail
                 </RoundedIcon>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -1811,7 +1789,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
         </Column>
         <Column>
-          <List :has-leading-avatar="true">
+          <List>
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -1820,13 +1798,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
+            <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -1834,32 +1812,29 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemBody>
               <Divider />
             </ListItem>
-            <ListItem>
-              <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
-                    A
-                  </TypographyLabel>
-                </AvatarThumbnail>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-              </ListItemText>
-            </ListItem>
           </List>
-          <List
-            :has-leading-avatar="true"
-            :has-trailing-icon="true"
-          >
+          <List>
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -1868,11 +1843,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -1887,42 +1862,17 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Hovered
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
-                    A
-                  </TypographyLabel>
-                </AvatarThumbnail>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-              </ListItemText>
-              <ListItemTrailing>
-                <RoundedIcon>
-                  arrow_drop_down
-                </RoundedIcon>
-              </ListItemTrailing>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :lines="ListLines.two"
-            :has-leading-avatar="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -1931,14 +1881,36 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemBody>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+              <Divider />
+            </ListItem>
+          </List>
+          <List :lines="ListLines.two">
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
             <ListItem>
               <ListItemLeading>
@@ -1948,39 +1920,15 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Focused
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
-                    A
-                  </TypographyLabel>
-                </AvatarThumbnail>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text.
-                </TypographyBody>
-              </ListItemText>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :lines="ListLines.two"
-            :has-leading-avatar="true"
-            :has-trailing-icon="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -1989,14 +1937,34 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
+              <Divider />
+            </ListItem>
+          </List>
+          <List :lines="ListLines.two">
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -2011,48 +1979,20 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Pressed
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
-                    A
-                  </TypographyLabel>
-                </AvatarThumbnail>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text.
-                </TypographyBody>
-              </ListItemText>
-              <ListItemTrailing>
-                <RoundedIcon>
-                  arrow_drop_down
-                </RoundedIcon>
-              </ListItemTrailing>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :lines="ListLines.three"
-            :has-leading-avatar="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -2061,14 +2001,39 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemBody>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+              <Divider />
+            </ListItem>
+          </List>
+          <List :lines="ListLines.three">
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
             <!-- <ListItem :state="ListItemState.dragged"> -->
             <ListItem>
@@ -2079,39 +2044,15 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Dragged
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
-                    A
-                  </TypographyLabel>
-                </AvatarThumbnail>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
-              </ListItemText>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :lines="ListLines.three"
-            :has-leading-avatar="true"
-            :has-trailing-icon="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
@@ -2120,14 +2061,34 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
+              <Divider />
+            </ListItem>
+          </List>
+          <List :lines="ListLines.three">
+            <ListItem>
+              <ListItemLeading>
+                <AvatarThumbnail>
+                  <TypographyLabel>
+                    A
+                  </TypographyLabel>
+                </AvatarThumbnail>
+              </ListItemLeading>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -2142,21 +2103,21 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Disabled
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
+            <ListItem>
               <ListItemLeading>
                 <AvatarThumbnail>
                   <TypographyLabel>
@@ -2164,14 +2125,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </TypographyLabel>
                 </AvatarThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -2182,7 +2143,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
         </Column>
         <Column>
-          <List :has-leading-image="true">
+          <List>
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2196,13 +2157,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
+            <ListItem>
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2215,37 +2176,34 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemBody>
               <Divider />
             </ListItem>
-            <ListItem>
-              <ListItemLeading>
-                <img
-                  class="is-theme-dark"
-                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                  alt="CosmicMind 16x9 Placeholder"
-                >
-                <img
-                  class="is-theme-light"
-                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                  alt="CosmicMind 16x9 Placeholder"
-                >
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-              </ListItemText>
-            </ListItem>
           </List>
-          <List
-            :has-leading-image="true"
-            :has-trailing-icon="true"
-          >
+          <List>
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2259,11 +2217,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -2283,47 +2241,17 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Hovered
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <img
-                  class="is-theme-dark"
-                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                  alt="CosmicMind 16x9 Placeholder"
-                >
-                <img
-                  class="is-theme-light"
-                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                  alt="CosmicMind 16x9 Placeholder"
-                >
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-              </ListItemText>
-              <ListItemTrailing>
-                <RoundedIcon>
-                  arrow_drop_down
-                </RoundedIcon>
-              </ListItemTrailing>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :lines="ListLines.two"
-            :has-leading-image="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2337,14 +2265,41 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemBody>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+              <Divider />
+            </ListItem>
+          </List>
+          <List :lines="ListLines.two">
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
             <ListItem>
               <ListItemLeading>
@@ -2359,44 +2314,15 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Focused
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <img
-                  class="is-theme-dark"
-                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                  alt="CosmicMind 16x9 Placeholder"
-                >
-                <img
-                  class="is-theme-light"
-                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                  alt="CosmicMind 16x9 Placeholder"
-                >
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text.
-                </TypographyBody>
-              </ListItemText>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :lines="ListLines.two"
-            :has-leading-image="true"
-            :has-trailing-icon="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2410,14 +2336,39 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
+              <Divider />
+            </ListItem>
+          </List>
+          <List :lines="ListLines.two">
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -2437,53 +2388,20 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Pressed
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <img
-                  class="is-theme-dark"
-                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                  alt="CosmicMind 16x9 Placeholder"
-                >
-                <img
-                  class="is-theme-light"
-                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                  alt="CosmicMind 16x9 Placeholder"
-                >
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text.
-                </TypographyBody>
-              </ListItemText>
-              <ListItemTrailing>
-                <RoundedIcon>
-                  arrow_drop_down
-                </RoundedIcon>
-              </ListItemTrailing>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :lines="ListLines.three"
-            :has-leading-image="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2497,14 +2415,44 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemBody>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+              <Divider />
+            </ListItem>
+          </List>
+          <List :lines="ListLines.three">
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
             <!-- <ListItem :state="ListItemState.dragged"> -->
             <ListItem>
@@ -2520,44 +2468,15 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Dragged
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <img
-                  class="is-theme-dark"
-                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                  alt="CosmicMind 16x9 Placeholder"
-                >
-                <img
-                  class="is-theme-light"
-                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                  alt="CosmicMind 16x9 Placeholder"
-                >
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
-              </ListItemText>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :lines="ListLines.three"
-            :has-leading-image="true"
-            :has-trailing-icon="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <img
@@ -2571,14 +2490,39 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
+              <Divider />
+            </ListItem>
+          </List>
+          <List :lines="ListLines.three">
+            <ListItem>
+              <ListItemLeading>
+                <img
+                  class="is-theme-dark"
+                  src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+                <img
+                  class="is-theme-light"
+                  src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                  alt="CosmicMind 16x9 Placeholder"
+                >
+              </ListItemLeading>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -2598,21 +2542,21 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Disabled
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
+            <ListItem>
               <ListItemLeading>
                 <img
                   class="is-theme-dark"
@@ -2625,14 +2569,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   alt="CosmicMind 16x9 Placeholder"
                 >
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -2643,7 +2587,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </List>
         </Column>
         <Column>
-          <List :has-leading-video="true">
+          <List>
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -2659,13 +2603,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
+            <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2680,39 +2624,36 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
+            </ListItem>
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemBody>
               <Divider />
             </ListItem>
-            <ListItem>
-              <ListItemLeading>
-                <VideoThumbnail>
-                  <img
-                    class="is-theme-dark"
-                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                  <img
-                    class="is-theme-light"
-                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                </VideoThumbnail>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-              </ListItemText>
-            </ListItem>
           </List>
-          <List
-            :has-leading-video="true"
-            :has-trailing-icon="true"
-          >
+          <List>
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -2728,11 +2669,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -2754,46 +2695,17 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Hovered
                 </TypographyHeadline>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <VideoThumbnail>
-                  <img
-                    class="is-theme-dark"
-                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                  <img
-                    class="is-theme-light"
-                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                </VideoThumbnail>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-              </ListItemText>
-              <ListItemTrailing>
-                <RoundedIcon>
-                  arrow_drop_down
-                </RoundedIcon>
-              </ListItemTrailing>
-              <Divider />
-            </ListItem>
-          </List>
-          <List :has-leading-video="true">
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -2809,14 +2721,43 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+              </ListItemBody>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+              <Divider />
+            </ListItem>
+          </List>
+          <List>
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
             <ListItem>
               <ListItemLeading>
@@ -2833,45 +2774,15 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Focused
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <VideoThumbnail>
-                  <img
-                    class="is-theme-dark"
-                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                  <img
-                    class="is-theme-light"
-                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                </VideoThumbnail>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text.
-                </TypographyBody>
-              </ListItemText>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :has-leading-video="true"
-            :has-trailing-icon="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -2887,14 +2798,41 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
+              <Divider />
+            </ListItem>
+          </List>
+          <List>
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
@@ -2916,55 +2854,20 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Pressed
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <VideoThumbnail>
-                  <img
-                    class="is-theme-dark"
-                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                  <img
-                    class="is-theme-light"
-                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                </VideoThumbnail>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text.
-                </TypographyBody>
-              </ListItemText>
-              <ListItemTrailing>
-                <RoundedIcon>
-                  arrow_drop_down
-                </RoundedIcon>
-              </ListItemTrailing>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :lines="ListLines.three"
-            :has-leading-video="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -2980,14 +2883,46 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text.
+                </TypographyBody>
+              </ListItemBody>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+              <Divider />
+            </ListItem>
+          </List>
+          <List :lines="ListLines.three">
+            <ListItem>
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
             <!-- <ListItem :state="ListItemState.dragged"> -->
             <ListItem>
@@ -3005,46 +2940,15 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Dragged
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
             </ListItem>
-            <ListItem :has-divider="true">
-              <ListItemLeading>
-                <VideoThumbnail>
-                  <img
-                    class="is-theme-dark"
-                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                  <img
-                    class="is-theme-light"
-                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
-                    alt="CosmicMind 16x9 Placeholder"
-                  >
-                </VideoThumbnail>
-              </ListItemLeading>
-              <ListItemText>
-                <TypographyHeadline>
-                  Headline
-                </TypographyHeadline>
-                <TypographyBody>
-                  Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
-              </ListItemText>
-              <Divider />
-            </ListItem>
-          </List>
-          <List
-            :lines="ListLines.three"
-            :has-leading-video="true"
-            :has-trailing-icon="true"
-          >
             <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
@@ -3060,24 +2964,19 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
-              <ListItemTrailing>
-                <RoundedIcon>
-                  arrow_drop_down
-                </RoundedIcon>
-              </ListItemTrailing>
+              </ListItemBody>
+              <Divider />
             </ListItem>
-            <ListItem
-              :state="ListItemState.disabled"
-              :has-divider="true"
-            >
+          </List>
+          <List :lines="ListLines.three">
+            <ListItem>
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -3092,20 +2991,48 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
+                <TypographyHeadline>
+                  Headline
+                </TypographyHeadline>
+                <TypographyBody>
+                  Supporting text that is long enough to fill multiple lines.
+                </TypographyBody>
+              </ListItemBody>
+              <ListItemTrailing>
+                <RoundedIcon>
+                  arrow_drop_down
+                </RoundedIcon>
+              </ListItemTrailing>
+            </ListItem>
+            <ListItem :state="ListItemState.disabled">
+              <ListItemLeading>
+                <VideoThumbnail>
+                  <img
+                    class="is-theme-dark"
+                    src="/assets/cosmicmind-16x9-placeholder-dark.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                  <img
+                    class="is-theme-light"
+                    src="/assets/cosmicmind-16x9-placeholder-light.svg"
+                    alt="CosmicMind 16x9 Placeholder"
+                  >
+                </VideoThumbnail>
+              </ListItemLeading>
+              <ListItemBody>
                 <TypographyHeadline>
                   Disabled
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
-              <Divider />
             </ListItem>
             <ListItem>
               <ListItemLeading>
@@ -3122,19 +3049,20 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   >
                 </VideoThumbnail>
               </ListItemLeading>
-              <ListItemText>
+              <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
                 <TypographyBody>
                   Supporting text that is long enough to fill multiple lines.
                 </TypographyBody>
-              </ListItemText>
+              </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
                   arrow_drop_down
                 </RoundedIcon>
               </ListItemTrailing>
+              <Divider />
             </ListItem>
           </List>
         </Column>

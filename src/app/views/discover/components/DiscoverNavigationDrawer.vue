@@ -41,7 +41,7 @@ import {
 	List,
 	ListItem,
 	ListItemLeading,
-	ListItemText,
+	ListItemBody,
 	ListItemTrailing,
 	RoundedIcon,
 } from '@/lib/vue'
@@ -60,11 +60,11 @@ import {
             mail
           </RoundedIcon>
         </ListItemLeading>
-        <ListItemText>
+        <ListItemBody>
           <TypographyLabel>
             Mail
           </TypographyLabel>
-        </ListItemText>
+        </ListItemBody>
         <ListItemTrailing>
           <TypographyLabel>
             100+
@@ -77,11 +77,11 @@ import {
             movie
           </RoundedIcon>
         </ListItemLeading>
-        <ListItemText>
+        <ListItemBody>
           <TypographyLabel>
             Videos
           </TypographyLabel>
-        </ListItemText>
+        </ListItemBody>
         <ListItemTrailing>
           <RoundedIcon>
             arrow_drop_down
@@ -97,11 +97,11 @@ import {
             mail
           </RoundedIcon>
         </ListItemLeading>
-        <ListItemText>
+        <ListItemBody>
           <TypographyLabel>
             Mail
           </TypographyLabel>
-        </ListItemText>
+        </ListItemBody>
         <ListItemTrailing>
           <TypographyLabel>
             100+
@@ -114,11 +114,11 @@ import {
             movie
           </RoundedIcon>
         </ListItemLeading>
-        <ListItemText>
+        <ListItemBody>
           <TypographyLabel>
             Videos
           </TypographyLabel>
-        </ListItemText>
+        </ListItemBody>
         <ListItemTrailing>
           <RoundedIcon>
             arrow_drop_down

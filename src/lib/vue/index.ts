@@ -136,7 +136,7 @@ export {
 	ListItem,
 	ListItemState,
 	ListItemLeading,
-	ListItemText,
+	ListItemBody,
 	ListItemTrailing,
 } from '@/lib/vue/lists'
 

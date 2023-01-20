@@ -58,6 +58,7 @@ export const Button = defineComponent({
 			state,
 		} = this.$props
 		return h('button', {
+			disabled: ButtonState.disabled === state,
 			class: {
 				button: true,
 				enabled: ButtonState.enabled === state,
