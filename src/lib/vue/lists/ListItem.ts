@@ -52,16 +52,23 @@ export const ListItem = defineComponent({
 			type: String as PropType<ListItemState>,
 			default: ListItemState.enabled,
 		},
+		hasLeadingVideo: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	emits: [ 'click' ],
 	render(): VNode {
 		const {
 			state,
+			hasLeadingVideo,
 		} = this.$props
+
 		return h('li', {
 			tabindex: ListItemState.disabled === state ? undefined : 0,
 			class: {
 				'list-item': true,
+				'has-leading-video': hasLeadingVideo,
 				enabled: ListItemState.enabled === state,
 				hovered: ListItemState.hovered === state,
 				focused: ListItemState.focused === state,

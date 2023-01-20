@@ -43,34 +43,37 @@
   justify-content: flex-start
 
   &:first-of-type
-    margin-top: 8px
+    padding-top: 8px
 
   &:last-of-type
-    margin-bottom: 8px
+    padding-bottom: 8px
 
   &,
   &.lines-1
     > .list-item
       min-height: 56px
-      align-items: center
-
+  
   &.lines-2
     > .list-item
       min-height: 72px
-      align-items: center  
 
   &.lines-3
     > .list-item
       min-height: 88px
-      align-items: flex-start
 
+      > .list-item-leading,
+      > .list-item-body,
+      > .list-item-trailing
+        justify-content: flex-start
+      
   > .list-item
     @extend %is-not-selectable
 
-    padding: 8px 24px 8px 16px
+    padding: 0 24px 0 16px
     display: grid
-    grid-template-rows: [row-1-start] auto [row-1-end row-2-start] minmax(0, min-content) [row-2-end]
-    grid-template-columns: [col-1-start] minmax(0, min-content) [col-1-end col-2-start] auto [col-2-end col-3-start] minmax(0, min-content) [col-3-end]
+    grid-template-rows: [row-1-start] auto [row-1-end row-2-start] min-content [row-2-end]
+    grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
+    align-items: stretch
     list-style-type: none
     border: none
     outline: none
@@ -87,31 +90,26 @@
       @include theme.preferred
         border-color: theme.style(surface-variant)
 
+    &.has-leading-video,
     &:has(.video.thumbnail)
-      padding-left: 0
-    
-    &:has(.list-item-leading)
-      > .list-item-body
-        margin-left: 16px
-    
-    &:has(.divider)
-      padding-bottom: 0
-
-      > .divider
-        margin-top: 8px
-    
-    &:has(.list-item-trailing)
-      > .list-item-body
-        margin-right: 16px
-
+      padding-left: 0 !important
+        
     > .list-item-leading,
     > .list-item-body,
     > .list-item-trailing
       display: flex
+      flex-flow: column
+      align-items: stretch
+      justify-content: center
+      padding-top: 8px
+      padding-bottom: 8px
 
     > .list-item-leading
       grid-row: row-1-start / row-1-end
       grid-column: col-1-start / col-1-end
+
+      + .list-item-body
+        padding-left: 16px
 
       > .icon
         font-size: 18px
@@ -156,13 +154,12 @@
             border-color: theme.style(outline-variant)
       
     > .list-item-body
-      display: flex
-      flex-flow: column
       grid-row: row-1-start / row-1-end
       grid-column: col-2-start / col-2-end
-      align-items: stretch
-      justify-content: center
 
+      + .list-item-trailing
+        padding-left: 16px
+      
       > .typography
         @extend %is-not-selectable
 

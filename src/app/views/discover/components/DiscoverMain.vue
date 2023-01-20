@@ -2588,7 +2588,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         </Column>
         <Column>
           <List>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2609,7 +2609,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyHeadline>
               </ListItemBody>
             </ListItem>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2630,7 +2630,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyHeadline>
               </ListItemBody>
             </ListItem>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2654,7 +2654,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2680,7 +2680,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2706,7 +2706,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2735,7 +2735,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2759,7 +2759,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemBody>
             </ListItem>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2783,7 +2783,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemBody>
             </ListItem>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2810,7 +2810,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2839,7 +2839,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2868,7 +2868,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2900,7 +2900,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List :lines="ListLines.three">
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2925,7 +2925,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               </ListItemBody>
             </ListItem>
             <!-- <ListItem :state="ListItemState.dragged"> -->
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2949,7 +2949,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyBody>
               </ListItemBody>
             </ListItem>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -2976,7 +2976,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
           </List>
           <List :lines="ListLines.three">
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -3005,7 +3005,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem :state="ListItemState.disabled">
+            <ListItem
+              :state="ListItemState.disabled"
+              :has-leading-video="true"
+            >
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
@@ -3034,7 +3037,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </RoundedIcon>
               </ListItemTrailing>
             </ListItem>
-            <ListItem>
+            <ListItem :has-leading-video="true">
               <ListItemLeading>
                 <VideoThumbnail>
                   <img
