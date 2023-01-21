@@ -165,7 +165,8 @@
           appearance: none
 
   &.without-label-text
-    &.focused
+    &.focused,
+    &:not(.is-empty)
       > .field-body
         > .field-control
           > .typography

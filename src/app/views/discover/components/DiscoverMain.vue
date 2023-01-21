@@ -798,7 +798,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <FormFieldset>
               <FilledTextField
                 ref="emailRef"
-                :has-error="errors.email"
+                :has-error="'undefined' !== typeof errors.email"
               >
                 <FieldBody>
                   <FieldLeading>
