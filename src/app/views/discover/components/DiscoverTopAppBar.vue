@@ -34,6 +34,10 @@
 
 <script lang="ts" setup>
 import {
+	computed,
+} from 'vue'
+
+import {
 	TopAppBar,
 	BarStart,
 	BarCenter,
@@ -42,6 +46,16 @@ import {
 	RoundedIcon,
 	TypographyHeadline,
 } from '@/lib/vue'
+
+import {
+	useAppStore,
+} from '@/app/contexts/app/stores/AppStore'
+
+const appStore = useAppStore()
+
+const toggleTheme = (): void => appStore.toggleTheme()
+
+const isThemeLight = computed(() => appStore.isThemeLight)
 
 </script>
 
@@ -63,6 +77,14 @@ import {
       </TypographyHeadline>
     </BarCenter>
     <BarEnd>
+      <IconButton @click="toggleTheme">
+        <RoundedIcon v-if="isThemeLight">
+          dark_mode
+        </RoundedIcon>
+        <RoundedIcon v-else>
+          light_mode
+        </RoundedIcon>
+      </IconButton>
       <IconButton>
         <RoundedIcon>
           notifications

@@ -32,6 +32,82 @@
  */
 -->
 
+<script lang="ts" setup>
+import {
+	watch,
+	onBeforeUnmount,
+} from 'vue'
+
+import {
+	storeToRefs,
+} from 'pinia'
+
+import {
+	logger,
+} from '@cosmicmind/foundation'
+
+import {
+	useAppStore,
+	AppTheme,
+} from '@/app/contexts/app/stores/AppStore'
+
+const appStore = useAppStore()
+
+appStore.$subscribe((): void => {
+	logger.log('appStore subscribe')
+})
+
+appStore.$onAction((): void => {
+	logger.log('appStore actions')
+})
+
+const syncTheme = (theme: string): void => {
+	const {
+		body,
+	} = document
+
+	if ('light' === theme) {
+		body.classList.add('theme-light')
+		body.classList.remove('theme-dark')
+	}
+	else {
+		body.classList.add('theme-dark')
+		body.classList.remove('theme-light')
+	}
+}
+
+const {
+	theme,
+} = storeToRefs(appStore)
+
+const unwatchTheme = watch(theme, syncTheme)
+
+// Check to see if Media-Queries are supported
+if (window.matchMedia) {
+	logger.trace('matchMedia', window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		appStore.setTheme(AppTheme.dark)
+
+		logger.trace('detected dark theme')
+	}
+	else {
+		appStore.setTheme(AppTheme.light)
+
+		logger.trace('detected light theme')
+	}
+
+	window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', event => {
+		appStore.setTheme(event.matches ? AppTheme.light : AppTheme.dark)
+	})
+}
+
+onBeforeUnmount((): void => {
+	unwatchTheme()
+})
+
+</script>
+
 <template>
   <div class="app">
     <router-view name="top-app-bar" />
