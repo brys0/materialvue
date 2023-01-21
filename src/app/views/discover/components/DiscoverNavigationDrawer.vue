@@ -34,6 +34,10 @@
 
 <script lang="ts" setup>
 import {
+	computed,
+} from 'vue'
+
+import {
 	NavigationDrawer,
 	TypographyHeadline,
 	TypographyLabel,
@@ -46,10 +50,18 @@ import {
 	RoundedIcon,
 } from '@/lib/vue'
 
+import {
+	useAppStore,
+} from '@/app/contexts/app/stores/AppStore'
+
+const appStore = useAppStore()
+
+const isOpened = computed(() => appStore.isNavigationDrawerOpened)
+
 </script>
 
 <template>
-  <NavigationDrawer>
+  <NavigationDrawer :is-opened="isOpened">
     <TypographyHeadline>
       Headline
     </TypographyHeadline>
@@ -87,8 +99,8 @@ import {
             arrow_drop_down
           </RoundedIcon>
         </ListItemTrailing>
+        <Divider />
       </ListItem>
-      <Divider />
     </List>
     <List>
       <ListItem>

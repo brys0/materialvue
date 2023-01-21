@@ -48,7 +48,7 @@ import {
 
 import {
 	useAppStore,
-	AppTheme,
+	Theme,
 } from '@/app/contexts/app/stores/AppStore'
 
 const appStore = useAppStore()
@@ -87,18 +87,18 @@ if (window.matchMedia) {
 	logger.trace('matchMedia', window.matchMedia('(prefers-color-scheme: dark)').matches)
 
 	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-		appStore.setTheme(AppTheme.dark)
+		appStore.setTheme(Theme.dark)
 
 		logger.trace('detected dark theme')
 	}
 	else {
-		appStore.setTheme(AppTheme.light)
+		appStore.setTheme(Theme.light)
 
 		logger.trace('detected light theme')
 	}
 
 	window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', event => {
-		appStore.setTheme(event.matches ? AppTheme.light : AppTheme.dark)
+		appStore.setTheme(event.matches ? Theme.light : Theme.dark)
 	})
 }
 

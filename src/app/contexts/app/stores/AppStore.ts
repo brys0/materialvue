@@ -34,31 +34,31 @@ import {
 	defineStore,
 } from 'pinia'
 
-export enum AppTheme {
+export enum Theme {
 	light = 'light',
 	dark = 'dark',
 }
 
-export enum AppDrawerState {
+export enum NavigationDrawerState {
 	opened = 'opened',
 	closed = 'closed',
 }
 
 export const useAppStore = defineStore('AppStore', {
 	state: () => ({
-		theme:AppTheme.light,
-		drawerState: AppDrawerState.closed,
+		theme:Theme.light,
+		navigationDrawerState: NavigationDrawerState.closed,
 	}),
 
 	getters: {
-		isThemeLight: state => AppTheme.light === state.theme,
-		isThemeDark: state => AppTheme.dark === state.theme,
-		isDrawerOpened: state => AppDrawerState.opened === state.drawerState,
-		isDrawerClosed: state => AppDrawerState.closed === state.drawerState,
+		isThemeLight: state => Theme.light === state.theme,
+		isThemeDark: state => Theme.dark === state.theme,
+		isNavigationDrawerOpened: state => NavigationDrawerState.opened === state.navigationDrawerState,
+		isNavigationDrawerClosed: state => NavigationDrawerState.closed === state.navigationDrawerState,
 	},
 
 	actions: {
-		setTheme(theme: AppTheme): void {
+		setTheme(theme: Theme): void {
 			this.$patch(state => {
 				state.theme = theme
 			})
@@ -66,25 +66,25 @@ export const useAppStore = defineStore('AppStore', {
 
 		toggleTheme(): void {
 			this.$patch(state => {
-				state.theme = AppTheme.light === state.theme ? AppTheme.dark : AppTheme.light
+				state.theme = Theme.light === state.theme ? Theme.dark : Theme.light
 			})
 		},
 
-		openDrawer(): void {
+		openNavigationDrawer(): void {
 			this.$patch(state => {
-				state.drawerState = AppDrawerState.opened
+				state.navigationDrawerState = NavigationDrawerState.opened
 			})
 		},
 
-		closeDrawer(): void {
+		closeNavigationDrawer(): void {
 			this.$patch(state => {
-				state.drawerState = AppDrawerState.closed
+				state.navigationDrawerState = NavigationDrawerState.closed
 			})
 		},
 
-		toggleDrawer(): void {
+		toggleNavigationDrawer(): void {
 			this.$patch(state => {
-				state.drawerState = AppDrawerState.opened === state.drawerState ? AppDrawerState.closed : AppDrawerState.opened
+				state.navigationDrawerState = NavigationDrawerState.opened === state.navigationDrawerState ? NavigationDrawerState.closed : NavigationDrawerState.opened
 			})
 		},
 	},

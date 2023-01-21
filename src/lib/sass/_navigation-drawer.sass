@@ -34,26 +34,31 @@
 
 .navigation-rail
   + .navigation-drawer
-    width: 280px
+    &.is-opened
+      width: 280px
 
 .navigation-drawer
   @extend %is-not-selectable
 
-  padding: 0 16px
-  width: 360px
   display: flex
   flex-flow: column
   align-items: stretch
   justify-content: flex-start
   border-radius: 0 16px 16px 0
+  overflow: hidden
 
   @include theme.preferred
     background: theme.style(elevation-0), theme.style(surface)
     box-shadow: theme.style(shadow-0)
 
+  &,
   &:empty
     width: 0
     visibility: hidden
+  
+  &.is-opened
+    width: 360px
+    visibility: visible
 
   &.modal
     @include theme.preferred
@@ -69,6 +74,8 @@
 
   > .list
     > .list-item
+      border-radius: 28px
+
       > .list-item-leading
         > .icon
           font-size: 24px

@@ -36,13 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type NavigationDrawerProps = {}
+export type NavigationDrawerProps = {
+	isOpened?: boolean
+}
 
-export const NavigationDrawer: FunctionalComponent<NavigationDrawerProps> = (_, {
+export const NavigationDrawer: FunctionalComponent<NavigationDrawerProps> = ({
+	isOpened,
+}, {
 	slots,
 }): VNode => h('nav', {
 	class: {
 		'navigation-drawer': true,
+		'is-opened': isOpened,
 	},
 }, {
 	default: () => slots.default?.(),
@@ -50,6 +55,8 @@ export const NavigationDrawer: FunctionalComponent<NavigationDrawerProps> = (_, 
 
 NavigationDrawer.displayName = 'NavigationDrawer'
 
-NavigationDrawer.props = []
+NavigationDrawer.props = [
+	'is-opened'
+]
 
 export default NavigationDrawer
