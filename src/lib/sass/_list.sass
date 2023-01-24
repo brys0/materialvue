@@ -123,6 +123,18 @@
   > .list-item
     @extend %list-item
 
+    position: relative
+
+    &::before
+      content: ' '
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      display: block
+      background: transparent
+
     > .divider
       @extend %list-item-divider
 
@@ -193,20 +205,11 @@
 
         > .avatar
           &.thumbnail
-            > img
-              @include theme.preferred
-                background: theme.style(background)
-
             > .typography
               &.label
                 @include theme.preferred
                   background: theme.style(primary-container)
                   color: theme.style(on-primary-container)
-
-        > .video
-          &.thumbnail
-            @include theme.preferred
-              background: theme.style(background)
         
       > .list-item-body
         > .typography
@@ -232,8 +235,9 @@
       &.hovered:not(.focused):not(.pressed):not(.dragged):not(.disabled)
         cursor: pointer
 
-        @include theme.preferred
-          background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
               
         > .list-item-leading
           > .icon
@@ -247,8 +251,9 @@
 
       &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.dragged):not(.disabled)
-        @include theme.preferred
-          background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
               
         > .list-item-leading
           > .icon
@@ -262,8 +267,9 @@
 
       &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.dragged):not(.disabled)
-        @include theme.preferred
-          background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
               
         > .list-item-leading
           > .icon
@@ -277,9 +283,12 @@
       
       &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
         @include theme.preferred
-          background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
           box-shadow: theme.style(shadow-4)
-              
+
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
+
         > .list-item-leading
           > .icon
             @include theme.preferred
@@ -298,8 +307,9 @@
       box-shadow: none
       opacity: 38%
 
-      @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+      &::before
+        @include theme.preferred
+          background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
             
       > .list-item-leading
         > .icon
