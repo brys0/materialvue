@@ -51,6 +51,7 @@ export {
 	NavigationDrawerTopBar,
 	NavigationDrawerBody,
 	NavigationDrawerBottomBar,
+	NavigationDrawerList,
 	NavigationDrawerItem,
 	NavigationDrawerItemState,
 	NavigationDrawerItemBody,

@@ -38,14 +38,10 @@
       width: 280px
 
 .navigation-drawer
-  @extend %list
-
   display: grid
   grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] auto [row-2-end row-3-start] min-content [row-3-end]
   grid-template-columns: [col-1-start] auto [col-1-end]
-  align-content: start
-  justify-content: stretch
-  overflow: scroll
+  overflow: hidden
   
   @include theme.preferred
     background: theme.style(elevation-0), theme.style(surface)
@@ -54,12 +50,10 @@
   &,
   &.is-closed,
   &:empty
-    padding: 0
     width: 0
     visibility: hidden
   
   &.is-opened
-    padding: 0 12px
     width: 360px
     visibility: visible
 
@@ -69,83 +63,93 @@
       box-shadow: theme.style(shadow-1)
 
   > .navigation-drawer-top-bar
+    padding: 0 12px
     grid-row: row-1-start / row-1-end
     grid-column: col-1-start / col-1-end
-  
-  > .navigation-drawer-bodu
-    grid-row: row-2-start / row-2-end
-    grid-column: col-1-start / col-1-end
-  
-  > .navigation-drawer-bottom-bar
-    grid-row: row-3-start / row-3-end
-    grid-column: col-1-start / col-1-end
 
-  > .typography
-    &.headline
-      @extend %typography-title-small
+    > .typography
+      &.headline
+        @extend %typography-title-small
 
-      padding: 0 28px 0 16px
-
-      @include theme.preferred
-        color: theme.style(on-surface-variant)
-  
-  > .navigation-drawer-item
-    @extend %list-item
-
-    border-radius: 28px
-
-    @include theme.preferred
-      background: theme.style(surface)
-
-    > .divider
-      @extend %list-item-divider
-
-    > .navigation-drawer-item-leading
-      @extend %list-item-leading
-
-      > .icon
-        font-size: 24px
+        padding: 0 28px 0 16px
 
         @include theme.preferred
           color: theme.style(on-surface-variant)
+  
+  > .navigation-drawer-body
+    padding: 0 12px
+    grid-row: row-2-start / row-2-end
+    grid-column: col-1-start / col-1-end
 
-    > .navigation-drawer-item-body
-      @extend %list-item-body
+    overflow: scroll
 
-      > .typography
-        @extend %is-not-selectable
+    > .navigation-drawer-list
+      @extend %list
 
-        &.label
-          @extend %typography-label-large
+      > .navigation-drawer-item
+        @extend %list-item
 
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-        
-    > .navigation-drawer-item-trailing
-      @extend %list-item-trailing
+        border-radius: 28px
 
-      > .typography
-        @extend %is-not-selectable
+        @include theme.preferred
+          background: theme.style(surface)
 
-        &.label
-          @extend %typography-label-large
+        > .divider
+          @extend %list-item-divider
 
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
+        > .navigation-drawer-item-leading
+          @extend %list-item-leading
 
-    &.active
-      @include theme.preferred
-        background: theme.style(secondary-container)
-
-      > .navigation-drawer-item-leading
-        > .icon
-          @include theme.preferred
-            color: theme.style(on-secondary-container)
-
-      > .navigation-drawer-item-body
-        > .typography
-          &.label
-            @extend %typography-label-large
+          > .icon
+            font-size: 24px
 
             @include theme.preferred
-              color: theme.style(on-secondary-container)
+              color: theme.style(on-surface-variant)
+
+        > .navigation-drawer-item-body
+          @extend %list-item-body
+
+          > .typography
+            @extend %is-not-selectable
+
+            &.label
+              @extend %typography-label-large
+
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
+            
+        > .navigation-drawer-item-trailing
+          @extend %list-item-trailing
+
+          > .typography
+            @extend %is-not-selectable
+
+            &.label
+              @extend %typography-label-large
+
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
+
+        &.active
+          @include theme.preferred
+            background: theme.style(secondary-container)
+
+          > .navigation-drawer-item-leading
+            > .icon
+              @include theme.preferred
+                color: theme.style(on-secondary-container)
+
+          > .navigation-drawer-item-body
+            > .typography
+              &.label
+                @extend %typography-label-large
+
+                @include theme.preferred
+                  color: theme.style(on-secondary-container)
+  
+  > .navigation-drawer-bottom-bar
+    padding: 0 12px
+    grid-row: row-3-start / row-3-end
+    grid-column: col-1-start / col-1-end
+
+  

@@ -30,39 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	NavigationDrawer,
-} from '@/lib/vue/navigation-drawer/NavigationDrawer'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	NavigationDrawerTopBar,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerTopBar'
+export type NavigationDrawerListProps = {}
 
-export {
-	NavigationDrawerBody,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerBody'
+export const NavigationDrawerList: FunctionalComponent<NavigationDrawerListProps> = (_, {
+	slots,
+}): VNode => h('ol', {
+	class: {
+		'navigation-drawer-list': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	NavigationDrawerBottomBar,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerBottomBar'
+NavigationDrawerList.displayName = 'NavigationDrawerList'
 
-export {
-	NavigationDrawerList,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerList'
+NavigationDrawerList.props = []
 
-export {
-	NavigationDrawerItem,
-	NavigationDrawerItemState,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerItem'
-
-export {
-	NavigationDrawerItemLeading,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerItemLeading'
-
-export {
-	NavigationDrawerItemBody,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerItemBody'
-
-export {
-	NavigationDrawerItemTrailing,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerItemTrailing'
+export default NavigationDrawerList
