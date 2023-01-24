@@ -48,6 +48,9 @@ export {
 
 export {
 	NavigationDrawer,
+	NavigationDrawerTopBar,
+	NavigationDrawerBody,
+	NavigationDrawerBottomBar,
 	NavigationDrawerItem,
 	NavigationDrawerItemState,
 	NavigationDrawerItemBody,

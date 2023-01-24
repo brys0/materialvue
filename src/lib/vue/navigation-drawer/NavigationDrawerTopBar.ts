@@ -30,13 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use './theme'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-.finder
-  @extend %is-not-selectable
+export type NavigationDrawerTopBarProps = {}
 
-  width: 200px
-  
-  &:empty
-    width: 0
-    visibility: hidden
+export const NavigationDrawerTopBar: FunctionalComponent<NavigationDrawerTopBarProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: {
+		'navigation-drawer-top-bar': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
+
+NavigationDrawerTopBar.displayName = 'NavigationDrawerTopBar'
+
+NavigationDrawerTopBar.props = []
+
+export default NavigationDrawerTopBar

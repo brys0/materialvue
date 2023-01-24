@@ -35,6 +35,18 @@ export {
 } from '@/lib/vue/navigation-drawer/NavigationDrawer'
 
 export {
+	NavigationDrawerTopBar,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerTopBar'
+
+export {
+	NavigationDrawerBody,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerBody'
+
+export {
+	NavigationDrawerBottomBar,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerBottomBar'
+
+export {
 	NavigationDrawerItem,
 	NavigationDrawerItemState,
 } from '@/lib/vue/navigation-drawer/NavigationDrawerItem'

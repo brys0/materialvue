@@ -39,9 +39,14 @@
 
 .navigation-drawer
   @extend %list
-  
-  overflow: hidden
 
+  display: grid
+  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] auto [row-2-end row-3-start] min-content [row-3-end]
+  grid-template-columns: [col-1-start] auto [col-1-end]
+  align-content: start
+  justify-content: stretch
+  overflow: scroll
+  
   @include theme.preferred
     background: theme.style(elevation-0), theme.style(surface)
     box-shadow: theme.style(shadow-0)
@@ -63,15 +68,27 @@
       background: theme.style(elevation-1), theme.style(surface)
       box-shadow: theme.style(shadow-1)
 
+  > .navigation-drawer-top-bar
+    grid-row: row-1-start / row-1-end
+    grid-column: col-1-start / col-1-end
+  
+  > .navigation-drawer-bodu
+    grid-row: row-2-start / row-2-end
+    grid-column: col-1-start / col-1-end
+  
+  > .navigation-drawer-bottom-bar
+    grid-row: row-3-start / row-3-end
+    grid-column: col-1-start / col-1-end
+
   > .typography
     &.headline
       @extend %typography-title-small
 
-      padding: 0 16px
+      padding: 0 28px 0 16px
 
       @include theme.preferred
         color: theme.style(on-surface-variant)
-   
+  
   > .navigation-drawer-item
     @extend %list-item
 

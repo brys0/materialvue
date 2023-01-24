@@ -30,13 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use './theme'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-.finder
-  @extend %is-not-selectable
+export type NavigationDrawerBodyProps = {}
 
-  width: 200px
-  
-  &:empty
-    width: 0
-    visibility: hidden
+export const NavigationDrawerBody: FunctionalComponent<NavigationDrawerBodyProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: {
+		'navigation-drawer-body': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
+
+NavigationDrawerBody.displayName = 'NavigationDrawerBody'
+
+NavigationDrawerBody.props = []
+
+export default NavigationDrawerBody
