@@ -30,30 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use './theme'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-.avatar
-  &.thumbnail
-    > img
-      width: 100%
-      height: 100%
-      object-fit: cover
-      
-    > .typography
-      @extend %is-not-selectable
-      
-      width: 40px
-      height: 40px
-      border-radius: 20px
-    
-      &.label
-        @extend %typography-title-medium
+export type NavigationDrawerItemTrailingProps = {}
 
-        display: flex
-        flex-flow: column
-        align-items: center
-        justify-content: center
+export const NavigationDrawerItemTrailing: FunctionalComponent<NavigationDrawerItemTrailingProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: {
+		'navigation-drawer-item-trailing': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
 
-        @include theme.preferred
-          background: theme.style(primary-container)
-          color: theme.style(on-primary-container)
+NavigationDrawerItemTrailing.displayName = 'NavigationDrawerItemTrailing'
+
+NavigationDrawerItemTrailing.props = []
+
+export default NavigationDrawerItemTrailing

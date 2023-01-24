@@ -8,10 +8,10 @@
  * modification, are permitted provided that the following conditions are met:
  *
  * 1. Redistributions of source code must retain the above copyright notice, this
- *    list of conditions and the following disclaimer.
+ *    navigation-drawer-list of conditions and the following disclaimer.
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice,
- *    this list of conditions and the following disclaimer in the documentation
+ *    this navigation-drawer-list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
  *
  * 3. Neither the name of the copyright holder nor the names of its
@@ -38,20 +38,16 @@
       width: 280px
 
 .navigation-drawer
-  @extend %is-not-selectable
-
-  display: flex
-  flex-flow: column
-  align-items: stretch
-  justify-content: flex-start
-  border-radius: 0 16px 16px 0
+  @extend %list
+  
   overflow: hidden
 
   @include theme.preferred
     background: theme.style(elevation-0), theme.style(surface)
     box-shadow: theme.style(shadow-0)
-
+    
   &,
+  &.is-closed,
   &:empty
     width: 0
     visibility: hidden
@@ -72,24 +68,67 @@
       @include theme.preferred
         color: theme.style(on-surface-variant)
 
-  > .list
-    > .list-item
-      border-radius: 28px
+   
+  > .navigation-drawer-item
+    @extend %list-item
 
-      > .list-item-leading
-        > .icon
-          font-size: 24px
+    border-radius: 28px
 
-      > .list-item-body
-        > .typography
-          &.label
-            @extend %typography-label-large
-          
-      > .list-item-trailing
-        > .typography
-          &.label
-            @extend %typography-label-large
+    @include theme.preferred
+      background: theme.style(surface)
+
+    > .divider
+      @extend %list-item-divider
+
+    > .navigation-drawer-item-leading
+      @extend %list-item-leading
+
+      > .icon
+        font-size: 24px
+
+        @include theme.preferred
+          color: theme.style(on-surface-variant)
+
+    > .navigation-drawer-item-body
+      @extend %list-item-body
+
+      > .typography
+        @extend %is-not-selectable
+
+        &.label
+          @extend %typography-label-large
+
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
         
+    > .navigation-drawer-item-trailing
+      @extend %list-item-trailing
+
+      > .typography
+        @extend %is-not-selectable
+
+        &.label
+          @extend %typography-label-large
+
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+      
+      > .icon
+        font-size: 24px
+
+    &.active
+      @include theme.preferred
+        background: theme.style(secondary-container)
+
+      > .navigation-drawer-item-leading
         > .icon
-          font-size: 24px
-          
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+
+      > .navigation-drawer-item-body
+        > .typography
+          &.label
+            @extend %typography-label-large
+
+            @include theme.preferred
+              color: theme.style(on-secondary-container)

@@ -48,6 +48,7 @@ export const NavigationDrawer: FunctionalComponent<NavigationDrawerProps> = ({
 	class: {
 		'navigation-drawer': true,
 		'is-opened': isOpened,
+		'is-closed': !isOpened,
 	},
 }, {
 	default: () => slots.default?.(),

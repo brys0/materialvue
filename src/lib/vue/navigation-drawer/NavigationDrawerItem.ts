@@ -30,30 +30,48 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use './theme'
+import {
+	h,
+	VNode,
+	PropType,
+	defineComponent,
+} from 'vue'
 
-.avatar
-  &.thumbnail
-    > img
-      width: 100%
-      height: 100%
-      object-fit: cover
-      
-    > .typography
-      @extend %is-not-selectable
-      
-      width: 40px
-      height: 40px
-      border-radius: 20px
-    
-      &.label
-        @extend %typography-title-medium
+export enum NavigationDrawerItemState {
+  active = 'active',
+	inactive = 'inactive',
+}
 
-        display: flex
-        flex-flow: column
-        align-items: center
-        justify-content: center
+export const NavigationDrawerItem = defineComponent({
+	props: {
+		state: {
+			type: String as PropType<NavigationDrawerItemState>,
+			default: NavigationDrawerItemState.inactive,
+		},
+	},
+	emits: [ 'click' ],
+	render(): VNode {
+		const {
+			state,
+		} = this.$props
 
-        @include theme.preferred
-          background: theme.style(primary-container)
-          color: theme.style(on-primary-container)
+		return h('li', {
+			tabindex: 0,
+			class: {
+				'navigation-drawer-item': true,
+				active: NavigationDrawerItemState.active === state,
+				inactive: NavigationDrawerItemState.inactive === state,
+			},
+			onClick: (event: PointerEvent) => {
+				if (NavigationDrawerItemState.inactive === this.$props.state) {
+					this.$el.blur()
+					this.$emit('click', event)
+				}
+			},
+		}, {
+			default: () => this.$slots.default?.(),
+		})
+	},
+})
+
+export default NavigationDrawerItem

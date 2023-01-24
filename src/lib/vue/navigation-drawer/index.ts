@@ -33,3 +33,20 @@
 export {
 	NavigationDrawer,
 } from '@/lib/vue/navigation-drawer/NavigationDrawer'
+
+export {
+	NavigationDrawerItem,
+	NavigationDrawerItemState,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerItem'
+
+export {
+	NavigationDrawerItemLeading,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerItemLeading'
+
+export {
+	NavigationDrawerItemBody,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerItemBody'
+
+export {
+	NavigationDrawerItemTrailing,
+} from '@/lib/vue/navigation-drawer/NavigationDrawerItemTrailing'

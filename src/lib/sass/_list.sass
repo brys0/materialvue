@@ -33,7 +33,7 @@
 @use './theme'
 @use './conversion'
 
-.list
+%list
   margin: 0
   padding: 0
   width: 100%
@@ -46,7 +46,65 @@
   &:last-of-type
     padding-bottom: 8px
 
-  &,
+%list-item
+  @extend %is-not-selectable
+
+  padding: 0 24px 0 16px
+  min-height: 56px
+  display: grid
+  grid-template-rows: [row-1-start] auto [row-1-end row-2-start] min-content [row-2-end]
+  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
+  list-style-type: none
+  border: none
+  outline: none
+  cursor: pointer
+
+%list-item-divider
+  grid-row: row-2-start / row-2-end
+  grid-column: col-1-start / col-3-end
+
+%list-item-trailing
+  padding-top: 8px
+  padding-bottom: 8px
+  grid-row: row-1-start / row-1-end
+  grid-column: col-3-start / col-3-end
+  display: flex
+  flex-flow: column
+  justify-content: center
+
+%list-item-body
+  padding-top: 8px
+  padding-bottom: 8px
+  grid-row: row-1-start / row-1-end
+  grid-column: col-2-start / col-2-end
+  display: flex
+  flex-flow: column
+  justify-content: center
+
+  + %list-item-trailing
+    padding-left: 16px
+
+%list-item-leading
+  padding-top: 8px
+  padding-bottom: 8px
+  grid-row: row-1-start / row-1-end
+  grid-column: col-1-start / col-1-end
+  display: flex
+  flex-flow: column
+  justify-content: center
+
+  + %list-item-body
+    padding-left: 16px
+
+.list
+  @extend %list
+
+  &:first-of-type
+    padding-top: 8px
+
+  &:last-of-type
+    padding-bottom: 8px
+
   &.lines-1
     > .list-item
       min-height: 56px
@@ -65,24 +123,14 @@
         justify-content: flex-start
       
   > .list-item
-    @extend %is-not-selectable
-
-    padding: 0 24px 0 16px
-    display: grid
-    grid-template-rows: [row-1-start] auto [row-1-end row-2-start] min-content [row-2-end]
-    grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
-    list-style-type: none
-    border: none
-    outline: none
-    cursor: pointer
+    @extend %list-item
 
     @include theme.preferred
       background: theme.style(surface)
       box-shadow: theme.style(shadow-0)
 
     > .divider
-      grid-row: row-2-start / row-2-end
-      grid-column: col-1-start / col-3-end
+      @extend %list-item-divider
 
       @include theme.preferred
         border-color: theme.style(surface-variant)
@@ -93,21 +141,8 @@
     &.has-leading-video
       padding-left: 0
         
-    > .list-item-leading,
-    > .list-item-body,
-    > .list-item-trailing
-      padding-top: 8px
-      padding-bottom: 8px
-      display: flex
-      flex-flow: column
-      justify-content: center
-
     > .list-item-leading
-      grid-row: row-1-start / row-1-end
-      grid-column: col-1-start / col-1-end
-
-      + .list-item-body
-        padding-left: 16px
+      @extend %list-item-leading
 
       > .icon
         font-size: 18px
@@ -127,12 +162,8 @@
           > img
             @include theme.preferred
               background: theme.style(background)
-              border-color: theme.style(surface-variant)
 
           > .typography
-            @include theme.preferred
-              border-color: theme.style(surface-variant)
-
             &.label
               @include theme.preferred
                 background: theme.style(primary-container)
@@ -145,14 +176,9 @@
 
           @include theme.preferred
             background: theme.style(background)
-            border-color: theme.style(outline-variant)
       
     > .list-item-body
-      grid-row: row-1-start / row-1-end
-      grid-column: col-2-start / col-2-end
-
-      + .list-item-trailing
-        padding-left: 16px
+      @extend %list-item-body
       
       > .typography
         @extend %is-not-selectable
@@ -170,8 +196,7 @@
             color: theme.style(on-surface-variant)
 
     > .list-item-trailing
-      grid-row: row-1-start / row-1-end
-      grid-column: col-3-start / col-3-end
+      @extend %list-item-trailing
 
       > .typography
         @extend %is-not-selectable
@@ -187,9 +212,9 @@
 
         @include theme.preferred
           color: theme.style(on-surface-variant)
-      
+
     &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
-    &.hovered
+    &.hovered:not(.focused):not(.pressed):not(.dragged):not(.disabled)
       cursor: pointer
 
       @include theme.preferred
@@ -206,7 +231,7 @@
             color: theme.style(on-surface-variant)
 
     &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
-    &.focused
+    &.focused:not(.hovered):not(.pressed):not(.dragged):not(.disabled)
       @include theme.preferred
         background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
             
@@ -221,7 +246,7 @@
             color: theme.style(on-surface-variant)
 
     &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
-    &.pressed
+    &.pressed:not(.hovered):not(.focused):not(.dragged):not(.disabled)
       @include theme.preferred
         background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
             

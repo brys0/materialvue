@@ -48,6 +48,11 @@ export {
 
 export {
 	NavigationDrawer,
+	NavigationDrawerItem,
+	NavigationDrawerItemState,
+	NavigationDrawerItemBody,
+	NavigationDrawerItemLeading,
+	NavigationDrawerItemTrailing,
 } from '@/lib/vue/navigation-drawer'
 
 export {
