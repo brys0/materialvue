@@ -125,7 +125,7 @@
       left: 0
       bottom: 0
       right: 0
-      display: none
+      display: block
       background: transparent
 
     > .divider
@@ -229,8 +229,6 @@
         cursor: pointer
 
         &::before
-          display: block
-
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
               
@@ -247,8 +245,6 @@
       &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.dragged):not(.disabled)
         &::before
-          display: block
-
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
               
@@ -265,8 +261,6 @@
       &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.dragged):not(.disabled)
         &::before
-          display: block
-
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
               
@@ -285,8 +279,6 @@
           box-shadow: theme.style(shadow-4)
 
         &::before
-          display: block
-
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
 
@@ -309,8 +301,6 @@
       opacity: 38%
 
       &::before
-        display: block
-        
         @include theme.preferred
           background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
             
