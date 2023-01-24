@@ -95,7 +95,19 @@
       > .navigation-drawer-list-item
         @extend %list-item
 
+        position: relative
         border-radius: 28px
+
+        &::before
+          content: ' '
+          position: absolute
+          top: 0
+          left: 0
+          bottom: 0
+          right: 0
+          display: block
+          background: transparent
+          border-radius: 28px
 
         > .divider
           @extend %list-item-divider
@@ -165,8 +177,9 @@
           &.hovered:not(.focused):not(.pressed)
             cursor: pointer
 
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+            &::before
+              @include theme.preferred
+                background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
                 
             > .navigation-drawer-list-item-leading
               > .icon
@@ -180,8 +193,9 @@
                     color: theme.style(on-surface)
               
             &.selected
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
+              &::before
+                @include theme.preferred
+                  background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
             
               > .navigation-drawer-list-item-leading
                 > .icon
@@ -196,32 +210,66 @@
 
           &:focus:not(.hovered):not(.pressed),
           &.focused:not(.hovered):not(.pressed)
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-                  
+            &::before
+              @include theme.preferred
+                background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+                
             > .navigation-drawer-list-item-leading
               > .icon
                 @include theme.preferred
-                  color: theme.style(on-surface-variant)
-              
-            > .navigation-drawer-list-item-trailing
+                  color: theme.style(on-surface)
+
+            > .navigation-drawer-list-item-body
               > .typography
                 &.label
                   @include theme.preferred
-                    color: theme.style(on-surface-variant)
+                    color: theme.style(on-surface)
+              
+            &.selected
+              &::before
+                @include theme.preferred
+                  background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+            
+              > .navigation-drawer-list-item-leading
+                > .icon
+                  @include theme.preferred
+                    color: theme.style(on-secondary-container)
+
+              > .navigation-drawer-list-item-body
+                > .typography
+                  &.label
+                    @include theme.preferred
+                      color: theme.style(on-secondary-container)
 
           &:active:not(.hovered):not(.focused),
           &.pressed:not(.hovered):not(.focused)
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-                  
+            &::before
+              @include theme.preferred
+                background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+                
             > .navigation-drawer-list-item-leading
               > .icon
                 @include theme.preferred
-                  color: theme.style(on-surface-variant)
-              
-            > .navigation-drawer-list-item-trailing
+                  color: theme.style(on-surface)
+
+            > .navigation-drawer-list-item-body
               > .typography
                 &.label
                   @include theme.preferred
-                    color: theme.style(on-surface-variant)
+                    color: theme.style(on-surface)
+              
+            &.selected
+              &::before
+                @include theme.preferred
+                  background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+            
+              > .navigation-drawer-list-item-leading
+                > .icon
+                  @include theme.preferred
+                    color: theme.style(on-secondary-container)
+
+              > .navigation-drawer-list-item-body
+                > .typography
+                  &.label
+                    @include theme.preferred
+                      color: theme.style(on-secondary-container)
