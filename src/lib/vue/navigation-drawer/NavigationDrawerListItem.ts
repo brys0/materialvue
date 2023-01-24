@@ -38,15 +38,18 @@ import {
 } from 'vue'
 
 export enum NavigationDrawerListItemState {
-  active = 'active',
-	inactive = 'inactive',
+  enabled = 'enabled',
+	hovered = 'hovered',
+	focused = 'focused',
+	pressed = 'pressed',
+	selected = 'selected',
 }
 
 export const NavigationDrawerListItem = defineComponent({
 	props: {
 		state: {
 			type: String as PropType<NavigationDrawerListItemState>,
-			default: NavigationDrawerListItemState.inactive,
+			default: NavigationDrawerListItemState.enabled,
 		},
 	},
 	emits: [ 'click' ],
@@ -56,14 +59,17 @@ export const NavigationDrawerListItem = defineComponent({
 		} = this.$props
 
 		return h('li', {
-			tabindex: 0,
+			tabindex: NavigationDrawerListItemState.selected === state ? undefined : 0,
 			class: {
 				'navigation-drawer-list-item': true,
-				active: NavigationDrawerListItemState.active === state,
-				inactive: NavigationDrawerListItemState.inactive === state,
+				enabled: NavigationDrawerListItemState.enabled === state,
+				hovered: NavigationDrawerListItemState.hovered === state,
+				focused: NavigationDrawerListItemState.focused === state,
+				pressed: NavigationDrawerListItemState.pressed === state,
+				selected: NavigationDrawerListItemState.selected === state,
 			},
 			onClick: (event: PointerEvent) => {
-				if (NavigationDrawerListItemState.inactive === this.$props.state) {
+				if (NavigationDrawerListItemState.selected !== this.$props.state) {
 					this.$el.blur()
 					this.$emit('click', event)
 				}

@@ -31,6 +31,7 @@
  */
 
 @use './theme'
+@use './conversion'
 
 .navigation-rail
   + .navigation-drawer
@@ -71,11 +72,16 @@
       &.headline
         @extend %typography-title-small
 
-        padding: 0 28px 0 16px
+        padding: 0 24px 0 16px
 
         @include theme.preferred
           color: theme.style(on-surface-variant)
   
+  > .navigation-drawer-trailing
+    padding: 0 12px
+    grid-row: row-3-start / row-3-end
+    grid-column: col-1-start / col-1-end
+
   > .navigation-drawer-body
     padding: 0 12px
     grid-row: row-2-start / row-2-end
@@ -91,9 +97,6 @@
 
         border-radius: 28px
 
-        @include theme.preferred
-          background: theme.style(surface)
-
         > .divider
           @extend %list-item-divider
 
@@ -103,9 +106,6 @@
           > .icon
             font-size: 24px
 
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
-
         > .navigation-drawer-list-item-body
           @extend %list-item-body
 
@@ -114,9 +114,6 @@
 
             &.label
               @extend %typography-label-large
-
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
             
         > .navigation-drawer-list-item-trailing
           @extend %list-item-trailing
@@ -127,29 +124,104 @@
             &.label
               @extend %typography-label-large
 
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
-
-        &.active
+        &,
+        &.enabled
           @include theme.preferred
-            background: theme.style(secondary-container)
-
+            background: theme.style(surface)
+          
           > .navigation-drawer-list-item-leading
             > .icon
               @include theme.preferred
-                color: theme.style(on-secondary-container)
-
+                color: theme.style(on-surface-variant)
+          
           > .navigation-drawer-list-item-body
             > .typography
               &.label
-                @extend %typography-label-large
+                @include theme.preferred
+                  color: theme.style(on-surface-variant)
 
+          > .navigation-drawer-list-item-trailing
+            > .typography
+              &.label
+                @include theme.preferred
+                  color: theme.style(on-surface-variant)
+
+          &.selected
+            @include theme.preferred
+              background: theme.style(secondary-container)
+            
+            > .navigation-drawer-list-item-leading
+              > .icon
                 @include theme.preferred
                   color: theme.style(on-secondary-container)
-  
-  > .navigation-drawer-trailing
-    padding: 0 12px
-    grid-row: row-3-start / row-3-end
-    grid-column: col-1-start / col-1-end
 
-  
+            > .navigation-drawer-list-item-body
+              > .typography
+                &.label
+                  @include theme.preferred
+                    color: theme.style(on-secondary-container)
+            
+          &:hover:not(.focused):not(.pressed),
+          &.hovered:not(.focused):not(.pressed)
+            cursor: pointer
+
+            @include theme.preferred
+              background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+                
+            > .navigation-drawer-list-item-leading
+              > .icon
+                @include theme.preferred
+                  color: theme.style(on-surface)
+
+            > .navigation-drawer-list-item-body
+              > .typography
+                &.label
+                  @include theme.preferred
+                    color: theme.style(on-surface)
+              
+            &.selected
+              @include theme.preferred
+                background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
+            
+              > .navigation-drawer-list-item-leading
+                > .icon
+                  @include theme.preferred
+                    color: theme.style(on-secondary-container)
+
+              > .navigation-drawer-list-item-body
+                > .typography
+                  &.label
+                    @include theme.preferred
+                      color: theme.style(on-secondary-container)
+
+          &:focus:not(.hovered):not(.pressed),
+          &.focused:not(.hovered):not(.pressed)
+            @include theme.preferred
+              background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+                  
+            > .navigation-drawer-list-item-leading
+              > .icon
+                @include theme.preferred
+                  color: theme.style(on-surface-variant)
+              
+            > .navigation-drawer-list-item-trailing
+              > .typography
+                &.label
+                  @include theme.preferred
+                    color: theme.style(on-surface-variant)
+
+          &:active:not(.hovered):not(.focused),
+          &.pressed:not(.hovered):not(.focused)
+            @include theme.preferred
+              background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+                  
+            > .navigation-drawer-list-item-leading
+              > .icon
+                @include theme.preferred
+                  color: theme.style(on-surface-variant)
+              
+            > .navigation-drawer-list-item-trailing
+              > .typography
+                &.label
+                  @include theme.preferred
+                    color: theme.style(on-surface-variant)

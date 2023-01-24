@@ -123,15 +123,8 @@
   > .list-item
     @extend %list-item
 
-    @include theme.preferred
-      background: theme.style(surface)
-      box-shadow: theme.style(shadow-0)
-
     > .divider
       @extend %list-item-divider
-
-      @include theme.preferred
-        border-color: theme.style(surface-variant)
 
     &:has(.video.thumbnail)
       padding-left: 0
@@ -145,9 +138,6 @@
       > .icon
         font-size: 18px
 
-        @include theme.preferred
-          color: theme.style(on-surface-variant)
-
       > img
         width: 56px
         height: 56px
@@ -157,23 +147,10 @@
           width: 40px
           height: 40px
 
-          > img
-            @include theme.preferred
-              background: theme.style(background)
-
-          > .typography
-            &.label
-              @include theme.preferred
-                background: theme.style(primary-container)
-                color: theme.style(on-primary-container)
-
       > .video
         &.thumbnail
           width: 114px
           height: 64px
-
-          @include theme.preferred
-            background: theme.style(background)
       
     > .list-item-body
       @extend %list-item-body
@@ -183,15 +160,9 @@
 
         &.headline
           @extend %typography-body-large
-
-          @include theme.preferred
-            color: theme.style(on-surface)
         
         &.body
           @extend %typography-body-medium
-          
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
 
     > .list-item-trailing
       @extend %list-item-trailing
@@ -201,78 +172,124 @@
 
         &.label
           @extend %typography-label-small
-
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
       
       > .icon
         font-size: 24px
+    
+    &,
+    &.enabled
+      @include theme.preferred
+        background: theme.style(surface)
+        box-shadow: theme.style(shadow-0)
+
+      > .divider
+        @include theme.preferred
+          border-color: theme.style(surface-variant)
+
+      > .list-item-leading
+        > .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+
+        > .avatar
+          &.thumbnail
+            > img
+              @include theme.preferred
+                background: theme.style(background)
+
+            > .typography
+              &.label
+                @include theme.preferred
+                  background: theme.style(primary-container)
+                  color: theme.style(on-primary-container)
+
+        > .video
+          &.thumbnail
+            @include theme.preferred
+              background: theme.style(background)
+        
+      > .list-item-body
+        > .typography
+          &.headline
+            @include theme.preferred
+              color: theme.style(on-surface)
+          
+          &.body
+            @include theme.preferred
+              color: theme.style(on-surface-variant)
+
+      > .list-item-trailing
+        > .typography
+          &.label
+            @include theme.preferred
+              color: theme.style(on-surface-variant)
+        
+        > .icon
+          @include theme.preferred
+            color: theme.style(on-surface-variant)
+
+      &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
+      &.hovered:not(.focused):not(.pressed):not(.dragged):not(.disabled)
+        cursor: pointer
 
         @include theme.preferred
-          color: theme.style(on-surface-variant)
+          background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+              
+        > .list-item-leading
+          > .icon
+            @include theme.preferred
+              color: theme.style(on-surface-variant)
+          
+        > .list-item-trailing
+          > .icon
+            @include theme.preferred
+              color: theme.style(on-surface-variant)
 
-    &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
-    &.hovered:not(.focused):not(.pressed):not(.dragged):not(.disabled)
-      cursor: pointer
+      &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
+      &.focused:not(.hovered):not(.pressed):not(.dragged):not(.disabled)
+        @include theme.preferred
+          background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+              
+        > .list-item-leading
+          > .icon
+            @include theme.preferred
+              color: theme.style(on-surface-variant)
+          
+        > .list-item-trailing
+          > .icon
+            @include theme.preferred
+              color: theme.style(on-surface-variant)
 
-      @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
-            
-      > .list-item-leading
-        > .icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-        
-      > .list-item-trailing
-        > .icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-
-    &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
-    &.focused:not(.hovered):not(.pressed):not(.dragged):not(.disabled)
-      @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-            
-      > .list-item-leading
-        > .icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-        
-      > .list-item-trailing
-        > .icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-
-    &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
-    &.pressed:not(.hovered):not(.focused):not(.dragged):not(.disabled)
-      @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-            
-      > .list-item-leading
-        > .icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-        
-      > .list-item-trailing
-        > .icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-    
-    &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
-      @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
-        box-shadow: theme.style(shadow-4)
-            
-      > .list-item-leading
-        > .icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-        
-      > .list-item-trailing
-        > .icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-            
+      &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
+      &.pressed:not(.hovered):not(.focused):not(.dragged):not(.disabled)
+        @include theme.preferred
+          background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+              
+        > .list-item-leading
+          > .icon
+            @include theme.preferred
+              color: theme.style(on-surface-variant)
+          
+        > .list-item-trailing
+          > .icon
+            @include theme.preferred
+              color: theme.style(on-surface-variant)
+      
+      &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
+        @include theme.preferred
+          background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
+          box-shadow: theme.style(shadow-4)
+              
+        > .list-item-leading
+          > .icon
+            @include theme.preferred
+              color: theme.style(on-surface-variant)
+          
+        > .list-item-trailing
+          > .icon
+            @include theme.preferred
+              color: theme.style(on-surface-variant)
+              
     &:disabled:not(.hovered):not(.focused):not(.pressed):not(.dragged),
     &[disabled]:not(.hovered):not(.focused):not(.pressed):not(.dragged),
     &.disabled:not(.hovered):not(.focused):not(.pressed:not(.dragged))
