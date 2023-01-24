@@ -39,15 +39,15 @@ import {
 
 import {
 	NavigationDrawer,
-	NavigationDrawerTopBar,
+	NavigationDrawerLeading,
 	NavigationDrawerBody,
-	NavigationDrawerBottomBar,
+	NavigationDrawerTrailing,
 	NavigationDrawerList,
-	NavigationDrawerItem,
-	NavigationDrawerItemState,
-	NavigationDrawerItemLeading,
-	NavigationDrawerItemBody,
-	NavigationDrawerItemTrailing,
+	NavigationDrawerListItem,
+	NavigationDrawerListItemState,
+	NavigationDrawerListItemLeading,
+	NavigationDrawerListItemBody,
+	NavigationDrawerListItemTrailing,
 	TypographyHeadline,
 	TypographyLabel,
 	RoundedIcon,
@@ -66,140 +66,140 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
 
 <template>
   <NavigationDrawer :is-opened="isOpened">
-    <NavigationDrawerTopBar>
+    <NavigationDrawerLeading>
       <TypographyHeadline>
         Headline
       </TypographyHeadline>
-    </NavigationDrawerTopBar>
+    </NavigationDrawerLeading>
     <NavigationDrawerBody>
       <NavigationDrawerList>
-        <NavigationDrawerItem>
-          <NavigationDrawerItemLeading>
+        <NavigationDrawerListItem>
+          <NavigationDrawerListItemLeading>
             <RoundedIcon>
               mail
             </RoundedIcon>
-          </NavigationDrawerItemLeading>
-          <NavigationDrawerItemBody>
+          </NavigationDrawerListItemLeading>
+          <NavigationDrawerListItemBody>
             <TypographyLabel>
               Mail
             </TypographyLabel>
-          </NavigationDrawerItemBody>
-          <NavigationDrawerItemTrailing>
+          </NavigationDrawerListItemBody>
+          <NavigationDrawerListItemTrailing>
             <TypographyLabel>
               100+
             </TypographyLabel>
-          </NavigationDrawerItemTrailing>
-        </NavigationDrawerItem>
-        <NavigationDrawerItem :state="NavigationDrawerItemState.active">
-          <NavigationDrawerItemLeading>
+          </NavigationDrawerListItemTrailing>
+        </NavigationDrawerListItem>
+        <NavigationDrawerListItem :state="NavigationDrawerListItemState.active">
+          <NavigationDrawerListItemLeading>
             <RoundedIcon>
               movie
             </RoundedIcon>
-          </NavigationDrawerItemLeading>
-          <NavigationDrawerItemBody>
+          </NavigationDrawerListItemLeading>
+          <NavigationDrawerListItemBody>
             <TypographyLabel>
               Videos
             </TypographyLabel>
-          </NavigationDrawerItemBody>
-          <NavigationDrawerItemTrailing>
+          </NavigationDrawerListItemBody>
+          <NavigationDrawerListItemTrailing>
             <TypographyLabel>
               100+
             </TypographyLabel>
-          </NavigationDrawerItemTrailing>
+          </NavigationDrawerListItemTrailing>
           <Divider />
-        </NavigationDrawerItem>
-        <NavigationDrawerItem>
-          <NavigationDrawerItemLeading>
+        </NavigationDrawerListItem>
+        <NavigationDrawerListItem>
+          <NavigationDrawerListItemLeading>
             <RoundedIcon>
               mail
             </RoundedIcon>
-          </NavigationDrawerItemLeading>
-          <NavigationDrawerItemBody>
+          </NavigationDrawerListItemLeading>
+          <NavigationDrawerListItemBody>
             <TypographyLabel>
               Mail
             </TypographyLabel>
-          </NavigationDrawerItemBody>
-          <NavigationDrawerItemTrailing>
+          </NavigationDrawerListItemBody>
+          <NavigationDrawerListItemTrailing>
             <TypographyLabel>
               100+
             </TypographyLabel>
-          </NavigationDrawerItemTrailing>
-        </NavigationDrawerItem>
-        <NavigationDrawerItem>
-          <NavigationDrawerItemLeading>
+          </NavigationDrawerListItemTrailing>
+        </NavigationDrawerListItem>
+        <NavigationDrawerListItem>
+          <NavigationDrawerListItemLeading>
             <RoundedIcon>
               movie
             </RoundedIcon>
-          </NavigationDrawerItemLeading>
-          <NavigationDrawerItemBody>
+          </NavigationDrawerListItemLeading>
+          <NavigationDrawerListItemBody>
             <TypographyLabel>
               Videos
             </TypographyLabel>
-          </NavigationDrawerItemBody>
-          <NavigationDrawerItemTrailing>
+          </NavigationDrawerListItemBody>
+          <NavigationDrawerListItemTrailing>
             <TypographyLabel>
               100+
             </TypographyLabel>
-          </NavigationDrawerItemTrailing>
+          </NavigationDrawerListItemTrailing>
           <Divider />
-        </NavigationDrawerItem>
-        <NavigationDrawerItem>
-          <NavigationDrawerItemLeading>
+        </NavigationDrawerListItem>
+        <NavigationDrawerListItem>
+          <NavigationDrawerListItemLeading>
             <RoundedIcon>
               movie
             </RoundedIcon>
-          </NavigationDrawerItemLeading>
-          <NavigationDrawerItemBody>
+          </NavigationDrawerListItemLeading>
+          <NavigationDrawerListItemBody>
             <TypographyLabel>
               Videos
             </TypographyLabel>
-          </NavigationDrawerItemBody>
-          <NavigationDrawerItemTrailing>
+          </NavigationDrawerListItemBody>
+          <NavigationDrawerListItemTrailing>
             <TypographyLabel>
               100+
             </TypographyLabel>
-          </NavigationDrawerItemTrailing>
-        </NavigationDrawerItem>
-        <NavigationDrawerItem>
-          <NavigationDrawerItemLeading>
+          </NavigationDrawerListItemTrailing>
+        </NavigationDrawerListItem>
+        <NavigationDrawerListItem>
+          <NavigationDrawerListItemLeading>
             <RoundedIcon>
               mail
             </RoundedIcon>
-          </NavigationDrawerItemLeading>
-          <NavigationDrawerItemBody>
+          </NavigationDrawerListItemLeading>
+          <NavigationDrawerListItemBody>
             <TypographyLabel>
               Mail
             </TypographyLabel>
-          </NavigationDrawerItemBody>
-          <NavigationDrawerItemTrailing>
+          </NavigationDrawerListItemBody>
+          <NavigationDrawerListItemTrailing>
             <TypographyLabel>
               100+
             </TypographyLabel>
-          </NavigationDrawerItemTrailing>
-        </NavigationDrawerItem>
-        <NavigationDrawerItem>
-          <NavigationDrawerItemLeading>
+          </NavigationDrawerListItemTrailing>
+        </NavigationDrawerListItem>
+        <NavigationDrawerListItem>
+          <NavigationDrawerListItemLeading>
             <RoundedIcon>
               movie
             </RoundedIcon>
-          </NavigationDrawerItemLeading>
-          <NavigationDrawerItemBody>
+          </NavigationDrawerListItemLeading>
+          <NavigationDrawerListItemBody>
             <TypographyLabel>
               Videos
             </TypographyLabel>
-          </NavigationDrawerItemBody>
-          <NavigationDrawerItemTrailing>
+          </NavigationDrawerListItemBody>
+          <NavigationDrawerListItemTrailing>
             <TypographyLabel>
               100+
             </TypographyLabel>
-          </NavigationDrawerItemTrailing>
-        </NavigationDrawerItem>
+          </NavigationDrawerListItemTrailing>
+        </NavigationDrawerListItem>
       </NavigationDrawerList>
     </NavigationDrawerBody>
-    <NavigationDrawerBottomBar>
+    <NavigationDrawerTrailing>
       <TypographyHeadline>
         Bottom
       </TypographyHeadline>
-    </NavigationDrawerBottomBar>
+    </NavigationDrawerTrailing>
   </NavigationDrawer>
 </template>

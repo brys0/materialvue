@@ -35,13 +35,13 @@ export {
 } from '@/lib/vue/bars/Bar'
 
 export {
-	BarStart,
-} from '@/lib/vue/bars/BarStart'
+	BarLeading,
+} from '@/lib/vue/bars/BarLeading'
 
 export {
-	BarCenter,
-} from '@/lib/vue/bars/BarCenter'
+	BarBody,
+} from '@/lib/vue/bars/BarBody'
 
 export {
-	BarEnd,
-} from '@/lib/vue/bars/BarEnd'
+	BarTrailing,
+} from '@/lib/vue/bars/BarTrailing'

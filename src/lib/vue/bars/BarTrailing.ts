@@ -33,45 +33,23 @@
 import {
 	h,
 	VNode,
-	PropType,
-	defineComponent,
+	FunctionalComponent,
 } from 'vue'
 
-export enum NavigationDrawerItemState {
-  active = 'active',
-	inactive = 'inactive',
-}
+export type BarTrailingProps = {}
 
-export const NavigationDrawerItem = defineComponent({
-	props: {
-		state: {
-			type: String as PropType<NavigationDrawerItemState>,
-			default: NavigationDrawerItemState.inactive,
-		},
+export const BarTrailing: FunctionalComponent<BarTrailingProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: {
+		'bar-trailing': true,
 	},
-	emits: [ 'click' ],
-	render(): VNode {
-		const {
-			state,
-		} = this.$props
-
-		return h('li', {
-			tabindex: 0,
-			class: {
-				'navigation-drawer-item': true,
-				active: NavigationDrawerItemState.active === state,
-				inactive: NavigationDrawerItemState.inactive === state,
-			},
-			onClick: (event: PointerEvent) => {
-				if (NavigationDrawerItemState.inactive === this.$props.state) {
-					this.$el.blur()
-					this.$emit('click', event)
-				}
-			},
-		}, {
-			default: () => this.$slots.default?.(),
-		})
-	},
+}, {
+	default: () => slots.default?.(),
 })
 
-export default NavigationDrawerItem
+BarTrailing.displayName = 'BarTrailing'
+
+BarTrailing.props = []
+
+export default BarTrailing

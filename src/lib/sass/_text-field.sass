@@ -38,7 +38,7 @@
   grid-template-rows: [row-1-start] 56px [row-1-end row-2-start] min-content [row-2-end]  
   grid-template-columns: [col-1-start] auto [col-1-end]
   
-  > .field-body
+  > .field-control
     display: grid
     grid-row: row-1-start / row-1-end
     grid-column: col-1-start / col-1-end
@@ -46,7 +46,7 @@
     grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
     
     > .field-leading,
-    > .field-control,
+    > .field-body,
     > .field-trailing
       padding-top: 8px
       padding-bottom: 8px
@@ -65,7 +65,7 @@
       grid-row: row-1-start / row-1-end
       grid-column: col-3-start / col-3-end
       
-    > .field-control
+    > .field-body
       padding-left: 16px
       padding-right: 16px
       display: grid
@@ -150,8 +150,8 @@
         grid-column: col-2-start / col-2-end
 
   &.is-empty:not(.focused)
-    > .field-body
-      > .field-control
+    > .field-control
+      > .field-body
         > .typography
           &.label
             @extend %typography-body-large
@@ -165,15 +165,15 @@
   &.without-label-text
     &.focused,
     &:not(.is-empty)
-      > .field-body
-        > .field-control
+      > .field-control
+        > .field-body
           > .typography
             &.label
               height: 0
               appearance: none
 
   &.filled
-    > .field-body
+    > .field-control
       border-bottom-style: solid
       border-bottom-width: 1px
       border-top-left-radius: 5px
@@ -191,7 +191,7 @@
           @include theme.preferred
             color: theme.style(on-surface-variant)
 
-      > .field-control
+      > .field-body
         > .typography
           &.label
             @extend %typography-body-small
@@ -226,7 +226,7 @@
             color: theme.style(on-surface-variant)
 
     &.has-error
-      > .field-body
+      > .field-control
         border-bottom-width: 2px
         
         @include theme.preferred
@@ -237,7 +237,7 @@
             @include theme.preferred
               color: theme.style(error)
 
-        > .field-control        
+        > .field-body        
           > .typography
             &.label
               @include theme.preferred
@@ -254,14 +254,14 @@
     &.hovered
       cursor: pointer
 
-      > .field-body
+      > .field-control
         border-bottom-width: 1px
 
         @include theme.preferred
           border-bottom-color: theme.style(on-surface)
           background: theme.tint(theme.style(on-surface), theme.style(surface-variant), 8%)
 
-        > .field-control
+        > .field-body
           > .typography
             &.label
               @include theme.preferred
@@ -283,7 +283,7 @@
               color: theme.style(on-surface-variant)
       
       &.has-error
-        > .field-body
+        > .field-control
           @include theme.preferred
             border-bottom-color: theme.style(on-error-container)
 
@@ -297,7 +297,7 @@
               @include theme.preferred
                 color: theme.style(on-error-container)
 
-          > .field-control  
+          > .field-body  
             > .typography
               &.label
                 @include theme.preferred
@@ -312,13 +312,13 @@
     
     &:focus:not(.hovered):not(.disabled),
     &.focused
-      > .field-body
+      > .field-control
         border-bottom-width: 2px
         
         @include theme.preferred
           border-bottom-color: theme.style(primary)
 
-        > .field-control
+        > .field-body
           > .typography
             &.label
               @extend %typography-body-small
@@ -335,7 +335,7 @@
               color: theme.style(on-surface-variant)
 
       &.has-error
-        > .field-body
+        > .field-control
           @include theme.preferred
             border-bottom-color: theme.style(error)
             
@@ -349,7 +349,7 @@
               @include theme.preferred
                 color: theme.style(error)
           
-          > .field-control
+          > .field-body
             > .typography
               &.label
                 @include theme.preferred
@@ -374,7 +374,7 @@
       cursor: not-allowed
       pointer-events: all !important
         
-      > .field-body
+      > .field-control
         @include theme.preferred
           border-bottom-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           background: conversion.hex-to-rgba(theme.style(on-surface), 4%)
@@ -385,7 +385,7 @@
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           
-        > .field-control
+        > .field-body
           > .typography
             &.label
               @include theme.preferred

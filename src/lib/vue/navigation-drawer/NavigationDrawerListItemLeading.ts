@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type BarEndProps = {}
+export type NavigationDrawerListItemLeadingProps = {}
 
-export const BarEnd: FunctionalComponent<BarEndProps> = (_, {
+export const NavigationDrawerListItemLeading: FunctionalComponent<NavigationDrawerListItemLeadingProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'bar-end': true,
+		'navigation-drawer-list-item-leading': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-BarEnd.displayName = 'BarEnd'
+NavigationDrawerListItemLeading.displayName = 'NavigationDrawerListItemLeading'
 
-BarEnd.props = []
+NavigationDrawerListItemLeading.props = []
 
-export default BarEnd
+export default NavigationDrawerListItemLeading

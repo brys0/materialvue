@@ -70,8 +70,8 @@ import {
 	Row,
 	Column,
 	FormFieldset,
-	FieldBody,
 	FieldControl,
+	FieldBody,
 	FieldLeading,
 	FieldTrailing,
 	FieldInput,
@@ -84,7 +84,7 @@ import {
 	CardState,
 	ElevatedCard,
 	Bar,
-	BarEnd,
+	BarTrailing,
 	FABButton,
 	FABButtonVariant,
 	Divider,
@@ -800,24 +800,24 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 ref="emailRef"
                 :has-error="'undefined' !== typeof errors.email"
               >
-                <FieldBody>
+                <FieldControl>
                   <FieldLeading>
                     <RoundedIcon>
                       mail
                     </RoundedIcon>
                   </FieldLeading>
-                  <FieldControl>
+                  <FieldBody>
                     <TypographyLabel>
                       Email
                     </TypographyLabel>
                     <FieldInput :name="'email'" />
-                  </FieldControl>
+                  </FieldBody>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
                       error
                     </RoundedIcon>
                   </FieldTrailing>
-                </FieldBody>
+                </FieldControl>
                 <FieldSupport v-if="errors.email">
                   <TypographyBody>
                     {{ errors.email }}
@@ -831,19 +831,19 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField>
-                <FieldBody>
+                <FieldControl>
                   <FieldLeading>
                     <RoundedIcon>
                       mail
                     </RoundedIcon>
                   </FieldLeading>
-                  <FieldControl>
+                  <FieldBody>
                     <TypographyLabel>
                       Label
                     </TypographyLabel>
                     <FieldInput :name="'name'" />
-                  </FieldControl>
-                </FieldBody>
+                  </FieldBody>
+                </FieldControl>
                 <FieldSupport>
                   <TypographyBody>
                     Support text.
@@ -860,8 +860,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField :without-label-text="true">
-                <FieldBody>
-                  <FieldControl>
+                <FieldControl>
+                  <FieldBody>
                     <TypographyLabel>
                       Label
                     </TypographyLabel>
@@ -871,13 +871,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       </TypographyLabel>
                     </FieldInputPrefix>
                     <FieldInput :name="'name'" />
-                  </FieldControl>
+                  </FieldBody>
                   <FieldTrailing>
                     <RoundedIcon>
                       clear
                     </RoundedIcon>
                   </FieldTrailing>
-                </FieldBody>
+                </FieldControl>
                 <FieldSupport>
                   <TypographyLabel>
                     5/20
@@ -891,8 +891,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField>
-                <FieldBody>
-                  <FieldControl>
+                <FieldControl>
+                  <FieldBody>
                     <TypographyLabel>
                       Label
                     </TypographyLabel>
@@ -902,8 +902,8 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                         lbs
                       </TypographyLabel>
                     </FieldInputSuffix>
-                  </FieldControl>
-                </FieldBody>
+                  </FieldBody>
+                </FieldControl>
                 <FieldSupport>
                   <TypographyLabel>
                     5/20
@@ -917,14 +917,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField>
-                <FieldBody>
-                  <FieldControl>
+                <FieldControl>
+                  <FieldBody>
                     <TypographyLabel>
                       Label
                     </TypographyLabel>
                     <FieldInput :name="'name'" />
-                  </FieldControl>
-                </FieldBody>
+                  </FieldBody>
+                </FieldControl>
                 <FieldSupport>
                   <TypographyBody>
                     Support text that is much longer than you think.
@@ -944,13 +944,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField :state="TextFieldState.disabled">
-                <FieldBody>
+                <FieldControl>
                   <FieldLeading>
                     <RoundedIcon>
                       mail
                     </RoundedIcon>
                   </FieldLeading>
-                  <FieldControl>
+                  <FieldBody>
                     <TypographyLabel>
                       Label
                     </TypographyLabel>
@@ -958,13 +958,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       :name="'name'"
                       :disabled="true"
                     />
-                  </FieldControl>
+                  </FieldBody>
                   <FieldTrailing>
                     <RoundedIcon>
                       error
                     </RoundedIcon>
                   </FieldTrailing>
-                </FieldBody>
+                </FieldControl>
                 <FieldSupport>
                   <TypographyBody>
                     Support text.
@@ -983,24 +983,24 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField :has-error="true">
-                <FieldBody>
+                <FieldControl>
                   <FieldLeading>
                     <RoundedIcon>
                       mail
                     </RoundedIcon>
                   </FieldLeading>
-                  <FieldControl>
+                  <FieldBody>
                     <TypographyLabel>
                       Email
                     </TypographyLabel>
                     <FieldInput :name="'name'" />
-                  </FieldControl>
+                  </FieldBody>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
                       error
                     </RoundedIcon>
                   </FieldTrailing>
-                </FieldBody>
+                </FieldControl>
                 <FieldSupport v-if="errors.email">
                   <TypographyBody>
                     {{ errors.email }}
@@ -1017,24 +1017,24 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 :state="TextFieldState.hovered"
                 :has-error="true"
               >
-                <FieldBody>
+                <FieldControl>
                   <FieldLeading>
                     <RoundedIcon>
                       mail
                     </RoundedIcon>
                   </FieldLeading>
-                  <FieldControl>
+                  <FieldBody>
                     <TypographyLabel>
                       Email
                     </TypographyLabel>
                     <FieldInput :name="'name'" />
-                  </FieldControl>
+                  </FieldBody>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
                       error
                     </RoundedIcon>
                   </FieldTrailing>
-                </FieldBody>
+                </FieldControl>
                 <FieldSupport v-if="errors.email">
                   <TypographyBody>
                     {{ errors.email }}
@@ -1051,24 +1051,24 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 :state="TextFieldState.focused"
                 :has-error="true"
               >
-                <FieldBody>
+                <FieldControl>
                   <FieldLeading>
                     <RoundedIcon>
                       mail
                     </RoundedIcon>
                   </FieldLeading>
-                  <FieldControl>
+                  <FieldBody>
                     <TypographyLabel>
                       Email
                     </TypographyLabel>
                     <FieldInput :name="'name'" />
-                  </FieldControl>
+                  </FieldBody>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
                       error
                     </RoundedIcon>
                   </FieldTrailing>
-                </FieldBody>
+                </FieldControl>
                 <FieldSupport v-if="errors.email">
                   <TypographyBody>
                     {{ errors.email }}
@@ -1082,13 +1082,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <form @submit="onSubmit">
             <FormFieldset>
               <FilledTextField :state="TextFieldState.disabled">
-                <FieldBody>
+                <FieldControl>
                   <FieldLeading>
                     <RoundedIcon>
                       mail
                     </RoundedIcon>
                   </FieldLeading>
-                  <FieldControl>
+                  <FieldBody>
                     <TypographyLabel>
                       Email
                     </TypographyLabel>
@@ -1096,13 +1096,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                       :name="'name'"
                       :disabled="true"
                     />
-                  </FieldControl>
+                  </FieldBody>
                   <FieldTrailing v-if="errors.email">
                     <RoundedIcon>
                       error
                     </RoundedIcon>
                   </FieldTrailing>
-                </FieldBody>
+                </FieldControl>
                 <FieldSupport v-if="errors.email">
                   <TypographyBody>
                     {{ errors.email }}
@@ -1146,11 +1146,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </TypographyBody>
             <Bar>
-              <BarEnd>
+              <BarTrailing>
                 <TonalButton>
                   Get Started
                 </TonalButton>
-              </BarEnd>
+              </BarTrailing>
             </Bar>
           </ElevatedCard>
         </Column>
@@ -1169,11 +1169,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </TypographyBody>
             <Bar>
-              <BarEnd>
+              <BarTrailing>
                 <TonalButton>
                   Get Started
                 </TonalButton>
-              </BarEnd>
+              </BarTrailing>
             </Bar>
           </ElevatedCard>
         </Column>
@@ -1192,11 +1192,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </TypographyBody>
             <Bar>
-              <BarEnd>
+              <BarTrailing>
                 <TonalButton>
                   Get Started
                 </TonalButton>
-              </BarEnd>
+              </BarTrailing>
             </Bar>
           </ElevatedCard>
         </Column>
@@ -1215,11 +1215,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </TypographyBody>
             <Bar>
-              <BarEnd>
+              <BarTrailing>
                 <TonalButton>
                   Get Started
                 </TonalButton>
-              </BarEnd>
+              </BarTrailing>
             </Bar>
           </ElevatedCard>
         </Column>
@@ -1238,11 +1238,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </TypographyBody>
             <Bar>
-              <BarEnd>
+              <BarTrailing>
                 <TonalButton>
                   Get Started
                 </TonalButton>
-              </BarEnd>
+              </BarTrailing>
             </Bar>
           </ElevatedCard>
         </Column>
@@ -1261,11 +1261,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </TypographyBody>
             <Bar>
-              <BarEnd>
+              <BarTrailing>
                 <TonalButton :state="CardState.disabled">
                   Get Started
                 </TonalButton>
-              </BarEnd>
+              </BarTrailing>
             </Bar>
           </ElevatedCard>
         </Column>

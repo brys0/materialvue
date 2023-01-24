@@ -39,12 +39,12 @@ export {
 } from '@/lib/vue/forms/FormField'
 
 export {
-	FieldBody,
-} from '@/lib/vue/forms/FieldBody'
-
-export {
 	FieldControl,
 } from '@/lib/vue/forms/FieldControl'
+
+export {
+	FieldBody,
+} from '@/lib/vue/forms/FieldBody'
 
 export {
 	FieldLeading,

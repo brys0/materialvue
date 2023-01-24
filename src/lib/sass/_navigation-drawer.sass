@@ -62,7 +62,7 @@
       background: theme.style(elevation-1), theme.style(surface)
       box-shadow: theme.style(shadow-1)
 
-  > .navigation-drawer-top-bar
+  > .navigation-drawer-leading
     padding: 0 12px
     grid-row: row-1-start / row-1-end
     grid-column: col-1-start / col-1-end
@@ -86,7 +86,7 @@
     > .navigation-drawer-list
       @extend %list
 
-      > .navigation-drawer-item
+      > .navigation-drawer-list-item
         @extend %list-item
 
         border-radius: 28px
@@ -97,7 +97,7 @@
         > .divider
           @extend %list-item-divider
 
-        > .navigation-drawer-item-leading
+        > .navigation-drawer-list-item-leading
           @extend %list-item-leading
 
           > .icon
@@ -106,7 +106,7 @@
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
-        > .navigation-drawer-item-body
+        > .navigation-drawer-list-item-body
           @extend %list-item-body
 
           > .typography
@@ -118,7 +118,7 @@
               @include theme.preferred
                 color: theme.style(on-surface-variant)
             
-        > .navigation-drawer-item-trailing
+        > .navigation-drawer-list-item-trailing
           @extend %list-item-trailing
 
           > .typography
@@ -134,12 +134,12 @@
           @include theme.preferred
             background: theme.style(secondary-container)
 
-          > .navigation-drawer-item-leading
+          > .navigation-drawer-list-item-leading
             > .icon
               @include theme.preferred
                 color: theme.style(on-secondary-container)
 
-          > .navigation-drawer-item-body
+          > .navigation-drawer-list-item-body
             > .typography
               &.label
                 @extend %typography-label-large
@@ -147,7 +147,7 @@
                 @include theme.preferred
                   color: theme.style(on-secondary-container)
   
-  > .navigation-drawer-bottom-bar
+  > .navigation-drawer-trailing
     padding: 0 12px
     grid-row: row-3-start / row-3-end
     grid-column: col-1-start / col-1-end

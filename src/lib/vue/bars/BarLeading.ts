@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type NavigationDrawerTopBarProps = {}
+export type BarLeadingProps = {}
 
-export const NavigationDrawerTopBar: FunctionalComponent<NavigationDrawerTopBarProps> = (_, {
+export const BarLeading: FunctionalComponent<BarLeadingProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'navigation-drawer-top-bar': true,
+		'bar-leading': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-NavigationDrawerTopBar.displayName = 'NavigationDrawerTopBar'
+BarLeading.displayName = 'BarLeading'
 
-NavigationDrawerTopBar.props = []
+BarLeading.props = []
 
-export default NavigationDrawerTopBar
+export default BarLeading

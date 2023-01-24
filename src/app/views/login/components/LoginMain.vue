@@ -60,8 +60,8 @@ import {
 	FilledButton,
 	RoundedIcon,
 	FormFieldset,
-	FieldBody,
 	FieldControl,
+	FieldBody,
 	FieldLeading,
 	FieldTrailing,
 	FieldInput,
@@ -111,20 +111,20 @@ onBeforeUnmount(() => {
               ref="emailRef"
               :has-error="'undefined' !== typeof errors.email"
             >
-              <FieldBody>
+              <FieldControl>
                 <FieldLeading>
                   <RoundedIcon>
                     mail
                   </RoundedIcon>
                 </FieldLeading>
-                <FieldControl>
+                <FieldBody>
                   <TypographyLabel
                     name="email"
                   >
                     Email
                   </TypographyLabel>
                   <FieldInput name="email" />
-                </FieldControl>
+                </FieldBody>
                 <FieldTrailing
                   v-if="errors.email"
                   class="trailing"
@@ -133,7 +133,7 @@ onBeforeUnmount(() => {
                     error
                   </RoundedIcon>
                 </FieldTrailing>
-              </FieldBody>
+              </FieldControl>
               <FieldSupport v-if="errors.email">
                 <TypographyBody>
                   {{ errors.email }}
@@ -146,13 +146,13 @@ onBeforeUnmount(() => {
               ref="passwordRef"
               :has-error="'undefined' !== typeof errors.password"
             >
-              <FieldBody>
+              <FieldControl>
                 <FieldLeading>
                   <RoundedIcon>
                     lock
                   </RoundedIcon>
                 </FieldLeading>
-                <FieldControl>
+                <FieldBody>
                   <TypographyLabel
                     name="password"
                   >
@@ -162,7 +162,7 @@ onBeforeUnmount(() => {
                     type="password"
                     name="password"
                   />
-                </FieldControl>
+                </FieldBody>
                 <FieldTrailing
                   v-if="errors.password"
                   class="trailing"
@@ -171,7 +171,7 @@ onBeforeUnmount(() => {
                     error
                   </RoundedIcon>
                 </FieldTrailing>
-              </FieldBody>
+              </FieldControl>
               <FieldSupport v-if="errors.password">
                 <TypographyBody>
                   {{ errors.password }}

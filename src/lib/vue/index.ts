@@ -48,15 +48,15 @@ export {
 
 export {
 	NavigationDrawer,
-	NavigationDrawerTopBar,
+	NavigationDrawerLeading,
 	NavigationDrawerBody,
-	NavigationDrawerBottomBar,
+	NavigationDrawerTrailing,
 	NavigationDrawerList,
-	NavigationDrawerItem,
-	NavigationDrawerItemState,
-	NavigationDrawerItemBody,
-	NavigationDrawerItemLeading,
-	NavigationDrawerItemTrailing,
+	NavigationDrawerListItem,
+	NavigationDrawerListItemState,
+	NavigationDrawerListItemBody,
+	NavigationDrawerListItemLeading,
+	NavigationDrawerListItemTrailing,
 } from '@/lib/vue/navigation-drawer'
 
 export {
@@ -101,8 +101,8 @@ export {
 export {
 	FormField,
 	FormFieldset,
-	FieldBody,
 	FieldControl,
+	FieldBody,
 	FieldLeading,
 	FieldTrailing,
 	FieldInput,
@@ -127,9 +127,9 @@ export {
 
 export {
 	Bar,
-	BarStart,
-	BarCenter,
-	BarEnd,
+	BarLeading,
+	BarBody,
+	BarTrailing,
 } from '@/lib/vue/bars'
 
 export {

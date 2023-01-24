@@ -37,25 +37,25 @@
   grid-template-rows: [row-1-start] auto [row-1-end]  
   grid-template-columns: [col-1-start] minmax(min-content, 1fr) [col-1-end col-2-start] auto [col-2-end col-3-start] minmax(min-content, 1fr) [col-3-end] 
 
-%bar-start,
-%bar-center,
-%bar-end
+%bar-leading,
+%bar-body,
+%bar-trailing
   display: flex
   align-items: center
   gap: 24px
   
-%bar-start
+%bar-leading
   grid-row: row-1-start / row-1-end
   grid-column: col-1-start / col-1-end
   justify-content: start
 
-%bar-center
+%bar-body
   padding: 0 24px
   grid-row: row-1-start / row-1-end
   grid-column: col-2-start / col-2-end
   justify-content: center
 
-%bar-end
+%bar-trailing
   grid-row: row-1-start / row-1-end
   grid-column: col-3-start / col-3-end
   justify-content: end
@@ -63,11 +63,11 @@
 .bar
   @extend %bar
 
-  > .bar-start
-    @extend %bar-start
+  > .bar-leading
+    @extend %bar-leading
 
-  > .bar-center
-    @extend %bar-center
+  > .bar-body
+    @extend %bar-body
 
-  > .bar-end
-    @extend %bar-end
+  > .bar-trailing
+    @extend %bar-trailing

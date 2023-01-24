@@ -33,23 +33,45 @@
 import {
 	h,
 	VNode,
-	FunctionalComponent,
+	PropType,
+	defineComponent,
 } from 'vue'
 
-export type BarStartProps = {}
+export enum NavigationDrawerListItemState {
+  active = 'active',
+	inactive = 'inactive',
+}
 
-export const BarStart: FunctionalComponent<BarStartProps> = (_, {
-	slots,
-}): VNode => h('div', {
-	class: {
-		'bar-start': true,
+export const NavigationDrawerListItem = defineComponent({
+	props: {
+		state: {
+			type: String as PropType<NavigationDrawerListItemState>,
+			default: NavigationDrawerListItemState.inactive,
+		},
 	},
-}, {
-	default: () => slots.default?.(),
+	emits: [ 'click' ],
+	render(): VNode {
+		const {
+			state,
+		} = this.$props
+
+		return h('li', {
+			tabindex: 0,
+			class: {
+				'navigation-drawer-list-item': true,
+				active: NavigationDrawerListItemState.active === state,
+				inactive: NavigationDrawerListItemState.inactive === state,
+			},
+			onClick: (event: PointerEvent) => {
+				if (NavigationDrawerListItemState.inactive === this.$props.state) {
+					this.$el.blur()
+					this.$emit('click', event)
+				}
+			},
+		}, {
+			default: () => this.$slots.default?.(),
+		})
+	},
 })
 
-BarStart.displayName = 'BarStart'
-
-BarStart.props = []
-
-export default BarStart
+export default NavigationDrawerListItem

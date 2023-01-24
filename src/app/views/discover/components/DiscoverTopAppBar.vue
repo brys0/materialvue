@@ -39,9 +39,9 @@ import {
 
 import {
 	TopAppBar,
-	BarStart,
-	BarCenter,
-	BarEnd,
+	BarLeading,
+	BarBody,
+	BarTrailing,
 	IconButton,
 	RoundedIcon,
 	TypographyHeadline,
@@ -63,7 +63,7 @@ const isThemeLight = computed(() => appStore.isThemeLight)
 
 <template>
   <TopAppBar>
-    <BarStart>
+    <BarLeading>
       <IconButton @click="toggleNavigationDrawer">
         <RoundedIcon>
           menu
@@ -72,13 +72,13 @@ const isThemeLight = computed(() => appStore.isThemeLight)
       <TypographyHeadline>
         Material
       </TypographyHeadline>
-    </BarStart>
-    <BarCenter>
+    </BarLeading>
+    <BarBody>
       <TypographyHeadline>
         Search Bar
       </TypographyHeadline>
-    </BarCenter>
-    <BarEnd>
+    </BarBody>
+    <BarTrailing>
       <IconButton @click="toggleTheme">
         <RoundedIcon v-if="isThemeLight">
           dark_mode
@@ -97,6 +97,6 @@ const isThemeLight = computed(() => appStore.isThemeLight)
           account_circle
         </RoundedIcon>
       </IconButton>
-    </BarEnd>
+    </BarTrailing>
   </TopAppBar>
 </template>

@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type NavigationDrawerItemLeadingProps = {}
+export type NavigationDrawerLeadingProps = {}
 
-export const NavigationDrawerItemLeading: FunctionalComponent<NavigationDrawerItemLeadingProps> = (_, {
+export const NavigationDrawerLeading: FunctionalComponent<NavigationDrawerLeadingProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'navigation-drawer-item-leading': true,
+		'navigation-drawer-leading': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-NavigationDrawerItemLeading.displayName = 'NavigationDrawerItemLeading'
+NavigationDrawerLeading.displayName = 'NavigationDrawerLeading'
 
-NavigationDrawerItemLeading.props = []
+NavigationDrawerLeading.props = []
 
-export default NavigationDrawerItemLeading
+export default NavigationDrawerLeading

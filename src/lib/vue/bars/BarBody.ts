@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type BarCenterProps = {}
+export type BarBodyProps = {}
 
-export const BarCenter: FunctionalComponent<BarCenterProps> = (_, {
+export const BarBody: FunctionalComponent<BarBodyProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'bar-center': true,
+		'bar-body': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-BarCenter.displayName = 'BarCenter'
+BarBody.displayName = 'BarBody'
 
-BarCenter.props = []
+BarBody.props = []
 
-export default BarCenter
+export default BarBody
