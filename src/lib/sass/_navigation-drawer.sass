@@ -49,10 +49,12 @@
   &,
   &.is-closed,
   &:empty
+    padding: 0
     width: 0
     visibility: hidden
   
   &.is-opened
+    padding: 0 12px
     width: 360px
     visibility: visible
 
@@ -65,9 +67,10 @@
     &.headline
       @extend %typography-title-small
 
+      padding: 0 16px
+
       @include theme.preferred
         color: theme.style(on-surface-variant)
-
    
   > .navigation-drawer-item
     @extend %list-item
@@ -112,9 +115,6 @@
 
           @include theme.preferred
             color: theme.style(on-surface-variant)
-      
-      > .icon
-        font-size: 24px
 
     &.active
       @include theme.preferred
@@ -123,7 +123,7 @@
       > .navigation-drawer-item-leading
         > .icon
           @include theme.preferred
-            color: theme.style(on-surface-variant)
+            color: theme.style(on-secondary-container)
 
       > .navigation-drawer-item-body
         > .typography
