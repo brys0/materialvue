@@ -33,48 +33,81 @@
 @use './theme'
 @use './conversion'
 
-.text-field
+%text-field
   display: grid
   grid-template-rows: [row-1-start] 56px [row-1-end row-2-start] min-content [row-2-end]  
   grid-template-columns: [col-1-start] auto [col-1-end]
+
+%text-field-control
+  position: relative
+  display: grid
+  grid-row: row-1-start / row-1-end
+  grid-column: col-1-start / col-1-end
+  grid-template-rows: [row-1-start] auto [row-1-end]  
+  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
+  
+%text-field-leading,
+%text-field-trailing
+  padding-top: 8px
+  padding-bottom: 8px
+  height: 54px
+  display: flex
+  flex-flow: column
+  justify-content: center
+
+%text-field-leading
+  padding-left: 12px
+  grid-row: row-1-start / row-1-end
+  grid-column: col-1-start / col-1-end
+
+%text-field-trailing
+  padding-right: 12px
+  grid-row: row-1-start / row-1-end
+  grid-column: col-3-start / col-3-end
+
+%text-field-body
+  padding: 8px 16px
+  height: 54px
+  display: grid
+  grid-row: row-1-start / row-1-end
+  grid-column: col-2-start / col-2-end
+  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] min-content [row-2-end]  
+  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
+  align-content: center
+  justify-content: stretch
+
+%text-field-support
+  padding: 4px 16px 0
+  display: grid
+  grid-row: row-2-start / row-2-end
+  grid-column: col-1-start / col-1-end
+  grid-template-rows: [row-1-start] auto [row-1-end]  
+  grid-template-columns: [col-1-start] auto [col-1-end col-2-start] min-content [col-2-end]
+
+.text-field
+  @extend %text-field
   
   > .field-control
-    display: grid
-    grid-row: row-1-start / row-1-end
-    grid-column: col-1-start / col-1-end
-    grid-template-rows: [row-1-start] auto [row-1-end]  
-    grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
+    @extend %text-field-control
+
+    &::before
+      content: ' '
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      display: none
+      background: transparent
     
-    > .field-leading,
-    > .field-body,
-    > .field-trailing
-      padding-top: 8px
-      padding-bottom: 8px
-      height: 54px
-      display: flex
-      flex-flow: column
-      justify-content: center
-      
     > .field-leading
-      padding-left: 12px
-      grid-row: row-1-start / row-1-end
-      grid-column: col-1-start / col-1-end
+      @extend %text-field-leading
       
     > .field-trailing
-      padding-right: 12px
-      grid-row: row-1-start / row-1-end
-      grid-column: col-3-start / col-3-end
+      @extend %text-field-trailing
       
     > .field-body
-      padding-left: 16px
-      padding-right: 16px
-      display: grid
-      grid-row: row-1-start / row-1-end
-      grid-column: col-2-start / col-2-end
-      grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] min-content [row-2-end]  
-      grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
-      align-content: center
-      justify-content: stretch
+      @extend %text-field-body
 
       > .typography
         &.label
@@ -130,12 +163,7 @@
             /** */
         
   > .field-support
-    padding: 4px 16px 0
-    display: grid
-    grid-row: row-2-start / row-2-end
-    grid-column: col-1-start / col-1-end
-    grid-template-rows: [row-1-start] auto [row-1-end]  
-    grid-template-columns: [col-1-start] auto [col-1-end col-2-start] min-content [col-2-end]
+    @extend %text-field-support
     
     > .typography
       grid-row: row-1-start / row-1-end
@@ -176,45 +204,29 @@
     > .field-control
       border-bottom-style: solid
       border-bottom-width: 1px
-      border-top-left-radius: 5px
-      border-top-right-radius: 5px
+      border-top-left-radius: 4px
+      border-top-right-radius: 4px
 
-      @include theme.preferred
-        border-bottom-color: theme.style(on-surface-variant)
-        background: theme.style(surface-variant)
+      &::before
+        border-bottom-style: solid
+        border-bottom-width: 1px
+        border-top-left-radius: 4px
+        border-top-right-radius: 4px
 
       > .field-leading,
       > .field-trailing
         .icon
           font-size: 24px
 
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-
       > .field-body
         > .typography
           &.label
             @extend %typography-body-small
 
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-
         > .field-input
           border: none
           outline: none
           background: transparent
-
-          @include theme.preferred
-            color: theme.style(on-surface)
-            caret-color: theme.style(primary)
-
-          &:-webkit-autofill,
-          &:-webkit-autofill:hover, 
-          &:-webkit-autofill:focus, 
-          &:-webkit-autofill:active
-            @include theme.preferred
-              -webkit-text-fill-color: theme.style(on-surface) !important
-              -webkit-box-shadow: 0 0 0 30px theme.style(surface-variant) inset !important
             
     > .field-support
       > .typography
@@ -222,110 +234,53 @@
         &.label
           @extend %typography-body-small
 
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-
     &.has-error
       > .field-control
         border-bottom-width: 2px
-        
+    
+    &,
+    &.enabled
+      > .field-control
         @include theme.preferred
-          border-bottom-color: theme.style(error)
+          border-color: theme.style(on-surface-variant)
+          background: theme.style(surface-variant)
 
+        &::before
+          border-color: transparent
+
+        > .field-leading,
         > .field-trailing
           .icon
             @include theme.preferred
-              color: theme.style(error)
-
-        > .field-body        
-          > .typography
-            &.label
-              @include theme.preferred
-                color: theme.style(error)
-          
-      > .field-support
-        > .typography
-          &.body,
-          &.label
-            @include theme.preferred
-              color: theme.style(error)
-      
-    &:hover:not(.focused):not(.disabled),
-    &.hovered
-      cursor: pointer
-
-      > .field-control
-        border-bottom-width: 1px
-
-        @include theme.preferred
-          border-bottom-color: theme.style(on-surface)
-          background: theme.tint(theme.style(on-surface), theme.style(surface-variant), 8%)
+              color: theme.style(on-surface-variant)
 
         > .field-body
           > .typography
             &.label
               @include theme.preferred
                 color: theme.style(on-surface-variant)
+          
+          > .field-input-prefix,
+          > .field-input-suffix
+            > .typography
+              &.label
+                @include theme.preferred
+                  color: theme.style(on-surface-variant)
 
           > .field-input
+            background: transparent
+
+            @include theme.preferred
+              color: theme.style(on-surface)
+              caret-color: theme.style(primary)
+
             &:-webkit-autofill,
             &:-webkit-autofill:hover, 
             &:-webkit-autofill:focus, 
             &:-webkit-autofill:active
               @include theme.preferred
-                -webkit-box-shadow: 0 0 0 30px theme.tint(theme.style(on-surface), theme.style(surface-variant), 8%) inset !important
-
-      > .field-support
-        > .typography
-          &.body,
-          &.label
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
-      
-      &.has-error
-        > .field-control
-          @include theme.preferred
-            border-bottom-color: theme.style(on-error-container)
-
-          > .field-leading
-            .icon
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
-
-          > .field-trailing
-            .icon
-              @include theme.preferred
-                color: theme.style(on-error-container)
-
-          > .field-body  
-            > .typography
-              &.label
-                @include theme.preferred
-                  color: theme.style(on-error-container)
-            
-        > .field-support
-          > .typography
-            &.body,
-            &.label
-              @include theme.preferred
-                color: theme.style(error)
-    
-    &:focus:not(.hovered):not(.disabled),
-    &.focused
-      > .field-control
-        border-bottom-width: 2px
-        
-        @include theme.preferred
-          border-bottom-color: theme.style(primary)
-
-        > .field-body
-          > .typography
-            &.label
-              @extend %typography-body-small
-
-              @include theme.preferred
-                color: theme.style(primary)
-              
+                -webkit-text-fill-color: theme.style(on-surface) !important
+                -webkit-box-shadow: 0 0 0 30px theme.style(surface-variant) inset !important
               
       > .field-support
         > .typography
@@ -338,33 +293,145 @@
         > .field-control
           @include theme.preferred
             border-bottom-color: theme.style(error)
-            
-          > .field-leading
-            .icon
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
 
           > .field-trailing
             .icon
               @include theme.preferred
                 color: theme.style(error)
-          
-          > .field-body
+
+          > .field-body        
             > .typography
               &.label
                 @include theme.preferred
                   color: theme.style(error)
             
-            > .field-input
-              @include theme.preferred
-                caret-color: theme.style(error)
-              
         > .field-support
           > .typography
             &.body,
             &.label
               @include theme.preferred
                 color: theme.style(error)
+      
+      &:hover:not(.focused):not(.disabled),
+      &.hovered:not(.focused):not(.disabled)
+        cursor: pointer
+
+        > .field-control
+          border-bottom-width: 1px
+
+          @include theme.preferred
+            border-bottom-color: theme.style(on-surface)
+
+          &::before
+            display: block
+
+            @include theme.preferred  
+              background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+
+          > .field-body
+            > .typography
+              &.label
+                @include theme.preferred
+                  color: theme.style(on-surface-variant)
+
+            > .field-input
+              &:-webkit-autofill,
+              &:-webkit-autofill:hover, 
+              &:-webkit-autofill:focus, 
+              &:-webkit-autofill:active
+                @include theme.preferred
+                  -webkit-box-shadow: 0 0 0 30px theme.tint(theme.style(on-surface), theme.style(surface-variant), 8%) inset !important
+
+        > .field-support
+          > .typography
+            &.body,
+            &.label
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
+        
+        &.has-error
+          > .field-control
+            @include theme.preferred
+              border-bottom-color: theme.style(on-error-container)
+
+            > .field-leading
+              .icon
+                @include theme.preferred
+                  color: theme.style(on-surface-variant)
+
+            > .field-trailing
+              .icon
+                @include theme.preferred
+                  color: theme.style(on-error-container)
+
+            > .field-body  
+              > .typography
+                &.label
+                  @include theme.preferred
+                    color: theme.style(on-error-container)
+              
+          > .field-support
+            > .typography
+              &.body,
+              &.label
+                @include theme.preferred
+                  color: theme.style(error)
+      
+      &:focus:not(.hovered):not(.disabled),
+      &.focused:not(.hovered):not(.disabled)
+        > .field-control
+          border-bottom-width: 2px
+          
+          @include theme.preferred
+            border-bottom-color: theme.style(primary)
+
+          > .field-body
+            > .typography
+              &.label
+                @extend %typography-body-small
+
+                @include theme.preferred
+                  color: theme.style(primary)
+                
+                
+        > .field-support
+          > .typography
+            &.body,
+            &.label
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
+
+        &.has-error
+          > .field-control
+            @include theme.preferred
+              border-bottom-color: theme.style(error)
+              
+            > .field-leading
+              .icon
+                @include theme.preferred
+                  color: theme.style(on-surface-variant)
+
+            > .field-trailing
+              .icon
+                @include theme.preferred
+                  color: theme.style(error)
+            
+            > .field-body
+              > .typography
+                &.label
+                  @include theme.preferred
+                    color: theme.style(error)
+              
+              > .field-input
+                @include theme.preferred
+                  caret-color: theme.style(error)
+                
+          > .field-support
+            > .typography
+              &.body,
+              &.label
+                @include theme.preferred
+                  color: theme.style(error)
 
     &:disabled:not(.hovered):not(.focused),
     &[disabled="true"]:not(.hovered):not(.focused),

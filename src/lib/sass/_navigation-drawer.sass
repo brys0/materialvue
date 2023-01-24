@@ -95,7 +95,6 @@
       > .navigation-drawer-list-item
         @extend %list-item
 
-        position: relative
         border-radius: 28px
 
         &::before
@@ -105,7 +104,7 @@
           left: 0
           bottom: 0
           right: 0
-          display: block
+          display: none
           background: transparent
           border-radius: 28px
 
@@ -178,6 +177,8 @@
             cursor: pointer
 
             &::before
+              display: block
+
               @include theme.preferred
                 background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
                 
@@ -194,6 +195,8 @@
               
             &.selected
               &::before
+                display: block
+
                 @include theme.preferred
                   background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
             
@@ -211,6 +214,8 @@
           &:focus:not(.hovered):not(.pressed),
           &.focused:not(.hovered):not(.pressed)
             &::before
+              display: block
+
               @include theme.preferred
                 background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
                 
@@ -227,6 +232,8 @@
               
             &.selected
               &::before
+                display: block
+
                 @include theme.preferred
                   background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
             
@@ -244,6 +251,8 @@
           &:active:not(.hovered):not(.focused),
           &.pressed:not(.hovered):not(.focused)
             &::before
+              display: block
+
               @include theme.preferred
                 background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
                 
@@ -260,6 +269,8 @@
               
             &.selected
               &::before
+                display: block
+                
                 @include theme.preferred
                   background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
             

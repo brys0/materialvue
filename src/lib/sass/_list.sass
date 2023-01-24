@@ -48,6 +48,7 @@
   @extend %is-not-selectable
 
   padding: 0 24px 0 16px
+  position: relative
   min-height: 56px
   display: grid
   grid-template-rows: [row-1-start] auto [row-1-end row-2-start] min-content [row-2-end]
@@ -61,35 +62,29 @@
   grid-row: row-2-start / row-2-end
   grid-column: col-1-start / col-3-end
 
+%list-item-leading,
+%list-item-body,
 %list-item-trailing
   padding-top: 8px
   padding-bottom: 8px
-  grid-row: row-1-start / row-1-end
-  grid-column: col-3-start / col-3-end
   display: flex
   flex-flow: column
   justify-content: center
 
+%list-item-trailing
+  grid-row: row-1-start / row-1-end
+  grid-column: col-3-start / col-3-end
+  
 %list-item-body
-  padding-top: 8px
-  padding-bottom: 8px
   grid-row: row-1-start / row-1-end
   grid-column: col-2-start / col-2-end
-  display: flex
-  flex-flow: column
-  justify-content: center
 
   + %list-item-trailing
     padding-left: 16px
 
 %list-item-leading
-  padding-top: 8px
-  padding-bottom: 8px
   grid-row: row-1-start / row-1-end
   grid-column: col-1-start / col-1-end
-  display: flex
-  flex-flow: column
-  justify-content: center
 
   + %list-item-body
     padding-left: 16px
@@ -123,8 +118,6 @@
   > .list-item
     @extend %list-item
 
-    position: relative
-
     &::before
       content: ' '
       position: absolute
@@ -132,7 +125,7 @@
       left: 0
       bottom: 0
       right: 0
-      display: block
+      display: none
       background: transparent
 
     > .divider
@@ -236,6 +229,8 @@
         cursor: pointer
 
         &::before
+          display: block
+
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
               
@@ -252,6 +247,8 @@
       &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.dragged):not(.disabled)
         &::before
+          display: block
+
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
               
@@ -268,6 +265,8 @@
       &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.dragged):not(.disabled)
         &::before
+          display: block
+
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
               
@@ -286,6 +285,8 @@
           box-shadow: theme.style(shadow-4)
 
         &::before
+          display: block
+
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
 
@@ -308,6 +309,8 @@
       opacity: 38%
 
       &::before
+        display: block
+        
         @include theme.preferred
           background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
             
