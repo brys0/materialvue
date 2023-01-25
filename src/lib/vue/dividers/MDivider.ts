@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type DividerProps = {}
+export type MDividerProps = {}
 
-export const Divider: FunctionalComponent<DividerProps> = (_: DividerProps, {
+export const MDivider: FunctionalComponent<MDividerProps> = (_: MDividerProps, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		divider: true,
+		'm-divider': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-Divider.displayName = 'Divider'
+MDivider.displayName = 'MDivider'
 
-Divider.props = []
+MDivider.props = []
 
-export default Divider
+export default MDivider

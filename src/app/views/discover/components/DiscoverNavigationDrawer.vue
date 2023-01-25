@@ -51,7 +51,7 @@ import {
 	MHeadline,
 	MLabel,
 	MRoundedIcon,
-	Divider,
+	MDivider,
 } from '@/lib/vue'
 
 import {
@@ -106,7 +106,7 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
               100+
             </m-label>
           </NavigationDrawerListItemTrailing>
-          <Divider />
+          <m-divider />
         </NavigationDrawerListItem>
         <NavigationDrawerListItem :state="NavigationDrawerListItemState.hovered">
           <NavigationDrawerListItemLeading>
@@ -141,7 +141,7 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
               100+
             </m-label>
           </NavigationDrawerListItemTrailing>
-          <Divider />
+          <m-divider />
         </NavigationDrawerListItem>
         <NavigationDrawerListItem :state="NavigationDrawerListItemState.pressed">
           <NavigationDrawerListItemLeading>

@@ -90,7 +90,7 @@ import {
 	ElevatedCard,
 	MBar,
 	MBarTrailing,
-	Divider,
+	MDivider,
 	List,
 	ListLines,
 	ListItem,
@@ -2022,7 +2022,7 @@ onBeforeUnmount(() => {
                   Headline
                 </m-headline>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List>
@@ -2061,7 +2061,7 @@ onBeforeUnmount(() => {
                   100+
                 </m-label>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.two">
@@ -2094,7 +2094,7 @@ onBeforeUnmount(() => {
                   Supporting text.
                 </m-body>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.two">
@@ -2142,7 +2142,7 @@ onBeforeUnmount(() => {
                   100+
                 </m-label>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.three">
@@ -2176,7 +2176,7 @@ onBeforeUnmount(() => {
                   Supporting text that is long enough to fill multiple lines.
                 </m-body>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.three">
@@ -2224,7 +2224,7 @@ onBeforeUnmount(() => {
                   100+
                 </m-label>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
         </m-column>
@@ -2265,7 +2265,7 @@ onBeforeUnmount(() => {
                   Headline
                 </m-headline>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List>
@@ -2319,7 +2319,7 @@ onBeforeUnmount(() => {
                   arrow_drop_down
                 </m-rounded-icon>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List
@@ -2369,7 +2369,7 @@ onBeforeUnmount(() => {
                   Supporting text.
                 </m-body>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.two">
@@ -2432,7 +2432,7 @@ onBeforeUnmount(() => {
                   arrow_drop_down
                 </m-rounded-icon>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List
@@ -2483,7 +2483,7 @@ onBeforeUnmount(() => {
                   Supporting text that is long enough to fill multiple lines.
                 </m-body>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.three">
@@ -2546,7 +2546,7 @@ onBeforeUnmount(() => {
                   arrow_drop_down
                 </m-rounded-icon>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
         </m-column>
@@ -2593,7 +2593,7 @@ onBeforeUnmount(() => {
                   Headline
                 </m-headline>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List>
@@ -2653,7 +2653,7 @@ onBeforeUnmount(() => {
                   arrow_drop_down
                 </m-rounded-icon>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.two">
@@ -2707,7 +2707,7 @@ onBeforeUnmount(() => {
                   Supporting text.
                 </m-body>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.two">
@@ -2776,7 +2776,7 @@ onBeforeUnmount(() => {
                   arrow_drop_down
                 </m-rounded-icon>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.three">
@@ -2831,7 +2831,7 @@ onBeforeUnmount(() => {
                   Supporting text that is long enough to fill multiple lines.
                 </m-body>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.three">
@@ -2900,7 +2900,7 @@ onBeforeUnmount(() => {
                   arrow_drop_down
                 </m-rounded-icon>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
         </m-column>
@@ -2962,7 +2962,7 @@ onBeforeUnmount(() => {
                   Headline
                 </m-headline>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List>
@@ -3037,7 +3037,7 @@ onBeforeUnmount(() => {
                   arrow_drop_down
                 </m-rounded-icon>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.two">
@@ -3106,7 +3106,7 @@ onBeforeUnmount(() => {
                   Supporting text.
                 </m-body>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.two">
@@ -3190,7 +3190,7 @@ onBeforeUnmount(() => {
                   arrow_drop_down
                 </m-rounded-icon>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.three">
@@ -3260,7 +3260,7 @@ onBeforeUnmount(() => {
                   Supporting text that is long enough to fill multiple lines.
                 </m-body>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.three">
@@ -3344,7 +3344,7 @@ onBeforeUnmount(() => {
                   arrow_drop_down
                 </m-rounded-icon>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
         </m-column>
@@ -3412,7 +3412,7 @@ onBeforeUnmount(() => {
                   Headline
                 </m-headline>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List>
@@ -3493,7 +3493,7 @@ onBeforeUnmount(() => {
                   arrow_drop_down
                 </m-rounded-icon>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List>
@@ -3568,7 +3568,7 @@ onBeforeUnmount(() => {
                   Supporting text.
                 </m-body>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List>
@@ -3658,7 +3658,7 @@ onBeforeUnmount(() => {
                   arrow_drop_down
                 </m-rounded-icon>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.three">
@@ -3734,7 +3734,7 @@ onBeforeUnmount(() => {
                   Supporting text that is long enough to fill multiple lines.
                 </m-body>
               </ListItemBody>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
           <List :lines="ListLines.three">
@@ -3827,7 +3827,7 @@ onBeforeUnmount(() => {
                   arrow_drop_down
                 </m-rounded-icon>
               </ListItemTrailing>
-              <Divider />
+              <m-divider />
             </ListItem>
           </List>
         </m-column>

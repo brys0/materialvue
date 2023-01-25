@@ -136,7 +136,7 @@ export {
 } from '@/lib/vue/bars'
 
 export {
-	Divider,
+	MDivider,
 } from '@/lib/vue/dividers'
 
 export {

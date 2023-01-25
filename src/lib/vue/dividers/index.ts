@@ -31,5 +31,5 @@
  */
 
 export {
-	Divider,
-} from '@/lib/vue/dividers/Divider'
+	MDivider,
+} from '@/lib/vue/dividers/MDivider'
