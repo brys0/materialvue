@@ -147,10 +147,9 @@
         width: 56px
         height: 56px
 
-      > .avatar
-        &.thumbnail
-          width: 40px
-          height: 40px
+      > .m-avatar
+        width: 40px
+        height: 40px
 
       > .video
         &.thumbnail
@@ -166,7 +165,7 @@
         &.headline
           @extend %typography-body-large
         
-        &.body
+        &.m-body
           @extend %typography-body-medium
 
     > .list-item-trailing
@@ -175,7 +174,7 @@
       > .typography
         @extend %is-not-selectable
 
-        &.label
+        &.m-label
           @extend %typography-label-small
       
       > .icon
@@ -196,27 +195,26 @@
           @include theme.preferred
             color: theme.style(on-surface-variant)
 
-        > .avatar
-          &.thumbnail
-            > .typography
-              &.label
-                @include theme.preferred
-                  background: theme.style(primary-container)
-                  color: theme.style(on-primary-container)
-        
+        > .m-avatar
+          > .typography
+            &.m-label
+              @include theme.preferred
+                background: theme.style(primary-container)
+                color: theme.style(on-primary-container)
+      
       > .list-item-body
         > .typography
           &.headline
             @include theme.preferred
               color: theme.style(on-surface)
           
-          &.body
+          &.m-body
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
       > .list-item-trailing
         > .typography
-          &.label
+          &.m-label
             @include theme.preferred
               color: theme.style(on-surface-variant)
         
@@ -315,13 +313,13 @@
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           
-          &.body
+          &.m-body
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
       > .list-item-trailing
         > .typography
-          &.label
+          &.m-label
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
         

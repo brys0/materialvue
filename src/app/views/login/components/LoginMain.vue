@@ -55,8 +55,8 @@ import {
 	Main,
 	Layout,
 	Tile,
-	TypographyBody,
-	TypographyLabel,
+	MBody,
+	MLabel,
 	FilledButton,
 	RoundedIcon,
 	FormFieldset,
@@ -118,11 +118,11 @@ onBeforeUnmount(() => {
                   </RoundedIcon>
                 </FieldLeading>
                 <FieldBody>
-                  <TypographyLabel
+                  <m-label
                     name="email"
                   >
                     Email
-                  </TypographyLabel>
+                  </m-label>
                   <FieldInput name="email" />
                 </FieldBody>
                 <FieldTrailing
@@ -135,9 +135,9 @@ onBeforeUnmount(() => {
                 </FieldTrailing>
               </FieldControl>
               <FieldSupport v-if="errors.email">
-                <TypographyBody>
+                <m-body>
                   {{ errors.email }}
-                </TypographyBody>
+                </m-body>
               </FieldSupport>
             </FilledTextField>
           </FormFieldset>
@@ -153,11 +153,11 @@ onBeforeUnmount(() => {
                   </RoundedIcon>
                 </FieldLeading>
                 <FieldBody>
-                  <TypographyLabel
+                  <m-label
                     name="password"
                   >
                     Password
-                  </TypographyLabel>
+                  </m-label>
                   <FieldInput
                     type="password"
                     name="password"
@@ -173,9 +173,9 @@ onBeforeUnmount(() => {
                 </FieldTrailing>
               </FieldControl>
               <FieldSupport v-if="errors.password">
-                <TypographyBody>
+                <m-body>
                   {{ errors.password }}
-                </TypographyBody>
+                </m-body>
               </FieldSupport>
             </FilledTextField>
           </FormFieldset>

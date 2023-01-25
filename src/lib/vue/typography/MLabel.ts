@@ -41,27 +41,27 @@ import {
 	TypographySize,
 } from '@/lib/vue/typography/Typography'
 
-export type TypographyBodyProps = {
+export type MLabelProps = {
 	size?: TypographySize
 }
 
-export const TypographyBody: FunctionalComponent<TypographyBodyProps> = ({
+export const MLabel: FunctionalComponent<MLabelProps> = ({
 	size,
 }, {
 	slots,
 }): VNode => h(Typography, {
 	size,
 	class: {
-		body: true,
+		'm-label': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-TypographyBody.displayName = 'TypographyBody'
+MLabel.displayName = 'MLabel'
 
-TypographyBody.props = [
+MLabel.props = [
 	'size'
 ]
 
-export default TypographyBody
+export default MLabel

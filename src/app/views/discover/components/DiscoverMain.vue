@@ -58,8 +58,8 @@ import {
 	TypographyDisplay,
 	TypographyHeadline,
 	TypographyTitle,
-	TypographyLabel,
-	TypographyBody,
+	MLabel,
+	MBody,
 	ButtonState,
 	FilledButton,
 	OutlinedButton,
@@ -99,7 +99,7 @@ import {
 	ListItemBody,
 	ListItemTrailing,
 	VideoThumbnail,
-	AvatarThumbnail,
+	MAvatar,
 } from '@/lib/vue'
 
 const validationSchema = object({
@@ -151,12 +151,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <TypographyDisplay :size="TypographySize.large">
         Typography
       </TypographyDisplay>
-      <TypographyBody :size="TypographySize.large">
+      <m-body :size="TypographySize.large">
         See the <a
           href="https://m3.material.io/styles/typography/overview"
           target="_blank"
         >Design Guidelines</a>
-      </TypographyBody>
+      </m-body>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.large">
@@ -204,41 +204,41 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <TypographyDisplay :size="TypographySize.large">
         Label
       </TypographyDisplay>
-      <TypographyLabel :size="TypographySize.large">
+      <m-label :size="TypographySize.large">
         Label Large - Roboto Medium 14/20 . +0.1
-      </TypographyLabel>
-      <TypographyLabel :size="TypographySize.medium">
+      </m-label>
+      <m-label :size="TypographySize.medium">
         Label Medium - Roboto Medium 12/16 . +0.5
-      </TypographyLabel>
-      <TypographyLabel :size="TypographySize.small">
+      </m-label>
+      <m-label :size="TypographySize.small">
         Label Small - Roboto Medium 11/16 . +0.5
-      </TypographyLabel>
+      </m-label>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.large">
         Body
       </TypographyDisplay>
-      <TypographyBody :size="TypographySize.large">
+      <m-body :size="TypographySize.large">
         Body Large - Roboto 16/24 . +0.15
-      </TypographyBody>
-      <TypographyBody :size="TypographySize.medium">
+      </m-body>
+      <m-body :size="TypographySize.medium">
         Body Medium - Roboto 14/20 . +0.25
-      </TypographyBody>
-      <TypographyBody :size="TypographySize.small">
+      </m-body>
+      <m-body :size="TypographySize.small">
         Body Small - Roboto 12/16 . +0.4
-      </TypographyBody>
+      </m-body>
     </section>
 
     <section class="banner">
       <TypographyDisplay :size="TypographySize.large">
         Buttons
       </TypographyDisplay>
-      <TypographyBody :size="TypographySize.large">
+      <m-body :size="TypographySize.large">
         See the <a
           href="https://m3.material.io/components/buttons/overview"
           target="_blank"
         >Design Guidelines</a>
-      </TypographyBody>
+      </m-body>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
@@ -247,37 +247,37 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <Row>
         <Column>
           <ElevatedButton>
-            <TypographyLabel>
+            <m-label>
               Enabled
-            </TypographyLabel>
+            </m-label>
           </ElevatedButton>
         </Column>
         <Column>
           <ElevatedButton :state="ButtonState.hovered">
-            <TypographyLabel>
+            <m-label>
               Hovered
-            </TypographyLabel>
+            </m-label>
           </ElevatedButton>
         </Column>
         <Column>
           <ElevatedButton :state="ButtonState.focused">
-            <TypographyLabel>
+            <m-label>
               Focused
-            </TypographyLabel>
+            </m-label>
           </ElevatedButton>
         </Column>
         <Column>
           <ElevatedButton :state="ButtonState.pressed">
-            <TypographyLabel>
+            <m-label>
               Pressed
-            </TypographyLabel>
+            </m-label>
           </ElevatedButton>
         </Column>
         <Column>
           <ElevatedButton :state="ButtonState.disabled">
-            <TypographyLabel>
+            <m-label>
               Disabled
-            </TypographyLabel>
+            </m-label>
           </ElevatedButton>
         </Column>
       </Row>
@@ -292,9 +292,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Enabled
-            </TypographyLabel>
+            </m-label>
           </ElevatedButton>
         </Column>
         <Column>
@@ -302,9 +302,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Hovered
-            </TypographyLabel>
+            </m-label>
           </ElevatedButton>
         </Column>
         <Column>
@@ -312,9 +312,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Focused
-            </TypographyLabel>
+            </m-label>
           </ElevatedButton>
         </Column>
         <Column>
@@ -322,9 +322,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Pressed
-            </TypographyLabel>
+            </m-label>
           </ElevatedButton>
         </Column>
         <Column>
@@ -332,9 +332,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Disabled
-            </TypographyLabel>
+            </m-label>
           </ElevatedButton>
         </Column>
       </Row>
@@ -346,37 +346,37 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <Row>
         <Column>
           <FilledButton>
-            <TypographyLabel>
+            <m-label>
               Enabled
-            </TypographyLabel>
+            </m-label>
           </FilledButton>
         </Column>
         <Column>
           <FilledButton :state="ButtonState.hovered">
-            <TypographyLabel>
+            <m-label>
               Hovered
-            </TypographyLabel>
+            </m-label>
           </FilledButton>
         </Column>
         <Column>
           <FilledButton :state="ButtonState.focused">
-            <TypographyLabel>
+            <m-label>
               Focused
-            </TypographyLabel>
+            </m-label>
           </FilledButton>
         </Column>
         <Column>
           <FilledButton :state="ButtonState.pressed">
-            <TypographyLabel>
+            <m-label>
               Pressed
-            </TypographyLabel>
+            </m-label>
           </FilledButton>
         </Column>
         <Column>
           <FilledButton :state="ButtonState.disabled">
-            <TypographyLabel>
+            <m-label>
               Disabled
-            </TypographyLabel>
+            </m-label>
           </FilledButton>
         </Column>
       </Row>
@@ -391,9 +391,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Enabled
-            </TypographyLabel>
+            </m-label>
           </FilledButton>
         </Column>
         <Column>
@@ -401,9 +401,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Hovered
-            </TypographyLabel>
+            </m-label>
           </FilledButton>
         </Column>
         <Column>
@@ -411,9 +411,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Focused
-            </TypographyLabel>
+            </m-label>
           </FilledButton>
         </Column>
         <Column>
@@ -421,9 +421,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Pressed
-            </TypographyLabel>
+            </m-label>
           </FilledButton>
         </Column>
         <Column>
@@ -431,9 +431,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Disabled
-            </TypographyLabel>
+            </m-label>
           </FilledButton>
         </Column>
       </Row>
@@ -445,37 +445,37 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <Row>
         <Column>
           <TonalButton>
-            <TypographyLabel>
+            <m-label>
               Enabled
-            </TypographyLabel>
+            </m-label>
           </TonalButton>
         </Column>
         <Column>
           <TonalButton :state="ButtonState.hovered">
-            <TypographyLabel>
+            <m-label>
               Hovered
-            </TypographyLabel>
+            </m-label>
           </TonalButton>
         </Column>
         <Column>
           <TonalButton :state="ButtonState.focused">
-            <TypographyLabel>
+            <m-label>
               Focused
-            </TypographyLabel>
+            </m-label>
           </TonalButton>
         </Column>
         <Column>
           <TonalButton :state="ButtonState.pressed">
-            <TypographyLabel>
+            <m-label>
               Pressed
-            </TypographyLabel>
+            </m-label>
           </TonalButton>
         </Column>
         <Column>
           <TonalButton :state="ButtonState.disabled">
-            <TypographyLabel>
+            <m-label>
               Disabled
-            </TypographyLabel>
+            </m-label>
           </TonalButton>
         </Column>
       </Row>
@@ -490,9 +490,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Enabled
-            </TypographyLabel>
+            </m-label>
           </TonalButton>
         </Column>
         <Column>
@@ -500,9 +500,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Hovered
-            </TypographyLabel>
+            </m-label>
           </TonalButton>
         </Column>
         <Column>
@@ -510,9 +510,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Focused
-            </TypographyLabel>
+            </m-label>
           </TonalButton>
         </Column>
         <Column>
@@ -520,9 +520,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Pressed
-            </TypographyLabel>
+            </m-label>
           </TonalButton>
         </Column>
         <Column>
@@ -530,9 +530,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Disabled
-            </TypographyLabel>
+            </m-label>
           </TonalButton>
         </Column>
       </Row>
@@ -544,37 +544,37 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <Row>
         <Column>
           <OutlinedButton>
-            <TypographyLabel>
+            <m-label>
               Enabled
-            </TypographyLabel>
+            </m-label>
           </OutlinedButton>
         </Column>
         <Column>
           <OutlinedButton :state="ButtonState.hovered">
-            <TypographyLabel>
+            <m-label>
               Hovered
-            </TypographyLabel>
+            </m-label>
           </OutlinedButton>
         </Column>
         <Column>
           <OutlinedButton :state="ButtonState.focused">
-            <TypographyLabel>
+            <m-label>
               Focused
-            </TypographyLabel>
+            </m-label>
           </OutlinedButton>
         </Column>
         <Column>
           <OutlinedButton :state="ButtonState.pressed">
-            <TypographyLabel>
+            <m-label>
               Pressed
-            </TypographyLabel>
+            </m-label>
           </OutlinedButton>
         </Column>
         <Column>
           <OutlinedButton :state="ButtonState.disabled">
-            <TypographyLabel>
+            <m-label>
               Disabled
-            </TypographyLabel>
+            </m-label>
           </OutlinedButton>
         </Column>
       </Row>
@@ -589,9 +589,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Enabled
-            </TypographyLabel>
+            </m-label>
           </OutlinedButton>
         </Column>
         <Column>
@@ -599,9 +599,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Hovered
-            </TypographyLabel>
+            </m-label>
           </OutlinedButton>
         </Column>
         <Column>
@@ -609,9 +609,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Focused
-            </TypographyLabel>
+            </m-label>
           </OutlinedButton>
         </Column>
         <Column>
@@ -619,9 +619,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Pressed
-            </TypographyLabel>
+            </m-label>
           </OutlinedButton>
         </Column>
         <Column>
@@ -629,9 +629,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Disabled
-            </TypographyLabel>
+            </m-label>
           </OutlinedButton>
         </Column>
       </Row>
@@ -643,37 +643,37 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <Row>
         <Column>
           <TextButton>
-            <TypographyLabel>
+            <m-label>
               Enabled
-            </TypographyLabel>
+            </m-label>
           </TextButton>
         </Column>
         <Column>
           <TextButton :state="ButtonState.hovered">
-            <TypographyLabel>
+            <m-label>
               Hovered
-            </TypographyLabel>
+            </m-label>
           </TextButton>
         </Column>
         <Column>
           <TextButton :state="ButtonState.focused">
-            <TypographyLabel>
+            <m-label>
               Focused
-            </TypographyLabel>
+            </m-label>
           </TextButton>
         </Column>
         <Column>
           <TextButton :state="ButtonState.pressed">
-            <TypographyLabel>
+            <m-label>
               Pressed
-            </TypographyLabel>
+            </m-label>
           </TextButton>
         </Column>
         <Column>
           <TextButton :state="ButtonState.disabled">
-            <TypographyLabel>
+            <m-label>
               Disabled
-            </TypographyLabel>
+            </m-label>
           </TextButton>
         </Column>
       </Row>
@@ -688,9 +688,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Enabled
-            </TypographyLabel>
+            </m-label>
           </TextButton>
         </Column>
         <Column>
@@ -698,9 +698,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Hovered
-            </TypographyLabel>
+            </m-label>
           </TextButton>
         </Column>
         <Column>
@@ -708,9 +708,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Focused
-            </TypographyLabel>
+            </m-label>
           </TextButton>
         </Column>
         <Column>
@@ -718,9 +718,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Pressed
-            </TypographyLabel>
+            </m-label>
           </TextButton>
         </Column>
         <Column>
@@ -728,9 +728,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <RoundedIcon>
               add_circle
             </RoundedIcon>
-            <TypographyLabel>
+            <m-label>
               Disabled
-            </TypographyLabel>
+            </m-label>
           </TextButton>
         </Column>
       </Row>
@@ -1500,12 +1500,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <TypographyDisplay :size="TypographySize.large">
         Text fields
       </TypographyDisplay>
-      <TypographyBody :size="TypographySize.large">
+      <m-body :size="TypographySize.large">
         See the <a
           href="https://m3.material.io/text-fields/overview"
           target="_blank"
         >Design Guidelines</a>
-      </TypographyBody>
+      </m-body>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
@@ -1526,9 +1526,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldBody>
-                    <TypographyLabel>
+                    <m-label>
                       Email
-                    </TypographyLabel>
+                    </m-label>
                     <FieldInput :name="'email'" />
                   </FieldBody>
                   <FieldTrailing v-if="errors.email">
@@ -1538,9 +1538,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldTrailing>
                 </FieldControl>
                 <FieldSupport v-if="errors.email">
-                  <TypographyBody>
+                  <m-body>
                     {{ errors.email }}
-                  </TypographyBody>
+                  </m-body>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -1557,19 +1557,19 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldBody>
-                    <TypographyLabel>
+                    <m-label>
                       Label
-                    </TypographyLabel>
+                    </m-label>
                     <FieldInput :name="'name'" />
                   </FieldBody>
                 </FieldControl>
                 <FieldSupport>
-                  <TypographyBody>
+                  <m-body>
                     Support text.
-                  </TypographyBody>
-                  <TypographyLabel>
+                  </m-body>
+                  <m-label>
                     5/20
-                  </TypographyLabel>
+                  </m-label>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -1581,13 +1581,13 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               <FilledTextField :without-label-text="true">
                 <FieldControl>
                   <FieldBody>
-                    <TypographyLabel>
+                    <m-label>
                       Label
-                    </TypographyLabel>
+                    </m-label>
                     <FieldInputPrefix>
-                      <TypographyLabel>
+                      <m-label>
                         $
-                      </TypographyLabel>
+                      </m-label>
                     </FieldInputPrefix>
                     <FieldInput :name="'name'" />
                   </FieldBody>
@@ -1598,9 +1598,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldTrailing>
                 </FieldControl>
                 <FieldSupport>
-                  <TypographyLabel>
+                  <m-label>
                     5/20
-                  </TypographyLabel>
+                  </m-label>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -1612,21 +1612,21 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               <FilledTextField>
                 <FieldControl>
                   <FieldBody>
-                    <TypographyLabel>
+                    <m-label>
                       Label
-                    </TypographyLabel>
+                    </m-label>
                     <FieldInput :name="'name'" />
                     <FieldInputSuffix>
-                      <TypographyLabel>
+                      <m-label>
                         lbs
-                      </TypographyLabel>
+                      </m-label>
                     </FieldInputSuffix>
                   </FieldBody>
                 </FieldControl>
                 <FieldSupport>
-                  <TypographyLabel>
+                  <m-label>
                     5/20
-                  </TypographyLabel>
+                  </m-label>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -1638,22 +1638,22 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               <FilledTextField>
                 <FieldControl>
                   <FieldBody>
-                    <TypographyLabel>
+                    <m-label>
                       Label
-                    </TypographyLabel>
+                    </m-label>
                     <FieldInput :name="'name'" />
                   </FieldBody>
                 </FieldControl>
                 <FieldSupport>
-                  <TypographyBody>
+                  <m-body>
                     Support text that is much longer than you think.
                     Support text that is much longer than you think.
                     Support text that is much longer than you think.
                     Support text that is much longer than you think.
-                  </TypographyBody>
-                  <TypographyLabel>
+                  </m-body>
+                  <m-label>
                     5/20
-                  </TypographyLabel>
+                  </m-label>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -1670,9 +1670,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldBody>
-                    <TypographyLabel>
+                    <m-label>
                       Label
-                    </TypographyLabel>
+                    </m-label>
                     <FieldInput
                       :name="'name'"
                       :disabled="true"
@@ -1685,9 +1685,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldTrailing>
                 </FieldControl>
                 <FieldSupport>
-                  <TypographyBody>
+                  <m-body>
                     Support text.
-                  </TypographyBody>
+                  </m-body>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -1709,9 +1709,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldBody>
-                    <TypographyLabel>
+                    <m-label>
                       Email
-                    </TypographyLabel>
+                    </m-label>
                     <FieldInput :name="'name'" />
                   </FieldBody>
                   <FieldTrailing v-if="errors.email">
@@ -1721,9 +1721,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldTrailing>
                 </FieldControl>
                 <FieldSupport v-if="errors.email">
-                  <TypographyBody>
+                  <m-body>
                     {{ errors.email }}
-                  </TypographyBody>
+                  </m-body>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -1743,9 +1743,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldBody>
-                    <TypographyLabel>
+                    <m-label>
                       Email
-                    </TypographyLabel>
+                    </m-label>
                     <FieldInput :name="'name'" />
                   </FieldBody>
                   <FieldTrailing v-if="errors.email">
@@ -1755,9 +1755,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldTrailing>
                 </FieldControl>
                 <FieldSupport v-if="errors.email">
-                  <TypographyBody>
+                  <m-body>
                     {{ errors.email }}
-                  </TypographyBody>
+                  </m-body>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -1777,9 +1777,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldBody>
-                    <TypographyLabel>
+                    <m-label>
                       Email
-                    </TypographyLabel>
+                    </m-label>
                     <FieldInput :name="'name'" />
                   </FieldBody>
                   <FieldTrailing v-if="errors.email">
@@ -1789,9 +1789,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldTrailing>
                 </FieldControl>
                 <FieldSupport v-if="errors.email">
-                  <TypographyBody>
+                  <m-body>
                     {{ errors.email }}
-                  </TypographyBody>
+                  </m-body>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -1808,9 +1808,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     </RoundedIcon>
                   </FieldLeading>
                   <FieldBody>
-                    <TypographyLabel>
+                    <m-label>
                       Email
-                    </TypographyLabel>
+                    </m-label>
                     <FieldInput
                       :name="'name'"
                       :disabled="true"
@@ -1823,9 +1823,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                   </FieldTrailing>
                 </FieldControl>
                 <FieldSupport v-if="errors.email">
-                  <TypographyBody>
+                  <m-body>
                     {{ errors.email }}
-                  </TypographyBody>
+                  </m-body>
                 </FieldSupport>
               </FilledTextField>
             </FormFieldset>
@@ -1838,12 +1838,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <TypographyDisplay :size="TypographySize.large">
         Cards
       </TypographyDisplay>
-      <TypographyBody :size="TypographySize.large">
+      <m-body :size="TypographySize.large">
         See the <a
           href="https://m3.material.io/components/cards/overview"
           target="_blank"
         >Design Guidelines</a>
-      </TypographyBody>
+      </m-body>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
@@ -1852,18 +1852,18 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <Row>
         <Column>
           <ElevatedCard>
-            <TypographyLabel>
+            <m-label>
               Enabled
-            </TypographyLabel>
+            </m-label>
             <TypographyTitle :size="TypographySize.large">
               Title
             </TypographyTitle>
             <TypographyTitle :size="TypographySize.small">
               Subhead
             </TypographyTitle>
-            <TypographyBody>
+            <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-            </TypographyBody>
+            </m-body>
             <Bar>
               <BarTrailing>
                 <TonalButton>
@@ -1875,18 +1875,18 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         </Column>
         <Column>
           <ElevatedCard :state="CardState.hovered">
-            <TypographyLabel>
+            <m-label>
               Hovered
-            </TypographyLabel>
+            </m-label>
             <TypographyTitle :size="TypographySize.large">
               Title
             </TypographyTitle>
             <TypographyTitle :size="TypographySize.small">
               Subhead
             </TypographyTitle>
-            <TypographyBody>
+            <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-            </TypographyBody>
+            </m-body>
             <Bar>
               <BarTrailing>
                 <TonalButton>
@@ -1898,18 +1898,18 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         </Column>
         <Column>
           <ElevatedCard :state="CardState.focused">
-            <TypographyLabel>
+            <m-label>
               Focused
-            </TypographyLabel>
+            </m-label>
             <TypographyTitle :size="TypographySize.large">
               Title
             </TypographyTitle>
             <TypographyTitle :size="TypographySize.small">
               Subhead
             </TypographyTitle>
-            <TypographyBody>
+            <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-            </TypographyBody>
+            </m-body>
             <Bar>
               <BarTrailing>
                 <TonalButton>
@@ -1921,18 +1921,18 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         </Column>
         <Column>
           <ElevatedCard :state="CardState.pressed">
-            <TypographyLabel>
+            <m-label>
               Pressed
-            </TypographyLabel>
+            </m-label>
             <TypographyTitle :size="TypographySize.large">
               Title
             </TypographyTitle>
             <TypographyTitle :size="TypographySize.small">
               Subhead
             </TypographyTitle>
-            <TypographyBody>
+            <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-            </TypographyBody>
+            </m-body>
             <Bar>
               <BarTrailing>
                 <TonalButton>
@@ -1944,18 +1944,18 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         </Column>
         <Column>
           <ElevatedCard :state="CardState.dragged">
-            <TypographyLabel>
+            <m-label>
               Dragged
-            </TypographyLabel>
+            </m-label>
             <TypographyTitle :size="TypographySize.large">
               Title
             </TypographyTitle>
             <TypographyTitle :size="TypographySize.small">
               Subhead
             </TypographyTitle>
-            <TypographyBody>
+            <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-            </TypographyBody>
+            </m-body>
             <Bar>
               <BarTrailing>
                 <TonalButton>
@@ -1967,18 +1967,18 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         </Column>
         <Column>
           <ElevatedCard :state="CardState.disabled">
-            <TypographyLabel>
+            <m-label>
               Disabled
-            </TypographyLabel>
+            </m-label>
             <TypographyTitle :size="TypographySize.large">
               Title
             </TypographyTitle>
             <TypographyTitle :size="TypographySize.small">
               Subhead
             </TypographyTitle>
-            <TypographyBody>
+            <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-            </TypographyBody>
+            </m-body>
             <Bar>
               <BarTrailing>
                 <TonalButton :state="CardState.disabled">
@@ -1995,12 +1995,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <TypographyDisplay :size="TypographySize.large">
         Lists
       </TypographyDisplay>
-      <TypographyBody :size="TypographySize.large">
+      <m-body :size="TypographySize.large">
         See the <a
           href="https://m3.material.io/components/lists/overview"
           target="_blank"
         >Design Guidelines</a>
-      </TypographyBody>
+      </m-body>
     </section>
     <section>
       <Row>
@@ -2037,9 +2037,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyHeadline>
               </ListItemBody>
               <ListItemTrailing>
-                <TypographyLabel>
+                <m-label>
                   100+
-                </TypographyLabel>
+                </m-label>
               </ListItemTrailing>
             </ListItem>
             <ListItem>
@@ -2049,9 +2049,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyHeadline>
               </ListItemBody>
               <ListItemTrailing>
-                <TypographyLabel>
+                <m-label>
                   100+
-                </TypographyLabel>
+                </m-label>
               </ListItemTrailing>
             </ListItem>
             <ListItem>
@@ -2061,9 +2061,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 </TypographyHeadline>
               </ListItemBody>
               <ListItemTrailing>
-                <TypographyLabel>
+                <m-label>
                   100+
-                </TypographyLabel>
+                </m-label>
               </ListItemTrailing>
               <Divider />
             </ListItem>
@@ -2074,9 +2074,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem>
@@ -2084,9 +2084,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Focused
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem>
@@ -2094,9 +2094,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <Divider />
             </ListItem>
@@ -2107,14 +2107,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
-                <TypographyLabel>
+                <m-label>
                   100+
-                </TypographyLabel>
+                </m-label>
               </ListItemTrailing>
             </ListItem>
             <ListItem>
@@ -2122,14 +2122,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Pressed
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
-                <TypographyLabel>
+                <m-label>
                   100+
-                </TypographyLabel>
+                </m-label>
               </ListItemTrailing>
             </ListItem>
             <ListItem>
@@ -2137,14 +2137,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
-                <TypographyLabel>
+                <m-label>
                   100+
-                </TypographyLabel>
+                </m-label>
               </ListItemTrailing>
               <Divider />
             </ListItem>
@@ -2155,9 +2155,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <!-- <ListItem :state="ListItemState.dragged"> -->
@@ -2166,9 +2166,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Dragged
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem>
@@ -2176,9 +2176,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <Divider />
             </ListItem>
@@ -2189,14 +2189,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
-                <TypographyLabel>
+                <m-label>
                   100+
-                </TypographyLabel>
+                </m-label>
               </ListItemTrailing>
             </ListItem>
             <ListItem :state="ListItemState.disabled">
@@ -2204,14 +2204,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Disabled
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
-                <TypographyLabel>
+                <m-label>
                   100+
-                </TypographyLabel>
+                </m-label>
               </ListItemTrailing>
             </ListItem>
             <ListItem>
@@ -2219,14 +2219,14 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
-                <TypographyLabel>
+                <m-label>
                   100+
-                </TypographyLabel>
+                </m-label>
               </ListItemTrailing>
               <Divider />
             </ListItem>
@@ -2339,9 +2339,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem>
@@ -2354,9 +2354,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Focused
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem>
@@ -2369,9 +2369,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <Divider />
             </ListItem>
@@ -2387,9 +2387,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -2407,9 +2407,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Pressed
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -2427,9 +2427,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -2452,9 +2452,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <!-- <ListItem :state="ListItemState.dragged"> -->
@@ -2468,9 +2468,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Dragged
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem>
@@ -2483,9 +2483,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <Divider />
             </ListItem>
@@ -2501,9 +2501,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -2521,9 +2521,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Disabled
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -2541,9 +2541,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -2558,11 +2558,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List>
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
@@ -2572,11 +2572,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
@@ -2586,11 +2586,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
@@ -2603,11 +2603,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List>
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
@@ -2622,11 +2622,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
@@ -2641,11 +2641,11 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
@@ -2663,53 +2663,53 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List :lines="ListLines.two">
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
                   Focused
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <Divider />
             </ListItem>
@@ -2717,19 +2717,19 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List :lines="ListLines.two">
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -2739,19 +2739,19 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
                   Pressed
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -2761,19 +2761,19 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -2786,54 +2786,54 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List :lines="ListLines.three">
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <!-- <ListItem :state="ListItemState.dragged"> -->
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
                   Dragged
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <Divider />
             </ListItem>
@@ -2841,19 +2841,19 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List :lines="ListLines.three">
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -2863,19 +2863,19 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem :state="ListItemState.disabled">
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
                   Disabled
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -2885,19 +2885,19 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem>
               <ListItemLeading>
-                <AvatarThumbnail>
-                  <TypographyLabel>
+                <m-avatar>
+                  <m-label>
                     A
-                  </TypographyLabel>
-                </AvatarThumbnail>
+                  </m-label>
+                </m-avatar>
               </ListItemLeading>
               <ListItemBody>
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -3062,9 +3062,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem>
@@ -3084,9 +3084,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Focused
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem>
@@ -3106,9 +3106,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <Divider />
             </ListItem>
@@ -3131,9 +3131,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -3158,9 +3158,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Pressed
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -3185,9 +3185,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -3215,9 +3215,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <!-- <ListItem :state="ListItemState.dragged"> -->
@@ -3238,9 +3238,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Dragged
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem>
@@ -3260,9 +3260,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <Divider />
             </ListItem>
@@ -3285,9 +3285,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -3312,9 +3312,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Disabled
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -3339,9 +3339,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -3520,9 +3520,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem :has-leading-video="true">
@@ -3544,9 +3544,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Focused
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem :has-leading-video="true">
@@ -3568,9 +3568,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <Divider />
             </ListItem>
@@ -3595,9 +3595,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -3624,9 +3624,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Pressed
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -3653,9 +3653,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -3685,9 +3685,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <!-- <ListItem :state="ListItemState.dragged"> -->
@@ -3710,9 +3710,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Dragged
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
             </ListItem>
             <ListItem :has-leading-video="true">
@@ -3734,9 +3734,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <Divider />
             </ListItem>
@@ -3761,9 +3761,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -3793,9 +3793,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Disabled
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>
@@ -3822,9 +3822,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                 <TypographyHeadline>
                   Headline
                 </TypographyHeadline>
-                <TypographyBody>
+                <m-body>
                   Supporting text that is long enough to fill multiple lines.
-                </TypographyBody>
+                </m-body>
               </ListItemBody>
               <ListItemTrailing>
                 <RoundedIcon>

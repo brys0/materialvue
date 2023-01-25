@@ -49,7 +49,7 @@ import {
 	NavigationDrawerListItemBody,
 	NavigationDrawerListItemTrailing,
 	TypographyHeadline,
-	TypographyLabel,
+	MLabel,
 	RoundedIcon,
 	Divider,
 } from '@/lib/vue'
@@ -80,14 +80,14 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
             </RoundedIcon>
           </NavigationDrawerListItemLeading>
           <NavigationDrawerListItemBody>
-            <TypographyLabel>
+            <m-label>
               Mail
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemBody>
           <NavigationDrawerListItemTrailing>
-            <TypographyLabel>
+            <m-label>
               100+
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemTrailing>
         </NavigationDrawerListItem>
         <NavigationDrawerListItem :selected="true">
@@ -97,14 +97,14 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
             </RoundedIcon>
           </NavigationDrawerListItemLeading>
           <NavigationDrawerListItemBody>
-            <TypographyLabel>
+            <m-label>
               Videos
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemBody>
           <NavigationDrawerListItemTrailing>
-            <TypographyLabel>
+            <m-label>
               100+
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemTrailing>
           <Divider />
         </NavigationDrawerListItem>
@@ -115,14 +115,14 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
             </RoundedIcon>
           </NavigationDrawerListItemLeading>
           <NavigationDrawerListItemBody>
-            <TypographyLabel>
+            <m-label>
               Mail
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemBody>
           <NavigationDrawerListItemTrailing>
-            <TypographyLabel>
+            <m-label>
               100+
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemTrailing>
         </NavigationDrawerListItem>
         <NavigationDrawerListItem :state="NavigationDrawerListItemState.focused">
@@ -132,14 +132,14 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
             </RoundedIcon>
           </NavigationDrawerListItemLeading>
           <NavigationDrawerListItemBody>
-            <TypographyLabel>
+            <m-label>
               Videos
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemBody>
           <NavigationDrawerListItemTrailing>
-            <TypographyLabel>
+            <m-label>
               100+
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemTrailing>
           <Divider />
         </NavigationDrawerListItem>
@@ -150,14 +150,14 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
             </RoundedIcon>
           </NavigationDrawerListItemLeading>
           <NavigationDrawerListItemBody>
-            <TypographyLabel>
+            <m-label>
               Videos
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemBody>
           <NavigationDrawerListItemTrailing>
-            <TypographyLabel>
+            <m-label>
               100+
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemTrailing>
         </NavigationDrawerListItem>
         <NavigationDrawerListItem>
@@ -167,14 +167,14 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
             </RoundedIcon>
           </NavigationDrawerListItemLeading>
           <NavigationDrawerListItemBody>
-            <TypographyLabel>
+            <m-label>
               Mail
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemBody>
           <NavigationDrawerListItemTrailing>
-            <TypographyLabel>
+            <m-label>
               100+
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemTrailing>
         </NavigationDrawerListItem>
         <NavigationDrawerListItem>
@@ -184,14 +184,14 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
             </RoundedIcon>
           </NavigationDrawerListItemLeading>
           <NavigationDrawerListItemBody>
-            <TypographyLabel>
+            <m-label>
               Videos
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemBody>
           <NavigationDrawerListItemTrailing>
-            <TypographyLabel>
+            <m-label>
               100+
-            </TypographyLabel>
+            </m-label>
           </NavigationDrawerListItemTrailing>
         </NavigationDrawerListItem>
       </NavigationDrawerList>

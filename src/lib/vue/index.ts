@@ -63,8 +63,8 @@ export {
 	TypographyDisplay,
 	TypographyHeadline,
 	TypographyTitle,
-	TypographyLabel,
-	TypographyBody,
+	MLabel,
+	MBody,
 	Typography,
 	TypographySize,
 } from '@/lib/vue/typography'
@@ -158,5 +158,5 @@ export {
 } from '@/lib/vue/videos'
 
 export {
-	AvatarThumbnail,
+	MAvatar,
 } from '@/lib/vue/avatars'

@@ -32,28 +32,27 @@
 
 @use './theme'
 
-.avatar
-  &.thumbnail
-    > img
-      width: 100%
-      height: 100%
-      object-fit: cover
-      
-    > .typography
-      @extend %is-not-selectable
-      
-      width: 40px
-      height: 40px
-      border-radius: 20px
+.m-avatar
+  > img
+    width: 100%
+    height: 100%
+    object-fit: cover
     
-      &.label
-        @extend %typography-title-medium
+  > .typography
+    @extend %is-not-selectable
+    
+    width: 40px
+    height: 40px
+    border-radius: 20px
+  
+    &.m-label
+      @extend %typography-title-medium
 
-        display: flex
-        flex-flow: column
-        align-items: center
-        justify-content: center
+      display: flex
+      flex-flow: column
+      align-items: center
+      justify-content: center
 
-        @include theme.preferred
-          background: theme.style(primary-container)
-          color: theme.style(on-primary-container)
+      @include theme.preferred
+        background: theme.style(primary-container)
+        color: theme.style(on-primary-container)

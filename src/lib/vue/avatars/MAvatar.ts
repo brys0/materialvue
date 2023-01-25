@@ -36,32 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-import {
-	Typography,
-	TypographySize,
-} from '@/lib/vue/typography/Typography'
+export type MAvatarProps = {}
 
-export type TypographyLabelProps = {
-	size?: TypographySize
-}
-
-export const TypographyLabel: FunctionalComponent<TypographyLabelProps> = ({
-	size,
-}, {
+export const MAvatar: FunctionalComponent<MAvatarProps> = (_, {
 	slots,
-}): VNode => h(Typography, {
-	size,
+}): VNode => h('div', {
 	class: {
-		label: true,
+		'm-avatar': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-TypographyLabel.displayName = 'TypographyLabel'
+MAvatar.displayName = 'MAvatar'
 
-TypographyLabel.props = [
-	'size'
-]
+MAvatar.props = []
 
-export default TypographyLabel
+export default MAvatar

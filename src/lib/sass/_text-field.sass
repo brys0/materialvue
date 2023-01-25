@@ -110,7 +110,7 @@
       @extend %text-field-body
 
       > .typography
-        &.label
+        &.m-label
           @extend %is-not-selectable
         
           overflow: hidden
@@ -124,7 +124,7 @@
         overflow: hidden
 
         > .typography
-          &.label
+          &.m-label
             @extend %typography-body-large
 
       > .field-input-prefix
@@ -168,12 +168,12 @@
     > .typography
       grid-row: row-1-start / row-1-end
         
-      &.body
+      &.m-body
         @extend %is-selectable
 
         grid-column: col-1-start / col-1-end
       
-      &.label
+      &.m-label
         padding-left: 16px
         grid-column: col-2-start / col-2-end
 
@@ -181,7 +181,7 @@
     > .field-control
       > .field-body
         > .typography
-          &.label
+          &.m-label
             @extend %typography-body-large
         
         > .field-input-prefix,
@@ -196,7 +196,7 @@
       > .field-control
         > .field-body
           > .typography
-            &.label
+            &.m-label
               height: 0
               appearance: none
 
@@ -218,7 +218,7 @@
 
       > .field-body
         > .typography
-          &.label
+          &.m-label
             @extend %typography-body-small
 
         > .field-input
@@ -228,8 +228,8 @@
             
     > .field-support
       > .typography
-        &.body,
-        &.label
+        &.m-body,
+        &.m-label
           @extend %typography-body-small
 
     &.has-error
@@ -251,14 +251,14 @@
 
         > .field-body
           > .typography
-            &.label
+            &.m-label
               @include theme.preferred
                 color: theme.style(on-surface-variant)
           
           > .field-input-prefix,
           > .field-input-suffix
             > .typography
-              &.label
+              &.m-label
                 @include theme.preferred
                   color: theme.style(on-surface-variant)
 
@@ -279,8 +279,8 @@
               
       > .field-support
         > .typography
-          &.body,
-          &.label
+          &.m-body,
+          &.m-label
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
@@ -296,14 +296,14 @@
 
           > .field-body        
             > .typography
-              &.label
+              &.m-label
                 @include theme.preferred
                   color: theme.style(error)
             
         > .field-support
           > .typography
-            &.body,
-            &.label
+            &.m-body,
+            &.m-label
               @include theme.preferred
                 color: theme.style(error)
       
@@ -325,14 +325,14 @@
 
           > .field-body
             > .typography
-              &.label
+              &.m-label
                 @include theme.preferred
                   color: theme.style(on-surface-variant)
 
         > .field-support
           > .typography
-            &.body,
-            &.label
+            &.m-body,
+            &.m-label
               @include theme.preferred
                 color: theme.style(on-surface-variant)
         
@@ -353,14 +353,14 @@
 
             > .field-body  
               > .typography
-                &.label
+                &.m-label
                   @include theme.preferred
                     color: theme.style(on-error-container)
               
           > .field-support
             > .typography
-              &.body,
-              &.label
+              &.m-body,
+              &.m-label
                 @include theme.preferred
                   color: theme.style(error)
       
@@ -374,7 +374,7 @@
 
           > .field-body
             > .typography
-              &.label
+              &.m-label
                 @extend %typography-body-small
 
                 @include theme.preferred
@@ -383,8 +383,8 @@
                 
         > .field-support
           > .typography
-            &.body,
-            &.label
+            &.m-body,
+            &.m-label
               @include theme.preferred
                 color: theme.style(on-surface-variant)
 
@@ -405,7 +405,7 @@
             
             > .field-body
               > .typography
-                &.label
+                &.m-label
                   @include theme.preferred
                     color: theme.style(error)
               
@@ -415,8 +415,8 @@
                 
           > .field-support
             > .typography
-              &.body,
-              &.label
+              &.m-body,
+              &.m-label
                 @include theme.preferred
                   color: theme.style(error)
 
@@ -441,7 +441,7 @@
           
         > .field-body
           > .typography
-            &.label
+            &.m-label
               @include theme.preferred
                 color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
             
@@ -461,7 +461,7 @@
                 
       > .field-support
         > .typography
-          &.body,
-          &.label
+          &.m-body,
+          &.m-label
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)

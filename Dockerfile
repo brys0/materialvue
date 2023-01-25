@@ -43,16 +43,16 @@ FROM source as dev
 ENV NODE_ENV=development
 
 # Install some helper tools when developing locally.
-RUN apk add build-base \
-    && apk add util-linux \
-    && apk add procps \
-    && apk add bash \
-    && apk add zsh \
-    && apk add htop \
-    && apk add curl \
-    && apk add git \
-    && apk add jq \
-    && apk add vim
+# RUN apk add build-base \
+#     && apk add util-linux \
+#     && apk add procps \
+#     && apk add bash \
+#     && apk add zsh \
+#     && apk add htop \
+#     && apk add curl \
+#     && apk add git \
+#     && apk add jq \
+#     && apk add vim
 
 # Connect to the `node` least privileged user provided by the
 # nodejs docker image.

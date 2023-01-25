@@ -36,21 +36,32 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type AvatarThumbnailProps = {}
+import {
+	Typography,
+	TypographySize,
+} from '@/lib/vue/typography/Typography'
 
-export const AvatarThumbnail: FunctionalComponent<AvatarThumbnailProps> = (_, {
+export type MBodyProps = {
+	size?: TypographySize
+}
+
+export const MBody: FunctionalComponent<MBodyProps> = ({
+	size,
+}, {
 	slots,
-}): VNode => h('div', {
+}): VNode => h(Typography, {
+	size,
 	class: {
-		avatar: true,
-		thumbnail: true,
+		'm-body': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-AvatarThumbnail.displayName = 'AvatarThumbnail'
+MBody.displayName = 'MBody'
 
-AvatarThumbnail.props = []
+MBody.props = [
+	'size'
+]
 
-export default AvatarThumbnail
+export default MBody

@@ -48,9 +48,9 @@ export {
 } from '@/lib/vue/typography/TypographyTitle'
 
 export {
-	TypographyLabel,
-} from '@/lib/vue/typography/TypographyLabel'
+	MLabel,
+} from '@/lib/vue/typography/MLabel'
 
 export {
-	TypographyBody,
-} from '@/lib/vue/typography/TypographyBody'
+	MBody,
+} from '@/lib/vue/typography/MBody'
