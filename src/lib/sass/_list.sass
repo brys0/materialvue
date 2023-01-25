@@ -131,7 +131,7 @@
     > .divider
       @extend %list-item-divider
 
-    &:has(.video.thumbnail)
+    &:has(.m-video)
       padding-left: 0
 
     &.has-leading-video
@@ -151,10 +151,9 @@
         width: 40px
         height: 40px
 
-      > .video
-        &.thumbnail
-          width: 114px
-          height: 64px
+      > .m-video
+        width: 114px
+        height: 64px
       
     > .list-item-body
       @extend %list-item-body

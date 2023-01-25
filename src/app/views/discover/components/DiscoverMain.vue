@@ -98,7 +98,7 @@ import {
 	ListItemLeading,
 	ListItemBody,
 	ListItemTrailing,
-	VideoThumbnail,
+	MVideo,
 	MAvatar,
 } from '@/lib/vue'
 
@@ -3356,7 +3356,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3367,7 +3367,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3377,7 +3377,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3388,7 +3388,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3398,7 +3398,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3409,7 +3409,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3422,7 +3422,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3433,7 +3433,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3448,7 +3448,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3459,7 +3459,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3474,7 +3474,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3485,7 +3485,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3503,7 +3503,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3514,7 +3514,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3527,7 +3527,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3538,7 +3538,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3551,7 +3551,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3562,7 +3562,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3578,7 +3578,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3589,7 +3589,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3607,7 +3607,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3618,7 +3618,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3636,7 +3636,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3647,7 +3647,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3668,7 +3668,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List :lines="ListLines.three">
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3679,7 +3679,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3693,7 +3693,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <!-- <ListItem :state="ListItemState.dragged"> -->
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3704,7 +3704,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3717,7 +3717,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3728,7 +3728,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3744,7 +3744,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           <List :lines="ListLines.three">
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3755,7 +3755,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3776,7 +3776,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               :has-leading-video="true"
             >
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3787,7 +3787,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>
@@ -3805,7 +3805,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             </ListItem>
             <ListItem :has-leading-video="true">
               <ListItemLeading>
-                <VideoThumbnail>
+                <m-video>
                   <img
                     class="is-theme-dark"
                     src="/assets/cosmicmind-16x9-placeholder-dark.svg"
@@ -3816,7 +3816,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
                     src="/assets/cosmicmind-16x9-placeholder-light.svg"
                     alt="CosmicMind 16x9 Placeholder"
                   >
-                </VideoThumbnail>
+                </m-video>
               </ListItemLeading>
               <ListItemBody>
                 <m-headline>

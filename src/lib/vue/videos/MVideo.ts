@@ -36,21 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type VideoThumbnailProps = {}
+export type MVideoProps = {}
 
-export const VideoThumbnail: FunctionalComponent<VideoThumbnailProps> = (_, {
+export const MVideo: FunctionalComponent<MVideoProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		video: true,
-		thumbnail: true,
+		'm-video': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-VideoThumbnail.displayName = 'VideoThumbnail'
+MVideo.displayName = 'MVideo'
 
-VideoThumbnail.props = []
+MVideo.props = []
 
-export default VideoThumbnail
+export default MVideo

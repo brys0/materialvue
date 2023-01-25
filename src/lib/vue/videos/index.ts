@@ -31,5 +31,5 @@
  */
 
 export {
-	VideoThumbnail,
-} from '@/lib/vue/videos/VideoThumbnail'
+	MVideo,
+} from '@/lib/vue/videos/MVideo'

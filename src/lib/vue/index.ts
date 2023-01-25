@@ -154,7 +154,7 @@ export {
 } from '@/lib/vue/lists'
 
 export {
-	VideoThumbnail,
+	MVideo,
 } from '@/lib/vue/videos'
 
 export {
