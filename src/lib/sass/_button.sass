@@ -34,16 +34,18 @@
 @use './conversion'
 
 %button
-  padding: 10px 24px
+  display: grid
+  grid-template-rows: [row-1-start] auto [row-1-end]  
+  grid-template-columns: [col-1-start] auto [col-1-end col-2-start] auto [col-2-end]
+  
+  padding: 0
   position: relative
-  display: flex
-  flex-flow: row
   align-items: center
-  justify-content: center
-  gap: 8px
+  align-content: stretch
+  justify-items: center
+  justify-content: stretch
   border: none
   outline: none
-  border-radius: 100px
   background: transparent
   cursor: pointer
 
@@ -61,11 +63,20 @@ a.button
     bottom: 0
     right: 0
     display: block
-    border-radius: 100px
     background: transparent
+
+  > .icon
+    grid-row: row-1-start / row-1-end
+    grid-column: col-1-start / col-1-end
 
   > .typography
     @extend %is-not-selectable
+
+    &.label
+      @extend %typography-label-large
+
+      grid-row: row-1-start / row-1-end
+      grid-column: col-2-start / col-2-end
 
   &:disabled:not(.hovered):not(.focused):not(.pressed),
   &[disabled]:not(.hovered):not(.focused):not(.pressed),
@@ -75,20 +86,346 @@ a.button
     box-shadow: none
 
   &.elevated
-    @extend %typography-label-large
+    height: 40px
+    border-radius: 20px
+
+    &::before
+      border-radius: 20px
+
+    > .icon
+      font-size: 18px
+      padding-left: 16px
+
+      + .typography
+        &.label
+          padding-left: 8px
+
+    > .typography
+      &.label
+        padding: 0 24px
 
     &,
     &.enabled
       @include theme.preferred
-        color: theme.style(primary)
-        background: theme.style(primary-container)
+        background: theme.style(elevation-1), theme.style(surface)
         box-shadow: theme.style(shadow-1)
 
+      > .icon
+        @include theme.preferred
+          color: theme.style(primary)
+
+      > .typography
+        &.label
+          @include theme.preferred
+            color: theme.style(primary)
+                
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered:not(.focused):not(.pressed):not(.disabled)
         @include theme.preferred
           box-shadow: theme.style(shadow-2)
 
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(primary), 8%)
+
+      &:focus:not(.hovered):not(.pressed):not(.disabled),
+      &.focused:not(.hovered):not(.pressed):not(.disabled)
+        @include theme.preferred
+          box-shadow: theme.style(shadow-1)
+
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(primary), 12%)
+
+      &:active:not(.hovered):not(.focused):not(.disabled),
+      &.pressed:not(.hovered):not(.focused):not(.disabled)
+        @include theme.preferred
+          box-shadow: theme.style(shadow-1)
+          
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(primary), 12%)
+    
+    &:disabled:not(.hovered):not(.focused):not(.pressed),
+    &[disabled]:not(.hovered):not(.focused):not(.pressed),
+    &.disabled:not(.hovered):not(.focused):not(.pressed)
+      @include theme.preferred
+        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+        box-shadow: theme.style(shadow-0)
+
+      > .icon
+        @include theme.preferred
+          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+      
+      > .typography
+        &.label
+          @include theme.preferred
+            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+
+  &.filled
+    height: 40px
+    border-radius: 20px
+
+    &::before
+      border-radius: 20px
+
+    > .icon
+      font-size: 18px
+      padding-left: 16px
+
+      + .typography
+        &.label
+          padding-left: 8px
+
+    > .typography
+      &.label
+        padding: 0 24px
+
+    &,
+    &.enabled
+      @include theme.preferred
+        background: theme.style(primary)
+        box-shadow: theme.style(shadow-0)
+
+      > .icon
+        @include theme.preferred
+          color: theme.style(on-primary)
+
+      > .typography
+        &.label
+          @include theme.preferred
+            color: theme.style(on-primary)
+                
+      &:hover:not(.focused):not(.pressed):not(.disabled),
+      &.hovered:not(.focused):not(.pressed):not(.disabled)
+        @include theme.preferred
+          box-shadow: theme.style(shadow-1)
+
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-primary), 8%)
+
+      &:focus:not(.hovered):not(.pressed):not(.disabled),
+      &.focused:not(.hovered):not(.pressed):not(.disabled)
+        @include theme.preferred
+          box-shadow: theme.style(shadow-0)
+
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
+
+      &:active:not(.hovered):not(.focused):not(.disabled),
+      &.pressed:not(.hovered):not(.focused):not(.disabled)
+        @include theme.preferred
+          box-shadow: theme.style(shadow-0)
+          
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
+    
+    &:disabled:not(.hovered):not(.focused):not(.pressed),
+    &[disabled]:not(.hovered):not(.focused):not(.pressed),
+    &.disabled:not(.hovered):not(.focused):not(.pressed)
+      @include theme.preferred
+        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+        box-shadow: theme.style(shadow-0)
+
+      > .icon
+        @include theme.preferred
+          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+      
+      > .typography
+        &.label
+          @include theme.preferred
+            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+
+  &.tonal
+    height: 40px
+    border-radius: 20px
+
+    &::before
+      border-radius: 20px
+
+    > .icon
+      font-size: 18px
+      padding-left: 16px
+
+      + .typography
+        &.label
+          padding-left: 8px
+
+    > .typography
+      &.label
+        padding: 0 24px
+
+    &,
+    &.enabled
+      @include theme.preferred
+        background: theme.style(secondary-container)
+        box-shadow: theme.style(shadow-0)
+
+      > .icon
+        @include theme.preferred
+          color: theme.style(on-secondary-container)
+
+      > .typography
+        &.label
+          @include theme.preferred
+            color: theme.style(on-secondary-container)
+                
+      &:hover:not(.focused):not(.pressed):not(.disabled),
+      &.hovered:not(.focused):not(.pressed):not(.disabled)
+        @include theme.preferred
+          box-shadow: theme.style(shadow-1)
+
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
+
+      &:focus:not(.hovered):not(.pressed):not(.disabled),
+      &.focused:not(.hovered):not(.pressed):not(.disabled)
+        @include theme.preferred
+          box-shadow: theme.style(shadow-0)
+
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+
+      &:active:not(.hovered):not(.focused):not(.disabled),
+      &.pressed:not(.hovered):not(.focused):not(.disabled)
+        @include theme.preferred
+          box-shadow: theme.style(shadow-0)
+          
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+    
+    &:disabled:not(.hovered):not(.focused):not(.pressed),
+    &[disabled]:not(.hovered):not(.focused):not(.pressed),
+    &.disabled:not(.hovered):not(.focused):not(.pressed)
+      @include theme.preferred
+        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+        box-shadow: theme.style(shadow-0)
+
+      > .icon
+        @include theme.preferred
+          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+      
+      > .typography
+        &.label
+          @include theme.preferred
+            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+
+  &.outlined
+    height: 40px
+    border-radius: 20px
+    border: 1px solid
+
+    &::before
+      border-radius: 20px
+
+    > .icon
+      font-size: 18px
+      padding-left: 16px
+
+      + .typography
+        &.label
+          padding-left: 8px
+
+    > .typography
+      &.label
+        padding: 0 24px
+
+    &,
+    &.enabled
+      @include theme.preferred
+        border-color: theme.style(outline)
+
+      > .icon
+        @include theme.preferred
+          color: theme.style(primary)
+
+      > .typography
+        &.label
+          @include theme.preferred
+            color: theme.style(primary)
+                
+      &:hover:not(.focused):not(.pressed):not(.disabled),
+      &.hovered:not(.focused):not(.pressed):not(.disabled)
+        @include theme.preferred
+          border-color: theme.style(outline)
+
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(primary), 8%)
+
+      &:focus:not(.hovered):not(.pressed):not(.disabled),
+      &.focused:not(.hovered):not(.pressed):not(.disabled)
+        @include theme.preferred
+          border-color: theme.style(primary)
+
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(primary), 12%)
+
+      &:active:not(.hovered):not(.focused):not(.disabled),
+      &.pressed:not(.hovered):not(.focused):not(.disabled)
+        @include theme.preferred
+          border-color: theme.style(outline)
+          
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(primary), 12%)
+    
+    &:disabled:not(.hovered):not(.focused):not(.pressed),
+    &[disabled]:not(.hovered):not(.focused):not(.pressed),
+    &.disabled:not(.hovered):not(.focused):not(.pressed)
+      @include theme.preferred
+        border-color: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+      > .icon
+        @include theme.preferred
+          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+      
+      > .typography
+        &.label
+          @include theme.preferred
+            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+
+  &.text
+    min-width: 48px
+    height: 40px
+    border-radius: 20px
+    
+    &::before
+      border-radius: 20px
+
+    > .icon
+      font-size: 18px
+      padding-left: 12px
+
+      + .typography
+        &.label
+          padding-left: 8px
+          padding-right: 16px
+
+    > .typography
+      &.label
+        padding: 0 12px
+
+    &,
+    &.enabled
+      > .icon
+        @include theme.preferred
+          color: theme.style(primary)
+
+      > .typography
+        &.label
+          @include theme.preferred
+            color: theme.style(primary)
+                
+      &:hover:not(.focused):not(.pressed):not(.disabled),
+      &.hovered:not(.focused):not(.pressed):not(.disabled)
         &::before
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(primary), 8%)
@@ -108,158 +445,14 @@ a.button
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
     &.disabled:not(.hovered):not(.focused):not(.pressed)
-      @include theme.preferred
-        color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
-        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-
-  &.filled
-    @extend %typography-label-large
-
-    &,
-    &.enabled
-      @include theme.preferred
-        color: theme.style(on-primary)
-        background: theme.style(primary)
-
-      &:hover:not(.focused):not(.pressed):not(.disabled),
-      &.hovered:not(.focused):not(.pressed):not(.disabled)
+      > .icon
         @include theme.preferred
-          box-shadow: theme.style(shadow-1)
-        
-        &::before
+          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+      
+      > .typography
+        &.label
           @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-primary), 8%)
-
-      &:focus:not(.hovered):not(.pressed):not(.disabled),
-      &.focused:not(.hovered):not(.pressed):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
-
-      &:active:not(.hovered):not(.focused):not(.disabled),
-      &.pressed:not(.hovered):not(.focused):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
-
-    &:disabled:not(.hovered):not(.focused):not(.pressed),
-    &[disabled]:not(.hovered):not(.focused):not(.pressed),
-    &.disabled:not(.hovered):not(.focused):not(.pressed)
-      @include theme.preferred
-        color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
-        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-
-  &.tonal
-    @extend %typography-label-large
-
-    &,
-    &.enabled
-      @include theme.preferred
-        color: theme.style(on-secondary-container)
-        background: theme.style(secondary-container)
-
-      &:hover:not(.focused):not(.pressed):not(.disabled),
-      &.hovered:not(.focused):not(.pressed):not(.disabled)
-        @include theme.preferred
-          box-shadow: theme.style(shadow-1)
-
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
-
-      &:focus:not(.hovered):not(.pressed):not(.disabled),
-      &.focused:not(.hovered):not(.pressed):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
-
-      &:active:not(.hovered):not(.focused):not(.disabled),
-      &.pressed:not(.hovered):not(.focused):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
-
-    &:disabled:not(.hovered):not(.focused):not(.pressed),
-    &[disabled]:not(.hovered):not(.focused):not(.pressed),
-    &.disabled:not(.hovered):not(.focused):not(.pressed)
-      @include theme.preferred
-        color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
-        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-
-  &.outlined
-    @extend %typography-label-large
-
-    padding-top: 8
-    padding-bottom: 8
-
-    border: 1px solid
-
-    &,
-    &.enabled
-      background: transparent
-      border: 1px solid
-
-      @include theme.preferred
-        color: theme.style(primary)
-        border-color: theme.style(outline)
-        
-      &:hover:not(.focused):not(.pressed):not(.disabled),
-      &.hovered:not(.focused):not(.pressed):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 8%)
-          
-      &:focus:not(.hovered):not(.pressed):not(.disabled),
-      &.focused:not(.hovered):not(.pressed):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 12%)
-
-      &:active:not(.hovered):not(.focused):not(.disabled),
-      &.pressed:not(.hovered):not(.focused):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 12%)
-
-    &:disabled:not(.hovered):not(.focused):not(.pressed),
-    &[disabled]:not(.hovered):not(.focused):not(.pressed),
-    &.disabled:not(.hovered):not(.focused):not(.pressed)
-      @include theme.preferred
-        color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
-        background: theme.style(surface)
-        border-color: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-
-  &.text
-    @extend %typography-label-large
-
-    &,
-    &.enabled
-      @include theme.preferred
-        color: theme.style(primary)
-
-      &:hover:not(.focused):not(.pressed):not(.disabled),
-      &.hovered:not(.focused):not(.pressed):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 8%)
-          
-      &:focus:not(.hovered):not(.pressed):not(.disabled),
-      &.focused
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 12%)
-
-      &:active:not(.hovered):not(.focused):not(.disabled),
-      &.pressed:not(.hovered):not(.focused):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 12%)
-
-    &:disabled:not(.hovered):not(.focused):not(.pressed),
-    &[disabled]:not(.hovered):not(.focused):not(.pressed),
-    &.disabled:not(.hovered):not(.focused):not(.pressed)
-      @include theme.preferred
-        color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
   &.icon
     padding: 0

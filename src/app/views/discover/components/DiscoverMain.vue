@@ -239,36 +239,298 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
+        Elevated button states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <ElevatedButton>
+            <TypographyLabel>
+              Enabled
+            </TypographyLabel>
+          </ElevatedButton>
+        </Column>
+        <Column>
+          <ElevatedButton :state="ButtonState.hovered">
+            <TypographyLabel>
+              Hovered
+            </TypographyLabel>
+          </ElevatedButton>
+        </Column>
+        <Column>
+          <ElevatedButton :state="ButtonState.focused">
+            <TypographyLabel>
+              Focused
+            </TypographyLabel>
+          </ElevatedButton>
+        </Column>
+        <Column>
+          <ElevatedButton :state="ButtonState.pressed">
+            <TypographyLabel>
+              Pressed
+            </TypographyLabel>
+          </ElevatedButton>
+        </Column>
+        <Column>
+          <ElevatedButton :state="ButtonState.disabled">
+            <TypographyLabel>
+              Disabled
+            </TypographyLabel>
+          </ElevatedButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
+        Elevated button with icon states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <ElevatedButton>
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Enabled
+            </TypographyLabel>
+          </ElevatedButton>
+        </Column>
+        <Column>
+          <ElevatedButton :state="ButtonState.hovered">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Hovered
+            </TypographyLabel>
+          </ElevatedButton>
+        </Column>
+        <Column>
+          <ElevatedButton :state="ButtonState.focused">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Focused
+            </TypographyLabel>
+          </ElevatedButton>
+        </Column>
+        <Column>
+          <ElevatedButton :state="ButtonState.pressed">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Pressed
+            </TypographyLabel>
+          </ElevatedButton>
+        </Column>
+        <Column>
+          <ElevatedButton :state="ButtonState.disabled">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Disabled
+            </TypographyLabel>
+          </ElevatedButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
         Filled button states
       </TypographyDisplay>
       <Row>
         <Column>
           <FilledButton>
-            Enabled
+            <TypographyLabel>
+              Enabled
+            </TypographyLabel>
           </FilledButton>
         </Column>
         <Column>
           <FilledButton :state="ButtonState.hovered">
-            Hovered
+            <TypographyLabel>
+              Hovered
+            </TypographyLabel>
           </FilledButton>
         </Column>
         <Column>
           <FilledButton :state="ButtonState.focused">
-            Focused
+            <TypographyLabel>
+              Focused
+            </TypographyLabel>
           </FilledButton>
         </Column>
         <Column>
           <FilledButton :state="ButtonState.pressed">
-            Pressed
+            <TypographyLabel>
+              Pressed
+            </TypographyLabel>
           </FilledButton>
         </Column>
         <Column>
-          <FilledButton
-            :state="ButtonState.disabled"
-            disabled
-          >
-            Disabled
+          <FilledButton :state="ButtonState.disabled">
+            <TypographyLabel>
+              Disabled
+            </TypographyLabel>
           </FilledButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
+        Filled button with icon states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <FilledButton>
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Enabled
+            </TypographyLabel>
+          </FilledButton>
+        </Column>
+        <Column>
+          <FilledButton :state="ButtonState.hovered">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Hovered
+            </TypographyLabel>
+          </FilledButton>
+        </Column>
+        <Column>
+          <FilledButton :state="ButtonState.focused">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Focused
+            </TypographyLabel>
+          </FilledButton>
+        </Column>
+        <Column>
+          <FilledButton :state="ButtonState.pressed">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Pressed
+            </TypographyLabel>
+          </FilledButton>
+        </Column>
+        <Column>
+          <FilledButton :state="ButtonState.disabled">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Disabled
+            </TypographyLabel>
+          </FilledButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
+        Tonal button states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <TonalButton>
+            <TypographyLabel>
+              Enabled
+            </TypographyLabel>
+          </TonalButton>
+        </Column>
+        <Column>
+          <TonalButton :state="ButtonState.hovered">
+            <TypographyLabel>
+              Hovered
+            </TypographyLabel>
+          </TonalButton>
+        </Column>
+        <Column>
+          <TonalButton :state="ButtonState.focused">
+            <TypographyLabel>
+              Focused
+            </TypographyLabel>
+          </TonalButton>
+        </Column>
+        <Column>
+          <TonalButton :state="ButtonState.pressed">
+            <TypographyLabel>
+              Pressed
+            </TypographyLabel>
+          </TonalButton>
+        </Column>
+        <Column>
+          <TonalButton :state="ButtonState.disabled">
+            <TypographyLabel>
+              Disabled
+            </TypographyLabel>
+          </TonalButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
+        Tonal button with icon states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <TonalButton>
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Enabled
+            </TypographyLabel>
+          </TonalButton>
+        </Column>
+        <Column>
+          <TonalButton :state="ButtonState.hovered">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Hovered
+            </TypographyLabel>
+          </TonalButton>
+        </Column>
+        <Column>
+          <TonalButton :state="ButtonState.focused">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Focused
+            </TypographyLabel>
+          </TonalButton>
+        </Column>
+        <Column>
+          <TonalButton :state="ButtonState.pressed">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Pressed
+            </TypographyLabel>
+          </TonalButton>
+        </Column>
+        <Column>
+          <TonalButton :state="ButtonState.disabled">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Disabled
+            </TypographyLabel>
+          </TonalButton>
         </Column>
       </Row>
     </section>
@@ -279,30 +541,94 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <Row>
         <Column>
           <OutlinedButton>
-            Enabled
+            <TypographyLabel>
+              Enabled
+            </TypographyLabel>
           </OutlinedButton>
         </Column>
         <Column>
           <OutlinedButton :state="ButtonState.hovered">
-            Hovered
+            <TypographyLabel>
+              Hovered
+            </TypographyLabel>
           </OutlinedButton>
         </Column>
         <Column>
           <OutlinedButton :state="ButtonState.focused">
-            Focused
+            <TypographyLabel>
+              Focused
+            </TypographyLabel>
           </OutlinedButton>
         </Column>
         <Column>
           <OutlinedButton :state="ButtonState.pressed">
-            Pressed
+            <TypographyLabel>
+              Pressed
+            </TypographyLabel>
           </OutlinedButton>
         </Column>
         <Column>
-          <OutlinedButton
-            :state="ButtonState.disabled"
-            disabled
-          >
-            Disabled
+          <OutlinedButton :state="ButtonState.disabled">
+            <TypographyLabel>
+              Disabled
+            </TypographyLabel>
+          </OutlinedButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
+        Outlined button with icon states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <OutlinedButton>
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Enabled
+            </TypographyLabel>
+          </OutlinedButton>
+        </Column>
+        <Column>
+          <OutlinedButton :state="ButtonState.hovered">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Hovered
+            </TypographyLabel>
+          </OutlinedButton>
+        </Column>
+        <Column>
+          <OutlinedButton :state="ButtonState.focused">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Focused
+            </TypographyLabel>
+          </OutlinedButton>
+        </Column>
+        <Column>
+          <OutlinedButton :state="ButtonState.pressed">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Pressed
+            </TypographyLabel>
+          </OutlinedButton>
+        </Column>
+        <Column>
+          <OutlinedButton :state="ButtonState.disabled">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Disabled
+            </TypographyLabel>
           </OutlinedButton>
         </Column>
       </Row>
@@ -314,101 +640,95 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       <Row>
         <Column>
           <TextButton>
-            Enabled
+            <TypographyLabel>
+              Enabled
+            </TypographyLabel>
           </TextButton>
         </Column>
         <Column>
           <TextButton :state="ButtonState.hovered">
-            Hovered
+            <TypographyLabel>
+              Hovered
+            </TypographyLabel>
           </TextButton>
         </Column>
         <Column>
           <TextButton :state="ButtonState.focused">
-            Focused
+            <TypographyLabel>
+              Focused
+            </TypographyLabel>
           </TextButton>
         </Column>
         <Column>
           <TextButton :state="ButtonState.pressed">
-            Pressed
+            <TypographyLabel>
+              Pressed
+            </TypographyLabel>
           </TextButton>
         </Column>
         <Column>
-          <TextButton
-            :state="ButtonState.disabled"
-            disabled
-          >
-            Disabled
+          <TextButton :state="ButtonState.disabled">
+            <TypographyLabel>
+              Disabled
+            </TypographyLabel>
           </TextButton>
         </Column>
       </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
-        Elevated button states
+        Text button with icon states
       </TypographyDisplay>
       <Row>
         <Column>
-          <ElevatedButton>
-            Enabled
-          </ElevatedButton>
+          <TextButton>
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Enabled
+            </TypographyLabel>
+          </TextButton>
         </Column>
         <Column>
-          <ElevatedButton :state="ButtonState.hovered">
-            Hovered
-          </ElevatedButton>
+          <TextButton :state="ButtonState.hovered">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Hovered
+            </TypographyLabel>
+          </TextButton>
         </Column>
         <Column>
-          <ElevatedButton :state="ButtonState.focused">
-            Focused
-          </ElevatedButton>
+          <TextButton :state="ButtonState.focused">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Focused
+            </TypographyLabel>
+          </TextButton>
         </Column>
         <Column>
-          <ElevatedButton :state="ButtonState.pressed">
-            Pressed
-          </ElevatedButton>
+          <TextButton :state="ButtonState.pressed">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Pressed
+            </TypographyLabel>
+          </TextButton>
         </Column>
         <Column>
-          <ElevatedButton
-            :state="ButtonState.disabled"
-            disabled
-          >
-            Disabled
-          </ElevatedButton>
-        </Column>
-      </Row>
-    </section>
-    <section>
-      <TypographyDisplay :size="TypographySize.small">
-        Tonal button states
-      </TypographyDisplay>
-      <Row>
-        <Column>
-          <TonalButton>
-            Enabled
-          </TonalButton>
-        </Column>
-        <Column>
-          <TonalButton :state="ButtonState.hovered">
-            Hovered
-          </TonalButton>
-        </Column>
-        <Column>
-          <TonalButton :state="ButtonState.focused">
-            Focused
-          </TonalButton>
-        </Column>
-        <Column>
-          <TonalButton :state="ButtonState.pressed">
-            Pressed
-          </TonalButton>
-        </Column>
-        <Column>
-          <TonalButton
-            :state="ButtonState.disabled"
-            disabled
-          >
-            Disabled
-          </TonalButton>
+          <TextButton :state="ButtonState.disabled">
+            <RoundedIcon>
+              add_circle
+            </RoundedIcon>
+            <TypographyLabel>
+              Disabled
+            </TypographyLabel>
+          </TextButton>
         </Column>
       </Row>
     </section>
