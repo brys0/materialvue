@@ -35,6 +35,7 @@
 <script lang="ts" setup>
 import {
 	watch,
+	onBeforeMount,
 	onBeforeUnmount,
 } from 'vue'
 
@@ -82,27 +83,31 @@ const {
 
 const unwatchTheme = watch(theme, syncTheme)
 
-// Check to see if Media-Queries are supported
-if (window.matchMedia) {
-	logger.trace('matchMedia', window.matchMedia('(prefers-color-scheme: dark)').matches)
+onBeforeMount(() => {
+	syncTheme(appStore.theme)
 
-	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-		appStore.setTheme(Theme.dark)
+	// Check to see if Media-Queries are supported
+	if (window.matchMedia) {
+		logger.trace('matchMedia', window.matchMedia('(prefers-color-scheme: dark)').matches)
 
-		logger.trace('detected dark theme')
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			appStore.setTheme(Theme.dark)
+
+			logger.trace('detected dark theme')
+		}
+		else {
+			appStore.setTheme(Theme.light)
+
+			logger.trace('detected light theme')
+		}
+
+		window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', event => {
+			appStore.setTheme(event.matches ? Theme.light : Theme.dark)
+		})
 	}
-	else {
-		appStore.setTheme(Theme.light)
+})
 
-		logger.trace('detected light theme')
-	}
-
-	window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', event => {
-		appStore.setTheme(event.matches ? Theme.light : Theme.dark)
-	})
-}
-
-onBeforeUnmount((): void => {
+onBeforeUnmount(() => {
 	unwatchTheme()
 })
 
