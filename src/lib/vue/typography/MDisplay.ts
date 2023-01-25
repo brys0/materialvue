@@ -37,31 +37,31 @@ import {
 } from 'vue'
 
 import {
-	Typography,
-	TypographySize,
-} from '@/lib/vue/typography/Typography'
+	MTypography,
+	MTypographySize,
+} from '@/lib/vue/typography/MTypography'
 
-export type TypographyDisplayProps = {
-	size?: TypographySize
+export type MDisplayProps = {
+	size?: MTypographySize
 }
 
-export const TypographyDisplay: FunctionalComponent<TypographyDisplayProps> = ({
+export const MDisplay: FunctionalComponent<MDisplayProps> = ({
 	size,
 }, {
 	slots,
-}): VNode => h(Typography, {
+}): VNode => h(MTypography, {
 	size,
 	class: {
-		display: true,
+		'm-display': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-TypographyDisplay.displayName = 'TypographyDisplay'
+MDisplay.displayName = 'MDisplay'
 
-TypographyDisplay.props = [
+MDisplay.props = [
 	'size'
 ]
 
-export default TypographyDisplay
+export default MDisplay

@@ -35,14 +35,14 @@
 :disabled:not(.hovered):not(.focused):not(.pressed),
 [disabled]:not(.hovered):not(.focused):not(.pressed),
 .disabled:not(.hovered):not(.focused):not(.pressed)
-  .typography
+  .m-typography
     @extend %is-not-selectable
 
     cursor: not-allowed
     pointer-events: all !important
     box-shadow: none
 
-%typography
+%m-typography
   @extend %is-selectable
 
   font-style: normal
@@ -52,143 +52,138 @@
   @include theme.preferred
     color: theme.style(on-background)
   
-%typography-display-large
+%m-typography-display-large
   font-size: 57px
   line-height: 64px
   letter-spacing: -0.25px
 
-%typography-display-medium
+%m-typography-display-medium
   font-size: 45px
   line-height: 52px
 
-%typography-display-small
+%m-typography-display-small
   font-size: 36px
   line-height: 44px
 
-%typography-headline-large
+%m-typography-headline-large
   font-size: 32px
   line-height: 40px
 
-%typography-headline-medium
+%m-typography-headline-medium
   font-size: 28px
   line-height: 36px
 
-%typography-headline-small
+%m-typography-headline-small
   font-size: 24px
   line-height: 32px
 
-%typography-title-large
+%m-typography-title-large
   font-size: 22px
   line-height: 28px
 
-%typography-title-medium
+%m-typography-title-medium
   font-size: 16px
   line-height: 24px
   letter-spacing: 0.15px
 
-%typography-title-small
+%m-typography-title-small
   font-size: 14px
   line-height: 20px
   letter-spacing: 0.1px
 
-%typography-label-large
+%m-typography-label-large
   font-size: 14px
   line-height: 20px
   letter-spacing: 0.1
 
-%typography-label-medium
+%m-typography-label-medium
   font-size: 12px
   line-height: 16px
   letter-spacing: 0.5px
 
-%typography-label-small
+%m-typography-label-small
   font-size: 11px
   line-height: 16px
   letter-spacing: 0.5px
 
-%typography-body-large
+%m-typography-body-large
   font-size: 16px
   line-height: 24px
   letter-spacing: 0.15
 
-%typography-body-medium
+%m-typography-body-medium
   font-size: 14px
   line-height: 20px
   letter-spacing: 0.25px
 
-%typography-body-small
+%m-typography-body-small
   font-size: 12px
   line-height: 16px
   letter-spacing: 0.4px
 
-.typography
-  @extend %typography
+.m-typography
+  @extend %m-typography
 
-  &.display
-
+  &.m-display
     &.large
-      @extend %typography-display-large
+      @extend %m-typography-display-large
     
     &,
     &.medium
-      @extend %typography-display-medium
+      @extend %m-typography-display-medium
     
     &.small
-      @extend %typography-display-small
+      @extend %m-typography-display-small
 
   &.m-headline
-    
     &.large
-      @extend %typography-headline-large
+      @extend %m-typography-headline-large
     
     &,
     &.medium
-      @extend %typography-headline-medium
+      @extend %m-typography-headline-medium
     
     &.small
-      @extend %typography-headline-small
+      @extend %m-typography-headline-small
 
-  &.title
-    
+  &.m-title
     &.large
-      @extend %typography-title-large
+      @extend %m-typography-title-large
     
     &,
     &.medium
-      @extend %typography-title-medium
+      @extend %m-typography-title-medium
     
     &.small
-      @extend %typography-title-small
+      @extend %m-typography-title-small
 
     + .m-body
       margin-top: 16px
 
   &.m-label
-    
     &.large
-      @extend %typography-label-large
+      @extend %m-typography-label-large
     
     &,
     &.medium
-      @extend %typography-label-medium
+      @extend %m-typography-label-medium
     
     &.small
-      @extend %typography-label-small
+      @extend %m-typography-label-small
 
-    + .title
+    + .m-title
         margin-top: 16px
   
   &.m-body
-
     &.large
-      @extend %typography-body-large
+      @extend %m-typography-body-large
     
     &,
     &.medium
-      @extend %typography-body-medium
+      @extend %m-typography-body-medium
     
     &.small
-      @extend %typography-body-small
+      @extend %m-typography-body-small
 
     + .m-body
       margin-top: 16px

@@ -60,13 +60,13 @@ export {
 } from '@/lib/vue/navigation-drawer'
 
 export {
-	TypographyDisplay,
+	MTypography,
+	MTypographySize,
+	MDisplay,
 	MHeadline,
-	TypographyTitle,
+	MTitle,
 	MLabel,
 	MBody,
-	Typography,
-	TypographySize,
 } from '@/lib/vue/typography'
 
 export {

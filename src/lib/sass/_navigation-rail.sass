@@ -86,9 +86,9 @@
           background: transparent
           border-radius: 16px
 
-      > .typography
+      > .m-typography
         &.m-label
-          @extend %typography-label-medium
+          @extend %m-typography-label-medium
 
           grid-row: row-2-start / row-2-end
           grid-column: col-1-start / col-1-end
@@ -100,7 +100,7 @@
             background: theme.style(surface)
             color: theme.style(on-surface-variant)
 
-        > .typography
+        > .m-typography
           &.m-label
             @include theme.preferred
               color: theme.style(on-surface-variant)
@@ -111,7 +111,7 @@
               background: theme.style(secondary-container)
               color: theme.style(on-secondary-container)
 
-          > .typography
+          > .m-typography
             &.m-label
               @include theme.preferred
                 color: theme.style(on-surface)

@@ -37,19 +37,19 @@ import {
 } from 'vue'
 
 import {
-	Typography,
-	TypographySize,
-} from '@/lib/vue/typography/Typography'
+	MTypography,
+	MTypographySize,
+} from '@/lib/vue/typography/MTypography'
 
 export type MHeadlineProps = {
-	size?: TypographySize
+	size?: MTypographySize
 }
 
 export const MHeadline: FunctionalComponent<MHeadlineProps> = ({
 	size,
 }, {
 	slots,
-}): VNode => h(Typography, {
+}): VNode => h(MTypography, {
 	size,
 	class: {
 		'm-headline': true,

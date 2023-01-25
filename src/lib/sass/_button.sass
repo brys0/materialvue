@@ -66,11 +66,11 @@ a.button
     grid-row: row-1-start / row-1-end
     grid-column: col-1-start / col-1-end
 
-  > .typography
+  > .m-typography
     @extend %is-not-selectable
 
     &.m-label
-      @extend %typography-label-large
+      @extend %m-typography-label-large
 
       grid-row: row-1-start / row-1-end
       grid-column: col-2-start / col-2-end
@@ -93,11 +93,11 @@ a.button
       font-size: 18px
       padding-left: 16px
 
-      + .typography
+      + .m-typography
         &.m-label
           padding-left: 8px
 
-    > .typography
+    > .m-typography
       &.m-label
         padding: 0 24px
 
@@ -111,7 +111,7 @@ a.button
         @include theme.preferred
           color: theme.style(primary)
 
-      > .typography
+      > .m-typography
         &.m-label
           @include theme.preferred
             color: theme.style(primary)
@@ -154,7 +154,7 @@ a.button
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
       
-      > .typography
+      > .m-typography
         &.m-label
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
@@ -170,11 +170,11 @@ a.button
       font-size: 18px
       padding-left: 16px
 
-      + .typography
+      + .m-typography
         &.m-label
           padding-left: 8px
 
-    > .typography
+    > .m-typography
       &.m-label
         padding: 0 24px
 
@@ -188,7 +188,7 @@ a.button
         @include theme.preferred
           color: theme.style(on-primary)
 
-      > .typography
+      > .m-typography
         &.m-label
           @include theme.preferred
             color: theme.style(on-primary)
@@ -231,7 +231,7 @@ a.button
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
       
-      > .typography
+      > .m-typography
         &.m-label
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
@@ -247,11 +247,11 @@ a.button
       font-size: 18px
       padding-left: 16px
 
-      + .typography
+      + .m-typography
         &.m-label
           padding-left: 8px
 
-    > .typography
+    > .m-typography
       &.m-label
         padding: 0 24px
 
@@ -265,7 +265,7 @@ a.button
         @include theme.preferred
           color: theme.style(on-secondary-container)
 
-      > .typography
+      > .m-typography
         &.m-label
           @include theme.preferred
             color: theme.style(on-secondary-container)
@@ -308,7 +308,7 @@ a.button
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
       
-      > .typography
+      > .m-typography
         &.m-label
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
@@ -325,11 +325,11 @@ a.button
       font-size: 18px
       padding-left: 16px
 
-      + .typography
+      + .m-typography
         &.m-label
           padding-left: 8px
 
-    > .typography
+    > .m-typography
       &.m-label
         padding: 0 24px
 
@@ -342,7 +342,7 @@ a.button
         @include theme.preferred
           color: theme.style(primary)
 
-      > .typography
+      > .m-typography
         &.m-label
           @include theme.preferred
             color: theme.style(primary)
@@ -384,7 +384,7 @@ a.button
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
       
-      > .typography
+      > .m-typography
         &.m-label
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
@@ -401,12 +401,12 @@ a.button
       font-size: 18px
       padding-left: 12px
 
-      + .typography
+      + .m-typography
         &.m-label
           padding-left: 8px
           padding-right: 16px
 
-    > .typography
+    > .m-typography
       &.m-label
         padding: 0 12px
 
@@ -416,7 +416,7 @@ a.button
         @include theme.preferred
           color: theme.style(primary)
 
-      > .typography
+      > .m-typography
         &.m-label
           @include theme.preferred
             color: theme.style(primary)
@@ -446,7 +446,7 @@ a.button
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
       
-      > .typography
+      > .m-typography
         &.m-label
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)

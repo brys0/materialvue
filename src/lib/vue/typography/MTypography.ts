@@ -36,32 +36,35 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-import {
-	Typography,
-	TypographySize,
-} from '@/lib/vue/typography/Typography'
-
-export type TypographyTitleProps = {
-	size?: TypographySize
+export enum MTypographySize {
+  small = 'small',
+	medium = 'medium',
+	large = 'large',
 }
 
-export const TypographyTitle: FunctionalComponent<TypographyTitleProps> = ({
+export type MTypographyProps = {
+	size?: MTypographySize,
+}
+
+export const MTypography: FunctionalComponent<MTypographyProps> = ({
 	size,
 }, {
 	slots,
-}): VNode => h(Typography, {
-	size,
+}): VNode => h('span', {
 	class: {
-		title: true,
+		'm-typography': true,
+		small: MTypographySize.small === size,
+		medium: MTypographySize.medium === size,
+		large: MTypographySize.large === size,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-TypographyTitle.displayName = 'TypographyTitle'
+MTypography.displayName = 'MTypography'
 
-TypographyTitle.props = [
+MTypography.props = [
 	'size'
 ]
 
-export default TypographyTitle
+export default MTypography

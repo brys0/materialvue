@@ -31,21 +31,21 @@
  */
 
 export {
-	Typography,
-	TypographySize,
-} from '@/lib/vue/typography/Typography'
+	MTypography,
+	MTypographySize,
+} from '@/lib/vue/typography/MTypography'
 
 export {
-	TypographyDisplay,
-} from '@/lib/vue/typography/TypographyDisplay'
+	MDisplay,
+} from '@/lib/vue/typography/MDisplay'
 
 export {
 	MHeadline,
 } from '@/lib/vue/typography/MHeadline'
 
 export {
-	TypographyTitle,
-} from '@/lib/vue/typography/TypographyTitle'
+	MTitle,
+} from '@/lib/vue/typography/MTitle'
 
 export {
 	MLabel,

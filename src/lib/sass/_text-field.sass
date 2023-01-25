@@ -109,7 +109,7 @@
     > .field-body
       @extend %text-field-body
 
-      > .typography
+      > .m-typography
         &.m-label
           @extend %is-not-selectable
         
@@ -123,9 +123,9 @@
         
         overflow: hidden
 
-        > .typography
+        > .m-typography
           &.m-label
-            @extend %typography-body-large
+            @extend %m-typography-body-large
 
       > .field-input-prefix
         padding-right: 4px
@@ -138,7 +138,7 @@
         grid-column: col-3-start / col-3-end
 
       > .field-input
-        @extend %typography-body-large
+        @extend %m-typography-body-large
 
         padding: 0
         grid-row: row-2-start / row-2-end
@@ -165,7 +165,7 @@
   > .field-support
     @extend %text-field-support
     
-    > .typography
+    > .m-typography
       grid-row: row-1-start / row-1-end
         
       &.m-body
@@ -180,9 +180,9 @@
   &.is-empty:not(.focused)
     > .field-control
       > .field-body
-        > .typography
+        > .m-typography
           &.m-label
-            @extend %typography-body-large
+            @extend %m-typography-body-large
         
         > .field-input-prefix,
         > .field-input-suffix,
@@ -195,7 +195,7 @@
     &:not(.is-empty)
       > .field-control
         > .field-body
-          > .typography
+          > .m-typography
             &.m-label
               height: 0
               appearance: none
@@ -217,9 +217,9 @@
           font-size: 24px
 
       > .field-body
-        > .typography
+        > .m-typography
           &.m-label
-            @extend %typography-body-small
+            @extend %m-typography-body-small
 
         > .field-input
           border: none
@@ -227,10 +227,10 @@
           background: transparent
             
     > .field-support
-      > .typography
+      > .m-typography
         &.m-body,
         &.m-label
-          @extend %typography-body-small
+          @extend %m-typography-body-small
 
     &.has-error
       > .field-control
@@ -250,14 +250,14 @@
               color: theme.style(on-surface-variant)
 
         > .field-body
-          > .typography
+          > .m-typography
             &.m-label
               @include theme.preferred
                 color: theme.style(on-surface-variant)
           
           > .field-input-prefix,
           > .field-input-suffix
-            > .typography
+            > .m-typography
               &.m-label
                 @include theme.preferred
                   color: theme.style(on-surface-variant)
@@ -278,7 +278,7 @@
                 -webkit-box-shadow: 0 0 0 30px theme.style(surface-variant) inset !important
               
       > .field-support
-        > .typography
+        > .m-typography
           &.m-body,
           &.m-label
             @include theme.preferred
@@ -295,13 +295,13 @@
                 color: theme.style(error)
 
           > .field-body        
-            > .typography
+            > .m-typography
               &.m-label
                 @include theme.preferred
                   color: theme.style(error)
             
         > .field-support
-          > .typography
+          > .m-typography
             &.m-body,
             &.m-label
               @include theme.preferred
@@ -324,13 +324,13 @@
               background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
 
           > .field-body
-            > .typography
+            > .m-typography
               &.m-label
                 @include theme.preferred
                   color: theme.style(on-surface-variant)
 
         > .field-support
-          > .typography
+          > .m-typography
             &.m-body,
             &.m-label
               @include theme.preferred
@@ -352,13 +352,13 @@
                   color: theme.style(on-error-container)
 
             > .field-body  
-              > .typography
+              > .m-typography
                 &.m-label
                   @include theme.preferred
                     color: theme.style(on-error-container)
               
           > .field-support
-            > .typography
+            > .m-typography
               &.m-body,
               &.m-label
                 @include theme.preferred
@@ -373,16 +373,16 @@
             border-bottom-color: theme.style(primary)
 
           > .field-body
-            > .typography
+            > .m-typography
               &.m-label
-                @extend %typography-body-small
+                @extend %m-typography-body-small
 
                 @include theme.preferred
                   color: theme.style(primary)
                 
                 
         > .field-support
-          > .typography
+          > .m-typography
             &.m-body,
             &.m-label
               @include theme.preferred
@@ -404,7 +404,7 @@
                   color: theme.style(error)
             
             > .field-body
-              > .typography
+              > .m-typography
                 &.m-label
                   @include theme.preferred
                     color: theme.style(error)
@@ -414,7 +414,7 @@
                   caret-color: theme.style(error)
                 
           > .field-support
-            > .typography
+            > .m-typography
               &.m-body,
               &.m-label
                 @include theme.preferred
@@ -440,7 +440,7 @@
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           
         > .field-body
-          > .typography
+          > .m-typography
             &.m-label
               @include theme.preferred
                 color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
@@ -460,7 +460,7 @@
                 -webkit-box-shadow: 0 0 0 30px conversion.hex-to-rgba(theme.style(on-surface), 4%) inset !important
                 
       > .field-support
-        > .typography
+        > .m-typography
           &.m-body,
           &.m-label
             @include theme.preferred

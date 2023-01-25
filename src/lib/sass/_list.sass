@@ -159,23 +159,23 @@
     > .list-item-body
       @extend %list-item-body
       
-      > .typography
+      > .m-typography
         @extend %is-not-selectable
 
         &.m-headline
-          @extend %typography-body-large
+          @extend %m-typography-body-large
         
         &.m-body
-          @extend %typography-body-medium
+          @extend %m-typography-body-medium
 
     > .list-item-trailing
       @extend %list-item-trailing
 
-      > .typography
+      > .m-typography
         @extend %is-not-selectable
 
         &.m-label
-          @extend %typography-label-small
+          @extend %m-typography-label-small
       
       > .icon
         font-size: 24px
@@ -196,14 +196,14 @@
             color: theme.style(on-surface-variant)
 
         > .m-avatar
-          > .typography
+          > .m-typography
             &.m-label
               @include theme.preferred
                 background: theme.style(primary-container)
                 color: theme.style(on-primary-container)
       
       > .list-item-body
-        > .typography
+        > .m-typography
           &.m-headline
             @include theme.preferred
               color: theme.style(on-surface)
@@ -213,7 +213,7 @@
               color: theme.style(on-surface-variant)
 
       > .list-item-trailing
-        > .typography
+        > .m-typography
           &.m-label
             @include theme.preferred
               color: theme.style(on-surface-variant)
@@ -308,7 +308,7 @@
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
         
       > .list-item-body
-        > .typography
+        > .m-typography
           &.m-headline
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
@@ -318,7 +318,7 @@
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
       > .list-item-trailing
-        > .typography
+        > .m-typography
           &.m-label
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)

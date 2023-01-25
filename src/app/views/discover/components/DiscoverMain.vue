@@ -54,10 +54,10 @@ import {
 
 import {
 	Main,
-	TypographySize,
-	TypographyDisplay,
+	MTypographySize,
+	MDisplay,
 	MHeadline,
-	TypographyTitle,
+	MTitle,
 	MLabel,
 	MBody,
 	ButtonState,
@@ -148,10 +148,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
 <template>
   <Main>
     <section class="banner">
-      <TypographyDisplay :size="TypographySize.large">
-        Typography
-      </TypographyDisplay>
-      <m-body :size="TypographySize.large">
+      <m-display :size="MTypographySize.large">
+        MTypography
+      </m-display>
+      <m-body :size="MTypographySize.large">
         See the <a
           href="https://m3.material.io/styles/typography/overview"
           target="_blank"
@@ -159,81 +159,81 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </m-body>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.large">
+      <m-display :size="MTypographySize.large">
         Display
-      </TypographyDisplay>
-      <TypographyDisplay :size="TypographySize.large">
+      </m-display>
+      <m-display :size="MTypographySize.large">
         Display Large - Roboto 57/64 . 0
-      </TypographyDisplay>
-      <TypographyDisplay :size="TypographySize.medium">
+      </m-display>
+      <m-display :size="MTypographySize.medium">
         Display Medium - Roboto 45/52 .  0
-      </TypographyDisplay>
-      <TypographyDisplay :size="TypographySize.small">
+      </m-display>
+      <m-display :size="MTypographySize.small">
         Display Small - Roboto 36/44 . 0
-      </TypographyDisplay>
+      </m-display>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.large">
+      <m-display :size="MTypographySize.large">
         Headline
-      </TypographyDisplay>
-      <m-headline :size="TypographySize.large">
+      </m-display>
+      <m-headline :size="MTypographySize.large">
         Headline Large - Roboto 32/40 . 0
       </m-headline>
-      <m-headline :size="TypographySize.medium">
+      <m-headline :size="MTypographySize.medium">
         Headline Medium - Roboto 28/36 . 0
       </m-headline>
-      <m-headline :size="TypographySize.small">
+      <m-headline :size="MTypographySize.small">
         Headline Small - Roboto 24/32 . 0
       </m-headline>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.large">
+      <m-display :size="MTypographySize.large">
         Title
-      </TypographyDisplay>
-      <TypographyTitle :size="TypographySize.large">
+      </m-display>
+      <m-title :size="MTypographySize.large">
         Title Large - Roboto Medium 22/28 . 0
-      </TypographyTitle>
-      <TypographyTitle :size="TypographySize.medium">
+      </m-title>
+      <m-title :size="MTypographySize.medium">
         Title Medium - Roboto Medium 16/24 . +0.15
-      </TypographyTitle>
-      <TypographyTitle :size="TypographySize.small">
+      </m-title>
+      <m-title :size="MTypographySize.small">
         Title Small - Roboto Medium 14/20 . +0.1
-      </TypographyTitle>
+      </m-title>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.large">
+      <m-display :size="MTypographySize.large">
         Label
-      </TypographyDisplay>
-      <m-label :size="TypographySize.large">
+      </m-display>
+      <m-label :size="MTypographySize.large">
         Label Large - Roboto Medium 14/20 . +0.1
       </m-label>
-      <m-label :size="TypographySize.medium">
+      <m-label :size="MTypographySize.medium">
         Label Medium - Roboto Medium 12/16 . +0.5
       </m-label>
-      <m-label :size="TypographySize.small">
+      <m-label :size="MTypographySize.small">
         Label Small - Roboto Medium 11/16 . +0.5
       </m-label>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.large">
+      <m-display :size="MTypographySize.large">
         Body
-      </TypographyDisplay>
-      <m-body :size="TypographySize.large">
+      </m-display>
+      <m-body :size="MTypographySize.large">
         Body Large - Roboto 16/24 . +0.15
       </m-body>
-      <m-body :size="TypographySize.medium">
+      <m-body :size="MTypographySize.medium">
         Body Medium - Roboto 14/20 . +0.25
       </m-body>
-      <m-body :size="TypographySize.small">
+      <m-body :size="MTypographySize.small">
         Body Small - Roboto 12/16 . +0.4
       </m-body>
     </section>
 
     <section class="banner">
-      <TypographyDisplay :size="TypographySize.large">
+      <m-display :size="MTypographySize.large">
         Buttons
-      </TypographyDisplay>
-      <m-body :size="TypographySize.large">
+      </m-display>
+      <m-body :size="MTypographySize.large">
         See the <a
           href="https://m3.material.io/components/buttons/overview"
           target="_blank"
@@ -241,9 +241,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </m-body>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Elevated button states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <ElevatedButton>
@@ -283,9 +283,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Elevated button with icon states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <ElevatedButton>
@@ -340,9 +340,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Filled button states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <FilledButton>
@@ -382,9 +382,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Filled button with icon states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <FilledButton>
@@ -439,9 +439,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Tonal button states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <TonalButton>
@@ -481,9 +481,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Tonal button with icon states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <TonalButton>
@@ -538,9 +538,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Outlined button states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <OutlinedButton>
@@ -580,9 +580,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Outlined button with icon states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <OutlinedButton>
@@ -637,9 +637,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Text button states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <TextButton>
@@ -679,9 +679,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Text button with icon states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <TextButton>
@@ -736,9 +736,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Filled icon button no toggle states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <FilledIconButton>
@@ -778,9 +778,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Filled icon button toggle-unselected states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <FilledIconButton :toggle="true">
@@ -832,9 +832,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Filled icon button toggle-selected states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <FilledIconButton
@@ -892,9 +892,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Tonal icon button no toggle states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <TonalIconButton>
@@ -934,9 +934,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Tonal icon button toggle-unselected states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <TonalIconButton :toggle="true">
@@ -988,9 +988,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Tonal icon button toggle-selected states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <TonalIconButton
@@ -1048,9 +1048,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Outlined icon button toggle-unselected states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <OutlinedIconButton :toggle="true">
@@ -1102,9 +1102,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Outlined icon button toggle-selected states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <OutlinedIconButton
@@ -1162,9 +1162,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Standard icon button toggle-unselected states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <IconButton :toggle="true">
@@ -1216,9 +1216,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Standard icon button toggle-selected states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <IconButton
@@ -1276,9 +1276,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         FAB button lowered states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <FABButton :lowered="true">
@@ -1331,9 +1331,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         FAB button surface variant
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <FABButton :variant="FABButtonVariant.surface">
@@ -1386,9 +1386,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         FAB button secondary variant
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <FABButton :variant="FABButtonVariant.secondary">
@@ -1441,9 +1441,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </Row>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         FAB button tertiary variant
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <FABButton :variant="FABButtonVariant.tertiary">
@@ -1497,10 +1497,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
     </section>
 
     <section class="banner">
-      <TypographyDisplay :size="TypographySize.large">
+      <m-display :size="MTypographySize.large">
         Text fields
-      </TypographyDisplay>
-      <m-body :size="TypographySize.large">
+      </m-display>
+      <m-body :size="MTypographySize.large">
         See the <a
           href="https://m3.material.io/text-fields/overview"
           target="_blank"
@@ -1508,9 +1508,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </m-body>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Filled text field states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <form @submit="onSubmit">
@@ -1694,9 +1694,9 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
           </form>
         </Column>
       </Row>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Filled text field error states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <form @submit="onSubmit">
@@ -1835,10 +1835,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
     </section>
 
     <section class="banner">
-      <TypographyDisplay :size="TypographySize.large">
+      <m-display :size="MTypographySize.large">
         Cards
-      </TypographyDisplay>
-      <m-body :size="TypographySize.large">
+      </m-display>
+      <m-body :size="MTypographySize.large">
         See the <a
           href="https://m3.material.io/components/cards/overview"
           target="_blank"
@@ -1846,21 +1846,21 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       </m-body>
     </section>
     <section>
-      <TypographyDisplay :size="TypographySize.small">
+      <m-display :size="MTypographySize.small">
         Elevated card states
-      </TypographyDisplay>
+      </m-display>
       <Row>
         <Column>
           <ElevatedCard>
             <m-label>
               Enabled
             </m-label>
-            <TypographyTitle :size="TypographySize.large">
+            <m-title :size="MTypographySize.large">
               Title
-            </TypographyTitle>
-            <TypographyTitle :size="TypographySize.small">
+            </m-title>
+            <m-title :size="MTypographySize.small">
               Subhead
-            </TypographyTitle>
+            </m-title>
             <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </m-body>
@@ -1878,12 +1878,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <m-label>
               Hovered
             </m-label>
-            <TypographyTitle :size="TypographySize.large">
+            <m-title :size="MTypographySize.large">
               Title
-            </TypographyTitle>
-            <TypographyTitle :size="TypographySize.small">
+            </m-title>
+            <m-title :size="MTypographySize.small">
               Subhead
-            </TypographyTitle>
+            </m-title>
             <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </m-body>
@@ -1901,12 +1901,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <m-label>
               Focused
             </m-label>
-            <TypographyTitle :size="TypographySize.large">
+            <m-title :size="MTypographySize.large">
               Title
-            </TypographyTitle>
-            <TypographyTitle :size="TypographySize.small">
+            </m-title>
+            <m-title :size="MTypographySize.small">
               Subhead
-            </TypographyTitle>
+            </m-title>
             <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </m-body>
@@ -1924,12 +1924,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <m-label>
               Pressed
             </m-label>
-            <TypographyTitle :size="TypographySize.large">
+            <m-title :size="MTypographySize.large">
               Title
-            </TypographyTitle>
-            <TypographyTitle :size="TypographySize.small">
+            </m-title>
+            <m-title :size="MTypographySize.small">
               Subhead
-            </TypographyTitle>
+            </m-title>
             <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </m-body>
@@ -1947,12 +1947,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <m-label>
               Dragged
             </m-label>
-            <TypographyTitle :size="TypographySize.large">
+            <m-title :size="MTypographySize.large">
               Title
-            </TypographyTitle>
-            <TypographyTitle :size="TypographySize.small">
+            </m-title>
+            <m-title :size="MTypographySize.small">
               Subhead
-            </TypographyTitle>
+            </m-title>
             <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </m-body>
@@ -1970,12 +1970,12 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
             <m-label>
               Disabled
             </m-label>
-            <TypographyTitle :size="TypographySize.large">
+            <m-title :size="MTypographySize.large">
               Title
-            </TypographyTitle>
-            <TypographyTitle :size="TypographySize.small">
+            </m-title>
+            <m-title :size="MTypographySize.small">
               Subhead
-            </TypographyTitle>
+            </m-title>
             <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </m-body>
@@ -1992,10 +1992,10 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
     </section>
 
     <section class="banner">
-      <TypographyDisplay :size="TypographySize.large">
+      <m-display :size="MTypographySize.large">
         Lists
-      </TypographyDisplay>
-      <m-body :size="TypographySize.large">
+      </m-display>
+      <m-body :size="MTypographySize.large">
         See the <a
           href="https://m3.material.io/components/lists/overview"
           target="_blank"
@@ -3854,7 +3854,7 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
       @include theme.preferred
         color: theme.style(primary)
 
-    > .display
+    > .m-display
       padding: 24px 0
 
 </style>
