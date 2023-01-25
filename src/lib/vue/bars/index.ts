@@ -31,17 +31,17 @@
  */
 
 export {
-	Bar,
-} from '@/lib/vue/bars/Bar'
+	MBar,
+} from '@/lib/vue/bars/MBar'
 
 export {
-	BarLeading,
-} from '@/lib/vue/bars/BarLeading'
+	MBarLeading,
+} from '@/lib/vue/bars/MBarLeading'
 
 export {
-	BarBody,
-} from '@/lib/vue/bars/BarBody'
+	MBarBody,
+} from '@/lib/vue/bars/MBarBody'
 
 export {
-	BarTrailing,
-} from '@/lib/vue/bars/BarTrailing'
+	MBarTrailing,
+} from '@/lib/vue/bars/MBarTrailing'

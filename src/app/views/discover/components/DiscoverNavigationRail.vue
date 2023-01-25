@@ -39,7 +39,7 @@ import {
 	MIconButton,
 	MFABButton,
 	MFABButtonVariant,
-	RoundedIcon,
+	MRoundedIcon,
 } from '@/lib/vue'
 
 </script>
@@ -50,22 +50,22 @@ import {
       :lowered="true"
       :variant="MFABButtonVariant.tertiary"
     >
-      <RoundedIcon>
+      <m-rounded-icon>
         edit
-      </RoundedIcon>
+      </m-rounded-icon>
     </m-fab-button>
     <m-icon-button>
-      <RoundedIcon>
+      <m-rounded-icon>
         tag
-      </RoundedIcon>
+      </m-rounded-icon>
       <m-label>
         Tags
       </m-label>
     </m-icon-button>
     <m-icon-button :selected="true">
-      <RoundedIcon>
+      <m-rounded-icon>
         bookmarks
-      </RoundedIcon>
+      </m-rounded-icon>
       <m-label>
         Bookmarks
       </m-label>

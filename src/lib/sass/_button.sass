@@ -46,8 +46,8 @@
   background: transparent
   cursor: pointer
 
-.button,
-a.button
+.m-button,
+a.m-button
   @extend %is-not-selectable
   @extend %is-ellipsis
   @extend %button
@@ -62,7 +62,7 @@ a.button
     display: block
     background: transparent
 
-  > .icon
+  > .m-icon
     grid-row: row-1-start / row-1-end
     grid-column: col-1-start / col-1-end
 
@@ -82,14 +82,14 @@ a.button
     pointer-events: all !important
     box-shadow: none
 
-  &.elevated
+  &.m-elevated
     height: 40px
     border-radius: 20px
 
     &::before
       border-radius: 20px
 
-    > .icon
+    > .m-icon
       font-size: 18px
       padding-left: 16px
 
@@ -107,7 +107,7 @@ a.button
         background: theme.style(elevation-1), theme.style(surface)
         box-shadow: theme.style(shadow-1)
 
-      > .icon
+      > .m-icon
         @include theme.preferred
           color: theme.style(primary)
 
@@ -150,7 +150,7 @@ a.button
         background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
         box-shadow: theme.style(shadow-0)
 
-      > .icon
+      > .m-icon
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
       
@@ -159,14 +159,14 @@ a.button
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
-  &.filled:not(.icon)
+  &.m-filled:not(.m-icon)
     height: 40px
     border-radius: 20px
 
     &::before
       border-radius: 20px
 
-    > .icon
+    > .m-icon
       font-size: 18px
       padding-left: 16px
 
@@ -184,7 +184,7 @@ a.button
         background: theme.style(primary)
         box-shadow: theme.style(shadow-0)
 
-      > .icon
+      > .m-icon
         @include theme.preferred
           color: theme.style(on-primary)
 
@@ -227,7 +227,7 @@ a.button
         background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
         box-shadow: theme.style(shadow-0)
 
-      > .icon
+      > .m-icon
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
       
@@ -236,14 +236,14 @@ a.button
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
-  &.tonal:not(.icon)
+  &.m-tonal:not(.m-icon)
     height: 40px
     border-radius: 20px
 
     &::before
       border-radius: 20px
 
-    > .icon
+    > .m-icon
       font-size: 18px
       padding-left: 16px
 
@@ -261,7 +261,7 @@ a.button
         background: theme.style(secondary-container)
         box-shadow: theme.style(shadow-0)
 
-      > .icon
+      > .m-icon
         @include theme.preferred
           color: theme.style(on-secondary-container)
 
@@ -304,7 +304,7 @@ a.button
         background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
         box-shadow: theme.style(shadow-0)
 
-      > .icon
+      > .m-icon
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
       
@@ -313,7 +313,7 @@ a.button
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
-  &.outlined:not(.icon)
+  &.m-outlined:not(.m-icon)
     height: 40px
     border-radius: 20px
     border: 1px solid
@@ -321,7 +321,7 @@ a.button
     &::before
       border-radius: 20px
 
-    > .icon
+    > .m-icon
       font-size: 18px
       padding-left: 16px
 
@@ -338,7 +338,7 @@ a.button
       @include theme.preferred
         border-color: theme.style(outline)
 
-      > .icon
+      > .m-icon
         @include theme.preferred
           color: theme.style(primary)
 
@@ -380,7 +380,7 @@ a.button
       @include theme.preferred
         border-color: conversion.hex-to-rgba(theme.style(on-surface), 12%)
 
-      > .icon
+      > .m-icon
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
       
@@ -389,7 +389,7 @@ a.button
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
-  &.text
+  &.m-text
     min-width: 48px
     height: 40px
     border-radius: 20px
@@ -397,7 +397,7 @@ a.button
     &::before
       border-radius: 20px
 
-    > .icon
+    > .m-icon
       font-size: 18px
       padding-left: 12px
 
@@ -412,7 +412,7 @@ a.button
 
     &,
     &.enabled
-      > .icon
+      > .m-icon
         @include theme.preferred
           color: theme.style(primary)
 
@@ -442,7 +442,7 @@ a.button
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
     &.disabled:not(.hovered):not(.focused):not(.pressed)
-      > .icon
+      > .m-icon
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
       
@@ -451,7 +451,7 @@ a.button
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
-  &.icon
+  &.m-icon
     width: 48px
     height: 48px
     grid-template-columns: [col-1-start] auto [col-1-end]
@@ -463,7 +463,7 @@ a.button
       right: 4px
       border-radius: 20px
 
-    > .icon
+    > .m-icon
       width: 40px
       height: 40px
       display: flex
@@ -472,20 +472,20 @@ a.button
       font-size: 24px
       border-radius: 20px
     
-    &:not(.filled):not(.tonal):not(.outlined)
+    &:not(.m-filled):not(.m-tonal):not(.m-outlined)
       &,
       &.enabled
-        > .icon
+        > .m-icon
           @include theme.preferred
             color: theme.style(on-surface-variant)
 
         &.toggle
-          > .icon
+          > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
           &.selected
-            > .icon
+            > .m-icon
               @include theme.preferred
                 color: theme.style(primary)
 
@@ -540,26 +540,26 @@ a.button
       &:disabled:not(.hovered):not(.focused):not(.pressed),
       &[disabled]:not(.hovered):not(.focused):not(.pressed),
       &.disabled:not(.hovered):not(.focused):not(.pressed)
-        > .icon
+        > .m-icon
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
     
-    &.filled
+    &.m-filled
       &,
       &.enabled
-        > .icon
+        > .m-icon
           @include theme.preferred
             background: theme.style(primary)
             color: theme.style(on-primary)
 
         &.toggle
-          > .icon
+          > .m-icon
             @include theme.preferred
               background: theme.style(surface-variant)
               color: theme.style(primary)
 
           &.selected
-            > .icon
+            > .m-icon
               @include theme.preferred
                 background: theme.style(primary)
                 color: theme.style(on-primary)
@@ -615,27 +615,27 @@ a.button
       &:disabled:not(.hovered):not(.focused):not(.pressed),
       &[disabled]:not(.hovered):not(.focused):not(.pressed),
       &.disabled:not(.hovered):not(.focused):not(.pressed)
-        > .icon
+        > .m-icon
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
     
-    &.tonal
+    &.m-tonal
       &,
       &.enabled
-        > .icon
+        > .m-icon
           @include theme.preferred
             background: theme.style(secondary-container)
             color: theme.style(on-secondary-container)
 
         &.toggle
-          > .icon
+          > .m-icon
             @include theme.preferred
               background: theme.style(surface-variant)
               color: theme.style(on-surface-variant)
 
           &.selected
-            > .icon
+            > .m-icon
               @include theme.preferred
                 background: theme.style(secondary-container)
                 color: theme.style(on-secondary-container)
@@ -691,30 +691,30 @@ a.button
       &:disabled:not(.hovered):not(.focused):not(.pressed),
       &[disabled]:not(.hovered):not(.focused):not(.pressed),
       &.disabled:not(.hovered):not(.focused):not(.pressed)
-        > .icon
+        > .m-icon
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
     
-    &.outlined
-      > .icon
+    &.m-outlined
+      > .m-icon
         border: 1px solid
 
       &,
       &.enabled
-        > .icon
+        > .m-icon
           @include theme.preferred
             border-color: theme.style(outline)
             color: theme.style(on-surface-variant)
 
         &.toggle
-          > .icon
+          > .m-icon
             @include theme.preferred
               border-color: theme.style(outline)
               color: theme.style(on-surface-variant)
 
           &.selected
-            > .icon
+            > .m-icon
               @include theme.preferred
                 background: theme.style(inverse-surface)
                 border-color: theme.style(inverse-surface)
@@ -771,12 +771,12 @@ a.button
       &:disabled:not(.hovered):not(.focused):not(.pressed),
       &[disabled]:not(.hovered):not(.focused):not(.pressed),
       &.disabled:not(.hovered):not(.focused):not(.pressed)
-        > .icon
+        > .m-icon
           @include theme.preferred
             border-color: conversion.hex-to-rgba(theme.style(on-surface), 12%)
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
   
-  &.fab
+  &.m-fab
     padding: 0
     width: 56px
     height: 56px
@@ -785,7 +785,7 @@ a.button
     &::before
       border-radius: 16px
 
-    > .icon
+    > .m-icon
       width: 56px
       height: 56px
       display: flex
@@ -803,7 +803,7 @@ a.button
       &.lowered
         box-shadow: theme.style(shadow-1)
 
-      > .icon
+      > .m-icon
         @include theme.preferred
           color: theme.style(on-primary-container)
 
@@ -811,7 +811,7 @@ a.button
         @include theme.preferred
           background: theme.style(surface)
 
-        > .icon
+        > .m-icon
           @include theme.preferred
             color: theme.style(primary)
 
@@ -819,7 +819,7 @@ a.button
         @include theme.preferred
           background: theme.style(secondary-container)
 
-        > .icon
+        > .m-icon
           @include theme.preferred
             color: theme.style(on-secondary-container)
 
@@ -827,7 +827,7 @@ a.button
         @include theme.preferred
           background: theme.style(tertiary-container)
         
-        > .icon
+        > .m-icon
           @include theme.preferred
             color: theme.style(on-tertiary-container)
 
@@ -927,21 +927,21 @@ a.button
         @include theme.preferred
           box-shadow: theme.style(shadow-0)
 
-      > .icon
+      > .m-icon
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-primary-container), 38%)
       
       &.surface
-        > .icon
+        > .m-icon
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(primary), 38%)
 
       &.secondary
-        > .icon
+        > .m-icon
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-secondary-container), 38%)
 
       &.tertiary
-        > .icon
+        > .m-icon
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-tertiary-container), 38%)

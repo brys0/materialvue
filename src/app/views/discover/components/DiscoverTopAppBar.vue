@@ -39,11 +39,11 @@ import {
 
 import {
 	TopAppBar,
-	BarLeading,
-	BarBody,
-	BarTrailing,
+	MBarLeading,
+	MBarBody,
+	MBarTrailing,
 	MIconButton,
-	RoundedIcon,
+	MRoundedIcon,
 	MHeadline,
 } from '@/lib/vue'
 
@@ -63,44 +63,44 @@ const isThemeLight = computed(() => appStore.isThemeLight)
 
 <template>
   <TopAppBar>
-    <BarLeading>
+    <m-bar-leading>
       <m-icon-button
         :toggle="true"
         :selected="isNavigationDrawerOpened"
         @click="toggleNavigationDrawer"
       >
-        <RoundedIcon>
+        <m-rounded-icon>
           menu
-        </RoundedIcon>
+        </m-rounded-icon>
       </m-icon-button>
       <m-headline>
         Material
       </m-headline>
-    </BarLeading>
-    <BarBody>
+    </m-bar-leading>
+    <m-bar-body>
       <m-headline>
         Search Bar
       </m-headline>
-    </BarBody>
-    <BarTrailing>
+    </m-bar-body>
+    <m-bar-trailing>
       <m-icon-button @click="toggleTheme">
-        <RoundedIcon v-if="isThemeLight">
+        <m-rounded-icon v-if="isThemeLight">
           dark_mode
-        </RoundedIcon>
-        <RoundedIcon v-else>
+        </m-rounded-icon>
+        <m-rounded-icon v-else>
           light_mode
-        </RoundedIcon>
+        </m-rounded-icon>
       </m-icon-button>
       <m-icon-button>
-        <RoundedIcon>
+        <m-rounded-icon>
           notifications
-        </RoundedIcon>
+        </m-rounded-icon>
       </m-icon-button>
       <m-icon-button>
-        <RoundedIcon>
+        <m-rounded-icon>
           account_circle
-        </RoundedIcon>
+        </m-rounded-icon>
       </m-icon-button>
-    </BarTrailing>
+    </m-bar-trailing>
   </TopAppBar>
 </template>

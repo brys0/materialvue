@@ -37,24 +37,24 @@ import {
 } from 'vue'
 
 import {
-	Icon,
-} from '@/lib/vue/icons/Icon'
+	MIcon,
+} from '@/lib/vue/icons/MIcon'
 
-export type SharpIconProps = {}
+export type MOutlinedIconProps = {}
 
-export const SharpIcon: FunctionalComponent<SharpIconProps> = (_, {
+export const MOutlinedIcon: FunctionalComponent<MOutlinedIconProps> = (_, {
 	slots,
-}): VNode => h(Icon, {
+}): VNode => h(MIcon, {
 	class: {
-		'material-symbols-sharp': true,
-		sharp: true,
+		'material-symbols-outlined': true,
+		'm-outlined': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-SharpIcon.displayName = 'SharpIcon'
+MOutlinedIcon.displayName = 'MOutlinedIcon'
 
-SharpIcon.props = []
+MOutlinedIcon.props = []
 
-export default SharpIcon
+export default MOutlinedIcon

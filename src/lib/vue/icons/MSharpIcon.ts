@@ -37,24 +37,24 @@ import {
 } from 'vue'
 
 import {
-	Icon,
-} from '@/lib/vue/icons/Icon'
+	MIcon,
+} from '@/lib/vue/icons/MIcon'
 
-export type RoundedIconProps = {}
+export type MSharpIconProps = {}
 
-export const RoundedIcon: FunctionalComponent<RoundedIconProps> = (_, {
+export const MSharpIcon: FunctionalComponent<MSharpIconProps> = (_, {
 	slots,
-}): VNode => h(Icon, {
+}): VNode => h(MIcon, {
 	class: {
-		'material-symbols-rounded': true,
-		rounded: true,
+		'material-symbols-sharp': true,
+		'm-sharp': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-RoundedIcon.displayName = 'RoundedIcon'
+MSharpIcon.displayName = 'MSharpIcon'
 
-RoundedIcon.props = []
+MSharpIcon.props = []
 
-export default RoundedIcon
+export default MSharpIcon

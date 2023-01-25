@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type BarBodyProps = {}
+export type MBarTrailingProps = {}
 
-export const BarBody: FunctionalComponent<BarBodyProps> = (_, {
+export const MBarTrailing: FunctionalComponent<MBarTrailingProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'bar-body': true,
+		'm-bar-trailing': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-BarBody.displayName = 'BarBody'
+MBarTrailing.displayName = 'MBarTrailing'
 
-BarBody.props = []
+MBarTrailing.props = []
 
-export default BarBody
+export default MBarTrailing

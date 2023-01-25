@@ -36,20 +36,25 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type BarProps = {}
+import {
+	MIcon,
+} from '@/lib/vue/icons/MIcon'
 
-export const Bar: FunctionalComponent<BarProps> = (_, {
+export type MRoundedIconProps = {}
+
+export const MRoundedIcon: FunctionalComponent<MRoundedIconProps> = (_, {
 	slots,
-}): VNode => h('div', {
+}): VNode => h(MIcon, {
 	class: {
-		bar: true,
+		'material-symbols-rounded': true,
+		'm-rounded': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-Bar.displayName = 'Bar'
+MRoundedIcon.displayName = 'MRoundedIcon'
 
-Bar.props = []
+MRoundedIcon.props = []
 
-export default Bar
+export default MRoundedIcon

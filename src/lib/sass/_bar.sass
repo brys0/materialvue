@@ -30,44 +30,44 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-%bar
+%m-bar
   @extend %is-not-selectable
 
   display: grid
   grid-template-rows: [row-1-start] auto [row-1-end]  
   grid-template-columns: [col-1-start] minmax(min-content, 1fr) [col-1-end col-2-start] auto [col-2-end col-3-start] minmax(min-content, 1fr) [col-3-end] 
 
-%bar-leading,
-%bar-body,
-%bar-trailing
+%m-bar-leading,
+%m-bar-body,
+%m-bar-trailing
   display: flex
   align-items: center
   gap: 24px
   
-%bar-leading
+%m-bar-leading
   grid-row: row-1-start / row-1-end
   grid-column: col-1-start / col-1-end
   justify-content: start
 
-%bar-body
+%m-bar-body
   padding: 0 24px
   grid-row: row-1-start / row-1-end
   grid-column: col-2-start / col-2-end
   justify-content: center
 
-%bar-trailing
+%m-bar-trailing
   grid-row: row-1-start / row-1-end
   grid-column: col-3-start / col-3-end
   justify-content: end
 
-.bar
-  @extend %bar
+.m-bar
+  @extend %m-bar
 
-  > .bar-leading
-    @extend %bar-leading
+  > .m-bar-leading
+    @extend %m-bar-leading
 
-  > .bar-body
-    @extend %bar-body
+  > .m-bar-body
+    @extend %m-bar-body
 
-  > .bar-trailing
-    @extend %bar-trailing
+  > .m-bar-trailing
+    @extend %m-bar-trailing

@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type BarLeadingProps = {}
+export type MIconProps = {}
 
-export const BarLeading: FunctionalComponent<BarLeadingProps> = (_, {
+export const MIcon: FunctionalComponent<MIconProps> = (_, {
 	slots,
-}): VNode => h('div', {
+}): VNode => h('span', {
 	class: {
-		'bar-leading': true,
+		'm-icon': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-BarLeading.displayName = 'BarLeading'
+MIcon.displayName = 'MIcon'
 
-BarLeading.props = []
+MIcon.props = []
 
-export default BarLeading
+export default MIcon

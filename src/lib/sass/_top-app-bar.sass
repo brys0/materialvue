@@ -33,7 +33,7 @@
 @use './theme'
 
 .top-app-bar
-  @extend %bar
+  @extend %m-bar
 
   padding: 0 16px
   height: 64px
@@ -45,29 +45,11 @@
     height: 0
     visibility: hidden
   
-  > .bar-leading
-    @extend %bar-leading
+  > .m-bar-leading
+    @extend %m-bar-leading
 
-  > .bar-body
-    @extend %bar-body
+  > .m-bar-body
+    @extend %m-bar-body
 
-  > .bar-trailing
-    @extend %bar-trailing
-
-  > .bar-leading,
-  > .bar-body,
-  > .bar-trailing
-    .button
-      &.icon
-        &.leading
-          @include theme.preferred
-            color: theme.style(on-surface)
-        
-        &.trailing
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-
-    .m-typography
-      &.m-headline
-        @include theme.preferred
-          color: theme.style(on-surface)
+  > .m-bar-trailing
+    @extend %m-bar-trailing

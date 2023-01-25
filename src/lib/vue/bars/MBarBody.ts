@@ -36,25 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-import {
-	Icon,
-} from '@/lib/vue/icons/Icon'
+export type MBarBodyProps = {}
 
-export type OutlinedIconProps = {}
-
-export const OutlinedIcon: FunctionalComponent<OutlinedIconProps> = (_, {
+export const MBarBody: FunctionalComponent<MBarBodyProps> = (_, {
 	slots,
-}): VNode => h(Icon, {
+}): VNode => h('div', {
 	class: {
-		'material-symbols-outlined': true,
-		outlined: true,
+		'm-bar-body': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-OutlinedIcon.displayName = 'OutlinedIcon'
+MBarBody.displayName = 'MBarBody'
 
-OutlinedIcon.props = []
+MBarBody.props = []
 
-export default OutlinedIcon
+export default MBarBody

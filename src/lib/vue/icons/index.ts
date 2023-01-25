@@ -31,17 +31,17 @@
  */
 
 export {
-	Icon,
-} from '@/lib/vue/icons/Icon'
+	MIcon,
+} from '@/lib/vue/icons/MIcon'
 
 export {
-	OutlinedIcon,
-} from '@/lib/vue/icons/OutlinedIcon'
+	MOutlinedIcon,
+} from '@/lib/vue/icons/MOutlinedIcon'
 
 export {
-	RoundedIcon,
-} from '@/lib/vue/icons/RoundedIcon'
+	MRoundedIcon,
+} from '@/lib/vue/icons/MRoundedIcon'
 
 export {
-	SharpIcon,
-} from '@/lib/vue/icons/SharpIcon'
+	MSharpIcon,
+} from '@/lib/vue/icons/MSharpIcon'

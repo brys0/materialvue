@@ -86,10 +86,10 @@ export {
 } from '@/lib/vue/buttons'
 
 export {
-	Icon,
-	OutlinedIcon,
-	RoundedIcon,
-	SharpIcon,
+	MIcon,
+	MOutlinedIcon,
+	MRoundedIcon,
+	MSharpIcon,
 } from '@/lib/vue/icons'
 
 export {
@@ -129,10 +129,10 @@ export {
 } from '@/lib/vue/cards'
 
 export {
-	Bar,
-	BarLeading,
-	BarBody,
-	BarTrailing,
+	MBar,
+	MBarLeading,
+	MBarBody,
+	MBarTrailing,
 } from '@/lib/vue/bars'
 
 export {

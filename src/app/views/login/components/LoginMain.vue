@@ -58,7 +58,7 @@ import {
 	MBody,
 	MLabel,
 	MFilledButton,
-	RoundedIcon,
+	MRoundedIcon,
 	FormFieldset,
 	FieldControl,
 	FieldBody,
@@ -110,9 +110,9 @@ onBeforeUnmount(() => {
             >
               <FieldControl>
                 <FieldLeading>
-                  <RoundedIcon>
+                  <m-rounded-icon>
                     mail
-                  </RoundedIcon>
+                  </m-rounded-icon>
                 </FieldLeading>
                 <FieldBody>
                   <m-label
@@ -126,9 +126,9 @@ onBeforeUnmount(() => {
                   v-if="errors.email"
                   class="trailing"
                 >
-                  <RoundedIcon>
+                  <m-rounded-icon>
                     error
-                  </RoundedIcon>
+                  </m-rounded-icon>
                 </FieldTrailing>
               </FieldControl>
               <FieldSupport v-if="errors.email">
@@ -145,9 +145,9 @@ onBeforeUnmount(() => {
             >
               <FieldControl>
                 <FieldLeading>
-                  <RoundedIcon>
+                  <m-rounded-icon>
                     lock
-                  </RoundedIcon>
+                  </m-rounded-icon>
                 </FieldLeading>
                 <FieldBody>
                   <m-label
@@ -164,9 +164,9 @@ onBeforeUnmount(() => {
                   v-if="errors.password"
                   class="trailing"
                 >
-                  <RoundedIcon>
+                  <m-rounded-icon>
                     error
-                  </RoundedIcon>
+                  </m-rounded-icon>
                 </FieldTrailing>
               </FieldControl>
               <FieldSupport v-if="errors.password">

@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type IconProps = {}
+export type MBarProps = {}
 
-export const Icon: FunctionalComponent<IconProps> = (_, {
+export const MBar: FunctionalComponent<MBarProps> = (_, {
 	slots,
-}): VNode => h('span', {
+}): VNode => h('div', {
 	class: {
-		icon: true,
+		'm-bar': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-Icon.displayName = 'Icon'
+MBar.displayName = 'MBar'
 
-Icon.props = []
+MBar.props = []
 
-export default Icon
+export default MBar
