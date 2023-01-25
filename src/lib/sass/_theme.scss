@@ -10,6 +10,7 @@ $light: (
   on-primary: light.$on-primary,
   primary-container: light.$primary-container,
   on-primary-container: light.$on-primary-container,
+  inverse-primary: light.$inverse-primary,
   
   secondary: light.$secondary,
   on-secondary: light.$on-secondary,
@@ -33,16 +34,21 @@ $light: (
   on-surface: light.$on-surface,
   surface-variant: light.$surface-variant,
   on-surface-variant: light.$on-surface-variant,
+  inverse-surface: light.$inverse-surface,
+  on-inverse-surface: light.$on-inverse-surface,
   
   outline: light.$outline,
   outline-variant: light.$outline-variant,
   
+  scrim: light.$scrim,
+
   shadow-0: light.$shadow-0,
   shadow-1: light.$shadow-1,
   shadow-2: light.$shadow-2,
   shadow-3: light.$shadow-3,
   shadow-4: light.$shadow-4,
   shadow-5: light.$shadow-5,
+
   elevation-0: light.$elevation-0,
   elevation-1: light.$elevation-1,
   elevation-2: light.$elevation-2,
@@ -56,6 +62,7 @@ $dark: (
   on-primary: dark.$on-primary,
   primary-container: dark.$primary-container,
   on-primary-container: dark.$on-primary-container,
+  inverse-primary: dark.$inverse-primary,
   
   secondary: dark.$secondary,
   on-secondary: dark.$on-secondary,
@@ -79,16 +86,21 @@ $dark: (
   on-surface: dark.$on-surface,
   surface-variant: dark.$surface-variant,
   on-surface-variant: dark.$on-surface-variant,
+  inverse-surface: dark.$inverse-surface,
+  on-inverse-surface: dark.$on-inverse-surface,
   
   outline: dark.$outline,
   outline-variant: dark.$outline-variant,
   
-  shadow-0: light.$shadow-0,
+  scrim: dark.$scrim,
+
+  shadow-0: dark.$shadow-0,
   shadow-1: dark.$shadow-1,
   shadow-2: dark.$shadow-2,
   shadow-3: dark.$shadow-3,
   shadow-4: dark.$shadow-4,
   shadow-5: dark.$shadow-5,
+  
   elevation-0: dark.$elevation-0,
   elevation-1: dark.$elevation-1,
   elevation-2: dark.$elevation-2,

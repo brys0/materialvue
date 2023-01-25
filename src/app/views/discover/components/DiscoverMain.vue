@@ -67,6 +67,8 @@ import {
 	ElevatedButton,
 	TonalButton,
 	FilledIconButton,
+	TonalIconButton,
+	OutlinedIconButton,
 	IconButton,
 	FABButton,
 	FABButtonVariant,
@@ -891,85 +893,290 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
-        Icon button states
+        Tonal icon button no toggle states
       </TypographyDisplay>
       <Row>
         <Column>
-          <IconButton>
+          <TonalIconButton>
             <RoundedIcon>
               settings
             </RoundedIcon>
-          </IconButton>
+          </TonalIconButton>
         </Column>
         <Column>
-          <IconButton :state="ButtonState.hovered">
+          <TonalIconButton :state="ButtonState.hovered">
             <RoundedIcon>
               settings
             </RoundedIcon>
-          </IconButton>
+          </TonalIconButton>
         </Column>
         <Column>
-          <IconButton :state="ButtonState.focused">
+          <TonalIconButton :state="ButtonState.focused">
             <RoundedIcon>
               settings
             </RoundedIcon>
-          </IconButton>
+          </TonalIconButton>
         </Column>
         <Column>
-          <IconButton :state="ButtonState.pressed">
+          <TonalIconButton :state="ButtonState.pressed">
             <RoundedIcon>
               settings
             </RoundedIcon>
-          </IconButton>
+          </TonalIconButton>
         </Column>
         <Column>
-          <IconButton
-            :state="ButtonState.disabled"
-            disabled
-          >
+          <TonalIconButton :state="ButtonState.disabled">
             <RoundedIcon>
               settings
             </RoundedIcon>
-          </IconButton>
+          </TonalIconButton>
         </Column>
       </Row>
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
-        Icon button selected states
+        Tonal icon button toggle-unselected states
       </TypographyDisplay>
       <Row>
         <Column>
-          <IconButton :selected="true">
+          <TonalIconButton :toggle="true">
             <RoundedIcon>
               settings
             </RoundedIcon>
-          </IconButton>
+          </TonalIconButton>
         </Column>
         <Column>
-          <IconButton
+          <TonalIconButton
+            :toggle="true"
             :state="ButtonState.hovered"
-            :selected="true"
           >
             <RoundedIcon>
               settings
             </RoundedIcon>
-          </IconButton>
+          </TonalIconButton>
         </Column>
         <Column>
-          <IconButton
+          <TonalIconButton
+            :toggle="true"
             :state="ButtonState.focused"
-            :selected="true"
           >
             <RoundedIcon>
               settings
             </RoundedIcon>
-          </IconButton>
+          </TonalIconButton>
         </Column>
         <Column>
-          <IconButton
+          <TonalIconButton
+            :toggle="true"
             :state="ButtonState.pressed"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </TonalIconButton>
+        </Column>
+        <Column>
+          <TonalIconButton
+            :toggle="true"
+            :state="ButtonState.disabled"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </TonalIconButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
+        Tonal icon button toggle-selected states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <TonalIconButton
+            :toggle="true"
             :selected="true"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </TonalIconButton>
+        </Column>
+        <Column>
+          <TonalIconButton
+            :toggle="true"
+            :selected="true"
+            :state="ButtonState.hovered"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </TonalIconButton>
+        </Column>
+        <Column>
+          <TonalIconButton
+            :toggle="true"
+            :selected="true"
+            :state="ButtonState.focused"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </TonalIconButton>
+        </Column>
+        <Column>
+          <TonalIconButton
+            :toggle="true"
+            :selected="true"
+            :state="ButtonState.pressed"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </TonalIconButton>
+        </Column>
+        <Column>
+          <TonalIconButton
+            :toggle="true"
+            :state="ButtonState.disabled"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </TonalIconButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
+        Outlined icon button toggle-unselected states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <OutlinedIconButton :toggle="true">
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </OutlinedIconButton>
+        </Column>
+        <Column>
+          <OutlinedIconButton
+            :toggle="true"
+            :state="ButtonState.hovered"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </OutlinedIconButton>
+        </Column>
+        <Column>
+          <OutlinedIconButton
+            :toggle="true"
+            :state="ButtonState.focused"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </OutlinedIconButton>
+        </Column>
+        <Column>
+          <OutlinedIconButton
+            :toggle="true"
+            :state="ButtonState.pressed"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </OutlinedIconButton>
+        </Column>
+        <Column>
+          <OutlinedIconButton
+            :toggle="true"
+            :state="ButtonState.disabled"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </OutlinedIconButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
+        Outlined icon button toggle-selected states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <OutlinedIconButton
+            :toggle="true"
+            :selected="true"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </OutlinedIconButton>
+        </Column>
+        <Column>
+          <OutlinedIconButton
+            :toggle="true"
+            :selected="true"
+            :state="ButtonState.hovered"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </OutlinedIconButton>
+        </Column>
+        <Column>
+          <OutlinedIconButton
+            :toggle="true"
+            :selected="true"
+            :state="ButtonState.focused"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </OutlinedIconButton>
+        </Column>
+        <Column>
+          <OutlinedIconButton
+            :toggle="true"
+            :selected="true"
+            :state="ButtonState.pressed"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </OutlinedIconButton>
+        </Column>
+        <Column>
+          <OutlinedIconButton
+            :toggle="true"
+            :state="ButtonState.disabled"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </OutlinedIconButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
+        Standard icon button toggle-unselected states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <IconButton :toggle="true">
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </IconButton>
+        </Column>
+        <Column>
+          <IconButton
+            :toggle="true"
+            :state="ButtonState.hovered"
           >
             <RoundedIcon>
               settings
@@ -978,8 +1185,28 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
         </Column>
         <Column>
           <IconButton
+            :toggle="true"
+            :state="ButtonState.focused"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </IconButton>
+        </Column>
+        <Column>
+          <IconButton
+            :toggle="true"
+            :state="ButtonState.pressed"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </IconButton>
+        </Column>
+        <Column>
+          <IconButton
+            :toggle="true"
             :state="ButtonState.disabled"
-            disabled
           >
             <RoundedIcon>
               settings
@@ -990,46 +1217,61 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
     </section>
     <section>
       <TypographyDisplay :size="TypographySize.small">
-        FAB button states
+        Standard icon button toggle-selected states
       </TypographyDisplay>
       <Row>
         <Column>
-          <FABButton>
-            <RoundedIcon>
-              edit
-            </RoundedIcon>
-          </FABButton>
-        </Column>
-        <Column>
-          <FABButton :state="ButtonState.hovered">
-            <RoundedIcon>
-              edit
-            </RoundedIcon>
-          </FABButton>
-        </Column>
-        <Column>
-          <FABButton :state="ButtonState.focused">
-            <RoundedIcon>
-              edit
-            </RoundedIcon>
-          </FABButton>
-        </Column>
-        <Column>
-          <FABButton :state="ButtonState.pressed">
-            <RoundedIcon>
-              edit
-            </RoundedIcon>
-          </FABButton>
-        </Column>
-        <Column>
-          <FABButton
-            :state="ButtonState.disabled"
-            disabled
+          <IconButton
+            :toggle="true"
+            :selected="true"
           >
             <RoundedIcon>
-              edit
+              settings
             </RoundedIcon>
-          </FABButton>
+          </IconButton>
+        </Column>
+        <Column>
+          <IconButton
+            :toggle="true"
+            :selected="true"
+            :state="ButtonState.hovered"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </IconButton>
+        </Column>
+        <Column>
+          <IconButton
+            :toggle="true"
+            :selected="true"
+            :state="ButtonState.focused"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </IconButton>
+        </Column>
+        <Column>
+          <IconButton
+            :toggle="true"
+            :selected="true"
+            :state="ButtonState.pressed"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </IconButton>
+        </Column>
+        <Column>
+          <IconButton
+            :toggle="true"
+            :state="ButtonState.disabled"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </IconButton>
         </Column>
       </Row>
     </section>

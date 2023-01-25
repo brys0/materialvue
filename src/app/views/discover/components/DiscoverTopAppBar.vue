@@ -54,9 +54,9 @@ import {
 const appStore = useAppStore()
 
 const toggleNavigationDrawer = (): void => appStore.toggleNavigationDrawer()
+const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpened)
 
 const toggleTheme = (): void => appStore.toggleTheme()
-
 const isThemeLight = computed(() => appStore.isThemeLight)
 
 </script>
@@ -64,7 +64,11 @@ const isThemeLight = computed(() => appStore.isThemeLight)
 <template>
   <TopAppBar>
     <BarLeading>
-      <IconButton @click="toggleNavigationDrawer">
+      <IconButton
+        :toggle="true"
+        :selected="isNavigationDrawerOpened"
+        @click="toggleNavigationDrawer"
+      >
         <RoundedIcon>
           menu
         </RoundedIcon>

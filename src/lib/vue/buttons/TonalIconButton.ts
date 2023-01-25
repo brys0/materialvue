@@ -30,48 +30,41 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Button,
-	ButtonState,
-} from '@/lib/vue/buttons/Button'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	FilledButton,
-} from '@/lib/vue/buttons/FilledButton'
-
-export {
-	ElevatedButton,
-} from '@/lib/vue/buttons/ElevatedButton'
-
-export {
-	OutlinedButton,
-} from '@/lib/vue/buttons/OutlinedButton'
-
-export {
-	TextButton,
-} from '@/lib/vue/buttons/TextButton'
-
-export {
-	TonalButton,
-} from '@/lib/vue/buttons/TonalButton'
-
-export {
-	FilledIconButton,
-} from '@/lib/vue/buttons/FilledIconButton'
-
-export {
-	TonalIconButton,
-} from '@/lib/vue/buttons/TonalIconButton'
-
-export {
-	OutlinedIconButton,
-} from '@/lib/vue/buttons/OutlinedIconButton'
-
-export {
+import {
 	IconButton,
 } from '@/lib/vue/buttons/IconButton'
 
-export {
-	FABButton,
-	FABButtonVariant,
-} from '@/lib/vue/buttons/FABButton'
+export type TonalIconButtonProps = {
+	toggle?: boolean
+	selected?: boolean
+}
+
+export const TonalIconButton: FunctionalComponent<TonalIconButtonProps> = ({
+	toggle,
+	selected,
+}, {
+	slots,
+}): VNode => h(IconButton, {
+	toggle,
+	selected,
+	class: {
+		tonal: true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
+
+TonalIconButton.displayName = 'TonalIconButton'
+
+TonalIconButton.props = [
+	'toggle',
+	'selected'
+]
+
+export default TonalIconButton
