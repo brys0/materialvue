@@ -37,8 +37,8 @@ import {
 	NavigationRail,
 	MLabel,
 	MIconButton,
-	MFABButton,
-	MFABButtonVariant,
+	MFabButton,
+	MFabButtonVariant,
 	MRoundedIcon,
 } from '@/lib/vue'
 
@@ -48,7 +48,7 @@ import {
   <NavigationRail>
     <m-fab-button
       :lowered="true"
-      :variant="MFABButtonVariant.tertiary"
+      :variant="MFabButtonVariant.tertiary"
     >
       <m-rounded-icon>
         edit

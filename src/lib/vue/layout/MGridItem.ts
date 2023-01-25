@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type GridItemProps = {}
+export type MGridItemProps = {}
 
-export const GridItem: FunctionalComponent<GridItemProps> = (_: GridItemProps, {
+export const MGridItem: FunctionalComponent<MGridItemProps> = (_: MGridItemProps, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'grid-item': true,
+		'm-grid-item': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-GridItem.displayName = 'GridItem'
+MGridItem.displayName = 'MGridItem'
 
-GridItem.props = []
+MGridItem.props = []
 
-export default GridItem
+export default MGridItem

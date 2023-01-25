@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type RowProps = {}
+export type MRowProps = {}
 
-export const Row: FunctionalComponent<RowProps> = (_, {
+export const MRow: FunctionalComponent<MRowProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		row: true,
+		'm-row': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-Row.displayName = 'Row'
+MRow.displayName = 'MRow'
 
-Row.props = []
+MRow.props = []
 
-export default Row
+export default MRow

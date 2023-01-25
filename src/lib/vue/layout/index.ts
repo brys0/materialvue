@@ -31,25 +31,25 @@
  */
 
 export {
-	Layout,
-} from '@/lib/vue/layout/Layout'
+	MLayout,
+} from '@/lib/vue/layout/MLayout'
 
 export {
-	Tile,
-} from '@/lib/vue/layout/Tile'
+	MTile,
+} from '@/lib/vue/layout/MTile'
 
 export {
-	Row,
-} from '@/lib/vue/layout/Row'
+	MRow,
+} from '@/lib/vue/layout/MRow'
 
 export {
-	Column,
-} from '@/lib/vue/layout/Column'
+	MColumn,
+} from '@/lib/vue/layout/MColumn'
 
 export {
-	Grid,
-} from '@/lib/vue/layout/Grid'
+	MGrid,
+} from '@/lib/vue/layout/MGrid'
 
 export {
-	GridItem,
-} from '@/lib/vue/layout/GridItem'
+	MGridItem,
+} from '@/lib/vue/layout/MGridItem'

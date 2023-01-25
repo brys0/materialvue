@@ -38,18 +38,18 @@ import {
 
 export type ColumnProps = {}
 
-export const Column: FunctionalComponent<ColumnProps> = (_: ColumnProps, {
+export const MColumn: FunctionalComponent<ColumnProps> = (_: ColumnProps, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		column: true,
+		'm-column': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-Column.displayName = 'Column'
+MColumn.displayName = 'MColumn'
 
-Column.props = []
+MColumn.props = []
 
-export default Column
+export default MColumn

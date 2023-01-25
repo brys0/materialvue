@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type LayoutProps = {}
+export type MLayoutProps = {}
 
-export const Layout: FunctionalComponent<LayoutProps> = (_: LayoutProps, {
+export const MLayout: FunctionalComponent<MLayoutProps> = (_: MLayoutProps, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		layout: true,
+		'm-layout': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-Layout.displayName = 'Layout'
+MLayout.displayName = 'MLayout'
 
-Layout.props = []
+MLayout.props = []
 
-export default Layout
+export default MLayout

@@ -53,8 +53,8 @@ import {
 
 import {
 	Main,
-	Layout,
-	Tile,
+	MLayout,
+	MTile,
 	MBody,
 	MLabel,
 	MFilledButton,
@@ -97,8 +97,8 @@ onBeforeUnmount(() => {
 
 <template>
   <Main>
-    <Layout>
-      <Tile>
+    <m-layout>
+      <m-tile>
         <form
           class="login"
           @submit="onSubmit"
@@ -180,8 +180,8 @@ onBeforeUnmount(() => {
             Submit
           </m-filled-button>
         </form>
-      </Tile>
-    </Layout>
+      </m-tile>
+    </m-layout>
   </Main>
 </template>
 

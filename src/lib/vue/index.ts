@@ -81,8 +81,8 @@ export {
 	MTonalIconButton,
 	MOutlinedIconButton,
 	MIconButton,
-	MFABButton,
-	MFABButtonVariant,
+	MFabButton,
+	MFabButtonVariant,
 } from '@/lib/vue/buttons'
 
 export {
@@ -93,12 +93,12 @@ export {
 } from '@/lib/vue/icons'
 
 export {
-	Layout,
-	Tile,
-	Row,
-	Column,
-	Grid,
-	GridItem,
+	MLayout,
+	MTile,
+	MRow,
+	MColumn,
+	MGrid,
+	MGridItem,
 } from '@/lib/vue/layout'
 
 export {

@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type TileProps = {}
+export type MTileProps = {}
 
-export const Grid: FunctionalComponent<TileProps> = (_: TileProps, {
+export const MTile: FunctionalComponent<MTileProps> = (_: MTileProps, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		grid: true,
+		'm-tile': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-Grid.displayName = 'Grid'
+MTile.displayName = 'MTile'
 
-Grid.props = []
+MTile.props = []
 
-export default Grid
+export default MTile

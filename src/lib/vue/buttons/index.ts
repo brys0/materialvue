@@ -72,6 +72,6 @@ export {
 } from '@/lib/vue/buttons/MIconButton'
 
 export {
-	MFABButton,
-	MFABButtonVariant,
-} from '@/lib/vue/buttons/MFABButton'
+	MFabButton,
+	MFabButtonVariant,
+} from '@/lib/vue/buttons/MFabButton'

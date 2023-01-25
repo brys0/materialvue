@@ -32,7 +32,7 @@
 
 @use './display'
 
-%row
+%m-layout-row
   display: flex
   flex-flow: row
   align-items: flex-start
@@ -40,20 +40,20 @@
   align-content: stretch
   justify-content: stretch
 
-%column
+%m-layout-column
   grid-row: row-1-start / row-2-end
   display: flex
   flex-flow: column
   align-items: center
   flex: 1
   
-.row
-  @extend %row
+.m-row
+  @extend %m-layout-row
 
-  > .column
-    @extend %column
+  > .m-column
+    @extend %m-layout-column
 
-%grid
+%m-layout-grid
   display: grid
   gap: 8px
 
@@ -72,10 +72,10 @@
   @include display.is-fullhd
     grid-template-columns: repeat(5, 1fr) !important
 
-.grid
-  @extend %grid
+.m-grid
+  @extend %m-layout-grid
 
-%tile
+%m-layout-tile
   position: relative
   display: flex
   flex-flow: column
@@ -83,5 +83,5 @@
   align-items: center
   justify-content: center
 
-.tile
-  @extend %tile
+.m-tile
+  @extend %m-layout-tile

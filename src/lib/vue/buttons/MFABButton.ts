@@ -40,18 +40,18 @@ import {
 	MButton,
 } from '@/lib/vue/buttons/MButton'
 
-export enum MFABButtonVariant {
+export enum MFabButtonVariant {
   surface = 'surface',
   secondary = 'secondary',
   tertiary = 'tertiary',
 }
 
-export type MFABButtonProps = {
+export type MFabButtonProps = {
 	lowered?: boolean
-	variant?: MFABButtonVariant
+	variant?: MFabButtonVariant
 }
 
-export const MFABButton: FunctionalComponent<MFABButtonProps> = ({
+export const MFabButton: FunctionalComponent<MFabButtonProps> = ({
 	lowered,
 	variant,
 }, {
@@ -60,19 +60,19 @@ export const MFABButton: FunctionalComponent<MFABButtonProps> = ({
 	class: {
 		'm-fab': true,
 		lowered,
-		surface: MFABButtonVariant.surface === variant,
-		secondary: MFABButtonVariant.secondary === variant,
-		tertiary: MFABButtonVariant.tertiary === variant,
+		surface: MFabButtonVariant.surface === variant,
+		secondary: MFabButtonVariant.secondary === variant,
+		tertiary: MFabButtonVariant.tertiary === variant,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-MFABButton.displayName = 'MFABButton'
+MFabButton.displayName = 'MFabButton'
 
-MFABButton.props = [
+MFabButton.props = [
 	'lowered',
 	'variant'
 ]
 
-export default MFABButton
+export default MFabButton
