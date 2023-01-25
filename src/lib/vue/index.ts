@@ -77,6 +77,7 @@ export {
 	TonalButton,
 	OutlinedButton,
 	TextButton,
+	FilledIconButton,
 	IconButton,
 	FABButton,
 	FABButtonVariant,

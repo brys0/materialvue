@@ -34,16 +34,13 @@
 @use './conversion'
 
 %button
+  padding: 0
+  position: relative
   display: grid
   grid-template-rows: [row-1-start] auto [row-1-end]  
   grid-template-columns: [col-1-start] auto [col-1-end col-2-start] auto [col-2-end]
-  
-  padding: 0
-  position: relative
   align-items: center
-  align-content: stretch
   justify-items: center
-  justify-content: stretch
   border: none
   outline: none
   background: transparent
@@ -162,7 +159,7 @@ a.button
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
-  &.filled
+  &.filled:not(.icon)
     height: 40px
     border-radius: 20px
 
@@ -455,94 +452,100 @@ a.button
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
   &.icon
-    padding: 0
-    width: 48px
-    height: 48px
+    width: 40px
+    height: 40px
+    grid-template-columns: [col-1-start] auto [col-1-end]
+    border-radius: 20px
 
     &::before
-      top: 4px
-      left: 4px
-      bottom: 4px
-      right: 4px
       border-radius: 20px
 
     > .icon
-      display: flex
-      align-items: center
-      justify-content: center
       font-size: 24px
-      border-radius: 20px
-
-    &,
-    &.enabled
-      > .icon
+    
+    &.filled
+      &,
+      &.enabled
         @include theme.preferred
-          color: theme.style(on-surface-variant)
+          background: theme.style(primary)
 
-      &.selected
         > .icon
           @include theme.preferred
-            color: theme.style(primary)
+            color: theme.style(on-primary)
 
-      &:hover:not(.focused):not(.pressed):not(.disabled),
-      &.hovered:not(.focused):not(.pressed):not(.disabled)
-        &::before
+        &.toggle
           @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-surface-variant), 8%)
-          
-        > .icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-      
-        &.selected
+            background: theme.style(surface-variant)
+
+          > .icon
+            @include theme.preferred
+              color: theme.style(primary)
+
+          &.selected
+            @include theme.preferred
+              background: theme.style(primary)
+
+            > .icon
+              @include theme.preferred
+                color: theme.style(on-primary)
+
+        &:hover:not(.focused):not(.pressed):not(.disabled),
+        &.hovered:not(.focused):not(.pressed):not(.disabled)
           &::before
             @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(primary), 8%)
+              background: conversion.hex-to-rgba(theme.style(on-primary), 8%)
+          
+          &.toggle
+            &::before
+              @include theme.preferred
+                background: conversion.hex-to-rgba(theme.style(primary), 8%)
 
-          > .icon
-            @include theme.preferred
-              color: theme.style(primary)
-          
-      &:focus:not(.hovered):not(.pressed):not(.disabled),
-      &.focused:not(.hovered):not(.pressed):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
-          
-        > .icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-      
-        &.selected
-          > .icon
-            @include theme.preferred
-              color: theme.style(primary)
-
-      &:active:not(.hovered):not(.focused):not(.disabled),
-      &.pressed:not(.hovered):not(.focused):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
-          
-        > .icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
-      
-        &.selected
+            &.selected
+              &::before
+                @include theme.preferred
+                  background: conversion.hex-to-rgba(theme.style(on-primary), 8%)
+            
+        &:focus:not(.hovered):not(.pressed):not(.disabled),
+        &.focused:not(.hovered):not(.pressed):not(.disabled)
           &::before
             @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(primary), 12%)
+              background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
+          
+          &.toggle
+            &::before
+              @include theme.preferred
+                background: conversion.hex-to-rgba(theme.style(primary), 12%)
 
-          > .icon
+            &.selected
+              &::before
+                @include theme.preferred
+                  background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
+
+        &:active:not(.hovered):not(.focused):not(.disabled),
+        &.pressed:not(.hovered):not(.focused):not(.disabled)
+          &::before
             @include theme.preferred
-              color: theme.style(primary)
+              background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
+          
+          &.toggle
+            &::before
+              @include theme.preferred
+                background: conversion.hex-to-rgba(theme.style(primary), 12%)
 
-    &:disabled:not(.hovered):not(.focused):not(.pressed),
-    &[disabled]:not(.hovered):not(.focused):not(.pressed),
-    &.disabled:not(.hovered):not(.focused):not(.pressed)
-      > .icon
+            &.selected
+              &::before
+                @include theme.preferred
+                  background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
+
+      &:disabled:not(.hovered):not(.focused):not(.pressed),
+      &[disabled]:not(.hovered):not(.focused):not(.pressed),
+      &.disabled:not(.hovered):not(.focused):not(.pressed)
         @include theme.preferred
-          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+        > .icon
+          @include theme.preferred
+            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
   
   &.fab
     padding: 0

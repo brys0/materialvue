@@ -66,7 +66,10 @@ import {
 	TextButton,
 	ElevatedButton,
 	TonalButton,
+	FilledIconButton,
 	IconButton,
+	FABButton,
+	FABButtonVariant,
 	Row,
 	Column,
 	FormFieldset,
@@ -85,8 +88,6 @@ import {
 	ElevatedCard,
 	Bar,
 	BarTrailing,
-	FABButton,
-	FABButtonVariant,
 	Divider,
 	List,
 	ListLines,
@@ -729,6 +730,162 @@ const updateState = (newState: TextFieldState, oldState: TextFieldState): void =
               Disabled
             </TypographyLabel>
           </TextButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
+        Filled icon button no toggle states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <FilledIconButton>
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+        <Column>
+          <FilledIconButton :state="ButtonState.hovered">
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+        <Column>
+          <FilledIconButton :state="ButtonState.focused">
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+        <Column>
+          <FilledIconButton :state="ButtonState.pressed">
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+        <Column>
+          <FilledIconButton :state="ButtonState.disabled">
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
+        Filled icon button toggle-unselected states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <FilledIconButton :toggle="true">
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+        <Column>
+          <FilledIconButton
+            :toggle="true"
+            :state="ButtonState.hovered"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+        <Column>
+          <FilledIconButton
+            :toggle="true"
+            :state="ButtonState.focused"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+        <Column>
+          <FilledIconButton
+            :toggle="true"
+            :state="ButtonState.pressed"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+        <Column>
+          <FilledIconButton
+            :toggle="true"
+            :state="ButtonState.disabled"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+      </Row>
+    </section>
+    <section>
+      <TypographyDisplay :size="TypographySize.small">
+        Filled icon button toggle-selected states
+      </TypographyDisplay>
+      <Row>
+        <Column>
+          <FilledIconButton
+            :toggle="true"
+            :selected="true"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+        <Column>
+          <FilledIconButton
+            :toggle="true"
+            :selected="true"
+            :state="ButtonState.hovered"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+        <Column>
+          <FilledIconButton
+            :toggle="true"
+            :selected="true"
+            :state="ButtonState.focused"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+        <Column>
+          <FilledIconButton
+            :toggle="true"
+            :selected="true"
+            :state="ButtonState.pressed"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
+        </Column>
+        <Column>
+          <FilledIconButton
+            :toggle="true"
+            :state="ButtonState.disabled"
+          >
+            <RoundedIcon>
+              settings
+            </RoundedIcon>
+          </FilledIconButton>
         </Column>
       </Row>
     </section>

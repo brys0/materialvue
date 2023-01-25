@@ -41,16 +41,19 @@ import {
 } from '@/lib/vue/buttons/Button'
 
 export type IconButtonProps = {
+	toggle?: boolean
 	selected?: boolean
 }
 
 export const IconButton: FunctionalComponent<IconButtonProps> = ({
+	toggle,
 	selected,
 }, {
 	slots,
 }): VNode => h(Button, {
 	class: {
 		icon: true,
+		toggle,
 		selected,
 	},
 }, {
@@ -60,6 +63,7 @@ export const IconButton: FunctionalComponent<IconButtonProps> = ({
 IconButton.displayName = 'IconButton'
 
 IconButton.props = [
+	'toggle',
 	'selected'
 ]
 

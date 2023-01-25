@@ -90,7 +90,7 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
             </TypographyLabel>
           </NavigationDrawerListItemTrailing>
         </NavigationDrawerListItem>
-        <NavigationDrawerListItem :state="NavigationDrawerListItemState.selected">
+        <NavigationDrawerListItem :selected="true">
           <NavigationDrawerListItemLeading>
             <RoundedIcon>
               movie

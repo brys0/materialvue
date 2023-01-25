@@ -42,7 +42,6 @@ export enum NavigationDrawerListItemState {
 	hovered = 'hovered',
 	focused = 'focused',
 	pressed = 'pressed',
-	selected = 'selected',
 }
 
 export const NavigationDrawerListItem = defineComponent({
@@ -51,25 +50,30 @@ export const NavigationDrawerListItem = defineComponent({
 			type: String as PropType<NavigationDrawerListItemState>,
 			default: NavigationDrawerListItemState.enabled,
 		},
+		selected: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	emits: [ 'click' ],
 	render(): VNode {
 		const {
 			state,
+			selected,
 		} = this.$props
 
 		return h('li', {
-			tabindex: NavigationDrawerListItemState.selected === state ? undefined : 0,
+			tabindex: selected ? undefined : 0,
 			class: {
 				'navigation-drawer-list-item': true,
 				enabled: NavigationDrawerListItemState.enabled === state,
 				hovered: NavigationDrawerListItemState.hovered === state,
 				focused: NavigationDrawerListItemState.focused === state,
 				pressed: NavigationDrawerListItemState.pressed === state,
-				selected: NavigationDrawerListItemState.selected === state,
+				selected,
 			},
 			onClick: (event: PointerEvent) => {
-				if (NavigationDrawerListItemState.selected !== this.$props.state) {
+				if (!this.$props.selected) {
 					this.$el.blur()
 					this.$emit('click', event)
 				}
