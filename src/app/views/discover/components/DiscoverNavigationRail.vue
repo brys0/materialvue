@@ -36,9 +36,9 @@
 import {
 	NavigationRail,
 	MLabel,
-	IconButton,
-	FABButton,
-	FABButtonVariant,
+	MIconButton,
+	MFABButton,
+	MFABButtonVariant,
 	RoundedIcon,
 } from '@/lib/vue'
 
@@ -46,29 +46,29 @@ import {
 
 <template>
   <NavigationRail>
-    <FABButton
+    <m-fab-button
       :lowered="true"
-      :variant="FABButtonVariant.tertiary"
+      :variant="MFABButtonVariant.tertiary"
     >
       <RoundedIcon>
         edit
       </RoundedIcon>
-    </FABButton>
-    <IconButton>
+    </m-fab-button>
+    <m-icon-button>
       <RoundedIcon>
         tag
       </RoundedIcon>
       <m-label>
         Tags
       </m-label>
-    </IconButton>
-    <IconButton :selected="true">
+    </m-icon-button>
+    <m-icon-button :selected="true">
       <RoundedIcon>
         bookmarks
       </RoundedIcon>
       <m-label>
         Bookmarks
       </m-label>
-    </IconButton>
+    </m-icon-button>
   </NavigationRail>
 </template>

@@ -33,50 +33,27 @@
 import {
 	h,
 	VNode,
-	PropType,
-	defineComponent,
+	FunctionalComponent,
 } from 'vue'
 
-export enum ButtonState {
-  enabled = 'enabled',
-  hovered = 'hovered',
-  focused = 'focused',
-	pressed = 'pressed',
-	disabled = 'disabled',
-}
+import {
+	MButton,
+} from '@/lib/vue/buttons/MButton'
 
-export const Button = defineComponent({
-	props: {
-		state: {
-			type: String as PropType<ButtonState>,
-			default: ButtonState.enabled,
-		},
+export type ElevatedButtonProps = {}
+
+export const MElevatedButton: FunctionalComponent<ElevatedButtonProps> = (_, {
+	slots,
+}): VNode => h(MButton, {
+	class: {
+		'm-elevated': true,
 	},
-	emits: [ 'click' ],
-	render(): VNode {
-		const {
-			state,
-		} = this.$props
-		return h('button', {
-			disabled: ButtonState.disabled === state,
-			class: {
-				button: true,
-				enabled: ButtonState.enabled === state,
-				hovered: ButtonState.hovered === state,
-				focused: ButtonState.focused === state,
-				pressed: ButtonState.pressed === state,
-				disabled: ButtonState.disabled === state,
-			},
-			onClick: (event: PointerEvent) => {
-				if (ButtonState.enabled === this.$props.state) {
-					this.$el.blur()
-					this.$emit('click', event)
-				}
-			},
-		}, {
-			default: () => this.$slots.default?.(),
-		})
-	},
+}, {
+	default: () => slots.default?.(),
 })
 
-export default Button
+MElevatedButton.displayName = 'MElevatedButton'
+
+MElevatedButton.props = []
+
+export default MElevatedButton

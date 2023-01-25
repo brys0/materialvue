@@ -31,47 +31,47 @@
  */
 
 export {
-	Button,
-	ButtonState,
-} from '@/lib/vue/buttons/Button'
+	MButton,
+	MButtonState,
+} from '@/lib/vue/buttons/MButton'
 
 export {
-	FilledButton,
-} from '@/lib/vue/buttons/FilledButton'
+	MFilledButton,
+} from '@/lib/vue/buttons/MFilledButton'
 
 export {
-	ElevatedButton,
-} from '@/lib/vue/buttons/ElevatedButton'
+	MElevatedButton,
+} from '@/lib/vue/buttons/MElevatedButton'
 
 export {
-	OutlinedButton,
-} from '@/lib/vue/buttons/OutlinedButton'
+	MOutlinedButton,
+} from '@/lib/vue/buttons/MOutlinedButton'
 
 export {
-	TextButton,
-} from '@/lib/vue/buttons/TextButton'
+	MTextButton,
+} from '@/lib/vue/buttons/MTextButton'
 
 export {
-	TonalButton,
-} from '@/lib/vue/buttons/TonalButton'
+	MTonalButton,
+} from '@/lib/vue/buttons/MTonalButton'
 
 export {
-	FilledIconButton,
-} from '@/lib/vue/buttons/FilledIconButton'
+	MFilledIconButton,
+} from '@/lib/vue/buttons/MFilledIconButton'
 
 export {
-	TonalIconButton,
-} from '@/lib/vue/buttons/TonalIconButton'
+	MTonalIconButton,
+} from '@/lib/vue/buttons/MTonalIconButton'
 
 export {
-	OutlinedIconButton,
-} from '@/lib/vue/buttons/OutlinedIconButton'
+	MOutlinedIconButton,
+} from '@/lib/vue/buttons/MOutlinedIconButton'
 
 export {
-	IconButton,
-} from '@/lib/vue/buttons/IconButton'
+	MIconButton,
+} from '@/lib/vue/buttons/MIconButton'
 
 export {
-	FABButton,
-	FABButtonVariant,
-} from '@/lib/vue/buttons/FABButton'
+	MFABButton,
+	MFABButtonVariant,
+} from '@/lib/vue/buttons/MFABButton'

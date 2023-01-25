@@ -37,23 +37,34 @@ import {
 } from 'vue'
 
 import {
-	Button,
-} from '@/lib/vue/buttons/Button'
+	MIconButton,
+} from '@/lib/vue/buttons/MIconButton'
 
-export type ElevatedButtonProps = {}
+export type MOutlinedIconButtonProps = {
+	toggle?: boolean
+	selected?: boolean
+}
 
-export const ElevatedButton: FunctionalComponent<ElevatedButtonProps> = (_, {
+export const MOutlinedIconButton: FunctionalComponent<MOutlinedIconButtonProps> = ({
+	toggle,
+	selected,
+}, {
 	slots,
-}): VNode => h(Button, {
+}): VNode => h(MIconButton, {
+	toggle,
+	selected,
 	class: {
-		elevated: true,
+		'm-outlined': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-ElevatedButton.displayName = 'ElevatedButton'
+MOutlinedIconButton.displayName = 'MOutlinedIconButton'
 
-ElevatedButton.props = []
+MOutlinedIconButton.props = [
+	'toggle',
+	'selected'
+]
 
-export default ElevatedButton
+export default MOutlinedIconButton

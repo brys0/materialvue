@@ -37,23 +37,42 @@ import {
 } from 'vue'
 
 import {
-	Button,
-} from '@/lib/vue/buttons/Button'
+	MButton,
+} from '@/lib/vue/buttons/MButton'
 
-export type FilledButtonProps = {}
+export enum MFABButtonVariant {
+  surface = 'surface',
+  secondary = 'secondary',
+  tertiary = 'tertiary',
+}
 
-export const FilledButton: FunctionalComponent<FilledButtonProps> = (_, {
+export type MFABButtonProps = {
+	lowered?: boolean
+	variant?: MFABButtonVariant
+}
+
+export const MFABButton: FunctionalComponent<MFABButtonProps> = ({
+	lowered,
+	variant,
+}, {
 	slots,
-}): VNode => h(Button, {
+}): VNode => h(MButton, {
 	class: {
-		filled: true,
+		'm-fab': true,
+		lowered,
+		surface: MFABButtonVariant.surface === variant,
+		secondary: MFABButtonVariant.secondary === variant,
+		tertiary: MFABButtonVariant.tertiary === variant,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-FilledButton.displayName = 'FilledButton'
+MFABButton.displayName = 'MFABButton'
 
-FilledButton.props = []
+MFABButton.props = [
+	'lowered',
+	'variant'
+]
 
-export default FilledButton
+export default MFABButton

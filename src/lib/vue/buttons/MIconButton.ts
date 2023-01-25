@@ -37,34 +37,34 @@ import {
 } from 'vue'
 
 import {
-	IconButton,
-} from '@/lib/vue/buttons/IconButton'
+	MButton,
+} from '@/lib/vue/buttons/MButton'
 
-export type TonalIconButtonProps = {
+export type MIconButtonProps = {
 	toggle?: boolean
 	selected?: boolean
 }
 
-export const TonalIconButton: FunctionalComponent<TonalIconButtonProps> = ({
+export const MIconButton: FunctionalComponent<MIconButtonProps> = ({
 	toggle,
 	selected,
 }, {
 	slots,
-}): VNode => h(IconButton, {
-	toggle,
-	selected,
+}): VNode => h(MButton, {
 	class: {
-		tonal: true,
+		'm-icon': true,
+		toggle,
+		selected,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-TonalIconButton.displayName = 'TonalIconButton'
+MIconButton.displayName = 'MIconButton'
 
-TonalIconButton.props = [
+MIconButton.props = [
 	'toggle',
 	'selected'
 ]
 
-export default TonalIconButton
+export default MIconButton

@@ -70,19 +70,19 @@ export {
 } from '@/lib/vue/typography'
 
 export {
-	Button,
-	ButtonState,
-	ElevatedButton,
-	FilledButton,
-	TonalButton,
-	OutlinedButton,
-	TextButton,
-	FilledIconButton,
-	TonalIconButton,
-	OutlinedIconButton,
-	IconButton,
-	FABButton,
-	FABButtonVariant,
+	MButton,
+	MButtonState,
+	MElevatedButton,
+	MFilledButton,
+	MTonalButton,
+	MOutlinedButton,
+	MTextButton,
+	MFilledIconButton,
+	MTonalIconButton,
+	MOutlinedIconButton,
+	MIconButton,
+	MFABButton,
+	MFABButtonVariant,
 } from '@/lib/vue/buttons'
 
 export {

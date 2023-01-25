@@ -33,27 +33,50 @@
 import {
 	h,
 	VNode,
-	FunctionalComponent,
+	PropType,
+	defineComponent,
 } from 'vue'
 
-import {
-	Button,
-} from '@/lib/vue/buttons/Button'
+export enum MButtonState {
+  enabled = 'enabled',
+  hovered = 'hovered',
+  focused = 'focused',
+	pressed = 'pressed',
+	disabled = 'disabled',
+}
 
-export type TextButtonProps = {}
-
-export const TextButton: FunctionalComponent<TextButtonProps> = (_, {
-	slots,
-}): VNode => h(Button, {
-	class: {
-		text: true,
+export const MButton = defineComponent({
+	props: {
+		state: {
+			type: String as PropType<MButtonState>,
+			default: MButtonState.enabled,
+		},
 	},
-}, {
-	default: () => slots.default?.(),
+	emits: [ 'click' ],
+	render(): VNode {
+		const {
+			state,
+		} = this.$props
+		return h('button', {
+			disabled: MButtonState.disabled === state,
+			class: {
+				'm-button': true,
+				enabled: MButtonState.enabled === state,
+				hovered: MButtonState.hovered === state,
+				focused: MButtonState.focused === state,
+				pressed: MButtonState.pressed === state,
+				disabled: MButtonState.disabled === state,
+			},
+			onClick: (event: PointerEvent) => {
+				if (MButtonState.enabled === this.$props.state) {
+					this.$el.blur()
+					this.$emit('click', event)
+				}
+			},
+		}, {
+			default: () => this.$slots.default?.(),
+		})
+	},
 })
 
-TextButton.displayName = 'TextButton'
-
-TextButton.props = []
-
-export default TextButton
+export default MButton

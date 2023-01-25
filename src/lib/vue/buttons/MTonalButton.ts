@@ -37,42 +37,23 @@ import {
 } from 'vue'
 
 import {
-	Button,
-} from '@/lib/vue/buttons/Button'
+	MButton,
+} from '@/lib/vue/buttons/MButton'
 
-export enum FABButtonVariant {
-  surface = 'surface',
-  secondary = 'secondary',
-  tertiary = 'tertiary',
-}
+export type MTonalButtonProps = {}
 
-export type FABButtonProps = {
-	lowered?: boolean
-	variant?: FABButtonVariant
-}
-
-export const FABButton: FunctionalComponent<FABButtonProps> = ({
-	lowered,
-	variant,
-}, {
+export const MTonalButton: FunctionalComponent<MTonalButtonProps> = (_, {
 	slots,
-}): VNode => h(Button, {
+}): VNode => h(MButton, {
 	class: {
-		fab: true,
-		lowered,
-		surface: FABButtonVariant.surface === variant,
-		secondary: FABButtonVariant.secondary === variant,
-		tertiary: FABButtonVariant.tertiary === variant,
+		'm-tonal': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-FABButton.displayName = 'FABButton'
+MTonalButton.displayName = 'MTonalButton'
 
-FABButton.props = [
-	'lowered',
-	'variant'
-]
+MTonalButton.props = []
 
-export default FABButton
+export default MTonalButton

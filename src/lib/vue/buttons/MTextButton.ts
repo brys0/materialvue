@@ -37,34 +37,23 @@ import {
 } from 'vue'
 
 import {
-	IconButton,
-} from '@/lib/vue/buttons/IconButton'
+	MButton,
+} from '@/lib/vue/buttons/MButton'
 
-export type FilledIconButtonProps = {
-	toggle?: boolean
-	selected?: boolean
-}
+export type MTextButtonProps = {}
 
-export const FilledIconButton: FunctionalComponent<FilledIconButtonProps> = ({
-	toggle,
-	selected,
-}, {
+export const MTextButton: FunctionalComponent<MTextButtonProps> = (_, {
 	slots,
-}): VNode => h(IconButton, {
-	toggle,
-	selected,
+}): VNode => h(MButton, {
 	class: {
-		filled: true,
+		'm-text': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-FilledIconButton.displayName = 'FilledIconButton'
+MTextButton.displayName = 'MTextButton'
 
-FilledIconButton.props = [
-	'toggle',
-	'selected'
-]
+MTextButton.props = []
 
-export default FilledIconButton
+export default MTextButton

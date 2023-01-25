@@ -37,23 +37,23 @@ import {
 } from 'vue'
 
 import {
-	Button,
-} from '@/lib/vue/buttons/Button'
+	MButton,
+} from '@/lib/vue/buttons/MButton'
 
-export type TonalButtonProps = {}
+export type MOutlinedButtonProps = {}
 
-export const TonalButton: FunctionalComponent<TonalButtonProps> = (_, {
+export const MOutlinedButton: FunctionalComponent<MOutlinedButtonProps> = (_, {
 	slots,
-}): VNode => h(Button, {
+}): VNode => h(MButton, {
 	class: {
-		tonal: true,
+		'm-outlined': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-TonalButton.displayName = 'TonalButton'
+MOutlinedButton.displayName = 'MOutlinedButton'
 
-TonalButton.props = []
+MOutlinedButton.props = []
 
-export default TonalButton
+export default MOutlinedButton
