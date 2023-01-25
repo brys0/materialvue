@@ -74,6 +74,7 @@ import {
 	MFabButtonVariant,
 	MRow,
 	MColumn,
+	MSection,
 	FormFieldset,
 	FieldControl,
 	FieldBody,
@@ -143,7 +144,7 @@ onBeforeUnmount(() => {
 
 <template>
   <Main>
-    <section class="banner">
+    <m-section class="banner">
       <m-display :size="MTypographySize.large">
         Typography
       </m-display>
@@ -153,8 +154,8 @@ onBeforeUnmount(() => {
           target="_blank"
         >Design Guidelines</a>
       </m-body>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.large">
         Display
       </m-display>
@@ -167,8 +168,8 @@ onBeforeUnmount(() => {
       <m-display :size="MTypographySize.small">
         Display Small - Roboto 36/44 . 0
       </m-display>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.large">
         Headline
       </m-display>
@@ -181,8 +182,8 @@ onBeforeUnmount(() => {
       <m-headline :size="MTypographySize.small">
         Headline Small - Roboto 24/32 . 0
       </m-headline>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.large">
         Title
       </m-display>
@@ -195,8 +196,8 @@ onBeforeUnmount(() => {
       <m-title :size="MTypographySize.small">
         Title Small - Roboto Medium 14/20 . +0.1
       </m-title>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.large">
         Label
       </m-display>
@@ -209,8 +210,8 @@ onBeforeUnmount(() => {
       <m-label :size="MTypographySize.small">
         Label Small - Roboto Medium 11/16 . +0.5
       </m-label>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.large">
         Body
       </m-display>
@@ -223,9 +224,9 @@ onBeforeUnmount(() => {
       <m-body :size="MTypographySize.small">
         Body Small - Roboto 12/16 . +0.4
       </m-body>
-    </section>
+    </m-section>
 
-    <section class="banner">
+    <m-section class="banner">
       <m-display :size="MTypographySize.large">
         Buttons
       </m-display>
@@ -235,8 +236,8 @@ onBeforeUnmount(() => {
           target="_blank"
         >Design Guidelines</a>
       </m-body>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Elevated button states
       </m-display>
@@ -277,8 +278,8 @@ onBeforeUnmount(() => {
           </m-elevated-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Elevated button with icon states
       </m-display>
@@ -334,8 +335,8 @@ onBeforeUnmount(() => {
           </m-elevated-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Filled button states
       </m-display>
@@ -376,8 +377,8 @@ onBeforeUnmount(() => {
           </m-filled-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Filled button with icon states
       </m-display>
@@ -433,8 +434,8 @@ onBeforeUnmount(() => {
           </m-filled-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Tonal button states
       </m-display>
@@ -475,8 +476,8 @@ onBeforeUnmount(() => {
           </m-tonal-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Tonal button with icon states
       </m-display>
@@ -532,8 +533,8 @@ onBeforeUnmount(() => {
           </m-tonal-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Outlined button states
       </m-display>
@@ -574,8 +575,8 @@ onBeforeUnmount(() => {
           </m-outlined-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Outlined button with icon states
       </m-display>
@@ -631,8 +632,8 @@ onBeforeUnmount(() => {
           </m-outlined-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Text button states
       </m-display>
@@ -673,8 +674,8 @@ onBeforeUnmount(() => {
           </m-text-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Text button with icon states
       </m-display>
@@ -730,8 +731,8 @@ onBeforeUnmount(() => {
           </m-text-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Filled icon button no toggle states
       </m-display>
@@ -772,8 +773,8 @@ onBeforeUnmount(() => {
           </m-filled-icon-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Filled icon button toggle-unselected states
       </m-display>
@@ -826,8 +827,8 @@ onBeforeUnmount(() => {
           </m-filled-icon-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Filled icon button toggle-selected states
       </m-display>
@@ -886,8 +887,8 @@ onBeforeUnmount(() => {
           </m-filled-icon-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Tonal icon button no toggle states
       </m-display>
@@ -928,8 +929,8 @@ onBeforeUnmount(() => {
           </m-tonal-icon-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Tonal icon button toggle-unselected states
       </m-display>
@@ -982,8 +983,8 @@ onBeforeUnmount(() => {
           </m-tonal-icon-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Tonal icon button toggle-selected states
       </m-display>
@@ -1042,8 +1043,8 @@ onBeforeUnmount(() => {
           </m-tonal-icon-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Outlined icon button toggle-unselected states
       </m-display>
@@ -1096,8 +1097,8 @@ onBeforeUnmount(() => {
           </m-outlined-icon-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Outlined icon button toggle-selected states
       </m-display>
@@ -1156,8 +1157,8 @@ onBeforeUnmount(() => {
           </m-outlined-icon-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Standard icon button toggle-unselected states
       </m-display>
@@ -1210,8 +1211,8 @@ onBeforeUnmount(() => {
           </m-icon-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Standard icon button toggle-selected states
       </m-display>
@@ -1270,8 +1271,8 @@ onBeforeUnmount(() => {
           </m-icon-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         FAB button lowered states
       </m-display>
@@ -1325,8 +1326,8 @@ onBeforeUnmount(() => {
           </m-fab-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         FAB button surface variant
       </m-display>
@@ -1380,8 +1381,8 @@ onBeforeUnmount(() => {
           </m-fab-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         FAB button secondary variant
       </m-display>
@@ -1435,8 +1436,8 @@ onBeforeUnmount(() => {
           </m-fab-button>
         </m-column>
       </m-row>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         FAB button tertiary variant
       </m-display>
@@ -1490,9 +1491,9 @@ onBeforeUnmount(() => {
           </m-fab-button>
         </m-column>
       </m-row>
-    </section>
+    </m-section>
 
-    <section class="banner">
+    <m-section class="banner">
       <m-display :size="MTypographySize.large">
         Text fields
       </m-display>
@@ -1502,8 +1503,8 @@ onBeforeUnmount(() => {
           target="_blank"
         >Design Guidelines</a>
       </m-body>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Filled text field states
       </m-display>
@@ -1828,9 +1829,9 @@ onBeforeUnmount(() => {
           </form>
         </m-column>
       </m-row>
-    </section>
+    </m-section>
 
-    <section class="banner">
+    <m-section class="banner">
       <m-display :size="MTypographySize.large">
         Cards
       </m-display>
@@ -1840,8 +1841,8 @@ onBeforeUnmount(() => {
           target="_blank"
         >Design Guidelines</a>
       </m-body>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-display :size="MTypographySize.small">
         Elevated card states
       </m-display>
@@ -1985,9 +1986,9 @@ onBeforeUnmount(() => {
           </ElevatedCard>
         </m-column>
       </m-row>
-    </section>
+    </m-section>
 
-    <section class="banner">
+    <m-section class="banner">
       <m-display :size="MTypographySize.large">
         Lists
       </m-display>
@@ -1997,8 +1998,8 @@ onBeforeUnmount(() => {
           target="_blank"
         >Design Guidelines</a>
       </m-body>
-    </section>
-    <section>
+    </m-section>
+    <m-section>
       <m-row>
         <m-column>
           <m-list>
@@ -3832,14 +3833,14 @@ onBeforeUnmount(() => {
           </m-list>
         </m-column>
       </m-row>
-    </section>
+    </m-section>
   </Main>
 </template>
 
 <style lang="sass" scoped>
   @use '@/lib/sass/theme'
 
-  section
+  .m-section
     padding: 48px
 
     &.banner

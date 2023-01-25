@@ -108,7 +108,7 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
           </NavigationDrawerListItemTrailing>
           <m-divider />
         </NavigationDrawerListItem>
-        <NavigationDrawerListItem :state="NavigationDrawerListItemState.hovered">
+        <NavigationDrawerListItem>
           <NavigationDrawerListItemLeading>
             <m-rounded-icon>
               mail
@@ -125,7 +125,7 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
             </m-label>
           </NavigationDrawerListItemTrailing>
         </NavigationDrawerListItem>
-        <NavigationDrawerListItem :state="NavigationDrawerListItemState.focused">
+        <NavigationDrawerListItem>
           <NavigationDrawerListItemLeading>
             <m-rounded-icon>
               movie
@@ -143,7 +143,7 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
           </NavigationDrawerListItemTrailing>
           <m-divider />
         </NavigationDrawerListItem>
-        <NavigationDrawerListItem :state="NavigationDrawerListItemState.pressed">
+        <NavigationDrawerListItem>
           <NavigationDrawerListItemLeading>
             <m-rounded-icon>
               movie

@@ -30,9 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-.m-section
-  position: relative
-  display: flex
-  flex-flow: column
-  align-items: stretch
-  justify-content: flex-start
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
+
+export type MSectionProps = {}
+
+export const MSection: FunctionalComponent<MSectionProps> = (_: MSectionProps, {
+	slots,
+}): VNode => h('section', {
+	class: {
+		'm-section': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
+
+MSection.displayName = 'MSection'
+
+MSection.props = []
+
+export default MSection

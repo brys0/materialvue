@@ -99,6 +99,7 @@ export {
 	MColumn,
 	MGrid,
 	MGridItem,
+	MSection,
 } from '@/lib/vue/layout'
 
 export {

@@ -53,3 +53,7 @@ export {
 export {
 	MGridItem,
 } from '@/lib/vue/layout/MGridItem'
+
+export {
+	MSection,
+} from '@/lib/vue/layout/MSection'
