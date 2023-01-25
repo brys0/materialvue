@@ -44,7 +44,7 @@ import {
 	BarTrailing,
 	IconButton,
 	RoundedIcon,
-	TypographyHeadline,
+	MHeadline,
 } from '@/lib/vue'
 
 import {
@@ -73,14 +73,14 @@ const isThemeLight = computed(() => appStore.isThemeLight)
           menu
         </RoundedIcon>
       </IconButton>
-      <TypographyHeadline>
+      <m-headline>
         Material
-      </TypographyHeadline>
+      </m-headline>
     </BarLeading>
     <BarBody>
-      <TypographyHeadline>
+      <m-headline>
         Search Bar
-      </TypographyHeadline>
+      </m-headline>
     </BarBody>
     <BarTrailing>
       <IconButton @click="toggleTheme">

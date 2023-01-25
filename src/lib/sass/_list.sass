@@ -162,7 +162,7 @@
       > .typography
         @extend %is-not-selectable
 
-        &.headline
+        &.m-headline
           @extend %typography-body-large
         
         &.m-body
@@ -204,7 +204,7 @@
       
       > .list-item-body
         > .typography
-          &.headline
+          &.m-headline
             @include theme.preferred
               color: theme.style(on-surface)
           
@@ -309,7 +309,7 @@
         
       > .list-item-body
         > .typography
-          &.headline
+          &.m-headline
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           

@@ -48,7 +48,7 @@ import {
 	NavigationDrawerListItemLeading,
 	NavigationDrawerListItemBody,
 	NavigationDrawerListItemTrailing,
-	TypographyHeadline,
+	MHeadline,
 	MLabel,
 	RoundedIcon,
 	Divider,
@@ -67,9 +67,9 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
 <template>
   <NavigationDrawer :is-opened="isOpened">
     <NavigationDrawerLeading>
-      <TypographyHeadline>
+      <m-headline>
         Headline
-      </TypographyHeadline>
+      </m-headline>
     </NavigationDrawerLeading>
     <NavigationDrawerBody>
       <NavigationDrawerList>
@@ -197,9 +197,9 @@ const isOpened = computed(() => appStore.isNavigationDrawerOpened)
       </NavigationDrawerList>
     </NavigationDrawerBody>
     <NavigationDrawerTrailing>
-      <TypographyHeadline>
+      <m-headline>
         Bottom
-      </TypographyHeadline>
+      </m-headline>
     </NavigationDrawerTrailing>
   </NavigationDrawer>
 </template>

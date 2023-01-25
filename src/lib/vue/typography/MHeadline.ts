@@ -41,27 +41,27 @@ import {
 	TypographySize,
 } from '@/lib/vue/typography/Typography'
 
-export type TypographyHeadlineProps = {
+export type MHeadlineProps = {
 	size?: TypographySize
 }
 
-export const TypographyHeadline: FunctionalComponent<TypographyHeadlineProps> = ({
+export const MHeadline: FunctionalComponent<MHeadlineProps> = ({
 	size,
 }, {
 	slots,
 }): VNode => h(Typography, {
 	size,
 	class: {
-		headline: true,
+		'm-headline': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-TypographyHeadline.displayName = 'TypographyHeadline'
+MHeadline.displayName = 'MHeadline'
 
-TypographyHeadline.props = [
+MHeadline.props = [
 	'size'
 ]
 
-export default TypographyHeadline
+export default MHeadline

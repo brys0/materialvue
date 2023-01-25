@@ -40,8 +40,8 @@ export {
 } from '@/lib/vue/typography/TypographyDisplay'
 
 export {
-	TypographyHeadline,
-} from '@/lib/vue/typography/TypographyHeadline'
+	MHeadline,
+} from '@/lib/vue/typography/MHeadline'
 
 export {
 	TypographyTitle,

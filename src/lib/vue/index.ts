@@ -61,7 +61,7 @@ export {
 
 export {
 	TypographyDisplay,
-	TypographyHeadline,
+	MHeadline,
 	TypographyTitle,
 	MLabel,
 	MBody,
