@@ -144,13 +144,13 @@ export {
 } from '@/lib/vue/menus'
 
 export {
-	List,
-	ListLines,
-	ListItem,
-	ListItemState,
-	ListItemLeading,
-	ListItemBody,
-	ListItemTrailing,
+	MList,
+	MListLines,
+	MListItem,
+	MListItemState,
+	MListItemLeading,
+	MListItemBody,
+	MListItemTrailing,
 } from '@/lib/vue/lists'
 
 export {

@@ -31,23 +31,23 @@
  */
 
 export {
-	List,
-	ListLines,
-} from '@/lib/vue/lists/List'
+	MList,
+	MListLines,
+} from '@/lib/vue/lists/MList'
 
 export {
-	ListItem,
-	ListItemState,
-} from '@/lib/vue/lists/ListItem'
+	MListItem,
+	MListItemState,
+} from '@/lib/vue/lists/MListItem'
 
 export {
-	ListItemLeading,
-} from '@/lib/vue/lists/ListItemLeading'
+	MListItemLeading,
+} from '@/lib/vue/lists/MListItemLeading'
 
 export {
-	ListItemBody,
-} from '@/lib/vue/lists/ListItemBody'
+	MListItemBody,
+} from '@/lib/vue/lists/MListItemBody'
 
 export {
-	ListItemTrailing,
-} from '@/lib/vue/lists/ListItemTrailing'
+	MListItemTrailing,
+} from '@/lib/vue/lists/MListItemTrailing'

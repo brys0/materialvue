@@ -37,7 +37,7 @@ import {
 	defineComponent,
 } from 'vue'
 
-export enum ListItemState {
+export enum MListItemState {
   enabled = 'enabled',
   hovered = 'hovered',
   focused = 'focused',
@@ -46,11 +46,11 @@ export enum ListItemState {
 	disabled = 'disabled',
 }
 
-export const ListItem = defineComponent({
+export const MListItem = defineComponent({
 	props: {
 		state: {
-			type: String as PropType<ListItemState>,
-			default: ListItemState.enabled,
+			type: String as PropType<MListItemState>,
+			default: MListItemState.enabled,
 		},
 		hasLeadingVideo: {
 			type: Boolean,
@@ -65,19 +65,19 @@ export const ListItem = defineComponent({
 		} = this.$props
 
 		return h('li', {
-			tabindex: ListItemState.disabled === state ? undefined : 0,
+			tabindex: MListItemState.disabled === state ? undefined : 0,
 			class: {
-				'list-item': true,
+				'm-list-item': true,
 				'has-leading-video': hasLeadingVideo,
-				enabled: ListItemState.enabled === state,
-				hovered: ListItemState.hovered === state,
-				focused: ListItemState.focused === state,
-				pressed: ListItemState.pressed === state,
-				dragged: ListItemState.dragged === state,
-				disabled: ListItemState.disabled === state,
+				enabled: MListItemState.enabled === state,
+				hovered: MListItemState.hovered === state,
+				focused: MListItemState.focused === state,
+				pressed: MListItemState.pressed === state,
+				dragged: MListItemState.dragged === state,
+				disabled: MListItemState.disabled === state,
 			},
 			onClick: (event: PointerEvent) => {
-				if (ListItemState.enabled === this.$props.state) {
+				if (MListItemState.enabled === this.$props.state) {
 					this.$el.blur()
 					this.$emit('click', event)
 				}
@@ -88,4 +88,4 @@ export const ListItem = defineComponent({
 	},
 })
 
-export default ListItem
+export default MListItem

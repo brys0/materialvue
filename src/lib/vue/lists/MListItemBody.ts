@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type ListItemLeadingProps = {}
+export type MListItemBodyProps = {}
 
-export const ListItemLeading: FunctionalComponent<ListItemLeadingProps> = (_, {
+export const MListItemBody: FunctionalComponent<MListItemBodyProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'list-item-leading': true,
+		'm-list-item-body': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-ListItemLeading.displayName = 'ListItemLeading'
+MListItemBody.displayName = 'MListItemBody'
 
-ListItemLeading.props = []
+MListItemBody.props = []
 
-export default ListItemLeading
+export default MListItemBody

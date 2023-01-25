@@ -36,20 +36,35 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type ListItemTrailingProps = {}
+export enum MListLines {
+  one = 1,
+	two = 2,
+	three = 3,
+}
 
-export const ListItemTrailing: FunctionalComponent<ListItemTrailingProps> = (_, {
+export type MListProps = {
+	lines?: MListLines
+}
+
+export const MList: FunctionalComponent<MListProps> = ({
+	lines,
+}, {
 	slots,
-}): VNode => h('div', {
+}): VNode => h('ol', {
 	class: {
-		'list-item-trailing': true,
+		'm-list': true,
+		'lines-1': MListLines.one === lines,
+		'lines-2': MListLines.two === lines,
+		'lines-3': MListLines.three === lines,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-ListItemTrailing.displayName = 'ListItemTrailing'
+MList.displayName = 'MList'
 
-ListItemTrailing.props = []
+MList.props = [
+	'lines'
+]
 
-export default ListItemTrailing
+export default MList

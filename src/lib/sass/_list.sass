@@ -89,7 +89,7 @@
   + %list-item-body
     padding-left: 16px
 
-.list
+.m-list
   @extend %list
 
   &:first-of-type
@@ -99,23 +99,23 @@
     padding-bottom: 8px
 
   &.lines-1
-    > .list-item
+    > .m-list-item
       min-height: 56px
   
   &.lines-2
-    > .list-item
+    > .m-list-item
       min-height: 72px
 
   &.lines-3
-    > .list-item
+    > .m-list-item
       min-height: 88px
 
-      > .list-item-leading,
-      > .list-item-body,
-      > .list-item-trailing
+      > .m-list-item-leading,
+      > .m-list-item-body,
+      > .m-list-item-trailing
         justify-content: flex-start
       
-  > .list-item
+  > .m-list-item
     @extend %list-item
 
     &::before
@@ -137,7 +137,7 @@
     &.has-leading-video
       padding-left: 0
         
-    > .list-item-leading
+    > .m-list-item-leading
       @extend %list-item-leading
 
       > .m-icon
@@ -155,7 +155,7 @@
         width: 114px
         height: 64px
       
-    > .list-item-body
+    > .m-list-item-body
       @extend %list-item-body
       
       > .m-typography
@@ -167,7 +167,7 @@
         &.m-body
           @extend %m-typography-body-medium
 
-    > .list-item-trailing
+    > .m-list-item-trailing
       @extend %list-item-trailing
 
       > .m-typography
@@ -189,7 +189,7 @@
         @include theme.preferred
           border-color: theme.style(surface-variant)
 
-      > .list-item-leading
+      > .m-list-item-leading
         > .m-icon
           @include theme.preferred
             color: theme.style(on-surface-variant)
@@ -201,7 +201,7 @@
                 background: theme.style(primary-container)
                 color: theme.style(on-primary-container)
       
-      > .list-item-body
+      > .m-list-item-body
         > .m-typography
           &.m-headline
             @include theme.preferred
@@ -211,7 +211,7 @@
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
-      > .list-item-trailing
+      > .m-list-item-trailing
         > .m-typography
           &.m-label
             @include theme.preferred
@@ -229,12 +229,12 @@
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
               
-        > .list-item-leading
+        > .m-list-item-leading
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
           
-        > .list-item-trailing
+        > .m-list-item-trailing
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
@@ -245,12 +245,12 @@
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
               
-        > .list-item-leading
+        > .m-list-item-leading
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
           
-        > .list-item-trailing
+        > .m-list-item-trailing
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
@@ -261,12 +261,12 @@
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
               
-        > .list-item-leading
+        > .m-list-item-leading
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
           
-        > .list-item-trailing
+        > .m-list-item-trailing
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
@@ -279,12 +279,12 @@
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
 
-        > .list-item-leading
+        > .m-list-item-leading
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
           
-        > .list-item-trailing
+        > .m-list-item-trailing
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
@@ -301,12 +301,12 @@
         @include theme.preferred
           background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
             
-      > .list-item-leading
+      > .m-list-item-leading
         > .m-icon
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
         
-      > .list-item-body
+      > .m-list-item-body
         > .m-typography
           &.m-headline
             @include theme.preferred
@@ -316,7 +316,7 @@
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
-      > .list-item-trailing
+      > .m-list-item-trailing
         > .m-typography
           &.m-label
             @include theme.preferred
