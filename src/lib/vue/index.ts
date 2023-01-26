@@ -84,6 +84,8 @@ export {
 	MFabButton,
 	MFabButtonSize,
 	MFabButtonVariant,
+	MExtendedFabButton,
+	MExtendedFabButtonVariant,
 } from '@/lib/vue/buttons'
 
 export {

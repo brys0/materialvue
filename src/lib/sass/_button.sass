@@ -800,7 +800,26 @@ a.m-button
 
       &::before
         border-radius: 28px
+  
+  &.m-extended-fab
+    padding: 0 16px
+    min-width: 80px
+    height: 56px
+    border-radius: 16px
 
+    &::before
+      border-radius: 16px
+
+    > .m-icon
+      font-size: 24px
+
+    > .m-icon
+      + .m-typography
+        &.m-label
+          padding-left: 16px
+
+  &.m-fab,
+  &.m-extended-fab
     &,
     &.enabled
       @include theme.preferred
@@ -938,6 +957,10 @@ a.m-button
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-primary-container), 38%)
       
+      > .m-typography
+        @include theme.preferred
+          color: conversion.hex-to-rgba(theme.style(on-primary-container), 38%)
+      
       &.surface
         > .m-icon
           @include theme.preferred
@@ -952,3 +975,55 @@ a.m-button
         > .m-icon
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-tertiary-container), 38%)
+    
+  &.m-extended-fab
+    &,
+    &.enabled
+      > .m-typography
+          &.m-label
+            @include theme.preferred
+              color: theme.style(on-primary-container)
+
+      &.surface
+        > .m-typography
+          &.m-label
+            @include theme.preferred
+              color: theme.style(primary)
+
+      &.secondary
+        > .m-typography
+          &.m-label
+            @include theme.preferred
+              color: theme.style(on-secondary-container)
+
+      &.tertiary
+        > .m-typography
+          &.m-label
+            @include theme.preferred
+              color: theme.style(on-tertiary-container)
+
+    &:disabled:not(.hovered):not(.focused):not(.pressed),
+    &[disabled]:not(.hovered):not(.focused):not(.pressed),
+    &.disabled:not(.hovered):not(.focused):not(.pressed)
+      > .m-typography
+        &.m-label
+          @include theme.preferred
+            color: conversion.hex-to-rgba(theme.style(on-primary-container), 38%)
+      
+      &.surface
+        > .m-typography
+          &.m-label
+            @include theme.preferred
+              color: conversion.hex-to-rgba(theme.style(primary), 38%)
+
+      &.secondary
+        > .m-typography
+          &.m-label
+            @include theme.preferred
+              color: conversion.hex-to-rgba(theme.style(on-secondary-container), 38%)
+
+      &.tertiary
+        > .m-typography
+          &.m-label
+            @include theme.preferred
+              color: conversion.hex-to-rgba(theme.style(on-tertiary-container), 38%)

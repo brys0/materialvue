@@ -30,54 +30,49 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
+
+import {
 	MButton,
-	MButtonState,
 } from '@/lib/vue/buttons/MButton'
 
-export {
-	MFilledButton,
-} from '@/lib/vue/buttons/MFilledButton'
+export enum MExtendedFabButtonVariant {
+  surface = 'surface',
+  secondary = 'secondary',
+  tertiary = 'tertiary',
+}
 
-export {
-	MElevatedButton,
-} from '@/lib/vue/buttons/MElevatedButton'
+export type MExtendedFabButtonProps = {
+	lowered?: boolean
+	variant?: MExtendedFabButtonVariant
+}
 
-export {
-	MOutlinedButton,
-} from '@/lib/vue/buttons/MOutlinedButton'
+export const MExtendedFabButton: FunctionalComponent<MExtendedFabButtonProps> = ({
+	lowered,
+	variant,
+}, {
+	slots,
+}): VNode => h(MButton, {
+	class: {
+		'm-extended-fab': true,
+		lowered,
+		surface: MExtendedFabButtonVariant.surface === variant,
+		secondary: MExtendedFabButtonVariant.secondary === variant,
+		tertiary: MExtendedFabButtonVariant.tertiary === variant,
+	},
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	MTextButton,
-} from '@/lib/vue/buttons/MTextButton'
+MExtendedFabButton.displayName = 'MExtendedFabButton'
 
-export {
-	MTonalButton,
-} from '@/lib/vue/buttons/MTonalButton'
+MExtendedFabButton.props = [
+	'lowered',
+	'variant'
+]
 
-export {
-	MFilledIconButton,
-} from '@/lib/vue/buttons/MFilledIconButton'
-
-export {
-	MTonalIconButton,
-} from '@/lib/vue/buttons/MTonalIconButton'
-
-export {
-	MOutlinedIconButton,
-} from '@/lib/vue/buttons/MOutlinedIconButton'
-
-export {
-	MIconButton,
-} from '@/lib/vue/buttons/MIconButton'
-
-export {
-	MFabButton,
-	MFabButtonSize,
-	MFabButtonVariant,
-} from '@/lib/vue/buttons/MFabButton'
-
-export {
-	MExtendedFabButton,
-	MExtendedFabButtonVariant,
-} from '@/lib/vue/buttons/MExtendedFabButton'
+export default MExtendedFabButton
