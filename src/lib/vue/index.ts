@@ -82,6 +82,7 @@ export {
 	MOutlinedIconButton,
 	MIconButton,
 	MFabButton,
+	MFabButtonSize,
 	MFabButtonVariant,
 } from '@/lib/vue/buttons'
 

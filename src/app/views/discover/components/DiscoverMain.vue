@@ -71,6 +71,7 @@ import {
 	MOutlinedIconButton,
 	MIconButton,
 	MFabButton,
+	MFabButtonSize,
 	MFabButtonVariant,
 	MRow,
 	MColumn,
@@ -1275,6 +1276,48 @@ onBeforeUnmount(() => {
     </m-section>
     <m-section>
       <m-display :size="MTypographySize.small">
+        FAB button states
+      </m-display>
+      <m-row>
+        <m-column>
+          <m-fab-button>
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+        <m-column>
+          <m-fab-button :state="MButtonState.hovered">
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+        <m-column>
+          <m-fab-button :state="MButtonState.focused">
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+        <m-column>
+          <m-fab-button :state="MButtonState.pressed">
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+        <m-column>
+          <m-fab-button :state="MButtonState.disabled">
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+      </m-row>
+    </m-section>
+    <m-section>
+      <m-display :size="MTypographySize.small">
         FAB button lowered states
       </m-display>
       <m-row>
@@ -1319,7 +1362,6 @@ onBeforeUnmount(() => {
           <m-fab-button
             :lowered="true"
             :state="MButtonState.disabled"
-            disabled
           >
             <m-rounded-icon>
               edit
@@ -1374,7 +1416,6 @@ onBeforeUnmount(() => {
           <m-fab-button
             :variant="MFabButtonVariant.surface"
             :state="MButtonState.disabled"
-            disabled
           >
             <m-rounded-icon>
               edit
@@ -1429,7 +1470,6 @@ onBeforeUnmount(() => {
           <m-fab-button
             :variant="MFabButtonVariant.secondary"
             :state="MButtonState.disabled"
-            disabled
           >
             <m-rounded-icon>
               edit
@@ -1484,7 +1524,114 @@ onBeforeUnmount(() => {
           <m-fab-button
             :variant="MFabButtonVariant.tertiary"
             :state="MButtonState.disabled"
-            disabled
+          >
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+      </m-row>
+    </m-section>
+    <m-section>
+      <m-display :size="MTypographySize.small">
+        FAB button small size
+      </m-display>
+      <m-row>
+        <m-column>
+          <m-fab-button :size="MFabButtonSize.small">
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+        <m-column>
+          <m-fab-button
+            :size="MFabButtonSize.small"
+            :state="MButtonState.hovered"
+          >
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+        <m-column>
+          <m-fab-button
+            :size="MFabButtonSize.small"
+            :state="MButtonState.focused"
+          >
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+        <m-column>
+          <m-fab-button
+            :size="MFabButtonSize.small"
+            :state="MButtonState.pressed"
+          >
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+        <m-column>
+          <m-fab-button
+            :size="MFabButtonSize.small"
+            :state="MButtonState.disabled"
+          >
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+      </m-row>
+    </m-section>
+    <m-section>
+      <m-display :size="MTypographySize.small">
+        FAB button large size
+      </m-display>
+      <m-row>
+        <m-column>
+          <m-fab-button :size="MFabButtonSize.large">
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+        <m-column>
+          <m-fab-button
+            :size="MFabButtonSize.large"
+            :state="MButtonState.hovered"
+          >
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+        <m-column>
+          <m-fab-button
+            :size="MFabButtonSize.large"
+            :state="MButtonState.focused"
+          >
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+        <m-column>
+          <m-fab-button
+            :size="MFabButtonSize.large"
+            :state="MButtonState.pressed"
+          >
+            <m-rounded-icon>
+              edit
+            </m-rounded-icon>
+          </m-fab-button>
+        </m-column>
+        <m-column>
+          <m-fab-button
+            :size="MFabButtonSize.large"
+            :state="MButtonState.disabled"
           >
             <m-rounded-icon>
               edit

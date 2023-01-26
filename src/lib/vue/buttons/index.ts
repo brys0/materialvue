@@ -73,5 +73,6 @@ export {
 
 export {
 	MFabButton,
+	MFabButtonSize,
 	MFabButtonVariant,
 } from '@/lib/vue/buttons/MFabButton'

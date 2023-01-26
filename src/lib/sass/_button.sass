@@ -466,9 +466,6 @@ a.m-button
     > .m-icon
       width: 40px
       height: 40px
-      display: flex
-      align-items: center
-      justify-content: center
       font-size: 24px
       border-radius: 20px
     
@@ -777,22 +774,32 @@ a.m-button
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
   
   &.m-fab
-    padding: 0
     width: 56px
     height: 56px
+    grid-template-columns: [col-1-start] auto [col-1-end]
     border-radius: 16px
 
     &::before
       border-radius: 16px
 
     > .m-icon
-      width: 56px
-      height: 56px
-      display: flex
-      align-items: center
-      justify-content: center
       font-size: 24px
-      border-radius: 16px
+
+    &.small
+      width: 40px
+      height: 40px
+      border-radius: 12px
+
+      &::before
+        border-radius: 12px
+    
+    &.large
+      width: 96px
+      height: 96px
+      border-radius: 28px
+
+      &::before
+        border-radius: 28px
 
     &,
     &.enabled

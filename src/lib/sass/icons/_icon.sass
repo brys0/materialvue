@@ -35,5 +35,10 @@
 .m-icon
   @extend %is-not-selectable
 
+  display: flex
+  flex-flow: column
+  align-items: center
+  justify-content: center
+
   @include theme.preferred
     color: theme.style(on-background)

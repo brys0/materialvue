@@ -44,7 +44,6 @@ import {
 	NavigationDrawerTrailing,
 	NavigationDrawerList,
 	NavigationDrawerListItem,
-	NavigationDrawerListItemState,
 	NavigationDrawerListItemLeading,
 	NavigationDrawerListItemBody,
 	NavigationDrawerListItemTrailing,

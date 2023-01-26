@@ -46,13 +46,20 @@ export enum MFabButtonVariant {
   tertiary = 'tertiary',
 }
 
+export enum MFabButtonSize {
+  small = 'small',
+  large = 'large',
+}
+
 export type MFabButtonProps = {
 	lowered?: boolean
+	size?: MFabButtonSize
 	variant?: MFabButtonVariant
 }
 
 export const MFabButton: FunctionalComponent<MFabButtonProps> = ({
 	lowered,
+	size,
 	variant,
 }, {
 	slots,
@@ -60,6 +67,8 @@ export const MFabButton: FunctionalComponent<MFabButtonProps> = ({
 	class: {
 		'm-fab': true,
 		lowered,
+		small: MFabButtonSize.small === size,
+		large: MFabButtonSize.large === size,
 		surface: MFabButtonVariant.surface === variant,
 		secondary: MFabButtonVariant.secondary === variant,
 		tertiary: MFabButtonVariant.tertiary === variant,
@@ -72,6 +81,7 @@ MFabButton.displayName = 'MFabButton'
 
 MFabButton.props = [
 	'lowered',
+	'size',
 	'variant'
 ]
 
