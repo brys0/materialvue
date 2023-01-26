@@ -44,17 +44,17 @@ import {
 } from 'vue'
 
 import {
-	FormField,
+	MField,
 } from '@/lib/vue/forms'
 
 import {
-	TextFieldState,
-} from '@/lib/vue/text-field/TextFieldState'
+	MTextFieldState,
+} from '@/lib/vue/text-field/MTextFieldState'
 
 const props = defineProps({
 	state: {
-		type: String as PropType<TextFieldState>,
-		default: TextFieldState.enabled,
+		type: String as PropType<MTextFieldState>,
+		default: MTextFieldState.enabled,
 	},
 	hasError: {
 		type: Boolean,
@@ -71,16 +71,16 @@ const emit = defineEmits<
  (e: 'click', event: PointerEvent): void
  (e: 'blur', event: FocusEvent): void
  (e: 'focus', event: FocusEvent): void
- (e: 'update:state', newState: TextFieldState, oldState: TextFieldState): void
+ (e: 'update:state', newState: MTextFieldState, oldState: MTextFieldState): void
 }>()
 
 const fieldRef = ref<HTMLElement | null>(null)
 const inputRef = ref<HTMLInputElement | null>(null)
 const stateRef = ref(props.state)
-const enabledRef = ref(TextFieldState.enabled === stateRef.value)
-const hoveredRef = ref(TextFieldState.hovered === stateRef.value)
-const focusedRef = ref(TextFieldState.focused === stateRef.value)
-const disabledRef = ref(TextFieldState.disabled === stateRef.value)
+const enabledRef = ref(MTextFieldState.enabled === stateRef.value)
+const hoveredRef = ref(MTextFieldState.hovered === stateRef.value)
+const focusedRef = ref(MTextFieldState.focused === stateRef.value)
+const disabledRef = ref(MTextFieldState.disabled === stateRef.value)
 const withoutLabelTextRef = toRef(props, 'withoutLabelText')
 const hasErrorRef = toRef(props, 'hasError')
 const isMouseDown = ref(false)
@@ -91,7 +91,7 @@ const isEmpty = (): boolean => {
 }
 
 const classRef = computed(() => ({
-	'text-field': true,
+	'm-text-field': true,
 	'has-error': hasErrorRef.value,
 	'without-label-text': withoutLabelTextRef.value,
 	'is-empty': isEmpty(),
@@ -101,7 +101,7 @@ const classRef = computed(() => ({
 	disabled: disabledRef.value,
 }))
 
-const updateState = (newState: TextFieldState): void => {
+const updateState = (newState: MTextFieldState): void => {
 	const oldState = stateRef.value
 	if (newState !== oldState) {
 		stateRef.value = newState
@@ -110,25 +110,25 @@ const updateState = (newState: TextFieldState): void => {
 
 		if (el instanceof HTMLElement) {
 			switch (newState) {
-			case TextFieldState.disabled:
+			case MTextFieldState.disabled:
 				enabledRef.value = false
 				hoveredRef.value = false
 				focusedRef.value = false
 				disabledRef.value = true
 				break
-			case TextFieldState.enabled:
+			case MTextFieldState.enabled:
 				enabledRef.value = true
 				hoveredRef.value = false
 				focusedRef.value = false
 				disabledRef.value = false
 				break
-			case TextFieldState.focused:
+			case MTextFieldState.focused:
 				enabledRef.value = true
 				hoveredRef.value = false
 				focusedRef.value = true
 				disabledRef.value = false
 				break
-			case TextFieldState.hovered:
+			case MTextFieldState.hovered:
 				enabledRef.value = true
 				hoveredRef.value = true
 				focusedRef.value = false
@@ -158,7 +158,7 @@ const handleClick = (event: PointerEvent): void => {
 				})
 			}
 
-			updateState(TextFieldState.focused)
+			updateState(MTextFieldState.focused)
 		}
 
 		emit('click', event)
@@ -167,13 +167,13 @@ const handleClick = (event: PointerEvent): void => {
 
 const handleBlur = (event: FocusEvent): void => {
 	if (!isMouseDown.value) {
-		updateState(TextFieldState.enabled)
+		updateState(MTextFieldState.enabled)
 		emit('blur', event)
 	}
 }
 
 const handleFocus = (event: FocusEvent): void => {
-	updateState(TextFieldState.focused)
+	updateState(MTextFieldState.focused)
 	emit('focus', event)
 }
 
@@ -187,7 +187,7 @@ const handleAnimationStart = (event: AnimationEvent): void => {
 onMounted(() => {
 	const el = fieldRef.value
 	if (el instanceof HTMLElement) {
-		const target = el.querySelector('.field-input') as HTMLInputElement
+		const target = el.querySelector('.m-field-input') as HTMLInputElement
 		if (target instanceof HTMLInputElement) {
 			inputRef.value = target
 			target.addEventListener('blur', handleBlur)
@@ -217,11 +217,11 @@ const listeners = computed(() => ({
 </script>
 
 <template>
-  <FormField
+  <m-field
     ref="fieldRef"
     :class="classRef"
     v-on="listeners"
   >
     <slot />
-  </FormField>
+  </m-field>
 </template>

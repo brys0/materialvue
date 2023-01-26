@@ -1,4 +1,3 @@
-<!--
 /**
  * BSD 3-Clause License
  *
@@ -30,73 +29,27 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
--->
 
-<script lang="ts" setup>
 import {
-	toRef,
-	computed,
+	h,
+	VNode,
+	FunctionalComponent,
 } from 'vue'
 
-import {
-	useField,
-} from 'vee-validate'
+export type MFieldTrailingProps = {}
 
-// interface FieldMeta {
-//   dirty: boolean;
-//   pending: boolean;
-//   touched: boolean;
-//   valid: boolean;
-//   initialValue: any;
-// }
-
-const props = defineProps({
-	name: {
-		type: String,
-		required: true,
+export const MFieldTrailing: FunctionalComponent<MFieldTrailingProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: {
+		'm-field-trailing': true,
 	},
-	modelValue: {
-		type: String,
-		default: '',
-	},
+}, {
+	default: () => slots.default?.(),
 })
 
-const nameRef = toRef(props, 'name')
+MFieldTrailing.displayName = 'MFieldTrailing'
 
-const {
-	errorMessage,
-	value,
-	handleChange,
-	// meta
-} = useField(nameRef, undefined, {
-	validateOnValueUpdate: false,
-})
+MFieldTrailing.props = []
 
-const listeners = computed(() => {
-	// if the field is valid or have not been validated yet
-	if (!errorMessage.value) {
-		return {
-			blur: handleChange,
-			change: handleChange,
-			// disable `shouldValidate` to avoid validating on input
-			input: (event: Event): void => handleChange(event, false),
-		}
-	}
-
-	return {
-		blur: handleChange,
-		change: handleChange,
-		input: handleChange, // only switched this
-	}
-})
-
-</script>
-
-<template>
-  <input
-    class="field-input"
-    type="text"
-    v-model="value"
-    v-on="listeners"
-  >
-</template>
+export default MFieldTrailing

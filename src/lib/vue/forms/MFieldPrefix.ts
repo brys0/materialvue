@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type FieldBodyProps = {}
+export type MFieldPrefixProps = {}
 
-export const FieldBody: FunctionalComponent<FieldBodyProps> = (_, {
+export const MFieldPrefix: FunctionalComponent<MFieldPrefixProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'field-body': true,
+		'm-field-prefix': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-FieldBody.displayName = 'FieldBody'
+MFieldPrefix.displayName = 'MFieldPrefix'
 
-FieldBody.props = []
+MFieldPrefix.props = []
 
-export default FieldBody
+export default MFieldPrefix

@@ -30,9 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export enum TextFieldState {
-  enabled = 'enabled',
-  hovered = 'hovered',
-  focused = 'focused',
-	disabled = 'disabled',
-}
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
+
+export type MFieldsetProps = {}
+
+export const MFieldset: FunctionalComponent<MFieldsetProps> = (_, {
+	slots,
+}): VNode => h('fieldset', {
+	class: {
+		'm-fieldset': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
+
+MFieldset.displayName = 'MFieldset'
+
+MFieldset.props = []
+
+export default MFieldset

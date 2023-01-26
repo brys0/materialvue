@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type FieldInputPrefixProps = {}
+export type MFieldSupportProps = {}
 
-export const FieldInputPrefix: FunctionalComponent<FieldInputPrefixProps> = (_, {
+export const MFieldSupport: FunctionalComponent<MFieldSupportProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'field-input-prefix': true,
+		'm-field-support': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-FieldInputPrefix.displayName = 'FieldInputPrefix'
+MFieldSupport.displayName = 'MFieldSupport'
 
-FieldInputPrefix.props = []
+MFieldSupport.props = []
 
-export default FieldInputPrefix
+export default MFieldSupport

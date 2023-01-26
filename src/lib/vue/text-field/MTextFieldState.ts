@@ -30,26 +30,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
-
-export type FormFieldProps = {}
-
-export const FormField: FunctionalComponent<FormFieldProps> = (_, {
-	slots,
-}): VNode => h('div', {
-	class: {
-		'form-field': true,
-	},
-}, {
-	default: () => slots.default?.(),
-})
-
-FormField.displayName = 'FormField'
-
-FormField.props = []
-
-export default FormField
+export enum MTextFieldState {
+  enabled = 'enabled',
+  hovered = 'hovered',
+  focused = 'focused',
+	disabled = 'disabled',
+}

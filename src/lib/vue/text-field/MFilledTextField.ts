@@ -36,20 +36,54 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type FieldTrailingProps = {}
+import {
+	MTextField,
+	MTextFieldState,
+} from '@/lib/vue/text-field'
 
-export const FieldTrailing: FunctionalComponent<FieldTrailingProps> = (_, {
+export type MFilledTextFieldProps = {
+	state?: MTextFieldState
+	hasError?: boolean
+	withoutLabelText?: boolean
+}
+
+export const MFilledTextField: FunctionalComponent<MFilledTextFieldProps> = ({
+	state,
+	hasError,
+	withoutLabelText,
+}, {
 	slots,
-}): VNode => h('div', {
+	emit,
+}): VNode => h(MTextField, {
+	state: state ?? MTextFieldState.enabled,
+	hasError,
+	withoutLabelText,
 	class: {
-		'field-trailing': true,
+		'm-filled': true,
 	},
+	onAutofill: () => emit('autofill'),
+	onClick: (event: PointerEvent) => emit('click', event),
+	onBlur: (event: FocusEvent) => emit('blur', event),
+	onFocus: (event: FocusEvent) => emit('focus', event),
+	'onUpdate:state': (newState: MTextFieldState, oldState: MTextFieldState) => emit('update:state', newState, oldState),
 }, {
 	default: () => slots.default?.(),
 })
 
-FieldTrailing.displayName = 'FieldTrailing'
+MFilledTextField.displayName = 'MFilledTextField'
 
-FieldTrailing.props = []
+MFilledTextField.emits = [
+	'autofill',
+	'click',
+	'blur',
+	'focus',
+	'update:state'
+]
 
-export default FieldTrailing
+MFilledTextField.props = [
+	'state',
+	'has-error',
+	'without-label-text'
+]
+
+export default MFilledTextField

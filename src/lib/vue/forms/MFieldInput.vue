@@ -1,3 +1,4 @@
+<!--
 /**
  * BSD 3-Clause License
  *
@@ -29,27 +30,73 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+-->
 
+<script lang="ts" setup>
 import {
-	h,
-	VNode,
-	FunctionalComponent,
+	toRef,
+	computed,
 } from 'vue'
 
-export type FieldControlProps = {}
+import {
+	useField,
+} from 'vee-validate'
 
-export const FieldControl: FunctionalComponent<FieldControlProps> = (_, {
-	slots,
-}): VNode => h('div', {
-	class: {
-		'field-control': true,
+// interface FieldMeta {
+//   dirty: boolean;
+//   pending: boolean;
+//   touched: boolean;
+//   valid: boolean;
+//   initialValue: any;
+// }
+
+const props = defineProps({
+	name: {
+		type: String,
+		required: true,
 	},
-}, {
-	default: () => slots.default?.(),
+	modelValue: {
+		type: String,
+		default: '',
+	},
 })
 
-FieldControl.displayName = 'FieldControl'
+const nameRef = toRef(props, 'name')
 
-FieldControl.props = []
+const {
+	errorMessage,
+	value,
+	handleChange,
+	// meta
+} = useField(nameRef, undefined, {
+	validateOnValueUpdate: false,
+})
 
-export default FieldControl
+const listeners = computed(() => {
+	// if the field is valid or have not been validated yet
+	if (!errorMessage.value) {
+		return {
+			blur: handleChange,
+			change: handleChange,
+			// disable `shouldValidate` to avoid validating on input
+			input: (event: Event): void => handleChange(event, false),
+		}
+	}
+
+	return {
+		blur: handleChange,
+		change: handleChange,
+		input: handleChange, // only switched this
+	}
+})
+
+</script>
+
+<template>
+  <input
+    class="m-field-input"
+    type="text"
+    v-model="value"
+    v-on="listeners"
+  >
+</template>

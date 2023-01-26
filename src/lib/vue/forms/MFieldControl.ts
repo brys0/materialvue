@@ -30,46 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MForm,
-} from '@/lib/vue/forms/MForm'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	MFieldset,
-} from '@/lib/vue/forms/MFieldset'
+export type MFieldControlProps = {}
 
-export {
-	MField,
-} from '@/lib/vue/forms/MField'
+export const MFieldControl: FunctionalComponent<MFieldControlProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: {
+		'm-field-control': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	MFieldControl,
-} from '@/lib/vue/forms/MFieldControl'
+MFieldControl.displayName = 'MFieldControl'
 
-export {
-	MFieldBody,
-} from '@/lib/vue/forms/MFieldBody'
+MFieldControl.props = []
 
-export {
-	MFieldLeading,
-} from '@/lib/vue/forms/MFieldLeading'
-
-export {
-	MFieldTrailing,
-} from '@/lib/vue/forms/MFieldTrailing'
-
-export {
-	default as MFieldInput,
-} from '@/lib/vue/forms/MFieldInput.vue'
-
-export {
-	MFieldPrefix,
-} from '@/lib/vue/forms/MFieldPrefix'
-
-export {
-	MFieldSuffix,
-} from '@/lib/vue/forms/MFieldSuffix'
-
-export {
-	MFieldSupport,
-} from '@/lib/vue/forms/MFieldSupport'
+export default MFieldControl

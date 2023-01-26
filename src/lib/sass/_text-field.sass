@@ -33,12 +33,12 @@
 @use './theme'
 @use './conversion'
 
-%text-field
+%m-text-field
   display: grid
   grid-template-rows: [row-1-start] 56px [row-1-end row-2-start] min-content [row-2-end]  
   grid-template-columns: [col-1-start] auto [col-1-end]
 
-%text-field-control
+%m-text-field-control
   position: relative
   display: grid
   grid-row: row-1-start / row-1-end
@@ -46,8 +46,8 @@
   grid-template-rows: [row-1-start] auto [row-1-end]  
   grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
   
-%text-field-leading,
-%text-field-trailing
+%m-text-field-leading,
+%m-text-field-trailing
   padding-top: 8px
   padding-bottom: 8px
   height: 54px
@@ -55,17 +55,17 @@
   flex-flow: column
   justify-content: center
 
-%text-field-leading
+%m-text-field-leading
   padding-left: 12px
   grid-row: row-1-start / row-1-end
   grid-column: col-1-start / col-1-end
 
-%text-field-trailing
+%m-text-field-trailing
   padding-right: 12px
   grid-row: row-1-start / row-1-end
   grid-column: col-3-start / col-3-end
 
-%text-field-body
+%m-text-field-body
   padding: 8px 16px
   height: 54px
   display: grid
@@ -76,7 +76,7 @@
   align-content: center
   justify-content: stretch
 
-%text-field-support
+%m-text-field-support
   padding: 4px 16px 0
   display: grid
   grid-row: row-2-start / row-2-end
@@ -84,11 +84,11 @@
   grid-template-rows: [row-1-start] auto [row-1-end]  
   grid-template-columns: [col-1-start] auto [col-1-end col-2-start] min-content [col-2-end]
 
-.text-field
-  @extend %text-field
+.m-text-field
+  @extend %m-text-field
   
-  > .field-control
-    @extend %text-field-control
+  > .m-field-control
+    @extend %m-text-field-control
 
     &::before
       content: ' '
@@ -100,14 +100,14 @@
       display: none
       background: transparent
     
-    > .field-leading
-      @extend %text-field-leading
+    > .m-field-leading
+      @extend %m-text-field-leading
       
-    > .field-trailing
-      @extend %text-field-trailing
+    > .m-field-trailing
+      @extend %m-text-field-trailing
       
-    > .field-body
-      @extend %text-field-body
+    > .m-field-body
+      @extend %m-text-field-body
 
       > .m-typography
         &.m-label
@@ -117,8 +117,8 @@
           grid-row: row-1-start / row-1-end
           grid-column: col-1-start / col-3-end
 
-      > .field-input-prefix,
-      > .field-input-suffix
+      > .m-field-prefix,
+      > .m-field-suffix
         @extend %is-not-selectable
         
         overflow: hidden
@@ -127,17 +127,17 @@
           &.m-label
             @extend %m-typography-body-large
 
-      > .field-input-prefix
+      > .m-field-prefix
         padding-right: 4px
         grid-row: row-2-start / row-2-end
         grid-column: col-1-start / col-1-end
       
-      > .field-input-suffix
+      > .m-field-suffix
         padding-left: 4px
         grid-row: row-2-start / row-2-end
         grid-column: col-3-start / col-3-end
 
-      > .field-input
+      > .m-field-input
         @extend %m-typography-body-large
 
         padding: 0
@@ -162,8 +162,8 @@
           to
             /** */
         
-  > .field-support
-    @extend %text-field-support
+  > .m-field-support
+    @extend %m-text-field-support
     
     > .m-typography
       grid-row: row-1-start / row-1-end
@@ -178,30 +178,30 @@
         grid-column: col-2-start / col-2-end
 
   &.is-empty:not(.focused)
-    > .field-control
-      > .field-body
+    > .m-field-control
+      > .m-field-body
         > .m-typography
           &.m-label
             @extend %m-typography-body-large
         
-        > .field-input-prefix,
-        > .field-input-suffix,
-        > .field-input
+        > .m-field-prefix,
+        > .m-field-suffix,
+        > .m-field-input
           height: 0
           appearance: none
 
   &.without-label-text
     &.focused,
     &:not(.is-empty)
-      > .field-control
-        > .field-body
+      > .m-field-control
+        > .m-field-body
           > .m-typography
             &.m-label
               height: 0
               appearance: none
 
-  &.filled
-    > .field-control
+  &.m-filled
+    > .m-field-control
       border-bottom-style: solid
       border-bottom-width: 1px
       border-top-left-radius: 4px
@@ -211,58 +211,58 @@
         border-top-left-radius: 4px
         border-top-right-radius: 4px
 
-      > .field-leading,
-      > .field-trailing
+      > .m-field-leading,
+      > .m-field-trailing
         .m-icon
           font-size: 24px
 
-      > .field-body
+      > .m-field-body
         > .m-typography
           &.m-label
             @extend %m-typography-body-small
 
-        > .field-input
+        > .m-field-input
           border: none
           outline: none
           background: transparent
             
-    > .field-support
+    > .m-field-support
       > .m-typography
         &.m-body,
         &.m-label
           @extend %m-typography-body-small
 
     &.has-error
-      > .field-control
+      > .m-field-control
         border-bottom-width: 2px
     
     &,
     &.enabled
-      > .field-control
+      > .m-field-control
         @include theme.preferred
           border-color: theme.style(on-surface-variant)
           background: theme.style(surface-variant)
 
-        > .field-leading,
-        > .field-trailing
+        > .m-field-leading,
+        > .m-field-trailing
           .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
-        > .field-body
+        > .m-field-body
           > .m-typography
             &.m-label
               @include theme.preferred
                 color: theme.style(on-surface-variant)
           
-          > .field-input-prefix,
-          > .field-input-suffix
+          > .m-field-prefix,
+          > .m-field-suffix
             > .m-typography
               &.m-label
                 @include theme.preferred
                   color: theme.style(on-surface-variant)
 
-          > .field-input
+          > .m-field-input
             background: transparent
 
             @include theme.preferred
@@ -277,7 +277,7 @@
                 -webkit-text-fill-color: theme.style(on-surface) !important
                 -webkit-box-shadow: 0 0 0 30px theme.style(surface-variant) inset !important
               
-      > .field-support
+      > .m-field-support
         > .m-typography
           &.m-body,
           &.m-label
@@ -285,22 +285,22 @@
               color: theme.style(on-surface-variant)
 
       &.has-error
-        > .field-control
+        > .m-field-control
           @include theme.preferred
             border-bottom-color: theme.style(error)
 
-          > .field-trailing
+          > .m-field-trailing
             .m-icon
               @include theme.preferred
                 color: theme.style(error)
 
-          > .field-body        
+          > .m-field-body        
             > .m-typography
               &.m-label
                 @include theme.preferred
                   color: theme.style(error)
             
-        > .field-support
+        > .m-field-support
           > .m-typography
             &.m-body,
             &.m-label
@@ -311,7 +311,7 @@
       &.hovered:not(.focused):not(.disabled)
         cursor: pointer
 
-        > .field-control
+        > .m-field-control
           border-bottom-width: 1px
 
           @include theme.preferred
@@ -323,13 +323,13 @@
             @include theme.preferred  
               background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
 
-          > .field-body
+          > .m-field-body
             > .m-typography
               &.m-label
                 @include theme.preferred
                   color: theme.style(on-surface-variant)
 
-        > .field-support
+        > .m-field-support
           > .m-typography
             &.m-body,
             &.m-label
@@ -337,27 +337,27 @@
                 color: theme.style(on-surface-variant)
         
         &.has-error
-          > .field-control
+          > .m-field-control
             @include theme.preferred
               border-bottom-color: theme.style(on-error-container)
 
-            > .field-leading
+            > .m-field-leading
               .m-icon
                 @include theme.preferred
                   color: theme.style(on-surface-variant)
 
-            > .field-trailing
+            > .m-field-trailing
               .m-icon
                 @include theme.preferred
                   color: theme.style(on-error-container)
 
-            > .field-body  
+            > .m-field-body  
               > .m-typography
                 &.m-label
                   @include theme.preferred
                     color: theme.style(on-error-container)
               
-          > .field-support
+          > .m-field-support
             > .m-typography
               &.m-body,
               &.m-label
@@ -366,13 +366,13 @@
       
       &:focus:not(.hovered):not(.disabled),
       &.focused:not(.hovered):not(.disabled)
-        > .field-control
+        > .m-field-control
           border-bottom-width: 2px
           
           @include theme.preferred
             border-bottom-color: theme.style(primary)
 
-          > .field-body
+          > .m-field-body
             > .m-typography
               &.m-label
                 @extend %m-typography-body-small
@@ -381,7 +381,7 @@
                   color: theme.style(primary)
                 
                 
-        > .field-support
+        > .m-field-support
           > .m-typography
             &.m-body,
             &.m-label
@@ -389,31 +389,31 @@
                 color: theme.style(on-surface-variant)
 
         &.has-error
-          > .field-control
+          > .m-field-control
             @include theme.preferred
               border-bottom-color: theme.style(error)
               
-            > .field-leading
+            > .m-field-leading
               .m-icon
                 @include theme.preferred
                   color: theme.style(on-surface-variant)
 
-            > .field-trailing
+            > .m-field-trailing
               .m-icon
                 @include theme.preferred
                   color: theme.style(error)
             
-            > .field-body
+            > .m-field-body
               > .m-typography
                 &.m-label
                   @include theme.preferred
                     color: theme.style(error)
               
-              > .field-input
+              > .m-field-input
                 @include theme.preferred
                   caret-color: theme.style(error)
                 
-          > .field-support
+          > .m-field-support
             > .m-typography
               &.m-body,
               &.m-label
@@ -428,24 +428,24 @@
       cursor: not-allowed
       pointer-events: all !important
         
-      > .field-control
+      > .m-field-control
         @include theme.preferred
           border-bottom-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           background: conversion.hex-to-rgba(theme.style(on-surface), 4%)
 
-        > .field-leading,
-        > .field-trailing
+        > .m-field-leading,
+        > .m-field-trailing
           .m-icon
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           
-        > .field-body
+        > .m-field-body
           > .m-typography
             &.m-label
               @include theme.preferred
                 color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
             
-          > .field-input
+          > .m-field-input
             pointer-events: none !important
 
             @include theme.preferred
@@ -459,7 +459,7 @@
                 -webkit-text-fill-color: conversion.hex-to-rgba(theme.style(on-surface), 38%) !important
                 -webkit-box-shadow: 0 0 0 30px conversion.hex-to-rgba(theme.style(on-surface), 4%) inset !important
                 
-      > .field-support
+      > .m-field-support
         > .m-typography
           &.m-body,
           &.m-label

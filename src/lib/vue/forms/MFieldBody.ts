@@ -36,54 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-import {
-	TextField,
-	TextFieldState,
-} from '@/lib/vue/text-field'
+export type FieldBodyProps = {}
 
-export type FilledTextFieldProps = {
-	state?: TextFieldState
-	hasError?: boolean
-	withoutLabelText?: boolean
-}
-
-export const FilledTextField: FunctionalComponent<FilledTextFieldProps> = ({
-	state,
-	hasError,
-	withoutLabelText,
-}, {
+export const MFieldBody: FunctionalComponent<FieldBodyProps> = (_, {
 	slots,
-	emit,
-}): VNode => h(TextField, {
-	state: state ?? TextFieldState.enabled,
-	hasError,
-	withoutLabelText,
+}): VNode => h('div', {
 	class: {
-		filled: true,
+		'm-field-body': true,
 	},
-	onAutofill: () => emit('autofill'),
-	onClick: (event: PointerEvent) => emit('click', event),
-	onBlur: (event: FocusEvent) => emit('blur', event),
-	onFocus: (event: FocusEvent) => emit('focus', event),
-	'onUpdate:state': (newState: TextFieldState, oldState: TextFieldState) => emit('update:state', newState, oldState),
 }, {
 	default: () => slots.default?.(),
 })
 
-FilledTextField.displayName = 'FilledTextField'
+MFieldBody.displayName = 'MFieldBody'
 
-FilledTextField.emits = [
-	'autofill',
-	'click',
-	'blur',
-	'focus',
-	'update:state'
-]
+MFieldBody.props = []
 
-FilledTextField.props = [
-	'state',
-	'has-error',
-	'without-label-text'
-]
-
-export default FilledTextField
+export default MFieldBody

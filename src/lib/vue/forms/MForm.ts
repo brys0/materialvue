@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type FieldSupportProps = {}
+export type MFormProps = {}
 
-export const FieldSupport: FunctionalComponent<FieldSupportProps> = (_, {
+export const MForm: FunctionalComponent<MFormProps> = (_, {
 	slots,
-}): VNode => h('div', {
+}): VNode => h('form', {
 	class: {
-		'field-support': true,
+		'm-form': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-FieldSupport.displayName = 'FieldSupport'
+MForm.displayName = 'MForm'
 
-FieldSupport.props = []
+MForm.props = []
 
-export default FieldSupport
+export default MForm

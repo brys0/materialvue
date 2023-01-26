@@ -31,13 +31,13 @@
  */
 
 export {
-	default as TextField,
-} from '@/lib/vue/text-field/TextField.vue'
+	default as MTextField,
+} from '@/lib/vue/text-field/MTextField.vue'
 
 export {
-	TextFieldState,
-} from '@/lib/vue/text-field/TextFieldState'
+	MTextFieldState,
+} from '@/lib/vue/text-field/MTextFieldState'
 
 export {
-	FilledTextField,
-} from '@/lib/vue/text-field/FilledTextField'
+	MFilledTextField,
+} from '@/lib/vue/text-field/MFilledTextField'

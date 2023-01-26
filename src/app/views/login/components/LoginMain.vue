@@ -5,13 +5,13 @@
  * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicverse dot org>
  * All rights reserved.
  *
- * Redistribution and use in source and binary forms, with or without
+ * Redistribution and use in source and binary m-forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
  * 1. Redistributions of source code must retain the above copyright notice, this
  *    list of conditions and the following disclaimer.
  *
- * 2. Redistributions in binary form must reproduce the above copyright notice,
+ * 2. Redistributions in binary m-form must reproduce the above copyright notice,
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
  *
@@ -59,14 +59,15 @@ import {
 	MLabel,
 	MFilledButton,
 	MRoundedIcon,
-	FormFieldset,
-	FieldControl,
-	FieldBody,
-	FieldLeading,
-	FieldTrailing,
-	FieldInput,
-	FieldSupport,
-	FilledTextField,
+	MForm,
+	MFieldset,
+	MFieldControl,
+	MFieldBody,
+	MFieldLeading,
+	MFieldTrailing,
+	MFieldInput,
+	MFieldSupport,
+	MFilledTextField,
 } from '@/lib/vue'
 
 const validationSchema = object({
@@ -99,87 +100,77 @@ onBeforeUnmount(() => {
   <Main>
     <m-layout>
       <m-tile>
-        <form
+        <m-form
           class="login"
           @submit="onSubmit"
         >
-          <FormFieldset>
-            <FilledTextField
+          <m-fieldset>
+            <m-filled-text-field
               ref="emailRef"
               :has-error="'undefined' !== typeof errors.email"
             >
-              <FieldControl>
-                <FieldLeading>
+              <m-field-control>
+                <m-field-leading>
                   <m-rounded-icon>
                     mail
                   </m-rounded-icon>
-                </FieldLeading>
-                <FieldBody>
-                  <m-label
-                    name="email"
-                  >
+                </m-field-leading>
+                <m-field-body>
+                  <m-label name="email">
                     Email
                   </m-label>
-                  <FieldInput name="email" />
-                </FieldBody>
-                <FieldTrailing
-                  v-if="errors.email"
-                  class="trailing"
-                >
+                  <m-field-input :name="'email'" />
+                </m-field-body>
+                <m-field-trailing v-if="errors.email">
                   <m-rounded-icon>
                     error
                   </m-rounded-icon>
-                </FieldTrailing>
-              </FieldControl>
-              <FieldSupport v-if="errors.email">
+                </m-field-trailing>
+              </m-field-control>
+              <m-field-support v-if="errors.email">
                 <m-body>
                   {{ errors.email }}
                 </m-body>
-              </FieldSupport>
-            </FilledTextField>
-          </FormFieldset>
-          <FormFieldset>
-            <FilledTextField
+              </m-field-support>
+            </m-filled-text-field>
+          </m-fieldset>
+          <m-fieldset>
+            <m-filled-text-field
               ref="passwordRef"
               :has-error="'undefined' !== typeof errors.password"
             >
-              <FieldControl>
-                <FieldLeading>
+              <m-field-control>
+                <m-field-leading>
                   <m-rounded-icon>
                     lock
                   </m-rounded-icon>
-                </FieldLeading>
-                <FieldBody>
-                  <m-label
-                    name="password"
-                  >
+                </m-field-leading>
+                <m-field-body>
+                  <m-label name="password">
                     Password
                   </m-label>
-                  <FieldInput
+                  <m-field-input
                     type="password"
-                    name="password"
+                    :name="'password'"
                   />
-                </FieldBody>
-                <FieldTrailing
-                  v-if="errors.password"
-                  class="trailing"
-                >
+                </m-field-body>
+                <m-field-trailing v-if="errors.password">
                   <m-rounded-icon>
                     error
                   </m-rounded-icon>
-                </FieldTrailing>
-              </FieldControl>
-              <FieldSupport v-if="errors.password">
+                </m-field-trailing>
+              </m-field-control>
+              <m-field-support v-if="errors.password">
                 <m-body>
                   {{ errors.password }}
                 </m-body>
-              </FieldSupport>
-            </FilledTextField>
-          </FormFieldset>
+              </m-field-support>
+            </m-filled-text-field>
+          </m-fieldset>
           <m-filled-button>
             Submit
           </m-filled-button>
-        </form>
+        </m-form>
       </m-tile>
     </m-layout>
   </Main>
@@ -188,7 +179,7 @@ onBeforeUnmount(() => {
 <style lang="sass" scoped>
 .login
   width: 300px
-  .form-fieldset
+  .m-fieldset
     height: 100px
 
 </style>

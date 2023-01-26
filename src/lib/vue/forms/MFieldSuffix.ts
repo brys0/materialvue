@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type FieldLeadingProps = {}
+export type MFieldSuffixProps = {}
 
-export const FieldLeading: FunctionalComponent<FieldLeadingProps> = (_, {
+export const MFieldSuffix: FunctionalComponent<MFieldSuffixProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'field-leading': true,
+		'm-field-suffix': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-FieldLeading.displayName = 'FieldLeading'
+MFieldSuffix.displayName = 'MFieldSuffix'
 
-FieldLeading.props = []
+MFieldSuffix.props = []
 
-export default FieldLeading
+export default MFieldSuffix

@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type FieldInputSuffixProps = {}
+export type MFieldProps = {}
 
-export const FieldInputSuffix: FunctionalComponent<FieldInputSuffixProps> = (_, {
+export const MField: FunctionalComponent<MFieldProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'field-input-suffix': true,
+		'm-field': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-FieldInputSuffix.displayName = 'FieldInputSuffix'
+MField.displayName = 'MField'
 
-FieldInputSuffix.props = []
+MField.props = []
 
-export default FieldInputSuffix
+export default MField

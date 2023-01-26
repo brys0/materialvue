@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type FormFieldsetProps = {}
+export type MFieldLeadingProps = {}
 
-export const FormFieldset: FunctionalComponent<FormFieldsetProps> = (_, {
+export const MFieldLeading: FunctionalComponent<MFieldLeadingProps> = (_, {
 	slots,
-}): VNode => h('fieldset', {
+}): VNode => h('div', {
 	class: {
-		'form-fieldset': true,
+		'm-field-leading': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-FormFieldset.displayName = 'FormFieldset'
+MFieldLeading.displayName = 'MFieldLeading'
 
-FormFieldset.props = []
+MFieldLeading.props = []
 
-export default FormFieldset
+export default MFieldLeading
