@@ -33,12 +33,27 @@
 @use './theme'
 @use './conversion'
 
-.m-card
+%m-card
   @extend %is-not-selectable
 
   padding: 20px 16px
+  position: relative
   border-radius: 12px
   outline: none
+
+.m-card
+  @extend %m-card
+
+  &::before
+    content: ' '
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    display: block
+    background: transparent
+    border-radius: 12px
   
   > .m-bar
     margin-top: 24px
@@ -57,28 +72,62 @@
         background: theme.style(elevation-1), theme.style(surface)
         box-shadow: theme.style(shadow-1)
 
+      *
+        @include theme.preferred
+          box-shadow: theme.style(shadow-0) !important
+
       &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
       &.hovered
         cursor: pointer
         
         @include theme.preferred
-          background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
           box-shadow: theme.style(shadow-2)
+
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+
+        *
+          @include theme.preferred
+            box-shadow: theme.style(shadow-0) !important
 
       &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
       &.focused
         @include theme.preferred
-          background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+          box-shadow: theme.style(shadow-1)
+
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+        *
+          @include theme.preferred
+            box-shadow: theme.style(shadow-0) !important
 
       &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
       &.pressed
         @include theme.preferred
-          background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+          box-shadow: theme.style(shadow-1)
+          
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
       
+        *
+          @include theme.preferred
+            box-shadow: theme.style(shadow-0) !important
+
       &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
         @include theme.preferred
-          background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
           box-shadow: theme.style(shadow-3)
+          
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+        *
+          @include theme.preferred
+            box-shadow: theme.style(shadow-0) !important
     
     &:disabled:not(.hovered):not(.focused):not(.pressed):not(.dragged),
     &[disabled]:not(.hovered):not(.focused):not(.pressed):not(.dragged),
@@ -86,5 +135,12 @@
       opacity: 38%
 
       @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 38%)
         box-shadow: theme.style(shadow-0)
+
+      *
+        background: transparent !important
+
+        @include theme.preferred
+          box-shadow: theme.style(shadow-0) !important
+          color: theme.style(on-surface-variant) !important
+          

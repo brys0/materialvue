@@ -34,6 +34,9 @@
 @use './conversion'
 
 %button
+  @extend %is-not-selectable
+  @extend %is-ellipsis
+  
   padding: 0
   position: relative
   display: grid
@@ -48,8 +51,6 @@
 
 .m-button,
 a.m-button
-  @extend %is-not-selectable
-  @extend %is-ellipsis
   @extend %button
 
   &::before
@@ -800,6 +801,9 @@ a.m-button
 
       &::before
         border-radius: 28px
+
+      > .m-icon
+        font-size: 36px
   
   &.m-extended-fab
     padding: 0 16px

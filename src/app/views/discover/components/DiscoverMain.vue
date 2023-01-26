@@ -2604,11 +2604,11 @@ onBeforeUnmount(() => {
             </m-body>
             <m-bar>
               <m-bar-trailing>
-                <m-text-button>
+                <m-filled-button>
                   <m-label>
                     Get Started
                   </m-label>
-                </m-text-button>
+                </m-filled-button>
               </m-bar-trailing>
             </m-bar>
           </m-elevated-card>
@@ -2629,11 +2629,11 @@ onBeforeUnmount(() => {
             </m-body>
             <m-bar>
               <m-bar-trailing>
-                <m-text-button>
+                <m-filled-button>
                   <m-label>
                     Get Started
                   </m-label>
-                </m-text-button>
+                </m-filled-button>
               </m-bar-trailing>
             </m-bar>
           </m-elevated-card>
@@ -2654,11 +2654,11 @@ onBeforeUnmount(() => {
             </m-body>
             <m-bar>
               <m-bar-trailing>
-                <m-text-button>
+                <m-filled-button>
                   <m-label>
                     Get Started
                   </m-label>
-                </m-text-button>
+                </m-filled-button>
               </m-bar-trailing>
             </m-bar>
           </m-elevated-card>
@@ -2679,11 +2679,11 @@ onBeforeUnmount(() => {
             </m-body>
             <m-bar>
               <m-bar-trailing>
-                <m-text-button>
+                <m-filled-button>
                   <m-label>
                     Get Started
                   </m-label>
-                </m-text-button>
+                </m-filled-button>
               </m-bar-trailing>
             </m-bar>
           </m-elevated-card>
@@ -2704,11 +2704,11 @@ onBeforeUnmount(() => {
             </m-body>
             <m-bar>
               <m-bar-trailing>
-                <m-text-button>
+                <m-filled-button>
                   <m-label>
                     Get Started
                   </m-label>
-                </m-text-button>
+                </m-filled-button>
               </m-bar-trailing>
             </m-bar>
           </m-elevated-card>
