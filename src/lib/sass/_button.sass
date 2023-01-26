@@ -816,7 +816,11 @@ a.m-button
 
       &.surface
         @include theme.preferred
-          background: theme.style(surface)
+          background: theme.style(elevation-3), theme.style(surface)
+
+        &.lowered
+          @include theme.preferred
+            background: theme.style(elevation-1), theme.style(surface)
 
         > .m-icon
           @include theme.preferred
@@ -852,6 +856,13 @@ a.m-button
             background: conversion.hex-to-rgba(theme.style(on-primary-container), 8%)
         
         &.surface
+          @include theme.preferred
+            background: theme.style(elevation-4), theme.style(surface)
+
+          &.lowered
+            @include theme.preferred
+              background: theme.style(elevation-2), theme.style(surface)
+
           &::before
             @include theme.preferred
               background: conversion.hex-to-rgba(theme.style(primary), 8%)
