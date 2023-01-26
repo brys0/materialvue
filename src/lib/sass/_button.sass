@@ -36,7 +36,7 @@
 %button
   @extend %is-not-selectable
   @extend %is-ellipsis
-  
+
   padding: 0
   position: relative
   display: grid
@@ -120,6 +120,7 @@ a.m-button
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered:not(.focused):not(.pressed):not(.disabled)
         @include theme.preferred
+          background: theme.style(elevation-2), theme.style(surface)
           box-shadow: theme.style(shadow-2)
 
         &::before
@@ -128,18 +129,12 @@ a.m-button
 
       &:focus:not(.hovered):not(.pressed):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.disabled)
-        @include theme.preferred
-          box-shadow: theme.style(shadow-1)
-
         &::before
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(primary), 12%)
 
       &:active:not(.hovered):not(.focused):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.disabled)
-        @include theme.preferred
-          box-shadow: theme.style(shadow-1)
-          
         &::before
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(primary), 12%)
@@ -197,6 +192,7 @@ a.m-button
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered:not(.focused):not(.pressed):not(.disabled)
         @include theme.preferred
+          background: theme.style(primary)
           box-shadow: theme.style(shadow-1)
 
         &::before
@@ -205,18 +201,12 @@ a.m-button
 
       &:focus:not(.hovered):not(.pressed):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.disabled)
-        @include theme.preferred
-          box-shadow: theme.style(shadow-0)
-
         &::before
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
 
       &:active:not(.hovered):not(.focused):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.disabled)
-        @include theme.preferred
-          box-shadow: theme.style(shadow-0)
-          
         &::before
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
@@ -226,8 +216,7 @@ a.m-button
     &.disabled:not(.hovered):not(.focused):not(.pressed)
       @include theme.preferred
         background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-        box-shadow: theme.style(shadow-0)
-
+        
       > .m-icon
         @include theme.preferred
           color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
@@ -274,6 +263,7 @@ a.m-button
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered:not(.focused):not(.pressed):not(.disabled)
         @include theme.preferred
+          background: theme.style(secondary-container)
           box-shadow: theme.style(shadow-1)
 
         &::before
@@ -282,18 +272,12 @@ a.m-button
 
       &:focus:not(.hovered):not(.pressed):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.disabled)
-        @include theme.preferred
-          box-shadow: theme.style(shadow-0)
-
         &::before
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
 
       &:active:not(.hovered):not(.focused):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.disabled)
-        @include theme.preferred
-          box-shadow: theme.style(shadow-0)
-          
         &::before
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
@@ -303,7 +287,6 @@ a.m-button
     &.disabled:not(.hovered):not(.focused):not(.pressed)
       @include theme.preferred
         background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-        box-shadow: theme.style(shadow-0)
 
       > .m-icon
         @include theme.preferred
@@ -350,9 +333,6 @@ a.m-button
                 
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered:not(.focused):not(.pressed):not(.disabled)
-        @include theme.preferred
-          border-color: theme.style(outline)
-
         &::before
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(primary), 8%)
@@ -368,9 +348,6 @@ a.m-button
 
       &:active:not(.hovered):not(.focused):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.disabled)
-        @include theme.preferred
-          border-color: theme.style(outline)
-          
         &::before
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(primary), 12%)

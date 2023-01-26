@@ -81,6 +81,7 @@
         cursor: pointer
         
         @include theme.preferred
+          background: theme.style(elevation-2), theme.style(surface)
           box-shadow: theme.style(shadow-2)
 
         &::before
@@ -93,9 +94,6 @@
 
       &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
       &.focused
-        @include theme.preferred
-          box-shadow: theme.style(shadow-1)
-
         &::before
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
@@ -106,9 +104,6 @@
 
       &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
       &.pressed
-        @include theme.preferred
-          box-shadow: theme.style(shadow-1)
-          
         &::before
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
@@ -119,6 +114,136 @@
 
       &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
         @include theme.preferred
+          background: theme.style(elevation-3), theme.style(surface)
+          box-shadow: theme.style(shadow-3)
+          
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+        *
+          @include theme.preferred
+            box-shadow: theme.style(shadow-0) !important
+      
+      &:disabled:not(.hovered):not(.focused):not(.pressed):not(.dragged),
+      &[disabled]:not(.hovered):not(.focused):not(.pressed):not(.dragged),
+      &.disabled:not(.hovered):not(.focused):not(.pressed:not(.dragged))
+        @include theme.preferred
+          box-shadow: theme.style(shadow-1)
+    
+  &.m-filled
+    &,
+    &.enabled
+      @include theme.preferred
+        background: theme.style(elevation-0), theme.style(surface-variant)
+        box-shadow: theme.style(shadow-0)
+
+      *
+        @include theme.preferred
+          box-shadow: theme.style(shadow-0) !important
+
+      &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
+      &.hovered
+        cursor: pointer
+        
+        @include theme.preferred
+          background: theme.style(elevation-1), theme.style(surface-variant)
+          box-shadow: theme.style(shadow-1)
+
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+
+        *
+          @include theme.preferred
+            box-shadow: theme.style(shadow-0) !important
+
+      &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
+      &.focused
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+        *
+          @include theme.preferred
+            box-shadow: theme.style(shadow-0) !important
+
+      &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
+      &.pressed
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+      
+        *
+          @include theme.preferred
+            box-shadow: theme.style(shadow-0) !important
+
+      &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
+        @include theme.preferred
+          background: theme.style(elevation-3), theme.style(surface-variant)
+          box-shadow: theme.style(shadow-3)
+          
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+        *
+          @include theme.preferred
+            box-shadow: theme.style(shadow-0) !important
+
+  &.m-outlined
+    border: 1px solid
+
+    &,
+    &.enabled
+      @include theme.preferred
+        background: theme.style(elevation-0), theme.style(surface)
+        border-color: theme.style(outline) 
+        box-shadow: theme.style(shadow-0)
+
+      *
+        @include theme.preferred
+          box-shadow: theme.style(shadow-0) !important
+
+      &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
+      &.hovered
+        cursor: pointer
+        
+        @include theme.preferred
+          background: theme.style(elevation-1), theme.style(surface)
+          box-shadow: theme.style(shadow-1)
+
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+
+        *
+          @include theme.preferred
+            box-shadow: theme.style(shadow-0) !important
+
+      &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
+      &.focused
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+        *
+          @include theme.preferred
+            box-shadow: theme.style(shadow-0) !important
+
+      &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
+      &.pressed
+        &::before
+          @include theme.preferred
+            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+      
+        *
+          @include theme.preferred
+            box-shadow: theme.style(shadow-0) !important
+
+      &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
+        @include theme.preferred
+          background: theme.style(elevation-3), theme.style(surface)
           box-shadow: theme.style(shadow-3)
           
         &::before
@@ -129,18 +254,14 @@
           @include theme.preferred
             box-shadow: theme.style(shadow-0) !important
     
-    &:disabled:not(.hovered):not(.focused):not(.pressed):not(.dragged),
-    &[disabled]:not(.hovered):not(.focused):not(.pressed):not(.dragged),
-    &.disabled:not(.hovered):not(.focused):not(.pressed:not(.dragged))
-      opacity: 38%
+  &:disabled:not(.hovered):not(.focused):not(.pressed):not(.dragged),
+  &[disabled]:not(.hovered):not(.focused):not(.pressed):not(.dragged),
+  &.disabled:not(.hovered):not(.focused):not(.pressed:not(.dragged))
+    opacity: 38%
+
+    *
+      background: transparent !important
 
       @include theme.preferred
-        box-shadow: theme.style(shadow-0)
-
-      *
-        background: transparent !important
-
-        @include theme.preferred
-          box-shadow: theme.style(shadow-0) !important
-          color: theme.style(on-surface-variant) !important
-          
+        box-shadow: theme.style(shadow-0) !important
+        color: theme.style(on-surface-variant) !important
