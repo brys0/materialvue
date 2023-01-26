@@ -88,8 +88,8 @@ import {
 	MTextFieldState,
 	MFilledTextField,
 	MRoundedIcon,
-	CardState,
-	ElevatedCard,
+	MCardState,
+	MElevatedCard,
 	MBar,
 	MBarTrailing,
 	MDivider,
@@ -1849,7 +1849,7 @@ onBeforeUnmount(() => {
       </m-display>
       <m-row>
         <m-column>
-          <ElevatedCard>
+          <m-elevated-card>
             <m-label>
               Enabled
             </m-label>
@@ -1864,15 +1864,17 @@ onBeforeUnmount(() => {
             </m-body>
             <m-bar>
               <m-bar-trailing>
-                <m-tonal-button>
-                  Get Started
-                </m-tonal-button>
+                <m-text-button>
+                  <m-label>
+                    Get Started
+                  </m-label>
+                </m-text-button>
               </m-bar-trailing>
             </m-bar>
-          </ElevatedCard>
+          </m-elevated-card>
         </m-column>
         <m-column>
-          <ElevatedCard :state="CardState.hovered">
+          <m-elevated-card :state="MCardState.hovered">
             <m-label>
               Hovered
             </m-label>
@@ -1887,15 +1889,17 @@ onBeforeUnmount(() => {
             </m-body>
             <m-bar>
               <m-bar-trailing>
-                <m-tonal-button>
-                  Get Started
-                </m-tonal-button>
+                <m-text-button>
+                  <m-label>
+                    Get Started
+                  </m-label>
+                </m-text-button>
               </m-bar-trailing>
             </m-bar>
-          </ElevatedCard>
+          </m-elevated-card>
         </m-column>
         <m-column>
-          <ElevatedCard :state="CardState.focused">
+          <m-elevated-card :state="MCardState.focused">
             <m-label>
               Focused
             </m-label>
@@ -1910,15 +1914,17 @@ onBeforeUnmount(() => {
             </m-body>
             <m-bar>
               <m-bar-trailing>
-                <m-tonal-button>
-                  Get Started
-                </m-tonal-button>
+                <m-text-button>
+                  <m-label>
+                    Get Started
+                  </m-label>
+                </m-text-button>
               </m-bar-trailing>
             </m-bar>
-          </ElevatedCard>
+          </m-elevated-card>
         </m-column>
         <m-column>
-          <ElevatedCard :state="CardState.pressed">
+          <m-elevated-card :state="MCardState.pressed">
             <m-label>
               Pressed
             </m-label>
@@ -1933,15 +1939,17 @@ onBeforeUnmount(() => {
             </m-body>
             <m-bar>
               <m-bar-trailing>
-                <m-tonal-button>
-                  Get Started
-                </m-tonal-button>
+                <m-text-button>
+                  <m-label>
+                    Get Started
+                  </m-label>
+                </m-text-button>
               </m-bar-trailing>
             </m-bar>
-          </ElevatedCard>
+          </m-elevated-card>
         </m-column>
         <m-column>
-          <ElevatedCard :state="CardState.dragged">
+          <m-elevated-card :state="MCardState.dragged">
             <m-label>
               Dragged
             </m-label>
@@ -1956,15 +1964,17 @@ onBeforeUnmount(() => {
             </m-body>
             <m-bar>
               <m-bar-trailing>
-                <m-tonal-button>
-                  Get Started
-                </m-tonal-button>
+                <m-text-button>
+                  <m-label>
+                    Get Started
+                  </m-label>
+                </m-text-button>
               </m-bar-trailing>
             </m-bar>
-          </ElevatedCard>
+          </m-elevated-card>
         </m-column>
         <m-column>
-          <ElevatedCard :state="CardState.disabled">
+          <m-elevated-card :state="MCardState.disabled">
             <m-label>
               Disabled
             </m-label>
@@ -1979,12 +1989,14 @@ onBeforeUnmount(() => {
             </m-body>
             <m-bar>
               <m-bar-trailing>
-                <m-tonal-button :state="CardState.disabled">
-                  Get Started
+                <m-tonal-button :state="MCardState.disabled">
+                  <m-label>
+                    Get Started
+                  </m-label>
                 </m-tonal-button>
               </m-bar-trailing>
             </m-bar>
-          </ElevatedCard>
+          </m-elevated-card>
         </m-column>
       </m-row>
     </m-section>

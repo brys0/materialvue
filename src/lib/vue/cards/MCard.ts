@@ -37,7 +37,7 @@ import {
 	defineComponent,
 } from 'vue'
 
-export enum CardState {
+export enum MCardState {
   enabled = 'enabled',
   hovered = 'hovered',
   focused = 'focused',
@@ -46,11 +46,11 @@ export enum CardState {
 	disabled = 'disabled',
 }
 
-export const Card = defineComponent({
+export const MCard = defineComponent({
 	props: {
 		state: {
-			type: String as PropType<CardState>,
-			default: CardState.enabled,
+			type: String as PropType<MCardState>,
+			default: MCardState.enabled,
 		},
 	},
 	emits: [ 'click' ],
@@ -59,18 +59,18 @@ export const Card = defineComponent({
 			state,
 		} = this.$props
 		return h('div', {
-			tabindex: CardState.disabled === state ? undefined : 0,
+			tabindex: MCardState.disabled === state ? undefined : 0,
 			class: {
-				card: true,
-				enabled: CardState.enabled === state,
-				hovered: CardState.hovered === state,
-				focused: CardState.focused === state,
-				pressed: CardState.pressed === state,
-				dragged: CardState.dragged === state,
-				disabled: CardState.disabled === state,
+				'm-card': true,
+				enabled: MCardState.enabled === state,
+				hovered: MCardState.hovered === state,
+				focused: MCardState.focused === state,
+				pressed: MCardState.pressed === state,
+				dragged: MCardState.dragged === state,
+				disabled: MCardState.disabled === state,
 			},
 			onClick: (event: PointerEvent) => {
-				if (CardState.enabled === this.$props.state) {
+				if (MCardState.enabled === this.$props.state) {
 					this.$el.blur()
 					this.$emit('click', event)
 				}
@@ -81,4 +81,4 @@ export const Card = defineComponent({
 	},
 })
 
-export default Card
+export default MCard

@@ -31,18 +31,18 @@
  */
 
 export {
-	Card,
-	CardState,
-} from '@/lib/vue/cards/Card'
+	MCard,
+	MCardState,
+} from '@/lib/vue/cards/MCard'
 
 export {
-	ElevatedCard,
-} from '@/lib/vue/cards/ElevatedCard'
+	MElevatedCard,
+} from '@/lib/vue/cards/MElevatedCard'
 
 export {
-	FilledCard,
-} from '@/lib/vue/cards/FilledCard'
+	MFilledCard,
+} from '@/lib/vue/cards/MFilledCard'
 
 export {
-	OutlinedCard,
-} from '@/lib/vue/cards/OutlinedCard'
+	MOutlinedCard,
+} from '@/lib/vue/cards/MOutlinedCard'

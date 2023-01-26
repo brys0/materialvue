@@ -33,14 +33,14 @@
 @use './theme'
 @use './conversion'
 
-.card
+.m-card
   @extend %is-not-selectable
 
   padding: 20px 16px
   border-radius: 12px
   outline: none
   
-  > .bar
+  > .m-bar
     margin-top: 24px
   
   &:disabled:not(.hovered):not(.focused):not(.pressed),
@@ -50,33 +50,35 @@
     pointer-events: all !important
     box-shadow: none
   
-  &.elevated
-    @include theme.preferred
-      background: theme.style(elevation-1), theme.style(surface)
-      box-shadow: theme.style(shadow-1)
+  &.m-elevated
+    &,
+    &.enabled
+      @include theme.preferred
+        background: theme.style(elevation-1), theme.style(surface)
+        box-shadow: theme.style(shadow-1)
 
-    &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
-    &.hovered
-      cursor: pointer
+      &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
+      &.hovered
+        cursor: pointer
+        
+        @include theme.preferred
+          background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+          box-shadow: theme.style(shadow-2)
+
+      &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
+      &.focused
+        @include theme.preferred
+          background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+      &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
+      &.pressed
+        @include theme.preferred
+          background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
       
-      @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
-        box-shadow: theme.style(shadow-2)
-
-    &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
-    &.focused
-      @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-
-    &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
-    &.pressed
-      @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-    
-    &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
-      @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
-        box-shadow: theme.style(shadow-3)
+      &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
+        @include theme.preferred
+          background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
+          box-shadow: theme.style(shadow-3)
     
     &:disabled:not(.hovered):not(.focused):not(.pressed):not(.dragged),
     &[disabled]:not(.hovered):not(.focused):not(.pressed):not(.dragged),

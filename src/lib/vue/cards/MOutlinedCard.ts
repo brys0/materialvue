@@ -37,23 +37,23 @@ import {
 } from 'vue'
 
 import {
-	Card,
-} from '@/lib/vue/cards/Card'
+	MCard,
+} from '@/lib/vue/cards/MCard'
 
-export type FilledCardProps = {}
+export type MOutlinedCardProps = {}
 
-export const FilledCard: FunctionalComponent<FilledCardProps> = (_, {
+export const MOutlinedCard: FunctionalComponent<MOutlinedCardProps> = (_, {
 	slots,
-}): VNode => h(Card, {
+}): VNode => h(MCard, {
 	class: {
-		filled: true,
+		'm-outlined': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-FilledCard.displayName = 'FilledCard'
+MOutlinedCard.displayName = 'MOutlinedCard'
 
-FilledCard.props = []
+MOutlinedCard.props = []
 
-export default FilledCard
+export default MOutlinedCard

@@ -123,11 +123,11 @@ export {
 } from '@/lib/vue/text-field'
 
 export {
-	Card,
-	CardState,
-	ElevatedCard,
-	FilledCard,
-	OutlinedCard,
+	MCard,
+	MCardState,
+	MElevatedCard,
+	MFilledCard,
+	MOutlinedCard,
 } from '@/lib/vue/cards'
 
 export {

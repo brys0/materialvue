@@ -37,23 +37,23 @@ import {
 } from 'vue'
 
 import {
-	Card,
-} from '@/lib/vue/cards/Card'
+	MCard,
+} from '@/lib/vue/cards/MCard'
 
-export type ElevatedCardProps = {}
+export type MElevatedCardProps = {}
 
-export const ElevatedCard: FunctionalComponent<ElevatedCardProps> = (_, {
+export const MElevatedCard: FunctionalComponent<MElevatedCardProps> = (_, {
 	slots,
-}): VNode => h(Card, {
+}): VNode => h(MCard, {
 	class: {
-		elevated: true,
+		'm-elevated': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-ElevatedCard.displayName = 'ElevatedCard'
+MElevatedCard.displayName = 'MElevatedCard'
 
-ElevatedCard.props = []
+MElevatedCard.props = []
 
-export default ElevatedCard
+export default MElevatedCard
