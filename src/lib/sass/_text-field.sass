@@ -33,63 +33,19 @@
 @use './theme'
 @use './conversion'
 
-%m-text-field
+.m-text-field
   display: grid
   grid-template-rows: [row-1-start] 56px [row-1-end row-2-start] min-content [row-2-end]  
   grid-template-columns: [col-1-start] auto [col-1-end]
-
-%m-text-field-control
-  position: relative
-  display: grid
-  grid-row: row-1-start / row-1-end
-  grid-column: col-1-start / col-1-end
-  grid-template-rows: [row-1-start] auto [row-1-end]  
-  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
-  
-%m-text-field-leading,
-%m-text-field-trailing
-  padding-top: 8px
-  padding-bottom: 8px
-  height: 54px
-  display: flex
-  flex-flow: column
-  justify-content: center
-
-%m-text-field-leading
-  padding-left: 12px
-  grid-row: row-1-start / row-1-end
-  grid-column: col-1-start / col-1-end
-
-%m-text-field-trailing
-  padding-right: 12px
-  grid-row: row-1-start / row-1-end
-  grid-column: col-3-start / col-3-end
-
-%m-text-field-body
-  padding: 8px 16px
-  height: 54px
-  display: grid
-  grid-row: row-1-start / row-1-end
-  grid-column: col-2-start / col-2-end
-  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] min-content [row-2-end]  
-  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
-  align-content: center
-  justify-content: stretch
-
-%m-text-field-support
-  padding: 4px 16px 0
-  display: grid
-  grid-row: row-2-start / row-2-end
-  grid-column: col-1-start / col-1-end
-  grid-template-rows: [row-1-start] auto [row-1-end]  
-  grid-template-columns: [col-1-start] auto [col-1-end col-2-start] min-content [col-2-end]
-
-.m-text-field
-  @extend %m-text-field
   
   > .m-field-control
-    @extend %m-text-field-control
-
+    position: relative
+    display: grid
+    grid-row: row-1-start / row-1-end
+    grid-column: col-1-start / col-1-end
+    grid-template-rows: [row-1-start] auto [row-1-end]  
+    grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
+    
     &::before
       content: ' '
       position: absolute
@@ -98,16 +54,36 @@
       bottom: 0
       right: 0
       display: none
-      background: transparent
+      z-index: 0
+
+    > .m-field-leading,
+    > .m-field-trailing
+      display: flex
+      flex-flow: column
+      justify-content: center
     
     > .m-field-leading
-      @extend %m-text-field-leading
-      
+      padding-left: 12px
+      grid-row: row-1-start / row-1-end
+      grid-column: col-1-start / col-1-end
+      z-index: 1
+
     > .m-field-trailing
-      @extend %m-text-field-trailing
-      
+      padding-right: 12px
+      grid-row: row-1-start / row-1-end
+      grid-column: col-3-start / col-3-end
+      z-index: 1
+
     > .m-field-body
-      @extend %m-text-field-body
+      padding: 0 12px
+      display: grid
+      grid-row: row-1-start / row-1-end
+      grid-column: col-2-start / col-2-end
+      grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] min-content [row-2-end]  
+      grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
+      align-content: center
+      justify-content: stretch
+      z-index: 1
 
       > .m-typography
         &.m-label
@@ -163,7 +139,12 @@
             /** */
         
   > .m-field-support
-    @extend %m-text-field-support
+    padding: 4px 16px 0
+    display: grid
+    grid-row: row-2-start / row-2-end
+    grid-column: col-1-start / col-1-end
+    grid-template-rows: [row-1-start] auto [row-1-end]  
+    grid-template-columns: [col-1-start] auto [col-1-end col-2-start] min-content [col-2-end]
     
     > .m-typography
       grid-row: row-1-start / row-1-end
@@ -207,18 +188,12 @@
         > .m-typography
           &.m-label
             @extend %m-typography-body-small
-
+  
   &.m-outlined
     &:not(.is-empty),
     &:focus:not(.hovered):not(.disabled),
     &.focused:not(.hovered):not(.disabled)
       > .m-field-control
-        > .m-field-leading
-          + .m-field-body
-            > .m-typography
-              &.m-label
-                left: 12px
-
         > .m-field-body
           > .m-typography
             &.m-label
@@ -237,12 +212,12 @@
 
   &.m-filled
     > .m-field-control
-      border-bottom-style: solid
-      border-bottom-width: 1px
+      border-bottom: 1px solid transparent
       border-top-left-radius: 4px
       border-top-right-radius: 4px
 
       &::before
+        border-bottom: 1px solid transparent
         border-top-left-radius: 4px
         border-top-right-radius: 4px
 
@@ -250,7 +225,7 @@
       > .m-field-trailing
         > .m-icon
           font-size: 24px
-
+  
       > .m-field-body
         > .m-typography
           &.m-label
@@ -266,16 +241,12 @@
         &.m-body,
         &.m-label
           @extend %m-typography-body-small
-
-    &.has-error
-      > .m-field-control
-        border-bottom-width: 2px
     
     &,
     &.enabled
       > .m-field-control
         @include theme.preferred
-          border-color: theme.style(on-surface-variant)
+          border-bottom-color: theme.style(on-surface-variant)
           background: theme.style(surface-variant)
 
         > .m-field-leading,
@@ -347,8 +318,6 @@
         cursor: pointer
 
         > .m-field-control
-          border-bottom-width: 1px
-
           @include theme.preferred
             border-bottom-color: theme.style(on-surface)
 
@@ -376,11 +345,15 @@
       
       &:focus:not(.hovered):not(.disabled),
       &.focused:not(.hovered):not(.disabled)
-        > .m-field-control
-          border-bottom-width: 2px
-          
+        > .m-field-control          
           @include theme.preferred
             border-bottom-color: theme.style(primary)
+          
+          &::before
+            display: block
+
+            @include theme.preferred
+              border-bottom-color: theme.style(primary)
 
           > .m-field-body
             > .m-typography
@@ -391,7 +364,11 @@
         &.has-error
           > .m-field-control
             @include theme.preferred
-              border-color: theme.style(error)
+              border-bottom-color: theme.style(error)
+            
+            &::before
+              @include theme.preferred
+                border-bottom-color: theme.style(error)
               
             > .m-field-body
               > .m-typography
@@ -438,12 +415,13 @@
   
   &.m-outlined
     > .m-field-control
-      border: solid 1px
+      border: 1px solid
       border-radius: 4px
 
       &::before
+        border: 1px solid
         border-radius: 4px
-
+        
       > .m-field-leading,
       > .m-field-trailing
         > .m-icon
@@ -583,8 +561,13 @@
       &:focus:not(.hovered):not(.disabled),
       &.focused:not(.hovered):not(.disabled)
         > .m-field-control
-          @include theme.preferred
-            border-color: theme.style(primary)
+          &,
+          &::before
+            @include theme.preferred
+              border-color: theme.style(primary)
+          
+          &::before
+            display: block
 
           > .m-field-body
             > .m-typography
@@ -595,8 +578,10 @@
 
         &.has-error
           > .m-field-control
-            @include theme.preferred
-              border-color: theme.style(error)
+            &,
+            &::before
+              @include theme.preferred
+                border-color: theme.style(error)
 
             > .m-field-body
               > .m-typography
