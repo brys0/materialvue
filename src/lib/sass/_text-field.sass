@@ -33,92 +33,148 @@
 @use './theme'
 @use './conversion'
 
-.m-text-field
+%m-text-field
   display: grid
   grid-template-rows: [row-1-start] 56px [row-1-end row-2-start] min-content [row-2-end]  
   grid-template-columns: [col-1-start] auto [col-1-end]
+
+%m-text-field-control
+  position: relative
+  display: grid
+  grid-row: row-1-start / row-1-end
+  grid-column: col-1-start / col-1-end
+  grid-template-rows: [row-1-start] auto [row-1-end]  
+  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
+
+%m-text-field-state-layer
+  content: ' '
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  display: none
+  z-index: 0
+
+%m-text-field-leading,
+%m-text-field-trailing
+  display: flex
+  flex-flow: column
+  justify-content: center
+  z-index: 1
+
+%m-text-field-leading
+  padding-left: 12px
+  grid-row: row-1-start / row-1-end
+  grid-column: col-1-start / col-1-end
+  
+%m-text-field-trailing
+  padding-right: 12px
+  grid-row: row-1-start / row-1-end
+  grid-column: col-3-start / col-3-end
+
+%m-text-field-body
+  padding: 0 16px
+  display: grid
+  grid-row: row-1-start / row-1-end
+  grid-column: col-2-start / col-2-end
+  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] min-content [row-2-end]  
+  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
+  align-content: center
+  justify-content: stretch
+  z-index: 1
+
+%m-text-field-body-label
+  @extend %is-not-selectable
+
+  grid-row: row-1-start / row-1-end
+  grid-column: col-1-start / col-3-end
+  overflow: hidden
+
+%m-text-field-body-prefix,
+%m-text-field-body-suffix
+  @extend %is-not-selectable
+  
+  overflow: hidden
+
+%m-text-field-body-prefix-label,
+%m-text-field-body-suffix-label
+  @extend %m-typography-body-large
+
+%m-text-field-input
+  @extend %m-typography-body-large
+
+  padding: 0
+  grid-row: row-2-start / row-2-end
+  grid-column: col-2-start / col-2-end
+
+%m-text-field-body-prefix
+  padding-right: 4px
+  grid-row: row-2-start / row-2-end
+  grid-column: col-1-start / col-1-end
+
+%m-text-field-body-suffix
+  padding-left: 4px
+  grid-row: row-2-start / row-2-end
+  grid-column: col-3-start / col-3-end
+  
+%m-text-field-support
+  padding: 4px 16px 0
+  display: grid
+  grid-row: row-2-start / row-2-end
+  grid-column: col-1-start / col-1-end
+  grid-template-rows: [row-1-start] auto [row-1-end]  
+  grid-template-columns: [col-1-start] auto [col-1-end col-2-start] min-content [col-2-end]
+
+%m-text-field-support-body,
+%m-text-field-support-label
+  grid-row: row-1-start / row-1-end
+
+%m-text-field-support-body
+  grid-column: col-1-start / col-1-end
+
+%m-text-field-support-label
+  padding-left: 16px
+  grid-column: col-2-start / col-2-end
+
+.m-text-field
+  @extend %m-text-field
   
   > .m-field-control
-    position: relative
-    display: grid
-    grid-row: row-1-start / row-1-end
-    grid-column: col-1-start / col-1-end
-    grid-template-rows: [row-1-start] auto [row-1-end]  
-    grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
+    @extend %m-text-field-control
     
     &::before
-      content: ' '
-      position: absolute
-      top: 0
-      left: 0
-      bottom: 0
-      right: 0
-      display: none
-      z-index: 0
-
-    > .m-field-leading,
-    > .m-field-trailing
-      display: flex
-      flex-flow: column
-      justify-content: center
+      @extend %m-text-field-state-layer
     
     > .m-field-leading
-      padding-left: 12px
-      grid-row: row-1-start / row-1-end
-      grid-column: col-1-start / col-1-end
-      z-index: 1
+      @extend %m-text-field-leading
 
     > .m-field-trailing
-      padding-right: 12px
-      grid-row: row-1-start / row-1-end
-      grid-column: col-3-start / col-3-end
-      z-index: 1
+      @extend %m-text-field-trailing
 
     > .m-field-body
-      padding: 0 12px
-      display: grid
-      grid-row: row-1-start / row-1-end
-      grid-column: col-2-start / col-2-end
-      grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] min-content [row-2-end]  
-      grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
-      align-content: center
-      justify-content: stretch
-      z-index: 1
+      @extend %m-text-field-body
 
       > .m-typography
         &.m-label
-          @extend %is-not-selectable
-        
-          overflow: hidden
-          grid-row: row-1-start / row-1-end
-          grid-column: col-1-start / col-3-end
+          @extend %m-text-field-body-label
 
-      > .m-field-prefix,
-      > .m-field-suffix
-        @extend %is-not-selectable
-        
-        overflow: hidden
+      > .m-field-prefix
+        @extend %m-text-field-body-prefix
 
         > .m-typography
           &.m-label
-            @extend %m-typography-body-large
-
-      > .m-field-prefix
-        padding-right: 4px
-        grid-row: row-2-start / row-2-end
-        grid-column: col-1-start / col-1-end
+            @extend %m-text-field-body-prefix-label
       
       > .m-field-suffix
-        padding-left: 4px
-        grid-row: row-2-start / row-2-end
-        grid-column: col-3-start / col-3-end
+        @extend %m-text-field-body-suffix
+
+        > .m-typography
+          &.m-label
+            @extend %m-text-field-body-suffix-label
 
       > .m-field-input
-        @extend %m-typography-body-large
-
-        padding: 0
-        grid-row: row-2-start / row-2-end
-        grid-column: col-2-start / col-2-end
+        @extend %m-text-field-input
 
         &:-webkit-autofill
           animation-name: onAutoFillStart
@@ -139,24 +195,14 @@
             /** */
         
   > .m-field-support
-    padding: 4px 16px 0
-    display: grid
-    grid-row: row-2-start / row-2-end
-    grid-column: col-1-start / col-1-end
-    grid-template-rows: [row-1-start] auto [row-1-end]  
-    grid-template-columns: [col-1-start] auto [col-1-end col-2-start] min-content [col-2-end]
+    @extend %m-text-field-support
     
     > .m-typography
-      grid-row: row-1-start / row-1-end
-        
       &.m-body
-        @extend %is-selectable
-
-        grid-column: col-1-start / col-1-end
+        @extend %m-text-field-support-body
       
       &.m-label
-        padding-left: 16px
-        grid-column: col-2-start / col-2-end
+        @extend %m-text-field-support-label
 
   &.is-empty:not(.focused)
     > .m-field-control
@@ -200,7 +246,7 @@
               padding: 0 4px
               position: absolute
               top: -8px
-              left: 16px
+              left: 12px
 
   &:disabled:not(.hovered):not(.focused),
   &[disabled="true"]:not(.hovered):not(.focused),

@@ -30,7 +30,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use './display'
+@use './adaptive'
 
 %m-layout-row
   display: flex
@@ -57,19 +57,19 @@
   display: grid
   gap: 8px
 
-  @include display.is-mobile
+  @include adaptive.is-mobile
     grid-template-columns: repeat(1, 1fr) !important
 
-  @include display.is-tablet
+  @include adaptive.is-tablet
     grid-template-columns: repeat(3, 1fr) !important
 
-  @include display.is-desktop
+  @include adaptive.is-desktop
     grid-template-columns: repeat(3, 1fr) !important
 
-  @include display.is-widescreen
+  @include adaptive.is-widescreen
     grid-template-columns: repeat(4, 1fr) !important
 
-  @include display.is-fullhd
+  @include adaptive.is-fullhd
     grid-template-columns: repeat(5, 1fr) !important
 
 .m-grid
