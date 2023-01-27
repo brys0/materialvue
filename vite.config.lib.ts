@@ -17,6 +17,7 @@ import {
 
 const external = [
 	'vue',
+	'pinia',
 	'vee-validate',
 	'@cosmicmind/foundation'
 ]
