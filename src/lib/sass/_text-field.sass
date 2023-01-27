@@ -189,7 +189,7 @@
         > .m-field-input
           height: 0
           appearance: none
-
+  
   &.without-label-text
     &.focused,
     &:not(.is-empty)
@@ -199,6 +199,41 @@
             &.m-label
               height: 0
               appearance: none
+  
+  &:focus:not(.hovered):not(.disabled),
+  &.focused:not(.hovered):not(.disabled)
+    > .m-field-control
+      > .m-field-body
+        > .m-typography
+          &.m-label
+            @extend %m-typography-body-small
+
+  &.m-outlined
+    &:not(.is-empty),
+    &:focus:not(.hovered):not(.disabled),
+    &.focused:not(.hovered):not(.disabled)
+      > .m-field-control
+        > .m-field-leading
+          + .m-field-body
+            > .m-typography
+              &.m-label
+                left: 12px
+
+        > .m-field-body
+          > .m-typography
+            &.m-label
+              padding: 0 4px
+              position: absolute
+              top: -8px
+              left: 16px
+
+  &:disabled:not(.hovered):not(.focused),
+  &[disabled="true"]:not(.hovered):not(.focused),
+  &.disabled:not(.hovered):not(.focused)
+    @extend %is-not-selectable
+
+    cursor: not-allowed
+    pointer-events: all !important
 
   &.m-filled
     > .m-field-control
@@ -213,7 +248,7 @@
 
       > .m-field-leading,
       > .m-field-trailing
-        .m-icon
+        > .m-icon
           font-size: 24px
 
       > .m-field-body
@@ -245,7 +280,7 @@
 
         > .m-field-leading,
         > .m-field-trailing
-          .m-icon
+          > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
@@ -274,8 +309,8 @@
             &:-webkit-autofill:focus, 
             &:-webkit-autofill:active
               @include theme.preferred
-                -webkit-text-fill-color: theme.style(on-surface) !important
-                -webkit-box-shadow: 0 0 0 30px theme.style(surface-variant) inset !important
+                -webkit-text-fill-color: transparent !important
+                -webkit-box-shadow: transparent !important
               
       > .m-field-support
         > .m-typography
@@ -322,29 +357,11 @@
 
             @include theme.preferred  
               background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
-
-          > .m-field-body
-            > .m-typography
-              &.m-label
-                @include theme.preferred
-                  color: theme.style(on-surface-variant)
-
-        > .m-field-support
-          > .m-typography
-            &.m-body,
-            &.m-label
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
         
         &.has-error
           > .m-field-control
             @include theme.preferred
               border-bottom-color: theme.style(on-error-container)
-
-            > .m-field-leading
-              .m-icon
-                @include theme.preferred
-                  color: theme.style(on-surface-variant)
 
             > .m-field-trailing
               .m-icon
@@ -356,13 +373,6 @@
                 &.m-label
                   @include theme.preferred
                     color: theme.style(on-error-container)
-              
-          > .m-field-support
-            > .m-typography
-              &.m-body,
-              &.m-label
-                @include theme.preferred
-                  color: theme.style(error)
       
       &:focus:not(.hovered):not(.disabled),
       &.focused:not(.hovered):not(.disabled)
@@ -375,66 +385,35 @@
           > .m-field-body
             > .m-typography
               &.m-label
-                @extend %m-typography-body-small
-
                 @include theme.preferred
-                  color: theme.style(primary) 
-                
-        > .m-field-support
-          > .m-typography
-            &.m-body,
-            &.m-label
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
+                  color: theme.style(primary)
 
         &.has-error
           > .m-field-control
             @include theme.preferred
-              border-bottom-color: theme.style(error)
+              border-color: theme.style(error)
               
-            > .m-field-leading
-              .m-icon
-                @include theme.preferred
-                  color: theme.style(on-surface-variant)
-
-            > .m-field-trailing
-              .m-icon
-                @include theme.preferred
-                  color: theme.style(error)
-            
             > .m-field-body
               > .m-typography
                 &.m-label
                   @include theme.preferred
                     color: theme.style(error)
-              
+                    
               > .m-field-input
                 @include theme.preferred
                   caret-color: theme.style(error)
-                
-          > .m-field-support
-            > .m-typography
-              &.m-body,
-              &.m-label
-                @include theme.preferred
-                  color: theme.style(error)
 
     &:disabled:not(.hovered):not(.focused),
     &[disabled="true"]:not(.hovered):not(.focused),
     &.disabled:not(.hovered):not(.focused)
-      @extend %is-not-selectable
-
-      cursor: not-allowed
-      pointer-events: all !important
-        
       > .m-field-control
         @include theme.preferred
-          border-bottom-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           background: conversion.hex-to-rgba(theme.style(on-surface), 4%)
-
+          border-bottom-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          
         > .m-field-leading,
         > .m-field-trailing
-          .m-icon
+          > .m-icon
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           
@@ -449,15 +428,211 @@
 
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+                            
+      > .m-field-support
+        > .m-typography
+          &.m-body,
+          &.m-label
+            @include theme.preferred
+              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+  
+  &.m-outlined
+    > .m-field-control
+      border: solid 1px
+      border-radius: 4px
+
+      &::before
+        border-radius: 4px
+
+      > .m-field-leading,
+      > .m-field-trailing
+        > .m-icon
+          font-size: 24px
+
+      > .m-field-body
+        > .m-typography
+          &.m-label
+            @extend %m-typography-body-small
+
+        > .m-field-input
+          border: none
+          outline: none
+          background: transparent
             
+    > .m-field-support
+      > .m-typography
+        &.m-body,
+        &.m-label
+          @extend %m-typography-body-small
+    
+    &:not(.is-empty)
+      > .m-field-control
+        > .m-field-body
+          > .m-typography
+            &.m-label
+              @include theme.preferred
+                background: theme.style(surface)
+
+    &,
+    &.enabled
+      > .m-field-control
+        @include theme.preferred
+          border-color: theme.style(outline)
+          
+        > .m-field-leading,
+        > .m-field-trailing
+          > .m-icon
+            @include theme.preferred
+              color: theme.style(on-surface-variant)
+
+        > .m-field-body
+          > .m-typography
+            &.m-label
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
+          
+          > .m-field-prefix,
+          > .m-field-suffix
+            > .m-typography
+              &.m-label
+                @include theme.preferred
+                  color: theme.style(on-surface-variant)
+
+          > .m-field-input
+            background: transparent
+
+            @include theme.preferred
+              color: theme.style(on-surface)
+              caret-color: theme.style(primary)
+
             &:-webkit-autofill,
             &:-webkit-autofill:hover, 
             &:-webkit-autofill:focus, 
             &:-webkit-autofill:active
               @include theme.preferred
-                -webkit-text-fill-color: conversion.hex-to-rgba(theme.style(on-surface), 38%) !important
-                -webkit-box-shadow: 0 0 0 30px conversion.hex-to-rgba(theme.style(on-surface), 4%) inset !important
-                
+                -webkit-text-fill-color: transparent !important
+                -webkit-box-shadow: transparent !important
+              
+      > .m-field-support
+        > .m-typography
+          &.m-body,
+          &.m-label
+            @include theme.preferred
+              color: theme.style(on-surface-variant)
+
+      &.has-error
+        > .m-field-control
+          @include theme.preferred
+            border-color: theme.style(error)
+
+          > .m-field-trailing
+            > .m-icon
+              @include theme.preferred
+                color: theme.style(error)
+
+          > .m-field-body        
+            > .m-typography
+              &.m-label
+                @include theme.preferred
+                  color: theme.style(error)
+            
+        > .m-field-support
+          > .m-typography
+            &.m-body,
+            &.m-label
+              @include theme.preferred
+                color: theme.style(error)
+      
+      &:hover:not(.focused):not(.disabled),
+      &.hovered:not(.focused):not(.disabled)
+        cursor: pointer
+
+        > .m-field-control
+          @include theme.preferred
+            border-color: theme.style(on-surface)
+            
+          > .m-field-body
+            > .m-typography
+              &.m-label
+                @include theme.preferred
+                  color: theme.style(on-surface)
+            
+            > .m-field-prefix,
+            > .m-field-suffix
+              > .m-typography
+                &.m-label
+                  @include theme.preferred
+                    color: theme.style(on-surface)
+        
+        &.has-error
+          > .m-field-control
+            @include theme.preferred
+              border-color: theme.style(on-error-container)
+
+            > .m-field-trailing
+              .m-icon
+                @include theme.preferred
+                  color: theme.style(on-error-container)
+
+            > .m-field-body  
+              > .m-typography
+                &.m-label
+                  @include theme.preferred
+                    color: theme.style(on-error-container)
+      
+      &:focus:not(.hovered):not(.disabled),
+      &.focused:not(.hovered):not(.disabled)
+        > .m-field-control
+          @include theme.preferred
+            border-color: theme.style(primary)
+
+          > .m-field-body
+            > .m-typography
+              &.m-label
+                @include theme.preferred
+                  background: theme.style(surface)
+                  color: theme.style(primary)
+
+        &.has-error
+          > .m-field-control
+            @include theme.preferred
+              border-color: theme.style(error)
+
+            > .m-field-body
+              > .m-typography
+                &.m-label
+                  @include theme.preferred
+                    color: theme.style(error)
+                    
+              > .m-field-input
+                @include theme.preferred
+                  caret-color: theme.style(error)
+
+    &:disabled:not(.hovered):not(.focused),
+    &[disabled="true"]:not(.hovered):not(.focused),
+    &.disabled:not(.hovered):not(.focused)
+      > .m-field-control
+        @include theme.preferred
+          border-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          
+        > .m-field-leading,
+        > .m-field-trailing
+          > .m-icon
+            @include theme.preferred
+              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+            
+        > .m-field-body
+          > .m-typography
+            &.m-label
+              @include theme.preferred
+                color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+            
+          > .m-field-input
+            pointer-events: none !important
+
+            @include theme.preferred
+              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+                            
       > .m-field-support
         > .m-typography
           &.m-body,

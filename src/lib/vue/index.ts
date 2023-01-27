@@ -123,6 +123,7 @@ export {
 	MTextField,
 	MTextFieldState,
 	MFilledTextField,
+	MOutlinedTextField,
 } from '@/lib/vue/text-field'
 
 export {

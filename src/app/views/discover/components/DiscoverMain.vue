@@ -90,6 +90,7 @@ import {
 	MFieldSupport,
 	MTextFieldState,
 	MFilledTextField,
+	MOutlinedTextField,
 	MRoundedIcon,
 	MCardState,
 	MElevatedCard,
@@ -2637,13 +2638,13 @@ onBeforeUnmount(() => {
                     </m-label>
                     <m-field-input :name="'name'" />
                   </m-field-body>
-                  <m-field-trailing v-if="errors.email">
+                  <m-field-trailing>
                     <m-rounded-icon>
                       error
                     </m-rounded-icon>
                   </m-field-trailing>
                 </m-field-control>
-                <m-field-support v-if="errors.email">
+                <m-field-support>
                   <m-body>
                     {{ errors.email }}
                   </m-body>
@@ -2671,13 +2672,13 @@ onBeforeUnmount(() => {
                     </m-label>
                     <m-field-input :name="'name'" />
                   </m-field-body>
-                  <m-field-trailing v-if="errors.email">
+                  <m-field-trailing>
                     <m-rounded-icon>
                       error
                     </m-rounded-icon>
                   </m-field-trailing>
                 </m-field-control>
-                <m-field-support v-if="errors.email">
+                <m-field-support>
                   <m-body>
                     {{ errors.email }}
                   </m-body>
@@ -2705,13 +2706,13 @@ onBeforeUnmount(() => {
                     </m-label>
                     <m-field-input :name="'name'" />
                   </m-field-body>
-                  <m-field-trailing v-if="errors.email">
+                  <m-field-trailing>
                     <m-rounded-icon>
                       error
                     </m-rounded-icon>
                   </m-field-trailing>
                 </m-field-control>
-                <m-field-support v-if="errors.email">
+                <m-field-support>
                   <m-body>
                     {{ errors.email }}
                   </m-body>
@@ -2739,6 +2740,47 @@ onBeforeUnmount(() => {
                       :disabled="true"
                     />
                   </m-field-body>
+                  <m-field-trailing>
+                    <m-rounded-icon>
+                      error
+                    </m-rounded-icon>
+                  </m-field-trailing>
+                </m-field-control>
+                <m-field-support>
+                  <m-body>
+                    {{ errors.email }}
+                  </m-body>
+                </m-field-support>
+              </m-filled-text-field>
+            </m-fieldset>
+          </m-form>
+        </m-column>
+      </m-row>
+    </m-section>
+    <m-section>
+      <m-display :size="MTypographySize.small">
+        Outlined text field states
+      </m-display>
+      <m-row>
+        <m-column>
+          <m-form @submit="onSubmit">
+            <m-fieldset>
+              <m-outlined-text-field
+                ref="emailRef"
+                :has-error="'undefined' !== typeof errors.email"
+              >
+                <m-field-control>
+                  <m-field-leading>
+                    <m-rounded-icon>
+                      mail
+                    </m-rounded-icon>
+                  </m-field-leading>
+                  <m-field-body>
+                    <m-label>
+                      Email
+                    </m-label>
+                    <m-field-input :name="'email'" />
+                  </m-field-body>
                   <m-field-trailing v-if="errors.email">
                     <m-rounded-icon>
                       error
@@ -2750,7 +2792,292 @@ onBeforeUnmount(() => {
                     {{ errors.email }}
                   </m-body>
                 </m-field-support>
-              </m-filled-text-field>
+              </m-outlined-text-field>
+            </m-fieldset>
+          </m-form>
+        </m-column>
+        <m-column>
+          <m-form @submit="onSubmit">
+            <m-fieldset>
+              <m-outlined-text-field>
+                <m-field-control>
+                  <m-field-leading>
+                    <m-rounded-icon>
+                      mail
+                    </m-rounded-icon>
+                  </m-field-leading>
+                  <m-field-body>
+                    <m-label>
+                      Label
+                    </m-label>
+                    <m-field-input :name="'name'" />
+                  </m-field-body>
+                </m-field-control>
+                <m-field-support>
+                  <m-body>
+                    Support text.
+                  </m-body>
+                  <m-label>
+                    5/20
+                  </m-label>
+                </m-field-support>
+              </m-outlined-text-field>
+            </m-fieldset>
+          </m-form>
+        </m-column>
+        <m-column>
+          <m-form @submit="onSubmit">
+            <m-fieldset>
+              <m-outlined-text-field :without-label-text="true">
+                <m-field-control>
+                  <m-field-body>
+                    <m-label>
+                      Label
+                    </m-label>
+                    <m-field-prefix>
+                      <m-label>
+                        $
+                      </m-label>
+                    </m-field-prefix>
+                    <m-field-input :name="'name'" />
+                  </m-field-body>
+                  <m-field-trailing>
+                    <m-rounded-icon>
+                      clear
+                    </m-rounded-icon>
+                  </m-field-trailing>
+                </m-field-control>
+                <m-field-support>
+                  <m-label>
+                    5/20
+                  </m-label>
+                </m-field-support>
+              </m-outlined-text-field>
+            </m-fieldset>
+          </m-form>
+        </m-column>
+        <m-column>
+          <m-form @submit="onSubmit">
+            <m-fieldset>
+              <m-outlined-text-field>
+                <m-field-control>
+                  <m-field-body>
+                    <m-label>
+                      Label
+                    </m-label>
+                    <m-field-input :name="'name'" />
+                    <m-field-suffix>
+                      <m-label>
+                        lbs
+                      </m-label>
+                    </m-field-suffix>
+                  </m-field-body>
+                </m-field-control>
+                <m-field-support>
+                  <m-label>
+                    5/20
+                  </m-label>
+                </m-field-support>
+              </m-outlined-text-field>
+            </m-fieldset>
+          </m-form>
+        </m-column>
+        <m-column>
+          <m-form @submit="onSubmit">
+            <m-fieldset>
+              <m-outlined-text-field>
+                <m-field-control>
+                  <m-field-body>
+                    <m-label>
+                      Label
+                    </m-label>
+                    <m-field-input :name="'name'" />
+                  </m-field-body>
+                </m-field-control>
+                <m-field-support>
+                  <m-body>
+                    Support text that is much longer than you think.
+                    Support text that is much longer than you think.
+                    Support text that is much longer than you think.
+                    Support text that is much longer than you think.
+                  </m-body>
+                  <m-label>
+                    5/20
+                  </m-label>
+                </m-field-support>
+              </m-outlined-text-field>
+            </m-fieldset>
+          </m-form>
+        </m-column>
+        <m-column>
+          <m-form @submit="onSubmit">
+            <m-fieldset>
+              <m-outlined-text-field :state="MTextFieldState.disabled">
+                <m-field-control>
+                  <m-field-leading>
+                    <m-rounded-icon>
+                      mail
+                    </m-rounded-icon>
+                  </m-field-leading>
+                  <m-field-body>
+                    <m-label>
+                      Label
+                    </m-label>
+                    <m-field-input
+                      :name="'name'"
+                      :disabled="true"
+                    />
+                  </m-field-body>
+                  <m-field-trailing>
+                    <m-rounded-icon>
+                      error
+                    </m-rounded-icon>
+                  </m-field-trailing>
+                </m-field-control>
+                <m-field-support>
+                  <m-body>
+                    Support text.
+                  </m-body>
+                </m-field-support>
+              </m-outlined-text-field>
+            </m-fieldset>
+          </m-form>
+        </m-column>
+      </m-row>
+      <m-display :size="MTypographySize.small">
+        Outlined text field error states
+      </m-display>
+      <m-row>
+        <m-column>
+          <m-form @submit="onSubmit">
+            <m-fieldset>
+              <m-outlined-text-field :has-error="true">
+                <m-field-control>
+                  <m-field-leading>
+                    <m-rounded-icon>
+                      mail
+                    </m-rounded-icon>
+                  </m-field-leading>
+                  <m-field-body>
+                    <m-label>
+                      Email
+                    </m-label>
+                    <m-field-input :name="'name'" />
+                  </m-field-body>
+                  <m-field-trailing>
+                    <m-rounded-icon>
+                      error
+                    </m-rounded-icon>
+                  </m-field-trailing>
+                </m-field-control>
+                <m-field-support>
+                  <m-body>
+                    {{ errors.email }}
+                  </m-body>
+                </m-field-support>
+              </m-outlined-text-field>
+            </m-fieldset>
+          </m-form>
+        </m-column>
+        <m-column>
+          <m-form @submit="onSubmit">
+            <m-fieldset>
+              <m-outlined-text-field
+                :state="MTextFieldState.hovered"
+                :has-error="true"
+              >
+                <m-field-control>
+                  <m-field-leading>
+                    <m-rounded-icon>
+                      mail
+                    </m-rounded-icon>
+                  </m-field-leading>
+                  <m-field-body>
+                    <m-label>
+                      Email
+                    </m-label>
+                    <m-field-input :name="'name'" />
+                  </m-field-body>
+                  <m-field-trailing>
+                    <m-rounded-icon>
+                      error
+                    </m-rounded-icon>
+                  </m-field-trailing>
+                </m-field-control>
+                <m-field-support>
+                  <m-body>
+                    {{ errors.email }}
+                  </m-body>
+                </m-field-support>
+              </m-outlined-text-field>
+            </m-fieldset>
+          </m-form>
+        </m-column>
+        <m-column>
+          <m-form @submit="onSubmit">
+            <m-fieldset>
+              <m-outlined-text-field
+                :state="MTextFieldState.focused"
+                :has-error="true"
+              >
+                <m-field-control>
+                  <m-field-leading>
+                    <m-rounded-icon>
+                      mail
+                    </m-rounded-icon>
+                  </m-field-leading>
+                  <m-field-body>
+                    <m-label>
+                      Email
+                    </m-label>
+                    <m-field-input :name="'name'" />
+                  </m-field-body>
+                  <m-field-trailing>
+                    <m-rounded-icon>
+                      error
+                    </m-rounded-icon>
+                  </m-field-trailing>
+                </m-field-control>
+                <m-field-support>
+                  <m-body>
+                    {{ errors.email }}
+                  </m-body>
+                </m-field-support>
+              </m-outlined-text-field>
+            </m-fieldset>
+          </m-form>
+        </m-column>
+        <m-column>
+          <m-form @submit="onSubmit">
+            <m-fieldset>
+              <m-outlined-text-field :state="MTextFieldState.disabled">
+                <m-field-control>
+                  <m-field-leading>
+                    <m-rounded-icon>
+                      mail
+                    </m-rounded-icon>
+                  </m-field-leading>
+                  <m-field-body>
+                    <m-label>
+                      Email
+                    </m-label>
+                    <m-field-input
+                      :name="'name'"
+                      :disabled="true"
+                    />
+                  </m-field-body>
+                  <m-field-trailing>
+                    <m-rounded-icon>
+                      error
+                    </m-rounded-icon>
+                  </m-field-trailing>
+                </m-field-control>
+                <m-field-support>
+                  <m-body>
+                    {{ errors.email }}
+                  </m-body>
+                </m-field-support>
+              </m-outlined-text-field>
             </m-fieldset>
           </m-form>
         </m-column>

@@ -30,18 +30,60 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	default as MTextField,
-} from '@/lib/vue/text-field/MTextField.vue'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
+import {
+	MTextField,
 	MTextFieldState,
-} from '@/lib/vue/text-field/MTextFieldState'
+} from '@/lib/vue/text-field'
 
-export {
-	MFilledTextField,
-} from '@/lib/vue/text-field/MFilledTextField'
+export type MOutlinedTextFieldProps = {
+	state?: MTextFieldState
+	hasError?: boolean
+	withoutLabelText?: boolean
+}
 
-export {
-	MOutlinedTextField,
-} from '@/lib/vue/text-field/MOutlinedTextField'
+export const MOutlinedTextField: FunctionalComponent<MOutlinedTextFieldProps> = ({
+	state,
+	hasError,
+	withoutLabelText,
+}, {
+	slots,
+	emit,
+}): VNode => h(MTextField, {
+	state: state ?? MTextFieldState.enabled,
+	hasError,
+	withoutLabelText,
+	class: {
+		'm-outlined': true,
+	},
+	onAutofill: () => emit('autofill'),
+	onClick: (event: PointerEvent) => emit('click', event),
+	onBlur: (event: FocusEvent) => emit('blur', event),
+	onFocus: (event: FocusEvent) => emit('focus', event),
+	'onUpdate:state': (newState: MTextFieldState, oldState: MTextFieldState) => emit('update:state', newState, oldState),
+}, {
+	default: () => slots.default?.(),
+})
+
+MOutlinedTextField.displayName = 'MOutlinedTextField'
+
+MOutlinedTextField.emits = [
+	'autofill',
+	'click',
+	'blur',
+	'focus',
+	'update:state'
+]
+
+MOutlinedTextField.props = [
+	'state',
+	'has-error',
+	'without-label-text'
+]
+
+export default MOutlinedTextField
