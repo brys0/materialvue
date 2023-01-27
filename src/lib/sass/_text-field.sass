@@ -229,14 +229,6 @@
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
           
-          &:-webkit-autofill,
-          &:-webkit-autofill:hover, 
-          &:-webkit-autofill:focus, 
-          &:-webkit-autofill:active
-            @include theme.preferred
-              -webkit-text-fill-color: conversion.hex-to-rgba(theme.style(on-surface), 38%) !important
-              -webkit-box-shadow: 0 0 0 30px conversion.hex-to-rgba(theme.style(on-surface), 4%) inset !important
-
   &.m-filled
     > .m-field-control
       border-bottom: 1px solid transparent
@@ -414,7 +406,17 @@
         @include theme.preferred
           background: conversion.hex-to-rgba(theme.style(on-surface), 4%)
           border-bottom-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
-                            
+
+        > .m-field-body
+          > .m-field-input
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover, 
+            &:-webkit-autofill:focus, 
+            &:-webkit-autofill:active
+              @include theme.preferred
+                -webkit-text-fill-color: conversion.hex-to-rgba(theme.style(on-surface), 38%) !important
+                -webkit-box-shadow: 0 0 0 30px conversion.hex-to-rgba(theme.style(on-surface), 4%) inset !important
+                              
       > .m-field-support
         > .m-typography
           &.m-body,
@@ -498,7 +500,7 @@
             &:-webkit-autofill:active
               @include theme.preferred
                 -webkit-text-fill-color: theme.style(on-surface-variant) !important
-                -webkit-box-shadow: 0 0 0 30px theme.style(on-surface) inset !important
+                -webkit-box-shadow: 0 0 0 30px theme.style(surface) inset !important
               
       > .m-field-support
         > .m-typography
@@ -607,7 +609,16 @@
     &.disabled:not(.hovered):not(.focused)
       > .m-field-control
         @include theme.preferred
-          border-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          border-color: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+        
+        > .m-field-body
+          > .m-field-input
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover, 
+            &:-webkit-autofill:focus, 
+            &:-webkit-autofill:active
+              @include theme.preferred
+                -webkit-text-fill-color: conversion.hex-to-rgba(theme.style(on-surface), 38%) !important
                             
       > .m-field-support
         > .m-typography
