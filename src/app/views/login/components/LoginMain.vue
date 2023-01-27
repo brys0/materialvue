@@ -34,11 +34,6 @@
 
 <script lang="ts" setup>
 import {
-	watch,
-	onBeforeUnmount,
-} from 'vue'
-
-import {
 	object,
 	string,
 } from 'yup'
@@ -47,27 +42,29 @@ import {
 	useForm,
 } from 'vee-validate'
 
-import {
-	logger,
-} from '@cosmicmind/foundation'
+// import {
+// 	logger,
+// } from '@cosmicmind/foundation'
 
 import {
 	Main,
 	MLayout,
 	MTile,
-	MBody,
 	MLabel,
-	MFilledButton,
+	MBody,
+	MTonalButton,
 	MRoundedIcon,
+	MBar,
+	MBarTrailing,
 	MForm,
 	MFieldset,
-	MFieldControl,
 	MFieldBody,
 	MFieldLeading,
+	MFieldControl,
 	MFieldTrailing,
 	MFieldInput,
 	MFieldSupport,
-	MFilledTextField,
+	MOutlinedTextField,
 } from '@/lib/vue'
 
 const validationSchema = object({
@@ -84,101 +81,129 @@ const {
 	validationSchema,
 })
 
-const unwatch = watch(errors, errors => logger.trace('errors', errors))
+const onSubmit = handleSubmit(async (data, actions): Promise<void> => {
 
-const onSubmit = handleSubmit((data, actions): void => {
-	logger.trace(data, actions)
-})
-
-onBeforeUnmount(() => {
-	unwatch()
 })
 
 </script>
 
 <template>
   <Main>
-    <m-layout>
-      <m-tile>
-        <m-form
-          class="login"
-          @submit="onSubmit"
+    <figure class="brand">
+      <img
+        class="is-theme-light"
+        src="/assets/cosmicmind-logo-light.svg"
+        alt="CosmicMind Logo"
+      >
+      <img
+        class="is-theme-dark"
+        src="/assets/cosmicmind-logo-dark.svg"
+        alt="CosmicMind Logo"
+      >
+    </figure>
+    <m-form
+      class="login"
+      @submit="onSubmit"
+    >
+      <m-fieldset>
+        <m-outlined-text-field
+          ref="emailRef"
+          :has-error="'undefined' !== typeof errors.email"
         >
-          <m-fieldset>
-            <m-filled-text-field
-              ref="emailRef"
-              :has-error="'undefined' !== typeof errors.email"
+          <m-field-control>
+            <m-field-leading>
+              <m-rounded-icon>
+                mail
+              </m-rounded-icon>
+            </m-field-leading>
+            <m-field-body>
+              <m-label
+                name="email"
+              >
+                Email
+              </m-label>
+              <m-field-input name="email" />
+            </m-field-body>
+            <m-field-trailing
+              v-if="errors.email"
+              class="trailing"
             >
-              <m-field-control>
-                <m-field-leading>
-                  <m-rounded-icon>
-                    mail
-                  </m-rounded-icon>
-                </m-field-leading>
-                <m-field-body>
-                  <m-label name="email">
-                    Email
-                  </m-label>
-                  <m-field-input :name="'email'" />
-                </m-field-body>
-                <m-field-trailing v-if="errors.email">
-                  <m-rounded-icon>
-                    error
-                  </m-rounded-icon>
-                </m-field-trailing>
-              </m-field-control>
-              <m-field-support v-if="errors.email">
-                <m-body>
-                  {{ errors.email }}
-                </m-body>
-              </m-field-support>
-            </m-filled-text-field>
-          </m-fieldset>
-          <m-fieldset>
-            <m-filled-text-field
-              ref="passwordRef"
-              :has-error="'undefined' !== typeof errors.password"
+              <m-rounded-icon>
+                error
+              </m-rounded-icon>
+            </m-field-trailing>
+          </m-field-control>
+          <m-field-support v-if="errors.email">
+            <m-body>
+              {{ errors.email }}
+            </m-body>
+          </m-field-support>
+        </m-outlined-text-field>
+      </m-fieldset>
+      <m-fieldset>
+        <m-outlined-text-field
+          ref="passwordRef"
+          :has-error="'undefined' !== typeof errors.password"
+        >
+          <m-field-control>
+            <m-field-leading>
+              <m-rounded-icon>
+                lock
+              </m-rounded-icon>
+            </m-field-leading>
+            <m-field-body>
+              <m-label
+                name="password"
+              >
+                Password
+              </m-label>
+              <m-field-input
+                type="password"
+                name="password"
+              />
+            </m-field-body>
+            <m-field-trailing
+              v-if="errors.password"
+              class="trailing"
             >
-              <m-field-control>
-                <m-field-leading>
-                  <m-rounded-icon>
-                    lock
-                  </m-rounded-icon>
-                </m-field-leading>
-                <m-field-body>
-                  <m-label name="password">
-                    Password
-                  </m-label>
-                  <m-field-input
-                    type="password"
-                    :name="'password'"
-                  />
-                </m-field-body>
-                <m-field-trailing v-if="errors.password">
-                  <m-rounded-icon>
-                    error
-                  </m-rounded-icon>
-                </m-field-trailing>
-              </m-field-control>
-              <m-field-support v-if="errors.password">
-                <m-body>
-                  {{ errors.password }}
-                </m-body>
-              </m-field-support>
-            </m-filled-text-field>
-          </m-fieldset>
-          <m-filled-button>
-            Submit
-          </m-filled-button>
-        </m-form>
-      </m-tile>
-    </m-layout>
+              <m-rounded-icon>
+                error
+              </m-rounded-icon>
+            </m-field-trailing>
+          </m-field-control>
+          <m-field-support v-if="errors.password">
+            <m-body>
+              {{ errors.password }}
+            </m-body>
+          </m-field-support>
+        </m-outlined-text-field>
+      </m-fieldset>
+      <m-bar>
+        <m-bar-trailing>
+          <m-tonal-button>
+            <m-label>
+              Submit
+            </m-label>
+          </m-tonal-button>
+        </m-bar-trailing>
+      </m-bar>
+    </m-form>
   </Main>
 </template>
 
 <style lang="sass" scoped>
+.main
+  display: flex
+  flex-flow: column
+  align-items: center
+  justify-content: center
+
+.brand
+  width: 300px
+
 .login
   width: 300px
+
   .m-fieldset
     height: 100px
 

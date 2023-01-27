@@ -209,6 +209,33 @@
 
     cursor: not-allowed
     pointer-events: all !important
+  
+    > .m-field-control
+      > .m-field-leading,
+      > .m-field-trailing
+        > .m-icon
+          @include theme.preferred
+            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          
+      > .m-field-body
+        > .m-typography
+          &.m-label
+            @include theme.preferred
+              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          
+        > .m-field-input
+          pointer-events: none !important
+
+          @include theme.preferred
+            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover, 
+          &:-webkit-autofill:focus, 
+          &:-webkit-autofill:active
+            @include theme.preferred
+              -webkit-text-fill-color: conversion.hex-to-rgba(theme.style(on-surface), 38%) !important
+              -webkit-box-shadow: 0 0 0 30px conversion.hex-to-rgba(theme.style(on-surface), 4%) inset !important
 
   &.m-filled
     > .m-field-control
@@ -280,8 +307,8 @@
             &:-webkit-autofill:focus, 
             &:-webkit-autofill:active
               @include theme.preferred
-                -webkit-text-fill-color: transparent !important
-                -webkit-box-shadow: transparent !important
+                -webkit-text-fill-color: theme.style(on-surface) !important
+                -webkit-box-shadow: 0 0 0 30px theme.style(surface-variant) inset !important
               
       > .m-field-support
         > .m-typography
@@ -387,24 +414,6 @@
         @include theme.preferred
           background: conversion.hex-to-rgba(theme.style(on-surface), 4%)
           border-bottom-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
-          
-        > .m-field-leading,
-        > .m-field-trailing
-          > .m-icon
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
-          
-        > .m-field-body
-          > .m-typography
-            &.m-label
-              @include theme.preferred
-                color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
-            
-          > .m-field-input
-            pointer-events: none !important
-
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
                             
       > .m-field-support
         > .m-typography
@@ -488,8 +497,8 @@
             &:-webkit-autofill:focus, 
             &:-webkit-autofill:active
               @include theme.preferred
-                -webkit-text-fill-color: transparent !important
-                -webkit-box-shadow: transparent !important
+                -webkit-text-fill-color: theme.style(on-surface-variant) !important
+                -webkit-box-shadow: 0 0 0 30px theme.style(on-surface) inset !important
               
       > .m-field-support
         > .m-typography
@@ -599,24 +608,6 @@
       > .m-field-control
         @include theme.preferred
           border-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
-          
-        > .m-field-leading,
-        > .m-field-trailing
-          > .m-icon
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
-            
-        > .m-field-body
-          > .m-typography
-            &.m-label
-              @include theme.preferred
-                color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
-            
-          > .m-field-input
-            pointer-events: none !important
-
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
                             
       > .m-field-support
         > .m-typography
