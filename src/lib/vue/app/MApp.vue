@@ -114,7 +114,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="app">
+  <div class="m-app">
     <router-view name="top-app-bar" />
     <router-view name="navigation-rail" />
     <router-view name="navigation-drawer" />

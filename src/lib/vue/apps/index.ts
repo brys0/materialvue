@@ -31,16 +31,8 @@
  */
 
 export {
-	default as App,
-} from '@/lib/vue/apps/App.vue'
-
-export {
 	Toolbar,
 } from '@/lib/vue/apps/Toolbar'
-
-export {
-	Main,
-} from '@/lib/vue/apps/Main'
 
 export {
 	Finder,

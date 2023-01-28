@@ -36,7 +36,8 @@ import serve from 'koa-static'
 export default (router: Router): void => {
 	router.get([
 		'/',
-		'/login'
+		'/login',
+		'/adaptive'
 	], (ctx, next) =>
 		serve('dist/public')(
 			Object.assign(ctx, {

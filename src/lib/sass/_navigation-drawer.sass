@@ -33,31 +33,17 @@
 @use './theme'
 @use './conversion'
 
-.navigation-rail
-  + .navigation-drawer
-    &.is-opened
-      width: 280px
-
 .navigation-drawer
+  @extend %is-not-selectable
+
   display: grid
-  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] auto [row-2-end row-3-start] min-content [row-3-end]
-  grid-template-columns: [col-1-start] auto [col-1-end]
-  overflow: hidden
+  grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] 1fr [row-2-end row-3-start] max-content [row-3-end]
+  grid-template-columns: [col-1-start] 1fr [col-1-end]
   
   @include theme.preferred
     background: theme.style(surface)
     box-shadow: theme.style(shadow-0)
-    
-  &,
-  &.is-closed,
-  &:empty
-    width: 0
-    visibility: hidden
-  
-  &.is-opened
-    width: 360px
-    visibility: visible
-
+        
   &.modal
     @include theme.preferred
       background: theme.style(surface)
@@ -87,7 +73,8 @@
     grid-row: row-2-start / row-2-end
     grid-column: col-1-start / col-1-end
 
-    overflow: scroll
+    overflow-x: hidden
+    overflow-y: scroll
 
     > .navigation-drawer-list
       @extend %list

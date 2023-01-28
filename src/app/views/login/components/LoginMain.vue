@@ -47,7 +47,7 @@ import {
 // } from '@cosmicmind/foundation'
 
 import {
-	Main,
+	MMain,
 	MLabel,
 	MBody,
 	MTonalButton,
@@ -86,7 +86,7 @@ const onSubmit = handleSubmit(async (data, actions): Promise<void> => {
 </script>
 
 <template>
-  <Main>
+  <m-main>
     <figure class="brand">
       <img
         class="is-theme-light"
@@ -186,11 +186,11 @@ const onSubmit = handleSubmit(async (data, actions): Promise<void> => {
         </m-bar-trailing>
       </m-bar>
     </m-form>
-  </Main>
+  </m-main>
 </template>
 
 <style lang="sass" scoped>
-.main
+.m-main
   display: flex
   flex-flow: column
   align-items: center

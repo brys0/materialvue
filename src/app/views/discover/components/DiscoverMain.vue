@@ -53,7 +53,7 @@ import {
 } from '@cosmicmind/foundation'
 
 import {
-	Main,
+	MMain,
 	MTypographySize,
 	MDisplay,
 	MHeadline,
@@ -150,7 +150,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <Main>
+  <m-main>
     <m-section class="banner">
       <m-display :size="MTypographySize.large">
         Typography
@@ -5413,7 +5413,7 @@ onBeforeUnmount(() => {
         </m-column>
       </m-row>
     </m-section>
-  </Main>
+  </m-main>
 </template>
 
 <style lang="sass" scoped>

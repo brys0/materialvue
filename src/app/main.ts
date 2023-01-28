@@ -46,11 +46,13 @@ import {
 import '@/app/main.sass'
 import MountMain from '@/app/MountMain.vue'
 
+import adaptiveRoutes from '@/app/views/adaptive/routes'
 import discoverRoutes from '@/app/views/discover/routes'
 import loginRoutes from '@/app/views/login/routes'
 
 const router = createRouter({
 	routes: [
+		...adaptiveRoutes,
 		...discoverRoutes,
 		...loginRoutes
 	],

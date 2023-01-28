@@ -60,16 +60,16 @@
   @include adaptive.is-mobile
     grid-template-columns: repeat(1, 1fr) !important
 
+  @include adaptive.is-foldable
+    grid-template-columns: repeat(3, 1fr) !important
+
   @include adaptive.is-tablet
     grid-template-columns: repeat(3, 1fr) !important
 
   @include adaptive.is-desktop
-    grid-template-columns: repeat(3, 1fr) !important
-
-  @include adaptive.is-widescreen
     grid-template-columns: repeat(4, 1fr) !important
 
-  @include adaptive.is-fullhd
+  @include adaptive.is-widescreen
     grid-template-columns: repeat(5, 1fr) !important
 
 .m-grid

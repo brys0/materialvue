@@ -1,4 +1,3 @@
-<!--
 /**
  * BSD 3-Clause License
  *
@@ -30,15 +29,27 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
--->
 
-<script lang="ts" setup>
 import {
-	MApp,
-} from '@/lib/vue'
+	RouteRecordRaw,
+} from 'vue-router'
 
-</script>
+import AdaptiveNavigationRail from '@/app/views/adaptive/components/AdaptiveNavigationRail.vue'
+import AdaptiveNavigationDrawer from '@/app/views/adaptive/components/AdaptiveNavigationDrawer.vue'
+import AdaptiveTopAppBar from '@/app/views/adaptive/components/AdaptiveTopAppBar.vue'
+import AdaptiveMain from '@/app/views/adaptive/components/AdaptiveMain.vue'
 
-<template>
-  <m-app />
-</template>
+const routes: RouteRecordRaw[] = [
+	{
+		name: 'adaptive',
+		path: '/adaptive',
+		components: {
+			'navigation-rail': AdaptiveNavigationRail,
+			'navigation-drawer': AdaptiveNavigationDrawer,
+			'top-app-bar': AdaptiveTopAppBar,
+			main: AdaptiveMain,
+		},
+	}
+]
+
+export default routes

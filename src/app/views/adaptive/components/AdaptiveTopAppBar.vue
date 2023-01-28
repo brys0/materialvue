@@ -34,11 +34,73 @@
 
 <script lang="ts" setup>
 import {
-	MApp,
+	computed,
+} from 'vue'
+
+import {
+	TopAppBar,
+	MBarLeading,
+	MBarBody,
+	MBarTrailing,
+	MIconButton,
+	MRoundedIcon,
+	MHeadline,
 } from '@/lib/vue'
+
+import {
+	useAppStore,
+} from '@/app/contexts/app/stores/AppStore'
+
+const appStore = useAppStore()
+
+const toggleNavigationDrawer = (): void => appStore.toggleNavigationDrawer()
+const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpened)
+
+const toggleTheme = (): void => appStore.toggleTheme()
+const isThemeLight = computed(() => appStore.isThemeLight)
 
 </script>
 
 <template>
-  <m-app />
+  <TopAppBar>
+    <m-bar-leading>
+      <m-icon-button
+        :toggle="true"
+        :selected="isNavigationDrawerOpened"
+        @click="toggleNavigationDrawer"
+      >
+        <m-rounded-icon>
+          menu
+        </m-rounded-icon>
+      </m-icon-button>
+      <m-headline>
+        Material
+      </m-headline>
+    </m-bar-leading>
+    <m-bar-body>
+      <m-headline>
+        Search Bar
+      </m-headline>
+    </m-bar-body>
+    <m-bar-trailing>
+      <m-icon-button @click="toggleTheme">
+        <m-rounded-icon v-if="isThemeLight">
+          dark_mode
+        </m-rounded-icon>
+        <m-rounded-icon v-else>
+          light_mode
+        </m-rounded-icon>
+      </m-icon-button>
+      <m-icon-button>
+        <m-rounded-icon>
+          notifications
+        </m-rounded-icon>
+      </m-icon-button>
+      <m-icon-button>
+        <m-rounded-icon>
+          account_circle
+        </m-rounded-icon>
+      </m-icon-button>
+    </m-bar-trailing>
+  </TopAppBar>
 </template>

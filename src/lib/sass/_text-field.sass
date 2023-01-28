@@ -35,16 +35,16 @@
 
 %m-text-field
   display: grid
-  grid-template-rows: [row-1-start] 56px [row-1-end row-2-start] min-content [row-2-end]  
-  grid-template-columns: [col-1-start] auto [col-1-end]
+  grid-template-rows: [row-1-start] 56px [row-1-end row-2-start] max-content [row-2-end]  
+  grid-template-columns: [col-1-start] 1fr [col-1-end]
 
 %m-text-field-control
   position: relative
   display: grid
   grid-row: row-1-start / row-1-end
   grid-column: col-1-start / col-1-end
-  grid-template-rows: [row-1-start] auto [row-1-end]  
-  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
+  grid-template-rows: [row-1-start] 1fr [row-1-end]  
+  grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] 1fr [col-2-end col-3-start] max-content [col-3-end]
 
 %m-text-field-state-layer
   content: ' '
@@ -78,8 +78,8 @@
   display: grid
   grid-row: row-1-start / row-1-end
   grid-column: col-2-start / col-2-end
-  grid-template-rows: [row-1-start] min-content [row-1-end row-2-start] min-content [row-2-end]  
-  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] auto [col-2-end col-3-start] min-content [col-3-end]
+  grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] max-content [row-2-end]  
+  grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] 1fr [col-2-end col-3-start] max-content [col-3-end]
   align-content: center
   justify-content: stretch
   z-index: 1
@@ -123,8 +123,8 @@
   display: grid
   grid-row: row-2-start / row-2-end
   grid-column: col-1-start / col-1-end
-  grid-template-rows: [row-1-start] auto [row-1-end]  
-  grid-template-columns: [col-1-start] auto [col-1-end col-2-start] min-content [col-2-end]
+  grid-template-rows: [row-1-start] 1fr [row-1-end]  
+  grid-template-columns: [col-1-start] 1fr [col-1-end col-2-start] max-content [col-2-end]
 
 %m-text-field-support-body,
 %m-text-field-support-label

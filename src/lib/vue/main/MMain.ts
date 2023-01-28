@@ -1,4 +1,3 @@
-<!--
 /**
  * BSD 3-Clause License
  *
@@ -30,15 +29,27 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
--->
 
-<script lang="ts" setup>
 import {
-	MApp,
-} from '@/lib/vue'
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-</script>
+export type MMainProps = {}
 
-<template>
-  <m-app />
-</template>
+export const MMain: FunctionalComponent<MMainProps> = (_, {
+	slots,
+}): VNode => h('main', {
+	class: {
+		'm-main': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
+
+MMain.displayName = 'MMain'
+
+MMain.props = []
+
+export default MMain

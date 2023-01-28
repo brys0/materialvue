@@ -31,12 +31,14 @@
  */
 
 export {
-	App,
 	Toolbar,
-	Main,
 	Finder,
 	Modal,
 } from '@/lib/vue/apps'
+
+export {
+	MApp,
+} from '@/lib/vue/app'
 
 export {
 	TopAppBar,
@@ -58,6 +60,10 @@ export {
 	NavigationDrawerListItemLeading,
 	NavigationDrawerListItemTrailing,
 } from '@/lib/vue/navigation-drawer'
+
+export {
+	MMain,
+} from '@/lib/vue/main'
 
 export {
 	MTypography,

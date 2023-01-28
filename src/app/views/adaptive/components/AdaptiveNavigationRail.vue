@@ -34,11 +34,41 @@
 
 <script lang="ts" setup>
 import {
-	MApp,
+	NavigationRail,
+	MLabel,
+	MIconButton,
+	MFabButton,
+	MFabButtonVariant,
+	MRoundedIcon,
 } from '@/lib/vue'
 
 </script>
 
 <template>
-  <m-app />
+  <NavigationRail>
+    <m-fab-button
+      :lowered="true"
+      :variant="MFabButtonVariant.tertiary"
+    >
+      <m-rounded-icon>
+        edit
+      </m-rounded-icon>
+    </m-fab-button>
+    <m-icon-button>
+      <m-rounded-icon>
+        tag
+      </m-rounded-icon>
+      <m-label>
+        Tags
+      </m-label>
+    </m-icon-button>
+    <m-icon-button :selected="true">
+      <m-rounded-icon>
+        bookmarks
+      </m-rounded-icon>
+      <m-label>
+        Bookmarks
+      </m-label>
+    </m-icon-button>
+  </NavigationRail>
 </template>

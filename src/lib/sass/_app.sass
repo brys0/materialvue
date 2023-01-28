@@ -39,12 +39,12 @@ body
   height: 100vh
   overflow: hidden
 
-.app
+.m-app
   width: 100vw
   height: 100vh
   display: grid
-  grid-template-rows: [row-1-start] minmax(0, min-content) [row-1-end row-2-start] minmax(0, min-content) [row-2-end row-3-start] auto [row-3-end]
-  grid-template-columns: [col-1-start] min-content [col-1-end col-2-start] min-content [col-2-end col-3-start] auto [col-3-end col-4-start] min-content [col-4-end]
+  grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] 1fr [row-2-end]
+  grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] max-content [col-2-end col-3-start] 1fr [col-3-end]
   align-content: stretch
   justify-content: stretch
   overflow: hidden
@@ -54,30 +54,38 @@ body
 
   > .top-app-bar
     grid-row: row-1-start / row-1-end
-    grid-column: col-1-start / col-4-end
+    grid-column: col-1-start / col-3-end
 
   > .navigation-rail
-    grid-row: row-2-start / row-3-end
+    width: 80px
+    grid-row: row-2-start / row-2-end
     grid-column: col-1-start / col-1-end
 
   > .navigation-drawer
-    grid-row: row-2-start / row-3-end
+    grid-row: row-2-start / row-2-end
     grid-column: col-2-start / col-2-end
+    overflow: hidden
+
+    &,
+    &.is-opened
+      width: 280px
+
+    &.is-closed
+      width: 0
+
+  // > .toolbar
+  //   grid-row: row-2-start / row-2-end
+  //   grid-column: col-3-start / col-3-end
   
-  > .toolbar
-    height: 0
+  > .m-main
     grid-row: row-2-start / row-2-end
     grid-column: col-3-start / col-3-end
-  
-  > .main
-    grid-row: row-3-start / row-3-end
-    grid-column: col-3-start / col-3-end
 
-  > .finder
-    grid-row: row-2-start / row-3-end
-    grid-column: col-4-start / col-4-end
+  // > .finder
+  //   grid-row: row-2-start / row-3-end
+  //   grid-column: col-4-start / col-4-end
 
-  > .modal
-    grid-row: row-1-start / row-3-end
-    grid-column: col-1-start / col-4-end
+  // > .modal
+  //   grid-row: row-1-start / row-3-end
+  //   grid-column: col-1-start / col-4-end
   

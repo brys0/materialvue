@@ -36,30 +36,42 @@
 $max-mobile-width-value: 599
 $max-mobile-width: conversion.to-px($max-mobile-width-value)
 
-/* 600-904 */
-$min-tablet-width-value: $max-mobile-width-value + 1
+/* 600-839 */
+$min-foldable-width-value: $max-mobile-width-value + 1
+$min-foldable-width: conversion.to-px($min-foldable-width-value)
+$max-foldable-width-value: 839
+$max-foldable-width: conversion.to-px($max-foldable-width-value)
+
+/* 840-1139 */
+$min-tablet-width-value: $max-foldable-width-value + 1
 $min-tablet-width: conversion.to-px($min-tablet-width-value)
-$max-tablet-width-value: 904
+$max-tablet-width-value: 1139
 $max-tablet-width: conversion.to-px($max-tablet-width-value)
 
-/* 905-1239 */
+/* 1140-1439 */
 $min-desktop-width-value: $max-tablet-width-value + 1
 $min-desktop-width: conversion.to-px($min-desktop-width-value)
-$max-desktop-width-value: 1239
+$max-desktop-width-value: 1539
 $max-desktop-width: conversion.to-px($max-desktop-width-value)
 
-/* 1240-1439 */
+/* 1440+ */
 $min-widescreen-width-value: $max-desktop-width-value + 1
 $min-widescreen-width: conversion.to-px($min-widescreen-width-value)
-$max-widescreen-width-value: 1439
-$max-widescreen-width: conversion.to-px($max-widescreen-width-value)
-
-/* 1440+ */
-$min-fullhd-width-value: $max-widescreen-width-value + 1
-$min-fullhd-width: conversion.to-px($min-fullhd-width-value)
 
 @mixin is-mobile
   @media (max-width: $max-mobile-width)
+    @content
+
+@mixin is-foldable
+  @media (min-width: $min-foldable-width) and (max-width: $max-foldable-width)
+    @content
+
+@mixin is-lte-foldable
+  @media (max-width: $max-mobile-width)
+    @content
+
+@mixin is-gte-foldable
+  @media (min-width: $min-tablet-width)
     @content
 
 @mixin is-tablet
@@ -67,7 +79,7 @@ $min-fullhd-width: conversion.to-px($min-fullhd-width-value)
     @content
 
 @mixin is-lte-tablet
-  @media (max-width: $max-mobile-width)
+  @media (max-width: $max-foldable-width)
     @content
 
 @mixin is-gte-tablet
@@ -87,23 +99,11 @@ $min-fullhd-width: conversion.to-px($min-fullhd-width-value)
     @content
 
 @mixin is-widescreen
-  @media (min-width: $min-widescreen-width) and (max-width: $max-widescreen-width)
+  @media (min-width: $min-widescreen-width)
     @content
 
 @mixin is-lte-widescreen
   @media (max-width: $max-desktop-width)
-    @content
-
-@mixin is-gte-widescreen
-  @media (min-width: $min-fullhd-width)
-    @content
-
-@mixin is-fullhd
-  @media (min-width: $min-fullhd-width)
-    @content
-
-@mixin is-lte-fullhd
-  @media (max-width: $max-widescreen-width)
     @content
 
 @mixin is-portrait

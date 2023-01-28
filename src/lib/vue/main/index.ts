@@ -30,24 +30,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
-
-export type MainProps = {}
-
-export const Main: FunctionalComponent<MainProps> = (_, {
-	slots,
-}): VNode => h('main', {
-	class: 'main',
-}, {
-	default: () => slots.default?.(),
-})
-
-Main.displayName = 'Main'
-
-Main.props = []
-
-export default Main
+export {
+	MMain,
+} from '@/lib/vue/main/MMain'

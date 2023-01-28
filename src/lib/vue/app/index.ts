@@ -1,4 +1,3 @@
-<!--
 /**
  * BSD 3-Clause License
  *
@@ -30,15 +29,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
--->
 
-<script lang="ts" setup>
-import {
-	MApp,
-} from '@/lib/vue'
-
-</script>
-
-<template>
-  <m-app />
-</template>
+export {
+	default as MApp,
+} from '@/lib/vue/app/MApp.vue'

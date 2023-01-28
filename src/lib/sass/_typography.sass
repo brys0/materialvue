@@ -32,16 +32,6 @@
 
 @use './theme'
 
-:disabled:not(.hovered):not(.focused):not(.pressed),
-[disabled]:not(.hovered):not(.focused):not(.pressed),
-.disabled:not(.hovered):not(.focused):not(.pressed)
-  .m-typography
-    @extend %is-not-selectable
-
-    cursor: not-allowed
-    pointer-events: all !important
-    box-shadow: none
-
 %m-typography
   @extend %is-selectable
 

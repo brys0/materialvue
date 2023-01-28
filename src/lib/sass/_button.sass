@@ -40,10 +40,9 @@
   padding: 0
   position: relative
   display: grid
-  grid-template-rows: [row-1-start] auto [row-1-end]  
-  grid-template-columns: [col-1-start] auto [col-1-end col-2-start] auto [col-2-end]
-  align-items: center
-  justify-items: center
+  grid-template-rows: [row-1-start] 1fr [row-1-end]  
+  grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] 1fr [col-2-end]
+  place-items: center
   border: none
   outline: none
   background: transparent
@@ -431,7 +430,7 @@ a.m-button
   &.m-icon
     width: 48px
     height: 48px
-    grid-template-columns: [col-1-start] auto [col-1-end]
+    grid-template-columns: [col-1-start] 1fr [col-1-end]
     
     &::before
       top: 4px
@@ -753,7 +752,7 @@ a.m-button
   &.m-fab
     width: 56px
     height: 56px
-    grid-template-columns: [col-1-start] auto [col-1-end]
+    grid-template-columns: [col-1-start] 1fr [col-1-end]
     border-radius: 16px
 
     &::before
