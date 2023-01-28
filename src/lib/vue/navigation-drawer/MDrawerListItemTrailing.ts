@@ -36,28 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type NavigationDrawerProps = {
-	isOpened?: boolean
-}
+export type MDrawerListItemTrailingProps = {}
 
-export const NavigationDrawer: FunctionalComponent<NavigationDrawerProps> = ({
-	isOpened,
-}, {
+export const MDrawerListItemTrailing: FunctionalComponent<MDrawerListItemTrailingProps> = (_, {
 	slots,
-}): VNode => h('nav', {
+}): VNode => h('div', {
 	class: {
-		'navigation-drawer': true,
-		'is-opened': isOpened,
-		'is-closed': !isOpened,
+		'm-drawer-list-item-trailing': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-NavigationDrawer.displayName = 'NavigationDrawer'
+MDrawerListItemTrailing.displayName = 'MDrawerListItemTrailing'
 
-NavigationDrawer.props = [
-	'is-opened'
-]
+MDrawerListItemTrailing.props = []
 
-export default NavigationDrawer
+export default MDrawerListItemTrailing

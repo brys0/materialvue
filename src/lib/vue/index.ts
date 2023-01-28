@@ -45,20 +45,21 @@ export {
 } from '@/lib/vue/top-app-bar'
 
 export {
-	NavigationRail,
+	MNavigationRail,
+	MRailButton,
 } from '@/lib/vue/navigation-rail'
 
 export {
-	NavigationDrawer,
-	NavigationDrawerLeading,
-	NavigationDrawerBody,
-	NavigationDrawerTrailing,
-	NavigationDrawerList,
-	NavigationDrawerListItem,
-	NavigationDrawerListItemState,
-	NavigationDrawerListItemBody,
-	NavigationDrawerListItemLeading,
-	NavigationDrawerListItemTrailing,
+	MNavigationDrawer,
+	MDrawerLeading,
+	MDrawerBody,
+	MDrawerTrailing,
+	MDrawerList,
+	MDrawerListItem,
+	MDrawerListItemState,
+	MDrawerListItemBody,
+	MDrawerListItemLeading,
+	MDrawerListItemTrailing,
 } from '@/lib/vue/navigation-drawer'
 
 export {

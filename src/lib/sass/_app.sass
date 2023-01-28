@@ -43,7 +43,7 @@ body
   width: 100vw
   height: 100vh
   display: grid
-  grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] 1fr [row-2-end]
+  grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] max-content [row-2-end row-3-start] 1fr [row-3-end]
   grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] max-content [col-2-end col-3-start] 1fr [col-3-end]
   align-content: stretch
   justify-content: stretch
@@ -56,13 +56,13 @@ body
     grid-row: row-1-start / row-1-end
     grid-column: col-1-start / col-3-end
 
-  > .navigation-rail
+  > .m-navigation-rail
     width: 80px
-    grid-row: row-2-start / row-2-end
+    grid-row: row-2-start / row-3-end
     grid-column: col-1-start / col-1-end
 
-  > .navigation-drawer
-    grid-row: row-2-start / row-2-end
+  > .m-navigation-drawer
+    grid-row: row-2-start / row-3-end
     grid-column: col-2-start / col-2-end
     overflow: hidden
 
@@ -73,12 +73,12 @@ body
     &.is-closed
       width: 0
 
-  // > .toolbar
-  //   grid-row: row-2-start / row-2-end
-  //   grid-column: col-3-start / col-3-end
+  > .toolbar
+    grid-row: row-2-start / row-2-end
+    grid-column: col-3-start / col-3-end
   
   > .m-main
-    grid-row: row-2-start / row-2-end
+    grid-row: row-3-start / row-3-end
     grid-column: col-3-start / col-3-end
 
   // > .finder

@@ -1,4 +1,3 @@
-<!--
 /**
  * BSD 3-Clause License
  *
@@ -30,45 +29,27 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
--->
 
-<script lang="ts" setup>
 import {
-	MNavigationRail,
-	MRailButton,
-	MLabel,
-	MFabButton,
-	MFabButtonVariant,
-	MRoundedIcon,
-} from '@/lib/vue'
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-</script>
+export type MDrawerListItemLeadingProps = {}
 
-<template>
-  <m-navigation-rail>
-    <m-fab-button
-      :lowered="true"
-      :variant="MFabButtonVariant.tertiary"
-    >
-      <m-rounded-icon>
-        edit
-      </m-rounded-icon>
-    </m-fab-button>
-    <m-rail-button>
-      <m-rounded-icon>
-        tag
-      </m-rounded-icon>
-      <m-label>
-        Tags
-      </m-label>
-    </m-rail-button>
-    <m-rail-button :selected="true">
-      <m-rounded-icon>
-        bookmarks
-      </m-rounded-icon>
-      <m-label>
-        Bookmarks
-      </m-label>
-    </m-rail-button>
-  </m-navigation-rail>
-</template>
+export const MDrawerListItemLeading: FunctionalComponent<MDrawerListItemLeadingProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: {
+		'm-drawer-list-item-leading': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
+
+MDrawerListItemLeading.displayName = 'MDrawerListItemLeading'
+
+MDrawerListItemLeading.props = []
+
+export default MDrawerListItemLeading

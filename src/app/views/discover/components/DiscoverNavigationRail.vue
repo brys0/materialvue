@@ -34,7 +34,7 @@
 
 <script lang="ts" setup>
 import {
-	NavigationRail,
+	MNavigationRail,
 	MLabel,
 	MIconButton,
 	MFabButton,
@@ -45,7 +45,7 @@ import {
 </script>
 
 <template>
-  <NavigationRail>
+  <m-navigation-rail>
     <m-fab-button
       :lowered="true"
       :variant="MFabButtonVariant.tertiary"
@@ -70,5 +70,5 @@ import {
         Bookmarks
       </m-label>
     </m-icon-button>
-  </NavigationRail>
+  </m-navigation-rail>
 </template>

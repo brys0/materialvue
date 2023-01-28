@@ -33,11 +33,23 @@
 @use './theme'
 
 .toolbar
-  @extend %is-not-selectable
+  @extend %m-bar
 
-  height: 56px
-  display: grid
+  padding: 0 16px
+  height: 64px
   
+  @include theme.preferred
+    background: theme.style(surface)
+
   &:empty
     height: 0
     visibility: hidden
+  
+  > .m-bar-leading
+    @extend %m-bar-leading
+
+  > .m-bar-body
+    @extend %m-bar-body
+
+  > .m-bar-trailing
+    @extend %m-bar-trailing

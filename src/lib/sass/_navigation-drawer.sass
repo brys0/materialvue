@@ -33,7 +33,7 @@
 @use './theme'
 @use './conversion'
 
-.navigation-drawer
+.m-navigation-drawer
   @extend %is-not-selectable
 
   display: grid
@@ -49,7 +49,7 @@
       background: theme.style(surface)
       box-shadow: theme.style(shadow-1)
 
-  > .navigation-drawer-leading
+  > .m-drawer-leading
     padding: 0 12px
     grid-row: row-1-start / row-1-end
     grid-column: col-1-start / col-1-end
@@ -63,12 +63,12 @@
         @include theme.preferred
           color: theme.style(on-surface-variant)
   
-  > .navigation-drawer-trailing
+  > .m-drawer-trailing
     padding: 0 12px
     grid-row: row-3-start / row-3-end
     grid-column: col-1-start / col-1-end
 
-  > .navigation-drawer-body
+  > .m-drawer-body
     padding: 0 12px
     grid-row: row-2-start / row-2-end
     grid-column: col-1-start / col-1-end
@@ -76,10 +76,10 @@
     overflow-x: hidden
     overflow-y: scroll
 
-    > .navigation-drawer-list
+    > .m-drawer-list
       @extend %list
 
-      > .navigation-drawer-list-item
+      > .m-drawer-list-item
         @extend %list-item
 
         border-radius: 28px
@@ -97,13 +97,13 @@
         > .m-divider
           @extend %list-item-divider
 
-        > .navigation-drawer-list-item-leading
+        > .m-drawer-list-item-leading
           @extend %list-item-leading
 
           > .m-icon
             font-size: 24px
 
-        > .navigation-drawer-list-item-body
+        > .m-drawer-list-item-body
           @extend %list-item-body
 
           > .m-typography
@@ -112,7 +112,7 @@
             &.m-label
               @extend %m-typography-label-large
             
-        > .navigation-drawer-list-item-trailing
+        > .m-drawer-list-item-trailing
           @extend %list-item-trailing
 
           > .m-typography
@@ -126,18 +126,18 @@
           @include theme.preferred
             background: theme.style(surface)
           
-          > .navigation-drawer-list-item-leading
+          > .m-drawer-list-item-leading
             > .m-icon
               @include theme.preferred
                 color: theme.style(on-surface-variant)
           
-          > .navigation-drawer-list-item-body
+          > .m-drawer-list-item-body
             > .m-typography
               &.m-label
                 @include theme.preferred
                   color: theme.style(on-surface-variant)
 
-          > .navigation-drawer-list-item-trailing
+          > .m-drawer-list-item-trailing
             > .m-typography
               &.m-label
                 @include theme.preferred
@@ -147,12 +147,12 @@
             @include theme.preferred
               background: theme.style(secondary-container)
             
-            > .navigation-drawer-list-item-leading
+            > .m-drawer-list-item-leading
               > .m-icon
                 @include theme.preferred
                   color: theme.style(on-secondary-container)
 
-            > .navigation-drawer-list-item-body
+            > .m-drawer-list-item-body
               > .m-typography
                 &.m-label
                   @include theme.preferred
@@ -166,12 +166,12 @@
               @include theme.preferred
                 background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
                 
-            > .navigation-drawer-list-item-leading
+            > .m-drawer-list-item-leading
               > .m-icon
                 @include theme.preferred
                   color: theme.style(on-surface)
 
-            > .navigation-drawer-list-item-body
+            > .m-drawer-list-item-body
               > .m-typography
                 &.m-label
                   @include theme.preferred
@@ -182,12 +182,12 @@
                 @include theme.preferred
                   background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
             
-              > .navigation-drawer-list-item-leading
+              > .m-drawer-list-item-leading
                 > .m-icon
                   @include theme.preferred
                     color: theme.style(on-secondary-container)
 
-              > .navigation-drawer-list-item-body
+              > .m-drawer-list-item-body
                 > .m-typography
                   &.m-label
                     @include theme.preferred
@@ -199,12 +199,12 @@
               @include theme.preferred
                 background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
                 
-            > .navigation-drawer-list-item-leading
+            > .m-drawer-list-item-leading
               > .m-icon
                 @include theme.preferred
                   color: theme.style(on-surface)
 
-            > .navigation-drawer-list-item-body
+            > .m-drawer-list-item-body
               > .m-typography
                 &.m-label
                   @include theme.preferred
@@ -215,12 +215,12 @@
                 @include theme.preferred
                   background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
             
-              > .navigation-drawer-list-item-leading
+              > .m-drawer-list-item-leading
                 > .m-icon
                   @include theme.preferred
                     color: theme.style(on-secondary-container)
 
-              > .navigation-drawer-list-item-body
+              > .m-drawer-list-item-body
                 > .m-typography
                   &.m-label
                     @include theme.preferred
@@ -232,12 +232,12 @@
               @include theme.preferred
                 background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
                 
-            > .navigation-drawer-list-item-leading
+            > .m-drawer-list-item-leading
               > .m-icon
                 @include theme.preferred
                   color: theme.style(on-surface)
 
-            > .navigation-drawer-list-item-body
+            > .m-drawer-list-item-body
               > .m-typography
                 &.m-label
                   @include theme.preferred
@@ -248,12 +248,12 @@
                 @include theme.preferred
                   background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
             
-              > .navigation-drawer-list-item-leading
+              > .m-drawer-list-item-leading
                 > .m-icon
                   @include theme.preferred
                     color: theme.style(on-secondary-container)
 
-              > .navigation-drawer-list-item-body
+              > .m-drawer-list-item-body
                 > .m-typography
                   &.m-label
                     @include theme.preferred

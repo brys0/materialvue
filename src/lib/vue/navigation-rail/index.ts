@@ -31,5 +31,9 @@
  */
 
 export {
-	NavigationRail,
-} from '@/lib/vue/navigation-rail/NavigationRail'
+	MNavigationRail,
+} from '@/lib/vue/navigation-rail/MNavigationRail'
+
+export {
+	MRailButton,
+} from '@/lib/vue/navigation-rail/MRailButton'

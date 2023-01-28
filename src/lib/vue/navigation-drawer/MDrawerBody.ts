@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type NavigationDrawerListItemBodyProps = {}
+export type MDrawerBodyProps = {}
 
-export const NavigationDrawerListItemBody: FunctionalComponent<NavigationDrawerListItemBodyProps> = (_, {
+export const MDrawerBody: FunctionalComponent<MDrawerBodyProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'navigation-drawer-list-item-body': true,
+		'm-drawer-body': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-NavigationDrawerListItemBody.displayName = 'NavigationDrawerListItemBody'
+MDrawerBody.displayName = 'MDrawerBody'
 
-NavigationDrawerListItemBody.props = []
+MDrawerBody.props = []
 
-export default NavigationDrawerListItemBody
+export default MDrawerBody

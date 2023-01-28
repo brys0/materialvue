@@ -1,3 +1,4 @@
+<!--
 /**
  * BSD 3-Clause License
  *
@@ -29,27 +30,35 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+-->
 
+<script lang="ts" setup>
 import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
+	Toolbar,
+	MBarLeading,
+	MBarBody,
+	MBarTrailing,
+	MHeadline,
+} from '@/lib/vue'
 
-export type NavigationDrawerTrailingProps = {}
+</script>
 
-export const NavigationDrawerTrailing: FunctionalComponent<NavigationDrawerTrailingProps> = (_, {
-	slots,
-}): VNode => h('div', {
-	class: {
-		'navigation-drawer-trailing': true,
-	},
-}, {
-	default: () => slots.default?.(),
-})
-
-NavigationDrawerTrailing.displayName = 'NavigationDrawerTrailing'
-
-NavigationDrawerTrailing.props = []
-
-export default NavigationDrawerTrailing
+<template>
+  <Toolbar>
+    <!-- <m-bar-leading>
+      <m-headline>
+        Leading
+      </m-headline>
+    </m-bar-leading> -->
+    <m-bar-body>
+      <m-headline>
+        Body
+      </m-headline>
+    </m-bar-body>
+    <!-- <m-bar-trailing>
+      <m-headline>
+        Trailing
+      </m-headline>
+    </m-bar-trailing> -->
+  </Toolbar>
+</template>

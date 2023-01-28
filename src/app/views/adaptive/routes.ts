@@ -37,6 +37,7 @@ import {
 import AdaptiveNavigationRail from '@/app/views/adaptive/components/AdaptiveNavigationRail.vue'
 import AdaptiveNavigationDrawer from '@/app/views/adaptive/components/AdaptiveNavigationDrawer.vue'
 import AdaptiveTopAppBar from '@/app/views/adaptive/components/AdaptiveTopAppBar.vue'
+import AdaptiveToolbar from '@/app/views/adaptive/components/AdaptiveToolbar.vue'
 import AdaptiveMain from '@/app/views/adaptive/components/AdaptiveMain.vue'
 
 const routes: RouteRecordRaw[] = [
@@ -47,6 +48,7 @@ const routes: RouteRecordRaw[] = [
 			'navigation-rail': AdaptiveNavigationRail,
 			'navigation-drawer': AdaptiveNavigationDrawer,
 			'top-app-bar': AdaptiveTopAppBar,
+			toolbar: AdaptiveToolbar,
 			main: AdaptiveMain,
 		},
 	}

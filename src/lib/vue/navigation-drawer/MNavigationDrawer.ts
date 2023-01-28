@@ -36,20 +36,28 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type NavigationRailProps = {}
+export type MNavigationDrawerProps = {
+	isOpened?: boolean
+}
 
-export const NavigationRail: FunctionalComponent<NavigationRailProps> = (_, {
+export const MNavigationDrawer: FunctionalComponent<MNavigationDrawerProps> = ({
+	isOpened,
+}, {
 	slots,
 }): VNode => h('nav', {
 	class: {
-		'navigation-rail': true,
+		'm-navigation-drawer': true,
+		'is-opened': isOpened,
+		'is-closed': !isOpened,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-NavigationRail.displayName = 'NavigationRail'
+MNavigationDrawer.displayName = 'MNavigationDrawer'
 
-NavigationRail.props = []
+MNavigationDrawer.props = [
+	'is-opened'
+]
 
-export default NavigationRail
+export default MNavigationDrawer

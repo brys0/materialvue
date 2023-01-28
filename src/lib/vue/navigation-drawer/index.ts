@@ -31,38 +31,38 @@
  */
 
 export {
-	NavigationDrawer,
-} from '@/lib/vue/navigation-drawer/NavigationDrawer'
+	MNavigationDrawer,
+} from '@/lib/vue/navigation-drawer/MNavigationDrawer'
 
 export {
-	NavigationDrawerLeading,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerLeading'
+	MDrawerLeading,
+} from '@/lib/vue/navigation-drawer/MDrawerLeading'
 
 export {
-	NavigationDrawerBody,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerBody'
+	MDrawerBody,
+} from '@/lib/vue/navigation-drawer/MDrawerBody'
 
 export {
-	NavigationDrawerTrailing,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerTrailing'
+	MDrawerTrailing,
+} from '@/lib/vue/navigation-drawer/MDrawerTrailing'
 
 export {
-	NavigationDrawerList,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerList'
+	MDrawerList,
+} from '@/lib/vue/navigation-drawer/MDrawerList'
 
 export {
-	NavigationDrawerListItem,
-	NavigationDrawerListItemState,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerListItem'
+	MDrawerListItem,
+	MDrawerListItemState,
+} from '@/lib/vue/navigation-drawer/MDrawerListItem'
 
 export {
-	NavigationDrawerListItemLeading,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerListItemLeading'
+	MDrawerListItemLeading,
+} from '@/lib/vue/navigation-drawer/MDrawerListItemLeading'
 
 export {
-	NavigationDrawerListItemBody,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerListItemBody'
+	MDrawerListItemBody,
+} from '@/lib/vue/navigation-drawer/MDrawerListItemBody'
 
 export {
-	NavigationDrawerListItemTrailing,
-} from '@/lib/vue/navigation-drawer/NavigationDrawerListItemTrailing'
+	MDrawerListItemTrailing,
+} from '@/lib/vue/navigation-drawer/MDrawerListItemTrailing'

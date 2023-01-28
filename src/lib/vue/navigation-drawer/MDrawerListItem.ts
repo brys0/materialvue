@@ -33,23 +33,55 @@
 import {
 	h,
 	VNode,
-	FunctionalComponent,
+	PropType,
+	defineComponent,
 } from 'vue'
 
-export type NavigationDrawerListProps = {}
+export enum MDrawerListItemState {
+  enabled = 'enabled',
+	hovered = 'hovered',
+	focused = 'focused',
+	pressed = 'pressed',
+}
 
-export const NavigationDrawerList: FunctionalComponent<NavigationDrawerListProps> = (_, {
-	slots,
-}): VNode => h('ol', {
-	class: {
-		'navigation-drawer-list': true,
+export const MDrawerListItem = defineComponent({
+	props: {
+		state: {
+			type: String as PropType<MDrawerListItemState>,
+			default: MDrawerListItemState.enabled,
+		},
+		selected: {
+			type: Boolean,
+			default: false,
+		},
 	},
-}, {
-	default: () => slots.default?.(),
+	emits: [ 'click' ],
+	render(): VNode {
+		const {
+			state,
+			selected,
+		} = this.$props
+
+		return h('li', {
+			tabindex: selected ? undefined : 0,
+			class: {
+				'm-drawer-list-item': true,
+				enabled: MDrawerListItemState.enabled === state,
+				hovered: MDrawerListItemState.hovered === state,
+				focused: MDrawerListItemState.focused === state,
+				pressed: MDrawerListItemState.pressed === state,
+				selected,
+			},
+			onClick: (event: PointerEvent) => {
+				if (!this.$props.selected) {
+					this.$el.blur()
+					this.$emit('click', event)
+				}
+			},
+		}, {
+			default: () => this.$slots.default?.(),
+		})
+	},
 })
 
-NavigationDrawerList.displayName = 'NavigationDrawerList'
-
-NavigationDrawerList.props = []
-
-export default NavigationDrawerList
+export default MDrawerListItem
