@@ -34,7 +34,7 @@
 
 <script lang="ts" setup>
 import {
-	Toolbar,
+	MToolbar,
 	MBarLeading,
 	MBarBody,
 	MBarTrailing,
@@ -44,7 +44,7 @@ import {
 </script>
 
 <template>
-  <Toolbar>
+  <m-toolbar>
     <!-- <m-bar-leading>
       <m-headline>
         Leading
@@ -60,5 +60,5 @@ import {
         Trailing
       </m-headline>
     </m-bar-trailing> -->
-  </Toolbar>
+  </m-toolbar>
 </template>

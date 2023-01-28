@@ -34,11 +34,11 @@
 
 <script lang="ts" setup>
 import {
-	Toolbar,
+	MToolbar,
 } from '@/lib/vue'
 
 </script>
 
 <template>
-  <Toolbar />
+  <m-toolbar />
 </template>

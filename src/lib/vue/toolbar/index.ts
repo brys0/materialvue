@@ -30,26 +30,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
-
-export type ToolbarProps = {}
-
-export const Toolbar: FunctionalComponent<ToolbarProps> = (_, {
-	slots,
-}): VNode => h('aside', {
-	class: {
-		toolbar: true,
-	},
-}, {
-	default: () => slots.default?.(),
-})
-
-Toolbar.displayName = 'Toolbar'
-
-Toolbar.props = []
-
-export default Toolbar
+export {
+	MToolbar,
+} from '@/lib/vue/toolbar/MToolbar'

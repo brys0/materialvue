@@ -30,10 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	Finder,
-} from '@/lib/vue/apps/Finder'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	Modal,
-} from '@/lib/vue/apps/Modal'
+export type MToolbarProps = {}
+
+export const MToolbar: FunctionalComponent<MToolbarProps> = (_, {
+	slots,
+}): VNode => h('aside', {
+	class: {
+		'm-toolbar': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
+
+MToolbar.displayName = 'MToolbar'
+
+MToolbar.props = []
+
+export default MToolbar

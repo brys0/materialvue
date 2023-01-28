@@ -31,7 +31,6 @@
  */
 
 export {
-	Toolbar,
 	Finder,
 	Modal,
 } from '@/lib/vue/apps'
@@ -43,6 +42,10 @@ export {
 export {
 	TopAppBar,
 } from '@/lib/vue/top-app-bar'
+
+export {
+	MToolbar,
+} from '@/lib/vue/toolbar'
 
 export {
 	MNavigationRail,
