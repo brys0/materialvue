@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type FinderProps = {}
+export type MFinderProps = {}
 
-export const Modal: FunctionalComponent<FinderProps> = (_, {
+export const MFinder: FunctionalComponent<MFinderProps> = (_, {
 	slots,
 }): VNode => h('aside', {
 	class: {
-		modal: true,
+		'm-finder': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-Modal.displayName = 'Modal'
+MFinder.displayName = 'MFinder'
 
-Modal.props = []
+MFinder.props = []
 
-export default Modal
+export default MFinder

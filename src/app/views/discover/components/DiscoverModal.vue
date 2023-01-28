@@ -34,11 +34,11 @@
 
 <script lang="ts" setup>
 import {
-	Modal,
+	MModal,
 } from '@/lib/vue'
 
 </script>
 
 <template>
-  <Modal />
+  <m-modal />
 </template>

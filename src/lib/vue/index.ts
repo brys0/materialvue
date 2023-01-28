@@ -31,11 +31,6 @@
  */
 
 export {
-	Finder,
-	Modal,
-} from '@/lib/vue/apps'
-
-export {
 	MApp,
 } from '@/lib/vue/app'
 
@@ -68,6 +63,14 @@ export {
 export {
 	MMain,
 } from '@/lib/vue/main'
+
+export {
+	MModal,
+} from '@/lib/vue/modal'
+
+export {
+	MFinder,
+} from '@/lib/vue/finder'
 
 export {
 	MTypography,

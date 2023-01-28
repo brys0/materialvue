@@ -40,13 +40,18 @@ import {
 	MButton,
 } from '@/lib/vue/buttons/MButton'
 
-export type MRailButtonProps = {}
+export type MRailButtonProps = {
+	selected?: boolean
+}
 
-export const MRailButton: FunctionalComponent<MRailButtonProps> = (_, {
+export const MRailButton: FunctionalComponent<MRailButtonProps> = ({
+	selected,
+}, {
 	slots,
 }): VNode => h(MButton, {
 	class: {
 		'm-rail': true,
+		selected,
 	},
 }, {
 	default: () => slots.default?.(),
@@ -54,6 +59,8 @@ export const MRailButton: FunctionalComponent<MRailButtonProps> = (_, {
 
 MRailButton.displayName = 'MRailButton'
 
-MRailButton.props = []
+MRailButton.props = [
+	'selected'
+]
 
 export default MRailButton

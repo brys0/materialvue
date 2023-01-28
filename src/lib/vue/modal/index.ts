@@ -30,24 +30,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
-
-export type FinderProps = {}
-
-export const Finder: FunctionalComponent<FinderProps> = (_, {
-	slots,
-}): VNode => h('aside', {
-	class: 'finder',
-}, {
-	default: () => slots.default?.(),
-})
-
-Finder.displayName = 'Finder'
-
-Finder.props = []
-
-export default Finder
+export {
+	MModal,
+} from '@/lib/vue/modal/MModal'
