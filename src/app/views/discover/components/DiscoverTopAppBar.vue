@@ -38,7 +38,7 @@ import {
 } from 'vue'
 
 import {
-	TopAppBar,
+	MTopAppBar,
 	MBarLeading,
 	MBarBody,
 	MBarTrailing,
@@ -62,7 +62,7 @@ const isThemeLight = computed(() => appStore.isThemeLight)
 </script>
 
 <template>
-  <TopAppBar>
+  <m-top-app-bar>
     <m-bar-leading>
       <m-icon-button
         :toggle="true"
@@ -102,5 +102,5 @@ const isThemeLight = computed(() => appStore.isThemeLight)
         </m-rounded-icon>
       </m-icon-button>
     </m-bar-trailing>
-  </TopAppBar>
+  </m-top-app-bar>
 </template>

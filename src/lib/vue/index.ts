@@ -40,7 +40,7 @@ export {
 } from '@/lib/vue/app'
 
 export {
-	TopAppBar,
+	MTopAppBar,
 } from '@/lib/vue/top-app-bar'
 
 export {

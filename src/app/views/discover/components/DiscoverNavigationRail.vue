@@ -36,7 +36,7 @@
 import {
 	MNavigationRail,
 	MLabel,
-	MIconButton,
+	MRailButton,
 	MFabButton,
 	MFabButtonVariant,
 	MRoundedIcon,
@@ -54,21 +54,21 @@ import {
         edit
       </m-rounded-icon>
     </m-fab-button>
-    <m-icon-button>
+    <m-rail-button>
       <m-rounded-icon>
         tag
       </m-rounded-icon>
       <m-label>
         Tags
       </m-label>
-    </m-icon-button>
-    <m-icon-button :selected="true">
+    </m-rail-button>
+    <m-rail-button :selected="true">
       <m-rounded-icon>
         bookmarks
       </m-rounded-icon>
       <m-label>
         Bookmarks
       </m-label>
-    </m-icon-button>
+    </m-rail-button>
   </m-navigation-rail>
 </template>

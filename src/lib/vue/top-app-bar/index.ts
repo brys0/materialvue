@@ -31,5 +31,5 @@
  */
 
 export {
-	TopAppBar,
-} from '@/lib/vue/top-app-bar/TopAppBar'
+	MTopAppBar,
+} from '@/lib/vue/top-app-bar/MTopAppBar'
