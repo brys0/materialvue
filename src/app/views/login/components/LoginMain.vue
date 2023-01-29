@@ -48,6 +48,8 @@ import {
 
 import {
 	MMain,
+	MLayout,
+	MTile,
 	MLabel,
 	MBody,
 	MTonalButton,
@@ -87,105 +89,109 @@ const onSubmit = handleSubmit(async (data, actions): Promise<void> => {
 
 <template>
   <m-main>
-    <figure class="brand">
-      <img
-        class="is-theme-light"
-        src="/assets/cosmicmind-logo-light.svg"
-        alt="CosmicMind Logo"
-      >
-      <img
-        class="is-theme-dark"
-        src="/assets/cosmicmind-logo-dark.svg"
-        alt="CosmicMind Logo"
-      >
-    </figure>
-    <m-form
-      class="login"
-      @submit="onSubmit"
-    >
-      <m-fieldset>
-        <m-outlined-text-field
-          ref="emailRef"
-          :has-error="'undefined' !== typeof errors.email"
+    <m-layout>
+      <m-tile>
+        <figure class="brand">
+          <img
+            class="is-theme-light"
+            src="/assets/cosmicmind-logo-light.svg"
+            alt="CosmicMind Logo"
+          >
+          <img
+            class="is-theme-dark"
+            src="/assets/cosmicmind-logo-dark.svg"
+            alt="CosmicMind Logo"
+          >
+        </figure>
+        <m-form
+          class="login"
+          @submit="onSubmit"
         >
-          <m-field-control>
-            <m-field-leading>
-              <m-rounded-icon>
-                mail
-              </m-rounded-icon>
-            </m-field-leading>
-            <m-field-body>
-              <m-label
-                name="email"
-              >
-                Email
-              </m-label>
-              <m-field-input name="email" />
-            </m-field-body>
-            <m-field-trailing
-              v-if="errors.email"
-              class="trailing"
+          <m-fieldset>
+            <m-outlined-text-field
+              ref="emailRef"
+              :has-error="'undefined' !== typeof errors.email"
             >
-              <m-rounded-icon>
-                error
-              </m-rounded-icon>
-            </m-field-trailing>
-          </m-field-control>
-          <m-field-support v-if="errors.email">
-            <m-body>
-              {{ errors.email }}
-            </m-body>
-          </m-field-support>
-        </m-outlined-text-field>
-      </m-fieldset>
-      <m-fieldset>
-        <m-outlined-text-field
-          ref="passwordRef"
-          :has-error="'undefined' !== typeof errors.password"
-        >
-          <m-field-control>
-            <m-field-leading>
-              <m-rounded-icon>
-                lock
-              </m-rounded-icon>
-            </m-field-leading>
-            <m-field-body>
-              <m-label
-                name="password"
-              >
-                Password
-              </m-label>
-              <m-field-input
-                type="password"
-                name="password"
-              />
-            </m-field-body>
-            <m-field-trailing
-              v-if="errors.password"
-              class="trailing"
+              <m-field-control>
+                <m-field-leading>
+                  <m-rounded-icon>
+                    mail
+                  </m-rounded-icon>
+                </m-field-leading>
+                <m-field-body>
+                  <m-label
+                    name="email"
+                  >
+                    Email
+                  </m-label>
+                  <m-field-input name="email" />
+                </m-field-body>
+                <m-field-trailing
+                  v-if="errors.email"
+                  class="trailing"
+                >
+                  <m-rounded-icon>
+                    error
+                  </m-rounded-icon>
+                </m-field-trailing>
+              </m-field-control>
+              <m-field-support v-if="errors.email">
+                <m-body>
+                  {{ errors.email }}
+                </m-body>
+              </m-field-support>
+            </m-outlined-text-field>
+          </m-fieldset>
+          <m-fieldset>
+            <m-outlined-text-field
+              ref="passwordRef"
+              :has-error="'undefined' !== typeof errors.password"
             >
-              <m-rounded-icon>
-                error
-              </m-rounded-icon>
-            </m-field-trailing>
-          </m-field-control>
-          <m-field-support v-if="errors.password">
-            <m-body>
-              {{ errors.password }}
-            </m-body>
-          </m-field-support>
-        </m-outlined-text-field>
-      </m-fieldset>
-      <m-bar>
-        <m-bar-trailing>
-          <m-tonal-button>
-            <m-label>
-              Submit
-            </m-label>
-          </m-tonal-button>
-        </m-bar-trailing>
-      </m-bar>
-    </m-form>
+              <m-field-control>
+                <m-field-leading>
+                  <m-rounded-icon>
+                    lock
+                  </m-rounded-icon>
+                </m-field-leading>
+                <m-field-body>
+                  <m-label
+                    name="password"
+                  >
+                    Password
+                  </m-label>
+                  <m-field-input
+                    type="password"
+                    name="password"
+                  />
+                </m-field-body>
+                <m-field-trailing
+                  v-if="errors.password"
+                  class="trailing"
+                >
+                  <m-rounded-icon>
+                    error
+                  </m-rounded-icon>
+                </m-field-trailing>
+              </m-field-control>
+              <m-field-support v-if="errors.password">
+                <m-body>
+                  {{ errors.password }}
+                </m-body>
+              </m-field-support>
+            </m-outlined-text-field>
+          </m-fieldset>
+          <m-bar>
+            <m-bar-trailing>
+              <m-tonal-button>
+                <m-label>
+                  Submit
+                </m-label>
+              </m-tonal-button>
+            </m-bar-trailing>
+          </m-bar>
+        </m-form>
+      </m-tile>
+    </m-layout>
   </m-main>
 </template>
 
