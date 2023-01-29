@@ -47,13 +47,5 @@ export {
 } from '@/lib/vue/layout/MColumn'
 
 export {
-	MGrid,
-} from '@/lib/vue/layout/MGrid'
-
-export {
-	MGridItem,
-} from '@/lib/vue/layout/MGridItem'
-
-export {
 	MSection,
 } from '@/lib/vue/layout/MSection'

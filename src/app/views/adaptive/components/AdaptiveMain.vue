@@ -35,6 +35,7 @@
 <script lang="ts" setup>
 import {
 	MMain,
+	MDisplay,
 	MLayout,
 	MSection,
 	MRow,
@@ -49,48 +50,168 @@ import {
       <m-section>
         <m-row>
           <m-column>
-            column 1
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
           </m-column>
           <m-column>
-            column 2
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
           </m-column>
           <m-column>
-            column 3
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
           </m-column>
           <m-column>
-            column 4
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+          </m-column>
+        </m-row>
+        <!--
+        <m-row>
+          <m-column>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+          </m-column>
+          <m-column>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+          </m-column>
+          <m-column>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+          </m-column>
+          <m-column>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
           </m-column>
         </m-row>
 
         <m-row>
           <m-column>
-            column 1
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
           </m-column>
           <m-column>
-            column 2
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
           </m-column>
           <m-column>
-            column 3
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
           </m-column>
           <m-column>
-            column 4
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+          </m-column>
+        </m-row>
+      </m-section>
+
+      <m-section>
+        <m-row>
+          <m-column>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+          </m-column>
+          <m-column>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+          </m-column>
+          <m-column>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+          </m-column>
+          <m-column>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
           </m-column>
         </m-row>
 
         <m-row>
           <m-column>
-            column 1
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
           </m-column>
           <m-column>
-            column 2
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
           </m-column>
           <m-column>
-            column 3
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
           </m-column>
           <m-column>
-            column 4
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
           </m-column>
         </m-row>
+
+        <m-row>
+          <m-column>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+          </m-column>
+          <m-column>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+          </m-column>
+          <m-column>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+          </m-column>
+          <m-column>
+            <div class="app">
+              <m-display>App</m-display>
+            </div>
+          </m-column>
+        </m-row>
+      </m-section> -->
       </m-section>
     </m-layout>
   </m-main>
@@ -112,5 +233,8 @@ import {
 
           .m-column
             background: yellow
+
+            .app
+              background: brown
 
 </style>

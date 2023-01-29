@@ -113,8 +113,6 @@ export {
 	MTile,
 	MRow,
 	MColumn,
-	MGrid,
-	MGridItem,
 	MSection,
 } from '@/lib/vue/layout'
 
