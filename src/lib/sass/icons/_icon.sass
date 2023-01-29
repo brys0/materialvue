@@ -35,9 +35,10 @@
 .m-icon:not(.button)
   @extend %is-not-selectable
 
-  display: flex
-  flex-flow: column
+  display: grid
   align-items: center
+  align-content: center
+  justify-items: center
   justify-content: center
 
   @include theme.preferred

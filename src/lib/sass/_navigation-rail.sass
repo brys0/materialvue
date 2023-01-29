@@ -36,27 +36,26 @@
 .m-navigation-rail
   @extend %is-not-selectable
 
-  display: flex
-  flex-flow: column
+  display: grid
   align-items: center
-  align-content: flex-start
+  align-content: start
+  justify-items: center
+  justify-content: stretch
+  grid-auto-rows: 56px
+  grid-auto-flow: row
+  gap: 12px
 
   @include theme.preferred
     background: theme.style(surface)
 
   > .m-rail
     &.m-button
-      width: 100%
-      height: 56px
       grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] max-content [row-2-end]  
       grid-template-columns: [col-1-start] 1fr [col-1-end]
       gap: 4px
 
       &::before
         display: none
-
-      + &
-        margin-top: 12px
 
       > .m-icon
         position: relative

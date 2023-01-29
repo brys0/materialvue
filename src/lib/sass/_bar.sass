@@ -40,8 +40,10 @@
 %m-bar-leading,
 %m-bar-body,
 %m-bar-trailing
-  display: flex
-  align-items: center
+  display: grid
+  align-content: center
+  grid-auto-columns: minmax(1fr, max-content)
+  grid-auto-flow: column
   gap: 24px
   
 %m-bar-leading

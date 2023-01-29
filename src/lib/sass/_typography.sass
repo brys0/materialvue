@@ -41,7 +41,20 @@
 
   @include theme.preferred
     color: theme.style(on-background)
-  
+
+%m-typography-display,
+%m-typography-headline,
+%m-typography-title,
+%m-typography-label
+  display: grid
+  align-items: baseline
+  align-content: center
+  justify-items: start
+  justify-content: start
+
+%m-typography-body
+  vertical-align: baseline
+
 %m-typography-display-large
   font-size: 57px
   line-height: 64px
@@ -115,6 +128,8 @@
   @extend %m-typography
 
   &.m-display
+    @extend %m-typography-display
+
     &.large
       @extend %m-typography-display-large
     
@@ -126,6 +141,8 @@
       @extend %m-typography-display-small
 
   &.m-headline
+    @extend %m-typography-headline
+
     &.large
       @extend %m-typography-headline-large
     
@@ -137,6 +154,8 @@
       @extend %m-typography-headline-small
 
   &.m-title
+    @extend %m-typography-title
+
     &.large
       @extend %m-typography-title-large
     
@@ -151,6 +170,8 @@
       margin-top: 16px
 
   &.m-label
+    @extend %m-typography-label
+
     &.large
       @extend %m-typography-label-large
     
@@ -165,6 +186,8 @@
         margin-top: 16px
   
   &.m-body
+    @extend %m-typography-body
+
     &.large
       @extend %m-typography-body-large
     

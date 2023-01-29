@@ -5370,7 +5370,7 @@ onBeforeUnmount(() => {
                   Disabled
                 </m-headline>
                 <m-body>
-                  Supporting text that is long enough to fill multiple lines.
+                  Supporting text.
                 </m-body>
               </m-list-item-body>
               <m-list-item-trailing>

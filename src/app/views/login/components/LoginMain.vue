@@ -191,9 +191,8 @@ const onSubmit = handleSubmit(async (data, actions): Promise<void> => {
 
 <style lang="sass" scoped>
 .m-main
-  display: flex
-  flex-flow: column
-  align-items: center
+  display: grid
+  align-content: center
   justify-content: center
 
 .brand

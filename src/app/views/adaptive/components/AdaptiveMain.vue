@@ -35,14 +35,64 @@
 <script lang="ts" setup>
 import {
 	MMain,
-	MDisplay,
+	MLayout,
+	MSection,
+	MRow,
+	MColumn,
 } from '@/lib/vue'
 
 </script>
 
 <template>
   <m-main>
-    <m-display>Main</m-display>
+    <m-layout>
+      <m-section>
+        <m-row>
+          <m-column>
+            column 1
+          </m-column>
+          <m-column>
+            column 2
+          </m-column>
+          <m-column>
+            column 3
+          </m-column>
+          <m-column>
+            column 4
+          </m-column>
+        </m-row>
+
+        <m-row>
+          <m-column>
+            column 1
+          </m-column>
+          <m-column>
+            column 2
+          </m-column>
+          <m-column>
+            column 3
+          </m-column>
+          <m-column>
+            column 4
+          </m-column>
+        </m-row>
+
+        <m-row>
+          <m-column>
+            column 1
+          </m-column>
+          <m-column>
+            column 2
+          </m-column>
+          <m-column>
+            column 3
+          </m-column>
+          <m-column>
+            column 4
+          </m-column>
+        </m-row>
+      </m-section>
+    </m-layout>
   </m-main>
 </template>
 
@@ -50,5 +100,17 @@ import {
   @use '@/lib/sass/theme'
   .m-main
     background: green
+
+    .m-layout
+      background: blue
+
+      .m-section
+        background: orange
+
+        .m-row
+          background: purple
+
+          .m-column
+            background: yellow
 
 </style>

@@ -32,26 +32,45 @@
 
 @use './adaptive'
 
-%m-layout-row
-  display: flex
-  flex-flow: row
-  align-items: flex-start
-  justify-items: flex-start
-  align-content: stretch
+%m-layout
+  display: grid
+  align-content: start
   justify-content: stretch
+  grid-auto-rows: minmax(1fr, max-content)
+  grid-auto-flow: row
+
+%m-layout-section
+  display: grid
+  align-content: start
+  justify-content: stretch
+  grid-auto-rows: minmax(1fr, max-content)
+  grid-auto-flow: row
+
+%m-layout-row
+  display: grid
+  align-content: start
+  justify-content: stretch
+  grid-auto-columns: minmax(1fr, max-content)
+  grid-auto-flow: column
 
 %m-layout-column
-  grid-row: row-1-start / row-2-end
-  display: flex
-  flex-flow: column
+  display: grid
   align-items: center
-  flex: 1
-  
+  align-content: start
+  justify-items: center
+  justify-content: stretch
+
+.m-layout
+  @extend %m-layout
+
+.m-section
+  @extend %m-layout-section
+
 .m-row
   @extend %m-layout-row
 
-  > .m-column
-    @extend %m-layout-column
+.m-column
+  @extend %m-layout-column
 
 %m-layout-grid
   display: grid
@@ -76,11 +95,8 @@
   @extend %m-layout-grid
 
 %m-layout-tile
-  position: relative
-  display: flex
-  flex-flow: column
-  flex: 1
-  align-items: center
+  display: grid
+  align-content: center
   justify-content: center
 
 .m-tile

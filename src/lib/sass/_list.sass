@@ -37,6 +37,11 @@
   margin: 0
   padding: 0
   width: 100%
+
+  display: grid
+  align-content: start
+  justify-content: stretch
+  grid-auto-flow: row
   
   &:first-of-type
     padding-top: 8px
@@ -67,9 +72,20 @@
 %list-item-trailing
   padding-top: 8px
   padding-bottom: 8px
-  display: flex
-  flex-flow: column
-  justify-content: center
+  display: grid
+  
+%list-item-leading,
+%list-item-trailing
+  align-content: center
+  justify-content: stretch
+  grid-auto-columns: minmax(1fr, max-content)
+  grid-auto-flow: column
+
+%list-item-body
+  align-content: center
+  justify-content: stretch
+  grid-auto-rows: minmax(1fr, max-content)
+  grid-auto-flow: row
 
 %list-item-trailing
   grid-row: row-1-start / row-1-end
@@ -99,21 +115,19 @@
     padding-bottom: 8px
 
   &.lines-1
-    > .m-list-item
-      min-height: 56px
+    grid-auto-flow: minmax(56px, max-content)
   
   &.lines-2
-    > .m-list-item
-      min-height: 72px
+    grid-auto-flow: minmax(72px, max-content)
 
   &.lines-3
-    > .m-list-item
-      min-height: 88px
+    grid-auto-flow: minmax(88px, max-content)
 
+    > .m-list-item
       > .m-list-item-leading,
       > .m-list-item-body,
       > .m-list-item-trailing
-        justify-content: flex-start
+        align-content: start
       
   > .m-list-item
     @extend %list-item
