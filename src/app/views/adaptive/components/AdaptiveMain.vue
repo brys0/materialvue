@@ -46,172 +46,147 @@ import {
 
 <template>
   <m-main>
-    <m-layout>
+    <m-layout class="is-desktop">
       <m-section>
         <m-row>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-3">
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
-            <div class="app">
-              <m-display>App</m-display>
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-          </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-3">
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-3">
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
-        </m-row>
-        <!--
-        <m-row>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-3">
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
-          </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-          </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-          </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-          </m-column>
-        </m-row>
-
-        <m-row>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-          </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-          </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-            <div class="app">
-              <m-display>App</m-display>
-            </div>
-          </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
         </m-row>
       </m-section>
+    </m-layout>
 
+    <m-layout class="is-tablet">
       <m-section>
         <m-row>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-4">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-4">
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-4">
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-12">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
         </m-row>
+      </m-section>
+    </m-layout>
 
+    <m-layout class="is-foldable">
+      <m-section>
         <m-row>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-6">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-6">
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-6">
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-6">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
         </m-row>
+      </m-section>
+    </m-layout>
 
+    <m-layout class="is-mobile">
+      <m-section>
         <m-row>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-12">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-12">
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-12">
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
-          <m-column>
-            <div class="app">
-              <m-display>App</m-display>
+          <m-column class="is-12">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
             </div>
           </m-column>
         </m-row>
-      </m-section> -->
       </m-section>
     </m-layout>
   </m-main>
@@ -220,21 +195,30 @@ import {
 <style lang="sass" scoped>
   @use '@/lib/sass/theme'
   .m-main
-    background: green
+    // background: green
 
     .m-layout
-      background: blue
+      // background: blue
 
       .m-section
-        background: orange
+        // background: orange
 
         .m-row
-          background: purple
+          border-radius: 12px
+
+          @include theme.preferred
+              background: theme.style(elevation-1), theme.style(surface)
 
           .m-column
-            background: yellow
+            border-radius: 12px
 
-            .app
-              background: brown
+            @include theme.preferred
+              background: theme.style(elevation-2), theme.style(surface)
+
+            .content
+              border-radius: 12px
+
+              @include theme.preferred
+                background: theme.style(elevation-3), theme.style(surface)
 
 </style>

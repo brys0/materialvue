@@ -51,35 +51,29 @@ $max-tablet-width: conversion.to-px($max-tablet-width-value)
 /* 1140-1439 */
 $min-desktop-width-value: $max-tablet-width-value + 1
 $min-desktop-width: conversion.to-px($min-desktop-width-value)
-$max-desktop-width-value: 1539
-$max-desktop-width: conversion.to-px($max-desktop-width-value)
-
-/* 1440+ */
-$min-widescreen-width-value: $max-desktop-width-value + 1
-$min-widescreen-width: conversion.to-px($min-widescreen-width-value)
 
 @mixin is-mobile
   @media (max-width: $max-mobile-width)
-    @content
-
-@mixin is-foldable
-  @media (min-width: $min-foldable-width) and (max-width: $max-foldable-width)
     @content
 
 @mixin is-lte-foldable
   @media (max-width: $max-foldable-width)
     @content
 
+@mixin is-foldable
+  @media (min-width: $min-foldable-width) and (max-width: $max-foldable-width)
+    @content
+
 @mixin is-gte-foldable
   @media (min-width: $min-foldable-width)
     @content
 
-@mixin is-tablet
-  @media (min-width: $min-tablet-width) and (max-width: $max-tablet-width)
-    @content
-
 @mixin is-lte-tablet
   @media (max-width: $max-tablet-width)
+    @content
+
+@mixin is-tablet
+  @media (min-width: $min-tablet-width) and (max-width: $max-tablet-width)
     @content
 
 @mixin is-gte-tablet
@@ -87,23 +81,7 @@ $min-widescreen-width: conversion.to-px($min-widescreen-width-value)
     @content
 
 @mixin is-desktop
-  @media (min-width: $min-desktop-width) and (max-width: $max-desktop-width)
-    @content
-
-@mixin is-lte-desktop
-  @media (max-width: $max-desktop-width)
-    @content
-
-@mixin is-gte-desktop
   @media (min-width: $min-desktop-width)
-    @content
-
-@mixin is-widescreen
-  @media (min-width: $min-widescreen-width)
-    @content
-
-@mixin is-lte-widescreen
-  @media (max-width: $max-widescreen-width)
     @content
 
 @mixin is-portrait
