@@ -31,6 +31,12 @@
  */
 
 @use './adaptive'
+@use './conversion'
+
+@mixin grid-column($size, $count)
+  @for $i from 1 through $count
+    &.is-#{$size}#{$i}
+      grid-column: span $i
 
 %m-layout,
 %m-layout-section,
@@ -44,52 +50,60 @@
 
 %m-layout
   display: grid
-  align-content: start
+  align-items: stretch
+  align-content: stretch
+  justify-items: stretch
   justify-content: stretch
   grid-auto-rows: max-content
   grid-auto-flow: row
-
-%m-layout-full,
-%m-layout-comfortable,
-%m-layout-narrow
-  margin: 0 auto
-
-%m-layout-full
-  width: 100%
-
-%m-layout-comfortable
-  width: adaptive.width(max-tablet)
-
-%m-layout-narrow
-  width: adaptive.width(max-foldable)
   
 %m-layout-section
+  margin: 0 auto
   display: grid
-  align-content: start
+  align-items: stretch
+  align-content: stretch
+  justify-items: stretch
   justify-content: stretch
   grid-auto-rows: max-content
   grid-auto-flow: row
+
+%m-layout-section-full,
+%m-layout-section-comfortable,
+%m-layout-section-narrow
+  @include adaptive.is-lte-foldable
+    padding: 0 8px
+    
+  @include adaptive.is-gte-tablet
+    padding: 0 32px
+
+%m-layout-section-full
+  min-width: 100%
+    
+%m-layout-section-comfortable
+  width: 100%
+  
+  @include adaptive.is-mobile
+    max-width: conversion.to-px(adaptive.width(mobile))
+  
+  @include adaptive.is-foldable
+    max-width: conversion.to-px(adaptive.width(max-foldable))
+  
+  @include adaptive.is-tablet
+    max-width: conversion.to-px(adaptive.width(max-tablet))
+
+  @include adaptive.is-desktop
+    max-width: conversion.to-px(adaptive.width(desktop))
+    
+%m-layout-section-narrow
+  max-width: conversion.to-px(adaptive.width(max-foldable))
 
 %m-layout-row
   display: grid
-  align-content: stretch
-  justify-content: stretch
-  grid-auto-rows: max-content
   
   @include adaptive.is-mobile
-    margin: 0 8px
     grid-template-columns: repeat(8, 1fr)
   
   @include adaptive.is-gte-foldable
-    margin: 0 12px
-
-  @include adaptive.is-foldable
-    grid-template-columns: repeat(12, 1fr)
-
-  @include adaptive.is-tablet
-    grid-template-columns: repeat(12, 1fr)
-      
-  @include adaptive.is-desktop
     grid-template-columns: repeat(12, 1fr)
 
 %m-layout-column
@@ -99,41 +113,54 @@
   grid-auto-rows: minmax(1fr, max-content)
   grid-auto-flow: row
 
-%m-layout-column-size-1
-  grid-column: span 1
+%m-layout-tile
+  display: grid
+  align-items: center
+  align-content: stretch
+  justify-items: center
+  justify-content: stretch
 
-%m-layout-column-size-2
-  grid-column: span 2
+.m-layout
+  @extend %m-layout
 
-%m-layout-column-size-3
-  grid-column: span 3
+.m-section
+  @extend %m-layout-section
 
-%m-layout-column-size-4
-  grid-column: span 4
+  &.full
+    @extend %m-layout-section-full
 
-%m-layout-column-size-5
-  grid-column: span 5
+  &,
+  &.comfortable
+    @extend %m-layout-section-comfortable
 
-%m-layout-column-size-6
-  grid-column: span 6
+  &.narrow
+    @extend %m-layout-section-narrow
 
-%m-layout-column-size-7
-  grid-column: span 7
+.m-row
+  @extend %m-layout-row
 
-%m-layout-column-size-8
-  grid-column: span 8
+.m-column
+  @extend %m-layout-column
 
-%m-layout-column-size-9
-  grid-column: span 9
+  @include grid-column('', 12)
 
-%m-layout-column-size-10
-  grid-column: span 10
+  @include adaptive.is-mobile
+    @include grid-column('mobile-', 8)
 
-%m-layout-column-size-11
-  grid-column: span 11
+  @include adaptive.is-foldable
+    @include grid-column('foldable-', 12)
+    
+  @include adaptive.is-tablet
+    @include grid-column('tablet-', 12)
 
-%m-layout-column-size-12
-  grid-column: span 12
+  @include adaptive.is-desktop  
+    @include grid-column('desktop-', 12)
+
+.m-tile
+  @extend %m-layout-tile
+
+.is-hidden
+  display: none
 
 @include adaptive.is-mobile
   .is-lte-foldable,
@@ -182,7 +209,7 @@
   .is-gte-tablet,
   .is-desktop
     display: none
-
+  
 @include adaptive.is-gte-tablet
   .is-mobile,
   .is-lte-foldable,
@@ -200,71 +227,3 @@
   .is-tablet,
   .is-gte-tablet
     display: none
-
-.m-layout
-  @extend %m-layout
-
-.m-section
-  @extend %m-layout-section
-
-  &,
-  &.full
-    @extend %m-layout-full
-
-  &.comfortable
-    @extend %m-layout-comfortable
-
-  &.narrow
-    @extend %m-layout-narrow
-
-.m-row
-  @extend %m-layout-row
-
-.m-column
-  @extend %m-layout-column
-
-  &.is-1
-    @extend %m-layout-column-size-1
-  
-  &.is-2
-    @extend %m-layout-column-size-2
-  
-  &.is-3
-    @extend %m-layout-column-size-3
-
-  &.is-4
-    @extend %m-layout-column-size-4
-  
-  &.is-5
-    @extend %m-layout-column-size-5
-  
-  &.is-6
-    @extend %m-layout-column-size-6
-  
-  &.is-7
-    @extend %m-layout-column-size-7
-  
-  &.is-8
-    @extend %m-layout-column-size-8
-  
-  &.is-9
-    @extend %m-layout-column-size-9
-  
-  &.is-10
-    @extend %m-layout-column-size-10
-  
-  &.is-11
-    @extend %m-layout-column-size-11
-  
-  &.is-12
-    @extend %m-layout-column-size-12
-  
-%m-layout-tile
-  display: grid
-  align-items: center
-  align-content: stretch
-  justify-items: center
-  justify-content: stretch
-
-.m-tile
-  @extend %m-layout-tile

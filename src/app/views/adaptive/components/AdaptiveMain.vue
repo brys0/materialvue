@@ -40,246 +40,137 @@ import {
 	MSection,
 	MRow,
 	MColumn,
+	MTile,
 } from '@/lib/vue'
 
 </script>
 
 <template>
   <m-main>
-    <m-layout class="is-desktop">
-      <m-section>
+    <m-layout>
+      <m-section class="full">
         <m-row>
-          <m-column class="is-3">
-            <div class="content">
+          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-desktop-4">
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
+            </m-tile>
           </m-column>
-          <m-column class="is-3">
-            <div class="content">
+          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-desktop-4">
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
+            </m-tile>
           </m-column>
-          <m-column class="is-3">
-            <div class="content">
+          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-desktop-4">
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
+            </m-tile>
           </m-column>
-          <m-column class="is-3">
-            <div class="content">
+          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-desktop-12">
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
+            </m-tile>
           </m-column>
         </m-row>
       </m-section>
-
       <m-section class="comfortable">
         <m-row>
-          <m-column class="is-4">
-            <div class="content">
+          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-desktop-4">
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
+            </m-tile>
           </m-column>
-          <m-column class="is-4">
-            <div class="content">
+          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-desktop-4">
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
+            </m-tile>
           </m-column>
-          <m-column class="is-4">
-            <div class="content">
+          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-desktop-4">
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
+            </m-tile>
           </m-column>
-          <m-column class="is-12">
-            <div class="content">
+          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-desktop-12">
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
+            </m-tile>
           </m-column>
         </m-row>
       </m-section>
-
       <m-section class="narrow">
         <m-row>
-          <m-column class="is-12">
-            <div class="content">
+          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-desktop-4">
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
+            </m-tile>
           </m-column>
-          <m-column class="is-12">
-            <div class="content">
+          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-desktop-4">
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
+            </m-tile>
           </m-column>
-          <m-column class="is-12">
-            <div class="content">
+          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-desktop-4">
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
+            </m-tile>
           </m-column>
-          <m-column class="is-12">
-            <div class="content">
+          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-desktop-12">
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-            <div class="content">
+            </m-tile>
+            <m-tile>
               <m-display>Content</m-display>
-            </div>
-          </m-column>
-        </m-row>
-      </m-section>
-    </m-layout>
-
-    <m-layout class="is-tablet">
-      <m-section>
-        <m-row>
-          <m-column class="is-4">
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-          </m-column>
-          <m-column class="is-4">
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-          </m-column>
-          <m-column class="is-4">
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-          </m-column>
-          <m-column class="is-12">
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-          </m-column>
-        </m-row>
-      </m-section>
-    </m-layout>
-
-    <m-layout class="is-foldable">
-      <m-section>
-        <m-row>
-          <m-column class="is-6">
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-          </m-column>
-          <m-column class="is-6">
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-          </m-column>
-          <m-column class="is-6">
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-          </m-column>
-          <m-column class="is-6">
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-          </m-column>
-        </m-row>
-      </m-section>
-    </m-layout>
-
-    <m-layout class="is-mobile">
-      <m-section>
-        <m-row>
-          <m-column class="is-12">
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-          </m-column>
-          <m-column class="is-12">
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-          </m-column>
-          <m-column class="is-12">
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-          </m-column>
-          <m-column class="is-12">
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
-            <div class="content">
-              <m-display>Content</m-display>
-            </div>
+            </m-tile>
           </m-column>
         </m-row>
       </m-section>
@@ -306,11 +197,12 @@ import {
 
           .m-column
             border-radius: 12px
+            background: orange
 
-            @include theme.preferred
-              background: theme.style(elevation-2), theme.style(surface)
+            // @include theme.preferred
+            //   background: theme.style(elevation-2), theme.style(surface)
 
-            .content
+            .m-tile
               border-radius: 12px
 
               @include theme.preferred

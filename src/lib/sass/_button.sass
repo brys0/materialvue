@@ -40,7 +40,6 @@
   padding: 0
   position: relative
   display: grid
-  grid-template-rows: [row-1-start] 1fr [row-1-end]  
   grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] 1fr [col-2-end]
   place-items: center
   border: none
@@ -62,7 +61,6 @@ a.m-button
     display: block
 
   > .m-icon
-    grid-row: row-1-start / row-1-end
     grid-column: col-1-start / col-1-end
 
   > .m-typography
@@ -71,7 +69,6 @@ a.m-button
     &.m-label
       @extend %m-typography-label-large
 
-      grid-row: row-1-start / row-1-end
       grid-column: col-2-start / col-2-end
 
   &:disabled:not(.hovered):not(.focused):not(.pressed),
@@ -366,7 +363,6 @@ a.m-button
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
   &.m-text
-    min-width: 48px
     height: 40px
     border-radius: 20px
     
@@ -782,7 +778,6 @@ a.m-button
   
   &.m-extended-fab
     padding: 0 16px
-    min-width: 80px
     height: 56px
     border-radius: 16px
 

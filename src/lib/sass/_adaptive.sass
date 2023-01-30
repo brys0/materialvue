@@ -98,7 +98,7 @@ $desktop-width: conversion.to-px($desktop-width-value)
   @media (hover)
     @content
 
-$measurements: (mobile: $mobile-width, min-foldable: $min-foldable-width, max-foldable: $max-foldable-width, min-tablet: $min-tablet-width, max-tablet: $max-tablet-width, desktop: $desktop-width)
+$measurements: (mobile: $mobile-width-value, min-foldable: $min-foldable-width-value, max-foldable: $max-foldable-width-value, min-tablet: $min-tablet-width-value, max-tablet: $max-tablet-width-value, desktop: $desktop-width-value)
 
 @function width($key)
   @return map.get($measurements, $key)

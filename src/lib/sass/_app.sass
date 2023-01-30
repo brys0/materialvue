@@ -58,14 +58,18 @@ body
     grid-column: col-1-start / col-3-end
 
   > .m-navigation-rail
-    width: 80px
-    grid-row: row-2-start / row-3-end
-    grid-column: col-1-start / col-1-end
+    @include adaptive.is-lte-foldable
+      display: none
 
-    + .m-navigation-drawer
-      &,
-      &.is-opened
-        width: 280px
+    @include adaptive.is-gte-tablet
+      width: 80px
+      grid-row: row-2-start / row-3-end
+      grid-column: col-1-start / col-1-end
+
+      + .m-navigation-drawer
+        &,
+        &.is-opened
+          width: 280px
 
   > .m-navigation-drawer
     grid-row: row-2-start / row-3-end
