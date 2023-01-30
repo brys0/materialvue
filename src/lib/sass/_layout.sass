@@ -49,6 +49,20 @@
   grid-auto-rows: max-content
   grid-auto-flow: row
 
+%m-layout-full,
+%m-layout-comfortable,
+%m-layout-narrow
+  margin: 0 auto
+
+%m-layout-full
+  width: 100%
+
+%m-layout-comfortable
+  width: adaptive.width(max-tablet)
+
+%m-layout-narrow
+  width: adaptive.width(max-foldable)
+  
 %m-layout-section
   display: grid
   align-content: start
@@ -192,6 +206,16 @@
 
 .m-section
   @extend %m-layout-section
+
+  &,
+  &.full
+    @extend %m-layout-full
+
+  &.comfortable
+    @extend %m-layout-comfortable
+
+  &.narrow
+    @extend %m-layout-narrow
 
 .m-row
   @extend %m-layout-row

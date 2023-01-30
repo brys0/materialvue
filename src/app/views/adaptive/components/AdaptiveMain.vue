@@ -64,6 +64,15 @@ import {
             <div class="content">
               <m-display>Content</m-display>
             </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
           </m-column>
           <m-column class="is-3">
             <div class="content">
@@ -71,6 +80,92 @@ import {
             </div>
           </m-column>
           <m-column class="is-3">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+          </m-column>
+        </m-row>
+      </m-section>
+
+      <m-section class="comfortable">
+        <m-row>
+          <m-column class="is-4">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+          </m-column>
+          <m-column class="is-4">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+          </m-column>
+          <m-column class="is-4">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+          </m-column>
+          <m-column class="is-12">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+          </m-column>
+        </m-row>
+      </m-section>
+
+      <m-section class="narrow">
+        <m-row>
+          <m-column class="is-12">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+          </m-column>
+          <m-column class="is-12">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+          </m-column>
+          <m-column class="is-12">
+            <div class="content">
+              <m-display>Content</m-display>
+            </div>
+          </m-column>
+          <m-column class="is-12">
             <div class="content">
               <m-display>Content</m-display>
             </div>

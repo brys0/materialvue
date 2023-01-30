@@ -30,14 +30,16 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+@use 'sass:map'
+
 @use './conversion'
 
 /* 0-599+ */
-$max-mobile-width-value: 599
-$max-mobile-width: conversion.to-px($max-mobile-width-value)
+$mobile-width-value: 599
+$mobile-width: conversion.to-px($mobile-width-value)
 
 /* 600-839 */
-$min-foldable-width-value: $max-mobile-width-value + 1
+$min-foldable-width-value: $mobile-width-value + 1
 $min-foldable-width: conversion.to-px($min-foldable-width-value)
 $max-foldable-width-value: 839
 $max-foldable-width: conversion.to-px($max-foldable-width-value)
@@ -48,12 +50,12 @@ $min-tablet-width: conversion.to-px($min-tablet-width-value)
 $max-tablet-width-value: 1139
 $max-tablet-width: conversion.to-px($max-tablet-width-value)
 
-/* 1140-1439 */
-$min-desktop-width-value: $max-tablet-width-value + 1
-$min-desktop-width: conversion.to-px($min-desktop-width-value)
+/* 1140 */
+$desktop-width-value: $max-tablet-width-value + 1
+$desktop-width: conversion.to-px($desktop-width-value)
 
 @mixin is-mobile
-  @media (max-width: $max-mobile-width)
+  @media (max-width: $mobile-width)
     @content
 
 @mixin is-lte-foldable
@@ -81,7 +83,7 @@ $min-desktop-width: conversion.to-px($min-desktop-width-value)
     @content
 
 @mixin is-desktop
-  @media (min-width: $min-desktop-width)
+  @media (min-width: $desktop-width)
     @content
 
 @mixin is-portrait
@@ -95,3 +97,8 @@ $min-desktop-width: conversion.to-px($min-desktop-width-value)
 @mixin is-hoverable
   @media (hover)
     @content
+
+$measurements: (mobile: $mobile-width, min-foldable: $min-foldable-width, max-foldable: $max-foldable-width, min-tablet: $min-tablet-width, max-tablet: $max-tablet-width, desktop: $desktop-width)
+
+@function width($key)
+  @return map.get($measurements, $key)
