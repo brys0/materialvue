@@ -41,15 +41,19 @@
   align-content: start
   justify-items: center
   justify-content: stretch
-  grid-auto-rows: 56px
+  grid-auto-rows: max-content
   grid-auto-flow: row
   gap: 12px
 
   @include theme.preferred
     background: theme.style(surface)
 
+  > .m-icon:first-child
+    margin: 8px 0
+
   > .m-rail
     &.m-button
+      height: 56px
       grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] max-content [row-2-end]  
       grid-template-columns: [col-1-start] 1fr [col-1-end]
       gap: 4px

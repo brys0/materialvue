@@ -45,10 +45,11 @@
   @include adaptive.is-mobile
     gap: 8px
 
-  @include adaptive.is-gte-foldable
+  @include adaptive.is-gt-mobile
     gap: 12px
 
 %m-layout
+  margin: 0 8px
   display: grid
   align-items: stretch
   align-content: stretch
@@ -67,16 +68,13 @@
   grid-auto-rows: max-content
   grid-auto-flow: row
 
-%m-layout-section-full,
 %m-layout-section-comfortable,
 %m-layout-section-narrow
-  @include adaptive.is-lte-foldable
-    padding: 0 8px
-    
-  @include adaptive.is-gte-tablet
-    padding: 0 32px
+  @include adaptive.is-gt-tablet
+    padding: 0 24px
 
 %m-layout-section-full
+  padding: 0
   min-width: 100%
     
 %m-layout-section-comfortable
@@ -91,8 +89,8 @@
   @include adaptive.is-tablet
     max-width: conversion.to-px(adaptive.width(max-tablet))
 
-  @include adaptive.is-desktop
-    max-width: conversion.to-px(adaptive.width(desktop))
+  @include adaptive.is-gt-tablet
+    max-width: conversion.to-px(adaptive.width(gt-tablet))
     
 %m-layout-section-narrow
   max-width: conversion.to-px(adaptive.width(max-foldable))
@@ -103,7 +101,7 @@
   @include adaptive.is-mobile
     grid-template-columns: repeat(8, 1fr)
   
-  @include adaptive.is-gte-foldable
+  @include adaptive.is-gt-mobile
     grid-template-columns: repeat(12, 1fr)
 
 %m-layout-column
@@ -147,83 +145,77 @@
   @include adaptive.is-mobile
     @include grid-column('mobile-', 8)
 
+  @include adaptive.is-gt-mobile
+    @include grid-column('gt-mobile-', 12)
+
   @include adaptive.is-foldable
     @include grid-column('foldable-', 12)
+  
+  @include adaptive.is-gt-foldable
+    @include grid-column('gt-foldable-', 12)
+  
+  @include adaptive.is-lt-tablet
+    @include grid-column('lt-tablet-', 12)
     
   @include adaptive.is-tablet
     @include grid-column('tablet-', 12)
 
-  @include adaptive.is-desktop  
-    @include grid-column('desktop-', 12)
+  @include adaptive.is-gt-tablet  
+    @include grid-column('gt-tablet-', 12)
 
 .m-tile
   @extend %m-layout-tile
 
 .is-hidden
-  display: none
+  display: none !important
 
 @include adaptive.is-mobile
-  .is-lte-foldable,
+  .is-gt-mobile,
   .is-foldable,
-  .is-gte-foldable,
-  .is-lte-tablet,
+  .is-gt-foldable,
   .is-tablet,
-  .is-gte-tablet,
-  .is-desktop
-    display: none
+  .is-gt-tablet
+    display: none !important
 
-@include adaptive.is-lte-foldable
-  .is-gte-foldable,
-  .is-lte-tablet,
-  .is-tablet,
-  .is-gte-tablet,
-  .is-desktop
-    display: none
+@include adaptive.is-gt-mobile
+  .is-mobile
+    display: none !important
 
 @include adaptive.is-foldable
   .is-mobile,
-  .is-lte-foldable,
-  .is-gte-foldable,
-  .is-lte-tablet,
+  .is-gt-foldable,
   .is-tablet,
-  .is-gte-tablet,
-  .is-desktop
-    display: none
+  .is-gt-tablet
+    display: none !important
 
-@include adaptive.is-gte-foldable
+@include adaptive.is-gt-foldable
   .is-mobile,
-  .is-lte-foldable
-    display: none
+  .is-gt-mobile,
+  .is-foldable,
+  .is-lt-tablet
+    display: none !important
 
-@include adaptive.is-lte-tablet
-  .is-gte-tablet,
-  .is-desktop
-    display: none
+@include adaptive.is-lt-tablet
+  .is-gt-foldable,
+  .is-tablet,
+  .is-gt-tablet
+    display: none !important
 
 @include adaptive.is-tablet
   .is-mobile,
-  .is-lte-foldable,
   .is-foldable,
-  .is-gte-foldable,
-  .is-lte-tablet,
-  .is-gte-tablet,
-  .is-desktop
-    display: none
+  .is-lt-tablet
+    display: none !important
   
-@include adaptive.is-gte-tablet
+@include adaptive.is-gt-tablet
   .is-mobile,
-  .is-lte-foldable,
+  .is-gt-mobile,
   .is-foldable,
-  .is-gte-foldable,
-  .is-lte-tablet
-    display: none
+  .is-gt-foldable,
+  .is-lt-tablet,
+  .is-tablet
+    display: none !important
 
-@include adaptive.is-desktop
-  .is-mobile,
-  .is-lte-foldable,
-  .is-foldable,
-  .is-gte-foldable,
-  .is-lte-tablet,
-  .is-tablet,
-  .is-gte-tablet
-    display: none
+@include adaptive.is-lt-desktop
+  .is-gt-tablet
+    display: none !important

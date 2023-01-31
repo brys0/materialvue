@@ -41,6 +41,7 @@ body
   overflow: hidden
 
 .m-app
+  position: relative
   width: 100vw
   height: 100vh
   display: grid
@@ -56,12 +57,15 @@ body
   > .m-top-app-bar
     grid-row: row-1-start / row-1-end
     grid-column: col-1-start / col-3-end
+    z-index: 3
 
   > .m-navigation-rail
-    @include adaptive.is-lte-foldable
+    z-index: 8
+
+    @include adaptive.is-lt-desktop
       display: none
 
-    @include adaptive.is-gte-tablet
+    @include adaptive.is-gt-tablet
       width: 80px
       grid-row: row-2-start / row-3-end
       grid-column: col-1-start / col-1-end
@@ -70,35 +74,61 @@ body
         &,
         &.is-opened
           width: 280px
-
+  
   > .m-navigation-drawer
     grid-row: row-2-start / row-3-end
     grid-column: col-2-start / col-2-end
+    z-index: 8
     overflow: hidden
 
-    &,
     &.is-opened
       width: 360px
+
+      @include adaptive.is-lt-desktop
+        ~ .m-scrim
+          display: block
 
     &.is-closed
       width: 0
 
+    @include adaptive.is-lt-desktop
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      grid-row: row-1-start / row-3-end
+    
   > .m-toolbar
     grid-row: row-2-start / row-2-end
     grid-column: col-3-start / col-3-end
+    z-index: 2
   
   > .m-main
     grid-row: row-3-start / row-3-end
     grid-column: col-3-start / col-3-end
-
+    z-index: 0
+    
   > .m-finder
     grid-row: row-2-start / row-3-end
     grid-column: col-4-start / col-4-end
+    z-index: 2
 
   > .m-modal
     grid-row: row-1-start / row-3-end
     grid-column: col-1-start / col-4-end
+    z-index: 10
 
     &:empty
       display: none
   
+  > .m-scrim
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    z-index: 4
+    display: none
+      
+    @include theme.preferred
+      background: theme.style(scrim)

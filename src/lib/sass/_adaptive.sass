@@ -51,39 +51,39 @@ $max-tablet-width-value: 1139
 $max-tablet-width: conversion.to-px($max-tablet-width-value)
 
 /* 1140 */
-$desktop-width-value: $max-tablet-width-value + 1
-$desktop-width: conversion.to-px($desktop-width-value)
+$gt-tablet-width-value: $max-tablet-width-value + 1
+$gt-tablet-width: conversion.to-px($gt-tablet-width-value)
 
 @mixin is-mobile
   @media (max-width: $mobile-width)
     @content
 
-@mixin is-lte-foldable
-  @media (max-width: $max-foldable-width)
+@mixin is-gt-mobile
+  @media (min-width: $min-foldable-width)
     @content
 
 @mixin is-foldable
   @media (min-width: $min-foldable-width) and (max-width: $max-foldable-width)
     @content
 
-@mixin is-gte-foldable
-  @media (min-width: $min-foldable-width)
+@mixin is-gt-foldable
+  @media (min-width: $min-tablet-width)
     @content
 
-@mixin is-lte-tablet
-  @media (max-width: $max-tablet-width)
+@mixin is-lt-tablet
+  @media (max-width: $max-foldable-width)
     @content
 
 @mixin is-tablet
   @media (min-width: $min-tablet-width) and (max-width: $max-tablet-width)
     @content
 
-@mixin is-gte-tablet
-  @media (min-width: $min-tablet-width)
+@mixin is-gt-tablet
+  @media (min-width: $gt-tablet-width)
     @content
 
-@mixin is-desktop
-  @media (min-width: $desktop-width)
+@mixin is-lt-desktop
+  @media (max-width: $max-tablet-width)
     @content
 
 @mixin is-portrait
@@ -98,7 +98,7 @@ $desktop-width: conversion.to-px($desktop-width-value)
   @media (hover)
     @content
 
-$measurements: (mobile: $mobile-width-value, min-foldable: $min-foldable-width-value, max-foldable: $max-foldable-width-value, min-tablet: $min-tablet-width-value, max-tablet: $max-tablet-width-value, desktop: $desktop-width-value)
+$measurements: (mobile: $mobile-width-value, min-foldable: $min-foldable-width-value, max-foldable: $max-foldable-width-value, min-tablet: $min-tablet-width-value, max-tablet: $max-tablet-width-value, gt-tablet: $gt-tablet-width-value, lt-desktop: $max-tablet-width-value)
 
 @function width($key)
   @return map.get($measurements, $key)

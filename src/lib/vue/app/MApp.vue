@@ -122,5 +122,6 @@ onBeforeUnmount(() => {
     <router-view name="main" />
     <router-view name="finder" />
     <router-view name="modal" />
+    <div class="m-scrim" />
   </div>
 </template>
