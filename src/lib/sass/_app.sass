@@ -62,7 +62,7 @@ body
   > .m-navigation-rail
     z-index: 8
 
-    @include adaptive.is-lt-desktop
+    @include adaptive.is-lt-tablet
       display: none
 
     @include adaptive.is-gt-tablet
@@ -84,14 +84,14 @@ body
     &.is-opened
       width: 360px
 
-      @include adaptive.is-lt-desktop
+      @include adaptive.is-lt-tablet
         ~ .m-scrim
           display: block
 
     &.is-closed
       width: 0
 
-    @include adaptive.is-lt-desktop
+    @include adaptive.is-lt-tablet
       position: absolute
       top: 0
       left: 0
