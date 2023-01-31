@@ -45,6 +45,15 @@ export {
 export {
 	MNavigationRail,
 	MRailButton,
+	MRailLeading,
+	MRailBody,
+	MRailTrailing,
+	MRailList,
+	MRailListItem,
+	MRailListItemState,
+	MRailListItemBody,
+	MRailListItemLeading,
+	MRailListItemTrailing,
 } from '@/lib/vue/navigation-rail'
 
 export {

@@ -37,122 +37,145 @@
   @extend %is-not-selectable
 
   display: grid
-  align-items: center
-  align-content: start
-  justify-items: center
+  grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] 1fr [row-2-end row-3-start] max-content [row-3-end]
+  align-content: stretch
   justify-content: stretch
-  grid-auto-rows: max-content
-  grid-auto-flow: row
   gap: 12px
-
+  
   @include theme.preferred
     background: theme.style(surface)
+  
+  > .m-rail-leading,
+  > .m-rail-body,
+  > .m-rail-trailing
+    display: grid
+    grid-row: row-1-start / row-1-end
+    grid-auto-rows: minmax(56px, max-content)
+    grid-auto-flow: row
+    gap: 12px
 
-  > .m-icon:first-child
-    margin: 8px 0
+  > .m-rail-leading,
+  > .m-rail-trailing
+    align-items: center
+    justify-items: center
 
-  > .m-rail
-    &.m-button
-      height: 56px
-      grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] max-content [row-2-end]  
-      grid-template-columns: [col-1-start] 1fr [col-1-end]
-      gap: 4px
+  > .m-rail-leading
+    grid-row: row-1-start / row-1-end
+    
+  > .m-rail-trailing
+    grid-row: row-3-start / row-3-end
+    
+  > .m-rail-body
+    grid-row: row-2-start / row-2-end
+    align-content: center
+    justify-items: stretch
 
-      &::before
-        display: none
+    overflow-x: hidden
+    overflow-y: scroll
 
-      > .m-icon
-        position: relative
-        width: 56px
-        height: 32px
-        line-height: 32px
-        grid-row: row-1-start / row-1-end
-        grid-column: col-1-start / col-1-end
-        border-radius: 16px
+    > .m-rail
+      &.m-button
+        grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] max-content [row-2-end]  
+        grid-template-columns: [col-1-start] 1fr [col-1-end]
+        align-items: center
+        justify-items: center
+        gap: 4px
 
         &::before
-          content: ' '
-          position: absolute
-          top: 0
-          left: 0
-          bottom: 0
-          right: 0
-          display: block
+          display: none
+
+        > .m-icon
+          position: relative
+          width: 56px
+          height: 32px
+          line-height: 32px
+          grid-row: row-1-start / row-1-end
+          grid-column: col-1-start / col-1-end
           border-radius: 16px
 
-      > .m-typography
-        &.m-label
-          @extend %m-typography-label-medium
-
-          grid-row: row-2-start / row-2-end
-          grid-column: col-1-start / col-1-end
-
-      &,
-      &.enabled
-        > .m-icon
-          @include theme.preferred
-            background: theme.style(surface)
-            color: theme.style(on-surface-variant)
+          &::before
+            content: ' '
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            display: block
+            border-radius: 16px
 
         > .m-typography
           &.m-label
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
+            @extend %m-typography-label-medium
 
-        &.selected
+            grid-row: row-2-start / row-2-end
+            grid-column: col-1-start / col-1-end
+
+        &,
+        &.enabled
           > .m-icon
             @include theme.preferred
-              background: theme.style(secondary-container)
-              color: theme.style(on-secondary-container)
+              background: theme.style(surface)
+              color: theme.style(on-surface-variant)
 
           > .m-typography
             &.m-label
               @include theme.preferred
-                color: theme.style(on-surface)
-
-        &:hover:not(.focused):not(.pressed):not(.disabled),
-        &.hovered:not(.focused):not(.pressed):not(.disabled)
-          > .m-icon
-            &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-surface-variant), 8%)
+                color: theme.style(on-surface-variant)
 
           &.selected
             > .m-icon
-              &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
-                        
-        &:focus:not(.hovered):not(.pressed):not(.disabled),
-        &.focused:not(.hovered):not(.pressed):not(.disabled)
-          > .m-icon
-            &::before
               @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
+                background: theme.style(secondary-container)
+                color: theme.style(on-secondary-container)
 
-          &.selected
+            > .m-typography
+              &.m-label
+                @include theme.preferred
+                  color: theme.style(on-surface)
+
+          &:hover:not(.focused):not(.pressed):not(.disabled),
+          &.hovered:not(.focused):not(.pressed):not(.disabled)
             > .m-icon
               &::before
                 @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+                  background: conversion.hex-to-rgba(theme.style(on-surface-variant), 8%)
 
-        &:active:not(.hovered):not(.focused):not(.disabled),
-        &.pressed:not(.hovered):not(.focused):not(.disabled)
-          > .m-icon
-            &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
-
-          &.selected
+            &.selected
+              > .m-icon
+                &::before
+                  @include theme.preferred
+                    background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+                          
+          &:focus:not(.hovered):not(.pressed):not(.disabled),
+          &.focused:not(.hovered):not(.pressed):not(.disabled)
             > .m-icon
               &::before
                 @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+                  background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
 
-        &:disabled:not(.hovered):not(.focused):not(.pressed),
-        &[disabled]:not(.hovered):not(.focused):not(.pressed),
-        &.disabled:not(.hovered):not(.focused):not(.pressed)
-          > .m-icon
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
-              
+            &.selected
+              > .m-icon
+                &::before
+                  @include theme.preferred
+                    background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+          &:active:not(.hovered):not(.focused):not(.disabled),
+          &.pressed:not(.hovered):not(.focused):not(.disabled)
+            > .m-icon
+              &::before
+                @include theme.preferred
+                  background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
+
+            &.selected
+              > .m-icon
+                &::before
+                  @include theme.preferred
+                    background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+          &:disabled:not(.hovered):not(.focused):not(.pressed),
+          &[disabled]:not(.hovered):not(.focused):not(.pressed),
+          &.disabled:not(.hovered):not(.focused):not(.pressed)
+            > .m-icon
+              @include theme.preferred
+                color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+                

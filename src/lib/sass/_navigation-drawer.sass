@@ -38,22 +38,14 @@
 
   display: grid
   grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] 1fr [row-2-end row-3-start] max-content [row-3-end]
-  grid-template-columns: [col-1-start] 1fr [col-1-end]
   
   @include theme.preferred
     background: theme.style(surface)
-    box-shadow: theme.style(shadow-0)
-        
-  &.modal
-    @include theme.preferred
-      background: theme.style(surface)
-      box-shadow: theme.style(shadow-1)
 
   > .m-drawer-leading
     padding: 0 12px
     grid-row: row-1-start / row-1-end
-    grid-column: col-1-start / col-1-end
-
+    
     > .m-typography
       &.m-headline
         @extend %m-typography-title-small
@@ -66,13 +58,11 @@
   > .m-drawer-trailing
     padding: 0 12px
     grid-row: row-3-start / row-3-end
-    grid-column: col-1-start / col-1-end
-
+    
   > .m-drawer-body
     padding: 0 12px
     grid-row: row-2-start / row-2-end
-    grid-column: col-1-start / col-1-end
-
+    
     overflow-x: hidden
     overflow-y: scroll
 
