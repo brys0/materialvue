@@ -49,8 +49,11 @@ import {
 	MDrawerListItemTrailing,
 	MHeadline,
 	MLabel,
+	MIconButton,
 	MRoundedIcon,
 	MDivider,
+	MBar,
+	MBarLeading,
 } from '@/lib/vue'
 
 import {
@@ -59,16 +62,33 @@ import {
 
 const appStore = useAppStore()
 
-const isOpened = computed(() => appStore.isNavigationDrawerOpened)
+const toggleNavigationDrawer = (): void => appStore.toggleNavigationDrawer()
+const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpened)
 
 </script>
 
 <template>
-  <m-navigation-drawer :is-opened="isOpened">
+  <m-navigation-drawer :is-opened="isNavigationDrawerOpened">
     <m-drawer-leading>
-      <m-headline>
+      <m-headline class="is-gt-tablet">
         Headline
       </m-headline>
+      <m-bar class="is-lt-desktop">
+        <m-bar-leading>
+          <m-icon-button
+            :toggle="true"
+            :selected="isNavigationDrawerOpened"
+            @click="toggleNavigationDrawer"
+          >
+            <m-rounded-icon>
+              arrow_back_ios
+            </m-rounded-icon>
+          </m-icon-button>
+          <m-headline>
+            Material
+          </m-headline>
+        </m-bar-leading>
+      </m-bar>
     </m-drawer-leading>
     <m-drawer-body>
       <m-drawer-list>

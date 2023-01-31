@@ -49,7 +49,6 @@
   > .m-rail-body,
   > .m-rail-trailing
     display: grid
-    grid-row: row-1-start / row-1-end
     grid-auto-rows: minmax(56px, max-content)
     grid-auto-flow: row
     gap: 12px
@@ -57,7 +56,7 @@
   > .m-rail-leading,
   > .m-rail-trailing
     align-items: center
-    justify-items: center
+    justify-content: center
 
   > .m-rail-leading
     grid-row: row-1-start / row-1-end
@@ -68,7 +67,6 @@
   > .m-rail-body
     grid-row: row-2-start / row-2-end
     align-content: start
-    justify-items: stretch
 
     overflow-x: hidden
     overflow-y: scroll

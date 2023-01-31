@@ -31,6 +31,7 @@
  */
 
 @use './theme'
+@use './adaptive'
 @use './conversion'
 
 .m-navigation-drawer
@@ -42,8 +43,18 @@
   @include theme.preferred
     background: theme.style(surface)
 
+  > .m-drawer-leading,
+  > .m-drawer-body,
+  > .m-drawer-trailing
+    display: grid
+    grid-auto-flow: row
+    gap: 12px
+
+  > .m-drawer-leading,
+  > .m-drawer-trailing
+    align-items: center
+    
   > .m-drawer-leading
-    padding: 0 12px
     grid-row: row-1-start / row-1-end
     
     > .m-typography
@@ -55,14 +66,24 @@
         @include theme.preferred
           color: theme.style(on-surface-variant)
   
+    @include adaptive.is-gt-tablet
+      padding: 0 12px
+      
+    @include adaptive.is-lt-desktop
+      padding: 0 16px
+      grid-auto-rows: minmax(64px, max-content)
+
   > .m-drawer-trailing
-    padding: 0 12px
     grid-row: row-3-start / row-3-end
     
+  > .m-drawer-trailing,
   > .m-drawer-body
     padding: 0 12px
-    grid-row: row-2-start / row-2-end
+    grid-auto-rows: minmax(56px, max-content)
     
+  > .m-drawer-body
+    grid-row: row-2-start / row-2-end
+    align-content: start
     overflow-x: hidden
     overflow-y: scroll
 
