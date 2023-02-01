@@ -8,18 +8,12 @@ on:
 jobs:
   lint:
     uses: cosmicmind/actions/.github/workflows/lint.yml@release
-    secrets:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   codeql:
     needs: lint
     uses: cosmicmind/actions/.github/workflows/codeql.yml@release
   dev-build:
     needs: codeql
     uses: cosmicmind/actions/.github/workflows/dev-build.yml@release
-    secrets:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   test:
     needs: dev-build
     uses: cosmicmind/actions/.github/workflows/test.yml@release
-    secrets:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
