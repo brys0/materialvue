@@ -1,0 +1,104 @@
+/**
+ * BSD 3-Clause License
+ *
+ * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicmind dot com>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its
+ *    contributors may be used to endorse or promote products derived from
+ *    this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES LOSS OF USE, DATA, OR PROFITS OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+@use 'sass:map'
+
+@use './conversion'
+
+/* 0-599+ */
+$mobile-width-value: 599
+$mobile-width: conversion.to-px($mobile-width-value)
+
+/* 600-839 */
+$min-foldable-width-value: $mobile-width-value + 1
+$min-foldable-width: conversion.to-px($min-foldable-width-value)
+$max-foldable-width-value: 839
+$max-foldable-width: conversion.to-px($max-foldable-width-value)
+
+/* 840-1139 */
+$min-tablet-width-value: $max-foldable-width-value + 1
+$min-tablet-width: conversion.to-px($min-tablet-width-value)
+$max-tablet-width-value: 1299
+$max-tablet-width: conversion.to-px($max-tablet-width-value)
+
+/* 1300 */
+$gt-tablet-width-value: $max-tablet-width-value + 1
+$gt-tablet-width: conversion.to-px($gt-tablet-width-value)
+
+@mixin is-mobile
+  @media (max-width: $mobile-width)
+    @content
+
+@mixin is-gt-mobile
+  @media (min-width: $min-foldable-width)
+    @content
+
+@mixin is-foldable
+  @media (min-width: $min-foldable-width) and (max-width: $max-foldable-width)
+    @content
+
+@mixin is-gt-foldable
+  @media (min-width: $min-tablet-width)
+    @content
+
+@mixin is-lt-tablet
+  @media (max-width: $max-foldable-width)
+    @content
+
+@mixin is-tablet
+  @media (min-width: $min-tablet-width) and (max-width: $max-tablet-width)
+    @content
+
+@mixin is-gt-tablet
+  @media (min-width: $gt-tablet-width)
+    @content
+
+@mixin is-lt-desktop
+  @media (max-width: $max-tablet-width)
+    @content
+
+@mixin is-portrait
+  @media (orientation: portrait)
+    @content
+
+@mixin is-landscape
+  @media (orientation: landscape)
+    @content
+
+@mixin is-hoverable
+  @media (hover)
+    @content
+
+$measurements: (mobile: $mobile-width-value, min-foldable: $min-foldable-width-value, max-foldable: $max-foldable-width-value, min-tablet: $min-tablet-width-value, max-tablet: $max-tablet-width-value, gt-tablet: $gt-tablet-width-value, lt-desktop: $max-tablet-width-value)
+
+@function width($key)
+  @return map.get($measurements, $key)

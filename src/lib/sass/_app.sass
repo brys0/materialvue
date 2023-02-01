@@ -1,0 +1,138 @@
+/**
+ * BSD 3-Clause License
+ *
+ * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicmind dot com>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its
+ *    contributors may be used to endorse or promote products derived from
+ *    this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES LOSS OF USE, DATA, OR PROFITS OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+@use './theme'
+@use './adaptive'
+
+html
+  width: -webkit-fill-available
+  height: -webkit-fill-available
+
+body
+  margin: 0
+  padding: 0
+  width: 100vw
+  width: -webkit-fill-available
+  height: 100vh
+  height: -webkit-fill-available
+  overflow: hidden
+
+.m-app
+  position: relative
+  width: 100vw
+  width: -webkit-fill-available
+  height: 100vh
+  height: -webkit-fill-available
+  display: grid
+  grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] max-content [row-2-end row-3-start] 1fr [row-3-end]
+  grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] max-content [col-2-end col-3-start] 1fr [col-3-end col-4-start] max-content [col-4-end]
+  align-content: stretch
+  justify-content: stretch
+  overflow: hidden
+
+  @include theme.preferred
+    background: theme.style(background)
+
+  > .m-top-app-bar
+    grid-row: row-1-start / row-1-end
+    grid-column: col-1-start / col-3-end
+    z-index: 3
+
+  > .m-navigation-rail
+    z-index: 8
+
+    @include adaptive.is-lt-desktop
+      display: none
+
+    @include adaptive.is-gt-tablet
+      width: 80px
+      grid-row: row-2-start / row-3-end
+      grid-column: col-1-start / col-1-end
+
+  > .m-navigation-drawer
+    grid-row: row-2-start / row-3-end
+    grid-column: col-2-start / col-2-end
+    z-index: 8
+    overflow: hidden
+
+    &.is-opened
+      width: 280px
+
+      @include adaptive.is-lt-desktop
+        ~ .m-scrim
+          display: block
+
+    &.is-closed
+      width: 0
+
+    @include adaptive.is-lt-desktop
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      grid-row: row-1-start / row-3-end
+      box-shadow: theme.style(shadow-3)
+
+  > .m-toolbar
+    grid-row: row-2-start / row-2-end
+    grid-column: col-3-start / col-3-end
+    z-index: 2
+
+  > .m-main
+    grid-row: row-3-start / row-3-end
+    grid-column: col-3-start / col-3-end
+    z-index: 0
+
+  > .m-finder
+    grid-row: row-2-start / row-3-end
+    grid-column: col-4-start / col-4-end
+    z-index: 2
+
+  > .m-modal
+    grid-row: row-1-start / row-3-end
+    grid-column: col-1-start / col-4-end
+    z-index: 10
+
+    &:empty
+      display: none
+
+  > .m-scrim
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    z-index: 4
+    display: none
+
+    @include theme.preferred
+      background: theme.style(scrim)

@@ -13,9 +13,7 @@ module.exports = {
 		parser: '@typescript-eslint/parser',
 		sourceType: 'module',
 		ecmaVersion: 2022,
-		ecmaFeatures: {
-			jsx: true,
-		},
+		ecmaFeatures: { jsx: true },
 	},
 	plugins: [
 		'vue',
@@ -85,9 +83,7 @@ module.exports = {
 		'no-return-await': [ 2 ],
 		'no-self-compare': [ 2 ],
 		'no-unused-expressions': [ 2 ],
-		'no-use-before-define': [ 2, {
-			functions: false,
-		} ],
+		'no-use-before-define': [ 2, { functions: false } ],
 		'no-useless-backreference': [ 2 ],
 		'no-useless-call': [ 2 ],
 		'no-useless-computed-key': [ 2 ],

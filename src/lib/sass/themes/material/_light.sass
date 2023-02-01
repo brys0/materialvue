@@ -1,0 +1,87 @@
+/**
+ * BSD 3-Clause License
+ *
+ * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicmind dot com>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its
+ *    contributors may be used to endorse or promote products derived from
+ *    this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES LOSS OF USE, DATA, OR PROFITS OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+@use '../../conversion'
+
+$neutral-100: #FFFFFF
+$neutral-0: #000000
+
+$primary: #6750A4
+$on-primary: #FFFFFF
+$primary-container: #EADDFF
+$on-primary-container: #21005E
+$inverse-primary: #D0BCFF
+
+$secondary: #625B71
+$on-secondary: #FFFFFF
+$secondary-container: #E8DEF8
+$on-secondary-container: #1E192B
+
+$tertiary: #7D5260
+$on-tertiary: #FFFFFF
+$tertiary-container: #FFD8E4
+$on-tertiary-container: #370B1E
+
+$error: #B3261E
+$on-error: #FFFFFF
+$error-container: #F9DEDC
+$on-error-container: #410E0B
+
+$background: #FFFBFE
+$on-background: #1C1B1F
+
+$surface: #FFFBFE
+$on-surface: #1C1B1F
+$surface-variant: #E7E0EC
+$on-surface-variant: #49454E
+$surface-tint: #6750A4
+$inverse-surface: #313033
+$on-inverse-surface: #F4EFF4
+
+$outline: #79747E
+$outline-variant: #C4C7C5
+
+$scrim: conversion.hex-to-rgba($neutral-0, 0.32)
+
+$shadow-0: 0 0 0 conversion.hex-to-rgba($neutral-0, 0), 0 0 0 0 conversion.hex-to-rgba($neutral-0, 0)
+$shadow-1: 0px 1px 2px conversion.hex-to-rgba($neutral-0, 0.3), 0px 1px 3px 1px conversion.hex-to-rgba($neutral-0, 0.15)
+$shadow-2: 0px 1px 2px conversion.hex-to-rgba($neutral-0, 0.3), 0px 2px 6px 2px conversion.hex-to-rgba($neutral-0, 0.15)
+$shadow-3: 0px 4px 8px 3px conversion.hex-to-rgba($neutral-0, 0.15), 0px 1px 3px conversion.hex-to-rgba($neutral-0, 0.3)
+$shadow-4: 0px 6px 10px 4px conversion.hex-to-rgba($neutral-0, 0.15), 0px 2px 3px conversion.hex-to-rgba($neutral-0, 0.3)
+$shadow-5: 0px 8px 12px 6px conversion.hex-to-rgba($neutral-0, 0.15), 0px 4px 4px conversion.hex-to-rgba($neutral-0, 0.3)
+
+$elevation-0: linear-gradient(0deg, conversion.hex-to-rgba($surface-tint, 0), conversion.hex-to-rgba($surface-tint, 0))
+$elevation-1: linear-gradient(0deg, conversion.hex-to-rgba($surface-tint, 0.05), conversion.hex-to-rgba($surface-tint, 0.05))
+$elevation-2: linear-gradient(0deg, conversion.hex-to-rgba($surface-tint, 0.08), conversion.hex-to-rgba($surface-tint, 0.08))
+$elevation-3: linear-gradient(0deg, conversion.hex-to-rgba($surface-tint, 0.11), conversion.hex-to-rgba($surface-tint, 0.11))
+$elevation-4: linear-gradient(0deg, conversion.hex-to-rgba($surface-tint, 0.12), conversion.hex-to-rgba($surface-tint, 0.12))
+$elevation-5: linear-gradient(0deg, conversion.hex-to-rgba($surface-tint, 0.14), conversion.hex-to-rgba($surface-tint, 0.14))

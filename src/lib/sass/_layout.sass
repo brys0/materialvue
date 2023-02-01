@@ -1,0 +1,214 @@
+/**
+ * BSD 3-Clause License
+ *
+ * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicmind dot com>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its
+ *    contributors may be used to endorse or promote products derived from
+ *    this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES LOSS OF USE, DATA, OR PROFITS OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+@use './adaptive'
+@use './conversion'
+
+@mixin grid-column($size, $count)
+  @for $i from 1 through $count
+    &.is-#{$size}#{$i}
+      grid-column: span $i
+
+%m-layout,
+%m-layout-section,
+%m-layout-row,
+%m-layout-column
+  @include adaptive.is-mobile
+    gap: 8px
+
+  @include adaptive.is-gt-mobile
+    gap: 12px
+
+%m-layout
+  margin: 0 8px
+  display: grid
+  align-items: stretch
+  align-content: stretch
+  justify-items: stretch
+  justify-content: stretch
+  grid-auto-rows: max-content
+  grid-auto-flow: row
+
+%m-layout-section
+  margin: 0 auto
+  display: grid
+  align-items: stretch
+  align-content: stretch
+  justify-items: stretch
+  justify-content: stretch
+  grid-auto-rows: max-content
+  grid-auto-flow: row
+
+%m-layout-section-full
+  padding: 0
+  min-width: 100%
+
+%m-layout-section-comfortable
+  width: 100%
+
+  @include adaptive.is-mobile
+    max-width: conversion.to-px(adaptive.width(mobile))
+
+  @include adaptive.is-foldable
+    max-width: conversion.to-px(adaptive.width(max-foldable))
+
+  @include adaptive.is-tablet
+    max-width: conversion.to-px(adaptive.width(max-tablet))
+
+  @include adaptive.is-gt-tablet
+    max-width: conversion.to-px(adaptive.width(gt-tablet))
+
+%m-layout-section-narrow
+  max-width: conversion.to-px(adaptive.width(max-foldable))
+
+%m-layout-row
+  display: grid
+
+  @include adaptive.is-mobile
+    grid-template-columns: repeat(8, 1fr)
+
+  @include adaptive.is-gt-mobile
+    grid-template-columns: repeat(12, 1fr)
+
+%m-layout-column
+  display: grid
+  align-content: stretch
+  justify-content: stretch
+  grid-auto-rows: minmax(1fr, max-content)
+  grid-auto-flow: row
+
+%m-layout-tile
+  display: grid
+  align-items: center
+  align-content: stretch
+  justify-items: center
+  justify-content: stretch
+
+.m-layout
+  @extend %m-layout
+
+.m-section
+  @extend %m-layout-section
+
+  &.full
+    @extend %m-layout-section-full
+
+  &,
+  &.comfortable
+    @extend %m-layout-section-comfortable
+
+  &.narrow
+    @extend %m-layout-section-narrow
+
+.m-row
+  @extend %m-layout-row
+
+.m-column
+  @extend %m-layout-column
+
+  @include grid-column('', 12)
+
+  @include adaptive.is-mobile
+    @include grid-column('mobile-', 8)
+
+  @include adaptive.is-gt-mobile
+    @include grid-column('gt-mobile-', 12)
+
+  @include adaptive.is-foldable
+    @include grid-column('foldable-', 12)
+
+  @include adaptive.is-gt-foldable
+    @include grid-column('gt-foldable-', 12)
+
+  @include adaptive.is-lt-tablet
+    @include grid-column('lt-tablet-', 12)
+
+  @include adaptive.is-tablet
+    @include grid-column('tablet-', 12)
+
+  @include adaptive.is-gt-tablet
+    @include grid-column('gt-tablet-', 12)
+
+.m-tile
+  @extend %m-layout-tile
+
+.is-hidden
+  display: none !important
+
+@include adaptive.is-mobile
+  .is-gt-mobile,
+  .is-foldable,
+  .is-gt-foldable,
+  .is-tablet,
+  .is-gt-tablet
+    display: none !important
+
+@include adaptive.is-gt-mobile
+  .is-mobile
+    display: none !important
+
+@include adaptive.is-foldable
+  .is-mobile,
+  .is-gt-foldable,
+  .is-tablet,
+  .is-gt-tablet
+    display: none !important
+
+@include adaptive.is-gt-foldable
+  .is-mobile,
+  .is-foldable,
+  .is-lt-tablet
+    display: none !important
+
+@include adaptive.is-lt-tablet
+  .is-gt-foldable,
+  .is-tablet,
+  .is-gt-tablet
+    display: none !important
+
+@include adaptive.is-tablet
+  .is-mobile,
+  .is-foldable,
+  .is-lt-tablet
+    display: none !important
+
+@include adaptive.is-gt-tablet
+  .is-mobile,
+  .is-foldable,
+  .is-lt-tablet,
+  .is-tablet,
+  .is-lt-desktop
+    display: none !important
+
+@include adaptive.is-lt-desktop
+  .is-gt-tablet
+    display: none !important
