@@ -1,7 +1,7 @@
 /**
  * BSD 3-Clause License
  *
- * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicverse dot org>
+ * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicmind dot com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -58,7 +58,7 @@ body
   align-content: stretch
   justify-content: stretch
   overflow: hidden
-  
+
   @include theme.preferred
     background: theme.style(background)
 
@@ -77,7 +77,7 @@ body
       width: 80px
       grid-row: row-2-start / row-3-end
       grid-column: col-1-start / col-1-end
-  
+
   > .m-navigation-drawer
     grid-row: row-2-start / row-3-end
     grid-column: col-2-start / col-2-end
@@ -106,12 +106,12 @@ body
     grid-row: row-2-start / row-2-end
     grid-column: col-3-start / col-3-end
     z-index: 2
-  
+
   > .m-main
     grid-row: row-3-start / row-3-end
     grid-column: col-3-start / col-3-end
     z-index: 0
-    
+
   > .m-finder
     grid-row: row-2-start / row-3-end
     grid-column: col-4-start / col-4-end
@@ -124,7 +124,7 @@ body
 
     &:empty
       display: none
-  
+
   > .m-scrim
     position: absolute
     top: 0
@@ -133,6 +133,6 @@ body
     right: 0
     z-index: 4
     display: none
-      
+
     @include theme.preferred
       background: theme.style(scrim)

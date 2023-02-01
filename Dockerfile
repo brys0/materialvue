@@ -6,7 +6,7 @@ FROM node:19-alpine3.16 as source
 # https://github.com/nodejs/docker-node/blob/66ec7a544dab2f8284e167075938258399a9d458/19/alpine3.16/Dockerfile
 ENV NODE_VERSION=19
 
-# Set the default environment to production, which will ignore dev 
+# Set the default environment to production, which will ignore dev
 # dependencies in the npm package file.
 ENV NODE_ENV=production
 
@@ -82,7 +82,7 @@ COPY ./config/nginx/inc.d/* /etc/nginx/inc.d
 RUN chown -R node:node /etc/nginx/http.d \
     && chown -R node:node /etc/nginx/inc.d \
     && touch /var/run/nginx.pid \
-    && chown -R node:node /var/run/nginx.pid \ 
+    && chown -R node:node /var/run/nginx.pid \
     && touch /node/logs/error.log \
     && chown -R node:node /node \
     && mkdir -p /var/lib/nginx/tmp /var/log/nginx \
@@ -125,7 +125,7 @@ COPY ./config/nginx/inc.d/* /etc/nginx/inc.d
 RUN chown -R node:node /etc/nginx/http.d \
     && chown -R node:node /etc/nginx/inc.d \
     && touch /var/run/nginx.pid \
-    && chown -R node:node /var/run/nginx.pid \ 
+    && chown -R node:node /var/run/nginx.pid \
     && touch /node/logs/error.log \
     && chown -R node:node /node \
     && mkdir -p /var/lib/nginx/tmp /var/log/nginx \
