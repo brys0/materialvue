@@ -18,7 +18,7 @@ const external = [
 	'@koa/router',
 	'@cosmicmind/foundation'
 ]
-const globals = {}
+
 const srcDir = './src'
 const emptyOutDir = false
 
@@ -46,9 +46,6 @@ export default defineConfig(({
 			},
 			rollupOptions: {
 				external,
-				output: {
-					globals,
-				},
 			},
 			minify,
 		},

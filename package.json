@@ -1,6 +1,6 @@
 {
   "name": "@cosmicmind/materialjs",
-  "version": "0.0.1-rc-020123-1",
+  "version": "0.0.1-rc-020123-2",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
   "author": {
@@ -11,6 +11,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/cosmicmind/materialjs.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "type": "module",
   "main": "dist/lib.es.js",
@@ -48,7 +51,7 @@
     "docker:build": "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --squash --target prod -t cosmicmind/materialjs:latest ."
   },
   "dependencies": {
-    "@cosmicmind/foundation": "^0.0.1-rc-121122-1",
+    "@cosmicmind/foundation": "^0.0.1-rc-020123-1",
     "@koa/router": "^12.0.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "@vitejs/plugin-vue-jsx": "^2.0.1",

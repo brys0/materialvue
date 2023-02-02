@@ -21,7 +21,7 @@ const external = [
 	'vee-validate',
 	'@cosmicmind/foundation'
 ]
-const globals = {}
+
 const srcDir = './src'
 const destDir = './'
 const emptyOutDir = false
@@ -59,9 +59,6 @@ export default defineConfig(({
 			},
 			rollupOptions: {
 				external,
-				output: {
-					globals,
-				},
 			},
 			minify,
 		},
