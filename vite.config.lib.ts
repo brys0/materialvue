@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import {
 	URL,
 	fileURLToPath,
@@ -11,26 +13,23 @@ import {
 
 import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
-import {
-	viteStaticCopy,
-} from 'vite-plugin-static-copy'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 const external = [
 	'vue',
 	'pinia',
 	'vee-validate',
-	'@cosmicmind/foundation'
+	'@cosmicmind/foundationjs'
 ]
 
 const srcDir = './src'
-const destDir = './'
+const distDir = './dist'
 const emptyOutDir = false
 const formats: LibraryFormats[] = [ 'es' ]
 
-export default defineConfig(({
-	mode,
-}) => {
+export default defineConfig(({ mode }) => {
 	const minify = 'production' === mode
+
 	const config: UserConfigExport = {
 		resolve: {
 			alias: {
@@ -44,7 +43,7 @@ export default defineConfig(({
 				targets: [
 					{
 						src: `${srcDir}/lib/sass`,
-						dest: destDir,
+						dest: './',
 					}
 				],
 			})
@@ -57,10 +56,20 @@ export default defineConfig(({
 				formats,
 				fileName: 'lib.es',
 			},
-			rollupOptions: {
-				external,
-			},
+			rollupOptions: { external },
 			minify,
+		},
+		test: {
+			include: [ '__tests__/**/*.spec.ts' ],
+			benchmark: {
+				include: [ '__benchmarks__/**/*.bench.ts' ],
+				outputFile: `${distDir}/benchmarks.json`,
+			},
+			coverage: {
+				provider: 'c8',
+				include: [ '**/src/vue/**' ],
+				extension: [ '.ts' ],
+			},
 		},
 	}
 

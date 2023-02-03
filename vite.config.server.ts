@@ -16,7 +16,7 @@ const external = [
 	'koa-bodyparser',
 	'koa-static',
 	'@koa/router',
-	'@cosmicmind/foundation'
+	'@cosmicmind/foundationjs'
 ]
 
 const srcDir = './src'

@@ -38,7 +38,7 @@ import serve from 'koa-static'
 
 import {
 	logger,
-} from '@cosmicmind/foundation'
+} from '@cosmicmind/foundationjs'
 
 import routes from '@/app/routes'
 

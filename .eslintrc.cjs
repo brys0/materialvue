@@ -59,6 +59,7 @@ module.exports = {
 		'object-curly-newline': [ 2, {
 			'multiline': true,
 			'minProperties': 2,
+			'consistent': true,
 		} ],
 		'object-property-newline': [ 2 ],
 		'object-shorthand': [ 2 ],

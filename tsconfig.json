@@ -5,8 +5,8 @@
       "node",
       "jsdom"
     ],
-    "target": "es2022",
-    "module": "es2022",
+    "target": "esnext",
+    "module": "esnext",
     "strict": true,
     "importHelpers": true,
     "moduleResolution": "node",
@@ -25,11 +25,8 @@
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "removeComments": true,
-    "jsx": "preserve",
-    "jsxFactory": "h",
-    "isolatedModules": true,
     "lib": [
-      "es2022",
+      "esnext",
       "dom",
       "dom.iterable",
       "webworker"
@@ -44,11 +41,9 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.js",
-    "src/**/*.jsx",
     "src/**/*.vue",
-    "vite.config*.ts"
+    "vite.config*.ts",
+    "__tests__/**/*"
   ],
   "exclude": [
     "dist",
