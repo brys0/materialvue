@@ -45,7 +45,7 @@ import {
 
 import {
 	logger,
-} from '@cosmicmind/foundation'
+} from '@cosmicmind/foundationjs'
 
 import {
 	useAppStore,

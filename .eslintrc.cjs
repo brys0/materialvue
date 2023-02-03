@@ -58,7 +58,8 @@ module.exports = {
 		'space-before-blocks': [ 2 ],
 		'object-curly-newline': [ 2, {
 			'multiline': true,
-			'minProperties': 1,
+			'minProperties': 2,
+			'consistent': true,
 		} ],
 		'object-property-newline': [ 2 ],
 		'object-shorthand': [ 2 ],

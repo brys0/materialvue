@@ -9,19 +9,13 @@ import {
 } from 'vite'
 
 import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
 
 const srcDir = './src'
 const emptyOutDir = false
 
-export default defineConfig(({
-	mode,
-}) => {
+export default defineConfig(({ mode }) => {
 	const minify = 'production' === mode
 	const config: UserConfigExport = {
-		define: {
-			SERVER_ACCOUNT_ENDPOINT: JSON.stringify(String(process.env.SERVER_ACCOUNT_ENDPOINT)),
-		},
 		resolve: {
 			alias: {
 				'@': fileURLToPath(new URL(srcDir, import.meta.url)),
@@ -35,8 +29,7 @@ export default defineConfig(({
 			minify,
 		},
 		plugins: [
-			vue(),
-			vueJsx()
+			vue()
 		],
 	}
 

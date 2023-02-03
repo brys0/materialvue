@@ -16,9 +16,9 @@ const external = [
 	'koa-bodyparser',
 	'koa-static',
 	'@koa/router',
-	'@cosmicmind/foundation'
+	'@cosmicmind/foundationjs'
 ]
-const globals = {}
+
 const srcDir = './src'
 const emptyOutDir = false
 
@@ -46,9 +46,6 @@ export default defineConfig(({
 			},
 			rollupOptions: {
 				external,
-				output: {
-					globals,
-				},
 			},
 			minify,
 		},
