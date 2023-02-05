@@ -7,7 +7,7 @@ on:
 
 jobs:
   dev-build:
-    uses: cosmicmind/actions/.github/workflows/dev-build.yml@release
+    uses: cosmicmind/actions/.github/workflows/docker-dev.yml@release
   test:
     needs: dev-build
     uses: cosmicmind/actions/.github/workflows/test.yml@release
