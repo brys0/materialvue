@@ -51,7 +51,7 @@
     "docker:build": "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --squash --target prod -t cosmicmind/materialjs:latest ."
   },
   "dependencies": {
-    "@cosmicmind/foundationjs": "^0.0.1-rc-020323-1",
+    "@cosmicmind/foundationjs": "^0.0.1-rc-020423-3",
     "@koa/router": "^12.0.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "koa": "^2.13.4",
