@@ -96,6 +96,6 @@ ENV NODE_ENV=development
 
 WORKDIR /node/service
 
-USER node
+#USER node
 
 CMD npm run test
