@@ -39,7 +39,7 @@ import {
 describe('group test description', () => {
 	describe('component/module test description - A', () => {
 		it('feature/fixture test description', () => {
-			expect(true).toBeTruthy()
+			expect(false).toBeTruthy()
 		})
 	})
 
