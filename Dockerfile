@@ -98,4 +98,4 @@ WORKDIR /node/service
 
 USER node
 
-CMD nginx; npm run test;
+CMD ./entrypoint-test.sh
