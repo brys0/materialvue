@@ -101,7 +101,7 @@ WORKDIR /node/service
 CMD ./entrypoint-test.sh
 
 # release
-FROM source as prod
+FROM source as release
 ENV NODE_ENV=production
 
 # Connect to the `node` least privileged user provided by the
