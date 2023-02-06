@@ -86,7 +86,7 @@ RUN chown -R node:node /etc/nginx/http.d \
     && chown -R node:node /var/lib/nginx /var/log/nginx \
     && chmod -R 755 /var/lib/nginx /var/log/nginx
 
-USER node
+#USER node
 
 CMD ./entrypoint-dev.sh
 
@@ -96,6 +96,6 @@ ENV NODE_ENV=development
 
 WORKDIR /node/service
 
-USER node
+#USER node
 
 CMD ./entrypoint-test.sh
