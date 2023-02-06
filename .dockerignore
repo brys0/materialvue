@@ -2,6 +2,7 @@
 *
 
 # allow
+!/entrypoint*.sh
 !/package*.json
 !/*.html
 !/src
@@ -9,7 +10,7 @@
 !/public
 !/typings
 !/tsconfig*
-!/vite.config*
+!/vite.config*.ts*
 !/.env.*
 !/config
 !/nodemon.json

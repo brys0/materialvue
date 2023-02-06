@@ -1,12 +1,12 @@
-name: Release Push
+name: Release Pull Request
 
 on:
-  push:
+  pull_request:
     branches:
       - release
 
 jobs:
-  package-publish:
-    uses: cosmicmind/actions/.github/workflows/package-publish.yml@release
+  release:
+    uses: cosmicmind/github-actions/.github/workflows/docker-release.yml@release
     secrets:
-      NPM_TOKEN: ${{ secrets.npm_token }}
+      npm_token: ${{ secrets.npm_token }}

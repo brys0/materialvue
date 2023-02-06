@@ -5,7 +5,7 @@ services:
     container_name: materialjs
     build:
       context: .
-      target: dev
+      target: ${docker_target:-dev}
     ports:
       - 80:8080
     volumes:
