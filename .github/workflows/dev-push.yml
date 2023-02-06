@@ -7,9 +7,9 @@ on:
 
 jobs:
   build:
-    uses: cosmicmind/actions/.github/workflows/docker-dev.yml@release
+    uses: cosmicmind/github-actions/.github/workflows/docker-dev.yml@release
     secrets:
       npm_token: ${{ secrets.npm_token }}
   test:
     needs: build
-    uses: cosmicmind/actions/.github/workflows/test.yml@release
+    uses: cosmicmind/github-actions/.github/workflows/test.yml@release

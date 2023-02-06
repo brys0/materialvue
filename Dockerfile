@@ -95,5 +95,3 @@ FROM dev as test
 ENV NODE_ENV=development
 
 USER node
-
-CMD ./entrypoint-test.sh
