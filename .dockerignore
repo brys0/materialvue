@@ -2,6 +2,7 @@
 *
 
 # allow
+!/entrypoint*.sh
 !/package*.json
 !/*.html
 !/src

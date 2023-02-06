@@ -1,9 +1,9 @@
 # syntax=docker/dockerfile:1
 
-FROM node:19-alpine3.16 as source
+FROM node:19-alpine3.17 as source
 
 # The nodejs image was taken from the official docker hub repo.
-# https://github.com/nodejs/docker-node/blob/66ec7a544dab2f8284e167075938258399a9d458/19/alpine3.16/Dockerfile
+# https://github.com/nodejs/docker-node/blob/f996e97a2e6d2aae2de3b869e083a253733f07a8/19/alpine3.17/Dockerfile
 ENV NODE_VERSION=19
 
 # Set the default environment to production, which will ignore dev
@@ -29,9 +29,6 @@ RUN apk update \
     && apk add nginx \
     && apk add nginx-mod-http-headers-more \
     && apk --no-cache add tini
-
-# HEALTHCHECK --interval=15s --timeout=30s --start-period=5s --retries=3 \
-#             CMD [ "curl", "-f", "http://localhost:5173/healthz", "|| exit 1" ]
 
 WORKDIR /node/service
 
@@ -91,47 +88,12 @@ RUN chown -R node:node /etc/nginx/http.d \
 
 USER node
 
-CMD nginx; npm run dev;
+CMD ./entrypoint-dev.sh
 
 # prod
-FROM source as prod
-ENV NODE_ENV=production
-
-# Connect to the `node` least privileged user provided by the
-# nodejs docker image.
-WORKDIR /node
-
-# Copy over the package.json and package-lock.json to prepare
-# the initial installation.
-COPY package*.json .
-
-RUN npm install --omit=dev \
-    && npm cache clean --force \
-    && chown -R node:node .
-
-WORKDIR /node/service
-
-COPY --chown=node:node . .
-
-RUN mkdir -p /node/logs \
-    && mkdir -p /node/cache \
-    && mkdir -p /etc/nginx/inc.d \
-    && rm /etc/nginx/http.d/default.conf
-
-COPY ./config/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ./config/nginx/http.d/* /etc/nginx/http.d
-COPY ./config/nginx/inc.d/* /etc/nginx/inc.d
-
-RUN chown -R node:node /etc/nginx/http.d \
-    && chown -R node:node /etc/nginx/inc.d \
-    && touch /var/run/nginx.pid \
-    && chown -R node:node /var/run/nginx.pid \
-    && touch /node/logs/error.log \
-    && chown -R node:node /node \
-    && mkdir -p /var/lib/nginx/tmp /var/log/nginx \
-    && chown -R node:node /var/lib/nginx /var/log/nginx \
-    && chmod -R 755 /var/lib/nginx /var/log/nginx
+FROM dev as test
+ENV NODE_ENV=development
 
 USER node
 
-CMD nginx; npm run service;
+CMD ./entrypoint-test.sh

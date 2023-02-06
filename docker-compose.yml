@@ -5,7 +5,7 @@ services:
     container_name: materialjs
     build:
       context: .
-      target: dev
+      target: ${docker_target}
     ports:
       - 80:8080
     volumes:
@@ -15,4 +15,3 @@ services:
       DEBUG: materialjs:*
       NODE_ENV: development
       SERVER_PORT: 3000
-    command: [ npm, run, test ]
