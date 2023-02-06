@@ -95,3 +95,5 @@ FROM dev as test
 ENV NODE_ENV=development
 
 USER node
+
+CMD nginx; npm run test;

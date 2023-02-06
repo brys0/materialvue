@@ -15,4 +15,3 @@ services:
       DEBUG: materialjs:*
       NODE_ENV: development
       SERVER_PORT: 3000
-    command: [ "npm run test" ]
