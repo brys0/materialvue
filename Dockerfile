@@ -90,7 +90,7 @@ RUN chown -R node:node /etc/nginx/http.d \
 
 CMD ./entrypoint-dev.sh
 
-# prod
+# test
 FROM dev as test
 ENV NODE_ENV=development
 
@@ -99,3 +99,41 @@ WORKDIR /node/service
 #USER node
 
 CMD ./entrypoint-test.sh
+
+# release
+FROM source as prod
+ENV NODE_ENV=production
+
+# Connect to the `node` least privileged user provided by the
+# nodejs docker image.
+WORKDIR /node
+
+RUN npm install --omit=dev \
+    && npm cache clean --force \
+    && rm .npmrc \
+    && chown -R node:node .
+
+WORKDIR /node/service
+
+COPY --chown=node:node . .
+
+RUN mkdir -p /node/logs \
+    && mkdir -p /node/cache \
+    && mkdir -p /etc/nginx/inc.d \
+    && rm /etc/nginx/http.d/default.conf
+
+COPY ./config/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY ./config/nginx/http.d/* /etc/nginx/http.d
+COPY ./config/nginx/inc.d/* /etc/nginx/inc.d
+
+RUN chown -R node:node /etc/nginx/http.d \
+    && chown -R node:node /etc/nginx/inc.d \
+    && touch /var/run/nginx.pid \
+    && chown -R node:node /var/run/nginx.pid \
+    && touch /node/logs/error.log \
+    && chown -R node:node /node \
+    && mkdir -p /var/lib/nginx/tmp /var/log/nginx \
+    && chown -R node:node /var/lib/nginx /var/log/nginx \
+    && chmod -R 755 /var/lib/nginx /var/log/nginx
+
+CMD ./entrypoint-release.sh
