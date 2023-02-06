@@ -94,6 +94,8 @@ CMD ./entrypoint-dev.sh
 FROM dev as test
 ENV NODE_ENV=development
 
+WORKDIR /node/service
+
 USER node
 
 CMD nginx; npm run test;

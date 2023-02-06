@@ -10,7 +10,7 @@
 !/public
 !/typings
 !/tsconfig*
-!/vite.config*
+!/vite.config*.ts*
 !/.env.*
 !/config
 !/nodemon.json
