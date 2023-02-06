@@ -98,4 +98,4 @@ WORKDIR /node/service
 
 USER node
 
-CMD ./entrypoint-test.sh
+CMD npm run test
