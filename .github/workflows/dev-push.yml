@@ -14,8 +14,6 @@ jobs:
   lib:
     needs: codeql
     uses: cosmicmind/github-actions/.github/workflows/lib-dev.yml@release
-    secrets:
-      npm_token: ${{ secrets.npm_token }}
   docker:
     needs: lib
     uses: cosmicmind/github-actions/.github/workflows/docker-dev.yml@release
