@@ -80,16 +80,8 @@ COPY --chown=node:node . .
 CMD ./entrypoint-dev.sh
 
 # test
-FROM source as test
+FROM dev as test
 ENV NODE_ENV=development
-
-RUN npm install \
-    && npm cache clean --force \
-    && chown -R node:node .
-
-WORKDIR /node/service
-
-COPY --chown=node:node . .
 
 CMD ./entrypoint-test.sh
 
@@ -97,7 +89,7 @@ CMD ./entrypoint-test.sh
 FROM source as release
 ENV NODE_ENV=production
 
-RUN npm install --omit=dev \
+RUN npm ci --omit=dev \
     && npm cache clean --force \
     && chown -R node:node .
 
