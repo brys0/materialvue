@@ -11,13 +11,13 @@ jobs:
   codeql:
     needs: lint
     uses: cosmicmind/github-actions/.github/workflows/codeql.yml@release
-  library:
+  lib:
     needs: codeql
     uses: cosmicmind/github-actions/.github/workflows/lib-release.yml@release
     secrets:
       npm_token: ${{ secrets.npm_token }}
   docker:
-    needs: library
+    needs: lib
     uses: cosmicmind/github-actions/.github/workflows/docker-release.yml@release
     secrets:
       docker_target: release
