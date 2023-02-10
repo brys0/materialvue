@@ -77,8 +77,6 @@ WORKDIR /node/service
 
 COPY --chown=node:node . .
 
-USER node
-
 CMD ./entrypoint-dev.sh
 
 # test
@@ -106,7 +104,5 @@ RUN npm install --omit=dev \
 WORKDIR /node/service
 
 COPY --chown=node:node . .
-
-USER node
 
 CMD ./entrypoint-release.sh
