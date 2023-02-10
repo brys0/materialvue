@@ -8,11 +8,23 @@ on:
 jobs:
   lint:
     uses: cosmicmind/github-actions/.github/workflows/lint.yml@release
-#  codeql:
-#    needs: lint
-#    uses: cosmicmind/github-actions/.github/workflows/codeql.yml@release
-  test:
+  codeql:
     needs: lint
+    uses: cosmicmind/github-actions/.github/workflows/codeql.yml@release
+  library:
+    needs: codeql
+    uses: cosmicmind/github-actions/.github/workflows/library-release.yml@release
+    secrets:
+      npm_token: ${{ secrets.npm_token }}
+  docker:
+    needs: library
+    uses: cosmicmind/github-actions/.github/workflows/docker-release.yml@release
+    secrets:
+      docker_target: release
+      npm_token: ${{ secrets.npm_token }}
+  test:
+    needs: docker
     uses: cosmicmind/github-actions/.github/workflows/docker-test.yml@release
     secrets:
+      docker_target: test
       npm_token: ${{ secrets.npm_token }}

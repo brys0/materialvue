@@ -42,10 +42,13 @@ import {
 
 import vue from '@vitejs/plugin-vue'
 
-const srcDir = './src'
+const srcDir = 'src'
+const distDir = 'dist'
 const emptyOutDir = false
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({
+	mode,
+}) => {
 	const minify = 'production' === mode
 	const config: UserConfigExport = {
 		resolve: {
@@ -56,7 +59,7 @@ export default defineConfig(({ mode }) => {
 		publicDir: 'public',
 		build: {
 			assetsDir: 'assets',
-			outDir: 'dist/public',
+			outDir: `${distDir}/public`,
 			emptyOutDir,
 			minify,
 		},

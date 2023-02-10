@@ -51,7 +51,7 @@ const external = [
 	'@cosmicmind/foundationjs'
 ]
 
-const srcDir = './src'
+const srcDir = 'src'
 const emptyOutDir = false
 
 export default defineConfig(({

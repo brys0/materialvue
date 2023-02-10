@@ -1,4 +1,4 @@
-name: Dev Pull Request
+name: Development Pull Request
 
 on:
   pull_request:
@@ -11,9 +11,20 @@ jobs:
   codeql:
     needs: lint
     uses: cosmicmind/github-actions/.github/workflows/codeql.yml@release
-  build:
+  library:
     needs: codeql
-    uses: cosmicmind/github-actions/.github/workflows/dev-build.yml@release
+    uses: cosmicmind/github-actions/.github/workflows/library-dev.yml@release
+    secrets:
+      npm_token: ${{ secrets.npm_token }}
+  docker:
+    needs: library
+    uses: cosmicmind/github-actions/.github/workflows/docker-dev.yml@release
+    secrets:
+      docker_target: dev
+      npm_token: ${{ secrets.npm_token }}
   test:
-    needs: build
-    uses: cosmicmind/github-actions/.github/workflows/test.yml@release
+    needs: docker
+    uses: cosmicmind/github-actions/.github/workflows/docker-test.yml@release
+    secrets:
+      docker_target: test
+      npm_token: ${{ secrets.npm_token }}

@@ -48,7 +48,7 @@
     "test:unit": "vitest run --config vite.config.test.ts --mode test",
     "test:watch": "vitest --config vite.config.test.ts --mode test",
     "test:coverage": "vitest run --coverage --config vite.config.test.ts --mode benchmark",
-    "release": "docker build --build-arg NPM_TOKEN=${NPM_TOKEN} --squash --target prod -t cosmicmind/materialjs:latest ."
+    "release": "docker build --build-arg npm_token=${npm_token} --squash --target prod -t cosmicmind/materialjs:latest ."
   },
   "dependencies": {
     "@cosmicmind/foundationjs": "^0.0.1-rc-020423-3",

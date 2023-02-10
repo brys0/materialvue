@@ -1,4 +1,3 @@
 #!/bin/sh
 
-nginx
-npm run test
+#npm run test

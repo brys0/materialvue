@@ -51,7 +51,6 @@ app.use(serve('dist/public'))
 
 const router = new Router()
 app.use(router.routes()).use(router.allowedMethods())
-
 routes(router)
 
 try {

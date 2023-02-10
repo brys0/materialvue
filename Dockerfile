@@ -6,10 +6,8 @@ FROM node:19-alpine3.17 as source
 # https://github.com/nodejs/docker-node/blob/f996e97a2e6d2aae2de3b869e083a253733f07a8/19/alpine3.17/Dockerfile
 ENV NODE_VERSION=19
 
-# Set the default environment to production, which will ignore dev
-# dependencies in the npm package file.
-ENV NODE_ENV=production
-
+# obtain private packages, ensure that biuld runs --squash for security and
+# make sure to delete the .npmrc file immediately once done the installation
 ARG CREATED_DATE=not-set
 ARG SOURCE_COMMIT=not-set
 
@@ -22,48 +20,19 @@ LABEL org.opencontainers.image.source=not-github-url
 LABEL org.opencontainers.image.licenses=UNLICENSED
 LABEL org.cosmicverse.nodeversion=${NODE_VERSION}
 
-# When launching the container PID 1 process,
-# we will want to use `tini` to safely manage
-# the SIGTERM and SIGINT signals.
 RUN apk update \
     && apk add nginx \
     && apk add nginx-mod-http-headers-more \
     && apk --no-cache add tini
 
-WORKDIR /node/service
-
-# This is needed for the `tini` setup to work correctly.
+# When launching the container PID 1 process,
+# we will want to use `tini` to safely manage
+# the SIGTERM and SIGINT signals.
 ENTRYPOINT [ "tini", "--" ]
-
-# dev
-FROM source as dev
-ENV NODE_ENV=development
-
-# Install some helper tools when developing locally.
-# RUN apk add build-base \
-#     && apk add util-linux \
-#     && apk add procps \
-#     && apk add bash \
-#     && apk add zsh \
-#     && apk add htop \
-#     && apk add curl \
-#     && apk add git \
-#     && apk add jq \
-#     && apk add vim
 
 WORKDIR /node
 
-# Copy over the package.json and package-lock.json to prepare
-# the initial installation.
 COPY package*.json .
-
-RUN npm install \
-    && npm cache clean --force \
-    && chown -R node:node .
-
-WORKDIR /node/service
-
-COPY --chown=node:node . .
 
 RUN mkdir -p /node/logs \
     && mkdir -p /node/cache \
@@ -84,26 +53,60 @@ RUN chown -R node:node /etc/nginx/http.d \
     && chown -R node:node /var/lib/nginx /var/log/nginx \
     && chmod -R 755 /var/lib/nginx /var/log/nginx
 
-#USER node
+# dev
+FROM source as dev
+ENV NODE_ENV=development
+
+# Install some helper tools when developing locally.
+#RUN apk add build-base \
+#    && apk add util-linux \
+#    && apk add procps \
+#    && apk add bash \
+#    && apk add zsh \
+#    && apk add htop \
+#    && apk add curl \
+#    && apk add git \
+#    && apk add jq \
+#    && apk add vim
+
+RUN npm install \
+    && npm cache clean --force \
+    && chown -R node:node .
+
+WORKDIR /node/service
+
+COPY --chown=node:node . .
+
+USER node
 
 CMD ./entrypoint-dev.sh
 
 # test
-FROM dev as test
+FROM source as test
 ENV NODE_ENV=development
+
+RUN npm install \
+    && npm cache clean --force \
+    && chown -R node:node .
 
 WORKDIR /node/service
 
-#USER node
+COPY --chown=node:node . .
 
 CMD ./entrypoint-test.sh
 
 # release
-FROM dev as release
+FROM source as release
 ENV NODE_ENV=production
+
+RUN npm install --omit=dev \
+    && npm cache clean --force \
+    && chown -R node:node .
 
 WORKDIR /node/service
 
-#USER node
+COPY --chown=node:node . .
+
+USER node
 
 CMD ./entrypoint-release.sh
