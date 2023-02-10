@@ -13,5 +13,4 @@ services:
       - ./.docker/nginx/logs:/node/logs:delegated
     environment:
       DEBUG: materialjs:*
-      NODE_ENV: development
       SERVER_PORT: 3000

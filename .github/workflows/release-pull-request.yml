@@ -9,18 +9,10 @@ jobs:
   lint:
     uses: cosmicmind/github-actions/.github/workflows/lint.yml@release
   codeql:
-    needs: lint
     uses: cosmicmind/github-actions/.github/workflows/codeql.yml@release
   lib:
-    needs: codeql
     uses: cosmicmind/github-actions/.github/workflows/lib-release.yml@release
-  docker:
-    needs: lib
-    uses: cosmicmind/github-actions/.github/workflows/docker-release.yml@release
-    secrets:
-      npm_token: ${{ secrets.npm_token }}
   test:
-    needs: docker
     uses: cosmicmind/github-actions/.github/workflows/docker-test.yml@release
     secrets:
       npm_token: ${{ secrets.npm_token }}
