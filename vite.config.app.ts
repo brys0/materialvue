@@ -46,10 +46,8 @@ const srcDir = 'src'
 const distDir = 'dist'
 const emptyOutDir = false
 
-export default defineConfig(({
-	mode,
-}) => {
-	const minify = 'production' === mode
+export default defineConfig(() => {
+	const minify = 'production' === process.env.NODE_ENV
 	const config: UserConfigExport = {
 		resolve: {
 			alias: {

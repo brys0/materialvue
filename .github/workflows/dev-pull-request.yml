@@ -16,3 +16,4 @@ jobs:
     uses: cosmicmind/github-actions/.github/workflows/docker-test.yml@release
     secrets:
       npm_token: ${{ secrets.npm_token }}
+      node_env: development
