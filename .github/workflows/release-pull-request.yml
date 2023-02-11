@@ -18,4 +18,3 @@ jobs:
       node_env: production
     secrets:
       npm_token: ${{ secrets.npm_token }}
-      node_env: production
