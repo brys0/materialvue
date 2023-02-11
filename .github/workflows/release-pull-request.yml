@@ -14,6 +14,8 @@ jobs:
     uses: cosmicmind/github-actions/.github/workflows/lib-release.yml@release
   test:
     uses: cosmicmind/github-actions/.github/workflows/docker-test.yml@release
+    with:
+      node_env: production
     secrets:
       npm_token: ${{ secrets.npm_token }}
       node_env: production
