@@ -81,8 +81,6 @@ CMD ./entrypoint-dev.sh
 
 # test
 FROM dev as test
-ENV NODE_ENV=development
-
 CMD ./entrypoint-test.sh
 
 # release

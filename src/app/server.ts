@@ -53,6 +53,8 @@ const router = new Router()
 app.use(router.routes()).use(router.allowedMethods())
 routes(router)
 
+console.log('PROCESS.env.NODE_ENV', process.env.NODE_ENV, import.meta.env.MODE)
+
 try {
 	const server = http.createServer(app.callback())
 	server.listen(SERVER_PORT)
