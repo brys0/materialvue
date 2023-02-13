@@ -10,7 +10,7 @@ jobs:
     uses: cosmicmind/github-actions/.github/workflows/lint.yml@release
   codeql:
     uses: cosmicmind/github-actions/.github/workflows/codeql.yml@release
-  lib:
+  build:
     uses: cosmicmind/github-actions/.github/workflows/lib-dev.yml@release
   test:
     uses: cosmicmind/github-actions/.github/workflows/docker-test.yml@release
