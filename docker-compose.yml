@@ -9,9 +9,9 @@ services:
     ports:
       - 80:8080
     volumes:
-      - .:/node/service:delegated
+      - .:/node/service:cached
       - ./.docker/nginx/logs:/node/logs:delegated
     environment:
       DEBUG: materialjs:*
-      NODE_ENV: development
+      NODE_ENV: ${node_env:-development}
       SERVER_PORT: 3000

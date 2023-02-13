@@ -1,4 +1,4 @@
-name: Dev Pull Request
+name: Development Pull Request
 
 on:
   pull_request:
@@ -9,11 +9,12 @@ jobs:
   lint:
     uses: cosmicmind/github-actions/.github/workflows/lint.yml@release
   codeql:
-    needs: lint
     uses: cosmicmind/github-actions/.github/workflows/codeql.yml@release
   build:
-    needs: codeql
-    uses: cosmicmind/github-actions/.github/workflows/dev-build.yml@release
+    uses: cosmicmind/github-actions/.github/workflows/lib-dev.yml@release
   test:
-    needs: build
-    uses: cosmicmind/github-actions/.github/workflows/test.yml@release
+    uses: cosmicmind/github-actions/.github/workflows/docker-test.yml@release
+    with:
+      node_env: development
+    secrets:
+      npm_token: ${{ secrets.npm_token }}

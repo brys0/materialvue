@@ -1,4 +1,4 @@
-name: Dev Push
+name: Development Push
 
 on:
   push:
@@ -6,7 +6,15 @@ on:
       - dev
 
 jobs:
+  lint:
+    uses: cosmicmind/github-actions/.github/workflows/lint.yml@release
+  codeql:
+    uses: cosmicmind/github-actions/.github/workflows/codeql.yml@release
+  build:
+    uses: cosmicmind/github-actions/.github/workflows/lib-dev.yml@release
   test:
     uses: cosmicmind/github-actions/.github/workflows/docker-test.yml@release
+    with:
+      node_env: development
     secrets:
       npm_token: ${{ secrets.npm_token }}

@@ -1,12 +1,29 @@
-name: Release Pull Request
+name: Release Push
 
 on:
-  pull_request:
+  push:
     branches:
       - release
 
 jobs:
-  release:
-    uses: cosmicmind/github-actions/.github/workflows/docker-release.yml@release
+  lint:
+    uses: cosmicmind/github-actions/.github/workflows/lint.yml@release
+  codeql:
+    uses: cosmicmind/github-actions/.github/workflows/codeql.yml@release
+  build:
+    uses: cosmicmind/github-actions/.github/workflows/lib-dev.yml@release
+  test:
+    uses: cosmicmind/github-actions/.github/workflows/docker-test.yml@release
+    with:
+      node_env: production
+    secrets:
+      npm_token: ${{ secrets.npm_token }}
+  publish:
+    needs:
+      - lint
+      - codeql
+      - build
+      - test
+    uses: cosmicmind/github-actions/.github/workflows/lib-publish.yml@release
     secrets:
       npm_token: ${{ secrets.npm_token }}

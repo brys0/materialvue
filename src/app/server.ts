@@ -51,7 +51,6 @@ app.use(serve('dist/public'))
 
 const router = new Router()
 app.use(router.routes()).use(router.allowedMethods())
-
 routes(router)
 
 try {
@@ -66,6 +65,10 @@ try {
 			}
 			process.exit()
 		})
+	}
+
+	if ('test' === import.meta.env.MODE) {
+		setTimeout(shutdown, 1000)
 	}
 
 	process.on('SIGINT', () => {
