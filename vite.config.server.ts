@@ -41,9 +41,12 @@ import {
 	defineConfig,
 } from 'vite'
 
+import JSON5 from 'json5'
+
 const formats: LibraryFormats[] = [ 'es' ]
 const external = [
 	'http',
+	'json5',
 	'koa',
 	'koa-bodyparser',
 	'koa-static',
@@ -58,7 +61,7 @@ export default defineConfig(() => {
 	const minify = 'production' === process.env.NODE_ENV
 	const config: UserConfigExport = {
 		define: {
-			SERVER_PORT: JSON.stringify(String(process.env.SERVER_PORT)),
+			SERVER_PORT: JSON5.stringify(String(process.env.SERVER_PORT)),
 		},
 		resolve: {
 			alias: {

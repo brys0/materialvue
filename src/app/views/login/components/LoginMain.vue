@@ -42,10 +42,6 @@ import {
 	useForm,
 } from 'vee-validate'
 
-// import {
-// 	logger,
-// } from '@cosmicmind/foundationjs'
-
 import {
 	MMain,
 	MLayout,

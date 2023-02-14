@@ -36,9 +36,7 @@ import koaBodyParser from 'koa-bodyparser'
 import Router from '@koa/router'
 import serve from 'koa-static'
 
-import {
-	logger,
-} from '@cosmicmind/foundationjs'
+import { logger } from '@cosmicmind/foundationjs'
 
 import routes from '@/app/routes'
 

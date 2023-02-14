@@ -44,13 +44,9 @@ import {
 	string,
 } from 'yup'
 
-import {
-	useForm,
-} from 'vee-validate'
+import { useForm } from 'vee-validate'
 
-import {
-	logger,
-} from '@cosmicmind/foundationjs'
+import { logger } from '@cosmicmind/foundationjs'
 
 import {
 	MMain,
