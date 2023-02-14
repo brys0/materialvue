@@ -43,9 +43,7 @@ import {
 	storeToRefs,
 } from 'pinia'
 
-import {
-	logger,
-} from '@cosmicmind/foundationjs'
+import { logger } from '@cosmicmind/foundationjs'
 
 import {
 	useAppStore,
