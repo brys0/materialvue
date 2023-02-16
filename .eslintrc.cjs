@@ -34,6 +34,7 @@ module.exports = {
 		}
 	],
 	rules: {
+		'@typescript-eslint/no-empty-interface': [ 2 ],
 		'@typescript-eslint/no-inferrable-types': [ 2 ],
 		'@typescript-eslint/explicit-function-return-type': [ 2 ],
 		indent: [ 2, 'tab' ],
