@@ -36,13 +36,24 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type MBarProps = {}
+export enum MBarDirection {
+	horizontal = 'horizontal',
+	vertical = 'vertical',
+}
 
-export const MBar: FunctionalComponent<MBarProps> = (_, {
+export type MBarProps = {
+	direction?: MBarDirection
+}
+
+export const MBar: FunctionalComponent<MBarProps> = ({
+	direction,
+}, {
 	slots,
 }): VNode => h('div', {
 	class: {
 		'm-bar': true,
+		horizontal: direction === MBarDirection.horizontal,
+		vertical: direction === MBarDirection.vertical,
 	},
 }, {
 	default: () => slots.default?.(),
@@ -50,6 +61,8 @@ export const MBar: FunctionalComponent<MBarProps> = (_, {
 
 MBar.displayName = 'MBar'
 
-MBar.props = []
+MBar.props = [
+	'direction'
+]
 
 export default MBar

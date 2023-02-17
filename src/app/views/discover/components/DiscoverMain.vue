@@ -93,6 +93,9 @@ import {
 	MFilledCard,
 	MOutlinedCard,
 	MBar,
+	MBarDirection,
+	MBarLeading,
+	MBarBody,
 	MBarTrailing,
 	MDivider,
 	MList,
@@ -3110,11 +3113,40 @@ onBeforeUnmount(() => {
             <m-body>
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
             </m-body>
-            <m-bar>
+            <m-bar :direction="MBarDirection.vertical">
+              <m-bar-leading>
+                <m-filled-button>
+                  <m-label>
+                    Vertical 1
+                  </m-label>
+                </m-filled-button>
+                <m-filled-button>
+                  <m-label>
+                    Vertical 2
+                  </m-label>
+                </m-filled-button>
+              </m-bar-leading>
+              <m-bar-body>
+                <m-filled-button>
+                  <m-label>
+                    Vertical 3
+                  </m-label>
+                </m-filled-button>
+                <m-filled-button>
+                  <m-label>
+                    Vertical 4
+                  </m-label>
+                </m-filled-button>
+              </m-bar-body>
               <m-bar-trailing>
                 <m-filled-button>
                   <m-label>
-                    Get Started
+                    Vertical 5
+                  </m-label>
+                </m-filled-button>
+                <m-filled-button>
+                  <m-label>
+                    Vertical 6
                   </m-label>
                 </m-filled-button>
               </m-bar-trailing>

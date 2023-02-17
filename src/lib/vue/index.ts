@@ -156,6 +156,7 @@ export {
 
 export {
 	MBar,
+	MBarDirection,
 	MBarLeading,
 	MBarBody,
 	MBarTrailing,

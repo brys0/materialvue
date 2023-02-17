@@ -30,7 +30,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-%m-bar
+%m-bar-horizontal
   @extend %is-not-selectable
 
   display: grid
@@ -40,36 +40,79 @@
   align-content: center
   justify-content: stretch
 
-%m-bar-leading,
-%m-bar-body,
-%m-bar-trailing
+%m-bar-horizontal-leading,
+%m-bar-horizontal-body,
+%m-bar-horizontal-trailing
   display: grid
   align-items: center
   grid-auto-columns: minmax(1fr, max-content)
   grid-auto-flow: column
   gap: 24px
 
-%m-bar-leading
+%m-bar-horizontal-leading
   grid-column: col-1-start / col-1-end
   justify-content: start
 
-%m-bar-body
+%m-bar-horizontal-body
   padding: 0 24px
   grid-column: col-2-start / col-2-end
   justify-content: center
 
-%m-bar-trailing
+%m-bar-horizontal-trailing
   grid-column: col-3-start / col-3-end
   justify-content: end
 
+%m-bar-vertical
+  @extend %is-not-selectable
+
+  display: grid
+  grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] 1fr [row-2-end row-3-start] max-content [row-3-end]
+  grid-template-columns: 1fr
+  align-content: center
+  justify-content: center
+  gap: 12px
+
+%m-bar-vertical-leading,
+%m-bar-vertical-body,
+%m-bar-vertical-trailing
+  display: grid
+  grid-auto-rows: minmax(1fr, max-content)
+  grid-auto-flow: row
+  align-items: center
+  justify-content: center
+  gap: 12px
+
+%m-bar-vertical-leading
+  grid-row: row-1-start / row-1-end
+
+%m-bar-vertical-body
+  grid-row: row-2-start / row-2-end
+
+%m-bar-vertical-trailing
+  grid-row: row-3-start / row-3-end
+
 .m-bar
-  @extend %m-bar
+  &,
+  &.horizontal
+    @extend %m-bar-horizontal
 
-  > .m-bar-leading
-    @extend %m-bar-leading
+    > .m-bar-leading
+      @extend %m-bar-horizontal-leading
 
-  > .m-bar-body
-    @extend %m-bar-body
+    > .m-bar-body
+      @extend %m-bar-horizontal-body
 
-  > .m-bar-trailing
-    @extend %m-bar-trailing
+    > .m-bar-trailing
+      @extend %m-bar-horizontal-trailing
+
+  &.vertical
+    @extend %m-bar-vertical
+
+    > .m-bar-leading
+      @extend %m-bar-vertical-leading
+
+    > .m-bar-body
+      @extend %m-bar-vertical-body
+
+    > .m-bar-trailing
+      @extend %m-bar-vertical-trailing

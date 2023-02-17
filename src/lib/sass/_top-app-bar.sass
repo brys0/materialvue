@@ -33,7 +33,7 @@
 @use './theme'
 
 .m-top-app-bar
-  @extend %m-bar
+  @extend %m-bar-horizontal
 
   padding: 0 16px
   height: 64px
@@ -46,10 +46,10 @@
     visibility: hidden
 
   > .m-bar-leading
-    @extend %m-bar-leading
+    @extend %m-bar-horizontal-leading
 
   > .m-bar-body
-    @extend %m-bar-body
+    @extend %m-bar-horizontal-body
 
   > .m-bar-trailing
-    @extend %m-bar-trailing
+    @extend %m-bar-horizontal-trailing

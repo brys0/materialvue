@@ -32,6 +32,7 @@
 
 export {
 	MBar,
+	MBarDirection,
 } from '@/lib/vue/bars/MBar'
 
 export {
