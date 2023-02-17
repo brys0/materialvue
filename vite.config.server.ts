@@ -35,13 +35,13 @@ import {
 	fileURLToPath,
 } from 'node:url'
 
+import JSON5 from 'json5'
+
 import {
 	LibraryFormats,
 	UserConfigExport,
 	defineConfig,
 } from 'vite'
-
-import JSON5 from 'json5'
 
 const formats: LibraryFormats[] = [ 'es' ]
 const external = [

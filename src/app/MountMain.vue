@@ -33,10 +33,7 @@
 -->
 
 <script lang="ts" setup>
-import {
-	MApp,
-} from '@/lib/vue'
-
+import { MApp } from '@/lib/vue'
 </script>
 
 <template>

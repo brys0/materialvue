@@ -180,6 +180,7 @@ import {
 
 <style lang="sass" scoped>
   @use '@/lib/sass/theme'
+
   .m-main
     // background: green
 

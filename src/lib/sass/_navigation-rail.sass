@@ -34,38 +34,26 @@
 @use './conversion'
 
 .m-navigation-rail
-  @extend %is-not-selectable
-
-  display: grid
-  grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] 1fr [row-2-end row-3-start] max-content [row-3-end]
-  align-content: stretch
-  justify-content: stretch
-  gap: 12px
+  @extend %m-bar-vertical
 
   @include theme.preferred
     background: theme.style(surface)
 
+  > .m-rail-leading
+    @extend %m-bar-vertical-leading
+
+  > .m-rail-body
+    @extend %m-bar-vertical-body
+
+  > .m-rail-trailing
+    @extend %m-bar-vertical-trailing
+
   > .m-rail-leading,
   > .m-rail-body,
   > .m-rail-trailing
-    display: grid
     grid-auto-rows: minmax(56px, max-content)
-    grid-auto-flow: row
-    gap: 12px
-
-  > .m-rail-leading,
-  > .m-rail-trailing
-    align-items: center
-    justify-content: center
-
-  > .m-rail-leading
-    grid-row: row-1-start / row-1-end
-
-  > .m-rail-trailing
-    grid-row: row-3-start / row-3-end
 
   > .m-rail-body
-    grid-row: row-2-start / row-2-end
     align-content: start
 
     overflow-x: hidden
