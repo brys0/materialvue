@@ -1,4 +1,4 @@
 #!/bin/sh
 
 nginx
-npm run release
+npm run service
