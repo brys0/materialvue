@@ -66,8 +66,8 @@ try {
 	}
 
 	if ('test' === import.meta.env.MODE || 'test' === process.env.MODE) {
-    setTimeout(shutdown, 1000)
-  }
+		setTimeout(shutdown, 1000)
+	}
 
 	process.on('SIGINT', () => {
 		logger.info('Got SIGINT (aka ctrl-c in docker). Graceful shutdown ', new Date().toISOString())
