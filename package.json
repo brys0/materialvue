@@ -1,6 +1,6 @@
 {
   "name": "@cosmicmind/materialjs",
-  "version": "0.0.1-rc-021623-5-1",
+  "version": "0.0.1-rc-022423-5",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
   "author": {
@@ -43,7 +43,7 @@
     "dev:build:app": "vite build --config vite.config.app.ts --mode development",
     "dev:build:server": "vite build --config vite.config.server.ts --mode development",
     "start": "node dist/server.js",
-    "service": "run-s build:app build:server start",
+    "release": "run-s build:app build:server start",
     "test": "run-s test:unit",
     "test:unit": "vitest run --config vite.config.test.ts --mode test",
     "test:watch": "vitest --config vite.config.test.ts --mode test",
@@ -55,7 +55,7 @@
     "docker:build": "docker build --build-arg npm_token=${npm_token} --squash --target release -t cosmicmind/materialjs:latest ."
   },
   "dependencies": {
-    "@cosmicmind/foundationjs": "^0.0.1-rc-021423-1",
+    "@cosmicmind/foundationjs": "^0.0.1-rc-022423-1",
     "@koa/router": "^12.0.0",
     "@types/jsdom": "^20.0.0",
     "@types/koa": "^2.13.5",
