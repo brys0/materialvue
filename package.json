@@ -1,6 +1,6 @@
 {
   "name": "@cosmicmind/materialjs",
-  "version": "0.0.1-rc-021623-5-1",
+  "version": "0.0.1-rc-022423-5",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
   "author": {
@@ -18,7 +18,7 @@
   "type": "module",
   "main": "dist/lib.es.js",
   "module": "dist/lib.es.js",
-  "types": "dist/lib/vue/index.d.ts",
+  "types": "dist/src/lib/vue/index.d.ts",
   "files": [
     "dist",
     "typings",
@@ -55,7 +55,7 @@
     "docker:build": "docker build --build-arg npm_token=${npm_token} --squash --target release -t cosmicmind/materialjs:latest ."
   },
   "dependencies": {
-    "@cosmicmind/foundationjs": "^0.0.1-rc-021423-1",
+    "@cosmicmind/foundationjs": "^0.0.1-rc-022423-1",
     "@koa/router": "^12.0.0",
     "@types/jsdom": "^20.0.0",
     "@types/koa": "^2.13.5",
