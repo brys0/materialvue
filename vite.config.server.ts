@@ -54,7 +54,7 @@ const alias = {
 }
 
 const external = [
-	'http',
+	'node:http',
 	'koa',
 	'koa-bodyparser',
 	'koa-static',

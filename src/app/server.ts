@@ -30,7 +30,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import http from 'http'
+import http from 'node:http'
 import Koa from 'koa'
 import koaBodyParser from 'koa-bodyparser'
 import Router from '@koa/router'
