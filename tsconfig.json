@@ -3,7 +3,8 @@
   "compilerOptions": {
     "types": [
       "node",
-      "jsdom"
+      "jsdom",
+      "vite/client"
     ],
     "target": "esnext",
     "module": "esnext",
