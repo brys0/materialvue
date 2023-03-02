@@ -35,18 +35,26 @@ import {
 	fileURLToPath,
 } from 'node:url'
 
-import JSON5 from 'json5'
+import { defineConfig } from 'vite'
 
-import {
-	LibraryFormats,
-	UserConfigExport,
-	defineConfig,
-} from 'vite'
+const srcDir = 'src'
+const entry = `${srcDir}/app/server.ts`
+const output = 'server.js'
+const format = 'es'
+const publicDir = false
+const emptyOutDir = false
+const minify = 'development' !== process.env.NODE_ENV
 
-const formats: LibraryFormats[] = [ 'es' ]
+const define = {
+	SERVER_PORT: JSON.stringify(String(process.env.SERVER_PORT)),
+}
+
+const alias = {
+	'@': fileURLToPath(new URL(srcDir, import.meta.url)),
+}
+
 const external = [
 	'http',
-	'json5',
 	'koa',
 	'koa-bodyparser',
 	'koa-static',
@@ -54,34 +62,22 @@ const external = [
 	'@cosmicmind/foundationjs'
 ]
 
-const srcDir = 'src'
-const emptyOutDir = false
-
-export default defineConfig(() => {
-	const minify = 'production' === process.env.NODE_ENV
-	const config: UserConfigExport = {
-		define: {
-			SERVER_PORT: JSON5.stringify(String(process.env.SERVER_PORT)),
-		},
-		resolve: {
-			alias: {
-				'@': fileURLToPath(new URL(srcDir, import.meta.url)),
+export default defineConfig(() => ({
+	define,
+	resolve: {
+		alias,
+	},
+	publicDir,
+	build: {
+		emptyOutDir,
+		rollupOptions: {
+			input: entry,
+			output: {
+				entryFileNames: output,
+				format,
 			},
+			external,
 		},
-		publicDir: false,
-		build: {
-			emptyOutDir,
-			lib: {
-				name: process.env.npm_package_name,
-				entry: `${srcDir}/app/server.ts`,
-				formats,
-				fileName: 'server',
-			},
-			rollupOptions: {
-				external,
-			},
-			minify,
-		},
-	}
-	return config
-})
+		minify,
+	},
+}))

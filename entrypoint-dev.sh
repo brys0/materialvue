@@ -1,4 +1,9 @@
 #!/bin/sh
 
 nginx
-npm run dev
+
+if [ "$VITE_MODE" = "development" ]; then
+    npm run watch
+elif [ "$VITE_MODE" = "test" ]; then
+    npm run dev
+fi

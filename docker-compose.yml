@@ -5,14 +5,14 @@ services:
     container_name: materialjs
     build:
       context: .
-      target: ${docker_target:-dev}
+      target: ${build_target:-dev}
     ports:
       - 80:8080
     volumes:
-      - .:/node/service:cached
+      - .:/node/service:delegated
       - ./.docker/nginx/logs:/node/logs:delegated
     environment:
       DEBUG: materialjs:*
       NODE_ENV: ${node_env:-development}
-      MODE: ${mode:-development}
+      VITE_MODE: ${vite_mode:-development}
       SERVER_PORT: 3000

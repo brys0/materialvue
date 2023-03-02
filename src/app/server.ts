@@ -65,7 +65,7 @@ try {
 		})
 	}
 
-	if ('test' === import.meta.env.MODE || 'test' === process.env.MODE) {
+	if ('test' === import.meta.env.MODE) {
 		setTimeout(shutdown, 1000)
 	}
 

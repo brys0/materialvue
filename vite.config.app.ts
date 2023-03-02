@@ -36,7 +36,7 @@ import {
 } from 'node:url'
 
 import {
-	UserConfigExport,
+	PluginOption,
 	defineConfig,
 } from 'vite'
 
@@ -44,26 +44,30 @@ import vue from '@vitejs/plugin-vue'
 
 const srcDir = 'src'
 const distDir = 'dist'
+const outDir = `${distDir}/public`
+const publicDir = 'public'
+const assetsDir = 'assets'
 const emptyOutDir = false
+const minify = 'development' !== process.env.NODE_ENV
 
-export default defineConfig(() => {
-	const minify = 'production' === process.env.NODE_ENV
-	const config: UserConfigExport = {
-		resolve: {
-			alias: {
-				'@': fileURLToPath(new URL(srcDir, import.meta.url)),
-			},
-		},
-		publicDir: 'public',
-		build: {
-			assetsDir: 'assets',
-			outDir: `${distDir}/public`,
-			emptyOutDir,
-			minify,
-		},
-		plugins: [
-			vue()
-		],
-	}
-	return config
-})
+const alias = {
+	'@': fileURLToPath(new URL(srcDir, import.meta.url)),
+}
+
+const plugins = [
+	vue()
+] as PluginOption[]
+
+export default defineConfig(() => ({
+	resolve: {
+		alias,
+	},
+	plugins,
+	publicDir,
+	build: {
+		assetsDir,
+		outDir,
+		emptyOutDir,
+		minify,
+	},
+}))
