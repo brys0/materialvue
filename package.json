@@ -1,6 +1,6 @@
 {
   "name": "@cosmicmind/materialjs",
-  "version": "0.0.1-rc-030223-5",
+  "version": "0.0.1-rc-030223-5-a",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
   "author": {
@@ -16,18 +16,11 @@
     "access": "public"
   },
   "type": "module",
-  "main": "./dist/lib-cjs.js",
+  "main": "./dist/lib-es.js",
   "module": "./dist/lib-es.js",
   "types": "./dist/src/lib/vue/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/lib-es.js",
-      "require": "./dist/lib-cjs.cjs"
-    }
-  },
   "files": [
     "dist",
-    "typings",
     "LICENSE",
     "README.md",
     "package.json"
