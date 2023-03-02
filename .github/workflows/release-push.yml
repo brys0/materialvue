@@ -34,7 +34,7 @@ jobs:
       - codeql
       - lib
       - test
-      - docker
+      - build
     uses: cosmicmind/github-actions/.github/workflows/lib-publish.yml@release
     secrets:
       npm_token: ${{ secrets.npm_token }}
