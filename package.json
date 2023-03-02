@@ -1,6 +1,6 @@
 {
   "name": "@cosmicmind/materialjs",
-  "version": "0.0.1-rc-030123-5",
+  "version": "0.0.1-rc-030223-5",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
   "author": {
@@ -16,9 +16,15 @@
     "access": "public"
   },
   "type": "module",
-  "main": "dist/server.js",
-  "module": "dist/lib.es.js",
-  "types": "dist/src/lib/vue/index.d.ts",
+  "main": "./dist/lib-cjs.js",
+  "module": "./dist/lib-es.js",
+  "types": "./dist/src/lib/vue/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/lib-es.js",
+      "require": "./dist/lib-cjs.cjs"
+    }
+  },
   "files": [
     "dist",
     "typings",
@@ -44,12 +50,12 @@
     "test": "run-s test:unit",
     "test:unit": "vitest run --config vite.config.test.ts --mode ${VITE_MODE:-test}",
     "test:coverage": "vitest run --coverage --config vite.config.test.ts --mode ${VITE_MODE:-benchmark}",
-    "nodemon": "nodemon --watch dist/server.js",
+    "nodemon": "nodemon dist/server.js --watch dist/server.js",
     "start": "node dist/server.js",
     "release": "run-s build"
   },
   "dependencies": {
-    "@cosmicmind/foundationjs": "^0.0.1-rc-030123-1-a",
+    "@cosmicmind/foundationjs": "^0.0.1-rc-030223-1",
     "@koa/router": "^12.0.0",
     "@types/jsdom": "^20.0.0",
     "@types/koa": "^2.13.5",
