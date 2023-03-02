@@ -82,7 +82,6 @@ export default defineConfig(() => ({
 	},
 	plugins,
 	build: {
-		manifest: true,
 		emptyOutDir,
 		lib: {
 			name,
