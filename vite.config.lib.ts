@@ -36,8 +36,8 @@ import {
 } from 'node:url'
 
 import {
+	PluginOption,
 	LibraryFormats,
-	UserConfigExport,
 	defineConfig,
 } from 'vite'
 
@@ -45,49 +45,53 @@ import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
+const name = process.env.npm_package_name
+const srcDir = 'src'
+const entry = `${srcDir}/lib/vue/index.ts`
+const output = 'lib.es'
+const formats: LibraryFormats[] = [ 'es' ]
+const emptyOutDir = false
+const minify = 'development' !== process.env.NODE_ENV
+
+const alias = {
+	'@': fileURLToPath(new URL(srcDir, import.meta.url)),
+}
+
 const external = [
-	'json5',
-	'vue',
-	'pinia',
-	'vee-validate',
 	'@cosmicmind/foundationjs'
 ]
 
-const srcDir = 'src'
-const emptyOutDir = false
-const formats: LibraryFormats[] = [ 'es' ]
-
-export default defineConfig(() => {
-	const minify = 'production' === process.env.NODE_ENV
-	const config: UserConfigExport = {
-		resolve: {
-			alias: {
-				'@': fileURLToPath(new URL(srcDir, import.meta.url)),
-			},
-		},
-		plugins: [
-			vue(),
-			dts(),
-			viteStaticCopy({
-				targets: [
-					{
-						src: `${srcDir}/lib/sass`,
-						dest: './',
-					}
-				],
-			})
-		],
-		build: {
-			emptyOutDir,
-			lib: {
-				name: process.env.npm_package_name,
-				entry: `${srcDir}/lib/vue/index.ts`,
-				formats,
-				fileName: 'lib.es',
-			},
-			rollupOptions: { external },
-			minify,
-		},
+const staticTargets = [
+	{
+		src: `${srcDir}/lib/sass`,
+		dest: './',
 	}
-	return config
-})
+]
+
+const plugins = [
+	vue(),
+	dts(),
+	viteStaticCopy({
+		targets: staticTargets,
+	})
+] as PluginOption[]
+
+export default defineConfig(() => ({
+	resolve: {
+		alias,
+	},
+	plugins,
+	build: {
+		emptyOutDir,
+		lib: {
+			name,
+			entry,
+			formats,
+			fileName: output,
+		},
+		rollupOptions: {
+			external,
+		},
+		minify,
+	},
+}))
