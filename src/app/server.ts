@@ -44,7 +44,6 @@ const app = new Koa()
 app.proxy = true
 
 app.use(koaBodyParser())
-
 app.use(serve('dist/public'))
 
 const router = new Router()

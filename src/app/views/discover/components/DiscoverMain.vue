@@ -152,7 +152,7 @@ onBeforeUnmount(() => {
   <m-main>
     <m-section class="banner">
       <m-display :size="MTypographySize.large">
-        Typography
+        Daniel wow
       </m-display>
       <m-body :size="MTypographySize.large">
         See the <a

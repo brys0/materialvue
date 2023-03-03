@@ -1,0 +1,15 @@
+{
+  "verbose": true,
+  "watch": [
+    "dist/server.js"
+  ],
+  "ext": "js",
+  "ignore": [
+    "src",
+    "assets",
+    "public",
+    ".github",
+    ".docker",
+    "typings"
+  ]
+}

@@ -79,6 +79,10 @@ COPY --chown=node:node . .
 
 CMD ./entrypoint-dev.sh
 
+# watch
+FROM dev as watch
+CMD ./entrypoint-watch.sh
+
 # test
 FROM dev as test
 CMD ./entrypoint-test.sh
