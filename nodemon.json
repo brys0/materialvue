@@ -5,11 +5,15 @@
   ],
   "ext": "js",
   "ignore": [
+    "config",
     "src",
+    "scripts",
     "assets",
     "public",
     ".github",
     ".docker",
-    "typings"
+    "typings",
+    "__tests__",
+    "__benchmarks__"
   ]
 }

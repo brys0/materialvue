@@ -1,6 +1,6 @@
 {
   "name": "@cosmicmind/materialjs",
-  "version": "0.0.1-rc-030223-5-e",
+  "version": "0.0.1-rc-030223-5-f",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
   "author": {
@@ -43,13 +43,13 @@
     "dev:lib": "vite build --config vite.config.lib.ts --mode ${VITE_MODE:-development}",
     "dev:app": "vite build --config vite.config.app.ts --mode ${VITE_MODE:-development}",
     "dev:server": "vite build --config vite.config.server.ts --mode ${VITE_MODE:-development}",
-    "watch": "mkdir dist; touch dist/server.js; run-p watch:app watch:server nodemon",
-    "watch:lib": "vite build --watch --config vite.config.lib.ts --mode ${VITE_MODE:-watch}",
-    "watch:app": "vite build --watch --config vite.config.app.ts --mode ${VITE_MODE:-watch}",
-    "watch:server": "vite build --watch --config vite.config.server.ts --mode ${VITE_MODE:-watch}",
+    "watch": "run-p watch:app watch:server nodemon",
+    "watch:lib": "vite build --watch --config vite.config.lib.ts --mode ${VITE_MODE:-development}",
+    "watch:app": "vite build --watch --config vite.config.app.ts --mode ${VITE_MODE:-development}",
+    "watch:server": "vite build --watch --config vite.config.server.ts --mode ${VITE_MODE:-development}",
     "test": "run-s test:unit",
     "test:unit": "vitest run --config vite.config.test.ts --mode ${VITE_MODE:-test}",
-    "test:coverage": "vitest run --coverage --config vite.config.test.ts --mode ${VITE_MODE:-benchmark}",
+    "test:coverage": "vitest run --coverage --config vite.config.test.ts --mode ${VITE_MODE:-test}",
     "nodemon": "nodemon dist/server.js",
     "start": "node dist/server.js",
     "release": "run-s build"
