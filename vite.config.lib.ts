@@ -60,6 +60,7 @@ const alias = {
 const external = [
 	'vue',
 	'pinia',
+	'vee-validate',
 	'@cosmicmind/foundationjs'
 ]
 
