@@ -58,6 +58,8 @@ const alias = {
 }
 
 const external = [
+	'vue',
+	'pinia',
 	'@cosmicmind/foundationjs'
 ]
 
