@@ -16,6 +16,7 @@
     "access": "public"
   },
   "type": "module",
+  "main": "dist/lib-cjs.cjs",
   "module": "dist/lib-es.js",
   "types": "dist/src/lib/vue/index.d.ts",
   "exports": {
