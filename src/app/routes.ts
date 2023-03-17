@@ -30,7 +30,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import Koa from 'koa'
 import Router from '@koa/router'
 import serve from 'koa-static'
 
@@ -39,11 +38,11 @@ export default (router: Router): void => {
 		'/',
 		'/login',
 		'/adaptive'
-	], (ctx: Koa.Context, next: Koa.Next) =>
-		serve('dist/public')(
+	], async (ctx, next) => {
+		await serve('dist/public')(
 			Object.assign(ctx, {
 				path: 'index.html',
 			}),
 			next)
-	)
+	})
 }
