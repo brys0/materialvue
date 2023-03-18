@@ -52,14 +52,6 @@ import {
 
 const appStore = useAppStore()
 
-appStore.$subscribe((): void => {
-	logger.log('appStore subscribe')
-})
-
-appStore.$onAction((): void => {
-	logger.log('appStore actions')
-})
-
 const syncTheme = (theme: string): void => {
 	const {
 		body,

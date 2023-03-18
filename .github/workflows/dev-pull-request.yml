@@ -15,7 +15,7 @@ jobs:
   lib:
     uses: cosmicmind/github-actions/.github/workflows/lib-build.yml@release
     with:
-      BUILD_TARGET: dev
+      BUILD_TARGET: dev:lib
       NODE_ENV: development
       VITE_MODE: test
   test:
