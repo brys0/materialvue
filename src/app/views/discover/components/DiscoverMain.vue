@@ -2,7 +2,7 @@
 /**
  * BSD 3-Clause License
  *
- * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicmind dot com>
+ * Copyright © 2023, Daniel Jonathan <daniel at cosmicmind dot com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -5445,20 +5445,20 @@ onBeforeUnmount(() => {
 </template>
 
 <style lang="sass" scoped>
-  @use '@/lib/sass/theme'
+@use '@/lib/sass/theme'
 
-  .m-section
-    padding: 48px
+.m-section
+  padding: 48px
 
-    &.banner
-      > span
-        padding: 12px
+  &.banner
+    > span
+      padding: 12px
 
-    a
-      @include theme.preferred
-        color: theme.style(primary)
+  a
+    @include theme.preferred
+      color: theme.style(primary)
 
-    > .m-display
-      padding: 24px 0
+  > .m-display
+    padding: 24px 0
 
 </style>

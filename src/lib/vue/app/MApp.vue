@@ -2,7 +2,7 @@
 /**
  * BSD 3-Clause License
  *
- * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicmind dot com>
+ * Copyright © 2023, Daniel Jonathan <daniel at cosmicmind dot com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -51,14 +51,6 @@ import {
 } from '@/app/contexts/app/stores/AppStore'
 
 const appStore = useAppStore()
-
-appStore.$subscribe((): void => {
-	logger.log('appStore subscribe')
-})
-
-appStore.$onAction((): void => {
-	logger.log('appStore actions')
-})
 
 const syncTheme = (theme: string): void => {
 	const {

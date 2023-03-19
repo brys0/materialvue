@@ -1,7 +1,7 @@
 /**
  * BSD 3-Clause License
  *
- * Copyright (c) 2022, Daniel Jonathan <daniel at cosmicmind dot com>
+ * Copyright © 2023, Daniel Jonathan <daniel at cosmicmind dot com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,7 +30,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import Koa from 'koa'
 import Router from '@koa/router'
 import serve from 'koa-static'
 
@@ -39,11 +38,11 @@ export default (router: Router): void => {
 		'/',
 		'/login',
 		'/adaptive'
-	], (ctx: Koa.Context, next: Koa.Next) =>
-		serve('dist/public')(
+	], async (ctx, next) => {
+		await serve('dist/public')(
 			Object.assign(ctx, {
 				path: 'index.html',
 			}),
 			next)
-	)
+	})
 }

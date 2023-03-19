@@ -8,12 +8,14 @@ on:
 jobs:
   lint:
     uses: cosmicmind/github-actions/.github/workflows/lint.yml@release
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   codeql:
     uses: cosmicmind/github-actions/.github/workflows/codeql.yml@release
   lib:
     uses: cosmicmind/github-actions/.github/workflows/lib-build.yml@release
     with:
-      BUILD_TARGET: dev
+      BUILD_TARGET: dev:lib
       NODE_ENV: development
       VITE_MODE: test
   test:

@@ -8,4 +8,4 @@ interface ImportMeta {
   readonly env: ImportMetaEnv
 }
 
-declare const SERVER_PORT: string
+declare const SERVER_PORT: number
