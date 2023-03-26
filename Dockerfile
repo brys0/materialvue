@@ -18,7 +18,7 @@ LABEL org.opencontainers.image.title="Domain Template Dockerfile"
 LABEL org.opencontainers.image.url=not-set_use_docker-hub-url
 LABEL org.opencontainers.image.source=not-github-url
 LABEL org.opencontainers.image.licenses=UNLICENSED
-LABEL org.cosmicverse.nodeversion=${NODE_VERSION}
+LABEL com.cosmicmind.nodeversion=${NODE_VERSION}
 
 RUN apk update \
     && apk add nginx \
@@ -32,7 +32,7 @@ ENTRYPOINT [ "tini", "--" ]
 
 WORKDIR /node
 
-COPY package*.json .
+COPY package*.json ./
 
 RUN mkdir -p /node/logs \
     && mkdir -p /node/cache \
@@ -71,11 +71,11 @@ ENV NODE_ENV=development
 
 RUN npm install \
     && npm cache clean --force \
-    && chown -R node:node .
+    && chown -R node:node ./
 
 WORKDIR /node/service
 
-COPY --chown=node:node . .
+COPY --chown=node:node . ./
 
 CMD ./entrypoint-dev.sh
 
@@ -93,10 +93,10 @@ ENV NODE_ENV=production
 
 RUN npm ci --omit=dev \
     && npm cache clean --force \
-    && chown -R node:node .
+    && chown -R node:node ./
 
 WORKDIR /node/service
 
-COPY --chown=node:node . .
+COPY --chown=node:node . ./
 
 CMD ./entrypoint-release.sh
