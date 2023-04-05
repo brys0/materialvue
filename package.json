@@ -1,6 +1,6 @@
 {
   "name": "@cosmicmind/materialjs",
-  "version": "0.0.1-rc-031923-5",
+  "version": "0.0.1-rc-040523-5",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
   "author": {
@@ -56,7 +56,7 @@
     "release": "run-s build"
   },
   "dependencies": {
-    "@cosmicmind/foundationjs": "^0.0.1-rc-031923-1",
+    "@cosmicmind/foundationjs": "^0.0.1-rc-040523-1",
     "@koa/router": "^12.0.0",
     "@types/jsdom": "^20.0.0",
     "@types/koa": "^2.13.5",
