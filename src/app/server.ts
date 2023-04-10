@@ -30,13 +30,16 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+
 import http from 'node:http'
 import Koa from 'koa'
 import koaBodyParser from 'koa-bodyparser'
 import Router from '@koa/router'
 import serve from 'koa-static'
 
-import { logger } from '@cosmicmind/foundationjs'
+import {
+	logger,
+} from '@cosmicmind/foundationjs'
 
 import routes from '@/app/routes'
 

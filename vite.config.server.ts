@@ -38,8 +38,8 @@ import {
 import { defineConfig } from 'vite'
 
 const srcDir = 'src'
-const entry = `${srcDir}/app/server.ts`
-const output = 'server.js'
+const input = `${srcDir}/app/server.ts`
+const entryFileNames = 'server.js'
 const format = 'es'
 const publicDir = false
 const emptyOutDir = false
@@ -71,9 +71,9 @@ export default defineConfig(() => ({
 	build: {
 		emptyOutDir,
 		rollupOptions: {
-			input: entry,
+			input,
 			output: {
-				entryFileNames: output,
+				entryFileNames,
 				format,
 			},
 			external,

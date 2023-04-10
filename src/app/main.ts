@@ -44,7 +44,7 @@ import {
 } from 'vue-router'
 
 import '@/app/main.sass'
-import MountMain from '@/app/MountMain.vue'
+import { MApp } from '@/lib/vue'
 
 import adaptiveRoutes from '@/app/views/adaptive/routes'
 import discoverRoutes from '@/app/views/discover/routes'
@@ -59,7 +59,7 @@ const router = createRouter({
 	history: createWebHistory(),
 })
 
-createApp(MountMain)
+createApp(MApp)
 	.use(createPinia())
 	.use(router)
 	.mount('#mount-vue')

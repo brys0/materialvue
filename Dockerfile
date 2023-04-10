@@ -40,8 +40,8 @@ RUN mkdir -p /node/logs \
     && rm /etc/nginx/http.d/default.conf
 
 COPY ./config/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ./config/nginx/http.d/* /etc/nginx/http.d
-COPY ./config/nginx/inc.d/* /etc/nginx/inc.d
+COPY ./config/nginx/http.d/* /etc/nginx/http.d/
+COPY ./config/nginx/inc.d/* /etc/nginx/inc.d/
 
 RUN chown -R node:node /etc/nginx/http.d \
     && chown -R node:node /etc/nginx/inc.d \
@@ -55,6 +55,7 @@ RUN chown -R node:node /etc/nginx/http.d \
 
 # dev
 FROM source as dev
+ARG NPM_TOKEN
 ENV NODE_ENV=development
 
 # Install some helper tools when developing locally.
@@ -89,6 +90,7 @@ CMD ./entrypoint-test.sh
 
 # release
 FROM source as release
+ARG NPM_TOKEN
 ENV NODE_ENV=production
 
 RUN npm ci --omit=dev \
