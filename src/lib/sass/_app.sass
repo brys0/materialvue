@@ -70,10 +70,10 @@ body
   > .m-navigation-rail
     z-index: 8
 
-    @include adaptive.is-lt-desktop
+    @include adaptive.is-lt-expanded
       display: none
 
-    @include adaptive.is-gt-tablet
+    @include adaptive.is-expanded
       width: 80px
       grid-row: row-2-start / row-3-end
       grid-column: col-1-start / col-1-end
@@ -87,14 +87,14 @@ body
     &.is-opened
       width: 280px
 
-      @include adaptive.is-lt-desktop
+      @include adaptive.is-lt-expanded
         ~ .m-scrim
           display: block
 
     &.is-closed
       width: 0
 
-    @include adaptive.is-lt-desktop
+    @include adaptive.is-lt-expanded
       position: absolute
       top: 0
       left: 0

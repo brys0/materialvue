@@ -34,8 +34,9 @@ import {
 	RouteRecordRaw,
 } from 'vue-router'
 
+import AdaptiveNavigationDrawer from '@/app/views/adaptive/components/AdaptiveNavigationDrawer.vue'
+
 import DiscoverNavigationRail from '@/app/views/discover/components/DiscoverNavigationRail.vue'
-import DiscoverNavigationDrawer from '@/app/views/discover/components/DiscoverNavigationDrawer.vue'
 import DiscoverTopAppBar from '@/app/views/discover/components/DiscoverTopAppBar.vue'
 import DiscoverToolbar from '@/app/views/discover/components/DiscoverToolbar.vue'
 import DiscoverMain from '@/app/views/discover/components/DiscoverMain.vue'
@@ -48,7 +49,7 @@ const routes: RouteRecordRaw[] = [
 		path: '/',
 		components: {
 			'navigation-rail': DiscoverNavigationRail,
-			'navigation-drawer': DiscoverNavigationDrawer,
+			'navigation-drawer': AdaptiveNavigationDrawer,
 			'top-app-bar': DiscoverTopAppBar,
 			toolbar: DiscoverToolbar,
 			main: DiscoverMain,

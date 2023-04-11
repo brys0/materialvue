@@ -50,7 +50,7 @@ import {
     <m-layout>
       <m-section class="full">
         <m-row>
-          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-gt-tablet-4">
+          <m-column class="is-compact-8 is-medium-6 is-expanded-6">
             <m-tile>
               <m-display>Content</m-display>
             </m-tile>
@@ -61,7 +61,7 @@ import {
               <m-display>Content</m-display>
             </m-tile>
           </m-column>
-          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-gt-tablet-4">
+          <m-column class="is-compact-8 is-medium-6 is-expanded-6">
             <m-tile>
               <m-display>Content</m-display>
             </m-tile>
@@ -75,12 +75,12 @@ import {
               <m-display>Content</m-display>
             </m-tile>
           </m-column>
-          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-gt-tablet-4">
+          <m-column class="is-compact-8 is-medium-6 is-expanded-6">
             <m-tile>
               <m-display>Content</m-display>
             </m-tile>
           </m-column>
-          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-gt-tablet-12">
+          <m-column class="is-compact-8 is-medium-6 is-expanded-6">
             <m-tile>
               <m-display>Content</m-display>
             </m-tile>
@@ -92,7 +92,7 @@ import {
       </m-section>
       <m-section class="comfortable">
         <m-row>
-          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-gt-tablet-4">
+          <m-column class="is-compact-8 is-medium-6 is-expanded-6">
             <m-tile>
               <m-display>Content</m-display>
             </m-tile>
@@ -103,7 +103,7 @@ import {
               <m-display>Content</m-display>
             </m-tile>
           </m-column>
-          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-gt-tablet-4">
+          <m-column class="is-compact-8 is-medium-6 is-expanded-6">
             <m-tile>
               <m-display>Content</m-display>
             </m-tile>
@@ -117,12 +117,12 @@ import {
               <m-display>Content</m-display>
             </m-tile>
           </m-column>
-          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-gt-tablet-4">
+          <m-column class="is-compact-8 is-medium-6 is-expanded-6">
             <m-tile>
               <m-display>Content</m-display>
             </m-tile>
           </m-column>
-          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-gt-tablet-12">
+          <m-column class="is-compact-8 is-medium-6 is-expanded-6">
             <m-tile>
               <m-display>Content</m-display>
             </m-tile>
@@ -134,7 +134,7 @@ import {
       </m-section>
       <m-section class="narrow">
         <m-row>
-          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-gt-tablet-4">
+          <m-column class="is-compact-8 is-medium-6 is-expanded-6">
             <m-tile>
               <m-display>Content</m-display>
             </m-tile>
@@ -145,7 +145,7 @@ import {
               <m-display>Content</m-display>
             </m-tile>
           </m-column>
-          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-gt-tablet-4">
+          <m-column class="is-compact-8 is-medium-6 is-expanded-6">
             <m-tile>
               <m-display>Content</m-display>
             </m-tile>
@@ -159,12 +159,12 @@ import {
               <m-display>Content</m-display>
             </m-tile>
           </m-column>
-          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-gt-tablet-4">
+          <m-column class="is-compact-8 is-medium-6 is-expanded-6">
             <m-tile>
               <m-display>Content</m-display>
             </m-tile>
           </m-column>
-          <m-column class="is-mobile-8 is-foldable-6 is-tablet-6 is-gt-tablet-12">
+          <m-column class="is-compact-8 is-medium-6 is-expanded-6">
             <m-tile>
               <m-display>Content</m-display>
             </m-tile>

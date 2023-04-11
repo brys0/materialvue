@@ -70,10 +70,10 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
 <template>
   <m-navigation-drawer :is-opened="isNavigationDrawerOpened">
     <m-drawer-leading>
-      <m-headline class="is-gt-tablet">
+      <m-headline class="is-expanded">
         Headline
       </m-headline>
-      <m-bar class="is-lt-desktop">
+      <m-bar class="is-lt-expanded">
         <m-bar-leading>
           <m-icon-button
             :toggle="true"

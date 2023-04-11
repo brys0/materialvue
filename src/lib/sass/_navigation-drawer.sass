@@ -66,10 +66,10 @@
         @include theme.preferred
           color: theme.style(on-surface-variant)
 
-    @include adaptive.is-gt-tablet
+    @include adaptive.is-expanded
       padding: 0 12px
 
-    @include adaptive.is-lt-desktop
+    @include adaptive.is-lt-expanded
       padding: 0 16px
       grid-auto-rows: minmax(64px, max-content)
 
