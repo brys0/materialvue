@@ -38,7 +38,7 @@ import AdaptiveNavigationDrawer from '@/app/views/adaptive/components/AdaptiveNa
 
 import DiscoverNavigationRail from '@/app/views/discover/components/DiscoverNavigationRail.vue'
 import DiscoverTopAppBar from '@/app/views/discover/components/DiscoverTopAppBar.vue'
-import DiscoverToolbar from '@/app/views/discover/components/DiscoverToolbar.vue'
+// import DiscoverToolbar from '@/app/views/discover/components/DiscoverToolbar.vue'
 import DiscoverMain from '@/app/views/discover/components/DiscoverMain.vue'
 import DiscoverFinder from '@/app/views/discover/components/DiscoverFinder.vue'
 import DiscoverModal from '@/app/views/discover/components/DiscoverModal.vue'
@@ -51,7 +51,7 @@ const routes: RouteRecordRaw[] = [
 			'navigation-rail': DiscoverNavigationRail,
 			'navigation-drawer': AdaptiveNavigationDrawer,
 			'top-app-bar': DiscoverTopAppBar,
-			toolbar: DiscoverToolbar,
+			// toolbar: DiscoverToolbar,
 			main: DiscoverMain,
 			finder: DiscoverFinder,
 			modal: DiscoverModal,

@@ -102,6 +102,12 @@ body
       grid-row: row-1-start / row-3-end
       box-shadow: theme.style(shadow-3)
 
+      border-top-right-radius: 12px
+      border-bottom-right-radius: 12px
+
+      @include theme.preferred
+        background: theme.style(elevation-1), theme.style(surface)
+
   > .m-toolbar
     margin-right: 12px
     grid-row: row-2-start / row-2-end
@@ -116,6 +122,13 @@ body
     @include theme.preferred
       background: theme.style(background)
 
+    + .m-main
+      border-top-left-radius: 0
+      border-top-right-radius: 0
+
+    @include adaptive.is-lt-expanded
+      margin-left: 12px
+
   > .m-main
     margin-bottom: 12px
     margin-right: 12px
@@ -123,11 +136,13 @@ body
     grid-column: col-3-start / col-3-end
     z-index: 0
 
-    border-bottom-left-radius: 12px
-    border-bottom-right-radius: 12px
+    border-radius: 12px
 
     @include theme.preferred
       background: theme.style(background)
+
+    @include adaptive.is-lt-expanded
+      margin-left: 12px
 
   > .m-finder
     grid-row: row-2-start / row-3-end
