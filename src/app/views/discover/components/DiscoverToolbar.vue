@@ -35,10 +35,30 @@
 <script lang="ts" setup>
 import {
 	MToolbar,
+	MBarLeading,
+	MBarBody,
+	MBarTrailing,
+	MHeadline,
 } from '@/lib/vue'
 
 </script>
 
 <template>
-  <m-toolbar />
+  <m-toolbar>
+    <m-bar-leading>
+      <m-headline>
+        Leading
+      </m-headline>
+    </m-bar-leading>
+    <m-bar-body>
+      <m-headline>
+        Body
+      </m-headline>
+    </m-bar-body>
+    <m-bar-trailing>
+      <m-headline>
+        Trailing
+      </m-headline>
+    </m-bar-trailing>
+  </m-toolbar>
 </template>

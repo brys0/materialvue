@@ -5448,8 +5448,6 @@ onBeforeUnmount(() => {
 @use '@/lib/sass/theme'
 
 .m-section
-  padding: 48px
-
   &.banner
     > span
       padding: 12px
