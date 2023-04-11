@@ -40,9 +40,6 @@
   display: grid
   grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] 1fr [row-2-end row-3-start] max-content [row-3-end]
 
-  @include theme.preferred
-    background: theme.style(surface)
-
   > .m-drawer-leading,
   > .m-drawer-body,
   > .m-drawer-trailing
@@ -134,9 +131,6 @@
 
         &,
         &.enabled
-          @include theme.preferred
-            background: theme.style(surface)
-
           > .m-drawer-list-item-leading
             > .m-icon
               @include theme.preferred

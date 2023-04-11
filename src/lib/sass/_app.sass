@@ -60,7 +60,7 @@ body
   overflow: hidden
 
   @include theme.preferred
-    background: theme.style(background)
+    background: theme.style(elevation-1), theme.style(background)
 
   > .m-top-app-bar
     grid-row: row-1-start / row-1-end
@@ -108,6 +108,8 @@ body
     z-index: 2
 
   > .m-main
+    margin-bottom: 12px
+    margin-right: 12px
     grid-row: row-3-start / row-3-end
     grid-column: col-3-start / col-3-end
     z-index: 0

@@ -35,7 +35,11 @@
 .m-main
   @extend %is-not-selectable
 
+  border-radius: 12px
   overflow: scroll
+
+  @include theme.preferred
+    background: theme.style(surface)
 
   &:empty
     visibility: hidden

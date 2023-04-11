@@ -36,9 +36,6 @@
 .m-navigation-rail
   @extend %m-bar-vertical
 
-  @include theme.preferred
-    background: theme.style(surface)
-
   > .m-rail-leading
     @extend %m-bar-vertical-leading
 
@@ -100,7 +97,6 @@
         &.enabled
           > .m-icon
             @include theme.preferred
-              background: theme.style(surface)
               color: theme.style(on-surface-variant)
 
           > .m-typography
