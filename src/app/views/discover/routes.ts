@@ -36,25 +36,26 @@ import {
 
 import AdaptiveNavigationDrawer from '@/app/views/adaptive/components/AdaptiveNavigationDrawer.vue'
 
-import DiscoverNavigationRail from '@/app/views/discover/components/DiscoverNavigationRail.vue'
-import DiscoverTopAppBar from '@/app/views/discover/components/DiscoverTopAppBar.vue'
-// import DiscoverToolbar from '@/app/views/discover/components/DiscoverToolbar.vue'
+import AppNavigationRail from '@/app/views/app/components/AppNavigationRail.vue'
+import AppTopAppBar from '@/app/views/app/components/AppTopAppBar.vue'
+// import AppToolbar from '@/app/views/app/components/AppToolbar.vue'
+import AppFinder from '@/app/views/app/components/AppFinder.vue'
+import AppModal from '@/app/views/app/components/AppModal.vue'
+
 import DiscoverMain from '@/app/views/discover/components/DiscoverMain.vue'
-import DiscoverFinder from '@/app/views/discover/components/DiscoverFinder.vue'
-import DiscoverModal from '@/app/views/discover/components/DiscoverModal.vue'
 
 const routes: RouteRecordRaw[] = [
 	{
 		name: 'discover',
 		path: '/',
 		components: {
-			'navigation-rail': DiscoverNavigationRail,
+			'navigation-rail': AppNavigationRail,
 			'navigation-drawer': AdaptiveNavigationDrawer,
-			'top-app-bar': DiscoverTopAppBar,
-			// toolbar: DiscoverToolbar,
+			'top-app-bar': AppTopAppBar,
+			// toolbar: AppToolbar,
 			main: DiscoverMain,
-			finder: DiscoverFinder,
-			modal: DiscoverModal,
+			finder: AppFinder,
+			modal: AppModal,
 		},
 	}
 ]
