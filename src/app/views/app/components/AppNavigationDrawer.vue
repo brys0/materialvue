@@ -94,16 +94,20 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
       <m-drawer-list>
         <m-drawer-list-item>
           <m-drawer-list-item-body>
-            <m-label>
-              Typography
-            </m-label>
+            <router-link to="/typography">
+              <m-label>
+                Typography
+              </m-label>
+            </router-link>
           </m-drawer-list-item-body>
         </m-drawer-list-item>
         <m-drawer-list-item>
           <m-drawer-list-item-body>
-            <m-label>
-              Theming
-            </m-label>
+            <router-link to="/theming">
+              <m-label>
+                Theming
+              </m-label>
+            </router-link>
           </m-drawer-list-item-body>
         </m-drawer-list-item>
         <m-drawer-list-item>

@@ -45,7 +45,7 @@ import DiscoverMain from '@/app/views/discover/components/DiscoverMain.vue'
 const routes: RouteRecordRaw[] = [
 	{
 		name: 'discover',
-		path: '/',
+		path: '/:page',
 		components: {
 			'navigation-rail': AppNavigationRail,
 			'navigation-drawer': AppNavigationDrawer,
@@ -53,6 +53,14 @@ const routes: RouteRecordRaw[] = [
 			main: DiscoverMain,
 			finder: AppFinder,
 			modal: AppModal,
+		},
+		props: {
+			'navigation-rail': true,
+			'navigation-drawer': true,
+			'top-app-bar': true,
+			main: true,
+			finder: true,
+			modal: true,
 		},
 	}
 ]

@@ -37,7 +37,14 @@ export default (router: Router): void => {
 	router.get([
 		'/',
 		'/login',
-		'/adaptive'
+		'/adaptive',
+		'/theming',
+		'/buttons',
+		'/lists',
+		'/cards',
+		'/navigation',
+		'/icons',
+		'/typography'
 	], async (ctx, next) => {
 		await serve('dist/public')(
 			Object.assign(ctx, {
