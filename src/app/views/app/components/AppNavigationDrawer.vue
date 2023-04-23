@@ -71,7 +71,7 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
   <m-navigation-drawer :is-opened="isNavigationDrawerOpened">
     <m-drawer-leading>
       <m-headline class="is-expanded">
-        Headline
+        Components
       </m-headline>
       <m-bar class="is-lt-expanded">
         <m-bar-leading>
@@ -93,132 +93,69 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
     <m-drawer-body>
       <m-drawer-list>
         <m-drawer-list-item>
-          <m-drawer-list-item-leading>
-            <m-rounded-icon>
-              mail
-            </m-rounded-icon>
-          </m-drawer-list-item-leading>
           <m-drawer-list-item-body>
             <m-label>
-              Mail
+              Typography
             </m-label>
           </m-drawer-list-item-body>
-          <m-drawer-list-item-trailing>
-            <m-label>
-              100+
-            </m-label>
-          </m-drawer-list-item-trailing>
-        </m-drawer-list-item>
-        <m-drawer-list-item :selected="true">
-          <m-drawer-list-item-leading>
-            <m-rounded-icon>
-              movie
-            </m-rounded-icon>
-          </m-drawer-list-item-leading>
-          <m-drawer-list-item-body>
-            <m-label>
-              Videos
-            </m-label>
-          </m-drawer-list-item-body>
-          <m-drawer-list-item-trailing>
-            <m-label>
-              100+
-            </m-label>
-          </m-drawer-list-item-trailing>
-          <m-divider />
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-leading>
-            <m-rounded-icon>
-              mail
-            </m-rounded-icon>
-          </m-drawer-list-item-leading>
           <m-drawer-list-item-body>
             <m-label>
-              Mail
+              Theming
             </m-label>
           </m-drawer-list-item-body>
-          <m-drawer-list-item-trailing>
-            <m-label>
-              100+
-            </m-label>
-          </m-drawer-list-item-trailing>
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-leading>
-            <m-rounded-icon>
-              movie
-            </m-rounded-icon>
-          </m-drawer-list-item-leading>
           <m-drawer-list-item-body>
             <m-label>
-              Videos
+              Buttons
             </m-label>
           </m-drawer-list-item-body>
-          <m-drawer-list-item-trailing>
-            <m-label>
-              100+
-            </m-label>
-          </m-drawer-list-item-trailing>
-          <m-divider />
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-leading>
-            <m-rounded-icon>
-              movie
-            </m-rounded-icon>
-          </m-drawer-list-item-leading>
           <m-drawer-list-item-body>
             <m-label>
-              Videos
+              Text fields
             </m-label>
           </m-drawer-list-item-body>
-          <m-drawer-list-item-trailing>
-            <m-label>
-              100+
-            </m-label>
-          </m-drawer-list-item-trailing>
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-leading>
-            <m-rounded-icon>
-              mail
-            </m-rounded-icon>
-          </m-drawer-list-item-leading>
           <m-drawer-list-item-body>
             <m-label>
-              Mail
+              Lists
             </m-label>
           </m-drawer-list-item-body>
-          <m-drawer-list-item-trailing>
-            <m-label>
-              100+
-            </m-label>
-          </m-drawer-list-item-trailing>
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-leading>
-            <m-rounded-icon>
-              movie
-            </m-rounded-icon>
-          </m-drawer-list-item-leading>
           <m-drawer-list-item-body>
             <m-label>
-              Videos
+              Cards
             </m-label>
           </m-drawer-list-item-body>
-          <m-drawer-list-item-trailing>
+        </m-drawer-list-item>
+        <m-drawer-list-item>
+          <m-drawer-list-item-body>
             <m-label>
-              100+
+              Navigation
             </m-label>
-          </m-drawer-list-item-trailing>
+          </m-drawer-list-item-body>
+        </m-drawer-list-item>
+        <m-drawer-list-item>
+          <m-drawer-list-item-body>
+            <m-label>
+              Icons
+            </m-label>
+          </m-drawer-list-item-body>
+        </m-drawer-list-item>
+        <m-drawer-list-item>
+          <m-drawer-list-item-body>
+            <m-label>
+              Layouts
+            </m-label>
+          </m-drawer-list-item-body>
         </m-drawer-list-item>
       </m-drawer-list>
     </m-drawer-body>
-    <m-drawer-trailing>
-      <m-headline>
-        Bottom
-      </m-headline>
-    </m-drawer-trailing>
   </m-navigation-drawer>
 </template>

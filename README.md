@@ -9,7 +9,7 @@ MaterialJS supports [Google Fonts icons](https://fonts.google.com/icons), [Vue 3
 - [x] Typography - display, headline, title, label, and body
 - [x] Theming - light and dark
 - [x] Common buttons - fab, extended fab, and icon buttons
-- [x] Input fields - filled and outlined
+- [x] Text fields - filled and outlined
 - [x] Lists - one line, two line, and three line items
 - [x] Cards - elevated, filled, and outlined
 - [x] Navigation - rail, drawer and top app bar

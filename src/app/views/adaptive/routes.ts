@@ -34,10 +34,10 @@ import {
 	RouteRecordRaw,
 } from 'vue-router'
 
-import AdaptiveNavigationRail from '@/app/views/adaptive/components/AdaptiveNavigationRail.vue'
-import AdaptiveNavigationDrawer from '@/app/views/adaptive/components/AdaptiveNavigationDrawer.vue'
-import AdaptiveTopAppBar from '@/app/views/adaptive/components/AdaptiveTopAppBar.vue'
-import AdaptiveToolbar from '@/app/views/adaptive/components/AdaptiveToolbar.vue'
+import AppNavigationRail from '@/app/views/app/components/AppNavigationRail.vue'
+import AppNavigationDrawer from '@/app/views/app/components/AppNavigationDrawer.vue'
+import AppTopAppBar from '@/app/views/app/components/AppTopAppBar.vue'
+import AppToolbar from '@/app/views/app/components/AppToolbar.vue'
 import AdaptiveMain from '@/app/views/adaptive/components/AdaptiveMain.vue'
 
 const routes: RouteRecordRaw[] = [
@@ -45,10 +45,10 @@ const routes: RouteRecordRaw[] = [
 		name: 'adaptive',
 		path: '/adaptive',
 		components: {
-			'navigation-rail': AdaptiveNavigationRail,
-			'navigation-drawer': AdaptiveNavigationDrawer,
-			'top-app-bar': AdaptiveTopAppBar,
-			toolbar: AdaptiveToolbar,
+			'navigation-rail': AppNavigationRail,
+			'navigation-drawer': AppNavigationDrawer,
+			'top-app-bar': AppTopAppBar,
+			toolbar: AppToolbar,
 			main: AdaptiveMain,
 		},
 	}

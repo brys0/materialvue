@@ -34,11 +34,9 @@ import {
 	RouteRecordRaw,
 } from 'vue-router'
 
-import AdaptiveNavigationDrawer from '@/app/views/adaptive/components/AdaptiveNavigationDrawer.vue'
-
 import AppNavigationRail from '@/app/views/app/components/AppNavigationRail.vue'
+import AppNavigationDrawer from '@/app/views/app/components/AppNavigationDrawer.vue'
 import AppTopAppBar from '@/app/views/app/components/AppTopAppBar.vue'
-// import AppToolbar from '@/app/views/app/components/AppToolbar.vue'
 import AppFinder from '@/app/views/app/components/AppFinder.vue'
 import AppModal from '@/app/views/app/components/AppModal.vue'
 
@@ -50,9 +48,8 @@ const routes: RouteRecordRaw[] = [
 		path: '/',
 		components: {
 			'navigation-rail': AppNavigationRail,
-			'navigation-drawer': AdaptiveNavigationDrawer,
+			'navigation-drawer': AppNavigationDrawer,
 			'top-app-bar': AppTopAppBar,
-			// toolbar: AppToolbar,
 			main: DiscoverMain,
 			finder: AppFinder,
 			modal: AppModal,

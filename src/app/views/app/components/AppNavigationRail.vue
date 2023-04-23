@@ -36,12 +36,8 @@
 import {
 	MNavigationRail,
 	MRailButton,
-	MRailLeading,
 	MRailBody,
-	MRailTrailing,
 	MLabel,
-	MFabButton,
-	MFabButtonVariant,
 	MRoundedIcon,
 } from '@/lib/vue'
 
@@ -49,38 +45,15 @@ import {
 
 <template>
   <m-navigation-rail>
-    <m-rail-leading>
-      <m-fab-button
-        :lowered="true"
-        :variant="MFabButtonVariant.tertiary"
-      >
-        <m-rounded-icon>
-          edit
-        </m-rounded-icon>
-      </m-fab-button>
-    </m-rail-leading>
     <m-rail-body>
       <m-rail-button>
         <m-rounded-icon>
-          tag
+          component_exchange
         </m-rounded-icon>
         <m-label>
-          Tags
-        </m-label>
-      </m-rail-button>
-      <m-rail-button :selected="true">
-        <m-rounded-icon>
-          bookmarks
-        </m-rounded-icon>
-        <m-label>
-          Bookmarks
+          Components
         </m-label>
       </m-rail-button>
     </m-rail-body>
-    <m-rail-trailing>
-      <m-rounded-icon>
-        settings
-      </m-rounded-icon>
-    </m-rail-trailing>
   </m-navigation-rail>
 </template>
