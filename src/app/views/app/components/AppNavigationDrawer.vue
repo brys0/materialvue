@@ -65,27 +65,6 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
 
 <template>
   <m-navigation-drawer :is-opened="isNavigationDrawerOpened">
-    <m-drawer-leading>
-      <m-headline class="is-expanded">
-        Components
-      </m-headline>
-      <m-bar class="is-lt-expanded">
-        <m-bar-leading>
-          <m-icon-button
-            :toggle="true"
-            :selected="isNavigationDrawerOpened"
-            @click="toggleNavigationDrawer"
-          >
-            <m-rounded-icon>
-              arrow_back_ios
-            </m-rounded-icon>
-          </m-icon-button>
-          <m-headline>
-            Material
-          </m-headline>
-        </m-bar-leading>
-      </m-bar>
-    </m-drawer-leading>
     <m-drawer-body>
       <m-drawer-list>
         <m-drawer-list-item>

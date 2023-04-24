@@ -60,7 +60,7 @@ body
   overflow: hidden
 
   @include theme.preferred
-    background: theme.style(elevation-1), theme.style(surface)
+    background: theme.style(background)
 
   > .m-top-app-bar
     grid-row: row-1-start / row-1-end
@@ -106,10 +106,9 @@ body
       border-bottom-right-radius: 12px
 
       @include theme.preferred
-        background: theme.style(elevation-1), theme.style(surface)
+        background: theme.style(background)
 
   > .m-toolbar
-    margin-right: 12px
     grid-row: row-2-start / row-2-end
     grid-column: col-3-start / col-3-end
     z-index: 2
@@ -126,23 +125,12 @@ body
       border-top-left-radius: 0
       border-top-right-radius: 0
 
-    @include adaptive.is-lt-expanded
-      margin-left: 12px
-
   > .m-main
-    margin-bottom: 12px
-    margin-right: 12px
     grid-row: row-3-start / row-3-end
     grid-column: col-3-start / col-3-end
     z-index: 0
 
     border-radius: 12px
-
-    @include theme.preferred
-      background: theme.style(background)
-
-    @include adaptive.is-lt-expanded
-      margin-left: 12px
 
   > .m-finder
     grid-row: row-2-start / row-3-end

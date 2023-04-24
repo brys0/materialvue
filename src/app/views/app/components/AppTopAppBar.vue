@@ -77,11 +77,6 @@ const isThemeLight = computed(() => appStore.isThemeLight)
         Material
       </m-headline>
     </m-bar-leading>
-    <m-bar-body>
-      <m-headline>
-        Search Bar
-      </m-headline>
-    </m-bar-body>
     <m-bar-trailing>
       <m-icon-button @click="toggleTheme">
         <m-rounded-icon v-if="isThemeLight">

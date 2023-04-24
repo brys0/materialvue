@@ -173,34 +173,6 @@ onBeforeUnmount(() => {
             </m-label>
           </m-elevated-button>
         </m-column>
-        <m-column>
-          <m-elevated-button :state="MButtonState.hovered">
-            <m-label>
-              Hovered
-            </m-label>
-          </m-elevated-button>
-        </m-column>
-        <m-column>
-          <m-elevated-button :state="MButtonState.focused">
-            <m-label>
-              Focused
-            </m-label>
-          </m-elevated-button>
-        </m-column>
-        <m-column>
-          <m-elevated-button :state="MButtonState.pressed">
-            <m-label>
-              Pressed
-            </m-label>
-          </m-elevated-button>
-        </m-column>
-        <m-column>
-          <m-elevated-button :state="MButtonState.disabled">
-            <m-label>
-              Disabled
-            </m-label>
-          </m-elevated-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -218,46 +190,6 @@ onBeforeUnmount(() => {
             </m-label>
           </m-elevated-button>
         </m-column>
-        <m-column>
-          <m-elevated-button :state="MButtonState.hovered">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Hovered
-            </m-label>
-          </m-elevated-button>
-        </m-column>
-        <m-column>
-          <m-elevated-button :state="MButtonState.focused">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Focused
-            </m-label>
-          </m-elevated-button>
-        </m-column>
-        <m-column>
-          <m-elevated-button :state="MButtonState.pressed">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Pressed
-            </m-label>
-          </m-elevated-button>
-        </m-column>
-        <m-column>
-          <m-elevated-button :state="MButtonState.disabled">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Disabled
-            </m-label>
-          </m-elevated-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -269,34 +201,6 @@ onBeforeUnmount(() => {
           <m-filled-button>
             <m-label>
               Enabled
-            </m-label>
-          </m-filled-button>
-        </m-column>
-        <m-column>
-          <m-filled-button :state="MButtonState.hovered">
-            <m-label>
-              Hovered
-            </m-label>
-          </m-filled-button>
-        </m-column>
-        <m-column>
-          <m-filled-button :state="MButtonState.focused">
-            <m-label>
-              Focused
-            </m-label>
-          </m-filled-button>
-        </m-column>
-        <m-column>
-          <m-filled-button :state="MButtonState.pressed">
-            <m-label>
-              Pressed
-            </m-label>
-          </m-filled-button>
-        </m-column>
-        <m-column>
-          <m-filled-button :state="MButtonState.disabled">
-            <m-label>
-              Disabled
             </m-label>
           </m-filled-button>
         </m-column>
@@ -317,46 +221,6 @@ onBeforeUnmount(() => {
             </m-label>
           </m-filled-button>
         </m-column>
-        <m-column>
-          <m-filled-button :state="MButtonState.hovered">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Hovered
-            </m-label>
-          </m-filled-button>
-        </m-column>
-        <m-column>
-          <m-filled-button :state="MButtonState.focused">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Focused
-            </m-label>
-          </m-filled-button>
-        </m-column>
-        <m-column>
-          <m-filled-button :state="MButtonState.pressed">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Pressed
-            </m-label>
-          </m-filled-button>
-        </m-column>
-        <m-column>
-          <m-filled-button :state="MButtonState.disabled">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Disabled
-            </m-label>
-          </m-filled-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -368,34 +232,6 @@ onBeforeUnmount(() => {
           <m-tonal-button>
             <m-label>
               Enabled
-            </m-label>
-          </m-tonal-button>
-        </m-column>
-        <m-column>
-          <m-tonal-button :state="MButtonState.hovered">
-            <m-label>
-              Hovered
-            </m-label>
-          </m-tonal-button>
-        </m-column>
-        <m-column>
-          <m-tonal-button :state="MButtonState.focused">
-            <m-label>
-              Focused
-            </m-label>
-          </m-tonal-button>
-        </m-column>
-        <m-column>
-          <m-tonal-button :state="MButtonState.pressed">
-            <m-label>
-              Pressed
-            </m-label>
-          </m-tonal-button>
-        </m-column>
-        <m-column>
-          <m-tonal-button :state="MButtonState.disabled">
-            <m-label>
-              Disabled
             </m-label>
           </m-tonal-button>
         </m-column>
@@ -416,46 +252,6 @@ onBeforeUnmount(() => {
             </m-label>
           </m-tonal-button>
         </m-column>
-        <m-column>
-          <m-tonal-button :state="MButtonState.hovered">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Hovered
-            </m-label>
-          </m-tonal-button>
-        </m-column>
-        <m-column>
-          <m-tonal-button :state="MButtonState.focused">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Focused
-            </m-label>
-          </m-tonal-button>
-        </m-column>
-        <m-column>
-          <m-tonal-button :state="MButtonState.pressed">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Pressed
-            </m-label>
-          </m-tonal-button>
-        </m-column>
-        <m-column>
-          <m-tonal-button :state="MButtonState.disabled">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Disabled
-            </m-label>
-          </m-tonal-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -467,34 +263,6 @@ onBeforeUnmount(() => {
           <m-outlined-button>
             <m-label>
               Enabled
-            </m-label>
-          </m-outlined-button>
-        </m-column>
-        <m-column>
-          <m-outlined-button :state="MButtonState.hovered">
-            <m-label>
-              Hovered
-            </m-label>
-          </m-outlined-button>
-        </m-column>
-        <m-column>
-          <m-outlined-button :state="MButtonState.focused">
-            <m-label>
-              Focused
-            </m-label>
-          </m-outlined-button>
-        </m-column>
-        <m-column>
-          <m-outlined-button :state="MButtonState.pressed">
-            <m-label>
-              Pressed
-            </m-label>
-          </m-outlined-button>
-        </m-column>
-        <m-column>
-          <m-outlined-button :state="MButtonState.disabled">
-            <m-label>
-              Disabled
             </m-label>
           </m-outlined-button>
         </m-column>
@@ -515,46 +283,6 @@ onBeforeUnmount(() => {
             </m-label>
           </m-outlined-button>
         </m-column>
-        <m-column>
-          <m-outlined-button :state="MButtonState.hovered">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Hovered
-            </m-label>
-          </m-outlined-button>
-        </m-column>
-        <m-column>
-          <m-outlined-button :state="MButtonState.focused">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Focused
-            </m-label>
-          </m-outlined-button>
-        </m-column>
-        <m-column>
-          <m-outlined-button :state="MButtonState.pressed">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Pressed
-            </m-label>
-          </m-outlined-button>
-        </m-column>
-        <m-column>
-          <m-outlined-button :state="MButtonState.disabled">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Disabled
-            </m-label>
-          </m-outlined-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -566,34 +294,6 @@ onBeforeUnmount(() => {
           <m-text-button>
             <m-label>
               Enabled
-            </m-label>
-          </m-text-button>
-        </m-column>
-        <m-column>
-          <m-text-button :state="MButtonState.hovered">
-            <m-label>
-              Hovered
-            </m-label>
-          </m-text-button>
-        </m-column>
-        <m-column>
-          <m-text-button :state="MButtonState.focused">
-            <m-label>
-              Focused
-            </m-label>
-          </m-text-button>
-        </m-column>
-        <m-column>
-          <m-text-button :state="MButtonState.pressed">
-            <m-label>
-              Pressed
-            </m-label>
-          </m-text-button>
-        </m-column>
-        <m-column>
-          <m-text-button :state="MButtonState.disabled">
-            <m-label>
-              Disabled
             </m-label>
           </m-text-button>
         </m-column>
@@ -614,46 +314,6 @@ onBeforeUnmount(() => {
             </m-label>
           </m-text-button>
         </m-column>
-        <m-column>
-          <m-text-button :state="MButtonState.hovered">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Hovered
-            </m-label>
-          </m-text-button>
-        </m-column>
-        <m-column>
-          <m-text-button :state="MButtonState.focused">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Focused
-            </m-label>
-          </m-text-button>
-        </m-column>
-        <m-column>
-          <m-text-button :state="MButtonState.pressed">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Pressed
-            </m-label>
-          </m-text-button>
-        </m-column>
-        <m-column>
-          <m-text-button :state="MButtonState.disabled">
-            <m-rounded-icon>
-              add_circle
-            </m-rounded-icon>
-            <m-label>
-              Disabled
-            </m-label>
-          </m-text-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -668,34 +328,6 @@ onBeforeUnmount(() => {
             </m-rounded-icon>
           </m-filled-icon-button>
         </m-column>
-        <m-column>
-          <m-filled-icon-button :state="MButtonState.hovered">
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-filled-icon-button>
-        </m-column>
-        <m-column>
-          <m-filled-icon-button :state="MButtonState.focused">
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-filled-icon-button>
-        </m-column>
-        <m-column>
-          <m-filled-icon-button :state="MButtonState.pressed">
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-filled-icon-button>
-        </m-column>
-        <m-column>
-          <m-filled-icon-button :state="MButtonState.disabled">
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-filled-icon-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -705,46 +337,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-filled-icon-button :toggle="true">
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-filled-icon-button>
-        </m-column>
-        <m-column>
-          <m-filled-icon-button
-            :toggle="true"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-filled-icon-button>
-        </m-column>
-        <m-column>
-          <m-filled-icon-button
-            :toggle="true"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-filled-icon-button>
-        </m-column>
-        <m-column>
-          <m-filled-icon-button
-            :toggle="true"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-filled-icon-button>
-        </m-column>
-        <m-column>
-          <m-filled-icon-button
-            :toggle="true"
-            :state="MButtonState.disabled"
-          >
             <m-rounded-icon>
               settings
             </m-rounded-icon>
@@ -767,49 +359,6 @@ onBeforeUnmount(() => {
             </m-rounded-icon>
           </m-filled-icon-button>
         </m-column>
-        <m-column>
-          <m-filled-icon-button
-            :toggle="true"
-            :selected="true"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-filled-icon-button>
-        </m-column>
-        <m-column>
-          <m-filled-icon-button
-            :toggle="true"
-            :selected="true"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-filled-icon-button>
-        </m-column>
-        <m-column>
-          <m-filled-icon-button
-            :toggle="true"
-            :selected="true"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-filled-icon-button>
-        </m-column>
-        <m-column>
-          <m-filled-icon-button
-            :toggle="true"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-filled-icon-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -824,34 +373,6 @@ onBeforeUnmount(() => {
             </m-rounded-icon>
           </m-tonal-icon-button>
         </m-column>
-        <m-column>
-          <m-tonal-icon-button :state="MButtonState.hovered">
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-tonal-icon-button>
-        </m-column>
-        <m-column>
-          <m-tonal-icon-button :state="MButtonState.focused">
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-tonal-icon-button>
-        </m-column>
-        <m-column>
-          <m-tonal-icon-button :state="MButtonState.pressed">
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-tonal-icon-button>
-        </m-column>
-        <m-column>
-          <m-tonal-icon-button :state="MButtonState.disabled">
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-tonal-icon-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -861,46 +382,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-tonal-icon-button :toggle="true">
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-tonal-icon-button>
-        </m-column>
-        <m-column>
-          <m-tonal-icon-button
-            :toggle="true"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-tonal-icon-button>
-        </m-column>
-        <m-column>
-          <m-tonal-icon-button
-            :toggle="true"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-tonal-icon-button>
-        </m-column>
-        <m-column>
-          <m-tonal-icon-button
-            :toggle="true"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-tonal-icon-button>
-        </m-column>
-        <m-column>
-          <m-tonal-icon-button
-            :toggle="true"
-            :state="MButtonState.disabled"
-          >
             <m-rounded-icon>
               settings
             </m-rounded-icon>
@@ -923,49 +404,6 @@ onBeforeUnmount(() => {
             </m-rounded-icon>
           </m-tonal-icon-button>
         </m-column>
-        <m-column>
-          <m-tonal-icon-button
-            :toggle="true"
-            :selected="true"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-tonal-icon-button>
-        </m-column>
-        <m-column>
-          <m-tonal-icon-button
-            :toggle="true"
-            :selected="true"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-tonal-icon-button>
-        </m-column>
-        <m-column>
-          <m-tonal-icon-button
-            :toggle="true"
-            :selected="true"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-tonal-icon-button>
-        </m-column>
-        <m-column>
-          <m-tonal-icon-button
-            :toggle="true"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-tonal-icon-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -975,46 +413,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-outlined-icon-button :toggle="true">
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-outlined-icon-button>
-        </m-column>
-        <m-column>
-          <m-outlined-icon-button
-            :toggle="true"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-outlined-icon-button>
-        </m-column>
-        <m-column>
-          <m-outlined-icon-button
-            :toggle="true"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-outlined-icon-button>
-        </m-column>
-        <m-column>
-          <m-outlined-icon-button
-            :toggle="true"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-outlined-icon-button>
-        </m-column>
-        <m-column>
-          <m-outlined-icon-button
-            :toggle="true"
-            :state="MButtonState.disabled"
-          >
             <m-rounded-icon>
               settings
             </m-rounded-icon>
@@ -1037,49 +435,6 @@ onBeforeUnmount(() => {
             </m-rounded-icon>
           </m-outlined-icon-button>
         </m-column>
-        <m-column>
-          <m-outlined-icon-button
-            :toggle="true"
-            :selected="true"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-outlined-icon-button>
-        </m-column>
-        <m-column>
-          <m-outlined-icon-button
-            :toggle="true"
-            :selected="true"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-outlined-icon-button>
-        </m-column>
-        <m-column>
-          <m-outlined-icon-button
-            :toggle="true"
-            :selected="true"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-outlined-icon-button>
-        </m-column>
-        <m-column>
-          <m-outlined-icon-button
-            :toggle="true"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-outlined-icon-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -1089,46 +444,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-icon-button :toggle="true">
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-icon-button>
-        </m-column>
-        <m-column>
-          <m-icon-button
-            :toggle="true"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-icon-button>
-        </m-column>
-        <m-column>
-          <m-icon-button
-            :toggle="true"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-icon-button>
-        </m-column>
-        <m-column>
-          <m-icon-button
-            :toggle="true"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-icon-button>
-        </m-column>
-        <m-column>
-          <m-icon-button
-            :toggle="true"
-            :state="MButtonState.disabled"
-          >
             <m-rounded-icon>
               settings
             </m-rounded-icon>
@@ -1151,49 +466,6 @@ onBeforeUnmount(() => {
             </m-rounded-icon>
           </m-icon-button>
         </m-column>
-        <m-column>
-          <m-icon-button
-            :toggle="true"
-            :selected="true"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-icon-button>
-        </m-column>
-        <m-column>
-          <m-icon-button
-            :toggle="true"
-            :selected="true"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-icon-button>
-        </m-column>
-        <m-column>
-          <m-icon-button
-            :toggle="true"
-            :selected="true"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-icon-button>
-        </m-column>
-        <m-column>
-          <m-icon-button
-            :toggle="true"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              settings
-            </m-rounded-icon>
-          </m-icon-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -1203,34 +475,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-fab-button>
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button :state="MButtonState.hovered">
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button :state="MButtonState.focused">
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button :state="MButtonState.pressed">
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button :state="MButtonState.disabled">
             <m-rounded-icon>
               edit
             </m-rounded-icon>
@@ -1250,46 +494,6 @@ onBeforeUnmount(() => {
             </m-rounded-icon>
           </m-fab-button>
         </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -1299,46 +503,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-fab-button :variant="MFabButtonVariant.surface">
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :variant="MFabButtonVariant.surface"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :variant="MFabButtonVariant.surface"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :variant="MFabButtonVariant.surface"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :variant="MFabButtonVariant.surface"
-            :state="MButtonState.disabled"
-          >
             <m-rounded-icon>
               edit
             </m-rounded-icon>
@@ -1361,50 +525,6 @@ onBeforeUnmount(() => {
             </m-rounded-icon>
           </m-fab-button>
         </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :variant="MFabButtonVariant.surface"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :variant="MFabButtonVariant.surface"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :variant="MFabButtonVariant.surface"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :variant="MFabButtonVariant.surface"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -1414,46 +534,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-fab-button :variant="MFabButtonVariant.secondary">
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :variant="MFabButtonVariant.secondary"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :variant="MFabButtonVariant.secondary"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :variant="MFabButtonVariant.secondary"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :variant="MFabButtonVariant.secondary"
-            :state="MButtonState.disabled"
-          >
             <m-rounded-icon>
               edit
             </m-rounded-icon>
@@ -1476,50 +556,6 @@ onBeforeUnmount(() => {
             </m-rounded-icon>
           </m-fab-button>
         </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :variant="MFabButtonVariant.secondary"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :variant="MFabButtonVariant.secondary"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :variant="MFabButtonVariant.secondary"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :variant="MFabButtonVariant.secondary"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -1529,46 +565,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-fab-button :variant="MFabButtonVariant.tertiary">
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :variant="MFabButtonVariant.tertiary"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :variant="MFabButtonVariant.tertiary"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :variant="MFabButtonVariant.tertiary"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :variant="MFabButtonVariant.tertiary"
-            :state="MButtonState.disabled"
-          >
             <m-rounded-icon>
               edit
             </m-rounded-icon>
@@ -1591,50 +587,6 @@ onBeforeUnmount(() => {
             </m-rounded-icon>
           </m-fab-button>
         </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :variant="MFabButtonVariant.tertiary"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :variant="MFabButtonVariant.tertiary"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :variant="MFabButtonVariant.tertiary"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :lowered="true"
-            :variant="MFabButtonVariant.tertiary"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -1644,46 +596,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-fab-button :size="MFabButtonSize.small">
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :size="MFabButtonSize.small"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :size="MFabButtonSize.small"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :size="MFabButtonSize.small"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :size="MFabButtonSize.small"
-            :state="MButtonState.disabled"
-          >
             <m-rounded-icon>
               edit
             </m-rounded-icon>
@@ -1703,46 +615,6 @@ onBeforeUnmount(() => {
             </m-rounded-icon>
           </m-fab-button>
         </m-column>
-        <m-column>
-          <m-fab-button
-            :size="MFabButtonSize.large"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :size="MFabButtonSize.large"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :size="MFabButtonSize.large"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
-        <m-column>
-          <m-fab-button
-            :size="MFabButtonSize.large"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-          </m-fab-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -1752,34 +624,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-extended-fab-button>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button :state="MButtonState.hovered">
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button :state="MButtonState.focused">
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button :state="MButtonState.pressed">
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button :state="MButtonState.disabled">
             <m-label>
               Compose
             </m-label>
@@ -1802,46 +646,6 @@ onBeforeUnmount(() => {
             </m-label>
           </m-extended-fab-button>
         </m-column>
-        <m-column>
-          <m-extended-fab-button :state="MButtonState.hovered">
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button :state="MButtonState.focused">
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button :state="MButtonState.pressed">
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button :state="MButtonState.disabled">
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -1851,46 +655,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-extended-fab-button :lowered="true">
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :lowered="true"
-            :state="MButtonState.hovered"
-          >
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :lowered="true"
-            :state="MButtonState.focused"
-          >
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :lowered="true"
-            :state="MButtonState.pressed"
-          >
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :lowered="true"
-            :state="MButtonState.disabled"
-          >
             <m-label>
               Compose
             </m-label>
@@ -1913,58 +677,6 @@ onBeforeUnmount(() => {
             </m-label>
           </m-extended-fab-button>
         </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :lowered="true"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :lowered="true"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :lowered="true"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :lowered="true"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -1974,46 +686,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-extended-fab-button :variant="MExtendedFabButtonVariant.surface">
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.surface"
-            :state="MButtonState.hovered"
-          >
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.surface"
-            :state="MButtonState.focused"
-          >
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.surface"
-            :state="MButtonState.pressed"
-          >
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.surface"
-            :state="MButtonState.disabled"
-          >
             <m-label>
               Compose
             </m-label>
@@ -2036,58 +708,6 @@ onBeforeUnmount(() => {
             </m-label>
           </m-extended-fab-button>
         </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.surface"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.surface"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.surface"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.surface"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -2097,46 +717,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-extended-fab-button :variant="MExtendedFabButtonVariant.secondary">
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.secondary"
-            :state="MButtonState.hovered"
-          >
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.secondary"
-            :state="MButtonState.focused"
-          >
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.secondary"
-            :state="MButtonState.pressed"
-          >
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.secondary"
-            :state="MButtonState.disabled"
-          >
             <m-label>
               Compose
             </m-label>
@@ -2159,58 +739,6 @@ onBeforeUnmount(() => {
             </m-label>
           </m-extended-fab-button>
         </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.secondary"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.secondary"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.secondary"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.secondary"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
       </m-row>
     </m-section>
     <m-section>
@@ -2220,46 +748,6 @@ onBeforeUnmount(() => {
       <m-row>
         <m-column>
           <m-extended-fab-button :variant="MExtendedFabButtonVariant.tertiary">
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.tertiary"
-            :state="MButtonState.hovered"
-          >
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.tertiary"
-            :state="MButtonState.focused"
-          >
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.tertiary"
-            :state="MButtonState.pressed"
-          >
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.tertiary"
-            :state="MButtonState.disabled"
-          >
             <m-label>
               Compose
             </m-label>
@@ -2282,58 +770,6 @@ onBeforeUnmount(() => {
             </m-label>
           </m-extended-fab-button>
         </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.tertiary"
-            :state="MButtonState.hovered"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.tertiary"
-            :state="MButtonState.focused"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.tertiary"
-            :state="MButtonState.pressed"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
-        <m-column>
-          <m-extended-fab-button
-            :variant="MExtendedFabButtonVariant.tertiary"
-            :state="MButtonState.disabled"
-          >
-            <m-rounded-icon>
-              edit
-            </m-rounded-icon>
-            <m-label>
-              Compose
-            </m-label>
-          </m-extended-fab-button>
-        </m-column>
       </m-row>
     </m-section>
   </m-main>
@@ -2343,6 +779,8 @@ onBeforeUnmount(() => {
 @use '@/lib/sass/theme'
 
 .m-section
+  padding: 48px
+
   &.banner
     > span
       padding: 12px
