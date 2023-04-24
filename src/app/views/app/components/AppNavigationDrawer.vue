@@ -39,17 +39,11 @@ import {
 
 import {
 	MNavigationDrawer,
-	MDrawerLeading,
 	MDrawerBody,
 	MDrawerList,
 	MDrawerListItem,
 	MDrawerListItemBody,
-	MHeadline,
 	MLabel,
-	MIconButton,
-	MRoundedIcon,
-	MBar,
-	MBarLeading,
 } from '@/lib/vue'
 
 import {
