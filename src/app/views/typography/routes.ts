@@ -40,12 +40,12 @@ import AppTopAppBar from '@/app/views/app/components/AppTopAppBar.vue'
 import AppFinder from '@/app/views/app/components/AppFinder.vue'
 import AppModal from '@/app/views/app/components/AppModal.vue'
 
-import DiscoverMain from '@/app/views/discover/components/DiscoverMain.vue'
+import DiscoverMain from '@/app/views/typography/components/TypographyMain.vue'
 
 const routes: RouteRecordRaw[] = [
 	{
-		name: 'discover',
-		path: '/',
+		name: 'typography',
+		path: '/typography',
 		components: {
 			'navigation-rail': AppNavigationRail,
 			'navigation-drawer': AppNavigationDrawer,

@@ -40,17 +40,17 @@ import AppTopAppBar from '@/app/views/app/components/AppTopAppBar.vue'
 import AppFinder from '@/app/views/app/components/AppFinder.vue'
 import AppModal from '@/app/views/app/components/AppModal.vue'
 
-import DiscoverMain from '@/app/views/discover/components/DiscoverMain.vue'
+import CardsMain from '@/app/views/cards/components/CardsMain.vue'
 
 const routes: RouteRecordRaw[] = [
 	{
-		name: 'discover',
-		path: '/',
+		name: 'cards',
+		path: '/cards',
 		components: {
 			'navigation-rail': AppNavigationRail,
 			'navigation-drawer': AppNavigationDrawer,
 			'top-app-bar': AppTopAppBar,
-			main: DiscoverMain,
+			main: CardsMain,
 			finder: AppFinder,
 			modal: AppModal,
 		},

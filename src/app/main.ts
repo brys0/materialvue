@@ -47,6 +47,14 @@ import '@/app/main.sass'
 import { MApp } from '@/lib/vue'
 
 import adaptiveRoutes from '@/app/views/adaptive/routes'
+import buttonsRoutes from '@/app/views/buttons/routes'
+import cardsRoutes from '@/app/views/cards/routes'
+import iconsRoutes from '@/app/views/icons/routes'
+import listsRoutes from '@/app/views/lists/routes'
+import navigationRoutes from '@/app/views/navigation/routes'
+import textFieldsRoutes from '@/app/views/text-fields/routes'
+import themingRoutes from '@/app/views/theming/routes'
+import typographyRoutes from '@/app/views/typography/routes'
 import discoverRoutes from '@/app/views/discover/routes'
 import loginRoutes from '@/app/views/login/routes'
 
@@ -54,6 +62,14 @@ const router = createRouter({
 	routes: [
 		...adaptiveRoutes,
 		...discoverRoutes,
+		...buttonsRoutes,
+		...cardsRoutes,
+		...iconsRoutes,
+		...listsRoutes,
+		...navigationRoutes,
+		...textFieldsRoutes,
+		...themingRoutes,
+		...typographyRoutes,
 		...loginRoutes
 	],
 	history: createWebHistory(),
