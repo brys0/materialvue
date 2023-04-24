@@ -40,17 +40,17 @@ import AppTopAppBar from '@/app/views/app/components/AppTopAppBar.vue'
 import AppFinder from '@/app/views/app/components/AppFinder.vue'
 import AppModal from '@/app/views/app/components/AppModal.vue'
 
-import TypographyMain from '@/app/views/typography/components/TypographyMain.vue'
+import LayoutsMain from '@/app/views/layouts/components/LayoutsMain.vue'
 
 const routes: RouteRecordRaw[] = [
 	{
-		name: 'typography',
-		path: '/typography',
+		name: 'layouts',
+		path: '/layouts',
 		components: {
 			'navigation-rail': AppNavigationRail,
 			'navigation-drawer': AppNavigationDrawer,
 			'top-app-bar': AppTopAppBar,
-			main: TypographyMain,
+			main: LayoutsMain,
 			finder: AppFinder,
 			modal: AppModal,
 		},

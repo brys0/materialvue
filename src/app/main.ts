@@ -50,6 +50,7 @@ import adaptiveRoutes from '@/app/views/adaptive/routes'
 import buttonsRoutes from '@/app/views/buttons/routes'
 import cardsRoutes from '@/app/views/cards/routes'
 import iconsRoutes from '@/app/views/icons/routes'
+import layoutsRoutes from '@/app/views/layouts/routes'
 import listsRoutes from '@/app/views/lists/routes'
 import navigationRoutes from '@/app/views/navigation/routes'
 import textFieldsRoutes from '@/app/views/text-fields/routes'
@@ -66,6 +67,7 @@ const router = createRouter({
 		...cardsRoutes,
 		...iconsRoutes,
 		...listsRoutes,
+		...layoutsRoutes,
 		...navigationRoutes,
 		...textFieldsRoutes,
 		...themingRoutes,
