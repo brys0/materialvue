@@ -33,7 +33,7 @@
 @use './theme'
 @use './conversion'
 
-%list
+%m-list
   margin: 0
   padding: 0
   width: 100%
@@ -49,7 +49,7 @@
   &:last-of-type
     padding-bottom: 8px
 
-%list-item
+%m-list-item
   @extend %is-not-selectable
 
   padding: 0 24px 0 16px
@@ -63,50 +63,70 @@
   outline: none
   cursor: pointer
 
-%list-item-divider
+  > a
+    margin: 0 -24px 0 -16px
+    padding: 0 24px 0 16px
+    position: relative
+    display: inline-grid
+    grid-row: row-1-start / row-2-end
+    grid-column: col-1-start / col-3-end
+    grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] max-content [row-2-end]
+    grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] 1fr [col-2-end col-3-start] max-content [col-3-end]
+
+  &::before
+    content: ' '
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    display: block
+    z-index: 0
+
+%m-list-item-divider
   grid-row: row-2-start / row-2-end
   grid-column: col-1-start / col-3-end
 
-%list-item-leading,
-%list-item-body,
-%list-item-trailing
+%m-list-item-leading,
+%m-list-item-body,
+%m-list-item-trailing
   padding-top: 8px
   padding-bottom: 8px
   display: grid
 
-%list-item-leading,
-%list-item-trailing
+%m-list-item-leading,
+%m-list-item-trailing
   align-content: center
   justify-content: stretch
   grid-auto-columns: minmax(1fr, max-content)
   grid-auto-flow: column
 
-%list-item-body
+%m-list-item-body
   align-content: center
   justify-content: stretch
   grid-auto-rows: minmax(1fr, max-content)
   grid-auto-flow: row
 
-%list-item-trailing
+%m-list-item-trailing
   grid-row: row-1-start / row-1-end
   grid-column: col-3-start / col-3-end
 
-%list-item-body
+%m-list-item-body
   grid-row: row-1-start / row-1-end
   grid-column: col-2-start / col-2-end
 
-  + %list-item-trailing
+  + %m-list-item-trailing
     padding-left: 16px
 
-%list-item-leading
+%m-list-item-leading
   grid-row: row-1-start / row-1-end
   grid-column: col-1-start / col-1-end
 
-  + %list-item-body
+  + %m-list-item-body
     padding-left: 16px
 
 .m-list
-  @extend %list
+  @extend %m-list
 
   &:first-of-type
     padding-top: 8px
@@ -124,34 +144,23 @@
     grid-auto-flow: minmax(88px, max-content)
 
     > .m-list-item
-      > .m-list-item-leading,
-      > .m-list-item-body,
-      > .m-list-item-trailing
+      .m-list-item-leading,
+      .m-list-item-body,
+      .m-list-item-trailing
         align-content: start
 
   > .m-list-item
-    @extend %list-item
-
-    &::before
-      content: ' '
-      position: absolute
-      top: 0
-      left: 0
-      bottom: 0
-      right: 0
-      display: block
+    @extend %m-list-item
 
     > .m-divider
-      @extend %list-item-divider
+      @extend %m-list-item-divider
 
-    &:has(.m-video)
-      padding-left: 0
-
+    &:has(.m-video),
     &.has-leading-video
       padding-left: 0
 
-    > .m-list-item-leading
-      @extend %list-item-leading
+    .m-list-item-leading
+      @extend %m-list-item-leading
 
       > .m-icon
         font-size: 18px
@@ -168,8 +177,8 @@
         width: 114px
         height: 64px
 
-    > .m-list-item-body
-      @extend %list-item-body
+    .m-list-item-body
+      @extend %m-list-item-body
 
       > .m-typography
         @extend %is-not-selectable
@@ -180,8 +189,8 @@
         &.m-body
           @extend %m-typography-body-medium
 
-    > .m-list-item-trailing
-      @extend %list-item-trailing
+    .m-list-item-trailing
+      @extend %m-list-item-trailing
 
       > .m-typography
         @extend %is-not-selectable
@@ -201,7 +210,7 @@
         @include theme.preferred
           border-color: theme.style(surface-variant)
 
-      > .m-list-item-leading
+      .m-list-item-leading
         > .m-icon
           @include theme.preferred
             color: theme.style(on-surface-variant)
@@ -213,7 +222,7 @@
                 background: theme.style(primary-container)
                 color: theme.style(on-primary-container)
 
-      > .m-list-item-body
+      .m-list-item-body
         > .m-typography
           &.m-headline
             @include theme.preferred
@@ -223,7 +232,7 @@
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
-      > .m-list-item-trailing
+      .m-list-item-trailing
         > .m-typography
           &.m-label
             @include theme.preferred
@@ -241,12 +250,12 @@
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
 
-        > .m-list-item-leading
+        .m-list-item-leading
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
-        > .m-list-item-trailing
+        .m-list-item-trailing
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
@@ -257,12 +266,12 @@
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
 
-        > .m-list-item-leading
+        .m-list-item-leading
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
-        > .m-list-item-trailing
+        .m-list-item-trailing
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
@@ -273,12 +282,12 @@
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
 
-        > .m-list-item-leading
+        .m-list-item-leading
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
-        > .m-list-item-trailing
+        .m-list-item-trailing
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
@@ -291,12 +300,12 @@
           @include theme.preferred
             background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
 
-        > .m-list-item-leading
+        .m-list-item-leading
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
 
-        > .m-list-item-trailing
+        .m-list-item-trailing
           > .m-icon
             @include theme.preferred
               color: theme.style(on-surface-variant)
@@ -313,12 +322,12 @@
         @include theme.preferred
           background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
 
-      > .m-list-item-leading
+      .m-list-item-leading
         > .m-icon
           @include theme.preferred
             color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
-      > .m-list-item-body
+      .m-list-item-body
         > .m-typography
           &.m-headline
             @include theme.preferred
@@ -328,7 +337,7 @@
             @include theme.preferred
               color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
 
-      > .m-list-item-trailing
+      .m-list-item-trailing
         > .m-typography
           &.m-label
             @include theme.preferred

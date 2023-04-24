@@ -40,6 +40,7 @@ export default (router: Router): void => {
 		'/adaptive',
 		'/theming',
 		'/buttons',
+		'/text-fields',
 		'/lists',
 		'/cards',
 		'/navigation',

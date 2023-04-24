@@ -41,17 +41,13 @@ import {
 	MNavigationDrawer,
 	MDrawerLeading,
 	MDrawerBody,
-	MDrawerTrailing,
 	MDrawerList,
 	MDrawerListItem,
-	MDrawerListItemLeading,
 	MDrawerListItemBody,
-	MDrawerListItemTrailing,
 	MHeadline,
 	MLabel,
 	MIconButton,
 	MRoundedIcon,
-	MDivider,
 	MBar,
 	MBarLeading,
 } from '@/lib/vue'
@@ -93,71 +89,85 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
     <m-drawer-body>
       <m-drawer-list>
         <m-drawer-list-item>
-          <m-drawer-list-item-body>
-            <router-link to="/typography">
+          <router-link to="/typography">
+            <m-drawer-list-item-body>
               <m-label>
                 Typography
               </m-label>
-            </router-link>
-          </m-drawer-list-item-body>
+            </m-drawer-list-item-body>
+          </router-link>
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-body>
-            <router-link to="/theming">
+          <router-link to="/theming">
+            <m-drawer-list-item-body>
               <m-label>
                 Theming
               </m-label>
-            </router-link>
-          </m-drawer-list-item-body>
+            </m-drawer-list-item-body>
+          </router-link>
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-body>
-            <m-label>
-              Buttons
-            </m-label>
-          </m-drawer-list-item-body>
+          <router-link to="/buttons">
+            <m-drawer-list-item-body>
+              <m-label>
+                Buttons
+              </m-label>
+            </m-drawer-list-item-body>
+          </router-link>
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-body>
-            <m-label>
-              Text fields
-            </m-label>
-          </m-drawer-list-item-body>
+          <router-link to="/text-fields">
+            <m-drawer-list-item-body>
+              <m-label>
+                Text fields
+              </m-label>
+            </m-drawer-list-item-body>
+          </router-link>
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-body>
-            <m-label>
-              Lists
-            </m-label>
-          </m-drawer-list-item-body>
+          <router-link to="/lists">
+            <m-drawer-list-item-body>
+              <m-label>
+                Lists
+              </m-label>
+            </m-drawer-list-item-body>
+          </router-link>
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-body>
-            <m-label>
-              Cards
-            </m-label>
-          </m-drawer-list-item-body>
+          <router-link to="/cards">
+            <m-drawer-list-item-body>
+              <m-label>
+                Cards
+              </m-label>
+            </m-drawer-list-item-body>
+          </router-link>
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-body>
-            <m-label>
-              Navigation
-            </m-label>
-          </m-drawer-list-item-body>
+          <router-link to="/navigation">
+            <m-drawer-list-item-body>
+              <m-label>
+                Navigation
+              </m-label>
+            </m-drawer-list-item-body>
+          </router-link>
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-body>
-            <m-label>
-              Icons
-            </m-label>
-          </m-drawer-list-item-body>
+          <router-link to="/icons">
+            <m-drawer-list-item-body>
+              <m-label>
+                Icons
+              </m-label>
+            </m-drawer-list-item-body>
+          </router-link>
         </m-drawer-list-item>
         <m-drawer-list-item>
-          <m-drawer-list-item-body>
-            <m-label>
-              Layouts
-            </m-label>
-          </m-drawer-list-item-body>
+          <router-link to="/layouts">
+            <m-drawer-list-item-body>
+              <m-label>
+                Layouts
+              </m-label>
+            </m-drawer-list-item-body>
+          </router-link>
         </m-drawer-list-item>
       </m-drawer-list>
     </m-drawer-body>

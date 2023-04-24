@@ -45,7 +45,7 @@ import DiscoverMain from '@/app/views/discover/components/DiscoverMain.vue'
 const routes: RouteRecordRaw[] = [
 	{
 		name: 'discover',
-		path: '/:page',
+		path: '/:page*',
 		components: {
 			'navigation-rail': AppNavigationRail,
 			'navigation-drawer': AppNavigationDrawer,

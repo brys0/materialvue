@@ -85,34 +85,27 @@
     overflow-y: scroll
 
     > .m-drawer-list
-      @extend %list
+      @extend %m-list
 
       > .m-drawer-list-item
-        @extend %list-item
+        @extend %m-list-item
 
         border-radius: 28px
 
         &::before
-          content: ' '
-          position: absolute
-          top: 0
-          left: 0
-          bottom: 0
-          right: 0
-          display: block
           border-radius: 28px
 
         > .m-divider
-          @extend %list-item-divider
+          @extend %m-list-item-divider
 
-        > .m-drawer-list-item-leading
-          @extend %list-item-leading
+        .m-drawer-list-item-leading
+          @extend %m-list-item-leading
 
           > .m-icon
             font-size: 24px
 
-        > .m-drawer-list-item-body
-          @extend %list-item-body
+        .m-drawer-list-item-body
+          @extend %m-list-item-body
 
           > .m-typography
             @extend %is-not-selectable
@@ -120,8 +113,8 @@
             &.m-label
               @extend %m-typography-label-large
 
-        > .m-drawer-list-item-trailing
-          @extend %list-item-trailing
+        .m-drawer-list-item-trailing
+          @extend %m-list-item-trailing
 
           > .m-typography
             @extend %is-not-selectable
@@ -131,18 +124,18 @@
 
         &,
         &.enabled
-          > .m-drawer-list-item-leading
+          .m-drawer-list-item-leading
             > .m-icon
               @include theme.preferred
                 color: theme.style(on-surface-variant)
 
-          > .m-drawer-list-item-body
+          .m-drawer-list-item-body
             > .m-typography
               &.m-label
                 @include theme.preferred
                   color: theme.style(on-surface-variant)
 
-          > .m-drawer-list-item-trailing
+          .m-drawer-list-item-trailing
             > .m-typography
               &.m-label
                 @include theme.preferred
@@ -152,12 +145,12 @@
             @include theme.preferred
               background: theme.style(secondary-container)
 
-            > .m-drawer-list-item-leading
+            .m-drawer-list-item-leading
               > .m-icon
                 @include theme.preferred
                   color: theme.style(on-secondary-container)
 
-            > .m-drawer-list-item-body
+            .m-drawer-list-item-body
               > .m-typography
                 &.m-label
                   @include theme.preferred
@@ -171,12 +164,12 @@
               @include theme.preferred
                 background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
 
-            > .m-drawer-list-item-leading
+            .m-drawer-list-item-leading
               > .m-icon
                 @include theme.preferred
                   color: theme.style(on-surface)
 
-            > .m-drawer-list-item-body
+            .m-drawer-list-item-body
               > .m-typography
                 &.m-label
                   @include theme.preferred
@@ -187,12 +180,12 @@
                 @include theme.preferred
                   background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
 
-              > .m-drawer-list-item-leading
+              .m-drawer-list-item-leading
                 > .m-icon
                   @include theme.preferred
                     color: theme.style(on-secondary-container)
 
-              > .m-drawer-list-item-body
+              .m-drawer-list-item-body
                 > .m-typography
                   &.m-label
                     @include theme.preferred
@@ -204,12 +197,12 @@
               @include theme.preferred
                 background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
 
-            > .m-drawer-list-item-leading
+            .m-drawer-list-item-leading
               > .m-icon
                 @include theme.preferred
                   color: theme.style(on-surface)
 
-            > .m-drawer-list-item-body
+            .m-drawer-list-item-body
               > .m-typography
                 &.m-label
                   @include theme.preferred
@@ -220,12 +213,12 @@
                 @include theme.preferred
                   background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
 
-              > .m-drawer-list-item-leading
+              .m-drawer-list-item-leading
                 > .m-icon
                   @include theme.preferred
                     color: theme.style(on-secondary-container)
 
-              > .m-drawer-list-item-body
+              .m-drawer-list-item-body
                 > .m-typography
                   &.m-label
                     @include theme.preferred
@@ -237,12 +230,12 @@
               @include theme.preferred
                 background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
 
-            > .m-drawer-list-item-leading
+            .m-drawer-list-item-leading
               > .m-icon
                 @include theme.preferred
                   color: theme.style(on-surface)
 
-            > .m-drawer-list-item-body
+            .m-drawer-list-item-body
               > .m-typography
                 &.m-label
                   @include theme.preferred
@@ -253,12 +246,12 @@
                 @include theme.preferred
                   background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
 
-              > .m-drawer-list-item-leading
+              .m-drawer-list-item-leading
                 > .m-icon
                   @include theme.preferred
                     color: theme.style(on-secondary-container)
 
-              > .m-drawer-list-item-body
+              .m-drawer-list-item-body
                 > .m-typography
                   &.m-label
                     @include theme.preferred
