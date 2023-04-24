@@ -37,9 +37,9 @@ import {
 	MMain,
 	MTypographySize,
 	MDisplay,
-	MLabel,
-	MBody,
 	MHeadline,
+	MBody,
+	MLabel,
 	MFilledButton,
 	MOutlinedButton,
 	MTextButton,
@@ -88,6 +88,37 @@ import {
                 Learn about the Material 3 button styles and maximize your application's experience.
               </m-body>
             </p>
+          </m-column>
+        </m-row>
+      </m-section>
+
+      <m-section class="banner comfortable">
+        <m-row>
+          <m-column class="is-12">
+            <h3>
+              <m-display :size="MTypographySize.small">
+                Elevated button
+              </m-display>
+            </h3>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column>
+            <m-elevated-button>
+              <m-label>
+                Enabled
+              </m-label>
+            </m-elevated-button>
+          </m-column>
+          <m-column>
+            <m-elevated-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+              <m-label>
+                Enabled
+              </m-label>
+            </m-elevated-button>
           </m-column>
         </m-row>
       </m-section>
