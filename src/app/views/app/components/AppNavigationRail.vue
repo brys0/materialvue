@@ -38,9 +38,12 @@ import {
 } from 'vue'
 
 import {
+	useRouter,
+} from 'vue-router'
+
+import {
 	MNavigationRail,
 	MRailButton,
-	MRailLeading,
 	MRailBody,
 	MRailTrailing,
 	MLabel,
@@ -51,6 +54,8 @@ import {
 import {
 	useAppStore,
 } from '@/app/contexts/app/stores/AppStore'
+
+const router = useRouter()
 
 const appStore = useAppStore()
 
@@ -64,19 +69,20 @@ const isThemeLight = computed(() => appStore.isThemeLight)
 
 <template>
   <m-navigation-rail>
-    <m-rail-leading>
-      <m-icon-button
+    <m-rail-body>
+      <m-rail-button @click="router.push('/')">
+        <m-rounded-icon>
+          home
+        </m-rounded-icon>
+        <m-label>
+          Home
+        </m-label>
+      </m-rail-button>
+      <m-rail-button
         :toggle="true"
         :selected="isNavigationDrawerOpened"
         @click="toggleNavigationDrawer"
       >
-        <m-rounded-icon>
-          menu
-        </m-rounded-icon>
-      </m-icon-button>
-    </m-rail-leading>
-    <m-rail-body>
-      <m-rail-button>
         <m-rounded-icon>
           component_exchange
         </m-rounded-icon>
@@ -94,6 +100,22 @@ const isThemeLight = computed(() => appStore.isThemeLight)
           light_mode
         </m-rounded-icon>
       </m-icon-button>
+      <img
+        class="is-theme-dark brand-logo"
+        src="/assets/cosmicmind-logo-dark.svg"
+        alt="CosmicMind"
+      >
+      <img
+        class="is-theme-light brand-logo"
+        src="/assets/cosmicmind-logo-light.svg"
+        alt="CosmicMind"
+      >
     </m-rail-trailing>
   </m-navigation-rail>
 </template>
+
+<style lang="sass" scoped>
+  .brand-logo
+    height: 48px
+
+</style>

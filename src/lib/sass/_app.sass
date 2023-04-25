@@ -90,6 +90,9 @@ body
     &.is-opened
       width: 280px
 
+      + .m-main
+        margin-left: 0
+
       @include adaptive.is-lt-expanded
         ~ .m-scrim
           display: block

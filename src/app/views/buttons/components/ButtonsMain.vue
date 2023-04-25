@@ -631,5 +631,4 @@ import {
       @include theme.preferred
         color: theme.style(primary)
 
-
 </style>

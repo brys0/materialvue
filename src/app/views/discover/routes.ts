@@ -37,8 +37,6 @@ import {
 import AppNavigationRail from '@/app/views/app/components/AppNavigationRail.vue'
 import AppNavigationDrawer from '@/app/views/app/components/AppNavigationDrawer.vue'
 import AppTopAppBar from '@/app/views/app/components/AppTopAppBar.vue'
-import AppFinder from '@/app/views/app/components/AppFinder.vue'
-import AppModal from '@/app/views/app/components/AppModal.vue'
 
 import DiscoverMain from '@/app/views/discover/components/DiscoverMain.vue'
 
@@ -51,16 +49,12 @@ const routes: RouteRecordRaw[] = [
 			'navigation-drawer': AppNavigationDrawer,
 			'top-app-bar': AppTopAppBar,
 			main: DiscoverMain,
-			finder: AppFinder,
-			modal: AppModal,
 		},
 		props: {
 			'navigation-rail': true,
 			'navigation-drawer': true,
 			'top-app-bar': true,
 			main: true,
-			finder: true,
-			modal: true,
 		},
 	}
 ]

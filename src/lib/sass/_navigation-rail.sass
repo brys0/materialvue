@@ -36,6 +36,8 @@
 .m-navigation-rail
   @extend %m-bar-vertical
 
+  padding: 12px 0
+
   > .m-rail-leading
     @extend %m-bar-vertical-leading
 
@@ -48,11 +50,10 @@
   > .m-rail-leading,
   > .m-rail-body,
   > .m-rail-trailing
-    grid-auto-rows: minmax(64px, max-content)
+    grid-auto-rows: minmax(56px, max-content)
 
   > .m-rail-body
     align-content: start
-
     overflow-x: hidden
     overflow-y: scroll
 

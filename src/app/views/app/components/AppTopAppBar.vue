@@ -34,29 +34,10 @@
 
 <script lang="ts" setup>
 import {
-	computed,
-} from 'vue'
-
-import {
 	MTopAppBar,
 	MBarLeading,
-	MBarTrailing,
-	MIconButton,
-	MRoundedIcon,
 	MHeadline,
 } from '@/lib/vue'
-
-import {
-	useAppStore,
-} from '@/app/contexts/app/stores/AppStore'
-
-const appStore = useAppStore()
-
-const toggleNavigationDrawer = (): void => appStore.toggleNavigationDrawer()
-const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpened)
-
-const toggleTheme = (): void => appStore.toggleTheme()
-const isThemeLight = computed(() => appStore.isThemeLight)
 
 </script>
 
@@ -67,17 +48,5 @@ const isThemeLight = computed(() => appStore.isThemeLight)
         Material
       </m-headline>
     </m-bar-leading>
-    <m-bar-trailing>
-      <m-icon-button>
-        <m-rounded-icon>
-          notifications
-        </m-rounded-icon>
-      </m-icon-button>
-      <m-icon-button>
-        <m-rounded-icon>
-          account_circle
-        </m-rounded-icon>
-      </m-icon-button>
-    </m-bar-trailing>
   </m-top-app-bar>
 </template>

@@ -43,6 +43,7 @@ import {
 	MDrawerBody,
 	MDrawerList,
 	MDrawerListItem,
+	MDrawerListItemLeading,
 	MDrawerListItemBody,
 	MHeadline,
 	MLabel,
@@ -87,6 +88,11 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
       <m-drawer-list>
         <m-drawer-list-item>
           <router-link to="/typography">
+            <m-drawer-list-item-leading>
+              <m-rounded-icon>
+                text_format
+              </m-rounded-icon>
+            </m-drawer-list-item-leading>
             <m-drawer-list-item-body>
               <m-label>
                 Typography
@@ -94,17 +100,27 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
             </m-drawer-list-item-body>
           </router-link>
         </m-drawer-list-item>
-        <m-drawer-list-item>
-          <router-link to="/theming">
-            <m-drawer-list-item-body>
-              <m-label>
-                Theming
-              </m-label>
-            </m-drawer-list-item-body>
-          </router-link>
-        </m-drawer-list-item>
+        <!--        <m-drawer-list-item>-->
+        <!--          <router-link to="/theming">-->
+        <!--            <m-drawer-list-item-leading>-->
+        <!--              <m-rounded-icon>-->
+        <!--                palette-->
+        <!--              </m-rounded-icon>-->
+        <!--            </m-drawer-list-item-leading>-->
+        <!--            <m-drawer-list-item-body>-->
+        <!--              <m-label>-->
+        <!--                Theming-->
+        <!--              </m-label>-->
+        <!--            </m-drawer-list-item-body>-->
+        <!--          </router-link>-->
+        <!--        </m-drawer-list-item>-->
         <m-drawer-list-item>
           <router-link to="/buttons">
+            <m-drawer-list-item-leading>
+              <m-rounded-icon>
+                smart_button
+              </m-rounded-icon>
+            </m-drawer-list-item-leading>
             <m-drawer-list-item-body>
               <m-label>
                 Buttons
@@ -112,60 +128,75 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
             </m-drawer-list-item-body>
           </router-link>
         </m-drawer-list-item>
-        <m-drawer-list-item>
-          <router-link to="/text-fields">
-            <m-drawer-list-item-body>
-              <m-label>
-                Text fields
-              </m-label>
-            </m-drawer-list-item-body>
-          </router-link>
-        </m-drawer-list-item>
-        <m-drawer-list-item>
-          <router-link to="/lists">
-            <m-drawer-list-item-body>
-              <m-label>
-                Lists
-              </m-label>
-            </m-drawer-list-item-body>
-          </router-link>
-        </m-drawer-list-item>
-        <m-drawer-list-item>
-          <router-link to="/cards">
-            <m-drawer-list-item-body>
-              <m-label>
-                Cards
-              </m-label>
-            </m-drawer-list-item-body>
-          </router-link>
-        </m-drawer-list-item>
-        <m-drawer-list-item>
-          <router-link to="/navigation">
-            <m-drawer-list-item-body>
-              <m-label>
-                Navigation
-              </m-label>
-            </m-drawer-list-item-body>
-          </router-link>
-        </m-drawer-list-item>
-        <m-drawer-list-item>
-          <router-link to="/icons">
-            <m-drawer-list-item-body>
-              <m-label>
-                Icons
-              </m-label>
-            </m-drawer-list-item-body>
-          </router-link>
-        </m-drawer-list-item>
-        <m-drawer-list-item>
-          <router-link to="/layouts">
-            <m-drawer-list-item-body>
-              <m-label>
-                Layouts
-              </m-label>
-            </m-drawer-list-item-body>
-          </router-link>
-        </m-drawer-list-item>
+        <!--        <m-drawer-list-item>-->
+        <!--          <router-link to="/text-fields">-->
+        <!--            <m-drawer-list-item-leading>-->
+        <!--              <m-rounded-icon>-->
+        <!--                text_fields-->
+        <!--              </m-rounded-icon>-->
+        <!--            </m-drawer-list-item-leading>-->
+        <!--            <m-drawer-list-item-body>-->
+        <!--              <m-label>-->
+        <!--                Text fields-->
+        <!--              </m-label>-->
+        <!--            </m-drawer-list-item-body>-->
+        <!--          </router-link>-->
+        <!--        </m-drawer-list-item>-->
+        <!--        <m-drawer-list-item>-->
+        <!--          <router-link to="/lists">-->
+        <!--            <m-drawer-list-item-leading>-->
+        <!--              <m-rounded-icon>-->
+        <!--                event_list-->
+        <!--              </m-rounded-icon>-->
+        <!--            </m-drawer-list-item-leading>-->
+        <!--            <m-drawer-list-item-body>-->
+        <!--              <m-label>-->
+        <!--                Lists-->
+        <!--              </m-label>-->
+        <!--            </m-drawer-list-item-body>-->
+        <!--          </router-link>-->
+        <!--        </m-drawer-list-item>-->
+        <!--        <m-drawer-list-item>-->
+        <!--          <router-link to="/cards">-->
+        <!--            <m-drawer-list-item-leading>-->
+        <!--              <m-rounded-icon>-->
+        <!--                dashboard-->
+        <!--              </m-rounded-icon>-->
+        <!--            </m-drawer-list-item-leading>-->
+        <!--            <m-drawer-list-item-body>-->
+        <!--              <m-label>-->
+        <!--                Cards-->
+        <!--              </m-label>-->
+        <!--            </m-drawer-list-item-body>-->
+        <!--          </router-link>-->
+        <!--        </m-drawer-list-item>-->
+        <!--        <m-drawer-list-item>-->
+        <!--          <router-link to="/navigation">-->
+        <!--            <m-drawer-list-item-body>-->
+        <!--              <m-label>-->
+        <!--                Navigation-->
+        <!--              </m-label>-->
+        <!--            </m-drawer-list-item-body>-->
+        <!--          </router-link>-->
+        <!--        </m-drawer-list-item>-->
+        <!--        <m-drawer-list-item>-->
+        <!--          <router-link to="/icons">-->
+        <!--            <m-drawer-list-item-body>-->
+        <!--              <m-label>-->
+        <!--                Icons-->
+        <!--              </m-label>-->
+        <!--            </m-drawer-list-item-body>-->
+        <!--          </router-link>-->
+        <!--        </m-drawer-list-item>-->
+        <!--        <m-drawer-list-item>-->
+        <!--          <router-link to="/layouts">-->
+        <!--            <m-drawer-list-item-body>-->
+        <!--              <m-label>-->
+        <!--                Layouts-->
+        <!--              </m-label>-->
+        <!--            </m-drawer-list-item-body>-->
+        <!--          </router-link>-->
+        <!--        </m-drawer-list-item>-->
       </m-drawer-list>
     </m-drawer-body>
   </m-navigation-drawer>

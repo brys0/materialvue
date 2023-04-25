@@ -34,21 +34,6 @@
 
 <script lang="ts" setup>
 import {
-	ref,
-	watch,
-	onBeforeUnmount,
-} from 'vue'
-
-import {
-	object,
-	string,
-} from 'yup'
-
-import { useForm } from 'vee-validate'
-
-import { logger } from '@cosmicmind/foundationjs'
-
-import {
 	MMain,
 	MTypographySize,
 	MDisplay,
@@ -56,197 +41,206 @@ import {
 	MTitle,
 	MLabel,
 	MBody,
-	MButtonState,
-	MFilledButton,
-	MOutlinedButton,
-	MTextButton,
-	MElevatedButton,
-	MTonalButton,
-	MFilledIconButton,
-	MTonalIconButton,
-	MOutlinedIconButton,
-	MIconButton,
-	MFabButton,
-	MFabButtonSize,
-	MFabButtonVariant,
-	MExtendedFabButton,
-	MExtendedFabButtonVariant,
-	MRow,
-	MColumn,
-	MSection,
-	MForm,
-	MFieldset,
-	MFieldControl,
-	MFieldBody,
-	MFieldLeading,
-	MFieldTrailing,
-	MFieldInput,
-	MFieldPrefix,
-	MFieldSuffix,
-	MFieldSupport,
-	MTextFieldState,
-	MFilledTextField,
-	MOutlinedTextField,
-	MRoundedIcon,
-	MCardState,
-	MElevatedCard,
-	MFilledCard,
-	MOutlinedCard,
-	MBar,
-	MBarDirection,
-	MBarLeading,
-	MBarBody,
-	MBarTrailing,
-	MDivider,
-	MList,
-	MListLines,
-	MListItem,
-	MListItemState,
-	MListItemLeading,
-	MListItemBody,
-	MListItemTrailing,
-	MVideo,
-	MAvatar,
+	MSection, MLayout, MRow, MRoundedIcon, MColumn, MElevatedButton, MCode,
 } from '@/lib/vue'
-
-const validationSchema = object({
-	email: string().required().email().label('Email Address'),
-})
-
-// create a form context with the validation schema
-const {
-	// meta,
-	errors,
-	handleSubmit,
-} = useForm({
-	validationSchema,
-	initialValues: {
-		email: '',
-	},
-})
-
-const emailRef = ref<HTMLElement>()
-
-const unwatchErrors = watch(errors, errors => {
-	if (errors.email) {
-		emailRef.value?.classList.add('error')
-	}
-	else {
-		emailRef.value?.classList.remove('error')
-	}
-
-	logger.log('errors', errors)
-})
-
-const onSubmit = handleSubmit((data): void => {
-	logger.log(data)
-})
-
-onBeforeUnmount(() => {
-	unwatchErrors()
-})
 
 </script>
 
 <template>
   <m-main>
-    <m-section class="banner">
-      <m-display :size="MTypographySize.large">
-        Typography
-      </m-display>
-      <m-body :size="MTypographySize.large">
-        See the <a
-          href="https://m3.material.io/styles/typography/overview"
-          target="_blank"
-        >Design Guidelines</a>
-      </m-body>
-    </m-section>
-    <m-section>
-      <m-display :size="MTypographySize.large">
-        Display
-      </m-display>
-      <m-display :size="MTypographySize.large">
-        Display Large - Roboto 57/64 . 0
-      </m-display>
-      <m-display :size="MTypographySize.medium">
-        Display Medium - Roboto 45/52 .  0
-      </m-display>
-      <m-display :size="MTypographySize.small">
-        Display Small - Roboto 36/44 . 0
-      </m-display>
-    </m-section>
-    <m-section>
-      <m-display :size="MTypographySize.large">
-        Headline
-      </m-display>
-      <m-headline :size="MTypographySize.large">
-        Headline Large - Roboto 32/40 . 0
-      </m-headline>
-      <m-headline :size="MTypographySize.medium">
-        Headline Medium - Roboto 28/36 . 0
-      </m-headline>
-      <m-headline :size="MTypographySize.small">
-        Headline Small - Roboto 24/32 . 0
-      </m-headline>
-    </m-section>
-    <m-section>
-      <m-display :size="MTypographySize.large">
-        Title
-      </m-display>
-      <m-title :size="MTypographySize.large">
-        Title Large - Roboto Medium 22/28 . 0
-      </m-title>
-      <m-title :size="MTypographySize.medium">
-        Title Medium - Roboto Medium 16/24 . +0.15
-      </m-title>
-      <m-title :size="MTypographySize.small">
-        Title Small - Roboto Medium 14/20 . +0.1
-      </m-title>
-    </m-section>
-    <m-section>
-      <m-display :size="MTypographySize.large">
-        Label
-      </m-display>
-      <m-label :size="MTypographySize.large">
-        Label Large - Roboto Medium 14/20 . +0.1
-      </m-label>
-      <m-label :size="MTypographySize.medium">
-        Label Medium - Roboto Medium 12/16 . +0.5
-      </m-label>
-      <m-label :size="MTypographySize.small">
-        Label Small - Roboto Medium 11/16 . +0.5
-      </m-label>
-    </m-section>
-    <m-section>
-      <m-display :size="MTypographySize.large">
-        Body
-      </m-display>
-      <m-body :size="MTypographySize.large">
-        Body Large - Roboto 16/24 . +0.15
-      </m-body>
-      <m-body :size="MTypographySize.medium">
-        Body Medium - Roboto 14/20 . +0.25
-      </m-body>
-      <m-body :size="MTypographySize.small">
-        Body Small - Roboto 12/16 . +0.4
-      </m-body>
-    </m-section>
+    <m-layout>
+      <m-section class="banner full">
+        <h1>
+          <m-display :size="MTypographySize.large">
+            Typography
+          </m-display>
+        </h1>
+        <p>
+          <m-body :size="MTypographySize.large">
+            <a
+              href="https://m3.material.io/styles/typography/overview"
+              target="_blank"
+            >Design Guidelines</a>
+          </m-body>
+        </p>
+        <h2>
+          <m-headline>
+            Buttons help users take action within your application.
+          </m-headline>
+        </h2>
+        <p>
+          <m-body>
+            Learn about the Material 3 button styles and maximize your application's experience.
+          </m-body>
+        </p>
+      </m-section>
+      <m-section class="banner comfortable">
+        <m-row>
+          <m-column class="is-12">
+            <h3>
+              <m-display :size="MTypographySize.small">
+                Display
+              </m-display>
+            </h3>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column class="is-12">
+            <m-display :size="MTypographySize.large">
+              Display Large - Roboto 57/64 . 0
+            </m-display>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column class="is-6">
+            <m-code
+              code="<m-display :size=&quot;MTypographySize.large&quot;>Display Large - Roboto 57/64 . 0</m-display>"
+            />
+          </m-column>
+          <m-column class="is-6">
+            <m-code
+              code="<button class=&quot;m-button m-elevated&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column class="is-12">
+            <m-display :size="MTypographySize.medium">
+              Display Medium - Roboto 45/52 .  0
+            </m-display>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column class="is-6">
+            <m-code
+              code="<m-display :size=&quot;MTypographySize.medium&quot;>Display Medium - Roboto 45/52 .  0</m-display>"
+            />
+          </m-column>
+          <m-column class="is-6">
+            <m-code
+              code="<button class=&quot;m-button m-elevated&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column class="is-12">
+            <m-display :size="MTypographySize.small">
+              Display Small - Roboto 36/44 . 0
+            </m-display>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column class="is-6">
+            <m-code
+              code="<m-display :size=&quot;MTypographySize.small&quot;>Display Small - Roboto 36/44 . 0</m-display>"
+            />
+          </m-column>
+          <m-column class="is-6">
+            <m-code
+              code="<button class=&quot;m-button m-elevated&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
+          </m-column>
+        </m-row>
+      </m-section>
+      <!--      <m-section>-->
+      <!--        <m-display :size="MTypographySize.large">-->
+      <!--          Display-->
+      <!--        </m-display>-->
+      <!--        <m-display :size="MTypographySize.large">-->
+      <!--          Display Large - Roboto 57/64 . 0-->
+      <!--        </m-display>-->
+      <!--        <m-display :size="MTypographySize.medium">-->
+      <!--          Display Medium - Roboto 45/52 .  0-->
+      <!--        </m-display>-->
+      <!--        <m-display :size="MTypographySize.small">-->
+      <!--          Display Small - Roboto 36/44 . 0-->
+      <!--        </m-display>-->
+      <!--      </m-section>-->
+      <!--      <m-section>-->
+      <!--        <m-display :size="MTypographySize.large">-->
+      <!--          Headline-->
+      <!--        </m-display>-->
+      <!--        <m-headline :size="MTypographySize.large">-->
+      <!--          Headline Large - Roboto 32/40 . 0-->
+      <!--        </m-headline>-->
+      <!--        <m-headline :size="MTypographySize.medium">-->
+      <!--          Headline Medium - Roboto 28/36 . 0-->
+      <!--        </m-headline>-->
+      <!--        <m-headline :size="MTypographySize.small">-->
+      <!--          Headline Small - Roboto 24/32 . 0-->
+      <!--        </m-headline>-->
+      <!--      </m-section>-->
+      <!--      <m-section>-->
+      <!--        <m-display :size="MTypographySize.large">-->
+      <!--          Title-->
+      <!--        </m-display>-->
+      <!--        <m-title :size="MTypographySize.large">-->
+      <!--          Title Large - Roboto Medium 22/28 . 0-->
+      <!--        </m-title>-->
+      <!--        <m-title :size="MTypographySize.medium">-->
+      <!--          Title Medium - Roboto Medium 16/24 . +0.15-->
+      <!--        </m-title>-->
+      <!--        <m-title :size="MTypographySize.small">-->
+      <!--          Title Small - Roboto Medium 14/20 . +0.1-->
+      <!--        </m-title>-->
+      <!--      </m-section>-->
+      <!--      <m-section>-->
+      <!--        <m-display :size="MTypographySize.large">-->
+      <!--          Label-->
+      <!--        </m-display>-->
+      <!--        <m-label :size="MTypographySize.large">-->
+      <!--          Label Large - Roboto Medium 14/20 . +0.1-->
+      <!--        </m-label>-->
+      <!--        <m-label :size="MTypographySize.medium">-->
+      <!--          Label Medium - Roboto Medium 12/16 . +0.5-->
+      <!--        </m-label>-->
+      <!--        <m-label :size="MTypographySize.small">-->
+      <!--          Label Small - Roboto Medium 11/16 . +0.5-->
+      <!--        </m-label>-->
+      <!--      </m-section>-->
+      <!--      <m-section>-->
+      <!--        <m-display :size="MTypographySize.large">-->
+      <!--          Body-->
+      <!--        </m-display>-->
+      <!--        <m-body :size="MTypographySize.large">-->
+      <!--          Body Large - Roboto 16/24 . +0.15-->
+      <!--        </m-body>-->
+      <!--        <m-body :size="MTypographySize.medium">-->
+      <!--          Body Medium - Roboto 14/20 . +0.25-->
+      <!--        </m-body>-->
+      <!--        <m-body :size="MTypographySize.small">-->
+      <!--          Body Small - Roboto 12/16 . +0.4-->
+      <!--        </m-body>-->
+      <!--      </m-section>-->
+    </m-layout>
   </m-main>
 </template>
 
 <style lang="sass" scoped>
 @use '@/lib/sass/theme'
 
-.m-section
-  &.banner
-    > span
-      padding: 12px
+.m-layout
+  padding: 48px
 
-  a
-    @include theme.preferred
-      color: theme.style(primary)
+  > .m-section
+    + .m-section
+      margin-top: 48px
 
-  > .m-display
-    padding: 24px 0
+    > .m-row
+      + .m-row
+        margin-top: 24px
+
+    a
+      @include theme.preferred
+        color: theme.style(primary)
 
 </style>
