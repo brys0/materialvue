@@ -155,6 +155,10 @@ export {
 } from '@/lib/vue/cards'
 
 export {
+	MCode,
+} from '@/lib/vue/code'
+
+export {
 	MBar,
 	MBarDirection,
 	MBarLeading,

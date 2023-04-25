@@ -34,6 +34,12 @@
 
 <script lang="ts" setup>
 import {
+	onMounted,
+} from 'vue'
+
+import highlight from 'highlight.js'
+
+import {
 	MMain,
 	MTypographySize,
 	MDisplay,
@@ -59,7 +65,16 @@ import {
 	MRow,
 	MColumn,
 	MRoundedIcon,
+	MCode,
 } from '@/lib/vue'
+
+onMounted(() => {
+	document.querySelectorAll('code').forEach((element) => {
+		element.innerHTML = element.innerHTML.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
+	})
+
+	highlight.highlightAll()
+})
 
 </script>
 
@@ -122,19 +137,29 @@ import {
           </m-column>
         </m-row>
         <m-row>
-          <m-column class="is-12">
-            <pre v-highlightjs>
-              <code class="html">
-                &lt;m-elevated-button&gt;
-                    &lt;m-rounded-icon&gt;
-                        add_circle
-                    &lt;/m-rounded-icon&gt;
-                    &lt;m-label&gt;
-                        Enabled
-                    &lt;/m-label&gt;
-                &lt;/m-elevated-button&gt;
-              </code>
-            </pre>
+          <m-column class="is-6">
+            <m-code>
+              <m-elevated-button>
+                <m-rounded-icon>
+                  add_circle
+                </m-rounded-icon>
+                <m-label>
+                  Enabled
+                </m-label>
+              </m-elevated-button>
+            </m-code>
+          </m-column>
+          <m-column class="is-6">
+            <m-code>
+              <button class="m-button m-elevated">
+                <span class="m-icon m-rounded material-symbols-rounded">
+                  add_circle
+                </span>
+                <span class="m-typography m-label">
+                  Enabled
+                </span>
+              </button>
+            </m-code>
           </m-column>
         </m-row>
 
@@ -420,15 +445,15 @@ import {
 <style lang="sass" scoped>
 @use '@/lib/sass/theme'
 
-.m-section
-  &.banner
-    padding: 0 56px
+.m-layout
+  padding: 56px
 
+  @include theme.preferred
+    background: theme.style(elevation-1), theme.style(surface)
+
+.m-section
   a
     @include theme.preferred
       color: theme.style(primary)
-
-  > .m-display
-    padding: 24px 0
 
 </style>

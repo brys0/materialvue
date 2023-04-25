@@ -43,10 +43,6 @@ import {
 	createWebHistory,
 } from 'vue-router'
 
-import VueHighlightJS from 'vue3-highlightjs'
-import css from 'highlight.js/lib/languages/css'
-import javascript from 'highlight.js/lib/languages/javascript'
-
 import '@/app/main.sass'
 import { MApp } from '@/lib/vue'
 
@@ -84,10 +80,4 @@ const router = createRouter({
 createApp(MApp)
 	.use(createPinia())
 	.use(router)
-	.use(VueHighlightJS, {
-		languages: {
-			css,
-			javascript,
-		},
-	})
 	.mount('#mount-vue')

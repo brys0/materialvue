@@ -30,100 +30,30 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use './theme'
-@use './conversion'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-pre,
-code
-  margin: 0
-  padding: 0
+export type MCodeProps = {}
 
-pre
-  @extend %is-not-selectable
+export const MCode: FunctionalComponent<MCodeProps> = (_, {
+	slots,
+}): VNode => h('pre', {
+	class: {
+		'm-code': true,
+	},
+}, [
+	h('code', {
+		class: {
+			html: true,
+		},
+	}, slots.default?.())
+])
 
-  white-space: normal
-  border-radius: 12px
-  overflow: scroll
+MCode.displayName = 'MCode'
 
-  @include theme.preferred
-    color: theme.style(on-surface)
-    background: theme.style(elevation-2), theme.style(surface)
+MCode.props = []
 
-code
-  @extend %is-selectable
-
-  white-space: pre
-
-.hljs
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace
-  font-size: 14px
-  letter-spacing: 0.2px
-
-  @include theme.preferred
-    color: theme.style(on-surface)
-
-.hljs-built_in,
-.hljs-selector-tag,
-.hljs-section,
-.hljs-link
-  @include theme.preferred
-    color: theme.style(on-surface)
-
-.hljs-keyword
-  @include theme.preferred
-    color: theme.style(on-surface-variant)
-
-.hljs-title,
-.hljs-tag,
-.hljs-meta-keyword
-  font-style: normal
-
-  @include theme.preferred
-    color: theme.style(on-surface-variant)
-
-.hljs-attr
-  font-style: italic
-
-  @include theme.preferred
-    color: theme.style(tertiary)
-
-.hljs-string
-  @include theme.preferred
-    color: theme.style(on-tertiary)
-
-.hljs-meta,
-.hljs-name,
-.hljs-type,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition,
-.hljs-variable,
-.hljs-template-tag,
-.hljs-template-variable
-  @include theme.preferred
-    color: theme.style(primary)
-
-.hljs-comment,
-.hljs-quote,
-.hljs-deletion
-  @include theme.preferred
-    color: theme.style(secondary)
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-title,
-.hljs-section,
-.hljs-doctag,
-.hljs-type,
-.hljs-name,
-.hljs-strong
-  font-weight: normal
-
-.hljs-literal,
-.hljs-number
-  @include theme.preferred
-    color: theme.style(tertiary)
-
-.hljs-emphasis
-  font-style: italic
+export default MCode
