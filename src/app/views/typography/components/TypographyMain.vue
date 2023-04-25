@@ -50,29 +50,33 @@ import {
   <m-main>
     <m-layout>
       <m-section class="banner full">
-        <h1>
-          <m-display :size="MTypographySize.large">
-            Typography
-          </m-display>
-        </h1>
-        <p>
-          <m-body :size="MTypographySize.large">
-            <a
-              href="https://m3.material.io/styles/typography/overview"
-              target="_blank"
-            >Design Guidelines</a>
-          </m-body>
-        </p>
-        <h2>
-          <m-headline>
-            Buttons help users take action within your application.
-          </m-headline>
-        </h2>
-        <p>
-          <m-body>
-            Learn about the Material 3 button styles and maximize your application's experience.
-          </m-body>
-        </p>
+        <m-row>
+          <m-column class="is-12">
+            <h1>
+              <m-display :size="MTypographySize.large">
+                Typography
+              </m-display>
+            </h1>
+            <p>
+              <m-body :size="MTypographySize.large">
+                <a
+                  href="https://m3.material.io/styles/typography/overview"
+                  target="_blank"
+                >Design Guidelines</a>
+              </m-body>
+            </p>
+            <h2>
+              <m-headline>
+                Buttons help users take action within your application.
+              </m-headline>
+            </h2>
+            <p>
+              <m-body>
+                Learn about the Material 3 button styles and maximize your application's experience.
+              </m-body>
+            </p>
+          </m-column>
+        </m-row>
       </m-section>
       <m-section class="banner comfortable">
         <m-row>
@@ -229,9 +233,10 @@ import {
 @use '@/lib/sass/theme'
 
 .m-layout
-  padding: 48px
-
   > .m-section
+    *.banner
+      padding: 48px
+
     + .m-section
       margin-top: 48px
 

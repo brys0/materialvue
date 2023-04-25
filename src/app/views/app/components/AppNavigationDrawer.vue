@@ -38,6 +38,10 @@ import {
 } from 'vue'
 
 import {
+	useRoute,
+} from 'vue-router'
+
+import {
 	MNavigationDrawer,
 	MDrawerLeading,
 	MDrawerBody,
@@ -57,8 +61,14 @@ import {
 	useAppStore,
 } from '@/app/contexts/app/stores/AppStore'
 
-const appStore = useAppStore()
+const route = useRoute()
+const isRoute = (name: string): boolean => {
+	console.log('name', route.name)
+	return name === route.name
+}
 
+
+const appStore = useAppStore()
 const toggleNavigationDrawer = (): void => appStore.toggleNavigationDrawer()
 const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpened)
 
@@ -86,7 +96,7 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
     </m-drawer-leading>
     <m-drawer-body>
       <m-drawer-list>
-        <m-drawer-list-item>
+        <m-drawer-list-item :selected="isRoute('typography')">
           <router-link to="/typography">
             <m-drawer-list-item-leading>
               <m-rounded-icon>
@@ -114,7 +124,7 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
         <!--            </m-drawer-list-item-body>-->
         <!--          </router-link>-->
         <!--        </m-drawer-list-item>-->
-        <m-drawer-list-item>
+        <m-drawer-list-item :selected="isRoute('buttons')">
           <router-link to="/buttons">
             <m-drawer-list-item-leading>
               <m-rounded-icon>

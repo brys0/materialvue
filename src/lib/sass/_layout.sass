@@ -75,17 +75,19 @@
 %m-layout-comfortable
   width: 100%
 
-  @include adaptive.is-compact
-    max-width: conversion.to-px(adaptive.width(compact))
-
   @include adaptive.is-medium
+    max-width: conversion.to-px(adaptive.width(max-small))
+
+  @include adaptive.is-large
     max-width: conversion.to-px(adaptive.width(max-medium))
+
+  @include adaptive.is-expanded
+    max-width: conversion.to-px(adaptive.width(max-large))
 
 %m-layout-narrow
   max-width: conversion.to-px(adaptive.width(max-medium))
 
 %m-layout-row
-  margin: 0 auto
   display: grid
 
   @include adaptive.is-compact
@@ -127,16 +129,6 @@
 .m-row
   @extend %m-layout-row
 
-  &.full
-    @extend %m-layout-full
-
-  &,
-  &.comfortable
-    @extend %m-layout-comfortable
-
-  &.narrow
-    @extend %m-layout-narrow
-
 .m-column
   @extend %m-layout-column
 
@@ -148,11 +140,11 @@
   @include adaptive.is-gt-compact
     @include grid-column('gt-compact-', 12)
 
-  @include adaptive.is-medium
+  @include adaptive.is-small
     @include grid-column('medium-', 12)
 
-  @include adaptive.is-gt-medium
-    @include grid-column('gt-medium-', 12)
+  @include adaptive.is-gt-small
+    @include grid-column('gt-small-', 12)
 
   @include adaptive.is-lt-expanded
     @include grid-column('lt-expanded-', 12)
@@ -168,8 +160,8 @@
 
 @include adaptive.is-compact
   .is-gt-compact,
-  .is-medium,
-  .is-gt-medium,
+  .is-small,
+  .is-gt-small,
   .is-expanded
     display: none !important
 
@@ -177,26 +169,26 @@
   .is-compact
     display: none !important
 
-@include adaptive.is-medium
+@include adaptive.is-small
   .is-compact,
-  .is-gt-medium,
+  .is-gt-small,
   .is-expanded
     display: none !important
 
-@include adaptive.is-gt-medium
+@include adaptive.is-gt-small
   .is-compact,
-  .is-medium,
+  .is-small,
   .is-lt-expanded
     display: none !important
 
 @include adaptive.is-lt-expanded
-  .is-gt-medium,
+  .is-gt-small,
   .is-expanded
     display: none !important
 
 @include adaptive.is-expanded
   .is-compact,
-  .is-medium,
+  .is-small,
   .is-lt-expanded
     display: none !important
 

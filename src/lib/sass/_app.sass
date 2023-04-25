@@ -90,9 +90,6 @@ body
     &.is-opened
       width: 280px
 
-      + .m-main
-        margin-left: 0
-
       @include adaptive.is-lt-expanded
         ~ .m-scrim
           display: block
@@ -132,15 +129,11 @@ body
       border-top-right-radius: 0
 
   > .m-main
-    margin: 0 12px 12px 12px
     grid-row: row-3-start / row-3-end
     grid-column: col-3-start / col-3-end
     z-index: 0
 
     border-radius: 12px
-
-    @include theme.preferred
-      background: theme.style(surface)
 
   > .m-finder
     grid-row: row-2-start / row-3-end

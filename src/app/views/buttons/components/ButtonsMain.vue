@@ -617,15 +617,16 @@ import {
 @use '@/lib/sass/theme'
 
 .m-layout
-  padding: 48px
-
   > .m-section
+    *.banner
+      padding: 48px
+
     + .m-section
       margin-top: 48px
 
     > .m-row
-     + .m-row
-       margin-top: 24px
+      + .m-row
+        margin-top: 24px
 
     a
       @include theme.preferred

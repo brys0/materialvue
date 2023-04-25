@@ -36,6 +36,11 @@
 import {
 	MMain,
 	MLayout,
+	MSection,
+	MRow,
+	MColumn,
+	MDisplay,
+	MTypographySize,
 } from '@/lib/vue'
 
 </script>
@@ -43,7 +48,38 @@ import {
 <template>
   <m-main>
     <m-layout>
-      <p>Hello</p>
+      <m-section>
+        <m-row>
+          <m-column class="is-3">
+            <img
+              class="is-theme-dark"
+              src="/assets/material-design-logo-dark.svg"
+              alt="Material Design"
+            >
+            <img
+              class="is-theme-light"
+              src="/assets/material-design-logo-light.svg"
+              alt="Material Design"
+            >
+          </m-column>
+          <m-column class="is-3">
+            <m-display :size="MTypographySize.large">
+              +
+            </m-display>
+          </m-column>
+          <m-column class="is-3">
+            <img
+              src="/assets/vue-logo.svg"
+              alt="VueJS Logo"
+            >
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column class="is-12">
+            <m-display>Material Design 3 and Vue 3 brought together for next level development.</m-display>
+          </m-column>
+        </m-row>
+      </m-section>
     </m-layout>
   </m-main>
 </template>

@@ -79,7 +79,6 @@ const isThemeLight = computed(() => appStore.isThemeLight)
         </m-label>
       </m-rail-button>
       <m-rail-button
-        :toggle="true"
         :selected="isNavigationDrawerOpened"
         @click="toggleNavigationDrawer"
       >
