@@ -56,9 +56,10 @@ code
   white-space: pre
 
 .hljs
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace
-  font-size: 14px
-  letter-spacing: 0.2px
+  @extend %m-typography-body-large
+  //font-family: Menlo, Monaco, Consolas, "Courier New", monospace
+  //font-size: 14px
+  //letter-spacing: 0.2px
 
   @include theme.preferred
     color: theme.style(on-surface)
