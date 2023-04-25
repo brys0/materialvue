@@ -121,622 +121,299 @@ import {
             </m-elevated-button>
           </m-column>
         </m-row>
+        <m-row>
+          <m-column class="is-12">
+            <pre v-highlightjs>
+              <code class="html">
+                &lt;m-elevated-button&gt;
+                    &lt;m-rounded-icon&gt;
+                        add_circle
+                    &lt;/m-rounded-icon&gt;
+                    &lt;m-label&gt;
+                        Enabled
+                    &lt;/m-label&gt;
+                &lt;/m-elevated-button&gt;
+              </code>
+            </pre>
+          </m-column>
+        </m-row>
+
+        <m-row>
+          <m-column class="is-12">
+            <h3>
+              <m-display :size="MTypographySize.small">
+                Filled button
+              </m-display>
+            </h3>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column>
+            <m-filled-button>
+              <m-label>
+                Enabled
+              </m-label>
+            </m-filled-button>
+          </m-column>
+          <m-column>
+            <m-filled-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+              <m-label>
+                Enabled
+              </m-label>
+            </m-filled-button>
+          </m-column>
+        </m-row>
+
+        <m-row>
+          <m-column class="is-12">
+            <h3>
+              <m-display :size="MTypographySize.small">
+                Tonal button
+              </m-display>
+            </h3>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column>
+            <m-tonal-button>
+              <m-label>
+                Enabled
+              </m-label>
+            </m-tonal-button>
+          </m-column>
+          <m-column>
+            <m-tonal-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+              <m-label>
+                Enabled
+              </m-label>
+            </m-tonal-button>
+          </m-column>
+        </m-row>
+
+        <m-row>
+          <m-column class="is-12">
+            <h3>
+              <m-display :size="MTypographySize.small">
+                Outlined button
+              </m-display>
+            </h3>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column>
+            <m-outlined-button>
+              <m-label>
+                Enabled
+              </m-label>
+            </m-outlined-button>
+          </m-column>
+          <m-column>
+            <m-outlined-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+              <m-label>
+                Enabled
+              </m-label>
+            </m-outlined-button>
+          </m-column>
+        </m-row>
+
+        <m-row>
+          <m-column class="is-12">
+            <h3>
+              <m-display :size="MTypographySize.small">
+                Text button
+              </m-display>
+            </h3>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column>
+            <m-text-button>
+              <m-label>
+                Enabled
+              </m-label>
+            </m-text-button>
+          </m-column>
+          <m-column>
+            <m-text-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+              <m-label>
+                Enabled
+              </m-label>
+            </m-text-button>
+          </m-column>
+        </m-row>
+
+        <m-row>
+          <m-column class="is-12">
+            <h3>
+              <m-display :size="MTypographySize.small">
+                Icon button
+              </m-display>
+            </h3>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column>
+            <m-icon-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+            </m-icon-button>
+          </m-column>
+          <m-column>
+            <m-icon-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+            </m-icon-button>
+          </m-column>
+        </m-row>
+
+        <m-row>
+          <m-column class="is-12">
+            <h3>
+              <m-display :size="MTypographySize.small">
+                Filled icon button
+              </m-display>
+            </h3>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column>
+            <m-filled-icon-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+            </m-filled-icon-button>
+          </m-column>
+          <m-column>
+            <m-filled-icon-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+            </m-filled-icon-button>
+          </m-column>
+        </m-row>
+
+        <m-row>
+          <m-column class="is-12">
+            <h3>
+              <m-display :size="MTypographySize.small">
+                Tonal icon button
+              </m-display>
+            </h3>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column>
+            <m-tonal-icon-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+            </m-tonal-icon-button>
+          </m-column>
+          <m-column>
+            <m-tonal-icon-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+            </m-tonal-icon-button>
+          </m-column>
+        </m-row>
+
+        <m-row>
+          <m-column class="is-12">
+            <h3>
+              <m-display :size="MTypographySize.small">
+                Outlined icon button
+              </m-display>
+            </h3>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column>
+            <m-outlined-icon-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+            </m-outlined-icon-button>
+          </m-column>
+          <m-column>
+            <m-outlined-icon-button>
+              <m-rounded-icon>
+                add_circle
+              </m-rounded-icon>
+            </m-outlined-icon-button>
+          </m-column>
+        </m-row>
+
+        <m-row>
+          <m-column class="is-12">
+            <h3>
+              <m-display :size="MTypographySize.small">
+                Floating action button (FAB)
+              </m-display>
+            </h3>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column>
+            <m-fab-button>
+              <m-rounded-icon>
+                edit
+              </m-rounded-icon>
+            </m-fab-button>
+          </m-column>
+          <m-column>
+            <m-fab-button>
+              <m-rounded-icon>
+                edit
+              </m-rounded-icon>
+            </m-fab-button>
+          </m-column>
+        </m-row>
+
+        <m-row>
+          <m-column class="is-12">
+            <h3>
+              <m-display :size="MTypographySize.small">
+                Extended floating action button (FAB)
+              </m-display>
+            </h3>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column>
+            <m-extended-fab-button>
+              <m-label>
+                Compose
+              </m-label>
+            </m-extended-fab-button>
+          </m-column>
+          <m-column>
+            <m-extended-fab-button>
+              <m-rounded-icon>
+                edit
+              </m-rounded-icon>
+              <m-label>
+                Compose
+              </m-label>
+            </m-extended-fab-button>
+          </m-column>
+        </m-row>
       </m-section>
     </m-layout>
-    <!--    <m-section>-->
-    <!--      <m-row>-->
-    <!--        <m-column />-->
-    <!--      </m-row>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Elevated button states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-elevated-button>-->
-    <!--            <m-label>-->
-    <!--              Enabled-->
-    <!--            </m-label>-->
-    <!--          </m-elevated-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Elevated button with icon states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-elevated-button>-->
-    <!--            <m-rounded-icon>-->
-    <!--              add_circle-->
-    <!--            </m-rounded-icon>-->
-    <!--            <m-label>-->
-    <!--              Enabled-->
-    <!--            </m-label>-->
-    <!--          </m-elevated-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Filled button states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-filled-button>-->
-    <!--            <m-label>-->
-    <!--              Enabled-->
-    <!--            </m-label>-->
-    <!--          </m-filled-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Filled button with icon states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-filled-button>-->
-    <!--            <m-rounded-icon>-->
-    <!--              add_circle-->
-    <!--            </m-rounded-icon>-->
-    <!--            <m-label>-->
-    <!--              Enabled-->
-    <!--            </m-label>-->
-    <!--          </m-filled-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Tonal button states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-tonal-button>-->
-    <!--            <m-label>-->
-    <!--              Enabled-->
-    <!--            </m-label>-->
-    <!--          </m-tonal-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Tonal button with icon states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-tonal-button>-->
-    <!--            <m-rounded-icon>-->
-    <!--              add_circle-->
-    <!--            </m-rounded-icon>-->
-    <!--            <m-label>-->
-    <!--              Enabled-->
-    <!--            </m-label>-->
-    <!--          </m-tonal-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Outlined button states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-outlined-button>-->
-    <!--            <m-label>-->
-    <!--              Enabled-->
-    <!--            </m-label>-->
-    <!--          </m-outlined-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Outlined button with icon states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-outlined-button>-->
-    <!--            <m-rounded-icon>-->
-    <!--              add_circle-->
-    <!--            </m-rounded-icon>-->
-    <!--            <m-label>-->
-    <!--              Enabled-->
-    <!--            </m-label>-->
-    <!--          </m-outlined-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Text button states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-text-button>-->
-    <!--            <m-label>-->
-    <!--              Enabled-->
-    <!--            </m-label>-->
-    <!--          </m-text-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Text button with icon states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-text-button>-->
-    <!--            <m-rounded-icon>-->
-    <!--              add_circle-->
-    <!--            </m-rounded-icon>-->
-    <!--            <m-label>-->
-    <!--              Enabled-->
-    <!--            </m-label>-->
-    <!--          </m-text-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Filled icon button no toggle states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-filled-icon-button>-->
-    <!--            <m-rounded-icon>-->
-    <!--              settings-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-filled-icon-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Filled icon button toggle-unselected states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-filled-icon-button :toggle="true">-->
-    <!--            <m-rounded-icon>-->
-    <!--              settings-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-filled-icon-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Filled icon button toggle-selected states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-filled-icon-button-->
-    <!--            :toggle="true"-->
-    <!--            :selected="true"-->
-    <!--          >-->
-    <!--            <m-rounded-icon>-->
-    <!--              settings-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-filled-icon-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Tonal icon button no toggle states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-tonal-icon-button>-->
-    <!--            <m-rounded-icon>-->
-    <!--              settings-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-tonal-icon-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Tonal icon button toggle-unselected states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-tonal-icon-button :toggle="true">-->
-    <!--            <m-rounded-icon>-->
-    <!--              settings-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-tonal-icon-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Tonal icon button toggle-selected states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-tonal-icon-button-->
-    <!--            :toggle="true"-->
-    <!--            :selected="true"-->
-    <!--          >-->
-    <!--            <m-rounded-icon>-->
-    <!--              settings-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-tonal-icon-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Outlined icon button toggle-unselected states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-outlined-icon-button :toggle="true">-->
-    <!--            <m-rounded-icon>-->
-    <!--              settings-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-outlined-icon-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Outlined icon button toggle-selected states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-outlined-icon-button-->
-    <!--            :toggle="true"-->
-    <!--            :selected="true"-->
-    <!--          >-->
-    <!--            <m-rounded-icon>-->
-    <!--              settings-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-outlined-icon-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Standard icon button toggle-unselected states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-icon-button :toggle="true">-->
-    <!--            <m-rounded-icon>-->
-    <!--              settings-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-icon-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Standard icon button toggle-selected states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-icon-button-->
-    <!--            :toggle="true"-->
-    <!--            :selected="true"-->
-    <!--          >-->
-    <!--            <m-rounded-icon>-->
-    <!--              settings-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-icon-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        FAB button states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-fab-button>-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        FAB button lowered states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-fab-button :lowered="true">-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        FAB button surface variant-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-fab-button :variant="MFabButtonVariant.surface">-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        FAB button surface variant lowered states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-fab-button-->
-    <!--            :lowered="true"-->
-    <!--            :variant="MFabButtonVariant.surface"-->
-    <!--          >-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        FAB button secondary variant-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-fab-button :variant="MFabButtonVariant.secondary">-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        FAB button secondary variant lowered states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-fab-button-->
-    <!--            :lowered="true"-->
-    <!--            :variant="MFabButtonVariant.secondary"-->
-    <!--          >-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        FAB button tertiary variant-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-fab-button :variant="MFabButtonVariant.tertiary">-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        FAB button tertiary variant lowered states-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-fab-button-->
-    <!--            :lowered="true"-->
-    <!--            :variant="MFabButtonVariant.tertiary"-->
-    <!--          >-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        FAB button small size-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-fab-button :size="MFabButtonSize.small">-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        FAB button large size-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-fab-button :size="MFabButtonSize.large">-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--          </m-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Extended FAB button states without icon-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-extended-fab-button>-->
-    <!--            <m-label>-->
-    <!--              Compose-->
-    <!--            </m-label>-->
-    <!--          </m-extended-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Extended FAB button states with icon-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-extended-fab-button>-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--            <m-label>-->
-    <!--              Compose-->
-    <!--            </m-label>-->
-    <!--          </m-extended-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Extended FAB button lowered states without icon-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-extended-fab-button :lowered="true">-->
-    <!--            <m-label>-->
-    <!--              Compose-->
-    <!--            </m-label>-->
-    <!--          </m-extended-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Extended FAB button lowered states with icon-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-extended-fab-button :lowered="true">-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--            <m-label>-->
-    <!--              Compose-->
-    <!--            </m-label>-->
-    <!--          </m-extended-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Extended FAB button surface variant without icon-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-extended-fab-button :variant="MExtendedFabButtonVariant.surface">-->
-    <!--            <m-label>-->
-    <!--              Compose-->
-    <!--            </m-label>-->
-    <!--          </m-extended-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Extended FAB button surface variant with icon-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-extended-fab-button :variant="MExtendedFabButtonVariant.surface">-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--            <m-label>-->
-    <!--              Compose-->
-    <!--            </m-label>-->
-    <!--          </m-extended-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Extended FAB button secondary variant without icon-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-extended-fab-button :variant="MExtendedFabButtonVariant.secondary">-->
-    <!--            <m-label>-->
-    <!--              Compose-->
-    <!--            </m-label>-->
-    <!--          </m-extended-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Extended FAB button secondary variant with icon-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-extended-fab-button :variant="MExtendedFabButtonVariant.secondary">-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--            <m-label>-->
-    <!--              Compose-->
-    <!--            </m-label>-->
-    <!--          </m-extended-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Extended FAB button tertiary variant without icon-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-extended-fab-button :variant="MExtendedFabButtonVariant.tertiary">-->
-    <!--            <m-label>-->
-    <!--              Compose-->
-    <!--            </m-label>-->
-    <!--          </m-extended-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
-    <!--    <m-section>-->
-    <!--      <m-display :size="MTypographySize.small">-->
-    <!--        Extended FAB button tertiary variant with icon-->
-    <!--      </m-display>-->
-    <!--      <m-row>-->
-    <!--        <m-column>-->
-    <!--          <m-extended-fab-button :variant="MExtendedFabButtonVariant.tertiary">-->
-    <!--            <m-rounded-icon>-->
-    <!--              edit-->
-    <!--            </m-rounded-icon>-->
-    <!--            <m-label>-->
-    <!--              Compose-->
-    <!--            </m-label>-->
-    <!--          </m-extended-fab-button>-->
-    <!--        </m-column>-->
-    <!--      </m-row>-->
-    <!--    </m-section>-->
   </m-main>
 </template>
 
