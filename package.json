@@ -67,6 +67,7 @@
     "@types/node": "^18.7.15",
     "@vitejs/plugin-vue": "^4.0.0",
     "highlight.js": "^11.7.0",
+    "html-prettify": "^1.0.7",
     "jsdom": "^20.0.0",
     "koa": "^2.13.4",
     "koa-bodyparser": "^4.3.0",

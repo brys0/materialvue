@@ -240,13 +240,13 @@ import {
           <m-column class="is-6">
             <m-code
               code="<m-elevated-button>
-  <m-rounded-icon>
-    add_circle
-  </m-rounded-icon>
-  <m-label>
-    Enabled
-  </m-label>
-</m-elevated-button>"
+                <m-rounded-icon>
+                  add_circle
+                </m-rounded-icon>
+                <m-label>
+                  Enabled
+                </m-label>
+              </m-elevated-button>"
             />
           </m-column>
           <m-column class="is-6">
