@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "@cosmicmind/foundationjs": "^0.0.1-rc-040523-1",
+    "@highlightjs/vue-plugin": "^2.1.0",
     "@koa/router": "^12.0.0",
     "@types/jsdom": "^20.0.0",
     "@types/koa": "^2.13.5",

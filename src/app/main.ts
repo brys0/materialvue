@@ -46,6 +46,14 @@ import {
 import '@/app/main.sass'
 import { MApp } from '@/lib/vue'
 
+import hljs from 'highlight.js/lib/core'
+import javascript from 'highlight.js/lib/languages/javascript'
+import xml from 'highlight.js/lib/languages/xml'
+import hljsVuePlugin from '@highlightjs/vue-plugin'
+
+hljs.registerLanguage('xml', xml)
+hljs.registerLanguage('javascript', javascript)
+
 import adaptiveRoutes from '@/app/views/adaptive/routes'
 import buttonsRoutes from '@/app/views/buttons/routes'
 import cardsRoutes from '@/app/views/cards/routes'
@@ -80,4 +88,5 @@ const router = createRouter({
 createApp(MApp)
 	.use(createPinia())
 	.use(router)
+	.use(hljsVuePlugin)
 	.mount('#mount-vue')

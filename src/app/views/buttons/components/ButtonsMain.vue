@@ -34,12 +34,6 @@
 
 <script lang="ts" setup>
 import {
-	onMounted,
-} from 'vue'
-
-import highlight from 'highlight.js'
-
-import {
 	MMain,
 	MTypographySize,
 	MDisplay,
@@ -67,14 +61,6 @@ import {
 	MRoundedIcon,
 	MCode,
 } from '@/lib/vue'
-
-onMounted(() => {
-	document.querySelectorAll('code').forEach((element) => {
-		element.innerHTML = element.innerHTML.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
-	})
-
-	highlight.highlightAll()
-})
 
 </script>
 
@@ -138,7 +124,9 @@ onMounted(() => {
         </m-row>
         <m-row>
           <m-column class="is-6">
-            <m-code>
+            <highlightjs
+              language="xml"
+              code="
               <m-elevated-button>
                 <m-rounded-icon>
                   add_circle
@@ -146,20 +134,32 @@ onMounted(() => {
                 <m-label>
                   Enabled
                 </m-label>
-              </m-elevated-button>
-            </m-code>
+              </m-elevated-button>"
+            />
           </m-column>
           <m-column class="is-6">
-            <m-code>
-              <button class="m-button m-elevated">
-                <span class="m-icon m-rounded material-symbols-rounded">
-                  add_circle
-                </span>
-                <span class="m-typography m-label">
-                  Enabled
-                </span>
-              </button>
-            </m-code>
+            <!--            <highlightjs-->
+            <!--              language="xml"-->
+            <!--              cde="-->
+            <!--              <button class=\"-->
+            <!--              m-button-->
+            <!--              m-elevated\"-->
+            <!--            >-->
+            <!--              <span-->
+            <!--                class="\&quot;m-icon"-->
+            <!--                m-rounded-->
+            <!--                material-symbols-rounded\"-->
+            <!--              >-->
+            <!--                add_circle-->
+            <!--              </span>-->
+            <!--              <span-->
+            <!--                class="\&quot;m-typography\&quot;"-->
+            <!--                m-label\"-->
+            <!--              >-->
+            <!--                Enabled-->
+            <!--              </span>-->
+            <!--              </button>" />-->
+            <!--            </highlightjs>-->
           </m-column>
         </m-row>
 
