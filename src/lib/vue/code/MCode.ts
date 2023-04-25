@@ -36,21 +36,27 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
+import hljs from 'highlight.js/lib/core'
+import javascript from 'highlight.js/lib/languages/javascript'
+import xml from 'highlight.js/lib/languages/xml'
+
+hljs.registerLanguage('xml', xml)
+hljs.registerLanguage('javascript', javascript)
+
+import hljsVuePlugin from '@highlightjs/vue-plugin'
+
 export type MCodeProps = {}
 
 export const MCode: FunctionalComponent<MCodeProps> = (_, {
 	slots,
-}): VNode => h('pre', {
-	class: {
-		'm-code': true,
-	},
-}, [
-	h('code', {
+}): VNode => {
+	return h(hljsVuePlugin.component, {
 		class: {
-			html: true,
+			'm-code': true,
 		},
-	}, slots.default?.())
-])
+		code: '<p>Hello World</p>',
+	})
+}
 
 MCode.displayName = 'MCode'
 
