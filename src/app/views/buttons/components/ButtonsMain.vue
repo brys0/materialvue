@@ -74,17 +74,21 @@ import {
               <m-display :size="MTypographySize.large">
                 Buttons
               </m-display>
+            </h1>
+            <p>
               <m-body :size="MTypographySize.large">
                 <a
                   href="https://m3.material.io/components/buttons/overview"
                   target="_blank"
                 >Design Guidelines</a>
               </m-body>
-            </h1>
-            <p>
+            </p>
+            <h2>
               <m-headline>
                 Buttons help users take action within your application.
               </m-headline>
+            </h2>
+            <p>
               <m-body>
                 Learn about the Material 3 button styles and maximize your application's experience.
               </m-body>
@@ -124,30 +128,20 @@ import {
         </m-row>
         <m-row>
           <m-column class="is-6">
-            <!--            <m-code-->
-            <!--              language="html"-->
-            <!--              code="<m-elevated-button>-->
-            <!--  <m-rounded-icon>-->
-            <!--    add_circle-->
-            <!--  </m-rounded-icon>-->
-            <!--  <m-label>-->
-            <!--    Enabled-->
-            <!--  </m-label>-->
-            <!--</m-elevated-button>"-->
-            <!--            />-->
+            <m-code
+              code="<m-elevated-button>
+                <m-rounded-icon>add_circle</m-rounded-icon>
+                <m-label>Enabled</m-label>
+              </m-elevated-button>"
+            />
           </m-column>
           <m-column class="is-6">
-            <!--            <m-code-->
-            <!--              language="html"-->
-            <!--              code="<button>-->
-            <!--  <span class='m-icon m-rounded'>-->
-            <!--    add_circle-->
-            <!--  </span>-->
-            <!--  <span class='m-typography m-label'>-->
-            <!--    Enabled-->
-            <!--  </span>-->
-            <!--</button>"-->
-            <!--            />-->
+            <m-code
+              code="<button class=&quot;m-button m-elevated&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
           </m-column>
         </m-row>
 
@@ -181,30 +175,20 @@ import {
         </m-row>
         <m-row>
           <m-column class="is-6">
-            <!--            <m-code-->
-            <!--              language="html"-->
-            <!--              code="<m-elevated-button>-->
-            <!--  <m-rounded-icon>-->
-            <!--    add_circle-->
-            <!--  </m-rounded-icon>-->
-            <!--  <m-label>-->
-            <!--    Enabled-->
-            <!--  </m-label>-->
-            <!--</m-elevated-button>"-->
-            <!--            />-->
+            <m-code
+              code="<m-filled-button>
+                <m-rounded-icon>add_circle</m-rounded-icon>
+                <m-label>Enabled</m-label>
+              </m-filled-button>"
+            />
           </m-column>
           <m-column class="is-6">
-            <!--            <m-code-->
-            <!--              language="html"-->
-            <!--              code="<button>-->
-            <!--  <span class='m-icon m-rounded'>-->
-            <!--    add_circle-->
-            <!--  </span>-->
-            <!--  <span class='m-typography m-label'>-->
-            <!--    Enabled-->
-            <!--  </span>-->
-            <!--</button>"-->
-            <!--            />-->
+            <m-code
+              code="<button class=&quot;m-button m-filled&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
           </m-column>
         </m-row>
 
@@ -239,15 +223,15 @@ import {
         <m-row>
           <m-column class="is-6">
             <m-code
-              code="<m-elevated-button>
+              code="<m-tonal-button>
                 <m-rounded-icon>add_circle</m-rounded-icon>
                 <m-label>Enabled</m-label>
-              </m-elevated-button>"
+              </m-tonal-button>"
             />
           </m-column>
           <m-column class="is-6">
             <m-code
-              code="<button class=&quot;m-button m-elevated&quot;>
+              code="<button class=&quot;m-button m-tonal&quot;>
                 <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
                 <span class=&quot;m-label&quot;>Enabled</span>
               </button>"
@@ -283,6 +267,24 @@ import {
             </m-outlined-button>
           </m-column>
         </m-row>
+        <m-row>
+          <m-column class="is-6">
+            <m-code
+              code="<m-tonal-button>
+                <m-rounded-icon>add_circle</m-rounded-icon>
+                <m-label>Enabled</m-label>
+              </m-tonal-button>"
+            />
+          </m-column>
+          <m-column class="is-6">
+            <m-code
+              code="<button class=&quot;m-button m-tonal&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
+          </m-column>
+        </m-row>
 
         <m-row>
           <m-column class="is-12">
@@ -312,6 +314,24 @@ import {
             </m-text-button>
           </m-column>
         </m-row>
+        <m-row>
+          <m-column class="is-6">
+            <m-code
+              code="<m-tonal-button>
+                <m-rounded-icon>add_circle</m-rounded-icon>
+                <m-label>Enabled</m-label>
+              </m-tonal-button>"
+            />
+          </m-column>
+          <m-column class="is-6">
+            <m-code
+              code="<button class=&quot;m-button m-tonal&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
+          </m-column>
+        </m-row>
 
         <m-row>
           <m-column class="is-12">
@@ -336,6 +356,24 @@ import {
                 add_circle
               </m-rounded-icon>
             </m-icon-button>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column class="is-6">
+            <m-code
+              code="<m-tonal-button>
+                <m-rounded-icon>add_circle</m-rounded-icon>
+                <m-label>Enabled</m-label>
+              </m-tonal-button>"
+            />
+          </m-column>
+          <m-column class="is-6">
+            <m-code
+              code="<button class=&quot;m-button m-tonal&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
           </m-column>
         </m-row>
 
@@ -364,6 +402,24 @@ import {
             </m-filled-icon-button>
           </m-column>
         </m-row>
+        <m-row>
+          <m-column class="is-6">
+            <m-code
+              code="<m-tonal-button>
+                <m-rounded-icon>add_circle</m-rounded-icon>
+                <m-label>Enabled</m-label>
+              </m-tonal-button>"
+            />
+          </m-column>
+          <m-column class="is-6">
+            <m-code
+              code="<button class=&quot;m-button m-tonal&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
+          </m-column>
+        </m-row>
 
         <m-row>
           <m-column class="is-12">
@@ -388,6 +444,24 @@ import {
                 add_circle
               </m-rounded-icon>
             </m-tonal-icon-button>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column class="is-6">
+            <m-code
+              code="<m-tonal-button>
+                <m-rounded-icon>add_circle</m-rounded-icon>
+                <m-label>Enabled</m-label>
+              </m-tonal-button>"
+            />
+          </m-column>
+          <m-column class="is-6">
+            <m-code
+              code="<button class=&quot;m-button m-tonal&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
           </m-column>
         </m-row>
 
@@ -416,6 +490,24 @@ import {
             </m-outlined-icon-button>
           </m-column>
         </m-row>
+        <m-row>
+          <m-column class="is-6">
+            <m-code
+              code="<m-tonal-button>
+                <m-rounded-icon>add_circle</m-rounded-icon>
+                <m-label>Enabled</m-label>
+              </m-tonal-button>"
+            />
+          </m-column>
+          <m-column class="is-6">
+            <m-code
+              code="<button class=&quot;m-button m-tonal&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
+          </m-column>
+        </m-row>
 
         <m-row>
           <m-column class="is-12">
@@ -440,6 +532,24 @@ import {
                 edit
               </m-rounded-icon>
             </m-fab-button>
+          </m-column>
+        </m-row>
+        <m-row>
+          <m-column class="is-6">
+            <m-code
+              code="<m-tonal-button>
+                <m-rounded-icon>add_circle</m-rounded-icon>
+                <m-label>Enabled</m-label>
+              </m-tonal-button>"
+            />
+          </m-column>
+          <m-column class="is-6">
+            <m-code
+              code="<button class=&quot;m-button m-tonal&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
           </m-column>
         </m-row>
 
@@ -471,6 +581,24 @@ import {
             </m-extended-fab-button>
           </m-column>
         </m-row>
+        <m-row>
+          <m-column class="is-6">
+            <m-code
+              code="<m-tonal-button>
+                <m-rounded-icon>add_circle</m-rounded-icon>
+                <m-label>Enabled</m-label>
+              </m-tonal-button>"
+            />
+          </m-column>
+          <m-column class="is-6">
+            <m-code
+              code="<button class=&quot;m-button m-tonal&quot;>
+                <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+                <span class=&quot;m-label&quot;>Enabled</span>
+              </button>"
+            />
+          </m-column>
+        </m-row>
       </m-section>
     </m-layout>
   </m-main>
@@ -483,7 +611,7 @@ import {
   padding: 56px
 
   @include theme.preferred
-    background: theme.style(elevation-1), theme.style(surface)
+    background: theme.style(surface)
 
 .m-section
   a

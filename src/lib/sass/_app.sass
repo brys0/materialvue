@@ -60,7 +60,7 @@ body
   overflow: hidden
 
   @include theme.preferred
-    background: theme.style(background)
+    background: theme.style(elevation-1), theme.style(surface)
 
   > .m-top-app-bar
     grid-row: row-1-start / row-1-end
@@ -69,6 +69,9 @@ body
 
   > .m-navigation-rail
     z-index: 8
+
+    @include theme.preferred
+      background: theme.style(elevation-2), theme.style(surface)
 
     @include adaptive.is-lt-expanded
       display: none
@@ -131,6 +134,9 @@ body
     z-index: 0
 
     border-radius: 12px
+
+    @include theme.preferred
+      background: theme.style(surface)
 
   > .m-finder
     grid-row: row-2-start / row-3-end
