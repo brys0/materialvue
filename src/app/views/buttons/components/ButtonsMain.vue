@@ -124,30 +124,30 @@ import {
         </m-row>
         <m-row>
           <m-column class="is-6">
-            <m-code
-              language="html"
-              code="<m-elevated-button>
-  <m-rounded-icon>
-    add_circle
-  </m-rounded-icon>
-  <m-label>
-    Enabled
-  </m-label>
-</m-elevated-button>"
-            />
+            <!--            <m-code-->
+            <!--              language="html"-->
+            <!--              code="<m-elevated-button>-->
+            <!--  <m-rounded-icon>-->
+            <!--    add_circle-->
+            <!--  </m-rounded-icon>-->
+            <!--  <m-label>-->
+            <!--    Enabled-->
+            <!--  </m-label>-->
+            <!--</m-elevated-button>"-->
+            <!--            />-->
           </m-column>
           <m-column class="is-6">
-            <m-code
-              language="html"
-              code="<button>
-  <span class='m-icon m-rounded'>
-    add_circle
-  </span>
-  <span class='m-typography m-label'>
-    Enabled
-  </span>
-</button>"
-            />
+            <!--            <m-code-->
+            <!--              language="html"-->
+            <!--              code="<button>-->
+            <!--  <span class='m-icon m-rounded'>-->
+            <!--    add_circle-->
+            <!--  </span>-->
+            <!--  <span class='m-typography m-label'>-->
+            <!--    Enabled-->
+            <!--  </span>-->
+            <!--</button>"-->
+            <!--            />-->
           </m-column>
         </m-row>
 
@@ -181,30 +181,30 @@ import {
         </m-row>
         <m-row>
           <m-column class="is-6">
-            <m-code
-              language="html"
-              code="<m-elevated-button>
-  <m-rounded-icon>
-    add_circle
-  </m-rounded-icon>
-  <m-label>
-    Enabled
-  </m-label>
-</m-elevated-button>"
-            />
+            <!--            <m-code-->
+            <!--              language="html"-->
+            <!--              code="<m-elevated-button>-->
+            <!--  <m-rounded-icon>-->
+            <!--    add_circle-->
+            <!--  </m-rounded-icon>-->
+            <!--  <m-label>-->
+            <!--    Enabled-->
+            <!--  </m-label>-->
+            <!--</m-elevated-button>"-->
+            <!--            />-->
           </m-column>
           <m-column class="is-6">
-            <m-code
-              language="html"
-              code="<button>
-  <span class='m-icon m-rounded'>
-    add_circle
-  </span>
-  <span class='m-typography m-label'>
-    Enabled
-  </span>
-</button>"
-            />
+            <!--            <m-code-->
+            <!--              language="html"-->
+            <!--              code="<button>-->
+            <!--  <span class='m-icon m-rounded'>-->
+            <!--    add_circle-->
+            <!--  </span>-->
+            <!--  <span class='m-typography m-label'>-->
+            <!--    Enabled-->
+            <!--  </span>-->
+            <!--</button>"-->
+            <!--            />-->
           </m-column>
         </m-row>
 
@@ -239,7 +239,6 @@ import {
         <m-row>
           <m-column class="is-6">
             <m-code
-              language="html"
               code="<m-elevated-button>
   <m-rounded-icon>
     add_circle
@@ -251,17 +250,16 @@ import {
             />
           </m-column>
           <m-column class="is-6">
-            <m-code
-              language="html"
-              code="<button>
-  <span class='m-icon m-rounded'>
-    add_circle
-  </span>
-  <span class='m-typography m-label'>
-    Enabled
-  </span>
-</button>"
-            />
+            <m-code>
+              <m-elevated-button>
+                <m-rounded-icon>
+                  add_circle
+                </m-rounded-icon>
+                <m-label>
+                  Enabled
+                </m-label>
+              </m-elevated-button>
+            </m-code>
           </m-column>
         </m-row>
 

@@ -31,5 +31,5 @@
  */
 
 export {
-	MCode,
-} from '@/lib/vue/code/MCode'
+	default as MCode,
+} from '@/lib/vue/code/MCode.vue'

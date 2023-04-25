@@ -1,3 +1,4 @@
+<!--
 /**
  * BSD 3-Clause License
  *
@@ -29,12 +30,20 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+-->
+
+<script lang="ts" setup>
 
 import {
-	h,
-	VNode,
-	FunctionalComponent,
+	toRef,
+	shallowRef,
+	triggerRef,
+	onMounted,
 } from 'vue'
+
+import {
+	guard,
+} from '@cosmicmind/foundationjs'
 
 import hljs from 'highlight.js/lib/core'
 import javascript from 'highlight.js/lib/languages/javascript'
@@ -43,23 +52,39 @@ import xml from 'highlight.js/lib/languages/xml'
 hljs.registerLanguage('xml', xml)
 hljs.registerLanguage('javascript', javascript)
 
-import hljsVuePlugin from '@highlightjs/vue-plugin'
+const elRef = shallowRef<HTMLElement | null>(null)
 
-export type MCodeProps = {}
+const props = defineProps({
+	code: {
+		type: String,
+		default: '',
+	},
+})
 
-export const MCode: FunctionalComponent<MCodeProps> = (_, {
-	slots,
-}): VNode => {
-	return h(hljsVuePlugin.component, {
-		class: {
-			'm-code': true,
-		},
-		code: '<p>Hello World</p>',
-	})
-}
+const codeRef =toRef(props, 'code')
 
-MCode.displayName = 'MCode'
+onMounted(() => {
+	const code = codeRef.value
+	const el = elRef.value
 
-MCode.props = []
+	if (guard<HTMLElement>(el)) {
+		if (0 < code.length) {
+			el.innerHTML = hljs.highlight(code, { language: 'xml' }).value
+		}
+		else {
+			el.innerHTML = hljs.highlight(el.innerHTML, { language: 'xml' }).value
+		}
+	}
 
-export default MCode
+	triggerRef(elRef)
+})
+
+</script>
+
+<template>
+  <pre>
+    <code ref="elRef">
+      <slot />
+    </code>
+  </pre>
+</template>
