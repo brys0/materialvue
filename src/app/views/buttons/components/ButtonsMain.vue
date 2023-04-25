@@ -96,7 +96,6 @@ import {
           </m-column>
         </m-row>
       </m-section>
-
       <m-section class="banner comfortable">
         <m-row>
           <m-column class="is-12">
@@ -144,7 +143,8 @@ import {
             />
           </m-column>
         </m-row>
-
+      </m-section>
+      <m-section>
         <m-row>
           <m-column class="is-12">
             <h3>
@@ -191,7 +191,8 @@ import {
             />
           </m-column>
         </m-row>
-
+      </m-section>
+      <m-section>
         <m-row>
           <m-column class="is-12">
             <h3>
@@ -238,7 +239,8 @@ import {
             />
           </m-column>
         </m-row>
-
+      </m-section>
+      <m-section>
         <m-row>
           <m-column class="is-12">
             <h3>
@@ -285,7 +287,8 @@ import {
             />
           </m-column>
         </m-row>
-
+      </m-section>
+      <m-section>
         <m-row>
           <m-column class="is-12">
             <h3>
@@ -332,7 +335,8 @@ import {
             />
           </m-column>
         </m-row>
-
+      </m-section>
+      <m-section>
         <m-row>
           <m-column class="is-12">
             <h3>
@@ -376,7 +380,8 @@ import {
             />
           </m-column>
         </m-row>
-
+      </m-section>
+      <m-section>
         <m-row>
           <m-column class="is-12">
             <h3>
@@ -420,7 +425,8 @@ import {
             />
           </m-column>
         </m-row>
-
+      </m-section>
+      <m-section>
         <m-row>
           <m-column class="is-12">
             <h3>
@@ -464,7 +470,8 @@ import {
             />
           </m-column>
         </m-row>
-
+      </m-section>
+      <m-section>
         <m-row>
           <m-column class="is-12">
             <h3>
@@ -508,7 +515,8 @@ import {
             />
           </m-column>
         </m-row>
-
+      </m-section>
+      <m-section>
         <m-row>
           <m-column class="is-12">
             <h3>
@@ -552,7 +560,8 @@ import {
             />
           </m-column>
         </m-row>
-
+      </m-section>
+      <m-section>
         <m-row>
           <m-column class="is-12">
             <h3>
@@ -608,14 +617,19 @@ import {
 @use '@/lib/sass/theme'
 
 .m-layout
-  padding: 56px
+  padding: 48px
 
-  @include theme.preferred
-    background: theme.style(surface)
+  > .m-section
+    + .m-section
+      margin-top: 48px
 
-.m-section
-  a
-    @include theme.preferred
-      color: theme.style(primary)
+    > .m-row
+     + .m-row
+       margin-top: 24px
+
+    a
+      @include theme.preferred
+        color: theme.style(primary)
+
 
 </style>

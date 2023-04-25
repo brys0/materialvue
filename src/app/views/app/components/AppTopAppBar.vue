@@ -40,7 +40,6 @@ import {
 import {
 	MTopAppBar,
 	MBarLeading,
-	MBarBody,
 	MBarTrailing,
 	MIconButton,
 	MRoundedIcon,
@@ -64,28 +63,11 @@ const isThemeLight = computed(() => appStore.isThemeLight)
 <template>
   <m-top-app-bar>
     <m-bar-leading>
-      <m-icon-button
-        :toggle="true"
-        :selected="isNavigationDrawerOpened"
-        @click="toggleNavigationDrawer"
-      >
-        <m-rounded-icon>
-          menu
-        </m-rounded-icon>
-      </m-icon-button>
       <m-headline>
         Material
       </m-headline>
     </m-bar-leading>
     <m-bar-trailing>
-      <m-icon-button @click="toggleTheme">
-        <m-rounded-icon v-if="isThemeLight">
-          dark_mode
-        </m-rounded-icon>
-        <m-rounded-icon v-else>
-          light_mode
-        </m-rounded-icon>
-      </m-icon-button>
       <m-icon-button>
         <m-rounded-icon>
           notifications

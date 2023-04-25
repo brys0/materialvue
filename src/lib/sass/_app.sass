@@ -64,21 +64,21 @@ body
 
   > .m-top-app-bar
     grid-row: row-1-start / row-1-end
-    grid-column: col-1-start / col-3-end
+    grid-column: col-2-start / col-3-end
     z-index: 3
 
   > .m-navigation-rail
     z-index: 8
 
     @include theme.preferred
-      background: theme.style(elevation-2), theme.style(surface)
+      background: theme.style(elevation-3), theme.style(surface)
 
     @include adaptive.is-lt-expanded
       display: none
 
     @include adaptive.is-expanded
       width: 80px
-      grid-row: row-2-start / row-3-end
+      grid-row: row-1-start / row-3-end
       grid-column: col-1-start / col-1-end
 
   > .m-navigation-drawer
@@ -129,6 +129,7 @@ body
       border-top-right-radius: 0
 
   > .m-main
+    margin: 0 12px 12px 12px
     grid-row: row-3-start / row-3-end
     grid-column: col-3-start / col-3-end
     z-index: 0

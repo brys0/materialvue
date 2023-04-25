@@ -34,17 +34,47 @@
 
 <script lang="ts" setup>
 import {
+	computed,
+} from 'vue'
+
+import {
 	MNavigationRail,
 	MRailButton,
+	MRailLeading,
 	MRailBody,
+	MRailTrailing,
 	MLabel,
 	MRoundedIcon,
+	MIconButton,
 } from '@/lib/vue'
+
+import {
+	useAppStore,
+} from '@/app/contexts/app/stores/AppStore'
+
+const appStore = useAppStore()
+
+const toggleNavigationDrawer = (): void => appStore.toggleNavigationDrawer()
+const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpened)
+
+const toggleTheme = (): void => appStore.toggleTheme()
+const isThemeLight = computed(() => appStore.isThemeLight)
 
 </script>
 
 <template>
   <m-navigation-rail>
+    <m-rail-leading>
+      <m-icon-button
+        :toggle="true"
+        :selected="isNavigationDrawerOpened"
+        @click="toggleNavigationDrawer"
+      >
+        <m-rounded-icon>
+          menu
+        </m-rounded-icon>
+      </m-icon-button>
+    </m-rail-leading>
     <m-rail-body>
       <m-rail-button>
         <m-rounded-icon>
@@ -55,5 +85,15 @@ import {
         </m-label>
       </m-rail-button>
     </m-rail-body>
+    <m-rail-trailing>
+      <m-icon-button @click="toggleTheme">
+        <m-rounded-icon v-if="isThemeLight">
+          dark_mode
+        </m-rounded-icon>
+        <m-rounded-icon v-else>
+          light_mode
+        </m-rounded-icon>
+      </m-icon-button>
+    </m-rail-trailing>
   </m-navigation-rail>
 </template>
