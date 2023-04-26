@@ -56,9 +56,6 @@ const appStore = useAppStore()
 const toggleNavigationDrawer = (): void => appStore.toggleNavigationDrawer()
 const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpened)
 
-const toggleTheme = (): void => appStore.toggleTheme()
-const isThemeLight = computed(() => appStore.isThemeLight)
-
 </script>
 
 <template>
@@ -79,16 +76,18 @@ const isThemeLight = computed(() => appStore.isThemeLight)
       </m-headline>
     </m-bar-leading>
     <m-bar-trailing>
-      <m-icon-button>
-        <m-rounded-icon>
-          notifications
-        </m-rounded-icon>
-      </m-icon-button>
-      <m-icon-button>
-        <m-rounded-icon>
-          account_circle
-        </m-rounded-icon>
-      </m-icon-button>
+      <img
+        class="github-brand"
+        src="/assets/github.svg"
+        alt="Material GitHub Repo"
+      >
     </m-bar-trailing>
   </m-top-app-bar>
 </template>
+
+<style lang="sass" scoped>
+.github-brand
+  width: 24px
+  height: 24px
+
+</style>
