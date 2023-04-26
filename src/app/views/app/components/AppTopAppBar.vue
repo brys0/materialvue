@@ -82,19 +82,8 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
         target="_blank"
         title="Material GitHub Repository"
       >
-        <img
-          class="github-brand"
-          src="/assets/github.svg"
-          alt="Material GitHub Repo"
-        >
+        <font-awesome-icon icon="fa-brands fa-github" />
       </a>
     </m-bar-trailing>
   </m-top-app-bar>
 </template>
-
-<style lang="sass" scoped>
-.github-brand
-  width: 24px
-  height: 24px
-
-</style>
