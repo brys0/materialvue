@@ -44,7 +44,7 @@ import {
 	MBarTrailing,
 	MIconButton,
 	MRoundedIcon,
-	MHeadline,
+	MHeadline, MLink,
 } from '@/lib/vue'
 
 import {
@@ -76,11 +76,18 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
       </m-headline>
     </m-bar-leading>
     <m-bar-trailing>
-      <img
-        class="github-brand"
-        src="/assets/github.svg"
-        alt="Material GitHub Repo"
+      <a
+        class="m-button m-icon-button"
+        href="https://github.com/cosmicmind/materialjs"
+        target="_blank"
+        title="Material GitHub Repository"
       >
+        <img
+          class="github-brand"
+          src="/assets/github.svg"
+          alt="Material GitHub Repo"
+        >
+      </a>
     </m-bar-trailing>
   </m-top-app-bar>
 </template>

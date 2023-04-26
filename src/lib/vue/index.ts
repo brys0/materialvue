@@ -89,6 +89,7 @@ export {
 	MTitle,
 	MLabel,
 	MBody,
+	MLink,
 } from '@/lib/vue/typography'
 
 export {

@@ -30,31 +30,41 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MTypography,
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
+
+import {
 	MTypographySize,
 } from '@/lib/vue/typography/MTypography'
 
-export {
-	MDisplay,
-} from '@/lib/vue/typography/MDisplay'
+export type MLinkProps = {
+	size?: MTypographySize
+}
 
-export {
-	MHeadline,
-} from '@/lib/vue/typography/MHeadline'
+export const MLink: FunctionalComponent<MLinkProps> = ({
+	size,
+}, {
+	slots,
+}): VNode => h('a', {
+	size,
+	class: {
+		'm-typography': true,
+		'm-link': true,
+		small: MTypographySize.small === size,
+		medium: MTypographySize.medium === size,
+		large: MTypographySize.large === size,
+	},
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	MTitle,
-} from '@/lib/vue/typography/MTitle'
+MLink.displayName = 'MLink'
 
-export {
-	MLabel,
-} from '@/lib/vue/typography/MLabel'
+MLink.props = [
+	'size'
+]
 
-export {
-	MBody,
-} from '@/lib/vue/typography/MBody'
-
-export {
-	MLink,
-} from '@/lib/vue/typography/MLink'
+export default MLink

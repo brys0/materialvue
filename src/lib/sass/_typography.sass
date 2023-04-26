@@ -42,13 +42,14 @@
   display: block
 
   @include theme.preferred
-    color: theme.style(on-background)
+    color: theme.style(on-surface)
 
 %m-typography-display,
 %m-typography-headline,
 %m-typography-title,
 %m-typography-label,
-%m-typography-body
+%m-typography-body,
+%m-typography-link
   vertical-align: baseline
 
 %m-typography-display-large
@@ -93,7 +94,7 @@
 %m-typography-label-large
   font-size: 14px
   line-height: 20px
-  letter-spacing: 0.1
+  letter-spacing: 0.1px
 
 %m-typography-label-medium
   font-size: 12px
@@ -108,7 +109,7 @@
 %m-typography-body-large
   font-size: 16px
   line-height: 24px
-  letter-spacing: 0.15
+  letter-spacing: 0.15px
 
 %m-typography-body-medium
   font-size: 14px
@@ -116,6 +117,30 @@
   letter-spacing: 0.25px
 
 %m-typography-body-small
+  font-size: 12px
+  line-height: 16px
+  letter-spacing: 0.4px
+
+%m-typography-link
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+  @include theme.preferred
+    color: theme.style(primary)
+
+%m-typography-link-large
+  font-size: 16px
+  line-height: 24px
+  letter-spacing: 0.15px
+
+%m-typography-link-medium
+  font-size: 14px
+  line-height: 20px
+  letter-spacing: 0.25px
+
+%m-typography-link-small
   font-size: 12px
   line-height: 16px
   letter-spacing: 0.4px
@@ -196,3 +221,16 @@
 
     + .m-body
       margin-top: 16px
+
+  &.m-link
+    @extend %m-typography-link
+
+    &.large
+      @extend %m-typography-link-large
+
+    &,
+    &.medium
+      @extend %m-typography-link-medium
+
+    &.small
+      @extend %m-typography-link-small

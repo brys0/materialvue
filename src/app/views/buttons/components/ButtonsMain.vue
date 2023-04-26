@@ -38,7 +38,7 @@ import {
 	MTypographySize,
 	MDisplay,
 	MHeadline,
-	MBody,
+	MLink,
 	MLabel,
 	MFilledButton,
 	MOutlinedButton,
@@ -59,6 +59,8 @@ import {
 	MRow,
 	MColumn,
 	MRoundedIcon,
+	MBar,
+	MBarTrailing,
 	MCode,
 } from '@/lib/vue'
 
@@ -68,35 +70,29 @@ import {
   <m-main>
     <m-layout>
       <m-section class="banner expanded">
-        <m-row>
-          <m-column class="is-12">
-            <h1>
-              <m-display :size="MTypographySize.large">
-                Buttons
-              </m-display>
-            </h1>
-            <p>
-              <m-body :size="MTypographySize.large">
-                <a
-                  href="https://m3.material.io/components/buttons/overview"
-                  target="_blank"
-                >Design Guidelines</a>
-              </m-body>
-            </p>
-            <h2>
-              <m-headline>
-                Buttons help users take action within your application.
-              </m-headline>
-            </h2>
-            <p>
-              <m-body>
-                Learn about the Material 3 button styles and maximize your application's experience.
-              </m-body>
-            </p>
-          </m-column>
-        </m-row>
+        <m-bar>
+          <m-bar-trailing>
+            <m-link
+              href="https://m3.material.io/components/buttons/overview"
+              target="_blank"
+              title="Material Design Guidelines - Buttons"
+            >
+              See design guidelines
+            </m-link>
+          </m-bar-trailing>
+        </m-bar>
+        <h1>
+          <m-display :size="MTypographySize.large">
+            Buttons
+          </m-display>
+        </h1>
+        <h2>
+          <m-headline>
+            Buttons help users take action within your application.
+          </m-headline>
+        </h2>
       </m-section>
-      <m-section class="banner comfortable">
+      <m-section class="comfortable">
         <m-row>
           <m-column class="is-12">
             <h3>
@@ -616,10 +612,30 @@ import {
 <style lang="sass" scoped>
 @use '@/lib/sass/theme'
 
+.m-main
+  padding: 0 12px
+
+.m-navigation-drawer
+  &.is-opened
+    + .m-main
+      padding-left: 0
+
 .m-layout
   > .m-section
-    *.banner
-      padding: 48px
+    &.banner
+      padding: 0 0 48px 48px
+      border-radius: 12px
+
+      @include theme.preferred
+        background: theme.style(elevation-4), theme.style(surface)
+
+      .m-bar
+        padding: 0 24px
+        height: 48px
+
+      .m-display,
+      .m-headline
+        padding-right: 48px
 
     + .m-section
       margin-top: 48px
