@@ -151,22 +151,43 @@ import {
           </m-column>
         </m-row>
         <m-row>
-          <m-column>
-            <m-filled-button>
-              <m-label>
-                Enabled
-              </m-label>
-            </m-filled-button>
-          </m-column>
-          <m-column>
-            <m-filled-button>
-              <m-rounded-icon>
-                add_circle
-              </m-rounded-icon>
-              <m-label>
-                Enabled
-              </m-label>
-            </m-filled-button>
+          <m-column class="is-12">
+            <div class="m-demo">
+              <m-row class="theme-light">
+                <m-column class="is-12">
+                  <m-filled-button>
+                    <m-label>
+                      Enabled
+                    </m-label>
+                  </m-filled-button>
+                  <m-filled-button>
+                    <m-rounded-icon>
+                      add_circle
+                    </m-rounded-icon>
+                    <m-label>
+                      Enabled
+                    </m-label>
+                  </m-filled-button>
+                </m-column>
+              </m-row>
+              <m-row class="theme-dark">
+                <m-column class="is-12">
+                  <m-filled-button>
+                    <m-label>
+                      Enabled
+                    </m-label>
+                  </m-filled-button>
+                  <m-filled-button>
+                    <m-rounded-icon>
+                      add_circle
+                    </m-rounded-icon>
+                    <m-label>
+                      Enabled
+                    </m-label>
+                  </m-filled-button>
+                </m-column>
+              </m-row>
+            </div>
           </m-column>
         </m-row>
         <m-row>
@@ -647,5 +668,19 @@ import {
     a
       @include theme.preferred
         color: theme.style(primary)
+
+.m-demo
+  width: 100%
+  margin: 0
+  padding: 48px
+  position: relative
+  gap: 0
+  display: flex
+  flex-flow: row
+  flex: 1 0 0
+
+
+  @include theme.preferred
+    background: theme.style(elevation-1), theme.style(surface)
 
 </style>

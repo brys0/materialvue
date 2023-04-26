@@ -71,7 +71,7 @@ body
     z-index: 8
 
     @include theme.preferred
-      background: theme.style(elevation-5), theme.style(surface)
+      background: theme.style(elevation-1), theme.style(surface)
 
     @include adaptive.is-lt-medium
       display: none
@@ -109,7 +109,7 @@ body
       border-bottom-right-radius: 12px
 
       @include theme.preferred
-        background: theme.style(background)
+        background: theme.style(elevation-1), theme.style(surface)
 
   > .m-toolbar
     grid-row: row-2-start / row-2-end

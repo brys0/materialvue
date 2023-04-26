@@ -93,6 +93,8 @@
 
 %m-layout-row
   display: grid
+  grid-auto-columns: minmax(1fr, max-content)
+  grid-auto-flow: column
 
   @include adaptive.is-compact
     grid-template-columns: repeat(8, 1fr)
