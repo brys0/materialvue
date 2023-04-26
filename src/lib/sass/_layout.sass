@@ -49,7 +49,7 @@
     gap: 12px
 
 %m-layout
-  margin: 0 8px
+  margin: 0
   display: grid
   align-items: stretch
   align-content: stretch
@@ -162,6 +162,10 @@
   .is-gt-compact,
   .is-small,
   .is-gt-small,
+  .is-medium,
+  .is-gt-medium,
+  .is-large,
+  .is-gt-large,
   .is-expanded
     display: none !important
 
@@ -171,27 +175,88 @@
 
 @include adaptive.is-small
   .is-compact,
+  .is-lt-small,
   .is-gt-small,
+  .is-medium,
+  .is-gt-medium,
+  .is-large,
+  .is-gt-large,
   .is-expanded
     display: none !important
 
 @include adaptive.is-gt-small
   .is-compact,
+  .is-gt-compact,
+  .is-lt-small,
+  .is-small
+    display: none !important
+
+@include adaptive.is-lt-medium
+  .is-medium,
+  .is-gt-medium,
+  .is-large,
+  .is-gt-large,
+  .is-expanded
+    display: none !important
+
+@include adaptive.is-medium
+  .is-compact,
+  .is-lt-small,
   .is-small,
-  .is-lt-expanded
+  .is-lt-medium,
+  .is-gt-medium,
+  .is-large,
+  .is-gt-large,
+  .is-expanded
+    display: none !important
+
+@include adaptive.is-gt-medium
+  .is-compact,
+  .is-gt-compact,
+  .is-lt-small,
+  .is-small,
+  .is-lt-medium,
+  .is-medium
+    display: none !important
+
+@include adaptive.is-lt-large
+  .is-large,
+  .is-gt-large,
+  .is-expanded
+    display: none !important
+
+@include adaptive.is-large
+  .is-compact,
+  .is-lt-small,
+  .is-small,
+  .is-lt-medium,
+  .is-medium,
+  .is-lt-large,
+  .is-gt-large,
+  .is-expanded
+    display: none !important
+
+@include adaptive.is-gt-large
+  .is-compact,
+  .is-lt-small,
+  .is-small,
+  .is-lt-medium,
+  .is-medium,
+  .is-lt-large,
+  .is-large
     display: none !important
 
 @include adaptive.is-lt-expanded
-  .is-gt-small,
   .is-expanded
     display: none !important
 
 @include adaptive.is-expanded
   .is-compact,
+  .is-lt-small,
   .is-small,
+  .is-lt-medium,
+  .is-medium,
+  .is-lt-large,
+  .is-large,
   .is-lt-expanded
-    display: none !important
-
-@include adaptive.is-lt-expanded
-  .is-expanded
     display: none !important

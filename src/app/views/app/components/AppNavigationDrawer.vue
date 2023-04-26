@@ -62,10 +62,7 @@ import {
 } from '@/app/contexts/app/stores/AppStore'
 
 const route = useRoute()
-const isRoute = (name: string): boolean => {
-	console.log('name', route.name)
-	return name === route.name
-}
+const isRoute = (name: string): boolean => name === route.name
 
 
 const appStore = useAppStore()
@@ -77,9 +74,10 @@ const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpene
 <template>
   <m-navigation-drawer :is-opened="isNavigationDrawerOpened">
     <m-drawer-leading>
-      <m-bar class="is-lt-expanded">
+      <m-bar class="is-lt-large">
         <m-bar-leading>
           <m-icon-button
+            class="is-lt-medium"
             :toggle="true"
             :selected="isNavigationDrawerOpened"
             @click="toggleNavigationDrawer"

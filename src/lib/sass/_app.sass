@@ -73,31 +73,31 @@ body
     @include theme.preferred
       background: theme.style(elevation-3), theme.style(surface)
 
-    @include adaptive.is-lt-expanded
+    @include adaptive.is-lt-medium
       display: none
 
-    @include adaptive.is-expanded
-      width: 80px
+    @include adaptive.is-gt-compact
       grid-row: row-1-start / row-3-end
       grid-column: col-1-start / col-1-end
 
   > .m-navigation-drawer
     grid-row: row-2-start / row-3-end
     grid-column: col-2-start / col-2-end
-    z-index: 8
+    z-index: 7
     overflow: hidden
 
     &.is-opened
       width: 280px
 
-      @include adaptive.is-lt-expanded
+      @include adaptive.is-lt-large
         ~ .m-scrim
           display: block
 
     &.is-closed
       width: 0
+      visibility: hidden
 
-    @include adaptive.is-lt-expanded
+    @include adaptive.is-lt-large
       position: absolute
       top: 0
       left: 0

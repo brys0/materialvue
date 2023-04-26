@@ -36,7 +36,6 @@ import serve from 'koa-static'
 export default (router: Router): void => {
 	router.get([
 		'/',
-		'/login',
 		'/adaptive',
 		'/theming',
 		'/buttons',

@@ -59,18 +59,24 @@ const router = useRouter()
 
 const appStore = useAppStore()
 
+const closeNavigationDrawer = (): void => appStore.closeNavigationDrawer()
 const toggleNavigationDrawer = (): void => appStore.toggleNavigationDrawer()
 const isNavigationDrawerOpened = computed(() => appStore.isNavigationDrawerOpened)
 
 const toggleTheme = (): void => appStore.toggleTheme()
 const isThemeLight = computed(() => appStore.isThemeLight)
 
+const goToHomeRoute = (): void => {
+	closeNavigationDrawer()
+	router.push('/')
+}
+
 </script>
 
 <template>
   <m-navigation-rail>
     <m-rail-body>
-      <m-rail-button @click="router.push('/')">
+      <m-rail-button @click="goToHomeRoute">
         <m-rounded-icon>
           home
         </m-rounded-icon>

@@ -50,12 +50,6 @@ const routes: RouteRecordRaw[] = [
 			'top-app-bar': AppTopAppBar,
 			main: DiscoverMain,
 		},
-		props: {
-			'navigation-rail': true,
-			'navigation-drawer': true,
-			'top-app-bar': true,
-			main: true,
-		},
 	}
 ]
 

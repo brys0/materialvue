@@ -54,14 +54,6 @@ const routes: RouteRecordRaw[] = [
 			finder: AppFinder,
 			modal: AppModal,
 		},
-		props: {
-			'navigation-rail': true,
-			'navigation-drawer': true,
-			'top-app-bar': true,
-			main: true,
-			finder: true,
-			modal: true,
-		},
 	}
 ]
 

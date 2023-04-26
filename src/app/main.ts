@@ -57,7 +57,6 @@ import textFieldsRoutes from '@/app/views/text-fields/routes'
 import themingRoutes from '@/app/views/theming/routes'
 import typographyRoutes from '@/app/views/typography/routes'
 import discoverRoutes from '@/app/views/discover/routes'
-import loginRoutes from '@/app/views/login/routes'
 
 const router = createRouter({
 	routes: [
@@ -71,8 +70,7 @@ const router = createRouter({
 		...navigationRoutes,
 		...textFieldsRoutes,
 		...themingRoutes,
-		...typographyRoutes,
-		...loginRoutes
+		...typographyRoutes
 	],
 	history: createWebHistory(),
 })
