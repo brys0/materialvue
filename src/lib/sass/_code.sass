@@ -57,9 +57,10 @@ code
 
 .hljs
   @extend %m-typography-body-large
+  
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace
-  //font-size: 14px
-  //letter-spacing: 0.2px
+  font-size: 14px
+  letter-spacing: 0.2px
 
   @include theme.preferred
     color: theme.style(on-surface)
@@ -81,7 +82,7 @@ code
   font-style: normal
 
   @include theme.preferred
-    color: theme.style(on-surface-variant)
+    color: theme.style(tertiary)
 
 .hljs-attr
   font-style: italic
@@ -91,7 +92,7 @@ code
 
 .hljs-string
   @include theme.preferred
-    color: theme.style(tertiary)
+    color: theme.style(primary)
 
 .hljs-meta,
 .hljs-name,
@@ -103,7 +104,7 @@ code
 .hljs-template-tag,
 .hljs-template-variable
   @include theme.preferred
-    color: theme.style(primary)
+    color: theme.style(tertiary)
 
 .hljs-comment,
 .hljs-quote,

@@ -67,7 +67,7 @@ import {
 <template>
   <m-main>
     <m-layout>
-      <m-section class="banner full">
+      <m-section class="banner expanded">
         <m-row>
           <m-column class="is-12">
             <h1>
@@ -126,7 +126,7 @@ import {
           </m-column>
         </m-row>
         <m-row>
-          <m-column class="is-6">
+          <m-column class="is-6 theme-light">
             <m-code
               code="<m-elevated-button>
                 <m-rounded-icon>add_circle</m-rounded-icon>
@@ -134,7 +134,7 @@ import {
               </m-elevated-button>"
             />
           </m-column>
-          <m-column class="is-6">
+          <m-column class="is-6 theme-dark">
             <m-code
               code="<button class=&quot;m-button m-elevated&quot;>
                 <span class=&quot;m-icon m-rounded&quot;>add_circle</span>

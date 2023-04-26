@@ -72,20 +72,24 @@
   padding: 0
   min-width: 100%
 
+%m-layout-expanded
+  padding: 0
+  max-width: conversion.to-px(adaptive.width(expanded))
+
 %m-layout-comfortable
   width: 100%
 
   @include adaptive.is-medium
-    max-width: conversion.to-px(adaptive.width(max-small))
+    max-width: conversion.to-px(adaptive.width(min-large))
 
   @include adaptive.is-large
-    max-width: conversion.to-px(adaptive.width(max-medium))
+    max-width: conversion.to-px(adaptive.width(min-large))
 
   @include adaptive.is-expanded
-    max-width: conversion.to-px(adaptive.width(max-large))
+    max-width: conversion.to-px(adaptive.width(min-large))
 
 %m-layout-narrow
-  max-width: conversion.to-px(adaptive.width(max-medium))
+  max-width: conversion.to-px(adaptive.width(min-medium))
 
 %m-layout-row
   display: grid
@@ -118,6 +122,9 @@
 
   &.full
     @extend %m-layout-full
+
+  &.expanded
+    @extend %m-layout-expanded
 
   &,
   &.comfortable

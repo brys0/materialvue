@@ -155,11 +155,13 @@ $current: null;
 }
 
 @mixin preferred() {
-  $current: 'light' !global;
-  @content;
-
   $current: 'dark' !global;
   .theme-dark & {
+    @content;
+  }
+
+  $current: 'light' !global;
+  .theme-light & {
     @content;
   }
 
