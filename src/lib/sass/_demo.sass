@@ -45,23 +45,23 @@ $dot-space: 24px
   border-radius: 12px
   overflow: hidden
 
-  .canvas
-    position: relative
-    padding: 48px
+.m-canvas
+  position: relative
+  padding: 48px
+
+  @include theme.preferred
+    background: theme.style(surface)
+
+  &::before
+    content: ' '
+    position: absolute
+    top: 12px
+    left: 12px
+    bottom: 12px
+    right: 12px
+    display: block
 
     @include theme.preferred
-      background: theme.style(surface)
-
-    &::before
-      content: ' '
-      position: absolute
-      top: 12px
-      left: 12px
-      bottom: 12px
-      right: 12px
-      display: block
-
-      @include theme.preferred
-        background-image: radial-gradient(conversion.hex-to-rgba(theme.style(on-surface), 0.12) 1px, transparent 0)
-        background-size: 12px 12px
-        background-position: -11px -11px
+      background-image: radial-gradient(conversion.hex-to-rgba(theme.style(on-surface), 0.12) 1px, transparent 0)
+      background-size: 12px 12px
+      background-position: -11px -11px

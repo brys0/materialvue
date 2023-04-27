@@ -157,7 +157,7 @@ import {
             <m-demo>
               <m-row>
                 <m-column class="is-12 theme-light">
-                  <m-tile class="canvas">
+                  <m-tile class="m-canvas">
                     <m-row>
                       <m-column>
                         <m-filled-button>
@@ -182,7 +182,7 @@ import {
               </m-row>
               <m-row>
                 <m-column class="is-12 theme-dark">
-                  <m-tile class="canvas">
+                  <m-tile class="m-canvas">
                     <m-row>
                       <m-column>
                         <m-filled-button>
@@ -210,6 +210,11 @@ import {
         </m-row>
         <m-row>
           <m-column class="is-6">
+            <h6>
+              <m-headline :size="MTypographySize.small">
+                Vue
+              </m-headline>
+            </h6>
             <m-code
               code="<m-filled-button>
                 <m-rounded-icon>add_circle</m-rounded-icon>
@@ -218,6 +223,11 @@ import {
             />
           </m-column>
           <m-column class="is-6">
+            <h6>
+              <m-headline :size="MTypographySize.small">
+                CSS
+              </m-headline>
+            </h6>
             <m-code
               code="<button class=&quot;m-button m-filled&quot;>
                 <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
@@ -664,6 +674,7 @@ import {
 .m-layout
   > .m-section
     &.banner
+      margin-top: 12px
       padding: 0 0 48px 48px
       border-radius: 12px
 
@@ -679,7 +690,7 @@ import {
         padding-right: 48px
 
     + .m-section
-      margin-top: 48px
+      margin-top: 96px
 
     > .m-row
       + .m-row
