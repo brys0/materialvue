@@ -1,16 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 935.32">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #9ed67c;
-      }
-
-      .cls-2 {
-        fill: #3a6a1e;
-      }
-    </style>
-  </defs>
-  <path class="cls-1" d="m664.71,0l-124.71,216L415.29,0H0l540,935.32L1080,0h-415.29,0Z"/>
-  <path class="cls-2" d="m664.71,0l-124.71,216L415.29,0h-199.29l324,561.18L864,0h-199.29Z"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1080 935.3" style="enable-background:new 0 0 1080 935.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#D0BCFF;}
+	.st1{fill:#6750A4;}
+</style>
+<path class="st0" d="M664.7,0L540,216L415.3,0H0l540,935.3L1080,0H664.7L664.7,0L664.7,0z"/>
+<path class="st1" d="M664.7,0L540,216L415.3,0H216l324,561.2L864,0H664.7z"/>
 </svg>

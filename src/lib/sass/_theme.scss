@@ -32,8 +32,8 @@
 
 @use 'sass:map';
 
-@use './themes/pastel/light' as light;
-@use './themes/pastel/dark' as dark;
+@use './themes/material/light' as light;
+@use './themes/material/dark' as dark;
 
 $light: (
   primary: light.$primary,
@@ -64,6 +64,9 @@ $light: (
   on-surface: light.$on-surface,
   surface-variant: light.$surface-variant,
   on-surface-variant: light.$on-surface-variant,
+
+  surface-tint: light.$surface-tint,
+
   inverse-surface: light.$inverse-surface,
   on-inverse-surface: light.$on-inverse-surface,
 
@@ -116,6 +119,9 @@ $dark: (
   on-surface: dark.$on-surface,
   surface-variant: dark.$surface-variant,
   on-surface-variant: dark.$on-surface-variant,
+
+  surface-tint: dark.$surface-tint,
+
   inverse-surface: dark.$inverse-surface,
   on-inverse-surface: dark.$on-inverse-surface,
 
@@ -166,6 +172,20 @@ $current: null;
   .theme-dark & {
     @content;
   }
+
+  $current: null !global;
+}
+
+@mixin light() {
+  $current: 'light' !global;
+  @content;
+
+  $current: null !global;
+}
+
+@mixin dark() {
+  $current: 'dark' !global;
+  @content;
 
   $current: null !global;
 }

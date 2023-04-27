@@ -153,40 +153,48 @@ import {
         <m-row>
           <m-column class="is-12">
             <div class="m-demo">
-              <m-row class="theme-light">
-                <m-column class="is-12">
-                  <m-filled-button>
-                    <m-label>
-                      Enabled
-                    </m-label>
-                  </m-filled-button>
-                  <m-filled-button>
-                    <m-rounded-icon>
-                      add_circle
-                    </m-rounded-icon>
-                    <m-label>
-                      Enabled
-                    </m-label>
-                  </m-filled-button>
-                </m-column>
-              </m-row>
-              <m-row class="theme-dark">
-                <m-column class="is-12">
-                  <m-filled-button>
-                    <m-label>
-                      Enabled
-                    </m-label>
-                  </m-filled-button>
-                  <m-filled-button>
-                    <m-rounded-icon>
-                      add_circle
-                    </m-rounded-icon>
-                    <m-label>
-                      Enabled
-                    </m-label>
-                  </m-filled-button>
-                </m-column>
-              </m-row>
+              <div class="theme-light">
+                <m-row>
+                  <m-column>
+                    <m-filled-button>
+                      <m-label>
+                        Enabled
+                      </m-label>
+                    </m-filled-button>
+                  </m-column>
+                  <m-column>
+                    <m-filled-button>
+                      <m-rounded-icon>
+                        add_circle
+                      </m-rounded-icon>
+                      <m-label>
+                        Enabled
+                      </m-label>
+                    </m-filled-button>
+                  </m-column>
+                </m-row>
+              </div>
+              <div class="theme-dark">
+                <m-row>
+                  <m-column>
+                    <m-filled-button>
+                      <m-label>
+                        Enabled
+                      </m-label>
+                    </m-filled-button>
+                  </m-column>
+                  <m-column>
+                    <m-filled-button>
+                      <m-rounded-icon>
+                        add_circle
+                      </m-rounded-icon>
+                      <m-label>
+                        Enabled
+                      </m-label>
+                    </m-filled-button>
+                  </m-column>
+                </m-row>
+              </div>
             </div>
           </m-column>
         </m-row>
@@ -632,14 +640,17 @@ import {
 
 <style lang="sass" scoped>
 @use '@/lib/sass/theme'
+@use '@/lib/sass/adaptive'
+@use '@/lib/sass/conversion'
 
 .m-main
   padding: 0 12px
 
-.m-navigation-drawer
-  &.is-opened
-    + .m-main
-      padding-left: 0
+@include adaptive.is-gt-medium
+  .m-navigation-drawer
+    &.is-opened
+      + .m-main
+        padding-left: 0
 
 .m-layout
   > .m-section
@@ -669,18 +680,42 @@ import {
       @include theme.preferred
         color: theme.style(primary)
 
+// Dimensions
+$dot-size: 1px
+$dot-space: 22px
+
 .m-demo
   width: 100%
   margin: 0
-  padding: 48px
-  position: relative
-  gap: 0
-  display: flex
-  flex-flow: row
-  flex: 1 0 0
+  //position: relative
+  //gap: 0
+  //display: flex
+  //flex-flow: row
+  //flex: 1 0 0
 
+  > div
+    &:first-of-type
+      padding: 48px
+      border-top-left-radius: 12px
+      border-top-right-radius: 12px
 
-  @include theme.preferred
-    background: theme.style(elevation-1), theme.style(surface)
+      @include theme.light
+        $bg-color: #F3E9F8
+        $dot-color1: theme.style(on-surface)
+
+        background: linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center, linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center, $dot-color1
+        background-size: $dot-space $dot-space
+
+    &:last-of-type
+      padding: 48px
+      border-bottom-left-radius: 12px
+      border-bottom-right-radius: 12px
+
+      @include theme.dark
+        $bg-color: #231F2A
+        $dot-color2: theme.style(on-surface)
+
+        background: linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center, linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center, $dot-color2
+        background-size: $dot-space $dot-space
 
 </style>
