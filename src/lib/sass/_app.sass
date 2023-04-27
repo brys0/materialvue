@@ -60,7 +60,7 @@ body
   overflow: hidden
 
   @include theme.preferred
-    background: theme.style(surface)
+    background: theme.style(background)
 
   > .m-top-app-bar
     grid-row: row-1-start / row-1-end
@@ -120,9 +120,6 @@ body
     border-top-right-radius: 12px
 
     overflow: hidden
-
-    @include theme.preferred
-      background: theme.style(background)
 
     + .m-main
       border-top-left-radius: 0

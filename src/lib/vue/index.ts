@@ -192,3 +192,7 @@ export {
 export {
 	MAvatar,
 } from '@/lib/vue/avatars'
+
+export {
+	MDemo,
+} from '@/lib/vue/MDemo'

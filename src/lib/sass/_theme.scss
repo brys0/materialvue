@@ -176,20 +176,6 @@ $current: null;
   $current: null !global;
 }
 
-@mixin light() {
-  $current: 'light' !global;
-  @content;
-
-  $current: null !global;
-}
-
-@mixin dark() {
-  $current: 'dark' !global;
-  @content;
-
-  $current: null !global;
-}
-
 @mixin prefers-light-scheme {
   @media (prefers-color-scheme: light) {
     @content;

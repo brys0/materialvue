@@ -194,7 +194,7 @@ import {
           border-radius: 12px
 
           @include theme.preferred
-              background: theme.style(elevation-1), theme.style(surface)
+            background: theme.style(elevation-1), theme.style(surface)
 
           .m-column
             border-radius: 12px
