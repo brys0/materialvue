@@ -82,10 +82,16 @@ const router = createRouter({
 })
 
 /* import specific icons */
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import {
+	faGithub,
+	faVuejs,
+	faCss3Alt,
+} from '@fortawesome/free-brands-svg-icons'
 
 /* add icons to the library */
 library.add(faGithub)
+library.add(faVuejs)
+library.add(faCss3Alt)
 
 createApp(MApp)
 	.component('font-awesome-icon', FontAwesomeIcon)

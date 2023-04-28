@@ -64,6 +64,7 @@ import {
 	MBarTrailing,
 	MCode,
 	MDemo,
+	MFilledCard,
 } from '@/lib/vue'
 
 </script>
@@ -130,15 +131,40 @@ import {
                 <m-rounded-icon>add_circle</m-rounded-icon>
                 <m-label>Enabled</m-label>
               </m-elevated-button>"
-            />
+            >
+              <m-bar>
+                <m-bar-trailing>
+                  <font-awesome-icon
+                    class="m-icon m-rounded"
+                    icon="fa-brands fa-vuejs"
+                  />
+                </m-bar-trailing>
+              </m-bar>
+            </m-code>
           </m-column>
           <m-column class="is-6 theme-dark">
-            <m-code
-              code="<button class=&quot;m-button m-elevated&quot;>
+            <m-filled-card>
+              <h3>
+                <m-display :size="MTypographySize.small">
+                  Elevated button
+                </m-display>
+              </h3>
+              <m-code
+                code="<button class=&quot;m-button m-elevated&quot;>
                 <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
                 <span class=&quot;m-label&quot;>Enabled</span>
               </button>"
-            />
+              >
+                <m-bar>
+                  <m-bar-trailing>
+                    <font-awesome-icon
+                      class="m-icon m-rounded"
+                      icon="fa-brands fa-css3-alt"
+                    />
+                  </m-bar-trailing>
+                </m-bar>
+              </m-code>
+            </m-filled-card>
           </m-column>
         </m-row>
       </m-section>
@@ -216,11 +242,19 @@ import {
               </m-headline>
             </h6>
             <m-code
-              code="<m-filled-button>
-                <m-rounded-icon>add_circle</m-rounded-icon>
-                <m-label>Enabled</m-label>
-              </m-filled-button>"
+              code="<button class=&quot;m-button m-elevated&quot;>
+              <span class=&quot;m-icon m-rounded&quot;>add_circle</span>
+              <span class=&quot;m-label&quot;>Enabled</span>
+            </button>"
             />
+            <m-bar>
+              <m-bar-trailing>
+                <font-awesome-icon
+                  class="m-icon m-rounded"
+                  icon="fa-brands fa-vuejs"
+                />
+              </m-bar-trailing>
+            </m-bar>
           </m-column>
           <m-column class="is-6">
             <h6>
@@ -234,6 +268,14 @@ import {
                 <span class=&quot;m-label&quot;>Enabled</span>
               </button>"
             />
+            <m-bar>
+              <m-bar-trailing>
+                <font-awesome-icon
+                  class="m-icon m-rounded"
+                  icon="fa-brands fa-css3-alt"
+                />
+              </m-bar-trailing>
+            </m-bar>
           </m-column>
         </m-row>
       </m-section>
@@ -679,7 +721,7 @@ import {
       border-radius: 12px
 
       @include theme.preferred
-        background: theme.style(elevation-4), theme.style(surface)
+        background: theme.style(elevation-1), theme.style(surface)
 
       .m-bar
         padding: 0 24px

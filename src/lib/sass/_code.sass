@@ -38,95 +38,95 @@ code
   margin: 0
   padding: 0
 
-pre
+.m-code
   @extend %is-not-selectable
 
+  position: relative
   padding: 24px
   white-space: normal
   border-radius: 12px
   overflow: scroll
 
+  border: 1px solid
+
   @include theme.preferred
+    border-color: conversion.hex-to-rgba(theme.style(outline), 0.12)
     color: theme.style(on-surface)
     background: theme.style(elevation-1), theme.style(surface)
 
-code
-  @extend %is-selectable
+  code
+    @extend %m-typography-body-large
 
-  white-space: pre
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace
+    font-size: 14px
+    letter-spacing: 0.2px
+    white-space: pre
 
-.hljs
-  @extend %m-typography-body-large
+    @include theme.preferred
+      color: theme.style(on-surface)
 
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace
-  font-size: 14px
-  letter-spacing: 0.2px
+    .hljs-built_in,
+    .hljs-selector-tag,
+    .hljs-section,
+    .hljs-link
+      @include theme.preferred
+        color: theme.style(on-surface)
 
-  @include theme.preferred
-    color: theme.style(on-surface)
+    .hljs-keyword
+      @include theme.preferred
+        color: theme.style(on-surface-variant)
 
-.hljs-built_in,
-.hljs-selector-tag,
-.hljs-section,
-.hljs-link
-  @include theme.preferred
-    color: theme.style(on-surface)
+    .hljs-title,
+    .hljs-tag,
+    .hljs-meta-keyword
+      font-style: normal
 
-.hljs-keyword
-  @include theme.preferred
-    color: theme.style(on-surface-variant)
+      @include theme.preferred
+        color: theme.style(tertiary)
 
-.hljs-title,
-.hljs-tag,
-.hljs-meta-keyword
-  font-style: normal
+    .hljs-attr
+      font-style: italic
 
-  @include theme.preferred
-    color: theme.style(tertiary)
+      @include theme.preferred
+        color: theme.style(tertiary)
 
-.hljs-attr
-  font-style: italic
+    .hljs-string
+      @include theme.preferred
+        color: theme.style(primary)
 
-  @include theme.preferred
-    color: theme.style(tertiary)
+    .hljs-meta,
+    .hljs-name,
+    .hljs-type,
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-addition,
+    .hljs-variable,
+    .hljs-template-tag,
+    .hljs-template-variable
+      @include theme.preferred
+        color: theme.style(tertiary)
 
-.hljs-string
-  @include theme.preferred
-    color: theme.style(primary)
+    .hljs-comment,
+    .hljs-quote,
+    .hljs-deletion
+      @include theme.preferred
+        color: theme.style(secondary)
 
-.hljs-meta,
-.hljs-name,
-.hljs-type,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition,
-.hljs-variable,
-.hljs-template-tag,
-.hljs-template-variable
-  @include theme.preferred
-    color: theme.style(tertiary)
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-literal,
+    .hljs-title,
+    .hljs-section,
+    .hljs-doctag,
+    .hljs-type,
+    .hljs-name,
+    .hljs-strong
+      font-weight: normal
 
-.hljs-comment,
-.hljs-quote,
-.hljs-deletion
-  @include theme.preferred
-    color: theme.style(secondary)
+    .hljs-literal,
+    .hljs-number
+      @include theme.preferred
+        color: theme.style(tertiary)
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-title,
-.hljs-section,
-.hljs-doctag,
-.hljs-type,
-.hljs-name,
-.hljs-strong
-  font-weight: normal
-
-.hljs-literal,
-.hljs-number
-  @include theme.preferred
-    color: theme.style(tertiary)
-
-.hljs-emphasis
-  font-style: italic
+    .hljs-emphasis
+      font-style: italic

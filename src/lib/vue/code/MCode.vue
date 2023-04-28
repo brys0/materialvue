@@ -164,7 +164,6 @@ onMounted(() => {
 			el.innerHTML = hljs.highlight(prettify(code), { language: 'xml' }).value
 		}
 		else {
-			console.log('here', prettify(el.innerHTML))
 			el.innerHTML = hljs.highlight(prettify(el.innerHTML), { language: 'xml' }).value
 		}
 	}
@@ -175,9 +174,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <pre>
-    <code ref="elRef">
-      <slot />
-    </code>
+  <pre class="m-code">
+    <code ref="elRef" />
+    <slot />
   </pre>
 </template>
