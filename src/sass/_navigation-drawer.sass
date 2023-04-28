@@ -52,6 +52,7 @@
     align-items: center
 
   > .m-drawer-leading
+    padding: 0 16px
     grid-row: row-1-start / row-1-end
     grid-auto-rows: minmax(64px, max-content)
 
@@ -63,12 +64,6 @@
 
         @include theme.preferred
           color: theme.style(on-surface-variant)
-
-    @include adaptive.is-expanded
-      padding: 0 12px
-
-    @include adaptive.is-lt-expanded
-      padding: 0 16px
 
   > .m-drawer-trailing
     grid-row: row-3-start / row-3-end
