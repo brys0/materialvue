@@ -18,7 +18,7 @@
   "type": "module",
   "main": "dist/lib-cjs.cjs",
   "module": "dist/lib-es.js",
-  "types": "dist/src/lib/vue/index.d.ts",
+  "types": "dist/src//vue/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/lib-es.js",
@@ -37,23 +37,13 @@
     "lint": "eslint --fix --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts",
     "build": "run-s build:lib",
     "build:lib": "vite build --config vite.config.lib.ts --mode ${VITE_MODE:-production}",
-    "build:app": "vite build --config vite.config.app.ts --mode ${VITE_MODE:-production}",
-    "build:server": "vite build --config vite.config.server.ts --mode ${VITE_MODE:-production}",
-    "build:docker": "docker build --squash --target release -t cosmicmind/materialjs:latest .",
-    "dev": "run-s dev:app dev:server start",
+    "dev": "run-s dev:lib",
     "dev:lib": "vite build --config vite.config.lib.ts --mode ${VITE_MODE:-development}",
-    "dev:app": "vite build --config vite.config.app.ts --mode ${VITE_MODE:-development}",
-    "dev:server": "vite build --config vite.config.server.ts --mode ${VITE_MODE:-development}",
-    "watch": "run-p watch:app watch:server nodemon",
+    "watch": "run-p watch:lib",
     "watch:lib": "vite build --watch --config vite.config.lib.ts --mode ${VITE_MODE:-development}",
-    "watch:app": "vite build --watch --config vite.config.app.ts --mode ${VITE_MODE:-development}",
-    "watch:server": "vite build --watch --config vite.config.server.ts --mode ${VITE_MODE:-development}",
     "test": "run-s test:unit",
     "test:unit": "vitest run --config vite.config.test.ts --mode ${VITE_MODE:-test}",
-    "test:coverage": "vitest run --coverage --config vite.config.test.ts --mode ${VITE_MODE:-test}",
-    "nodemon": "nodemon dist/server.js",
-    "start": "node dist/server.js",
-    "release": "run-s build"
+    "test:coverage": "vitest run --coverage --config vite.config.test.ts --mode ${VITE_MODE:-test}"
   },
   "dependencies": {
     "@cosmicmind/foundationjs": "^0.0.1-rc-040523-1",

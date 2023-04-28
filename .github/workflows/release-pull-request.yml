@@ -12,21 +12,15 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   codeql:
     uses: cosmicmind/github-actions/.github/workflows/codeql.yml@release
-  lib:
+  build:
     uses: cosmicmind/github-actions/.github/workflows/lib-build.yml@release
     with:
-      BUILD_TARGET: release
-      NODE_ENV: production
+      BUILD_TARGET: dev
+      NODE_ENV: development
       VITE_MODE: test
   test:
-    uses: cosmicmind/github-actions/.github/workflows/docker-build.yml@release
+    uses: cosmicmind/github-actions/.github/workflows/lib-build.yml@release
     with:
       BUILD_TARGET: test
-      NODE_ENV: production
-      VITE_MODE: test
-  build:
-    uses: cosmicmind/github-actions/.github/workflows/docker-build.yml@release
-    with:
-      BUILD_TARGET: release
-      NODE_ENV: production
+      NODE_ENV: development
       VITE_MODE: test

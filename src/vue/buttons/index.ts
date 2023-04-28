@@ -24,77 +24,60 @@
  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
- * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * SERVICES LOSS OF USE, DATA, OR PROFITS OR BUSINESS INTERRUPTION) HOWEVER
  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	URL,
-	fileURLToPath,
-} from 'node:url'
+export {
+	MButton,
+	MButtonState,
+} from '@/vue/buttons/MButton'
 
-import {
-	PluginOption,
-	LibraryFormats,
-	defineConfig,
-} from 'vite'
+export {
+	MFilledButton,
+} from '@/vue/buttons/MFilledButton'
 
-import vue from '@vitejs/plugin-vue'
-import dts from 'vite-plugin-dts'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
+export {
+	MElevatedButton,
+} from '@/vue/buttons/MElevatedButton'
 
-const name = process.env.npm_package_name
-const srcDir = 'src'
-const entry = `${srcDir}//vue/index.ts`
-const fileName = 'lib-[format]'
-const formats: LibraryFormats[] = [ 'es', 'cjs' ]
-const emptyOutDir = false
-const minify = 'development' !== process.env.NODE_ENV
+export {
+	MOutlinedButton,
+} from '@/vue/buttons/MOutlinedButton'
 
-const alias = {
-	'@': fileURLToPath(new URL(srcDir, import.meta.url)),
-}
+export {
+	MTextButton,
+} from '@/vue/buttons/MTextButton'
 
-const external = [
-	'vue',
-	'pinia',
-	'vee-validate',
-	'@cosmicmind/foundationjs'
-]
+export {
+	MTonalButton,
+} from '@/vue/buttons/MTonalButton'
 
-const staticTargets = [
-	{
-		src: `${srcDir}/sass`,
-		dest: './',
-	}
-]
+export {
+	MFilledIconButton,
+} from '@/vue/buttons/MFilledIconButton'
 
-const plugins = [
-	vue(),
-	dts(),
-	viteStaticCopy({
-		targets: staticTargets,
-	})
-] as PluginOption[]
+export {
+	MTonalIconButton,
+} from '@/vue/buttons/MTonalIconButton'
 
-export default defineConfig(() => ({
-	resolve: {
-		alias,
-	},
-	plugins,
-	build: {
-		emptyOutDir,
-		lib: {
-			name,
-			entry,
-			formats,
-			fileName,
-		},
-		rollupOptions: {
-			external,
-		},
-		minify,
-	},
-}))
+export {
+	MOutlinedIconButton,
+} from '@/vue/buttons/MOutlinedIconButton'
+
+export {
+	MIconButton,
+} from '@/vue/buttons/MIconButton'
+
+export {
+	MFabButton,
+	MFabButtonSize,
+	MFabButtonVariant,
+} from '@/vue/buttons/MFabButton'
+
+export {
+	MExtendedFabButton,
+	MExtendedFabButtonVariant,
+} from '@/vue/buttons/MExtendedFabButton'
