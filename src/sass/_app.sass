@@ -76,10 +76,6 @@ body
     @include adaptive.is-lt-medium
       display: none
 
-    @include adaptive.is-lt-large
-      @include theme.preferred
-        background: theme.style(elevation-5), theme.style(surface)
-
     @include adaptive.is-gt-compact
       grid-row: row-1-start / row-3-end
       grid-column: col-1-start / col-1-end
@@ -113,9 +109,6 @@ body
 
       border-top-right-radius: 16px
       border-bottom-right-radius: 16px
-
-      @include theme.preferred
-        background: theme.style(elevation-5), theme.style(surface)
 
   > .m-toolbar
     grid-row: row-2-start / row-2-end
