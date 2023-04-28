@@ -53,6 +53,7 @@
 
   > .m-drawer-leading
     grid-row: row-1-start / row-1-end
+    grid-auto-rows: minmax(64px, max-content)
 
     > .m-typography
       &.m-headline
@@ -68,7 +69,6 @@
 
     @include adaptive.is-lt-expanded
       padding: 0 16px
-      grid-auto-rows: minmax(64px, max-content)
 
   > .m-drawer-trailing
     grid-row: row-3-start / row-3-end
