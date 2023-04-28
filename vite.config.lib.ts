@@ -47,7 +47,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 const name = process.env.npm_package_name
 const srcDir = 'src'
-const entry = `${srcDir}//vue/index.ts`
+const entry = `${srcDir}/vue/index.ts`
 const fileName = 'lib-[format]'
 const formats: LibraryFormats[] = [ 'es', 'cjs' ]
 const emptyOutDir = false
