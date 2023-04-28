@@ -90,9 +90,6 @@ body
     z-index: 7
     overflow: hidden
 
-    border-top-right-radius: 16px
-    border-bottom-right-radius: 16px
-
     @include theme.preferred
       background: theme.style(elevation-1), theme.style(surface)
 
@@ -113,6 +110,9 @@ body
       left: 0
       bottom: 0
       box-shadow: theme.style(shadow-3)
+
+      border-top-right-radius: 16px
+      border-bottom-right-radius: 16px
 
       @include theme.preferred
         background: theme.style(elevation-5), theme.style(surface)
