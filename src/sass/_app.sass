@@ -46,7 +46,7 @@ body
   height: -webkit-fill-available
   overflow: hidden
 
-  @include theme.preferred
+  @include theme.preferred-self
     background: theme.style(background)
 
 div,
@@ -68,12 +68,15 @@ figure,
 figcaption,
 article,
 aside,
+main,
 section,
 header,
 footer,
 blockquote,
 pre,
 code
+  box-sizing: border-box
+
   &::after,
   &::before
     box-sizing: border-box

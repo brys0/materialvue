@@ -1,6 +1,6 @@
 {
   "name": "@cosmicmind/materialvue",
-  "version": "0.0.1-rc-050323-5",
+  "version": "0.0.1-rc-050323-5-a",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
   "author": {
@@ -46,7 +46,7 @@
     "test:coverage": "vitest run --coverage --config vite.config.test.ts --mode ${VITE_MODE:-test}"
   },
   "dependencies": {
-    "@cosmicmind/foundationjs": "^0.0.1-rc-040523-1",
+    "@cosmicmind/foundationjs": "^0.0.1-rc-050323-1",
     "@types/node": "^18.7.15",
     "@vitejs/plugin-vue": "^4.0.0",
     "jsdom": "^20.0.0",

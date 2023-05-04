@@ -43,18 +43,18 @@
   > .m-drawer-leading,
   > .m-drawer-body,
   > .m-drawer-trailing
-    padding: 0 12px
+    padding: 0 16px
     display: grid
     grid-auto-flow: row
     gap: 12px
 
   > .m-drawer-leading,
   > .m-drawer-trailing
+    grid-auto-rows: minmax(72px, max-content)
     align-items: center
 
   > .m-drawer-leading
     grid-row: row-1-start / row-1-end
-    grid-auto-rows: minmax(64px, max-content)
 
     > .m-typography
       &.m-headline
@@ -68,7 +68,6 @@
   > .m-drawer-trailing
     grid-row: row-3-start / row-3-end
 
-  > .m-drawer-trailing,
   > .m-drawer-body
     grid-auto-rows: minmax(56px, max-content)
 

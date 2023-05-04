@@ -48,8 +48,8 @@
   > .m-rail-leading,
   > .m-rail-body,
   > .m-rail-trailing
-    padding: 0 12px
-    grid-auto-rows: max-content
+    padding: 0 8px
+    grid-auto-rows: minmax(72px, max-content)
 
   > .m-rail-body
     align-content: start
@@ -61,7 +61,9 @@
         grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] max-content [row-2-end]
         grid-template-columns: [col-1-start] 1fr [col-1-end]
         align-items: center
+        align-content: center
         justify-items: center
+        justify-content: center
         gap: 4px
 
         &::before
