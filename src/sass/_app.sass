@@ -46,6 +46,51 @@ body
   height: -webkit-fill-available
   overflow: hidden
 
+  @include theme.preferred
+    background: theme.style(background)
+
+div,
+input,
+p,
+span,
+a,
+b,
+i,
+button,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+figcaption,
+article,
+aside,
+section,
+header,
+footer,
+blockquote,
+pre,
+code
+  &::after,
+  &::before
+    box-sizing: border-box
+
+[v-cloak]
+  display: none
+
+.theme-light
+  .is-theme-dark
+    display: none
+    visibility: hidden
+
+.theme-dark
+  .is-theme-light
+    display: none
+    visibility: hidden
+
 .m-app
   position: relative
   width: 100vw
@@ -59,15 +104,13 @@ body
   justify-content: stretch
   overflow: hidden
 
-  @include theme.preferred
-    background: theme.style(background)
-
   > .m-top-app-bar
     grid-row: row-1-start / row-1-end
     grid-column: col-2-start / col-3-end
     z-index: 3
 
   > .m-navigation-rail
+    min-width: 80px
     z-index: 8
 
     @include theme.preferred
@@ -90,7 +133,15 @@ body
       background: theme.style(elevation-1), theme.style(surface)
 
     &.is-opened
-      width: 280px
+      @include adaptive.is-gt-small
+        width: 281px
+        border-left: 1px solid
+
+        @include theme.preferred
+          border-left-color: theme.style(outline-variant)
+
+      @include adaptive.is-lt-medium
+        width: 280px
 
       @include adaptive.is-lt-large
         ~ .m-scrim
