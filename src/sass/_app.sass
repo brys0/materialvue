@@ -44,10 +44,12 @@ body
   width: -webkit-fill-available
   height: 100vh
   height: -webkit-fill-available
-  overflow: hidden
 
   @include theme.preferred-self
     background: theme.style(background)
+
+  @include adaptive.is-gt-small
+    overflow: hidden
 
 div,
 input,
@@ -105,7 +107,6 @@ code
   grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] max-content [col-2-end col-3-start] 1fr [col-3-end col-4-start] max-content [col-4-end]
   align-content: stretch
   justify-content: stretch
-  overflow: hidden
 
   > .m-top-app-bar
     grid-row: row-1-start / row-1-end
