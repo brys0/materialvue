@@ -50,7 +50,7 @@ const srcDir = 'src'
 const entry = `${srcDir}/vue/index.ts`
 const fileName = 'lib-[format]'
 const formats: LibraryFormats[] = [ 'es', 'cjs' ]
-const emptyOutDir = false
+const emptyOutDir = true
 const minify = 'development' !== process.env.NODE_ENV
 
 const alias = {
