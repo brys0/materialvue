@@ -46,10 +46,10 @@
       grid-template-columns: repeat($i, 1fr)
 
 %m-layout
-  align-items: stretch
   align-content: stretch
-  justify-items: stretch
+  align-items: stretch
   justify-content: stretch
+  justify-items: stretch
 
 %m-layout-flex
   @extend %m-layout
@@ -78,9 +78,9 @@
   justify-content: stretch
 
 %m-column
-  align-content: center
-  justify-content: center
+  align-content: stretch
   align-items: center
+  justify-content: stretch
   justify-items: center
 
 %m-column-flex
@@ -143,18 +143,10 @@
   display: grid
 
   @include adaptive.is-compact
-    margin: 0 16px
+    gap: 16px
 
   @include adaptive.is-gt-compact
-    margin: 0 32px
-
-  @include adaptive.is-gt-small
-    margin: 0 32px
-
-  @include adaptive.is-gt-medium
-    margin: auto
-    width: 100%
-    max-width: 1040px
+    gap: 24px
 
   @include adaptive.is-compact
     grid-template-columns: repeat(4, 1fr)
@@ -211,32 +203,17 @@
   display: none !important
 
 %m-adaptive-grid
-  @include adaptive.is-gt-medium
+  @include adaptive.is-compact
+    margin: 0 16px
+
+  @include adaptive.is-gt-compact
     margin: 0 32px
-
+    
   > %m-section-grid
-    @include adaptive.is-compact
-      margin: 0 16px
-
-    @include adaptive.is-gt-compact
-      margin: 0 32px
-
-    @include adaptive.is-gt-small
-      margin: 0 32px
-
     @include adaptive.is-gt-medium
       margin: auto
       width: 100%
       max-width: 1040px
-
-    > %m-row-grid
-      @include adaptive.is-compact
-        > %m-column-grid
-          padding: 0 8px
-
-      @include adaptive.is-gt-compact
-        > %m-column-grid
-          padding: 0 16px
 
 @include adaptive.is-compact
   .is-gt-compact,
