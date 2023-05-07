@@ -38,7 +38,7 @@ import {
 
 export type MenuProps = {}
 
-export const Menu: FunctionalComponent<MenuProps> = (_: MenuProps, {
+export const Menu: FunctionalComponent<MenuProps> = (_, {
 	slots,
 }): VNode => h('aside', {
 	class: {

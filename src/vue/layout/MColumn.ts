@@ -38,7 +38,7 @@ import {
 
 export type ColumnProps = {}
 
-export const MColumn: FunctionalComponent<ColumnProps> = (_: ColumnProps, {
+export const MColumn: FunctionalComponent<ColumnProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {

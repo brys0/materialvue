@@ -31,8 +31,17 @@
  */
 
 export {
+	MLayoutFlow,
 	MLayout,
 } from '@/vue/layout/MLayout'
+
+export {
+	MAdaptive,
+} from '@/vue/layout/MAdaptive'
+
+export {
+	MGrid,
+} from '@/vue/layout/MGrid'
 
 export {
 	MTile,

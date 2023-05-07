@@ -38,7 +38,7 @@ import {
 
 export type MDividerProps = {}
 
-export const MDivider: FunctionalComponent<MDividerProps> = (_: MDividerProps, {
+export const MDivider: FunctionalComponent<MDividerProps> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {

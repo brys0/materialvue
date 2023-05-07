@@ -36,13 +36,24 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type MLayoutProps = {}
+export enum MLayoutFlow {
+	adaptive = 'adaptive',
+	grid = 'grid',
+}
 
-export const MLayout: FunctionalComponent<MLayoutProps> = (_: MLayoutProps, {
+export type MLayoutProps = {
+	flow?: MLayoutFlow
+}
+
+export const MLayout: FunctionalComponent<MLayoutProps> = ({
+	flow,
+}, {
 	slots,
 }): VNode => h('div', {
 	class: {
 		'm-layout': true,
+		'adaptive': MLayoutFlow.adaptive === flow || 'undefined' === typeof flow,
+		'grid': MLayoutFlow.grid === flow,
 	},
 }, {
 	default: () => slots.default?.(),
@@ -50,6 +61,8 @@ export const MLayout: FunctionalComponent<MLayoutProps> = (_: MLayoutProps, {
 
 MLayout.displayName = 'MLayout'
 
-MLayout.props = []
+MLayout.props = [
+	'flow'
+]
 
 export default MLayout

@@ -36,20 +36,26 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type MTileProps = {}
+import {
+	MLayoutFlow,
+	MLayout,
+} from '@/vue/layout/MLayout'
 
-export const MTile: FunctionalComponent<MTileProps> = (_, {
+export type MAdaptiveProps = {}
+
+export const MAdaptive: FunctionalComponent<MAdaptiveProps> = (_, {
 	slots,
-}): VNode => h('div', {
+}): VNode => h(MLayout, {
+	flow: MLayoutFlow.adaptive,
 	class: {
-		'm-tile': true,
+		'm-adaptive': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-MTile.displayName = 'MTile'
+MAdaptive.displayName = 'MLayout'
 
-MTile.props = []
+MAdaptive.props = []
 
-export default MTile
+export default MAdaptive

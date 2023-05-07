@@ -38,7 +38,7 @@ import {
 
 export type MSectionProps = {}
 
-export const MSection: FunctionalComponent<MSectionProps> = (_: MSectionProps, {
+export const MSection: FunctionalComponent<MSectionProps> = (_, {
 	slots,
 }): VNode => h('section', {
 	class: {

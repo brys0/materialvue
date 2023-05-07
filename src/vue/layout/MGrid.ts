@@ -36,20 +36,26 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type MTileProps = {}
+import {
+	MLayoutFlow,
+	MLayout,
+} from '@/vue/layout/MLayout'
 
-export const MTile: FunctionalComponent<MTileProps> = (_, {
+export type MGridProps = {}
+
+export const MGrid: FunctionalComponent<MGridProps> = (_, {
 	slots,
-}): VNode => h('div', {
+}): VNode => h(MLayout, {
+	flow: MLayoutFlow.grid,
 	class: {
-		'm-tile': true,
+		'm-grid': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-MTile.displayName = 'MTile'
+MGrid.displayName = 'MLayout'
 
-MTile.props = []
+MGrid.props = []
 
-export default MTile
+export default MGrid

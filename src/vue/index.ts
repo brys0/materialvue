@@ -119,7 +119,10 @@ export {
 } from '@/vue/icons'
 
 export {
+	MLayoutFlow,
 	MLayout,
+	MAdaptive,
+	MGrid,
 	MTile,
 	MRow,
 	MColumn,

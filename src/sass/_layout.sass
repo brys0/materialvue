@@ -40,78 +40,46 @@
     &.is-#{$size}#{$i}
       grid-column: span $i
 
-%m-layout
+%m-layout,
+%m-section,
+%m-row,
+%m-column
   margin: 0
-  display: flex
-  flex-flow: column
+  padding: 0
+
+%m-layout
   align-items: stretch
   align-content: stretch
   justify-items: stretch
   justify-content: stretch
-  grid-auto-rows: max-content
 
-  @include adaptive.is-gt-medium
-    margin: 0 32px
-
-%m-layout-section
-  margin: 0
-  padding: 0
-  position: relative
-  display: flex
-  flex-flow: column
-  flex: 1 0 0
-
-  @include adaptive.is-compact
-    margin: 0 16px
-
-  @include adaptive.is-gt-compact
-    margin: 0 32px
-
-  @include adaptive.is-gt-small
-    margin: 0 32px
-
-  @include adaptive.is-gt-medium
-    margin: auto
-    width: 100%
-    max-width: 1040px
-
-%m-layout-row
-  margin: 0
-  padding: 0
-  position: relative
-  display: flex
-  flex-flow: row
-  flex: 1
-  border-radius: 12px
-
-  //@include adaptive.is-compact
-  //  grid-template-columns: repeat(4, 1fr)
-  //
-  //@include adaptive.is-small
-  //  grid-template-columns: repeat(8, 1fr)
-  //
-  //@include adaptive.is-medium
-  //  grid-template-columns: repeat(12, 1fr)
-  //
-  //@include adaptive.is-gt-medium
-  //  grid-template-columns: repeat(12, 1fr)
-
-%m-layout-column
-  padding: 0
-  position: relative
-  border-radius: 12px
-  display: flex
-  flex-flow: column
-  flex: 1
+%m-column
   align-content: center
   justify-content: center
   align-items: center
   justify-items: center
 
+  //@include adaptive.is-gt-medium
+  //  margin: 0 32px
+
+//%m-section
+  //@include adaptive.is-compact
+  //  margin: 0 16px
+  //
+  //@include adaptive.is-gt-compact
+  //  margin: 0 32px
+  //
+  //@include adaptive.is-gt-small
+  //  margin: 0 32px
+  //
+  //@include adaptive.is-gt-medium
+  //  margin: auto
+  //  width: 100%
+  //  max-width: 1040px
+
 %m-layout-tile
   margin: 0
   padding: 0
-  position: relative
   border-radius: 12px
   display: flex
   flex-flow: column
@@ -120,17 +88,73 @@
   &:hover
     z-index: 1
 
-.m-layout
+%m-layout-adaptive
   @extend %m-layout
 
-.m-section
-  @extend %m-layout-section
+  display: flex
+  flex-flow: column
 
-.m-row
-  @extend %m-layout-row
+%m-layout-grid
+  @extend %m-layout
 
-.m-column
-  @extend %m-layout-column
+  display: grid
+  grid-auto-rows: max-content
+
+%m-section-adaptive
+  @extend %m-section
+
+  display: flex
+  flex-flow: column
+  flex: 1 0 0
+
+%m-section-grid
+  @extend %m-section
+
+  display: grid
+  grid-auto-rows: max-content
+  grid-auto-flow: row
+  align-items: stretch
+  align-content: stretch
+  justify-items: stretch
+  justify-content: stretch
+
+%m-row-adaptive
+  @extend %m-row
+
+  display: flex
+  flex-flow: column
+  flex: 1 0 0
+
+%m-row-grid
+  @extend %m-row
+
+  display: grid
+  grid-auto-flow: column
+
+  @include adaptive.is-compact
+    grid-template-columns: repeat(4, 1fr)
+
+  @include adaptive.is-small
+    grid-template-columns: repeat(8, 1fr)
+
+  @include adaptive.is-medium
+    grid-template-columns: repeat(12, 1fr)
+
+  @include adaptive.is-gt-medium
+    grid-template-columns: repeat(12, 1fr)
+
+%m-column-adaptive
+  @extend %m-column
+
+  display: flex
+  flex-flow: column
+  flex: 1
+
+%m-column-grid
+  @extend %m-column
+
+  display: grid
+  grid-auto-flow: row
 
   @include grid-column('', 12)
 
@@ -169,6 +193,31 @@
 
   @include adaptive.is-expanded
     @include grid-column('expanded-', 12)
+
+.m-layout
+  &.m-adaptive
+    @extend %m-layout-adaptive
+
+    > .m-section
+      @extend %m-section-adaptive
+
+      > .m-row
+        @extend %m-row-adaptive
+
+        > .m-column
+          @extend %m-column-adaptive
+
+  &.m-grid
+    @extend %m-layout-grid
+
+    > .m-section
+      @extend %m-section-grid
+
+      > .m-row
+        @extend %m-row-grid
+
+        > .m-column
+          @extend %m-column-grid
 
 .m-tile
   @extend %m-layout-tile
