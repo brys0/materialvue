@@ -40,6 +40,11 @@
     &.is-#{$size}#{$i}
       grid-column: span $i
 
+@mixin grid-template-columns($size, $count)
+  @for $i from 1 through $count
+    &.is-#{$size}#{$i}
+      grid-template-columns: repeat($i, 1fr)
+
 %m-layout
   align-items: stretch
   align-content: stretch
@@ -83,7 +88,7 @@
 
   display: flex
   flex-flow: column
-  flex: 1
+  flex: 1 0 0
 
 %m-column-grid
   @extend %m-column
@@ -154,14 +159,25 @@
   @include adaptive.is-compact
     grid-template-columns: repeat(4, 1fr)
 
+    @include grid-template-columns('compact-', 4)
+
   @include adaptive.is-small
-    grid-template-columns: repeat(8, 1fr)
+    @include grid-template-columns('small-', 8)
 
   @include adaptive.is-medium
     grid-template-columns: repeat(12, 1fr)
 
-  @include adaptive.is-gt-medium
+    @include grid-template-columns('medium-', 12)
+
+  @include adaptive.is-large
     grid-template-columns: repeat(12, 1fr)
+
+    @include grid-template-columns('large-', 12)
+
+  @include adaptive.is-expanded
+    grid-template-columns: repeat(12, 1fr)
+
+    @include grid-template-columns('expanded-', 12)
 
 .m-layout
   &.m-flex
