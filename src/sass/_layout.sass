@@ -40,55 +40,13 @@
     &.is-#{$size}#{$i}
       grid-column: span $i
 
-%m-layout,
-%m-section,
-%m-row,
-%m-column
-  margin: 0
-  padding: 0
-
 %m-layout
   align-items: stretch
   align-content: stretch
   justify-items: stretch
   justify-content: stretch
 
-%m-column
-  align-content: center
-  justify-content: center
-  align-items: center
-  justify-items: center
-
-  //@include adaptive.is-gt-medium
-  //  margin: 0 32px
-
-//%m-section
-  //@include adaptive.is-compact
-  //  margin: 0 16px
-  //
-  //@include adaptive.is-gt-compact
-  //  margin: 0 32px
-  //
-  //@include adaptive.is-gt-small
-  //  margin: 0 32px
-  //
-  //@include adaptive.is-gt-medium
-  //  margin: auto
-  //  width: 100%
-  //  max-width: 1040px
-
-%m-layout-tile
-  margin: 0
-  padding: 0
-  border-radius: 12px
-  display: flex
-  flex-flow: column
-  z-index: 0
-
-  &:hover
-    z-index: 1
-
-%m-layout-adaptive
+%m-layout-flex
   @extend %m-layout
 
   display: flex
@@ -100,16 +58,12 @@
   display: grid
   grid-auto-rows: max-content
 
-%m-section-adaptive
-  @extend %m-section
-
+%m-section-flex
   display: flex
   flex-flow: column
   flex: 1 0 0
 
 %m-section-grid
-  @extend %m-section
-
   display: grid
   grid-auto-rows: max-content
   grid-auto-flow: row
@@ -118,32 +72,13 @@
   justify-items: stretch
   justify-content: stretch
 
-%m-row-adaptive
-  @extend %m-row
+%m-column
+  align-content: center
+  justify-content: center
+  align-items: center
+  justify-items: center
 
-  display: flex
-  flex-flow: column
-  flex: 1 0 0
-
-%m-row-grid
-  @extend %m-row
-
-  display: grid
-  grid-auto-flow: column
-
-  @include adaptive.is-compact
-    grid-template-columns: repeat(4, 1fr)
-
-  @include adaptive.is-small
-    grid-template-columns: repeat(8, 1fr)
-
-  @include adaptive.is-medium
-    grid-template-columns: repeat(12, 1fr)
-
-  @include adaptive.is-gt-medium
-    grid-template-columns: repeat(12, 1fr)
-
-%m-column-adaptive
+%m-column-flex
   @extend %m-column
 
   display: flex
@@ -194,18 +129,52 @@
   @include adaptive.is-expanded
     @include grid-column('expanded-', 12)
 
+%m-row-flex
+  display: flex
+  flex-flow: row
+  flex: 1 0 0
+
+%m-row-grid
+  display: grid
+
+  @include adaptive.is-compact
+    margin: 0 16px
+
+  @include adaptive.is-gt-compact
+    margin: 0 32px
+
+  @include adaptive.is-gt-small
+    margin: 0 32px
+
+  @include adaptive.is-gt-medium
+    margin: auto
+    width: 100%
+    max-width: 1040px
+
+  @include adaptive.is-compact
+    grid-template-columns: repeat(4, 1fr)
+
+  @include adaptive.is-small
+    grid-template-columns: repeat(8, 1fr)
+
+  @include adaptive.is-medium
+    grid-template-columns: repeat(12, 1fr)
+
+  @include adaptive.is-gt-medium
+    grid-template-columns: repeat(12, 1fr)
+
 .m-layout
-  &.m-adaptive
-    @extend %m-layout-adaptive
+  &.m-flex
+    @extend %m-layout-flex
 
     > .m-section
-      @extend %m-section-adaptive
+      @extend %m-section-flex
 
       > .m-row
-        @extend %m-row-adaptive
+        @extend %m-row-flex
 
         > .m-column
-          @extend %m-column-adaptive
+          @extend %m-column-flex
 
   &.m-grid
     @extend %m-layout-grid
@@ -219,11 +188,39 @@
         > .m-column
           @extend %m-column-grid
 
-.m-tile
-  @extend %m-layout-tile
+    &.m-adaptive
+      @extend %m-adaptive-grid
 
 .is-hidden
   display: none !important
+
+%m-adaptive-grid
+  @include adaptive.is-gt-medium
+    margin: 0 32px
+
+  > %m-section-grid
+    @include adaptive.is-compact
+      margin: 0 16px
+
+    @include adaptive.is-gt-compact
+      margin: 0 32px
+
+    @include adaptive.is-gt-small
+      margin: 0 32px
+
+    @include adaptive.is-gt-medium
+      margin: auto
+      width: 100%
+      max-width: 1040px
+
+    > %m-row-grid
+      @include adaptive.is-compact
+        > %m-column-grid
+          padding: 0 8px
+
+      @include adaptive.is-gt-compact
+        > %m-column-grid
+          padding: 0 16px
 
 @include adaptive.is-compact
   .is-gt-compact,

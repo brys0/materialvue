@@ -36,20 +36,24 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type MLayoutProps = {}
+import {
+	MLayout,
+} from '@/vue/layout/MLayout'
 
-export const MLayout: FunctionalComponent<MLayoutProps> = (_, {
+export type MFlexProps = {}
+
+export const MFlex: FunctionalComponent<MFlexProps> = (_, {
 	slots,
-}): VNode => h('div', {
+}): VNode => h(MLayout, {
 	class: {
-		'm-layout': true,
+		'm-flex': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-MLayout.displayName = 'MLayout'
+MFlex.displayName = 'MLayout'
 
-MLayout.props = []
+MFlex.props = []
 
-export default MLayout
+export default MFlex

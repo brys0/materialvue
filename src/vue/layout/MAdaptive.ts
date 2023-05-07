@@ -37,16 +37,14 @@ import {
 } from 'vue'
 
 import {
-	MLayoutFlow,
-	MLayout,
-} from '@/vue/layout/MLayout'
+	MGrid,
+} from '@/vue/layout/MGrid'
 
 export type MAdaptiveProps = {}
 
 export const MAdaptive: FunctionalComponent<MAdaptiveProps> = (_, {
 	slots,
-}): VNode => h(MLayout, {
-	flow: MLayoutFlow.adaptive,
+}): VNode => h(MGrid, {
 	class: {
 		'm-adaptive': true,
 	},
@@ -54,7 +52,7 @@ export const MAdaptive: FunctionalComponent<MAdaptiveProps> = (_, {
 	default: () => slots.default?.(),
 })
 
-MAdaptive.displayName = 'MLayout'
+MAdaptive.displayName = 'MGrid'
 
 MAdaptive.props = []
 

@@ -37,7 +37,6 @@ import {
 } from 'vue'
 
 import {
-	MLayoutFlow,
 	MLayout,
 } from '@/vue/layout/MLayout'
 
@@ -46,7 +45,6 @@ export type MGridProps = {}
 export const MGrid: FunctionalComponent<MGridProps> = (_, {
 	slots,
 }): VNode => h(MLayout, {
-	flow: MLayoutFlow.grid,
 	class: {
 		'm-grid': true,
 	},
