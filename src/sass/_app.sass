@@ -33,13 +33,13 @@
 @use './theme'
 @use './adaptive'
 
-html
-  width: -webkit-fill-available
-  height: -webkit-fill-available
-
 body
   margin: 0
   padding: 0
+  width: 100vw
+  width: -webkit-fill-available
+  height: 100vh
+  height: -webkit-fill-available
 
   @include theme.preferred-self
     background: theme.style(background)
