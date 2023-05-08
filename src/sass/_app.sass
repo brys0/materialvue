@@ -40,16 +40,9 @@ html
 body
   margin: 0
   padding: 0
-  width: 100vw
-  width: -webkit-fill-available
-  height: 100vh
-  height: -webkit-fill-available
 
   @include theme.preferred-self
     background: theme.style(background)
-
-  @include adaptive.is-gt-small
-    overflow: hidden
 
 div,
 input,
@@ -180,7 +173,7 @@ code
       border-top-right-radius: 0
 
   > .m-main
-    grid-row: row-3-start / row-3-end
+    grid-row: row-3-start
     grid-column: col-3-start / col-3-end
     z-index: 0
 
