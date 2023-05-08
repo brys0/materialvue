@@ -33,17 +33,6 @@
 @use './theme'
 @use './adaptive'
 
-body
-  margin: 0
-  padding: 0
-  width: 100vw
-  width: -webkit-fill-available
-  height: 100vh
-  height: -webkit-fill-available
-
-  @include theme.preferred-self
-    background: theme.style(background)
-
 div,
 input,
 p,
@@ -89,117 +78,109 @@ code
     display: none
     visibility: hidden
 
-.m-app
+body
+  margin: 0
+  padding: 0
   position: relative
   width: 100vw
-  width: -webkit-fill-available
   height: 100vh
   height: -webkit-fill-available
   display: grid
   grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] max-content [row-2-end row-3-start] 1fr [row-3-end]
   grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] max-content [col-2-end col-3-start] 1fr [col-3-end col-4-start] max-content [col-4-end]
-  align-content: stretch
-  justify-content: stretch
+  overflow: hidden
 
-  > .m-top-app-bar
-    grid-row: row-1-start / row-1-end
-    grid-column: col-2-start / col-3-end
-    z-index: 3
+  @include theme.preferred-self
+    background: theme.style(background)
 
-  > .m-navigation-rail
-    min-width: 80px
-    z-index: 8
+.m-top-app-bar
+  grid-row: row-1-start / row-1-end
+  grid-column: col-3-start / col-3-end
+  z-index: 3
 
-    @include theme.preferred
-      background: theme.style(elevation-1), theme.style(surface)
+.m-navigation-rail
+  min-width: 80px
+  z-index: 8
+
+  @include theme.preferred
+    background: theme.style(elevation-1), theme.style(surface)
+
+  @include adaptive.is-lt-medium
+    display: none
+
+  @include adaptive.is-gt-compact
+    grid-row: row-1-start / row-3-end
+    grid-column: col-1-start / col-1-end
+
+.m-navigation-drawer
+  grid-row: row-1-start / row-3-end
+  grid-column: col-2-start / col-2-end
+  z-index: 7
+
+  @include theme.preferred
+    background: theme.style(elevation-1), theme.style(surface)
+
+  &.is-opened
+    @include adaptive.is-gt-small
+      width: 281px
+      border-left: 1px solid
+
+      @include theme.preferred
+        border-left-color: theme.style(outline-variant)
 
     @include adaptive.is-lt-medium
-      display: none
-
-    @include adaptive.is-gt-compact
-      grid-row: row-1-start / row-3-end
-      grid-column: col-1-start / col-1-end
-
-  > .m-navigation-drawer
-    grid-row: row-1-start / row-3-end
-    grid-column: col-2-start / col-2-end
-    z-index: 7
-    overflow: hidden
-
-    @include theme.preferred
-      background: theme.style(elevation-1), theme.style(surface)
-
-    &.is-opened
-      @include adaptive.is-gt-small
-        width: 281px
-        border-left: 1px solid
-
-        @include theme.preferred
-          border-left-color: theme.style(outline-variant)
-
-      @include adaptive.is-lt-medium
-        width: 280px
-
-      @include adaptive.is-lt-large
-        ~ .m-scrim
-          display: block
-
-    &.is-closed
-      width: 0
-      visibility: hidden
+      width: 280px
 
     @include adaptive.is-lt-large
-      position: absolute
-      top: 0
-      left: 0
-      bottom: 0
-      box-shadow: theme.style(shadow-3)
+      ~ .m-scrim
+        display: block
 
-      border-top-right-radius: 16px
-      border-bottom-right-radius: 16px
+  &.is-closed
+    width: 0
+    visibility: hidden
 
-  > .m-toolbar
-    grid-row: row-2-start / row-2-end
-    grid-column: col-3-start / col-3-end
-    z-index: 2
-
-    border-top-left-radius: 12px
-    border-top-right-radius: 12px
-
-    overflow: hidden
-
-    + .m-main
-      border-top-left-radius: 0
-      border-top-right-radius: 0
-
-  > .m-main
-    grid-row: row-3-start
-    grid-column: col-3-start / col-3-end
-    z-index: 0
-
-    border-radius: 12px
-
-  > .m-finder
-    grid-row: row-2-start / row-3-end
-    grid-column: col-4-start / col-4-end
-    z-index: 2
-
-  > .m-modal
-    grid-row: row-1-start / row-3-end
-    grid-column: col-1-start / col-4-end
-    z-index: 10
-
-    &:empty
-      display: none
-
-  > .m-scrim
+  @include adaptive.is-lt-large
     position: absolute
     top: 0
     left: 0
     bottom: 0
-    right: 0
-    z-index: 4
-    display: none
+    border-top-right-radius: 16px
+    border-bottom-right-radius: 16px
 
     @include theme.preferred
-      background: theme.style(scrim)
+      box-shadow: theme.style(shadow-3)
+
+.m-toolbar
+  grid-row: row-2-start / row-2-end
+  grid-column: col-3-start / col-3-end
+  z-index: 2
+
+.m-main
+  grid-row: row-3-start / row-3-end
+  grid-column: col-3-start / col-3-end
+  z-index: 0
+
+.m-finder
+  grid-row: row-2-start / row-3-end
+  grid-column: col-4-start / col-4-end
+  z-index: 2
+
+.m-modal
+  grid-row: row-1-start / row-3-end
+  grid-column: col-1-start / col-4-end
+  z-index: 10
+
+  &:empty
+    display: none
+
+.m-scrim
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  z-index: 4
+  display: none
+
+  @include theme.preferred
+    background: theme.style(scrim)
