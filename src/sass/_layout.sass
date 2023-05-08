@@ -78,10 +78,10 @@
   justify-content: stretch
 
 %m-column
-  align-content: stretch
   align-items: center
-  justify-content: stretch
+  align-content: start
   justify-items: center
+  justify-content: stretch
 
 %m-column-flex
   @extend %m-column
@@ -134,19 +134,24 @@
   @include adaptive.is-expanded
     @include grid-column('expanded-', 12)
 
-%m-row-flex
-  display: flex
-  flex-flow: row
-  flex: 1 0 0
-
-%m-row-grid
-  display: grid
-
+%m-row
   @include adaptive.is-compact
     gap: 16px
 
   @include adaptive.is-gt-compact
     gap: 24px
+
+%m-row-flex
+  @extend %m-row
+
+  display: flex
+  flex-flow: row
+  flex: 1 0 0
+
+%m-row-grid
+  @extend %m-row
+
+  display: grid
 
   @include adaptive.is-compact
     grid-template-columns: repeat(4, 1fr)
@@ -205,15 +210,30 @@
 %m-adaptive-grid
   @include adaptive.is-compact
     margin: 0 16px
+    gap: 72px
 
   @include adaptive.is-gt-compact
     margin: 0 32px
-    
+    gap: 96px
+
   > %m-section-grid
+    @include adaptive.is-compact
+      gap: 16px
+
+    @include adaptive.is-gt-compact
+      gap: 24px
+
     @include adaptive.is-gt-medium
       margin: auto
       width: 100%
       max-width: 1040px
+
+    > %m-row
+      > %m-column
+        align-items: center
+        align-content: start
+        justify-items: stretch
+
 
 @include adaptive.is-compact
   .is-gt-compact,

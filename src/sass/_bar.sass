@@ -30,6 +30,8 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+@use './adaptive'
+
 %m-bar-horizontal
   @extend %is-not-selectable
 
@@ -45,9 +47,13 @@
 %m-bar-horizontal-trailing
   display: grid
   align-items: center
-  grid-auto-columns: minmax(1fr, max-content)
   grid-auto-flow: column
-  gap: 24px
+
+  @include adaptive.is-compact
+    gap: 16px
+
+  @include adaptive.is-gt-compact
+    gap: 24px
 
 %m-bar-horizontal-leading
   grid-column: col-1-start / col-1-end

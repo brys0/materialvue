@@ -32,6 +32,16 @@
 
 @use './theme'
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p
+  margin: 0
+  width: 100%
+
 a
   color: inherit
   text-decoration: none
@@ -50,6 +60,12 @@ a
 
   @include theme.preferred
     color: theme.style(on-background)
+
+%m-typography-display,
+%m-typography-headline,
+%m-typography-title,
+%m-typography-body
+  width: 100%
 
 %m-typography-display,
 %m-typography-headline,
