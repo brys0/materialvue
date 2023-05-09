@@ -80,6 +80,7 @@
   display: flex
   flex-flow: column
   flex: 1 0 0
+  justify-content: center
 
   @include flex('', 12)
 
@@ -257,8 +258,8 @@
       width: 100%
       max-width: 1040px
 
-    > %m-row
-      > %m-column
+    > %m-row-grid
+      > %m-column-grid
         justify-items: stretch
 
 @include adaptive.is-compact
