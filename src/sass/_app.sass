@@ -82,12 +82,12 @@ body
   margin: 0
   padding: 0
   position: relative
+  height: 100vh
   display: grid
   grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] max-content [row-2-end row-3-start] 1fr [row-3-end]
   grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] max-content [col-2-end col-3-start] 1fr [col-3-end col-4-start] max-content [col-4-end]
 
   @include adaptive.is-hoverable
-    height: 100vh
     overflow: hidden
 
   @include theme.preferred-self

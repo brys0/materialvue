@@ -163,7 +163,7 @@ $current: null;
 @mixin preferred() {
   $current: 'light' !global;
 
-  &,
+  .theme-light &,
   .theme-dark .theme-light & {
     @content;
   }
