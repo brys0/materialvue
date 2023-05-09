@@ -82,24 +82,35 @@ body
   margin: 0
   padding: 0
   position: relative
-  width: 100vw
-  height: 100vh
-  height: -webkit-fill-available
   display: grid
   grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] max-content [row-2-end row-3-start] 1fr [row-3-end]
   grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] max-content [col-2-end col-3-start] 1fr [col-3-end col-4-start] max-content [col-4-end]
-  overflow: hidden
 
   @include theme.preferred-self
     background: theme.style(background)
 
+  @include adaptive.is-gt-medium
+    height: 100vh
+    overflow: hidden
+
 .m-top-app-bar
+  position: sticky
+  top: 0
+  left: 0
+  right: 0
   grid-row: row-1-start / row-1-end
-  grid-column: col-3-start / col-3-end
+  grid-column: col-2-start / col-3-end
   z-index: 3
 
+  @include theme.preferred
+    background: theme.style(background)
+
 .m-navigation-rail
+  position: sticky
+  top: 0
+  left: 0
   min-width: 80px
+  max-height: 100vh
   z-index: 8
 
   @include theme.preferred
@@ -113,6 +124,10 @@ body
     grid-column: col-1-start / col-1-end
 
 .m-navigation-drawer
+  position: sticky
+  top: 0
+  left: 0
+  max-height: 100vh
   grid-row: row-1-start / row-3-end
   grid-column: col-2-start / col-2-end
   z-index: 7
@@ -140,10 +155,6 @@ body
     visibility: hidden
 
   @include adaptive.is-lt-large
-    position: absolute
-    top: 0
-    left: 0
-    bottom: 0
     border-top-right-radius: 16px
     border-bottom-right-radius: 16px
 
@@ -160,6 +171,12 @@ body
   grid-column: col-3-start / col-3-end
   z-index: 0
 
+  @include adaptive.is-lt-large
+    grid-column: col-2-start / col-3-end
+
+  @include adaptive.is-gt-medium
+    overflow: auto
+
 .m-finder
   grid-row: row-2-start / row-3-end
   grid-column: col-4-start / col-4-end
@@ -174,11 +191,13 @@ body
     display: none
 
 .m-scrim
-  position: absolute
+  position: sticky
   top: 0
   left: 0
   bottom: 0
   right: 0
+  grid-row: row-1-start / row-3-end
+  grid-column: col-1-start / col-4-end
   z-index: 4
   display: none
 
