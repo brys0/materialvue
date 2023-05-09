@@ -50,8 +50,6 @@
     padding-bottom: 8px
 
 %m-list-item
-  @extend %is-not-selectable
-
   padding: 0 24px 0 16px
   position: relative
   min-height: 56px
@@ -61,8 +59,20 @@
   list-style-type: none
   border: none
   outline: none
-  cursor: pointer
 
+  &:not(.is-not-interactive)
+    cursor: pointer
+
+    &::before
+      content: ' '
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      display: block
+      z-index: 0
+  
   > a
     margin: 0 -24px 0 -16px
     padding: 0 24px 0 16px
@@ -72,16 +82,6 @@
     grid-column: col-1-start / col-3-end
     grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] max-content [row-2-end]
     grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] 1fr [col-2-end col-3-start] max-content [col-3-end]
-
-  &::before
-    content: ' '
-    position: absolute
-    top: 0
-    left: 0
-    bottom: 0
-    right: 0
-    display: block
-    z-index: 0
 
 %m-list-item-divider
   grid-row: row-2-start / row-2-end
@@ -127,14 +127,14 @@
 .m-list
   @extend %m-list
 
-  &.lines-1
-    grid-auto-flow: minmax(56px, max-content)
-
-  &.lines-2
-    grid-auto-flow: minmax(72px, max-content)
+  //&.lines-1
+  //  grid-auto-flow: minmax(56px, max-content)
+  //
+  //&.lines-2
+  //  grid-auto-flow: minmax(72px, max-content)
 
   &.lines-3
-    grid-auto-flow: minmax(88px, max-content)
+    //grid-auto-flow: minmax(88px, max-content)
 
     > .m-list-item
       .m-list-item-leading,
@@ -174,8 +174,6 @@
       @extend %m-list-item-body
 
       > .m-typography
-        @extend %is-not-selectable
-
         &.m-headline
           @extend %m-typography-body-large
 
@@ -186,8 +184,6 @@
       @extend %m-list-item-trailing
 
       > .m-typography
-        @extend %is-not-selectable
-
         &.m-label
           @extend %m-typography-label-small
 
@@ -235,73 +231,74 @@
           @include theme.preferred
             color: theme.style(on-surface-variant)
 
-      &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
-      &.hovered:not(.focused):not(.pressed):not(.dragged):not(.disabled)
-        cursor: pointer
+      &:not(.is-not-interactive)
+        &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
+        &.hovered:not(.focused):not(.pressed):not(.dragged):not(.disabled)
+          cursor: pointer
 
-        &::before
+          &::before
+            @include theme.preferred
+              background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+
+          .m-list-item-leading
+            > .m-icon
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
+
+          .m-list-item-trailing
+            > .m-icon
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
+
+        &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
+        &.focused:not(.hovered):not(.pressed):not(.dragged):not(.disabled)
+          &::before
+            @include theme.preferred
+              background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+          .m-list-item-leading
+            > .m-icon
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
+
+          .m-list-item-trailing
+            > .m-icon
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
+
+        &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
+        &.pressed:not(.hovered):not(.focused):not(.dragged):not(.disabled)
+          &::before
+            @include theme.preferred
+              background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+
+          .m-list-item-leading
+            > .m-icon
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
+
+          .m-list-item-trailing
+            > .m-icon
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
+
+        &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
           @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+            box-shadow: theme.style(shadow-4)
 
-        .m-list-item-leading
-          > .m-icon
+          &::before
             @include theme.preferred
-              color: theme.style(on-surface-variant)
+              background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
 
-        .m-list-item-trailing
-          > .m-icon
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
+          .m-list-item-leading
+            > .m-icon
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
 
-      &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
-      &.focused:not(.hovered):not(.pressed):not(.dragged):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-
-        .m-list-item-leading
-          > .m-icon
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
-
-        .m-list-item-trailing
-          > .m-icon
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
-
-      &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
-      &.pressed:not(.hovered):not(.focused):not(.dragged):not(.disabled)
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-
-        .m-list-item-leading
-          > .m-icon
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
-
-        .m-list-item-trailing
-          > .m-icon
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
-
-      &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
-        @include theme.preferred
-          box-shadow: theme.style(shadow-4)
-
-        &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
-
-        .m-list-item-leading
-          > .m-icon
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
-
-        .m-list-item-trailing
-          > .m-icon
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
+          .m-list-item-trailing
+            > .m-icon
+              @include theme.preferred
+                color: theme.style(on-surface-variant)
 
     &:disabled:not(.hovered):not(.focused):not(.pressed):not(.dragged),
     &[disabled]:not(.hovered):not(.focused):not(.pressed):not(.dragged),
