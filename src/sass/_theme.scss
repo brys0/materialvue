@@ -170,7 +170,8 @@ $current: null;
 
   $current: 'dark' !global;
 
-  .theme-dark & {
+  .theme-dark &,
+  .theme-light .theme-dark & {
     @content;
   }
 
