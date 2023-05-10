@@ -85,6 +85,8 @@ body
   display: grid
   grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] max-content [row-2-end row-3-start] 1fr [row-3-end]
   grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] max-content [col-2-end col-3-start] 1fr [col-3-end col-4-start] max-content [col-4-end]
+  align-items: stretch
+  align-content: stretch
 
   @include adaptive.is-hoverable
     height: 100vh
@@ -110,7 +112,7 @@ body
   top: 0
   left: 0
   min-width: 80px
-  height: 100vh
+  max-height: 100vh
   z-index: 8
 
   @include theme.preferred
@@ -127,7 +129,7 @@ body
   position: sticky
   top: 0
   left: 0
-  height: 100vh
+  max-height: 100vh
   grid-row: row-1-start / row-3-end
   grid-column: col-2-start / col-2-end
   z-index: 7
