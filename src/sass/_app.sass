@@ -78,6 +78,18 @@ code
     display: none
     visibility: hidden
 
+html
+  position: relative
+  height: 100vh
+  display: grid
+  align-items: stretch
+  align-content: stretch
+  justify-items: stretch
+  justify-content: stretch
+
+  @include theme.preferred
+    background: theme.style(elevation-1), theme.style(surface)
+
 body
   margin: 0
   padding: 0
@@ -85,11 +97,10 @@ body
   display: grid
   grid-template-rows: [row-1-start] max-content [row-1-end row-2-start] max-content [row-2-end row-3-start] 1fr [row-3-end]
   grid-template-columns: [col-1-start] max-content [col-1-end col-2-start] max-content [col-2-end col-3-start] 1fr [col-3-end col-4-start] max-content [col-4-end]
-  align-items: stretch
-  align-content: stretch
+  align-items: start
+  justify-content: stretch
 
   @include adaptive.is-hoverable
-    height: 100vh
     overflow: hidden
 
   @include theme.preferred-self
@@ -112,7 +123,7 @@ body
   top: 0
   left: 0
   min-width: 80px
-  max-height: 100vh
+  height: 100vh
   z-index: 8
 
   @include theme.preferred
@@ -129,7 +140,7 @@ body
   position: sticky
   top: 0
   left: 0
-  max-height: 100vh
+  height: 100vh
   grid-row: row-1-start / row-3-end
   grid-column: col-2-start / col-2-end
   z-index: 7
