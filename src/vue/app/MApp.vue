@@ -42,5 +42,3 @@
   <router-view name="modal" />
   <div class="m-scrim" />
 </template>
-<script setup lang="ts">
-</script>

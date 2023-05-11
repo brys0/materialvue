@@ -36,11 +36,15 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
+import {
+	M100vh,
+} from '@/vue/app'
+
 export type MNavigationRailProps = {}
 
 export const MNavigationRail: FunctionalComponent<MNavigationRailProps> = (_, {
 	slots,
-}): VNode => h('nav', {
+}): VNode => h(M100vh, {
 	class: {
 		'm-navigation-rail': true,
 	},

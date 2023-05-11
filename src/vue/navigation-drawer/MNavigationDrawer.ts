@@ -36,6 +36,10 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
+import {
+	M100vh,
+} from '@/vue/app'
+
 export type MNavigationDrawerProps = {
 	isOpened?: boolean
 }
@@ -44,7 +48,7 @@ export const MNavigationDrawer: FunctionalComponent<MNavigationDrawerProps> = ({
 	isOpened,
 }, {
 	slots,
-}): VNode => h('nav', {
+}): VNode => h(M100vh, {
 	class: {
 		'm-navigation-drawer': true,
 		'is-opened': isOpened,

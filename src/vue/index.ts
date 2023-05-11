@@ -32,6 +32,7 @@
 
 export {
 	MApp,
+	M100vh,
 } from '@/vue/app'
 
 export {

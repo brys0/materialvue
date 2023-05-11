@@ -50,8 +50,11 @@
 
   > .m-drawer-leading,
   > .m-drawer-trailing
-    grid-auto-rows: minmax(72px, max-content)
-    align-items: center
+    @include adaptive.is-compact
+      grid-auto-rows: minmax(64px, max-content)
+
+    @include adaptive.is-gt-compact
+      grid-auto-rows: minmax(72px, max-content)
 
   > .m-drawer-leading
     grid-row: row-1-start / row-1-end
@@ -70,8 +73,6 @@
 
   > .m-drawer-body
     grid-auto-rows: minmax(56px, max-content)
-
-  > .m-drawer-body
     grid-row: row-2-start / row-2-end
     align-content: start
     overflow-x: hidden

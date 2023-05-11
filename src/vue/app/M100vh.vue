@@ -1,3 +1,4 @@
+<!--
 /**
  * BSD 3-Clause License
  *
@@ -29,11 +30,43 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+-->
 
-export {
-	default as MApp,
-} from '@/vue/app/MApp.vue'
+<script lang="ts" setup>
+import {
+	shallowRef,
+	triggerRef,
+	onMounted,
+	onBeforeUnmount,
+} from 'vue'
 
-export {
-	default as M100vh,
-} from '@/vue/app/M100vh.vue'
+import {
+	guard,
+} from '@cosmicmind/foundationjs'
+
+const elRef = shallowRef<HTMLElement | null>(null)
+
+const onResize = (): void => {
+	const el = elRef.value
+	if (guard<HTMLElement>(el)) {
+		el.style.height = `${window.innerHeight}px`
+		triggerRef(elRef)
+	}
+}
+
+onMounted(() => {
+	window.addEventListener('resize', onResize)
+	onResize()
+})
+
+onBeforeUnmount(() => {
+	window.removeEventListener('resize', onResize)
+})
+
+</script>
+
+<template>
+  <div ref="elRef">
+    <slot />
+  </div>
+</template>
