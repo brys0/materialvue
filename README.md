@@ -1,4 +1,4 @@
-![MaterialVue GitHub Banner](https://raw.githubusercontent.com/CosmicMind/materialvue/dev/public/github/materialvue-github-banner.png)
+![MaterialVue GitHub Banner](https://raw.githubusercontent.com/CosmicMind/materialvue/dev/public/github/materialvue-github-banner-051123-a.png)
 
 # Welcome to MaterialVue
 
