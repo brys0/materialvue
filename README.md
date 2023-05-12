@@ -1,7 +1,7 @@
-![MaterialVue GitHub Banner](https://raw.githubusercontent.com/CosmicMind/materialvue/dev/public/github/materialvue-github-banner-051223-a.png)
+![MaterialVue GitHub Banner](https://raw.githubusercontent.com/CosmicMind/materialvue/dev/public/github/materialvue-github-banner-051223-b.png)
 
-Inspired by [Google's Material 3 Design System](https://m3.material.io/), MaterialJS is a framework that offers both CSS and [Vue 3](https:/vuejs.org/) component libraries.
-MaterialJS supports [Google Fonts icons](https://fonts.google.com/icons), [Vue 3](https:/vuejs.org/), and a pure CSS library for community development.
+Inspired by [Google's Material Design System](https://m3.material.io/), MaterialVue is a framework that offers both CSS and [Vue 3](https:/vuejs.org/) component libraries.
+MaterialVue supports [Google Fonts icons](https://fonts.google.com/icons), [Vue 3](https:/vuejs.org/), and a pure CSS library for community development.
 
 ## Features
 
