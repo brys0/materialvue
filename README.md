@@ -18,5 +18,5 @@ MaterialVue supports [Google Fonts icons](https://fonts.google.com/icons), [Vue 
 
 ### Buttons
 
-![MaterialVue GitHub Common Buttons](https://raw.githubusercontent.com/CosmicMind/materialvue/dev/public/github/materialvue-github-common buttons-051223-b.png)
+![MaterialVue GitHub Common Buttons](https://raw.githubusercontent.com/CosmicMind/materialvue/dev/public/github/materialvue-github-common-buttons-051223-b.png)
 
