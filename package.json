@@ -24,8 +24,7 @@
       "import": "./dist/lib-es.js",
       "require": "./dist/lib-cjs.cjs"
     },
-    "./sass/theme": "./dist/sass/theme.scss",
-    "./sass/*": "./dist/sass/*.sass"
+    "./dist/sass/*": "./dist/sass/*"
   },
   "files": [
     "dist",

@@ -60,8 +60,7 @@ a
   font-weight: 400
   display: block
 
-  @include theme.preferred
-    color: theme.style(on-background)
+  color: var(--on-background)
 
 %m-typography-display,
 %m-typography-headline,
@@ -153,8 +152,7 @@ a
   &:hover
     text-decoration: underline
 
-  @include theme.preferred
-    color: theme.style(primary)
+  color: var(--primary)
 
 %m-typography-link-large
   font-size: 16px

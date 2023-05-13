@@ -66,8 +66,7 @@
 
         padding: 0 24px 0 16px
 
-        @include theme.preferred
-          color: theme.style(on-surface-variant)
+        color: var(--on-surface-variant)
 
   > .m-drawer-trailing
     grid-row: row-3-start / row-3-end
@@ -122,133 +121,109 @@
         &.enabled
           .m-drawer-list-item-leading
             > .m-icon
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
+              color: var(--on-surface-variant)
 
           .m-drawer-list-item-body
             > .m-typography
               &.m-label
-                @include theme.preferred
-                  color: theme.style(on-surface-variant)
+                color: var(--on-surface-variant)
 
           .m-drawer-list-item-trailing
             > .m-typography
               &.m-label
-                @include theme.preferred
-                  color: theme.style(on-surface-variant)
+                color: var(--on-surface-variant)
 
           &.selected
-            @include theme.preferred
-              background: theme.style(secondary-container)
+            background: var(--secondary-container)
 
             .m-drawer-list-item-leading
               > .m-icon
-                @include theme.preferred
-                  color: theme.style(on-secondary-container)
+                color: var(--on-secondary-container)
 
             .m-drawer-list-item-body
               > .m-typography
                 &.m-label
-                  @include theme.preferred
-                    color: theme.style(on-secondary-container)
+                  color: var(--on-secondary-container)
 
           &:hover:not(.focused):not(.pressed),
           &.hovered:not(.focused):not(.pressed)
             cursor: pointer
 
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+              background: conversion.hex-to-rgba(var(--on-surface), 8%)
 
             .m-drawer-list-item-leading
               > .m-icon
-                @include theme.preferred
-                  color: theme.style(on-surface)
+                color: var(--on-surface)
 
             .m-drawer-list-item-body
               > .m-typography
                 &.m-label
-                  @include theme.preferred
-                    color: theme.style(on-surface)
+                  color: var(--on-surface)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
+                background: conversion.hex-to-rgba(var(--on-secondary-container), 8%)
 
               .m-drawer-list-item-leading
                 > .m-icon
-                  @include theme.preferred
-                    color: theme.style(on-secondary-container)
+                  color: var(--on-secondary-container)
 
               .m-drawer-list-item-body
                 > .m-typography
                   &.m-label
-                    @include theme.preferred
-                      color: theme.style(on-secondary-container)
+                    color: var(--on-secondary-container)
 
           &:focus:not(.hovered):not(.pressed),
           &.focused:not(.hovered):not(.pressed)
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+              background: conversion.hex-to-rgba(var(--on-surface), 12%)
 
             .m-drawer-list-item-leading
               > .m-icon
-                @include theme.preferred
-                  color: theme.style(on-surface)
+                color: var(--on-surface)
 
             .m-drawer-list-item-body
               > .m-typography
                 &.m-label
-                  @include theme.preferred
-                    color: theme.style(on-surface)
+                  color: var(--on-surface)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+                background: conversion.hex-to-rgba(var(--on-secondary-container), 12%)
 
               .m-drawer-list-item-leading
                 > .m-icon
-                  @include theme.preferred
-                    color: theme.style(on-secondary-container)
+                  color: var(--on-secondary-container)
 
               .m-drawer-list-item-body
                 > .m-typography
                   &.m-label
-                    @include theme.preferred
-                      color: theme.style(on-secondary-container)
+                    color: var(--on-secondary-container)
 
           &:active:not(.hovered):not(.focused),
           &.pressed:not(.hovered):not(.focused)
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+              background: conversion.hex-to-rgba(var(--on-secondary-container), 12%)
 
             .m-drawer-list-item-leading
               > .m-icon
-                @include theme.preferred
-                  color: theme.style(on-surface)
+                color: var(--on-surface)
 
             .m-drawer-list-item-body
               > .m-typography
                 &.m-label
-                  @include theme.preferred
-                    color: theme.style(on-surface)
+                  color: var(--on-surface)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+                background: conversion.hex-to-rgba(var(--on-secondary-container), 12%)
 
               .m-drawer-list-item-leading
                 > .m-icon
-                  @include theme.preferred
-                    color: theme.style(on-secondary-container)
+                  color: var(--on-secondary-container)
 
               .m-drawer-list-item-body
                 > .m-typography
                   &.m-label
-                    @include theme.preferred
-                      color: theme.style(on-secondary-container)
+                    color: var(--on-secondary-container)

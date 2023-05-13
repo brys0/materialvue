@@ -104,56 +104,46 @@ a.m-button
 
     &,
     &.enabled
-      @include theme.preferred
-        background: theme.style(elevation-1), theme.style(surface)
-        box-shadow: theme.style(shadow-1)
+      background: var(--elevation-1), var(--surface)
+      box-shadow: var(--shadow-1)
 
       > .m-icon
-        @include theme.preferred
-          color: theme.style(primary)
+        color: var(--primary)
 
       > .m-typography
         &.m-label
-          @include theme.preferred
-            color: theme.style(primary)
+          color: var(--primary)
 
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered:not(.focused):not(.pressed):not(.disabled)
-        @include theme.preferred
-          background: theme.style(elevation-2), theme.style(surface)
-          box-shadow: theme.style(shadow-2)
+        background: var(--elevation-2), var(--surface)
+        box-shadow: var(--shadow-2)
 
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 8%)
+          background: conversion.hex-to-rgba(var(--primary), 8%)
 
       &:focus:not(.hovered):not(.pressed):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.disabled)
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 12%)
+          background: conversion.hex-to-rgba(var(--primary), 12%)
 
       &:active:not(.hovered):not(.focused):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.disabled)
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 12%)
+          background: conversion.hex-to-rgba(var(--primary), 12%)
 
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
     &.disabled:not(.hovered):not(.focused):not(.pressed)
-      @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-        box-shadow: theme.style(shadow-0)
+      background: conversion.hex-to-rgba(var(--on-surface), 12%)
+      box-shadow: var(--shadow-0)
 
       > .m-icon
-        @include theme.preferred
-          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+        color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
       > .m-typography
         &.m-label
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
   &.m-filled:not(.m-icon)
     height: 40px
@@ -176,55 +166,45 @@ a.m-button
 
     &,
     &.enabled
-      @include theme.preferred
-        background: theme.style(primary)
-        box-shadow: theme.style(shadow-0)
+      background: var(--primary)
+      box-shadow: var(--shadow-0)
 
       > .m-icon
-        @include theme.preferred
-          color: theme.style(on-primary)
+        color: var(--on-primary)
 
       > .m-typography
         &.m-label
-          @include theme.preferred
-            color: theme.style(on-primary)
+          color: var(--on-primary)
 
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered:not(.focused):not(.pressed):not(.disabled)
-        @include theme.preferred
-          background: theme.style(primary)
-          box-shadow: theme.style(shadow-1)
+        background: var(--primary)
+        box-shadow: var(--shadow-1)
 
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-primary), 8%)
+          background: conversion.hex-to-rgba(var(--on-primary), 8%)
 
       &:focus:not(.hovered):not(.pressed):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.disabled)
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
+          background: conversion.hex-to-rgba(var(--on-primary), 12%)
 
       &:active:not(.hovered):not(.focused):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.disabled)
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
+          background: conversion.hex-to-rgba(var(--on-primary), 12%)
 
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
     &.disabled:not(.hovered):not(.focused):not(.pressed)
-      @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+      background: conversion.hex-to-rgba(var(--on-surface), 12%)
 
       > .m-icon
-        @include theme.preferred
-          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+        color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
       > .m-typography
         &.m-label
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
   &.m-tonal:not(.m-icon)
     height: 40px
@@ -247,55 +227,45 @@ a.m-button
 
     &,
     &.enabled
-      @include theme.preferred
-        background: theme.style(secondary-container)
-        box-shadow: theme.style(shadow-0)
+      background: var(--secondary-container)
+      box-shadow: var(--shadow-0)
 
       > .m-icon
-        @include theme.preferred
-          color: theme.style(on-secondary-container)
+        color: var(--on-secondary-container)
 
       > .m-typography
         &.m-label
-          @include theme.preferred
-            color: theme.style(on-secondary-container)
+          color: var(--on-secondary-container)
 
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered:not(.focused):not(.pressed):not(.disabled)
-        @include theme.preferred
-          background: theme.style(secondary-container)
-          box-shadow: theme.style(shadow-1)
+        background: var(--secondary-container)
+        box-shadow: var(--shadow-1)
 
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
+          background: conversion.hex-to-rgba(var(--on-secondary-container), 8%)
 
       &:focus:not(.hovered):not(.pressed):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.disabled)
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+          background: conversion.hex-to-rgba(var(--on-secondary-container), 12%)
 
       &:active:not(.hovered):not(.focused):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.disabled)
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+          background: conversion.hex-to-rgba(var(--on-secondary-container), 12%)
 
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
     &.disabled:not(.hovered):not(.focused):not(.pressed)
-      @include theme.preferred
-        background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+      background: conversion.hex-to-rgba(var(--on-surface), 12%)
 
       > .m-icon
-        @include theme.preferred
-          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+        color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
       > .m-typography
         &.m-label
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
   &.m-outlined:not(.m-icon)
     height: 40px
@@ -319,53 +289,43 @@ a.m-button
 
     &,
     &.enabled
-      @include theme.preferred
-        border-color: theme.style(outline)
+      border-color: var(--outline)
 
       > .m-icon
-        @include theme.preferred
-          color: theme.style(primary)
+        color: var(--primary)
 
       > .m-typography
         &.m-label
-          @include theme.preferred
-            color: theme.style(primary)
+          color: var(--primary)
 
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered:not(.focused):not(.pressed):not(.disabled)
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 8%)
+          background: conversion.hex-to-rgba(var(--primary), 8%)
 
       &:focus:not(.hovered):not(.pressed):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.disabled)
-        @include theme.preferred
-          border-color: theme.style(primary)
+        border-color: var(--primary)
 
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 12%)
+          background: conversion.hex-to-rgba(var(--primary), 12%)
 
       &:active:not(.hovered):not(.focused):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.disabled)
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 12%)
+          background: conversion.hex-to-rgba(var(--primary), 12%)
 
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
     &.disabled:not(.hovered):not(.focused):not(.pressed)
-      @include theme.preferred
-        border-color: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+      border-color: conversion.hex-to-rgba(var(--on-surface), 12%)
 
       > .m-icon
-        @include theme.preferred
-          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+        color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
       > .m-typography
         &.m-label
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
   &.m-text
     height: 40px
@@ -390,43 +350,36 @@ a.m-button
     &,
     &.enabled
       > .m-icon
-        @include theme.preferred
-          color: theme.style(primary)
+        color: var(--primary)
 
       > .m-typography
         &.m-label
-          @include theme.preferred
-            color: theme.style(primary)
+          color: var(--primary)
 
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered:not(.focused):not(.pressed):not(.disabled)
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 8%)
+          background: conversion.hex-to-rgba(var(--primary), 8%)
 
       &:focus:not(.hovered):not(.pressed):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.disabled)
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 12%)
+          background: conversion.hex-to-rgba(var(--primary), 12%)
 
       &:active:not(.hovered):not(.focused):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.disabled)
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(primary), 12%)
+          background: conversion.hex-to-rgba(var(--primary), 12%)
 
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
     &.disabled:not(.hovered):not(.focused):not(.pressed)
       > .m-icon
-        @include theme.preferred
-          color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+        color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
       > .m-typography
         &.m-label
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
   &.m-icon
     width: 48px
@@ -450,225 +403,186 @@ a.m-button
       &,
       &.enabled
         > .m-icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
+          color: var(--on-surface-variant)
 
         &.toggle
           > .m-icon
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
+            color: var(--on-surface-variant)
 
           &.selected
             > .m-icon
-              @include theme.preferred
-                color: theme.style(primary)
+              color: var(--primary)
 
         &:hover:not(.focused):not(.pressed):not(.disabled),
         &.hovered:not(.focused):not(.pressed):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-surface-variant), 8%)
+            background: conversion.hex-to-rgba(var(--on-surface-variant), 8%)
 
           &.toggle
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-surface-variant), 8%)
+              background: conversion.hex-to-rgba(var(--on-surface-variant), 8%)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(primary), 8%)
+                background: conversion.hex-to-rgba(var(--primary), 8%)
 
         &:focus:not(.hovered):not(.pressed):not(.disabled),
         &.focused:not(.hovered):not(.pressed):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
+            background: conversion.hex-to-rgba(var(--on-surface-variant), 12%)
 
           &.toggle
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
+              background: conversion.hex-to-rgba(var(--on-surface-variant), 12%)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(primary), 12%)
+                background: conversion.hex-to-rgba(var(--primary), 12%)
 
         &:active:not(.hovered):not(.focused):not(.disabled),
         &.pressed:not(.hovered):not(.focused):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
+            background: conversion.hex-to-rgba(var(--on-surface-variant), 12%)
 
           &.toggle
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
+              background: conversion.hex-to-rgba(var(--on-surface-variant), 12%)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(primary), 12%)
+                background: conversion.hex-to-rgba(var(--primary), 12%)
 
       &:disabled:not(.hovered):not(.focused):not(.pressed),
       &[disabled]:not(.hovered):not(.focused):not(.pressed),
       &.disabled:not(.hovered):not(.focused):not(.pressed)
         > .m-icon
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
     &.m-filled
       &,
       &.enabled
         > .m-icon
-          @include theme.preferred
-            background: theme.style(primary)
-            color: theme.style(on-primary)
+          background: var(--primary)
+          color: var(--on-primary)
 
         &.toggle
           > .m-icon
-            @include theme.preferred
-              background: theme.style(surface-variant)
-              color: theme.style(primary)
+            background: var(--surface-variant)
+            color: var(--primary)
 
           &.selected
             > .m-icon
-              @include theme.preferred
-                background: theme.style(primary)
-                color: theme.style(on-primary)
+              background: var(--primary)
+              color: var(--on-primary)
 
         &:hover:not(.focused):not(.pressed):not(.disabled),
         &.hovered:not(.focused):not(.pressed):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-primary), 8%)
+            background: conversion.hex-to-rgba(var(--on-primary), 8%)
 
           &.toggle
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(primary), 8%)
+              background: conversion.hex-to-rgba(var(--primary), 8%)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-primary), 8%)
+                background: conversion.hex-to-rgba(var(--on-primary), 8%)
 
         &:focus:not(.hovered):not(.pressed):not(.disabled),
         &.focused:not(.hovered):not(.pressed):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
+            background: conversion.hex-to-rgba(var(--on-primary), 12%)
 
           &.toggle
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(primary), 12%)
+              background: conversion.hex-to-rgba(var(--primary), 12%)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
+                background: conversion.hex-to-rgba(var(--on-primary), 12%)
 
         &:active:not(.hovered):not(.focused):not(.disabled),
         &.pressed:not(.hovered):not(.focused):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
+            background: conversion.hex-to-rgba(var(--on-primary), 12%)
 
           &.toggle
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(primary), 12%)
+              background: conversion.hex-to-rgba(var(--primary), 12%)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-primary), 12%)
+                background: conversion.hex-to-rgba(var(--on-primary), 12%)
 
       &:disabled:not(.hovered):not(.focused):not(.pressed),
       &[disabled]:not(.hovered):not(.focused):not(.pressed),
       &.disabled:not(.hovered):not(.focused):not(.pressed)
         > .m-icon
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          background: conversion.hex-to-rgba(var(--on-surface), 12%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
     &.m-tonal
       &,
       &.enabled
         > .m-icon
-          @include theme.preferred
-            background: theme.style(secondary-container)
-            color: theme.style(on-secondary-container)
+          background: var(--secondary-container)
+          color: var(--on-secondary-container)
 
         &.toggle
           > .m-icon
-            @include theme.preferred
-              background: theme.style(surface-variant)
-              color: theme.style(on-surface-variant)
+            background: var(--surface-variant)
+            color: var(--on-surface-variant)
 
           &.selected
             > .m-icon
-              @include theme.preferred
-                background: theme.style(secondary-container)
-                color: theme.style(on-secondary-container)
+              background: var(--secondary-container)
+              color: var(--on-secondary-container)
 
         &:hover:not(.focused):not(.pressed):not(.disabled),
         &.hovered:not(.focused):not(.pressed):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
+            background: conversion.hex-to-rgba(var(--on-secondary-container), 8%)
 
           &.toggle
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-surface-variant), 8%)
+              background: conversion.hex-to-rgba(var(--on-surface-variant), 8%)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
+                background: conversion.hex-to-rgba(var(--on-secondary-container), 8%)
 
         &:focus:not(.hovered):not(.pressed):not(.disabled),
         &.focused:not(.hovered):not(.pressed):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+            background: conversion.hex-to-rgba(var(--on-secondary-container), 12%)
 
           &.toggle
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
+              background: conversion.hex-to-rgba(var(--on-surface-variant), 12%)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+                background: conversion.hex-to-rgba(var(--on-secondary-container), 12%)
 
         &:active:not(.hovered):not(.focused):not(.disabled),
         &.pressed:not(.hovered):not(.focused):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+            background: conversion.hex-to-rgba(var(--on-secondary-container), 12%)
 
           &.toggle
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
+              background: conversion.hex-to-rgba(var(--on-surface-variant), 12%)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+                background: conversion.hex-to-rgba(var(--on-secondary-container), 12%)
 
       &:disabled:not(.hovered):not(.focused):not(.pressed),
       &[disabled]:not(.hovered):not(.focused):not(.pressed),
       &.disabled:not(.hovered):not(.focused):not(.pressed)
         > .m-icon
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          background: conversion.hex-to-rgba(var(--on-surface), 12%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
     &.m-outlined
       > .m-icon
@@ -677,78 +591,65 @@ a.m-button
       &,
       &.enabled
         > .m-icon
-          @include theme.preferred
-            border-color: theme.style(outline)
-            color: theme.style(on-surface-variant)
+          border-color: var(--outline)
+          color: var(--on-surface-variant)
 
         &.toggle
           > .m-icon
-            @include theme.preferred
-              border-color: theme.style(outline)
-              color: theme.style(on-surface-variant)
+            border-color: var(--outline)
+            color: var(--on-surface-variant)
 
           &.selected
             > .m-icon
-              @include theme.preferred
-                background: theme.style(inverse-surface)
-                border-color: theme.style(inverse-surface)
-                color: theme.style(on-inverse-surface)
+              background: var(--inverse-surface)
+              border-color: var(--inverse-surface)
+              color: var(--on-inverse-surface)
 
         &:hover:not(.focused):not(.pressed):not(.disabled),
         &.hovered:not(.focused):not(.pressed):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-surface-variant), 8%)
+            background: conversion.hex-to-rgba(var(--on-surface-variant), 8%)
 
           &.toggle
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-surface-variant), 8%)
+              background: conversion.hex-to-rgba(var(--on-surface-variant), 8%)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-inverse-surface), 8%)
+                background: conversion.hex-to-rgba(var(--on-inverse-surface), 8%)
 
         &:focus:not(.hovered):not(.pressed):not(.disabled),
         &.focused:not(.hovered):not(.pressed):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-inverse-surface), 12%)
+            background: conversion.hex-to-rgba(var(--on-inverse-surface), 12%)
 
           &.toggle
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-inverse-surface), 12%)
+              background: conversion.hex-to-rgba(var(--on-inverse-surface), 12%)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
+                background: conversion.hex-to-rgba(var(--on-surface-variant), 12%)
 
         &:active:not(.hovered):not(.focused):not(.disabled),
         &.pressed:not(.hovered):not(.focused):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-inverse-surface), 12%)
+            background: conversion.hex-to-rgba(var(--on-inverse-surface), 12%)
 
           &.toggle
             &::before
-              @include theme.preferred
-                background: conversion.hex-to-rgba(theme.style(on-inverse-surface), 12%)
+              background: conversion.hex-to-rgba(var(--on-inverse-surface), 12%)
 
             &.selected
               &::before
-                @include theme.preferred
-                  background: conversion.hex-to-rgba(theme.style(on-surface-variant), 12%)
+                background: conversion.hex-to-rgba(var(--on-surface-variant), 12%)
 
       &:disabled:not(.hovered):not(.focused):not(.pressed),
       &[disabled]:not(.hovered):not(.focused):not(.pressed),
       &.disabled:not(.hovered):not(.focused):not(.pressed)
         > .m-icon
-          @include theme.preferred
-            border-color: conversion.hex-to-rgba(theme.style(on-surface), 12%)
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          border-color: conversion.hex-to-rgba(var(--on-surface), 12%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
   &.m-fab
     width: 56px
@@ -801,219 +702,174 @@ a.m-button
   &.m-extended-fab
     &,
     &.enabled
-      @include theme.preferred
-        background: theme.style(primary-container)
-        box-shadow: theme.style(shadow-3)
+      background: var(--primary-container)
+      box-shadow: var(--shadow-3)
 
       &.lowered
-        box-shadow: theme.style(shadow-1)
+        box-shadow: var(--shadow-1)
 
       > .m-icon
-        @include theme.preferred
-          color: theme.style(on-primary-container)
+        color: var(--on-primary-container)
 
       &.surface
-        @include theme.preferred
-          background: theme.style(elevation-3), theme.style(surface)
+        background: var(--elevation-3), var(--surface)
 
         &.lowered
-          @include theme.preferred
-            background: theme.style(elevation-1), theme.style(surface)
+          background: var(--elevation-1), var(--surface)
 
         > .m-icon
-          @include theme.preferred
-            color: theme.style(primary)
+          color: var(--primary)
 
       &.secondary
-        @include theme.preferred
-          background: theme.style(secondary-container)
+        background: var(--secondary-container)
 
         > .m-icon
-          @include theme.preferred
-            color: theme.style(on-secondary-container)
+          color: var(--on-secondary-container)
 
       &.tertiary
-        @include theme.preferred
-          background: theme.style(tertiary-container)
+        background: var(--tertiary-container)
 
         > .m-icon
-          @include theme.preferred
-            color: theme.style(on-tertiary-container)
+          color: var(--on-tertiary-container)
 
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered:not(.focused):not(.pressed):not(.disabled)
-        @include theme.preferred
-          box-shadow: theme.style(shadow-4)
+        box-shadow: var(--shadow-4)
 
         &.lowered
-          @include theme.preferred
-            box-shadow: theme.style(shadow-2)
+          box-shadow: var(--shadow-2)
 
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-primary-container), 8%)
+          background: conversion.hex-to-rgba(var(--on-primary-container), 8%)
 
         &.surface
-          @include theme.preferred
-            background: theme.style(elevation-4), theme.style(surface)
+          background: var(--elevation-4), var(--surface)
 
           &.lowered
-            @include theme.preferred
-              background: theme.style(elevation-2), theme.style(surface)
+            background: var(--elevation-2), var(--surface)
 
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(primary), 8%)
+            background: conversion.hex-to-rgba(var(--primary), 8%)
 
         &.secondary
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-secondary-container), 8%)
+            background: conversion.hex-to-rgba(var(--on-secondary-container), 8%)
 
         &.tertiary
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-tertiary-container), 8%)
+            background: conversion.hex-to-rgba(var(--on-tertiary-container), 8%)
 
       &:focus:not(.hovered):not(.pressed):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.disabled)
-        @include theme.preferred
-          box-shadow: theme.style(shadow-3)
+        box-shadow: var(--shadow-3)
 
         &.lowered
-          @include theme.preferred
-            box-shadow: theme.style(shadow-1)
+          box-shadow: var(--shadow-1)
 
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-primary-container), 12%)
+          background: conversion.hex-to-rgba(var(--on-primary-container), 12%)
 
         &.surface
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(primary), 12%)
+            background: conversion.hex-to-rgba(var(--primary), 12%)
 
         &.secondary
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+            background: conversion.hex-to-rgba(var(--on-secondary-container), 12%)
 
         &.tertiary
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-tertiary-container), 12%)
+            background: conversion.hex-to-rgba(var(--on-tertiary-container), 12%)
 
       &:active:not(.hovered):not(.focused):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.disabled)
-        @include theme.preferred
-          box-shadow: theme.style(shadow-3)
+        box-shadow: var(--shadow-3)
 
         &.lowered
-          @include theme.preferred
-            box-shadow: theme.style(shadow-1)
+          box-shadow: var(--shadow-1)
 
         &::before
-          @include theme.preferred
-            background: conversion.hex-to-rgba(theme.style(on-primary-container), 12%)
+          background: conversion.hex-to-rgba(var(--on-primary-container), 12%)
 
         &.surface
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(primary), 12%)
+            background: conversion.hex-to-rgba(var(--primary), 12%)
 
         &.secondary
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-secondary-container), 12%)
+            background: conversion.hex-to-rgba(var(--on-secondary-container), 12%)
 
         &.tertiary
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-tertiary-container), 12%)
+            background: conversion.hex-to-rgba(var(--on-tertiary-container), 12%)
 
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
     &.disabled:not(.hovered):not(.focused):not(.pressed)
       background: transparent
-
-      @include theme.preferred
-        box-shadow: theme.style(shadow-0)
+      box-shadow: var(--shadow-0)
 
       &.lowered
-        @include theme.preferred
-          box-shadow: theme.style(shadow-0)
+        box-shadow: var(--shadow-0)
 
       > .m-icon
-        @include theme.preferred
-          color: conversion.hex-to-rgba(theme.style(on-primary-container), 38%)
+        color: conversion.hex-to-rgba(var(--on-primary-container), 38%)
 
       > .m-typography
-        @include theme.preferred
-          color: conversion.hex-to-rgba(theme.style(on-primary-container), 38%)
+        color: conversion.hex-to-rgba(var(--on-primary-container), 38%)
 
       &.surface
         > .m-icon
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(primary), 38%)
+          color: conversion.hex-to-rgba(var(--primary), 38%)
 
       &.secondary
         > .m-icon
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-secondary-container), 38%)
+          color: conversion.hex-to-rgba(var(--on-secondary-container), 38%)
 
       &.tertiary
         > .m-icon
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-tertiary-container), 38%)
+          color: conversion.hex-to-rgba(var(--on-tertiary-container), 38%)
 
   &.m-extended-fab
     &,
     &.enabled
       > .m-typography
           &.m-label
-            @include theme.preferred
-              color: theme.style(on-primary-container)
+            color: var(--on-primary-container)
 
       &.surface
         > .m-typography
           &.m-label
-            @include theme.preferred
-              color: theme.style(primary)
+            color: var(--primary)
 
       &.secondary
         > .m-typography
           &.m-label
-            @include theme.preferred
-              color: theme.style(on-secondary-container)
+            color: var(--on-secondary-container)
 
       &.tertiary
         > .m-typography
           &.m-label
-            @include theme.preferred
-              color: theme.style(on-tertiary-container)
+            color: var(--on-tertiary-container)
 
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
     &.disabled:not(.hovered):not(.focused):not(.pressed)
       > .m-typography
         &.m-label
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-primary-container), 38%)
+          color: conversion.hex-to-rgba(var(--on-primary-container), 38%)
 
       &.surface
         > .m-typography
           &.m-label
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(primary), 38%)
+            color: conversion.hex-to-rgba(var(--primary), 38%)
 
       &.secondary
         > .m-typography
           &.m-label
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-secondary-container), 38%)
+            color: conversion.hex-to-rgba(var(--on-secondary-container), 38%)
 
       &.tertiary
         > .m-typography
           &.m-label
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-tertiary-container), 38%)
+            color: conversion.hex-to-rgba(var(--on-tertiary-container), 38%)

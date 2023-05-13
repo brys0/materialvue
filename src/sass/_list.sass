@@ -192,44 +192,36 @@
 
     &,
     &.enabled
-      @include theme.preferred
-        box-shadow: theme.style(shadow-0)
+      box-shadow: var(--shadow-0)
 
       > .m-divider
-        @include theme.preferred
-          border-color: theme.style(surface-variant)
+        border-color: var(--surface-variant)
 
       .m-list-item-leading
         > .m-icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
+          color: var(--on-surface-variant)
 
         > .m-avatar
           > .m-typography
             &.m-label
-              @include theme.preferred
-                background: theme.style(primary-container)
-                color: theme.style(on-primary-container)
+              background: var(--primary-container)
+              color: var(--on-primary-container)
 
       .m-list-item-body
         > .m-typography
           &.m-headline
-            @include theme.preferred
-              color: theme.style(on-surface)
+            color: var(--on-surface)
 
           &.m-body
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
+            color: var(--on-surface-variant)
 
       .m-list-item-trailing
         > .m-typography
           &.m-label
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
+            color: var(--on-surface-variant)
 
         > .m-icon
-          @include theme.preferred
-            color: theme.style(on-surface-variant)
+          color: var(--on-surface-variant)
 
       &:not(.is-not-interactive)
         &:hover:not(.focused):not(.pressed):not(.dragged):not(.disabled),
@@ -237,68 +229,55 @@
           cursor: pointer
 
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+            background: conversion.hex-to-rgba(var(--on-surface), 8%)
 
           .m-list-item-leading
             > .m-icon
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
+              color: var(--on-surface-variant)
 
           .m-list-item-trailing
             > .m-icon
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
+              color: var(--on-surface-variant)
 
         &:focus:not(.hovered):not(.pressed):not(.dragged):not(.disabled),
         &.focused:not(.hovered):not(.pressed):not(.dragged):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+            background: conversion.hex-to-rgba(var(--on-surface), 12%)
 
           .m-list-item-leading
             > .m-icon
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
+              color: var(--on-surface-variant)
 
           .m-list-item-trailing
             > .m-icon
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
+              color: var(--on-surface-variant)
 
         &:active:not(.hovered):not(.focused):not(.dragged):not(.disabled),
         &.pressed:not(.hovered):not(.focused):not(.dragged):not(.disabled)
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+            background: conversion.hex-to-rgba(var(--on-surface), 12%)
 
           .m-list-item-leading
             > .m-icon
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
+              color: var(--on-surface-variant)
 
           .m-list-item-trailing
             > .m-icon
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
+              color: var(--on-surface-variant)
 
         &.dragged:not(.hovered):not(.focused):not(.pressed):not(.disabled)
-          @include theme.preferred
-            box-shadow: theme.style(shadow-4)
+          box-shadow: var(--shadow-4)
 
           &::before
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-surface), 16%)
+            background: conversion.hex-to-rgba(var(--on-surface), 16%)
 
           .m-list-item-leading
             > .m-icon
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
+              color: var(--on-surface-variant)
 
           .m-list-item-trailing
             > .m-icon
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
+              color: var(--on-surface-variant)
 
     &:disabled:not(.hovered):not(.focused):not(.pressed):not(.dragged),
     &[disabled]:not(.hovered):not(.focused):not(.pressed):not(.dragged),
@@ -309,30 +288,24 @@
       opacity: 38%
 
       &::before
-        @include theme.preferred
-          background: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+        background: conversion.hex-to-rgba(var(--on-surface), 12%)
 
       .m-list-item-leading
         > .m-icon
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
       .m-list-item-body
         > .m-typography
           &.m-headline
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+            color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
           &.m-body
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+            color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
       .m-list-item-trailing
         > .m-typography
           &.m-label
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+            color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
         > .m-icon
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)

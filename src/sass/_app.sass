@@ -100,8 +100,7 @@ body
   @include adaptive.is-hoverable
     overflow: hidden
 
-  @include theme.preferred-self
-    background: theme.style(background)
+  background: var(--background)
 
 .m-top-app-bar
   position: sticky
@@ -112,8 +111,7 @@ body
   grid-column: col-2-start / col-3-end
   z-index: 3
 
-  @include theme.preferred
-    background: theme.style(background)
+  background: var(--background)
 
 .m-navigation-rail
   position: sticky
@@ -123,8 +121,7 @@ body
   height: 100vh
   z-index: 8
 
-  @include theme.preferred
-    background: theme.style(elevation-1), theme.style(surface)
+  background: var(--elevation-1), var(--surface)
 
   @include adaptive.is-lt-medium
     display: none
@@ -142,16 +139,14 @@ body
   grid-column: col-2-start / col-2-end
   z-index: 7
 
-  @include theme.preferred
-    background: theme.style(elevation-1), theme.style(surface)
+  background: var(--elevation-1), var(--surface)
 
   &.is-opened
     @include adaptive.is-gt-small
       width: 281px
       border-left: 1px solid
 
-      @include theme.preferred
-        border-left-color: theme.style(outline-variant)
+      border-left-color: var(--outline-variant)
 
     @include adaptive.is-lt-medium
       width: 280px
@@ -168,8 +163,7 @@ body
     border-top-right-radius: 16px
     border-bottom-right-radius: 16px
 
-    @include theme.preferred
-      box-shadow: theme.style(shadow-3)
+    box-shadow: var(--shadow-3)
 
 .m-toolbar
   grid-row: row-2-start / row-2-end
@@ -211,5 +205,4 @@ body
   z-index: 4
   display: none
 
-  @include theme.preferred
-    background: theme.style(scrim)
+  background: var(--scrim)

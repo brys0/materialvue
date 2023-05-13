@@ -260,20 +260,17 @@
       > .m-field-leading,
       > .m-field-trailing
         > .m-icon
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
       > .m-field-body
         > .m-typography
           &.m-label
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+            color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
         > .m-field-input
           pointer-events: none !important
 
-          @include theme.preferred
-            color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+          color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
   &.m-filled
     > .m-field-control
@@ -310,148 +307,124 @@
     &,
     &.enabled
       > .m-field-control
-        @include theme.preferred
-          border-bottom-color: theme.style(on-surface-variant)
-          background: theme.style(surface-variant)
+        border-bottom-color: var(--on-surface-variant)
+        background: var(--surface-variant)
 
         > .m-field-leading,
         > .m-field-trailing
           > .m-icon
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
+            color: var(--on-surface-variant)
 
         > .m-field-body
           > .m-typography
             &.m-label
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
+              color: var(--on-surface-variant)
 
           > .m-field-prefix,
           > .m-field-suffix
             > .m-typography
               &.m-label
-                @include theme.preferred
-                  color: theme.style(on-surface-variant)
+                color: var(--on-surface-variant)
 
           > .m-field-input
             background: transparent
 
-            @include theme.preferred
-              color: theme.style(on-surface)
-              caret-color: theme.style(primary)
+            color: var(--on-surface)
+            caret-color: var(--primary)
 
             &:-webkit-autofill,
             &:-webkit-autofill:hover,
             &:-webkit-autofill:focus,
             &:-webkit-autofill:active
-              @include theme.preferred
-                -webkit-text-fill-color: theme.style(on-surface) !important
-                -webkit-box-shadow: 0 0 0 30px inset theme.style(surface-variant) !important
+              -webkit-text-fill-color: var(--on-surface) !important
+              -webkit-box-shadow: 0 0 0 30px inset var(--surface-variant) !important
 
       > .m-field-support
         > .m-typography
           &.m-body,
           &.m-label
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
+            color: var(--on-surface-variant)
 
       &.has-error
         > .m-field-control
-          @include theme.preferred
-            border-bottom-color: theme.style(error)
+          border-bottom-color: var(--error)
 
           > .m-field-trailing
             .m-icon
-              @include theme.preferred
-                color: theme.style(error)
+              color: var(--error)
 
           > .m-field-body
             > .m-typography
               &.m-label
-                @include theme.preferred
-                  color: theme.style(error)
+                color: var(--error)
 
         > .m-field-support
           > .m-typography
             &.m-body,
             &.m-label
-              @include theme.preferred
-                color: theme.style(error)
+              color: var(--error)
 
       &:hover:not(.focused):not(.disabled),
       &.hovered:not(.focused):not(.disabled)
         cursor: pointer
 
         > .m-field-control
-          @include theme.preferred
-            border-bottom-color: theme.style(on-surface)
+          border-bottom-color: var(--on-surface)
 
           &::before
             display: block
 
-            @include theme.preferred
-              background: conversion.hex-to-rgba(theme.style(on-surface), 8%)
+            background: conversion.hex-to-rgba(var(--on-surface), 8%)
 
         &.has-error
           > .m-field-control
-            @include theme.preferred
-              border-bottom-color: theme.style(on-error-container)
+            border-bottom-color: var(--on-error-container)
 
             > .m-field-trailing
               .m-icon
-                @include theme.preferred
-                  color: theme.style(on-error-container)
+                color: var(--on-error-container)
 
             > .m-field-body
               > .m-typography
                 &.m-label
-                  @include theme.preferred
-                    color: theme.style(on-error-container)
+                  color: var(--on-error-container)
 
       &:focus:not(.hovered):not(.disabled),
       &.focused:not(.hovered):not(.disabled)
         > .m-field-control
-          @include theme.preferred
-            border-bottom-color: theme.style(primary)
+          border-bottom-color: var(--primary)
 
           &::before
             display: block
 
-            @include theme.preferred
-              border-bottom-color: theme.style(primary)
+            border-bottom-color: var(--primary)
 
           > .m-field-body
             > .m-typography
               &.m-label
-                @include theme.preferred
-                  color: theme.style(primary)
+                color: var(--primary)
 
         &.has-error
           > .m-field-control
-            @include theme.preferred
-              border-bottom-color: theme.style(error)
+            border-bottom-color: var(--error)
 
             &::before
-              @include theme.preferred
-                border-bottom-color: theme.style(error)
+              border-bottom-color: var(--error)
 
             > .m-field-body
               > .m-typography
                 &.m-label
-                  @include theme.preferred
-                    color: theme.style(error)
+                  color: var(--error)
 
               > .m-field-input
-                @include theme.preferred
-                  caret-color: theme.style(error)
+                caret-color: var(--error)
 
     &:disabled:not(.hovered):not(.focused),
     &[disabled="true"]:not(.hovered):not(.focused),
     &.disabled:not(.hovered):not(.focused)
       > .m-field-control
-        @include theme.preferred
-          background: conversion.hex-to-rgba(theme.style(on-surface), 4%)
-          border-bottom-color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+        background: conversion.hex-to-rgba(var(--on-surface), 4%)
+        border-bottom-color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
         > .m-field-body
           > .m-field-input
@@ -459,16 +432,14 @@
             &:-webkit-autofill:hover,
             &:-webkit-autofill:focus,
             &:-webkit-autofill:active
-              @include theme.preferred
-                -webkit-text-fill-color: conversion.hex-to-rgba(theme.style(on-surface), 38%) !important
-                -webkit-box-shadow: 0 0 0 30px inset conversion.hex-to-rgba(theme.style(on-surface), 4%) !important
+              -webkit-text-fill-color: conversion.hex-to-rgba(var(--on-surface), 38%) !important
+              -webkit-box-shadow: 0 0 0 30px inset conversion.hex-to-rgba(var(--on-surface), 4%) !important
 
       > .m-field-support
         > .m-typography
           &.m-body,
           &.m-label
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+            color: conversion.hex-to-rgba(var(--on-surface), 38%)
 
   &.m-outlined
     > .m-field-control
@@ -505,123 +476,105 @@
         > .m-field-body
           > .m-typography
             &.m-label
-              @include theme.preferred
-                background: theme.style(surface)
+              background: var(--surface)
 
     &,
     &.enabled
       > .m-field-control
-        @include theme.preferred
-          border-color: theme.style(outline)
+        border-color: var(--outline)
 
         > .m-field-leading,
         > .m-field-trailing
           > .m-icon
             @include theme.preferred
-              color: theme.style(on-surface-variant)
+              color: var(--on-surface-variant)
 
         > .m-field-body
           > .m-typography
             &.m-label
-              @include theme.preferred
-                color: theme.style(on-surface-variant)
+              color: var(--on-surface-variant)
 
           > .m-field-prefix,
           > .m-field-suffix
             > .m-typography
               &.m-label
-                @include theme.preferred
-                  color: theme.style(on-surface-variant)
+                color: var(--on-surface-variant)
 
           > .m-field-input
             background: transparent
 
-            @include theme.preferred
-              color: theme.style(on-surface)
-              caret-color: theme.style(primary)
+            color: var(--on-surface)
+            caret-color: var(--primary)
 
             &:-webkit-autofill,
             &:-webkit-autofill:hover,
             &:-webkit-autofill:focus,
             &:-webkit-autofill:active
-              @include theme.preferred
-                -webkit-text-fill-color: theme.style(on-surface-variant) !important
-                -webkit-box-shadow: 0 0 0 30px inset theme.style(surface) !important
+              -webkit-text-fill-color: var(--on-surface-variant) !important
+              -webkit-box-shadow: 0 0 0 30px inset var(--surface) !important
 
       > .m-field-support
         > .m-typography
           &.m-body,
           &.m-label
-            @include theme.preferred
-              color: theme.style(on-surface-variant)
+            color: var(--on-surface-variant)
 
       &.has-error
         > .m-field-control
-          @include theme.preferred
-            border-color: theme.style(error)
+          border-color: var(--error)
 
           > .m-field-trailing
             > .m-icon
-              @include theme.preferred
-                color: theme.style(error)
+              color: var(--error)
 
           > .m-field-body
             > .m-typography
               &.m-label
-                @include theme.preferred
-                  color: theme.style(error)
+                color: var(--error)
 
         > .m-field-support
           > .m-typography
             &.m-body,
             &.m-label
-              @include theme.preferred
-                color: theme.style(error)
+              color: var(--error)
 
       &:hover:not(.focused):not(.disabled),
       &.hovered:not(.focused):not(.disabled)
         cursor: pointer
 
         > .m-field-control
-          @include theme.preferred
-            border-color: theme.style(on-surface)
+          border-color: var(--on-surface)
 
           > .m-field-body
             > .m-typography
               &.m-label
-                @include theme.preferred
-                  color: theme.style(on-surface)
+                color: var(--on-surface)
 
             > .m-field-prefix,
             > .m-field-suffix
               > .m-typography
                 &.m-label
-                  @include theme.preferred
-                    color: theme.style(on-surface)
+                  color: var(--on-surface)
 
         &.has-error
           > .m-field-control
-            @include theme.preferred
-              border-color: theme.style(on-error-container)
+            border-color: var(--on-error-container)
 
             > .m-field-trailing
               .m-icon
-                @include theme.preferred
-                  color: theme.style(on-error-container)
+                color: var(--on-error-container)
 
             > .m-field-body
               > .m-typography
                 &.m-label
-                  @include theme.preferred
-                    color: theme.style(on-error-container)
+                  color: var(--on-error-container)
 
       &:focus:not(.hovered):not(.disabled),
       &.focused:not(.hovered):not(.disabled)
         > .m-field-control
           &,
           &::before
-            @include theme.preferred
-              border-color: theme.style(primary)
+            border-color: var(--primary)
 
           &::before
             display: block
@@ -629,33 +582,28 @@
           > .m-field-body
             > .m-typography
               &.m-label
-                @include theme.preferred
-                  background: theme.style(surface)
-                  color: theme.style(primary)
+                background: var(--surface)
+                color: var(--primary)
 
         &.has-error
           > .m-field-control
             &,
             &::before
-              @include theme.preferred
-                border-color: theme.style(error)
+              border-color: var(--error)
 
             > .m-field-body
               > .m-typography
                 &.m-label
-                  @include theme.preferred
-                    color: theme.style(error)
+                  color: var(--error)
 
               > .m-field-input
-                @include theme.preferred
-                  caret-color: theme.style(error)
+                caret-color: var(--error)
 
     &:disabled:not(.hovered):not(.focused),
     &[disabled="true"]:not(.hovered):not(.focused),
     &.disabled:not(.hovered):not(.focused)
       > .m-field-control
-        @include theme.preferred
-          border-color: conversion.hex-to-rgba(theme.style(on-surface), 12%)
+        border-color: conversion.hex-to-rgba(var(--on-surface), 12%)
 
         > .m-field-body
           > .m-field-input
@@ -663,12 +611,10 @@
             &:-webkit-autofill:hover,
             &:-webkit-autofill:focus,
             &:-webkit-autofill:active
-              @include theme.preferred
-                -webkit-text-fill-color: conversion.hex-to-rgba(theme.style(on-surface), 38%) !important
+              -webkit-text-fill-color: conversion.hex-to-rgba(var(--on-surface), 38%) !important
 
       > .m-field-support
         > .m-typography
           &.m-body,
           &.m-label
-            @include theme.preferred
-              color: conversion.hex-to-rgba(theme.style(on-surface), 38%)
+            color: conversion.hex-to-rgba(var(--on-surface), 38%)
