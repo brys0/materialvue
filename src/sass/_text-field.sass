@@ -30,7 +30,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@use './theme'
 @use './conversion'
 
 %m-text-field
@@ -486,8 +485,7 @@
         > .m-field-leading,
         > .m-field-trailing
           > .m-icon
-            @include theme.preferred
-              color: var(--on-surface-variant)
+            color: var(--on-surface-variant)
 
         > .m-field-body
           > .m-typography
