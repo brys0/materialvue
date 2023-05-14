@@ -32,61 +32,61 @@
 
 @use '../../conversion'
 
-$neutral-100: #FFFFFF
-$neutral-0: #000000
+$neutral-100: conversion.format-to-rgb(#FFFFFF)
+$neutral-0: conversion.format-to-rgb(#000000)
 
-$primary: #D0BCFF
-$on-primary: #381E72
-$primary-container: #4F378B
-$on-primary-container: #EADDFF
-$inverse-primary: #6750A4
+$primary: conversion.format-to-rgb(#D0BCFF)
+$on-primary: conversion.format-to-rgb(#381E72)
+$primary-container: conversion.format-to-rgb(#4F378B)
+$on-primary-container: conversion.format-to-rgb(#EADDFF)
+$inverse-primary: conversion.format-to-rgb(#6750A4)
 
-$secondary: #CCC2DC
-$on-secondary: #332D41
-$secondary-container: #4A4458
-$on-secondary-container: #E8DEF8
+$secondary: conversion.format-to-rgb(#CCC2DC)
+$on-secondary: conversion.format-to-rgb(#332D41)
+$secondary-container: conversion.format-to-rgb(#4A4458)
+$on-secondary-container: conversion.format-to-rgb(#E8DEF8)
 
-$tertiary: #EFB8C8
-$on-tertiary: #492532
-$tertiary-container: #633B48
-$on-tertiary-container: #FFD8E4
+$tertiary: conversion.format-to-rgb(#EFB8C8)
+$on-tertiary: conversion.format-to-rgb(#492532)
+$tertiary-container: conversion.format-to-rgb(#633B48)
+$on-tertiary-container: conversion.format-to-rgb(#FFD8E4)
 
-$error: #F2B8B5
-$on-error: #601410
-$error-container: #8C1D18
-$on-error-container: #F9DEDC
+$error: conversion.format-to-rgb(#F2B8B5)
+$on-error: conversion.format-to-rgb(#601410)
+$error-container: conversion.format-to-rgb(#8C1D18)
+$on-error-container: conversion.format-to-rgb(#F9DEDC)
 
-$background: #141218
-$on-background: #E6E0E9
+$background: conversion.format-to-rgb(#141218)
+$on-background: conversion.format-to-rgb(#E6E0E9)
 
-$surface: #141218
-$on-surface: #E6E0E9
-$surface-variant: #49454F
-$on-surface-variant: #CAC4D0
+$surface: conversion.format-to-rgb(#141218)
+$on-surface: conversion.format-to-rgb(#E6E0E9)
+$surface-variant: conversion.format-to-rgb(#49454F)
+$on-surface-variant: conversion.format-to-rgb(#CAC4D0)
 
-$surface-tint: #D0BCFF
+$surface-tint: conversion.format-to-rgb(#D0BCFF)
 
-$inverse-surface: #E6E0E9
-$on-inverse-surface: #322F35
+$inverse-surface: conversion.format-to-rgb(#E6E0E9)
+$on-inverse-surface: conversion.format-to-rgb(#322F35)
 
-$outline: #938F99
-$outline-variant: #49454F
+$outline: conversion.format-to-rgb(#938F99)
+$outline-variant: conversion.format-to-rgb(#49454F)
 
-$scrim: conversion.hex-to-rgba($neutral-0, 0.32)
+$scrim: rgba(#000000, 0.32)
 
-$shadow-0: 0 0 0 conversion.hex-to-rgba($neutral-0, 0), 0 0 0 0 conversion.hex-to-rgba($neutral-0, 0)
-$shadow-1: 0px 1px 2px conversion.hex-to-rgba($neutral-0, 0.3), 0px 1px 3px 1px conversion.hex-to-rgba($neutral-0, 0.15)
-$shadow-2: 0px 1px 2px conversion.hex-to-rgba($neutral-0, 0.3), 0px 2px 6px 2px conversion.hex-to-rgba($neutral-0, 0.15)
-$shadow-3: 0px 4px 8px 3px conversion.hex-to-rgba($neutral-0, 0.15), 0px 1px 3px conversion.hex-to-rgba($neutral-0, 0.3)
-$shadow-4: 0px 6px 10px 4px conversion.hex-to-rgba($neutral-0, 0.15), 0px 2px 3px conversion.hex-to-rgba($neutral-0, 0.3)
-$shadow-5: 0px 8px 12px 6px conversion.hex-to-rgba($neutral-0, 0.15), 0px 4px 4px conversion.hex-to-rgba($neutral-0, 0.3)
+$shadow-0: 0 0 0 rgba(#000000, 0), 0 0 0 0 rgba(#000000, 0)
+$shadow-1: 0px 1px 2px rgba(#000000, 0.3), 0px 1px 3px 1px rgba(#000000, 0.15)
+$shadow-2: 0px 1px 2px rgba(#000000, 0.3), 0px 2px 6px 2px rgba(#000000, 0.15)
+$shadow-3: 0px 4px 8px 3px rgba(#000000, 0.15), 0px 1px 3px rgba(#000000, 0.3)
+$shadow-4: 0px 6px 10px 4px rgba(#000000, 0.15), 0px 2px 3px rgba(#000000, 0.3)
+$shadow-5: 0px 8px 12px 6px rgba(#000000, 0.15), 0px 4px 4px rgba(#000000, 0.3)
 
-$elevation-0: linear-gradient(0deg, conversion.hex-to-rgba($surface-tint, 0), conversion.hex-to-rgba($surface-tint, 0))
-$elevation-1: linear-gradient(0deg, conversion.hex-to-rgba($surface-tint, 0.05), conversion.hex-to-rgba($surface-tint, 0.05))
-$elevation-2: linear-gradient(0deg, conversion.hex-to-rgba($surface-tint, 0.08), conversion.hex-to-rgba($surface-tint, 0.08))
-$elevation-3: linear-gradient(0deg, conversion.hex-to-rgba($surface-tint, 0.11), conversion.hex-to-rgba($surface-tint, 0.11))
-$elevation-4: linear-gradient(0deg, conversion.hex-to-rgba($surface-tint, 0.12), conversion.hex-to-rgba($surface-tint, 0.12))
-$elevation-5: linear-gradient(0deg, conversion.hex-to-rgba($surface-tint, 0.14), conversion.hex-to-rgba($surface-tint, 0.14))
+$elevation-0: linear-gradient(0deg, rgba(#D0BCFF, 0), rgba(#D0BCFF, 0))
+$elevation-1: linear-gradient(0deg, rgba(#D0BCFF, 0.05), rgba(#D0BCFF, 0.05))
+$elevation-2: linear-gradient(0deg, rgba(#D0BCFF, 0.08), rgba(#D0BCFF, 0.08))
+$elevation-3: linear-gradient(0deg, rgba(#D0BCFF, 0.11), rgba(#D0BCFF, 0.11))
+$elevation-4: linear-gradient(0deg, rgba(#D0BCFF, 0.12), rgba(#D0BCFF, 0.12))
+$elevation-5: linear-gradient(0deg, rgba(#D0BCFF, 0.14), rgba(#D0BCFF, 0.14))
 
 .material
   .theme-dark,

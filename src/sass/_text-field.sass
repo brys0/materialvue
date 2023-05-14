@@ -306,69 +306,69 @@
     &,
     &.enabled
       > .m-field-control
-        border-bottom-color: var(--on-surface-variant)
-        background: var(--surface-variant)
+        border-bottom-color: rgb(var(--on-surface-variant))
+        background: rgb(var(--surface-variant))
 
         > .m-field-leading,
         > .m-field-trailing
           > .m-icon
-            color: var(--on-surface-variant)
+            color: rgb(var(--on-surface-variant))
 
         > .m-field-body
           > .m-typography
             &.m-label
-              color: var(--on-surface-variant)
+              color: rgb(var(--on-surface-variant))
 
           > .m-field-prefix,
           > .m-field-suffix
             > .m-typography
               &.m-label
-                color: var(--on-surface-variant)
+                color: rgb(var(--on-surface-variant))
 
           > .m-field-input
             background: transparent
 
-            color: var(--on-surface)
-            caret-color: var(--primary)
+            color: rgb(var(--on-surface))
+            caret-color: rgb(var(--primary))
 
             &:-webkit-autofill,
             &:-webkit-autofill:hover,
             &:-webkit-autofill:focus,
             &:-webkit-autofill:active
-              -webkit-text-fill-color: var(--on-surface) !important
-              -webkit-box-shadow: 0 0 0 30px inset var(--surface-variant) !important
+              -webkit-text-fill-color: rgb(var(--on-surface)) !important
+              -webkit-box-shadow: 0 0 0 30px inset rgb(var(--surface-variant)) !important
 
       > .m-field-support
         > .m-typography
           &.m-body,
           &.m-label
-            color: var(--on-surface-variant)
+            color: rgb(var(--on-surface-variant))
 
       &.has-error
         > .m-field-control
-          border-bottom-color: var(--error)
+          border-bottom-color: rgb(var(--error))
 
           > .m-field-trailing
             .m-icon
-              color: var(--error)
+              color: rgb(var(--error))
 
           > .m-field-body
             > .m-typography
               &.m-label
-                color: var(--error)
+                color: rgb(var(--error))
 
         > .m-field-support
           > .m-typography
             &.m-body,
             &.m-label
-              color: var(--error)
+              color: rgb(var(--error))
 
       &:hover:not(.focused):not(.disabled),
       &.hovered:not(.focused):not(.disabled)
         cursor: pointer
 
         > .m-field-control
-          border-bottom-color: var(--on-surface)
+          border-bottom-color: rgb(var(--on-surface))
 
           &::before
             display: block
@@ -377,46 +377,46 @@
 
         &.has-error
           > .m-field-control
-            border-bottom-color: var(--on-error-container)
+            border-bottom-color: rgb(var(--on-error-container))
 
             > .m-field-trailing
               .m-icon
-                color: var(--on-error-container)
+                color: rgb(var(--on-error-container))
 
             > .m-field-body
               > .m-typography
                 &.m-label
-                  color: var(--on-error-container)
+                  color: rgb(var(--on-error-container))
 
       &:focus:not(.hovered):not(.disabled),
       &.focused:not(.hovered):not(.disabled)
         > .m-field-control
-          border-bottom-color: var(--primary)
+          border-bottom-color: rgb(var(--primary))
 
           &::before
             display: block
 
-            border-bottom-color: var(--primary)
+            border-bottom-color: rgb(var(--primary))
 
           > .m-field-body
             > .m-typography
               &.m-label
-                color: var(--primary)
+                color: rgb(var(--primary))
 
         &.has-error
           > .m-field-control
-            border-bottom-color: var(--error)
+            border-bottom-color: rgb(var(--error))
 
             &::before
-              border-bottom-color: var(--error)
+              border-bottom-color: rgb(var(--error))
 
             > .m-field-body
               > .m-typography
                 &.m-label
-                  color: var(--error)
+                  color: rgb(var(--error))
 
               > .m-field-input
-                caret-color: var(--error)
+                caret-color: rgb(var(--error))
 
     &:disabled:not(.hovered):not(.focused),
     &[disabled="true"]:not(.hovered):not(.focused),
@@ -475,104 +475,104 @@
         > .m-field-body
           > .m-typography
             &.m-label
-              background: var(--surface)
+              background: rgb(var(--surface))
 
     &,
     &.enabled
       > .m-field-control
-        border-color: var(--outline)
+        border-color: rgb(var(--outline))
 
         > .m-field-leading,
         > .m-field-trailing
           > .m-icon
-            color: var(--on-surface-variant)
+            color: rgb(var(--on-surface-variant))
 
         > .m-field-body
           > .m-typography
             &.m-label
-              color: var(--on-surface-variant)
+              color: rgb(var(--on-surface-variant))
 
           > .m-field-prefix,
           > .m-field-suffix
             > .m-typography
               &.m-label
-                color: var(--on-surface-variant)
+                color: rgb(var(--on-surface-variant))
 
           > .m-field-input
             background: transparent
 
-            color: var(--on-surface)
-            caret-color: var(--primary)
+            color: rgb(var(--on-surface))
+            caret-color: rgb(var(--primary))
 
             &:-webkit-autofill,
             &:-webkit-autofill:hover,
             &:-webkit-autofill:focus,
             &:-webkit-autofill:active
-              -webkit-text-fill-color: var(--on-surface-variant) !important
-              -webkit-box-shadow: 0 0 0 30px inset var(--surface) !important
+              -webkit-text-fill-color: rgb(var(--on-surface-variant)) !important
+              -webkit-box-shadow: 0 0 0 30px inset rgb(var(--surface)) !important
 
       > .m-field-support
         > .m-typography
           &.m-body,
           &.m-label
-            color: var(--on-surface-variant)
+            color: rgb(var(--on-surface-variant))
 
       &.has-error
         > .m-field-control
-          border-color: var(--error)
+          border-color: rgb(var(--error))
 
           > .m-field-trailing
             > .m-icon
-              color: var(--error)
+              color: rgb(var(--error))
 
           > .m-field-body
             > .m-typography
               &.m-label
-                color: var(--error)
+                color: rgb(var(--error))
 
         > .m-field-support
           > .m-typography
             &.m-body,
             &.m-label
-              color: var(--error)
+              color: rgb(var(--error))
 
       &:hover:not(.focused):not(.disabled),
       &.hovered:not(.focused):not(.disabled)
         cursor: pointer
 
         > .m-field-control
-          border-color: var(--on-surface)
+          border-color: rgb(var(--on-surface))
 
           > .m-field-body
             > .m-typography
               &.m-label
-                color: var(--on-surface)
+                color: rgb(var(--on-surface))
 
             > .m-field-prefix,
             > .m-field-suffix
               > .m-typography
                 &.m-label
-                  color: var(--on-surface)
+                  color: rgb(var(--on-surface))
 
         &.has-error
           > .m-field-control
-            border-color: var(--on-error-container)
+            border-color: rgb(var(--on-error-container))
 
             > .m-field-trailing
               .m-icon
-                color: var(--on-error-container)
+                color: rgb(var(--on-error-container))
 
             > .m-field-body
               > .m-typography
                 &.m-label
-                  color: var(--on-error-container)
+                  color: rgb(var(--on-error-container))
 
       &:focus:not(.hovered):not(.disabled),
       &.focused:not(.hovered):not(.disabled)
         > .m-field-control
           &,
           &::before
-            border-color: var(--primary)
+            border-color: rgb(var(--primary))
 
           &::before
             display: block
@@ -580,22 +580,22 @@
           > .m-field-body
             > .m-typography
               &.m-label
-                background: var(--surface)
-                color: var(--primary)
+                background: rgb(var(--surface))
+                color: rgb(var(--primary))
 
         &.has-error
           > .m-field-control
             &,
             &::before
-              border-color: var(--error)
+              border-color: rgb(var(--error))
 
             > .m-field-body
               > .m-typography
                 &.m-label
-                  color: var(--error)
+                  color: rgb(var(--error))
 
               > .m-field-input
-                caret-color: var(--error)
+                caret-color: rgb(var(--error))
 
     &:disabled:not(.hovered):not(.focused),
     &[disabled="true"]:not(.hovered):not(.focused),

@@ -36,5 +36,8 @@
 @function to-rem($value)
   @return $value * 1rem
 
+@function format-to-rgb($hexcolor)
+  @return red($hexcolor), green($hexcolor), blue($hexcolor)
+  
 @function hex-to-rgba($hexcolor, $opacity: 1)
   @return rgba($hexcolor, $opacity)
