@@ -181,7 +181,7 @@ a.m-button
         box-shadow: var(--shadow-1)
 
         &::before
-          background: conversion.hex-to-rgba(var(--on-primary), 8%)
+          background: conversion.hex-to-rgba(var(--primary), 8%)
 
       &:focus:not(.hovered):not(.pressed):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.disabled)
@@ -300,19 +300,19 @@ a.m-button
       &:hover:not(.focused):not(.pressed):not(.disabled),
       &.hovered:not(.focused):not(.pressed):not(.disabled)
         &::before
-          background: conversion.hex-to-rgba(var(--primary), 8%)
+          background: conversion.hex-to-rgba(var(--primary), 8%) !important
 
       &:focus:not(.hovered):not(.pressed):not(.disabled),
       &.focused:not(.hovered):not(.pressed):not(.disabled)
         border-color: var(--primary)
 
         &::before
-          background: conversion.hex-to-rgba(var(--primary), 12%)
+          background: conversion.hex-to-rgba(var(--primary), 12%) !important
 
       &:active:not(.hovered):not(.focused):not(.disabled),
       &.pressed:not(.hovered):not(.focused):not(.disabled)
         &::before
-          background: conversion.hex-to-rgba(var(--primary), 12%)
+          background: conversion.hex-to-rgba(var(--primary), 12%) !important
 
     &:disabled:not(.hovered):not(.focused):not(.pressed),
     &[disabled]:not(.hovered):not(.focused):not(.pressed),
