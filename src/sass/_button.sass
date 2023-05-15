@@ -602,7 +602,7 @@ a.m-button
             > .m-icon
               background: rgb(var(--inverse-surface))
               border-color: rgb(var(--inverse-surface))
-              color: rgb(var(--on-inverse-surface))
+              color: rgb(var(--inverse-on-surface))
 
         &:hover:not(.focused):not(.pressed):not(.disabled),
         &.hovered:not(.focused):not(.pressed):not(.disabled)
@@ -615,16 +615,16 @@ a.m-button
 
             &.selected
               &::before
-                background: rgba(var(--on-inverse-surface), 8%)
+                background: rgba(var(--inverse-on-surface), 8%)
 
         &:focus:not(.hovered):not(.pressed):not(.disabled),
         &.focused:not(.hovered):not(.pressed):not(.disabled)
           &::before
-            background: rgba(var(--on-inverse-surface), 12%)
+            background: rgba(var(--inverse-on-surface), 12%)
 
           &.toggle
             &::before
-              background: rgba(var(--on-inverse-surface), 12%)
+              background: rgba(var(--inverse-on-surface), 12%)
 
             &.selected
               &::before
@@ -633,11 +633,11 @@ a.m-button
         &:active:not(.hovered):not(.focused):not(.disabled),
         &.pressed:not(.hovered):not(.focused):not(.disabled)
           &::before
-            background: rgba(var(--on-inverse-surface), 12%)
+            background: rgba(var(--inverse-on-surface), 12%)
 
           &.toggle
             &::before
-              background: rgba(var(--on-inverse-surface), 12%)
+              background: rgba(var(--inverse-on-surface), 12%)
 
             &.selected
               &::before
