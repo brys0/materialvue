@@ -99,7 +99,7 @@ body
   @include adaptive.is-hoverable
     overflow: hidden
 
-  background: rgb(var(--background))
+  background: rgb(var(--surface))
 
 .m-top-app-bar
   position: sticky
@@ -109,8 +109,7 @@ body
   grid-row: row-1-start / row-1-end
   grid-column: col-2-start / col-3-end
   z-index: 3
-
-  background: rgb(var(--background))
+  background: rgb(var(--surface))
 
 .m-navigation-rail
   position: sticky
@@ -119,8 +118,7 @@ body
   min-width: 80px
   height: 100vh
   z-index: 8
-
-  background: var(--elevation-1), rgb(var(--surface))
+  background: rgb(var(--surface-container))
 
   @include adaptive.is-lt-medium
     display: none
@@ -137,8 +135,7 @@ body
   grid-row: row-1-start / row-3-end
   grid-column: col-2-start / col-2-end
   z-index: 7
-
-  background: var(--elevation-1), rgb(var(--surface))
+  background: rgb(var(--surface-container))
 
   &.is-opened
     @include adaptive.is-gt-small
@@ -161,7 +158,6 @@ body
   @include adaptive.is-lt-large
     border-top-right-radius: 16px
     border-bottom-right-radius: 16px
-
     box-shadow: var(--shadow-3)
 
 .m-toolbar
@@ -202,6 +198,5 @@ body
   grid-row: row-1-start / row-3-end
   grid-column: col-1-start / col-4-end
   z-index: 4
+  background: rgba(var(--scrim), 0.32)
   display: none
-
-  background: var(--scrim)
