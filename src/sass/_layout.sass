@@ -85,8 +85,17 @@
 %m-column
   align-items: center
   align-content: stretch
-  justify-items: center
+  justify-items: stretch
   justify-content: stretch
+
+  &.start
+    align-content: start
+
+  &.center
+    align-content: center
+
+  &.end
+    align-content: end
 
 %m-column-flex
   @extend %m-column
@@ -94,7 +103,6 @@
   display: flex
   flex-flow: column
   flex: 1 0 0
-  justify-content: center
 
   @include flex('', 12)
 
@@ -138,8 +146,6 @@
   @extend %m-column
 
   display: grid
-  align-items: stretch
-  justify-items: stretch
 
   @include grid-column('', 12)
 
@@ -187,6 +193,15 @@
   justify-items: stretch
   justify-content: stretch
 
+  &.start
+    justify-items: start
+
+  &.center
+    justify-items: center
+
+  &.end
+    justify-items: end
+
 %m-tile-grid
   @extend %m-tile
 
@@ -197,23 +212,12 @@
     @include adaptive.is-gt-compact
       margin-top: 24px
 
-%m-row
-  @include adaptive.is-compact
-    gap: 16px
-
-  @include adaptive.is-gt-compact
-    gap: 24px
-
 %m-row-flex
-  @extend %m-row
-
   display: flex
   flex-flow: row
   flex: 1 0 0
 
 %m-row-grid
-  @extend %m-row
-
   display: grid
   grid-template-columns: repeat(auto-fit, minmax(math.div(100, 12) * 1%, 1fr))
 
@@ -271,27 +275,44 @@
 %m-adaptive-grid
   @include adaptive.is-compact
     margin: 0 16px
-    gap: 72px
+
+    > %m-section-grid
+      + %m-section-grid
+        margin-top: 96px
+
+      > %m-row-grid
+        > %m-column-grid
+          + %m-column-grid
+            margin-left: 16px
 
   @include adaptive.is-gt-compact
     margin: 0 24px
-    gap: 96px
+
+    > %m-section-grid
+      + %m-section-grid
+        margin-top: 96px
+
+      > %m-row-grid
+        > %m-column-grid
+          + %m-column-grid
+            margin-left: 24px
 
   > %m-section-grid
     @include adaptive.is-compact
-      gap: 16px
+      > %m-row-grid
+        + %m-row-grid
+          margin-top: 16px
 
     @include adaptive.is-gt-compact
-      gap: 24px
+      > %m-row-grid
+        + %m-row-grid
+          margin-top: 24px
 
     @include adaptive.is-gt-medium
-      margin: auto
+      margin-left: auto
+      margin-right: auto
       width: 100%
       max-width: 1040px
-
-    > %m-row-grid
-      > %m-column-grid
-        justify-items: stretch
 
 @include adaptive.is-compact
   .is-gt-compact,
