@@ -35,6 +35,20 @@
 @use './adaptive'
 @use './conversion'
 
+@mixin with-count($n)
+  @if $n == 1
+    &:first-child:nth-last-child(1)
+      @content
+  @else
+    &:first-child:nth-last-child(#{$n}),
+    &:first-child:nth-last-child(#{$n}) ~ &
+      @content
+
+@mixin nth-child($count)
+  @for $i from 1 through $count
+    @include with-count(#{$i})
+      grid-column: span 1
+
 @mixin grid-column($size, $count)
   @for $i from 1 through $count
     &.is-#{$size}#{$i}
@@ -201,28 +215,23 @@
   @extend %m-row
 
   display: grid
+  grid-template-columns: repeat(auto-fit, minmax(math.div(100, 12) * 1%, 1fr))
+
+  @include grid-template-columns('', 12)
 
   @include adaptive.is-compact
-    grid-template-columns: repeat(12, 1fr)
-
     @include grid-template-columns('compact-', 12)
 
   @include adaptive.is-small
     @include grid-template-columns('small-', 12)
 
   @include adaptive.is-medium
-    grid-template-columns: repeat(12, 1fr)
-
     @include grid-template-columns('medium-', 12)
 
   @include adaptive.is-large
-    grid-template-columns: repeat(12, 1fr)
-
     @include grid-template-columns('large-', 12)
 
   @include adaptive.is-expanded
-    grid-template-columns: repeat(12, 1fr)
-
     @include grid-template-columns('expanded-', 12)
 
 .m-layout
