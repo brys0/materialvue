@@ -51,103 +51,113 @@
     grid-auto-rows: minmax(72px, max-content)
 
   > .m-rail-body
-    align-content: start
+    align-content: stretch
     overflow-x: hidden
     overflow-y: scroll
 
-    > .m-rail
-      &.m-button
-        grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] max-content [row-2-end]
-        grid-template-columns: [col-1-start] 1fr [col-1-end]
-        align-items: center
-        align-content: center
-        justify-items: center
-        justify-content: center
-        gap: 4px
+    &,
+    &.start
+      align-content: start
+
+    &.center
+      align-content: center
+
+    &.end
+      align-content: end
+
+  .m-rail
+    &.m-button
+      grid-template-rows: [row-1-start] 1fr [row-1-end row-2-start] max-content [row-2-end]
+      grid-template-columns: [col-1-start] 1fr [col-1-end]
+      align-items: center
+      align-content: center
+      justify-items: center
+      justify-content: center
+      gap: 4px
+
+      &::before
+        display: none
+
+      > .m-icon
+        position: relative
+        width: 56px
+        height: 32px
+        line-height: 32px
+        font-size: 20px
+        grid-row: row-1-start / row-1-end
+        grid-column: col-1-start / col-1-end
+        border-radius: 16px
 
         &::before
-          display: none
-
-        > .m-icon
-          position: relative
-          width: 56px
-          height: 32px
-          line-height: 32px
-          font-size: 20px
-          grid-row: row-1-start / row-1-end
-          grid-column: col-1-start / col-1-end
+          content: ' '
+          position: absolute
+          top: 0
+          left: 0
+          bottom: 0
+          right: 0
+          display: block
           border-radius: 16px
 
-          &::before
-            content: ' '
-            position: absolute
-            top: 0
-            left: 0
-            bottom: 0
-            right: 0
-            display: block
-            border-radius: 16px
+      > .m-typography
+        &.m-label
+          @extend %m-typography-label-medium
+
+          grid-row: row-2-start / row-2-end
+          grid-column: col-1-start / col-1-end
+
+      &,
+      &.enabled
+        > .m-icon
+          color: rgb(var(--on-surface-variant))
 
         > .m-typography
           &.m-label
-            @extend %m-typography-label-medium
-
-            grid-row: row-2-start / row-2-end
-            grid-column: col-1-start / col-1-end
-
-        &,
-        &.enabled
-          > .m-icon
             color: rgb(var(--on-surface-variant))
+
+        &.selected
+          > .m-icon
+            background: rgb(var(--secondary-container))
+            color: rgb(var(--on-secondary-container))
 
           > .m-typography
             &.m-label
-              color: rgb(var(--on-surface-variant))
+              color: rgb(var(--on-surface))
+
+        &:hover:not(.focused):not(.pressed):not(.disabled),
+        &.hovered:not(.focused):not(.pressed):not(.disabled)
+          > .m-icon
+            &::before
+              background: rgba(var(--on-surface-variant), 8%)
 
           &.selected
             > .m-icon
-              background: rgb(var(--secondary-container))
-              color: rgb(var(--on-secondary-container))
+              &::before
+                background: rgba(var(--on-surface), 8%)
 
-            > .m-typography
-              &.m-label
-                color: rgb(var(--on-surface))
+        &:focus:not(.hovered):not(.pressed):not(.disabled),
+        &.focused:not(.hovered):not(.pressed):not(.disabled)
+          > .m-icon
+            &::before
+              background: rgba(var(--on-surface-variant), 12%)
 
-          &:hover:not(.focused):not(.pressed):not(.disabled),
-          &.hovered:not(.focused):not(.pressed):not(.disabled)
+          &.selected
             > .m-icon
               &::before
-                background: rgba(var(--on-surface-variant), 8%)
+                background: rgba(var(--on-surface), 12%)
 
-            &.selected
-              > .m-icon
-                &::before
-                  background: rgba(var(--on-surface), 8%)
+        &:active:not(.hovered):not(.focused):not(.disabled),
+        &.pressed:not(.hovered):not(.focused):not(.disabled)
+          > .m-icon
+            &::before
+              background: rgba(var(--on-surface-variant), 12%)
 
-          &:focus:not(.hovered):not(.pressed):not(.disabled),
-          &.focused:not(.hovered):not(.pressed):not(.disabled)
+          &.selected
             > .m-icon
               &::before
-                background: rgba(var(--on-surface-variant), 12%)
+                background: rgba(var(--on-surface), 12%)
 
-            &.selected
-              > .m-icon
-                &::before
-                  background: rgba(var(--on-surface), 12%)
-
-          &:active:not(.hovered):not(.focused):not(.disabled),
-          &.pressed:not(.hovered):not(.focused):not(.disabled)
-            > .m-icon
-              &::before
-                background: rgba(var(--on-surface-variant), 12%)
-
-            &.selected
-              > .m-icon
-                &::before
-                  background: rgba(var(--on-surface), 12%)
-
-          &:disabled:not(.hovered):not(.focused):not(.pressed),
-          &[disabled]:not(.hovered):not(.focused):not(.pressed),
-          &.disabled:not(.hovered):not(.focused):not(.pressed)
-            > .m-icon
-              color: rgba(var(--on-surface), 38%)
+        &:disabled:not(.hovered):not(.focused):not(.pressed),
+        &[disabled]:not(.hovered):not(.focused):not(.pressed),
+        &.disabled:not(.hovered):not(.focused):not(.pressed)
+          > .m-icon
+            color: rgba(var(--on-surface), 38%)
