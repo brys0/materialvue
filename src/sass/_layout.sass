@@ -205,13 +205,6 @@
 %m-tile-grid
   @extend %m-tile
 
-  + %m-tile-grid
-    @include adaptive.is-compact
-      margin-top: 16px
-
-    @include adaptive.is-gt-compact
-      margin-top: 24px
-
 %m-row-flex
   display: flex
   flex-flow: row
@@ -274,43 +267,43 @@
 
 %m-adaptive-grid
   @include adaptive.is-compact
-    margin: 0 16px
+    gap: 16px
 
     > %m-section-grid
-      + %m-section-grid
-        margin-top: 96px
+      margin: 0 16px
+
+      gap: 16px
 
       > %m-row-grid
+        gap: 16px
+
         > %m-column-grid
-          + %m-column-grid
-            margin-left: 16px
+          gap: 16px
+
+          > %m-tile-grid
+            gap: 16px
 
   @include adaptive.is-gt-compact
+    gap: 24px
+
+    > %m-section-grid
+      margin: 0 24px
+      gap: 24px
+
+      > %m-row-grid
+        gap: 24px
+
+        > %m-column-grid
+          gap: 24px
+
+          > %m-tile-grid
+            gap: 24px
+
+  @include adaptive.is-gt-medium
     margin: 0 24px
 
     > %m-section-grid
-      + %m-section-grid
-        margin-top: 96px
-
-      > %m-row-grid
-        > %m-column-grid
-          + %m-column-grid
-            margin-left: 24px
-
-  > %m-section-grid
-    @include adaptive.is-compact
-      > %m-row-grid
-        + %m-row-grid
-          margin-top: 16px
-
-    @include adaptive.is-gt-compact
-      > %m-row-grid
-        + %m-row-grid
-          margin-top: 24px
-
-    @include adaptive.is-gt-medium
-      margin-left: auto
-      margin-right: auto
+      margin: auto
       width: 100%
       max-width: 1040px
 
