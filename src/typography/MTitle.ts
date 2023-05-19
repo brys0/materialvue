@@ -24,65 +24,44 @@
  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
- * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * SERVICES LOSS OF USE, DATA, OR PROFITS OR BUSINESS INTERRUPTION) HOWEVER
  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
 import {
-	URL,
-	fileURLToPath,
-} from 'node:url'
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
 import {
-	PluginOption,
-	LibraryFormats,
-	defineConfig,
-} from 'vite'
+	MTypography,
+	MTypographySize,
+} from '@/typography/MTypography'
 
-import vue from '@vitejs/plugin-vue'
-import dts from 'vite-plugin-dts'
-
-const name = process.env.npm_package_name
-const srcDir = 'src'
-const entry = `${srcDir}/index.ts`
-const fileName = 'lib-[format]'
-const formats: LibraryFormats[] = [ 'es', 'cjs' ]
-const emptyOutDir = true
-const minify = 'development' !== process.env.NODE_ENV
-
-const alias = {
-	'@': fileURLToPath(new URL(srcDir, import.meta.url)),
+export type MTitleProps = {
+	size?: MTypographySize
 }
 
-const external = [
-	'vue',
-	'vee-validate',
-	'@cosmicmind/foundationjs'
+export const MTitle: FunctionalComponent<MTitleProps> = ({
+	size,
+}, {
+	slots,
+}): VNode => h(MTypography, {
+	size,
+	class: {
+		'm-title': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
+
+MTitle.displayName = 'MTitle'
+
+MTitle.props = [
+	'size'
 ]
 
-const plugins = [
-	vue(),
-	dts()
-] as PluginOption[]
-
-export default defineConfig(() => ({
-	resolve: {
-		alias,
-	},
-	plugins,
-	build: {
-		emptyOutDir,
-		lib: {
-			name,
-			entry,
-			formats,
-			fileName,
-		},
-		rollupOptions: {
-			external,
-		},
-		minify,
-	},
-}))
+export default MTitle
