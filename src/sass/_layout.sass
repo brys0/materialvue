@@ -70,32 +70,65 @@
 
 %m-layout-grid
   display: grid
-  grid-auto-rows: max-content
+  grid-auto-flow: row
+
+%m-section,
+%m-row,
+%m-column,
+%m-tile
+  align-items: stretch
+  align-content: stretch
+  justify-items: stretch
+  justify-content: stretch
+
+  &.align-items-start
+    align-items: start
+
+  &.align-items-center
+    align-items: center
+
+  &.align-items-end
+    align-items: end
+
+  &.align-content-start
+    align-content: start
+
+  &.align-content-center
+    align-content: center
+
+  &.align-content-end
+    align-content: end
+
+  &.justify-items-start
+    justify-items: start
+
+  &.justify-items-center
+    justify-items: center
+
+  &.justify-items-end
+    justify-items: end
+
+  &.justify-content-start
+    justify-content: start
+
+  &.justify-content-center
+    justify-content: center
+
+  &.justify-content-end
+    justify-content: end
 
 %m-section-flex
+  @extend %m-section
+
   display: flex
   flex-flow: column
   flex: 1 0 0
 
 %m-section-grid
+  @extend %m-section
+
   display: grid
-  grid-auto-rows: max-content
   grid-auto-flow: row
-
-%m-column
-  align-items: center
-  align-content: stretch
-  justify-items: stretch
-  justify-content: stretch
-
-  &.start
-    align-content: start
-
-  &.center
-    align-content: center
-
-  &.end
-    align-content: end
 
 %m-column-flex
   @extend %m-column
@@ -146,6 +179,7 @@
   @extend %m-column
 
   display: grid
+  grid-auto-flow: row
 
   @include grid-column('', 12)
 
@@ -185,32 +219,22 @@
   @include adaptive.is-expanded
     @include grid-column('expanded-', 12)
 
-%m-tile
-  display: grid
-  grid-auto-flow: row
-  align-items: start
-  align-content: start
-  justify-items: stretch
-  justify-content: stretch
-
-  &.start
-    justify-items: start
-
-  &.center
-    justify-items: center
-
-  &.end
-    justify-items: end
-
 %m-tile-grid
   @extend %m-tile
 
+  display: grid
+  grid-auto-flow: row
+
 %m-row-flex
+  @extend %m-row
+
   display: flex
   flex-flow: row
   flex: 1 0 0
 
 %m-row-grid
+  @extend %m-row
+
   display: grid
   grid-template-columns: repeat(auto-fit, minmax(math.div(100, 12) * 1%, 1fr))
 
@@ -306,11 +330,11 @@
     > %m-section-grid
       margin: auto
       width: 100%
-      max-width: 1200px
+      max-width: conversion.to-px(adaptive.width(max-medium))
 
       &.full
         width: 100%
-        max-width: 100%
+        max-width: conversion.to-px(adaptive.width(expanded))
 
 @include adaptive.is-compact
   .is-gt-compact,
