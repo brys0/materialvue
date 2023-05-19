@@ -31,9 +31,5 @@
  */
 
 export {
-	default as MApp,
-} from '@/vue/app/MApp.vue'
-
-export {
 	default as M100vh,
 } from '@/vue/app/M100vh.vue'

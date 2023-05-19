@@ -30,7 +30,12 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200')
+.m-icon:not(.m-button)
+  @extend %is-not-selectable
 
-.material-symbols-sharp
-  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 200, 'opsz' 48
+  display: grid
+  align-items: center
+  align-content: center
+  justify-items: center
+  justify-content: center
+  color: rgb(var(--on-background))
