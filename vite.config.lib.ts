@@ -73,6 +73,7 @@ export default defineConfig(() => ({
 	},
 	plugins,
 	build: {
+		minify,
 		emptyOutDir,
 		lib: {
 			name,
@@ -82,7 +83,8 @@ export default defineConfig(() => ({
 		},
 		rollupOptions: {
 			external,
+			assetFileNames: (info): string =>
+				info.name || 'build-filename-undefined',
 		},
-		minify,
 	},
 }))
