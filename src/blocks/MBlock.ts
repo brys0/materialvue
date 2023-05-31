@@ -30,30 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MLayout,
-} from '@/layout/MLayout'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
 
-export {
-	MGrid,
-} from '@/layout/MGrid'
+export type MBlockProps = {}
 
-export {
-	MAdaptive,
-} from '@/layout/MAdaptive'
+export const MBlock: FunctionalComponent<MBlockProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: {
+		'm-block': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
 
-export {
-	MTile,
-} from '@/layout/MTile'
+MBlock.displayName = 'MBlock'
 
-export {
-	MRow,
-} from '@/layout/MRow'
+MBlock.props = []
 
-export {
-	MColumn,
-} from '@/layout/MColumn'
-
-export {
-	MSection,
-} from '@/layout/MSection'
+export default MBlock

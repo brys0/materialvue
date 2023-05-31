@@ -30,30 +30,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
-
-import {
-	MLayout,
-} from '@/layout/MLayout'
-
-export type MFlexProps = {}
-
-export const MFlex: FunctionalComponent<MFlexProps> = (_, {
-	slots,
-}): VNode => h(MLayout, {
-	class: {
-		'm-flex': true,
-	},
-}, {
-	default: () => slots.default?.(),
-})
-
-MFlex.displayName = 'MLayout'
-
-MFlex.props = []
-
-export default MFlex
+export {
+	MBlock,
+} from '@/blocks/MBlock'

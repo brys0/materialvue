@@ -111,9 +111,12 @@ export {
 } from '@/icons'
 
 export {
+	MBlock,
+} from '@/blocks'
+
+export {
 	MLayout,
 	MGrid,
-	MFlex,
 	MAdaptive,
 	MTile,
 	MRow,
