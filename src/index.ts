@@ -167,6 +167,14 @@ export {
 } from '@/menus'
 
 export {
+	MStack,
+	MStackItem,
+	MStackItemLeading,
+	MStackItemBody,
+	MStackItemTrailing,
+} from '@/stack'
+
+export {
 	MList,
 	MListLines,
 	MListItem,
