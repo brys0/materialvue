@@ -44,7 +44,7 @@
     "test:coverage": "vitest run --coverage --config vite.config.test.ts --mode ${VITE_MODE:-test}"
   },
   "devDependencies": {
-    "@cosmicmind/foundationjs": "^0.0.1-rc-050323-1",
+    "@cosmicmind/foundationjs": "^0.0.1-rc-060123-1",
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/node": "^18.7.15",
