@@ -1,6 +1,6 @@
 {
   "name": "@cosmicmind/materialvue",
-  "version": "0.0.1-rc-060123-5",
+  "version": "0.0.1-rc-060223-5",
   "description": "A Material Design framework in TypeScript.",
   "keywords": [],
   "author": {
@@ -43,8 +43,10 @@
     "test:unit": "vitest run --config vite.config.test.ts --mode ${VITE_MODE:-test}",
     "test:coverage": "vitest run --coverage --config vite.config.test.ts --mode ${VITE_MODE:-test}"
   },
+  "dependencies": {
+    "@cosmicmind/foundationjs": "^0.0.1-rc-060223-1"
+  },
   "devDependencies": {
-    "@cosmicmind/foundationjs": "^0.0.1-rc-060123-1",
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/node": "^18.7.15",
