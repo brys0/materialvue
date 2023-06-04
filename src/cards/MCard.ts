@@ -50,7 +50,7 @@ export const MCard = defineComponent({
 	props: {
 		state: {
 			type: String as PropType<MCardState>,
-			default: MCardState.enabled,
+			required: false,
 		},
 	},
 	emits: [ 'click' ],
@@ -70,7 +70,7 @@ export const MCard = defineComponent({
 				disabled: MCardState.disabled === state,
 			},
 			onClick: (event: PointerEvent) => {
-				if (MCardState.enabled === this.$props.state) {
+				if ('undefined' === typeof this.$props.state) {
 					this.$el.blur()
 					this.$emit('click', event)
 				}

@@ -49,7 +49,7 @@ export const MButton = defineComponent({
 	props: {
 		state: {
 			type: String as PropType<MButtonState>,
-			default: MButtonState.enabled,
+			required: false,
 		},
 	},
 	emits: [ 'click' ],
@@ -68,7 +68,7 @@ export const MButton = defineComponent({
 				disabled: MButtonState.disabled === state,
 			},
 			onClick: (event: PointerEvent) => {
-				if (MButtonState.enabled === this.$props.state) {
+				if ('undefined' === typeof this.$props.state) {
 					this.$el.blur()
 					this.$emit('click', event)
 				}

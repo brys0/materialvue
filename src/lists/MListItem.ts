@@ -50,7 +50,7 @@ export const MListItem = defineComponent({
 	props: {
 		state: {
 			type: String as PropType<MListItemState>,
-			default: MListItemState.enabled,
+			required: false,
 		},
 		hasLeadingVideo: {
 			type: Boolean,
@@ -77,7 +77,7 @@ export const MListItem = defineComponent({
 				disabled: MListItemState.disabled === state,
 			},
 			onClick: (event: PointerEvent) => {
-				if (MListItemState.enabled === this.$props.state) {
+				if ('undefined' === typeof this.$props.state) {
 					this.$el.blur()
 					this.$emit('click', event)
 				}
