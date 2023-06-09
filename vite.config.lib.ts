@@ -84,8 +84,6 @@ export default defineConfig(() => ({
 		rollupOptions: {
 			external,
 			output: {
-				assetFileNames: (info): string =>
-					info.name || 'build-filename-undefined',
 			},
 		},
 	},
