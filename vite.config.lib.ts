@@ -50,7 +50,7 @@ const entry = `${srcDir}/index.ts`
 const fileName = 'lib-[format]'
 const formats: LibraryFormats[] = [ 'es', 'cjs' ]
 const emptyOutDir = true
-const minify = 'development' !== process.env.NODE_ENV
+const minify = false
 
 const alias = {
 	'@': fileURLToPath(new URL(srcDir, import.meta.url)),
