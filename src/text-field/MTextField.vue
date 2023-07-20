@@ -34,10 +34,10 @@
 
 <script lang="ts" setup>
 import {
+	PropType,
 	ref,
 	toRef,
 	computed,
-	PropType,
 	onMounted,
 	onBeforeUnmount,
 	nextTick,
