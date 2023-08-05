@@ -33,23 +33,27 @@
 import {
 	h,
 	VNode,
-	FunctionalComponent,
+	SetupContext,
 } from 'vue'
 
+import {
+	MTile,
+} from '@cosmicmind/materialvue'
+
 export type MAvatarProps = {}
+export type MAvatarEvents = {}
 
-export const MAvatar: FunctionalComponent<MAvatarProps> = (_, {
+export function MAvatar(_: MAvatarProps, {
 	slots,
-}): VNode => h('div', {
-	class: {
-		'm-avatar': true,
-	},
-}, {
-	default: () => slots.default?.(),
-})
+}: SetupContext<MAvatarEvents>): VNode {
+	return h(MTile, {
+		class: {
+			'm-avatar': true,
+		},
+	}, {
+		default: () => slots.default?.(),
+	})
+}
 
-MAvatar.displayName = 'MAvatar'
-
-MAvatar.props = []
-
-export default MAvatar
+MAvatar.props = {}
+MAvatar.emits = {}

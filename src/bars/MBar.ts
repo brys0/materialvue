@@ -33,7 +33,8 @@
 import {
 	h,
 	VNode,
-	FunctionalComponent,
+	PropType,
+	SetupContext,
 } from 'vue'
 
 export enum MBarDirection {
@@ -45,24 +46,32 @@ export type MBarProps = {
 	direction?: MBarDirection
 }
 
-export const MBar: FunctionalComponent<MBarProps> = ({
-	direction,
-}, {
-	slots,
-}): VNode => h('div', {
-	class: {
-		'm-bar': true,
-		horizontal: direction === MBarDirection.horizontal,
-		vertical: direction === MBarDirection.vertical,
+export type MBarEvents = {}
+
+export function MBar(
+	{
+		direction,
+	}: MBarProps,
+	{
+		slots,
+	}: SetupContext<MBarEvents>): VNode {
+	return h('div', {
+		class: {
+			'm-bar': true,
+			horizontal: direction === MBarDirection.horizontal,
+			vertical: direction === MBarDirection.vertical,
+		},
+	}, {
+		default: () => slots.default?.(),
+	})
+}
+
+MBar.props = {
+	direction: {
+		type: String as PropType<MBarDirection>,
+		required: false,
+		validator: (value: MBarDirection): boolean => Object.values(MBarDirection).includes(value),
 	},
-}, {
-	default: () => slots.default?.(),
-})
+}
 
-MBar.displayName = 'MBar'
-
-MBar.props = [
-	'direction'
-]
-
-export default MBar
+MBar.emits = {}
