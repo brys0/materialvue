@@ -38,7 +38,7 @@ import {
 
 import {
 	MTile,
-} from '@cosmicmind/materialvue'
+} from '@/layout/MTile'
 
 export type MAvatarProps = {}
 export type MAvatarEvents = {}
