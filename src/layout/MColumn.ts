@@ -40,7 +40,7 @@ export type ColumnProps = {}
 
 export const MColumn: FunctionalComponent<ColumnProps> = (_, {
 	slots,
-}): VNode => h('div', {
+}): VNode => h('dl', {
 	class: {
 		'm-column': true,
 	},

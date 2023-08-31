@@ -50,6 +50,7 @@ export const MButton = defineComponent({
 		state: {
 			type: String as PropType<MButtonState>,
 			required: false,
+			default: MButtonState.enabled,
 		},
 	},
 	emits: [ 'click' ],

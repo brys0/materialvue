@@ -40,7 +40,7 @@ export type MRowProps = {}
 
 export const MRow: FunctionalComponent<MRowProps> = (_, {
 	slots,
-}): VNode => h('div', {
+}): VNode => h('aside', {
 	class: {
 		'm-row': true,
 	},
