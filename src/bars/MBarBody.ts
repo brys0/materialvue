@@ -45,7 +45,7 @@ export function MBarBody(_: MBarProps,
 	}: SetupContext<MBarEvents>): VNode {
 	return h('div', {
 		class: {
-			'm-bar-boy': true,
+			'm-bar-body': true,
 		},
 	}, {
 		default: () => slots.default?.(),
