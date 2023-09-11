@@ -66,7 +66,7 @@ const props = defineProps({
 	},
 })
 
-const emit = defineEmits<
+const emits = defineEmits<
 {(e: 'autofill'): void
  (e: 'click', event: PointerEvent): void
  (e: 'blur', event: FocusEvent): void
@@ -137,7 +137,7 @@ const updateState = (newState: MTextFieldState): void => {
 			}
 		}
 
-		emit('update:state', newState, oldState)
+		emits('update:state', newState, oldState)
 	}
 }
 
@@ -161,26 +161,26 @@ const handleClick = (event: PointerEvent): void => {
 			updateState(MTextFieldState.focused)
 		}
 
-		emit('click', event)
+		emits('click', event)
 	}
 }
 
 const handleBlur = (event: FocusEvent): void => {
 	if (!isMouseDown.value) {
 		updateState(MTextFieldState.enabled)
-		emit('blur', event)
+		emits('blur', event)
 	}
 }
 
 const handleFocus = (event: FocusEvent): void => {
 	updateState(MTextFieldState.focused)
-	emit('focus', event)
+	emits('focus', event)
 }
 
 const handleAnimationStart = (event: AnimationEvent): void => {
 	if ('onAutoFillStart' === event.animationName) {
 		fieldRef?.value?.classList.remove('is-empty')
-		emit('autofill')
+		emits('autofill')
 	}
 }
 
