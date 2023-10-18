@@ -66,13 +66,15 @@ const props = defineProps({
 	},
 })
 
-const emits = defineEmits<
-{(e: 'autofill'): void
- (e: 'click', event: PointerEvent): void
- (e: 'blur', event: FocusEvent): void
- (e: 'focus', event: FocusEvent): void
- (e: 'update:state', newState: MTextFieldState, oldState: MTextFieldState): void
-}>()
+type TextFieldEvents = {
+  (e: 'autofill', event: void): void
+  (e: 'click', event: PointerEvent): void
+  (e: 'blur', event: FocusEvent): void
+  (e: 'focus', event: FocusEvent): void
+  (e: 'update:state', newState: MTextFieldState, oldState: MTextFieldState): void
+}
+
+const emits = defineEmits<TextFieldEvents>()
 
 const fieldRef = ref<HTMLElement | null>(null)
 const inputRef = ref<HTMLInputElement | null>(null)
