@@ -30,4 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export * from '@/index'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
+
+export type MStackItemsProps = {}
+
+export const MStackItems: FunctionalComponent<MStackItemsProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: {
+		'm-stack-items': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
+
+MStackItems.displayName = 'MStackItems'
+
+MStackItems.props = []
+
+export default MStackItems

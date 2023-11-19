@@ -39,6 +39,10 @@ export {
 } from '@/stack/MStackItem'
 
 export {
+	MStackItems,
+} from '@/stack/MStackItems'
+
+export {
 	MStackItemLeading,
 } from '@/stack/MStackItemLeading'
 
