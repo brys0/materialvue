@@ -36,25 +36,21 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-import {
-	MIcon,
-} from '@/icons/MIcon'
+export type MBlockProps = {}
+export type MBlockEvents = {}
 
-export type MSharpIconProps = {}
-
-export const MSharpIcon: FunctionalComponent<MSharpIconProps> = (_, {
+export const MBlock: FunctionalComponent<MBlockProps, MBlockEvents> = (_, {
 	slots,
-}): VNode => h(MIcon, {
+}): VNode => h('div', {
 	class: {
-		'material-symbols-sharp': true,
-		'm-sharp': true,
+		'm-block': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-MSharpIcon.displayName = 'MSharpIcon'
+MBlock.displayName = 'MBlock'
+MBlock.props = {}
+MBlock.emits = {}
 
-MSharpIcon.props = []
-
-export default MSharpIcon
+export default MBlock

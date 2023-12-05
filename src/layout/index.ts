@@ -35,25 +35,37 @@ export {
 } from '@/layout/MLayout'
 
 export {
-	MGrid,
-} from '@/layout/MGrid'
+	MRoot,
+} from '@/layout/MRoot'
 
 export {
-	MAdaptive,
-} from '@/layout/MAdaptive'
+	MRootSections,
+} from '@/layout/MRootSections'
 
 export {
-	MTile,
-} from '@/layout/MTile'
+	MSection,
+} from '@/layout/MSection'
+
+export {
+	MSectionRows,
+} from '@/layout/MSectionRows'
 
 export {
 	MRow,
 } from '@/layout/MRow'
 
 export {
+	MRowColumns,
+} from '@/layout/MRowColumns'
+
+export {
 	MColumn,
 } from '@/layout/MColumn'
 
 export {
-	MSection,
-} from '@/layout/MSection'
+	MColumnTiles,
+} from '@/layout/MColumnTiles'
+
+export {
+	MTile,
+} from '@/layout/MTile'

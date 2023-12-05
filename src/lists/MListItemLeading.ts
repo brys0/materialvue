@@ -37,8 +37,9 @@ import {
 } from 'vue'
 
 export type MListItemLeadingProps = {}
+export type MListItemLeadingEvents = {}
 
-export const MListItemLeading: FunctionalComponent<MListItemLeadingProps> = (_, {
+export const MListItemLeading: FunctionalComponent<MListItemLeadingProps, MListItemLeadingEvents> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
@@ -49,7 +50,7 @@ export const MListItemLeading: FunctionalComponent<MListItemLeadingProps> = (_, 
 })
 
 MListItemLeading.displayName = 'MListItemLeading'
-
-MListItemLeading.props = []
+MListItemLeading.props = {}
+MListItemLeading.emits = {}
 
 export default MListItemLeading

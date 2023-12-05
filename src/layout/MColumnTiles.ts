@@ -36,20 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type MIconProps = {}
+export type MColumnTilesProps = {}
 
-export const MIcon: FunctionalComponent<MIconProps> = (_, {
+export const MColumnTiles: FunctionalComponent<MColumnTilesProps> = (_, {
 	slots,
-}): VNode => h('span', {
+}): VNode => h('div', {
 	class: {
-		'm-icon': true,
+		'm-column-tiles': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-MIcon.displayName = 'MIcon'
+MColumnTiles.displayName = 'MColumnTiles'
 
-MIcon.props = []
+MColumnTiles.props = []
 
-export default MIcon
+export default MColumnTiles

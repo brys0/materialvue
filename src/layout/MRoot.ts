@@ -33,50 +33,23 @@
 import {
 	h,
 	VNode,
-	PropType,
-	defineComponent,
+	FunctionalComponent,
 } from 'vue'
 
-export enum MButtonState {
-  enabled = 'enabled',
-  hovered = 'hovered',
-  focused = 'focused',
-	pressed = 'pressed',
-	disabled = 'disabled',
-}
+export type MRootProps = {}
 
-export const MButton = defineComponent({
-	props: {
-		state: {
-			type: String as PropType<MButtonState>,
-			required: false,
-		},
+export const MRoot: FunctionalComponent<MRootProps> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: {
+		'm-root': true,
 	},
-	emits: [ 'click' ],
-	render(): VNode {
-		const {
-			state,
-		} = this.$props
-		return h('button', {
-			disabled: MButtonState.disabled === state,
-			class: {
-				'm-button': true,
-				enabled: MButtonState.enabled === state,
-				hovered: MButtonState.hovered === state,
-				focused: MButtonState.focused === state,
-				pressed: MButtonState.pressed === state,
-				disabled: MButtonState.disabled === state,
-			},
-			onClick: (event: PointerEvent) => {
-				if ('undefined' === typeof this.$props.state) {
-					this.$el.blur()
-					this.$emit('click', event)
-				}
-			},
-		}, {
-			default: () => this.$slots.default?.(),
-		})
-	},
+}, {
+	default: () => slots.default?.(),
 })
 
-export default MButton
+MRoot.displayName = 'MRoot'
+
+MRoot.props = []
+
+export default MRoot

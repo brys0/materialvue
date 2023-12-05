@@ -30,6 +30,4 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MBlock,
-} from '@/blocks/MBlock'
+export * from '@/blocks/MBlock'

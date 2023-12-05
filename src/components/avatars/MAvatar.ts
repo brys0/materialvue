@@ -37,24 +37,24 @@ import {
 } from 'vue'
 
 import {
-	MIcon,
-} from '@/icons/MIcon'
+	MBlock,
+} from '@/elements/blocks'
 
-export type MRoundedIconProps = {}
+export type MAvatarProps = {}
+export type MAvatarEvents = {}
 
-export const MRoundedIcon: FunctionalComponent<MRoundedIconProps> = (_, {
+export const MAvatar: FunctionalComponent<MAvatarProps, MAvatarEvents> = (_, {
 	slots,
-}): VNode => h(MIcon, {
+}): VNode => h(MBlock, {
 	class: {
-		'material-symbols-rounded': true,
-		'm-rounded': true,
+		'm-avatar': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-MRoundedIcon.displayName = 'MRoundedIcon'
+MAvatar.displayName = 'MAvatar'
+MAvatar.props = {}
+MAvatar.emits = {}
 
-MRoundedIcon.props = []
-
-export default MRoundedIcon
+export default MAvatar

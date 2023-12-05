@@ -33,50 +33,30 @@
 import {
 	h,
 	VNode,
-	PropType,
-	defineComponent,
+	FunctionalComponent,
 } from 'vue'
 
-export enum MButtonState {
-  enabled = 'enabled',
-  hovered = 'hovered',
-  focused = 'focused',
-	pressed = 'pressed',
-	disabled = 'disabled',
-}
+import {
+	MBarProps,
+	MBarEvents,
+	MBar,
+} from '@/index'
 
-export const MButton = defineComponent({
-	props: {
-		state: {
-			type: String as PropType<MButtonState>,
-			required: false,
-		},
+export type MToolbarProps = MBarProps
+export type MToolbarEvents = MBarEvents
+
+export const MToolbar: FunctionalComponent<MToolbarProps, MToolbarEvents> = (_, {
+	slots,
+}): VNode => h(MBar, {
+	class: {
+		'm-toolbar': true,
 	},
-	emits: [ 'click' ],
-	render(): VNode {
-		const {
-			state,
-		} = this.$props
-		return h('button', {
-			disabled: MButtonState.disabled === state,
-			class: {
-				'm-button': true,
-				enabled: MButtonState.enabled === state,
-				hovered: MButtonState.hovered === state,
-				focused: MButtonState.focused === state,
-				pressed: MButtonState.pressed === state,
-				disabled: MButtonState.disabled === state,
-			},
-			onClick: (event: PointerEvent) => {
-				if ('undefined' === typeof this.$props.state) {
-					this.$el.blur()
-					this.$emit('click', event)
-				}
-			},
-		}, {
-			default: () => this.$slots.default?.(),
-		})
-	},
+}, {
+	default: () => slots.default?.(),
 })
 
-export default MButton
+MToolbar.displayName = 'MToolbar'
+MToolbar.props = {}
+MToolbar.emits = {}
+
+export default MToolbar

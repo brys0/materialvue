@@ -30,26 +30,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MStack,
-} from '@/stack/MStack'
-
-export {
-	MStackItem,
-} from '@/stack/MStackItem'
-
-export {
-	MStackItems,
-} from '@/stack/MStackItems'
-
-export {
-	MStackItemLeading,
-} from '@/stack/MStackItemLeading'
-
-export {
-	MStackItemBody,
-} from '@/stack/MStackItemBody'
-
-export {
-	MStackItemTrailing,
-} from '@/stack/MStackItemTrailing'
+export * from '@/stack/MStack'
+export * from '@/stack/MStackItem'
+export * from '@/stack/MStackItems'
+export * from '@/stack/MStackItemLeading'
+export * from '@/stack/MStackItemBody'
+export * from '@/stack/MStackItemTrailing'

@@ -36,24 +36,21 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-import {
-	MGrid,
-} from '@/layout/MGrid'
+export type MSideSheetProps = {}
+export type MSideSheetEvents = {}
 
-export type MAdaptiveProps = {}
-
-export const MAdaptive: FunctionalComponent<MAdaptiveProps> = (_, {
+export const MSideSheet: FunctionalComponent<MSideSheetProps, MSideSheetEvents> = (_, {
 	slots,
-}): VNode => h(MGrid, {
+}): VNode => h('aside', {
 	class: {
-		'm-adaptive': true,
+		'm-side-sheet': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-MAdaptive.displayName = 'MGrid'
+MSideSheet.displayName = 'MSideSheet'
+MSideSheet.props = {}
+MSideSheet.emits = {}
 
-MAdaptive.props = []
-
-export default MAdaptive
+export default MSideSheet

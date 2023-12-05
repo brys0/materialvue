@@ -37,8 +37,9 @@ import {
 } from 'vue'
 
 export type MListItemTrailingProps = {}
+export type MListItemTrailingEvents = {}
 
-export const MListItemTrailing: FunctionalComponent<MListItemTrailingProps> = (_, {
+export const MListItemTrailing: FunctionalComponent<MListItemTrailingProps, MListItemTrailingEvents> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
@@ -49,7 +50,7 @@ export const MListItemTrailing: FunctionalComponent<MListItemTrailingProps> = (_
 })
 
 MListItemTrailing.displayName = 'MListItemTrailing'
-
-MListItemTrailing.props = []
+MListItemTrailing.props = {}
+MListItemTrailing.emits = {}
 
 export default MListItemTrailing

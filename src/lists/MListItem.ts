@@ -51,13 +51,18 @@ export const MListItem = defineComponent({
 		state: {
 			type: String as PropType<MListItemState>,
 			required: false,
+			default: undefined,
 		},
 		hasLeadingVideo: {
 			type: Boolean,
 			default: false,
 		},
 	},
-	emits: [ 'click' ],
+
+	emits: [
+		'click'
+	],
+
 	render(): VNode {
 		const {
 			state,

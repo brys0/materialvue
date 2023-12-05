@@ -37,8 +37,9 @@ import {
 } from 'vue'
 
 export type MBarTrailingProps = {}
+export type MBarTrailingEvents = {}
 
-export const MBarTrailing: FunctionalComponent<MBarTrailingProps> = (_, {
+export const MBarTrailing: FunctionalComponent<MBarTrailingProps, MBarTrailingEvents> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
@@ -49,7 +50,7 @@ export const MBarTrailing: FunctionalComponent<MBarTrailingProps> = (_, {
 })
 
 MBarTrailing.displayName = 'MBarTrailing'
-
-MBarTrailing.props = []
+MBarTrailing.props = {}
+MBarTrailing.emits = {}
 
 export default MBarTrailing

@@ -37,8 +37,8 @@ import {
 } from 'vue'
 
 import {
-	MTile,
-} from '@/layout/MTile'
+	MBlock,
+} from '@/blocks/MBlock'
 
 export type MAvatarProps = {}
 export type MAvatarEvents = {}
@@ -46,7 +46,7 @@ export type MAvatarEvents = {}
 export function MAvatar(_: MAvatarProps, {
 	slots,
 }: SetupContext<MAvatarEvents>): VNode {
-	return h(MTile, {
+	return h(MBlock, {
 		class: {
 			'm-avatar': true,
 		},

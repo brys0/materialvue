@@ -37,8 +37,9 @@ import {
 } from 'vue'
 
 export type MListItemBodyProps = {}
+export type MListItemBodyEvents = {}
 
-export const MListItemBody: FunctionalComponent<MListItemBodyProps> = (_, {
+export const MListItemBody: FunctionalComponent<MListItemBodyProps, MListItemBodyEvents> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
@@ -49,7 +50,7 @@ export const MListItemBody: FunctionalComponent<MListItemBodyProps> = (_, {
 })
 
 MListItemBody.displayName = 'MListItemBody'
-
-MListItemBody.props = []
+MListItemBody.props = {}
+MListItemBody.emits = {}
 
 export default MListItemBody

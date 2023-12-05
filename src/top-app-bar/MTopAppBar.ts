@@ -36,11 +36,18 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type MTopAppBarProps = {}
+import {
+	MBarProps,
+	MBarEvents,
+	MBar,
+} from '@/index'
 
-export const MTopAppBar: FunctionalComponent<MTopAppBarProps> = (_, {
+export type MTopAppBarProps = MBarProps
+export type MTopAppBarEvents = MBarEvents
+
+export const MTopAppBar: FunctionalComponent<MTopAppBarProps, MTopAppBarEvents> = (_, {
 	slots,
-}): VNode => h('nav', {
+}): VNode => h(MBar, {
 	class: {
 		'm-top-app-bar': true,
 	},
@@ -49,7 +56,7 @@ export const MTopAppBar: FunctionalComponent<MTopAppBarProps> = (_, {
 })
 
 MTopAppBar.displayName = 'MTopAppBar'
-
-MTopAppBar.props = []
+MTopAppBar.props = {}
+MTopAppBar.emits = {}
 
 export default MTopAppBar

@@ -37,8 +37,9 @@ import {
 } from 'vue'
 
 export type MStackItemTrailingProps = {}
+export type MStackItemTrailingEvents = {}
 
-export const MStackItemTrailing: FunctionalComponent<MStackItemTrailingProps> = (_, {
+export const MStackItemTrailing: FunctionalComponent<MStackItemTrailingProps, MStackItemTrailingEvents> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
@@ -49,7 +50,7 @@ export const MStackItemTrailing: FunctionalComponent<MStackItemTrailingProps> = 
 })
 
 MStackItemTrailing.displayName = 'MStackItemTrailing'
-
-MStackItemTrailing.props = []
+MStackItemTrailing.props = {}
+MStackItemTrailing.emits = {}
 
 export default MStackItemTrailing

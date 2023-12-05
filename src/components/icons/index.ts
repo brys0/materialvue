@@ -30,30 +30,4 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
-
-import {
-	MLayout,
-} from '@/layout/MLayout'
-
-export type MGridProps = {}
-
-export const MGrid: FunctionalComponent<MGridProps> = (_, {
-	slots,
-}): VNode => h(MLayout, {
-	class: {
-		'm-grid': true,
-	},
-}, {
-	default: () => slots.default?.(),
-})
-
-MGrid.displayName = 'MLayout'
-
-MGrid.props = []
-
-export default MGrid
+export * from '@/components/icons/MIcon'

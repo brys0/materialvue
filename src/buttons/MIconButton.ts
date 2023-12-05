@@ -37,6 +37,10 @@ import {
 } from 'vue'
 
 import {
+	guard,
+} from '@cosmicmind/foundationjs'
+
+import {
 	MButton,
 } from '@/buttons/MButton'
 
@@ -62,9 +66,20 @@ export const MIconButton: FunctionalComponent<MIconButtonProps> = ({
 
 MIconButton.displayName = 'MIconButton'
 
-MIconButton.props = [
-	'toggle',
-	'selected'
-]
+MIconButton.props = {
+	toggle: {
+		type: Boolean,
+		required: false,
+		validator: (value: boolean): boolean => guard(value),
+	},
+
+	selected: {
+		type: Boolean,
+		required: false,
+		validator: (value: boolean): boolean => guard(value),
+	},
+}
+
+MIconButton.emits = {}
 
 export default MIconButton

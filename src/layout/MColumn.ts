@@ -36,11 +36,11 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-export type ColumnProps = {}
+export type MColumnProps = {}
 
-export const MColumn: FunctionalComponent<ColumnProps> = (_, {
+export const MColumn: FunctionalComponent<MColumnProps> = (_, {
 	slots,
-}): VNode => h('dl', {
+}): VNode => h('div', {
 	class: {
 		'm-column': true,
 	},

@@ -30,18 +30,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MIcon,
-} from '@/icons/MIcon'
-
-export {
-	MOutlinedIcon,
-} from '@/icons/MOutlinedIcon'
-
-export {
-	MRoundedIcon,
-} from '@/icons/MRoundedIcon'
-
-export {
-	MSharpIcon,
-} from '@/icons/MSharpIcon'
+export * from '@/components/avatars'
+export * from '@/components/drawers'
+export * from '@/components/icons'
+export * from '@/components/side-sheets'

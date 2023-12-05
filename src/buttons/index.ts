@@ -30,54 +30,15 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MButton,
-	MButtonState,
-} from '@/buttons/MButton'
-
-export {
-	MFilledButton,
-} from '@/buttons/MFilledButton'
-
-export {
-	MElevatedButton,
-} from '@/buttons/MElevatedButton'
-
-export {
-	MOutlinedButton,
-} from '@/buttons/MOutlinedButton'
-
-export {
-	MTextButton,
-} from '@/buttons/MTextButton'
-
-export {
-	MTonalButton,
-} from '@/buttons/MTonalButton'
-
-export {
-	MFilledIconButton,
-} from '@/buttons/MFilledIconButton'
-
-export {
-	MTonalIconButton,
-} from '@/buttons/MTonalIconButton'
-
-export {
-	MOutlinedIconButton,
-} from '@/buttons/MOutlinedIconButton'
-
-export {
-	MIconButton,
-} from '@/buttons/MIconButton'
-
-export {
-	MFabButton,
-	MFabButtonSize,
-	MFabButtonVariant,
-} from '@/buttons/MFabButton'
-
-export {
-	MExtendedFabButton,
-	MExtendedFabButtonVariant,
-} from '@/buttons/MExtendedFabButton'
+export * from '@/buttons/MButton'
+export * from '@/buttons/MFilledButton'
+export * from '@/buttons/MElevatedButton'
+export * from '@/buttons/MOutlinedButton'
+export *from '@/buttons/MTextButton'
+export * from '@/buttons/MTonalButton'
+export * from '@/buttons/MFilledIconButton'
+export * from '@/buttons/MTonalIconButton'
+export * from '@/buttons/MOutlinedIconButton'
+export * from '@/buttons/MIconButton'
+export * from '@/buttons/MFabButton'
+export * from '@/buttons/MExtendedFabButton'

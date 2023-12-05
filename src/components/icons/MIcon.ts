@@ -31,52 +31,49 @@
  */
 
 import {
+	PropType,
 	h,
 	VNode,
-	PropType,
-	defineComponent,
+	FunctionalComponent,
 } from 'vue'
 
-export enum MButtonState {
-  enabled = 'enabled',
-  hovered = 'hovered',
-  focused = 'focused',
-	pressed = 'pressed',
-	disabled = 'disabled',
+export enum MIconSize {
+	small = 'small',
+	medium = 'medium',
+	large = 'large',
 }
 
-export const MButton = defineComponent({
-	props: {
-		state: {
-			type: String as PropType<MButtonState>,
-			required: false,
-		},
+export type MIconProps = {
+	size?: MIconSize,
+}
+
+export type MIconEvents = {}
+
+export const MIcon: FunctionalComponent<MIconProps, MIconEvents> = ({
+	size,
+}, {
+	slots,
+}): VNode => h('span', {
+	class: {
+		'm-icon': true,
+		'small': size === MIconSize.small,
+		'medium': size === MIconSize.medium,
+		'large': size === MIconSize.large,
 	},
-	emits: [ 'click' ],
-	render(): VNode {
-		const {
-			state,
-		} = this.$props
-		return h('button', {
-			disabled: MButtonState.disabled === state,
-			class: {
-				'm-button': true,
-				enabled: MButtonState.enabled === state,
-				hovered: MButtonState.hovered === state,
-				focused: MButtonState.focused === state,
-				pressed: MButtonState.pressed === state,
-				disabled: MButtonState.disabled === state,
-			},
-			onClick: (event: PointerEvent) => {
-				if ('undefined' === typeof this.$props.state) {
-					this.$el.blur()
-					this.$emit('click', event)
-				}
-			},
-		}, {
-			default: () => this.$slots.default?.(),
-		})
-	},
+}, {
+	default: () => slots.default?.(),
 })
 
-export default MButton
+MIcon.displayName = 'MIcon'
+
+MIcon.props = {
+	size: {
+		type: String as PropType<MIconSize>,
+		required: false,
+		validator: (value: MIconSize): boolean => Object.values(MIconSize).includes(value),
+	},
+}
+
+MIcon.emits = {}
+
+export default MIcon

@@ -33,6 +33,7 @@
 import {
 	h,
 	VNode,
+	PropType,
 	FunctionalComponent,
 } from 'vue'
 
@@ -46,9 +47,12 @@ export type MListProps = {
 	lines?: MListLines
 }
 
-export const MList: FunctionalComponent<MListProps> = ({
+export type MListEvents = {}
+
+export const MList: FunctionalComponent<MListProps, MListEvents> = ({
 	lines,
-}, {
+}: MListProps,
+{
 	slots,
 }): VNode => h('ol', {
 	class: {
@@ -61,10 +65,16 @@ export const MList: FunctionalComponent<MListProps> = ({
 	default: () => slots.default?.(),
 })
 
-MList.displayName = 'MList'
+MList.displayName = 'MIcon'
 
-MList.props = [
-	'lines'
-]
+MList.props = {
+	lines: {
+		type: Number as PropType<MListLines>,
+		required: false,
+		validator: (value: MListLines): boolean => Object.values(MListLines).includes(value),
+	},
+}
+
+MList.emits = {}
 
 export default MList

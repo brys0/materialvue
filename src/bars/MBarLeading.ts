@@ -37,8 +37,9 @@ import {
 } from 'vue'
 
 export type MBarLeadingProps = {}
+export type MBarLeadingEvents = {}
 
-export const MBarLeading: FunctionalComponent<MBarLeadingProps> = (_, {
+export const MBarLeading: FunctionalComponent<MBarLeadingProps, MBarLeadingEvents> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
@@ -49,7 +50,7 @@ export const MBarLeading: FunctionalComponent<MBarLeadingProps> = (_, {
 })
 
 MBarLeading.displayName = 'MBarLeading'
-
-MBarLeading.props = []
+MBarLeading.props = {}
+MBarLeading.emits = {}
 
 export default MBarLeading

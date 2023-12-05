@@ -40,7 +40,7 @@ export type MTileProps = {}
 
 export const MTile: FunctionalComponent<MTileProps> = (_, {
 	slots,
-}): VNode => h('dd', {
+}): VNode => h('div', {
 	class: {
 		'm-tile': true,
 	},

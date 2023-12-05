@@ -30,53 +30,10 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	PropType,
-	defineComponent,
-} from 'vue'
+export {
+	default as MDropdown,
+} from '@/dropdown/MDropdown.vue'
 
-export enum MButtonState {
-  enabled = 'enabled',
-  hovered = 'hovered',
-  focused = 'focused',
-	pressed = 'pressed',
-	disabled = 'disabled',
-}
-
-export const MButton = defineComponent({
-	props: {
-		state: {
-			type: String as PropType<MButtonState>,
-			required: false,
-		},
-	},
-	emits: [ 'click' ],
-	render(): VNode {
-		const {
-			state,
-		} = this.$props
-		return h('button', {
-			disabled: MButtonState.disabled === state,
-			class: {
-				'm-button': true,
-				enabled: MButtonState.enabled === state,
-				hovered: MButtonState.hovered === state,
-				focused: MButtonState.focused === state,
-				pressed: MButtonState.pressed === state,
-				disabled: MButtonState.disabled === state,
-			},
-			onClick: (event: PointerEvent) => {
-				if ('undefined' === typeof this.$props.state) {
-					this.$el.blur()
-					this.$emit('click', event)
-				}
-			},
-		}, {
-			default: () => this.$slots.default?.(),
-		})
-	},
-})
-
-export default MButton
+export * from '@/dropdown/MDropdownLeading'
+export * from '@/dropdown/MDropdownBody'
+export * from '@/dropdown/MDropdownTrailing'

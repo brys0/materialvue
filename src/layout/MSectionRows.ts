@@ -36,25 +36,20 @@ import {
 	FunctionalComponent,
 } from 'vue'
 
-import {
-	MIcon,
-} from '@/icons/MIcon'
+export type MSectionProps = {}
 
-export type MOutlinedIconProps = {}
-
-export const MOutlinedIcon: FunctionalComponent<MOutlinedIconProps> = (_, {
+export const MSectionRows: FunctionalComponent<MSectionProps> = (_, {
 	slots,
-}): VNode => h(MIcon, {
+}): VNode => h('div', {
 	class: {
-		'material-symbols-outlined': true,
-		'm-outlined': true,
+		'm-section-rows': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-MOutlinedIcon.displayName = 'MOutlinedIcon'
+MSectionRows.displayName = 'MSectionRows'
 
-MOutlinedIcon.props = []
+MSectionRows.props = []
 
-export default MOutlinedIcon
+export default MSectionRows

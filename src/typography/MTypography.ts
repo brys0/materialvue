@@ -31,6 +31,7 @@
  */
 
 import {
+	PropType,
 	h,
 	VNode,
 	FunctionalComponent,
@@ -63,8 +64,12 @@ export const MTypography: FunctionalComponent<MTypographyProps> = ({
 
 MTypography.displayName = 'MTypography'
 
-MTypography.props = [
-	'size'
-]
+MTypography.props = {
+	size: {
+		type: String as PropType<MTypographySize>,
+		required: false,
+		validator: (value: MTypographySize): boolean => Object.values(MTypographySize).includes(value),
+	},
+}
 
 export default MTypography

@@ -30,19 +30,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MBar,
-	MBarDirection,
-} from '@/bars/MBar'
-
-export {
-	MBarLeading,
-} from '@/bars/MBarLeading'
-
-export {
-	MBarBody,
-} from '@/bars/MBarBody'
-
-export {
-	MBarTrailing,
-} from '@/bars/MBarTrailing'
+export * from '@/bars/MBar'
+export * from '@/bars/MBarLeading'
+export * from '@/bars/MBarBody'
+export * from '@/bars/MBarTrailing'

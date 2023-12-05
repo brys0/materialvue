@@ -96,7 +96,9 @@ const listeners = computed(() => {
   <input
     class="m-field-input"
     type="text"
+    :name="nameRef"
     v-model="value"
     v-on="listeners"
+    autocomplete="off"
   >
 </template>

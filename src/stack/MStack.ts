@@ -37,8 +37,9 @@ import {
 } from 'vue'
 
 export type MStackProps = {}
+export type MStackEvents = {}
 
-export const MStack: FunctionalComponent<MStackProps> = (_, {
+export const MStack: FunctionalComponent<MStackProps, MStackEvents> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
@@ -49,7 +50,7 @@ export const MStack: FunctionalComponent<MStackProps> = (_, {
 })
 
 MStack.displayName = 'MStack'
-
-MStack.props = []
+MStack.props = {}
+MStack.emits = {}
 
 export default MStack

@@ -30,6 +30,4 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MAvatar,
-} from '@/avatars/MAvatar'
+export * from '@/avatars/MAvatar'

@@ -33,24 +33,24 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
-export type MBarProps = {}
-export type MBarEvents = {}
+export type MBarBodyProps = {}
+export type MBarBodyEvents = {}
 
-export function MBarBody(_: MBarProps,
-	{
-		slots,
-	}: SetupContext<MBarEvents>): VNode {
-	return h('div', {
-		class: {
-			'm-bar-body': true,
-		},
-	}, {
-		default: () => slots.default?.(),
-	})
-}
+export const MBarBody: FunctionalComponent<MBarBodyProps, MBarBodyEvents> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: {
+		'm-bar-body': true,
+	},
+}, {
+	default: () => slots.default?.(),
+})
 
+MBarBody.displayName = 'MBarBody'
 MBarBody.props = {}
 MBarBody.emits = {}
+
+export default MBarBody
