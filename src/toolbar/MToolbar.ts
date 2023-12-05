@@ -40,7 +40,7 @@ import {
 	MBarProps,
 	MBarEvents,
 	MBar,
-} from '@/index'
+} from '@/'
 
 export type MToolbarProps = MBarProps
 export type MToolbarEvents = MBarEvents
