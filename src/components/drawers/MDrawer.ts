@@ -41,7 +41,7 @@ export type MDrawerEvents = {}
 
 export const MDrawer: FunctionalComponent<MDrawerProps, MDrawerEvents> = (_, {
 	slots,
-}): VNode => h('aside', {
+}): VNode => h('div', {
 	class: {
 		'm-drawer': true,
 	},
