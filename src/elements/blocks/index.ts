@@ -31,5 +31,5 @@
  */
 
 export {
-	MBlock,
+	MBlockRow,
 } from './MBlock'

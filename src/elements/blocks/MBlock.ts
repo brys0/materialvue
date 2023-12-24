@@ -43,7 +43,7 @@ export const MBlock: FunctionalComponent<MBlockProps, MBlockEvents> = (_, {
 	slots,
 }): VNode => h('div', {
 	class: {
-		'm-block': true,
+		'm-block-row': true,
 	},
 }, {
 	default: () => slots.default?.(),

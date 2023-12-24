@@ -37,7 +37,7 @@ import {
 } from 'vue'
 
 import {
-	MBlock,
+	MBlockRow,
 } from '@/blocks/MBlock'
 
 export type MAvatarProps = {}
@@ -46,7 +46,7 @@ export type MAvatarEvents = {}
 export function MAvatar(_: MAvatarProps, {
 	slots,
 }: SetupContext<MAvatarEvents>): VNode {
-	return h(MBlock, {
+	return h(MBlockRow, {
 		class: {
 			'm-avatar': true,
 		},
