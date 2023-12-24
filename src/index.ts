@@ -31,6 +31,8 @@
  */
 
 export * from '@/components'
+export * from '@/elements'
+
 export * from '@/app'
 export * from '@/top-app-bar'
 export * from '@/toolbar'
@@ -39,7 +41,6 @@ export * from '@/navigation-drawer'
 export * from '@/modal'
 export * from '@/typography'
 export * from '@/buttons'
-export * from '@/blocks'
 export * from '@/dropdown'
 export * from '@/layout'
 export * from '@/forms'

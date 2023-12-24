@@ -30,46 +30,14 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MForm,
-} from '@/forms/MForm'
-
-export {
-	MFieldset,
-} from '@/forms/MFieldset'
-
-export {
-	MField,
-} from '@/forms/MField'
-
-export {
-	MFieldControl,
-} from '@/forms/MFieldControl'
-
-export {
-	MFieldBody,
-} from '@/forms/MFieldBody'
-
-export {
-	MFieldLeading,
-} from '@/forms/MFieldLeading'
-
-export {
-	MFieldTrailing,
-} from '@/forms/MFieldTrailing'
-
-export {
-	default as MFieldInput,
-} from '@/forms/MFieldInput.vue'
-
-export {
-	MFieldPrefix,
-} from '@/forms/MFieldPrefix'
-
-export {
-	MFieldSuffix,
-} from '@/forms/MFieldSuffix'
-
-export {
-	MFieldSupport,
-} from '@/forms/MFieldSupport'
+export * from '@/forms/MForm'
+export * from '@/forms/MFieldset'
+export * from '@/forms/MField'
+export * from '@/forms/MFieldControl'
+export * from '@/forms/MFieldBody'
+export * from '@/forms/MFieldLeading'
+export * from '@/forms/MFieldTrailing'
+export * from '@/forms/MFieldInput.vue'
+export * from '@/forms/MFieldPrefix'
+export * from '@/forms/MFieldSuffix'
+export * from '@/forms/MFieldSupport'

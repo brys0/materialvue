@@ -30,26 +30,4 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import {
-	h,
-	VNode,
-	FunctionalComponent,
-} from 'vue'
-
-export type MBlockProps = {}
-
-export const MBlock: FunctionalComponent<MBlockProps> = (_, {
-	slots,
-}): VNode => h('div', {
-	class: {
-		'm-block-row': true,
-	},
-}, {
-	default: () => slots.default?.(),
-})
-
-MBlock.displayName = 'MBlock'
-
-MBlock.props = []
-
-export default MBlock
+export * from '@/elements/blocks'

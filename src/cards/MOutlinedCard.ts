@@ -41,19 +41,18 @@ import {
 } from '@/cards/MCard'
 
 export type MOutlinedCardProps = {}
+export type MOutlinedCardEvents = {}
 
-export const MOutlinedCard: FunctionalComponent<MOutlinedCardProps> = (_, {
+export const MOutlinedCard: FunctionalComponent<MOutlinedCardProps, MOutlinedCardEvents> = (_, {
 	slots,
 }): VNode => h(MCard, {
-	class: {
-		'm-outlined': true,
-	},
+	class: 'm-outlined',
 }, {
 	default: () => slots.default?.(),
 })
 
 MOutlinedCard.displayName = 'MOutlinedCard'
-
-MOutlinedCard.props = []
+MOutlinedCard.props = {}
+MOutlinedCard.emits = {}
 
 export default MOutlinedCard

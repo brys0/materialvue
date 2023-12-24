@@ -30,4 +30,25 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export * from '@/blocks/MBlock'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
+
+export type MBlockRowProps = {}
+export type MBlockRowEvents = {}
+
+export const MBlockRow: FunctionalComponent<MBlockRowProps, MBlockRowEvents> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: 'm-block-row',
+}, {
+	default: () => slots.default?.(),
+})
+
+MBlockRow.displayName = 'MBlockRow'
+MBlockRow.props = {}
+MBlockRow.emits = {}
+
+export default MBlockRow

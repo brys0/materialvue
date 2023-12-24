@@ -33,27 +33,26 @@
 import {
 	h,
 	VNode,
-	SetupContext,
+	FunctionalComponent,
 } from 'vue'
 
 import {
 	MBlockRow,
-} from '@/blocks/MBlock'
+} from '@/elements'
 
 export type MAvatarProps = {}
 export type MAvatarEvents = {}
 
-export function MAvatar(_: MAvatarProps, {
+export const MAvatar: FunctionalComponent<MAvatarProps, MAvatarEvents> = (_, {
 	slots,
-}: SetupContext<MAvatarEvents>): VNode {
-	return h(MBlockRow, {
-		class: {
-			'm-avatar': true,
-		},
-	}, {
-		default: () => slots.default?.(),
-	})
-}
+}): VNode => h(MBlockRow, {
+	class: 'm-avatar',
+}, {
+	default: () => slots.default?.(),
+})
 
+MAvatar.displayName = 'MAvatar'
 MAvatar.props = {}
 MAvatar.emits = {}
+
+export default MAvatar

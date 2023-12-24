@@ -30,19 +30,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MCard,
-	MCardState,
-} from '@/cards/MCard'
-
-export {
-	MElevatedCard,
-} from '@/cards/MElevatedCard'
-
-export {
-	MFilledCard,
-} from '@/cards/MFilledCard'
-
-export {
-	MOutlinedCard,
-} from '@/cards/MOutlinedCard'
+export * from '@/cards/MCard'
+export * from '@/cards/MElevatedCard'
+export * from '@/cards/MFilledCard'
+export * from '@/cards/MOutlinedCard'

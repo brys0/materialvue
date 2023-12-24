@@ -30,6 +30,5 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MBlockRow,
-} from './MBlock'
+export * from '@/elements/blocks/MBlockColumn'
+export * from '@/elements/blocks/MBlockRow'

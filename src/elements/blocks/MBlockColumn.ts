@@ -30,6 +30,25 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-export {
-	MMain,
-} from '@/main/MMain'
+import {
+	h,
+	VNode,
+	FunctionalComponent,
+} from 'vue'
+
+export type MBlockColumnProps = {}
+export type MBlockColumnEvents = {}
+
+export const MBlockColumn: FunctionalComponent<MBlockColumnProps, MBlockColumnEvents> = (_, {
+	slots,
+}): VNode => h('div', {
+	class: 'm-block-column',
+}, {
+	default: () => slots.default?.(),
+})
+
+MBlockColumn.displayName = 'MBlockColumn'
+MBlockColumn.props = {}
+MBlockColumn.emits = {}
+
+export default MBlockColumn
