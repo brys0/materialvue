@@ -43,7 +43,7 @@ export const MDropdownLeading: FunctionalComponent<MDropdownLeadingProps, MDropd
 	slots,
 }): VNode => h('div', {
 	class: {
-		'm-dropdown-leading': true,
+		'm-dropdown-trigger': true,
 	},
 }, {
 	default: () => slots.default?.(),
