@@ -49,16 +49,15 @@ export type MIconProps = {
 
 export type MIconEvents = {}
 
-export const MIcon: FunctionalComponent<MIconProps, MIconEvents> = ({
-	size,
-}, {
-	slots,
-}): VNode => h('span', {
+export const MIcon: FunctionalComponent<MIconProps, MIconEvents> = (
+	{
+		size,
+	}, {
+		slots,
+	}): VNode => h('span', {
 	class: {
 		'm-icon': true,
-		'small': size === MIconSize.small,
-		'medium': size === MIconSize.medium,
-		'large': size === MIconSize.large,
+		size,
 	},
 }, {
 	default: () => slots.default?.(),

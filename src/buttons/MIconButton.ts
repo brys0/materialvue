@@ -44,19 +44,29 @@ import {
 	MButton,
 } from '@/buttons/MButton'
 
-export type MIconButtonProps = {
-	toggle?: boolean
-	selected?: boolean
+export enum MIconButtonSize {
+  small = 'small',
+  medium = 'medium',
+  large = 'large',
 }
 
-export const MIconButton: FunctionalComponent<MIconButtonProps> = ({
-	toggle,
-	selected,
-}, {
-	slots,
-}): VNode => h(MButton, {
+export type MIconButtonProps = {
+  size?: MIconButtonSize
+  toggle?: boolean
+  selected?: boolean
+}
+
+export const MIconButton: FunctionalComponent<MIconButtonProps> = (
+	{
+		size,
+		toggle,
+		selected,
+	}, {
+		slots,
+	}): VNode => h(MButton, {
 	class: {
 		'm-icon': true,
+		size,
 		toggle,
 		selected,
 	},
