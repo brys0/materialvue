@@ -47,11 +47,13 @@ export type MTypographyProps = {
 	size?: MTypographySize,
 }
 
-export const MTypography: FunctionalComponent<MTypographyProps> = ({
-	size,
-}, {
-	slots,
-}): VNode => h('span', {
+export const MTypography: FunctionalComponent<MTypographyProps> = (
+	{
+		size,
+	}, {
+		slots,
+	}
+): VNode => h('span', {
 	class: {
 		'm-typography': true,
 		small: MTypographySize.small === size,
