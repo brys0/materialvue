@@ -31,5 +31,5 @@
  */
 
 export {
-	MTopAppBar,
-} from '@/top-app-bar/MTopAppBar'
+	MTopbar,
+} from '@/topbar/MTopbar'

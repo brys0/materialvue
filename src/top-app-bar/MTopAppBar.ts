@@ -42,21 +42,21 @@ import {
 	MBar,
 } from '@/bars'
 
-export type MTopAppBarProps = MBarProps
-export type MTopAppBarEvents = MBarEvents
+export type MTopbarProps = MBarProps
+export type MTopbarEvents = MBarEvents
 
-export const MTopAppBar: FunctionalComponent<MTopAppBarProps, MTopAppBarEvents> = (_, {
+export const MTopbar: FunctionalComponent<MTopbarProps, MTopbarEvents> = (_, {
 	slots,
 }): VNode => h(MBar, {
 	class: {
-		'm-top-app-bar': true,
+		'm-topbar': true,
 	},
 }, {
 	default: () => slots.default?.(),
 })
 
-MTopAppBar.displayName = 'MTopAppBar'
-MTopAppBar.props = {}
-MTopAppBar.emits = {}
+MTopbar.displayName = 'MTopbar'
+MTopbar.props = {}
+MTopbar.emits = {}
 
-export default MTopAppBar
+export default MTopbar

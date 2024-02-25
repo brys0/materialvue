@@ -34,7 +34,7 @@ export * from '@/components'
 export * from '@/elements'
 
 export * from '@/app'
-export * from '@/top-app-bar'
+export * from '@/topbar'
 export * from '@/toolbar'
 export * from '@/navigation-rail'
 export * from '@/navigation-drawer'
