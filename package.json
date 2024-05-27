@@ -18,9 +18,9 @@
   "type": "module",
   "main": "dist/lib-cjs.cjs",
   "module": "dist/lib-es.js",
-  "types": "dist/src/index.d.ts",
   "exports": {
     ".": {
+      "types": "dist/src/index.d.ts",
       "import": "./dist/lib-es.js",
       "require": "./dist/lib-cjs.cjs"
     }
